@@ -29,6 +29,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
+      - run: pip install -q numpy==2.5.3
       - name: sync the wanted issues, or handle a claim
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
