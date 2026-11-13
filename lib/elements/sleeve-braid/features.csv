@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+6.35,sleeve bore on the tube,own,,,,design: the OD of the tube it covers (toolkit/pneu.py D2 TUBES_IN; 1/4 in by default),the tube sits in it face to face; no fastener or port

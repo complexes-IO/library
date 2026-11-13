@@ -1,0 +1,10 @@
+# behaviour.csv · hold-down · generic single-acting plunger hold-down for a shear, Ø32, stroke 25 (lib/behaviour.md). One oil port and no electrical pin; one moving node,
+# the plunger with its foot pad. Oil into port-cap presses it down; the spring inside lifts it when the oil is let out (spec.md); the solver is electrical in phase 1
+# (lib/toolkit/nets.py) and solves no oil, so its states are its two ends, set by a manual state until the hydraulic circuit model drives them. The port's thread is open
+# (class B), set by the fitting's stud end: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,cap,port-cap,flange,,not claimed,N·m,not claimed: the fitting's stud end sets it (SAE J1926-2 / -3); spec.md Ports (pneu.NODES cylinder end port-cap; marked by its name),oil in presses the plunger down (unit hyd-port)
+state,raised,,plunger,default,,,spec.md Named nodes (plunger at rest: raised by its spring),
+state,pressed,,plunger,manual toggle,,,spec.md Named nodes (the stroke 25; stand-in for oil at port-cap until the circuit model),
+pose,plunger,,,pressed,end,,element.py (plunger translates 0 to 25 along -z),
+limit,plunger,,,,12.9,kN,spec.md Class values 4 (160 bar on the Ø32 plunger; theoretical; the spring not deducted),max. push load

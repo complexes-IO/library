@@ -1,0 +1,6 @@
+# behaviour.csv · fitting-pushin · generic push-in fitting, one tube OD to one male NPT thread (lib/behaviour.md). Two ports and no electrical pin or moving node. The air it
+# passes is a pneumatic path: the solver is electrical in phase 1 (lib/toolkit/nets.py), so no state or contact row is written. The NPT stub makes up by turns (pneu.NPT L1 + L3)
+# (port-thread: value not claimed, lib/behaviour.md, pin; request pneu-13 1); the tube is held by the collet, not a torque (port-tube: value not claimed, lib/behaviour.md, pin; request pneu-15 3). The release sleeve is drawn fixed (spec.md Named nodes), so it has no pose.
+kind,a,b,part,when,value,unit,source,note
+pin,thread,port-thread,hex,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: a fitting's ends have no ISO 11727 number; marked by the node's name)",the male NPT stub (parameter thread) into a female port of the same size
+pin,tube,port-tube,sleeve,,not claimed,N·m,not claimed: held by the fitting's collet; no thread (ISO 14743 push-in; lib/behaviour.md; pin; request pneu-15 3); spec.md Ports (design: as thread),the push-in port: a tube of the parameter's OD (tube-pneu) pushed in to its stop

@@ -1,0 +1,5 @@
+port,pin,role,signal,rated_A,source
+pwr,L1,phase-load:L1,U1,,design (spec.md Ports: the drive motor's terminals U1 / V1 / W1 as motor-iec71-370w's; the full-load current is ratings.csv fla)
+pwr,L2,phase-load:L2,V1,,design (spec.md Ports)
+pwr,L3,phase-load:L3,W1,,design (spec.md Ports)
+pwr,PE,PE,terminal box earth,,design (spec.md Ports: the frame's bonding terminal in the terminal box)

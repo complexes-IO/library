@@ -1,0 +1,11 @@
+port,pin,role,signal,rated_A,source
+main,L1,pass,line 1 in (pin into the contactor's T1),,drawing p. 1 (pin row); marks NOT ON FILE on the pages read
+main,L2,pass,line 2 in,,as L1
+main,L3,pass,line 3 in,,as L1
+motor,T1,pass,motor phase 1 out,,drawing p. 1 (terminal row); setting 7.0-10.0 A (cut sheet p. 1); a terminal current rating is NOT ON FILE
+motor,T2,pass,motor phase 2 out,,as T1
+motor,T3,pass,motor phase 3 out,,as T1
+aux,95,sw-com,N.C. 95-96 common,1,"spec p. 2 (marks), p. 5 (DC-13 1 A at 24 V)"
+aux,96,sw-nc,N.C. 95-96 output,1,as 95
+aux,97,sw-com,N.O. 97-98 common,1,as 95
+aux,98,sw-no,N.O. 97-98 output,1,as 95

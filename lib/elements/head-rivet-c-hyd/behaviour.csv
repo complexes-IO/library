@@ -1,0 +1,10 @@
+# behaviour.csv · head-rivet-c-hyd · own design: a cylinder-driven rivet setting head, a C-frame fixture that places hyd-cylinder-da-40 1.1 (lib/behaviour.md). No electrical pin and no
+# moving node of its own: the two port nodes (cyl.port-cap, cyl.port-rod: unit hyd-port, thread open there) and the one moving node (cyl.rod, with the die cup and upper
+# die drawn on it, translate -z 0 to 200) are the placed cylinder's, and a placed element carries its own spec (toolkit/behaviour.py: its states and pose rows are
+# hyd-cylinder-da-40 1.1's behaviour.csv, carried by the placed part; a pose row here on cyl.rod is refused, BEH-030). The two pin rows below say what the cylinder's ports do in
+# this head so the twin's probe can touch them here. The oil that drives it is hydraulic: the solver is electrical in phase 1 (lib/toolkit/nets.py) and solves no oil.
+# Torque: not claimed (lib/behaviour.md, pin; request pneu-13 1): the fitting's stud end sets it, the hyd-port's thread open. No rating of its own (no ratings.csv): no setting force or rivet size is claimed; the force available is the cylinder's own
+# figure (hyd-cylinder-da-40 1.1 behaviour.csv limit row).
+kind,a,b,part,when,value,unit,source,note
+pin,cap,cyl.port-cap,cylinder,,not claimed,N·m,not claimed: the fitting's stud end sets it (SAE J1926-2 / -3); hyd-cylinder-da-40 1.1 spec.md Ports (its cap-end port; placed here as cyl.port-cap; named by its function; unit hyd-port),oil in drives the rod and the die down onto the rivet (the die 3 above the anvil at full stroke)
+pin,rod,cyl.port-rod,cylinder,,not claimed,N·m,not claimed: the fitting's stud end sets it (SAE J1926-2 / -3); hyd-cylinder-da-40 1.1 spec.md Ports (its rod-end port; placed here as cyl.port-rod; named by its function; unit hyd-port),oil in raises the die (203 above the anvil at rest)

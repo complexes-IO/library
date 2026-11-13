@@ -1,0 +1,3 @@
+property,value,unit,status,source
+supply_v,24,V DC,assumption,own design
+load_i,0.15,A,assumption,own design (3.6 W)

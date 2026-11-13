@@ -1,0 +1,23 @@
+# behaviour.csv · guard-interlock · position switch with guard locking, tongue actuator, 2 N.C. safety contacts, spring lock released by a 24 V DC solenoid (lib/behaviour.md). Written by elec-r48 (unattended, 2026-11-13) from spec.md (Class values, Switching program, Named nodes), pins.csv, ratings.csv and element.py: a generic element, so its class values are its figures.
+# Two parts hold states. The actuator (node actuator, translate toward -y, 0 ... 40): inserted while the guard is shut (as built), withdrawn when the operator opens the guard (manual toggle: a guard stays where it is left). The lock (spring-applied guard locking, power to unlock: spec.md Class values 5): locked while the solenoid A1-A2 is off, released while it carries a voltage.
+# 11-12 is closed while the actuator is in (the guard's position); 21-22 while the actuator is in and locked (the guard locking's position). Both open by the actuator's withdrawal or the lock's release (spec.md Switching program).
+# The solenoid is a load A1-A2. Its operating limits are IEC 60947-1's (class B: a document wanted, not in lib/standards/sources.csv), so any solenoid voltage reads as released. Its power is not a class feature (spec.md Notes): the load row carries the designer's figure (OPERATING.md 6, "design"), 6 W at 24 V, so the solver has a current and the panel's 24 V budget a share; ratings.csv carries the matching coil_p (design) and load_i (derived) rows.
+# Each terminal is a screw clamp with its own port node t-<mark> on the back wall (element.py TERMS). The clamps' conductor range and torque are class B (IEC 60947-1 not on file: spec.md Dimensions). Contact resistances are not stated and the phase-1 solver reads none for a closed contact: the contact rows carry no figure.
+kind,a,b,part,when,value,unit,source,note
+pin,11,t-11,terminal-11,,NOT ON FILE (B): IEC 60947-1,N·m,spec.md Dimensions (terminals: six screw clamps on the back wall; conductor range and torque class B); pins.csv t-11,safety contact 11-12 line side
+pin,12,t-12,terminal-12,,NOT ON FILE (B): IEC 60947-1,N·m,as 11,safety contact 11-12 load side (opens when the actuator is withdrawn)
+pin,21,t-21,terminal-21,,NOT ON FILE (B): IEC 60947-1,N·m,as 11,safety contact 21-22 line side
+pin,22,t-22,terminal-22,,NOT ON FILE (B): IEC 60947-1,N·m,as 11,safety contact 21-22 load side (opens when the lock is released or the actuator withdrawn)
+pin,A1,t-A1,terminal-A1,,NOT ON FILE (B): IEC 60947-1,N·m,as 11,guard locking solenoid + (24 V DC)
+pin,A2,t-A2,terminal-A2,,NOT ON FILE (B): IEC 60947-1,N·m,as 11,guard locking solenoid 0 V
+load,A1,A2,solenoid,,96,ohm,"design: 6 W solenoid at 24 V DC (R = 24² / 6 = 96 Ω; 0.25 A), the designer's figure for a generic 24 V DC guard locking magnet drive of this size under the panel's 24 V budget (ELR-020); not a class feature (spec.md Notes); spec.md Class values 9 (24 V DC)",the guard locking solenoid
+state,inserted,,actuator,default,,,spec.md Switching program (the guard shut: the tongue in the head's slot as built); Class values 24 (separate actuator),the guard shut
+state,withdrawn,,actuator,manual toggle,,,spec.md Switching program (the operator has opened the guard: the tongue out of the slot); Class values 24,the twin's input for the guard
+state,locked,,lock,default,,,spec.md Class values 5 (spring-applied guard locking: locked while the solenoid is off),the guard held shut
+state,released,,lock,solenoid.V > 0,,,"spec.md Class values 5 and 9 (power to unlock, 24 V DC); the solenoid's operating limits are NOT ON FILE (B): IEC 60947-1 (not in lib/standards/sources.csv), so any solenoid voltage reads as released",the guard free to open
+contact,11,12,contact-11-12,inserted,,,spec.md Switching program (11-12 closed while the actuator is in); Class values 14 (2 N.C.),safety contact: the guard's position
+contact,21,22,contact-21-22,inserted and locked,,,spec.md Switching program (21-22 closed while the actuator is in and locked); Class values 14 (2 N.C.),safety contact: the guard locking's position
+pose,actuator,,,withdrawn,end,,element.py (actuator translates toward -y with range 0 ... 40; the withdrawn pose at the range end: spec.md Switching program),the tongue clear of the head
+limit,contact-11-12 contact-21-22,,,,2,A,ratings.csv ie_ac15_230v (ETIM 10.0 EC002593 class value EF001385; spec.md Class values 20),each contact's rated operation current at AC-15 230 V
+limit,contact-11-12 contact-21-22,,,,230,VAC,ratings.csv ie_ac15_230v (ETIM 10.0 EC002593 class value EF001385: the voltage the class value rates; spec.md Class values 20),the contacts' highest rated voltage
+limit,lock,,,,1000,N,ratings.csv locking_force (ETIM 10.0 EC002593 class value EF007552; spec.md Class values 3),the guard locking force the twin reports

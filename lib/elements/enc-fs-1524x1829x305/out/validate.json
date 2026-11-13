@@ -1,0 +1,260 @@
+{
+ "toolkit": "1.3",
+ "validation": "1.0",
+ "rules": 86,
+ "id": "enc-fs-1524x1829x305",
+ "status": "REVIEW",
+ "findings": [
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
+   "scope": "enc-fs-1524x1829x305",
+   "where": "enc-fs-1524x1829x305",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "enc-fs-1524x1829x305",
+   "where": "enc-fs-1524x1829x305",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "enc-fs-1524x1829x305",
+   "where": "enc-fs-1524x1829x305",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "DOC-004",
+   "scope": "enc-fs-1524x1829x305",
+   "where": "enc-fs-1524x1829x305",
+   "message": "no Stage 0 brief (references/measure.md) on file",
+   "elements": [],
+   "title": "Stage 0 brief on file (references/measure.md or interior.md) unless the baseline starts 'own' / 'our own design'",
+   "basis": "element-qa-checklist Stage 0; OPERATING.md 12"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "DOC-005",
+   "scope": "enc-fs-1524x1829x305",
+   "where": "enc-fs-1524x1829x305",
+   "message": "open figures in spec.md, behaviour.csv: 1 NOT ON FILE, 4 NOT ON FILE (B); 1 need EM, 0 approved ('REVIEW accepted: <figure> \u00b7 EM <date>', one line each); 4 class B want a source (lib/standards/wanted.md), not EM's line",
+   "elements": [],
+   "title": "every open figure accepted by its class: Assumption (C) with the reviewer's PASS; (A), (B), unclassed and NOT ON FILE each by one 'REVIEW accepted: <figure> \u00b7 EM <date>' line in spec.md",
+   "basis": "element-qa-checklist Stage 0; OPERATING.md 8.c"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-030",
+   "scope": "enc-fs-1524x1829x305",
+   "where": "enc-fs-1524x1829x305",
+   "message": "3 declared contact pair(s) accepted (contacts.csv)",
+   "elements": [],
+   "title": "declared contacts (seal, journal, seat, insert, bonded, seated) accepted with a reason",
+   "basis": "lib/contacts.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "enc-fs-1524x1829x305",
+   "where": "enc-fs-1524x1829x305",
+   "message": "no interference among 100 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "enc-fs-1524x1829x305",
+   "where": "enc-fs-1524x1829x305",
+   "message": "6 moving node(s) swept through their full range, nothing hit; 13 pair(s) of independent nodes posed together at their ends, clear",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "enc-fs-1524x1829x305",
+   "where": "enc-fs-1524x1829x305",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "enc-fs-1524x1829x305",
+   "where": "enc-fs-1524x1829x305",
+   "message": "11 solid(s) with openings, all cut in the glTF: 11 as clean extrusions, 0 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "enc-fs-1524x1829x305",
+   "where": "enc-fs-1524x1829x305",
+   "message": "50 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-002",
+   "scope": "enc-fs-1524x1829x305",
+   "where": "enc-fs-1524x1829x305",
+   "message": "every port declares its gender",
+   "elements": [],
+   "title": "every port declares its gender (male, female or none)",
+   "basis": "EM 2026-11-05; IEC 60204-1 13.4.5 (no exposed live pins on the part that stays live); PIN-030"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "enc-fs-1524x1829x305",
+   "where": "enc-fs-1524x1829x305",
+   "message": "3 pins, 0 contacts, 0 loads, 0 sources, 6 states (3 manual), 3 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "enc-fs-1524x1829x305",
+   "where": "enc-fs-1524x1829x305",
+   "message": "4 \u00d7 \u00d811.1 floor anchor hole 7/16 in (declared: vendor, maker's STEP read-back 11.13 (terminal 2026-11-03; references/source.txt))",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "enc-fs-1524x1829x305",
+   "where": "enc-fs-1524x1829x305",
+   "message": "4 \u00d7 \u00d811 M10 clearance medium (declared, ISO 273)",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "enc-fs-1524x1829x305",
+   "where": "enc-fs-1524x1829x305",
+   "message": "3 \u00d7 \u00d822.5 22.5 operator cut-out (manufacturer data for IEC 60947-5-1 22 mm devices (\u00d822.3 +0.4 / 0; e.g. Schneider ZB4))",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GDT-010",
+   "scope": "enc-fs-1524x1829x305",
+   "where": "enc-fs-1524x1829x305",
+   "message": "4 \u00d7 \u00d811 for M10 (floating): position \u00d80.5 declared \u2264 H \u2212 F = 1.00",
+   "elements": [],
+   "title": "fastener patterns: positional tolerance \u2264 H \u2212 F (floating fastener)",
+   "basis": "ASME Y14.5 / ISO 5459 virtual condition; ISO 2768-1"
+  },
+  {
+   "status": "PASS",
+   "rule": "DFM-010",
+   "scope": "enc-fs-1524x1829x305",
+   "where": "enc-fs-1524x1829x305",
+   "message": "4 sheet hole(s): edge distance \u2265 1.5 t and \u00d8 \u2265 t",
+   "elements": [],
+   "title": "sheet holes: edge distance \u2265 1.5 t, \u00d8 \u2265 t",
+   "basis": "sheet-metal punching guideline"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-020",
+   "scope": "enc-fs-1524x1829x305",
+   "where": "enc-fs-1524x1829x305",
+   "message": "11 hole(s) inside their parts",
+   "elements": [],
+   "title": "every hole stays inside the part it cuts (no break-out)",
+   "basis": "geometry rule"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "enc-fs-1524x1829x305",
+   "where": "enc-fs-1524x1829x305",
+   "message": "the AutoCAD gate will pick 51 edges; skipped 105 buried, 36 short, 344 on thin parts, 0 shared, 80 hidden; 124 on placed elements, left to their own gates; 19 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "MATE-010",
+   "scope": "library",
+   "where": "door skin within the operators' panel range",
+   "message": "enc-fs-1524x1829x305.DOOR_T = 1.9 within op-pb-22-1no.std22.PANEL_RANGE = (1.0, 6.0)",
+   "elements": [
+    "enc-fs-1524x1829x305",
+    "op-pb-22-1no"
+   ],
+   "title": "figures two elements must share agree within tolerance (equal / within / le / ge)",
+   "basis": "lib/mates.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "MATE-010",
+   "scope": "library",
+   "where": "disconnect door_t = enclosure door",
+   "message": "disc-3p-30a.PARAMS.door_t = 1.9 vs enc-fs-1524x1829x305.DOOR_T = 1.9: diff 0.00 (tol 0.05)",
+   "elements": [
+    "disc-3p-30a",
+    "enc-fs-1524x1829x305"
+   ],
+   "title": "figures two elements must share agree within tolerance (equal / within / le / ge)",
+   "basis": "lib/mates.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "MATE-010",
+   "scope": "library",
+   "where": "M12 port panel_t = enclosure wall",
+   "message": "port-m12-a.PARAMS.panel_t = 1.9 vs enc-fs-1524x1829x305.T = 1.9: diff 0.00 (tol 0.05)",
+   "elements": [
+    "port-m12-a",
+    "enc-fs-1524x1829x305"
+   ],
+   "title": "figures two elements must share agree within tolerance (equal / within / le / ge)",
+   "basis": "lib/mates.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "ELR-021",
+   "scope": "dm-motor-starter-cell",
+   "where": "dc-24v panel-1.enc-1.lamp-power",
+   "message": "24 V device on the 24 V supply",
+   "elements": [
+    "enc-fs-1524x1829x305"
+   ],
+   "title": "coil and device voltages match the supply",
+   "basis": "device ratings"
+  }
+ ]
+}

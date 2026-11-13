@@ -1,0 +1,2 @@
+# behaviour.csv · pallet-rack · one bay of selective pallet rack (lib/behaviour.md). One body: no terminal, no node, no moving part, no state. The footplates' M12 anchor holes take the floor anchors, not a port; no load rating and no safety claim.
+kind,a,b,part,when,value,unit,source,note

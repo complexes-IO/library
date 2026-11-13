@@ -1,0 +1,6 @@
+# behaviour.csv · drain-auto · generic float-type condensate drain (lib/behaviour.md). Two ports and no electrical pin or moving node: the float and its valve are inside and
+# not modelled (spec.md Named nodes). The condensate path (1 to drain, while the float is up) is pneumatic and liquid: the solver is electrical in phase 1 (lib/toolkit/nets.py),
+# so no state or contact row is written. NPT joints make up by turns (pneu.NPT L1 + L3), not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,1,port-1,head,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 1 as toolkit/pneu.py NODES)",the inlet under supply pressure: female NPT 1/4 on the head's top face
+pin,drain,port-drain,drain boss,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: a condensate outlet has no ISO 11727 number; named as tank's port-drain)",the condensate outlet: female NPT 1/8; water and oil; no silencer

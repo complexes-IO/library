@@ -1,0 +1,8 @@
+property,value,unit,status,source
+n_ai,4,,generic design,"ETIM 10.0 EC001420 class value: number of analogue inputs (EF001994); spec.md Class values 1"
+n_ao,2,,generic design,"ETIM 10.0 EC001420 class value: number of analogue outputs (EF001995); spec.md Class values 2"
+res_ai,12,bit,generic design,"ETIM 10.0 EC001420 class value: resolution of the analogue inputs (EF003575); spec.md Class values 11"
+res_ao,12,bit,generic design,"ETIM 10.0 EC001420 class value: resolution of the analogue outputs (EF003577); spec.md Class values 15"
+p_consumption,2.0,W,generic design,"ETIM 10.0 EC001420 class value: power consumption (EF000346); spec.md Class values 25"
+u_supply,24,V DC,design,"design: 24 V DC, the panel's control supply (psu-24v-2a4) under the panel's 24 V budget (ELR-020); not a feature of EC001420; spec.md Class values (the paragraph under the table)"
+load_i,0.08,A,derived,"2.0 W / 24 V = 0.083 A (I = P / U; p_consumption and u_supply above), what the 24 V budget (ELR-020) reads; behaviour.csv load row 24V-0V"

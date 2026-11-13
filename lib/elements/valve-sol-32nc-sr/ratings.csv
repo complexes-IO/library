@@ -1,0 +1,4 @@
+property,value,unit,status,source
+p_max,10,bar,generic design,ETIM 10.0 EC010303 class value (EF023852 Max. pressure difference for DC model: read as p_max since port-1 carries the whole difference with the poppet shut; spec.md Class values 11)
+p_min,2,bar,generic design,ETIM 10.0 EC010303 class value (EF020189 Min. pressure difference: the internal pilot shifts the poppet only from 2 bar at port-1; spec.md Class values 12)
+coil_v,24,V DC,generic design,ETIM 10.0 EC010303 class value (EF003625 Connection voltage 24 V with EF000187 Voltage type DC; toolkit/pneu.py D6 COIL_V; spec.md Class values 18 and 20)

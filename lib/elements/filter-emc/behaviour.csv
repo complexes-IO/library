@@ -1,0 +1,25 @@
+# behaviour.csv · filter-emc · generic three-phase EMC filter (ETIM 10.0 EC002564) (lib/behaviour.md). Written by elec-r23 from pins.csv and spec.md (our own design; no brief).
+# Each line passes LINE to LOAD (pins.csv role pass); the earth is one conductor from the LINE PE to the LOAD PE through the housing (pins.csv t-PE). Both earth clamps
+# are printed PE (pins.csv); here the LOAD one is written PE' so the two pins have two names. The filter's attenuation and leakage current are not modelled
+# (phase 1 of the solver is ideal); a series drop per line is NOT ON FILE (not a class value of EC002564).
+# elec-r26: the 16 A and 480 VAC limits written for line-2 and line-3 as for line-1 (review elec-r23 finding 4: spec.md Class values 9 is "each line").
+# elec-r29 (needs-em r27 item 6): the eight clamp torques classed B (a generic's screw clamp: the figure IEC 60947-1 tabulates is not on file; not a class value of EC002564).
+kind,a,b,part,when,value,unit,source,note
+pin,L1,t-L1,t-L1,,NOT ON FILE (B): IEC 60947-1,N·m,pins.csv (t-L1: LINE line 1); torque not a class value; IEC 60947-1 not on file (lib/standards/sources.csv),from the supply
+pin,L2,t-L2,t-L2,,NOT ON FILE (B): IEC 60947-1,N·m,pins.csv (t-L2); as L1,
+pin,L3,t-L3,t-L3,,NOT ON FILE (B): IEC 60947-1,N·m,pins.csv (t-L3); as L1,
+pin,PE,t-PE,t-PE,,NOT ON FILE (B): IEC 60947-1,N·m,pins.csv (t-PE: LINE side); as L1,
+pin,L1',t-L1-load,t-L1-load,,NOT ON FILE (B): IEC 60947-1,N·m,pins.csv (t-L1-load: LOAD line 1); as L1,to the drive or controller
+pin,L2',t-L2-load,t-L2-load,,NOT ON FILE (B): IEC 60947-1,N·m,pins.csv (t-L2-load); as L1,
+pin,L3',t-L3-load,t-L3-load,,NOT ON FILE (B): IEC 60947-1,N·m,pins.csv (t-L3-load); as L1,
+pin,PE',t-PE-load,t-PE-load,,NOT ON FILE (B): IEC 60947-1,N·m,"pins.csv (t-PE-load, printed PE: LOAD side); as L1",
+contact,L1,L1',line-1,always,,,pins.csv role pass; spec.md Class values 9 (16 A each line),
+contact,L2,L2',line-2,always,,,as line-1,
+contact,L3,L3',line-3,always,,,as line-1,
+contact,PE,PE',housing,always,,,"pins.csv t-PE source (the filter's earth: its capacitors to earth and the housing); both PE blocks on the steel housing (spec.md, terminal blocks)",
+limit,line-1,,,,16,A,ratings.csv ie (ETIM 10.0 EC002564 class value; spec.md Class values 9),each line
+limit,line-1,,,,480,VAC,ratings.csv ue_max (spec.md Class values 8),line to line
+limit,line-2,,,,16,A,as line-1 (spec.md Class values 9: each line),each line
+limit,line-2,,,,480,VAC,as line-1 (spec.md Class values 8),line to line
+limit,line-3,,,,16,A,as line-1 (spec.md Class values 9: each line),each line
+limit,line-3,,,,480,VAC,as line-1 (spec.md Class values 8),line to line

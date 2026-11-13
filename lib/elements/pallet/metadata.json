@@ -1,0 +1,12 @@
+{
+  "element_id": "pallet",
+  "domain": "mechanical",
+  "category": "Logistics",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 1219.0,
+  "height": 144.0,
+  "depth": 1016.0,
+  "units": "mm",
+  "datasheet_dims": null
+}

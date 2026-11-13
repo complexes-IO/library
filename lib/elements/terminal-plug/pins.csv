@@ -1,0 +1,9 @@
+port,pin,role,signal,rated_A,source
+t-1,1,pass,pole 1 clamp (the wire side),12,spec.md Class values 7 and 9 (12 A each pole)
+s-1,S1,pass,pole 1 socket (the header side),12,as t-1
+t-2,2,pass,pole 2 clamp,12,as t-1
+s-2,S2,pass,pole 2 socket,12,as t-1
+t-3,3,pass,pole 3 clamp,12,as t-1
+s-3,S3,pass,pole 3 socket,12,as t-1
+t-4,4,pass,pole 4 clamp,12,as t-1
+s-4,S4,pass,pole 4 socket,12,as t-1

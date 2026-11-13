@@ -1,0 +1,8 @@
+port,pin,role,signal,rated_A,source
+c-1,1,pass,contact 1: the host says what it carries; rated_A is the default kind's (power 10 A; in kind signal 8 A),10,spec.md Class values 18 (power 10 A; signal 8 A per contact); one row per mark: the kind's pin sets wait on request elec-15
+c-2,2,pass,contact 2 (power 10 A; signal 8 A),10,as c-1
+c-3,3,pass,contact 3 (power 10 A; signal 8 A),10,as c-1
+c-pe,PE,PE,protective earth contact (kind power),10,spec.md Class values 7 (with PE-connection: power)
+c-4,4,pass,contact 4 (kind signal),8,spec.md Class values 18 (signal 8 A per contact)
+c-5,5,pass,contact 5 (kind signal),8,as c-4
+c-6,6,pass,contact 6 (kind signal),8,as c-4

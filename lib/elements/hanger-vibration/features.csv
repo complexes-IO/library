@@ -1,0 +1,4 @@
+match,role,kind,check,position_tol,datums,source,note
+11.0,M10 clearance medium,clearance,,0.5,"A (the frame's top face), B (the plane x 0), C (the plane y 0)",ISO 273 medium H13 (lib/standards/holes.csv); position Ø0.5 at MMC ≤ H − F = 1.0 (ASME Y14.5 floating fastener: the rod's own position takes the other half),"Ø11 through the top plate at the origin for the ceiling's M10 rod (its nut inside the frame), and Ø11 through the cap for the load's M10 rod (its nut on the cap): design choice"
+22.0,load rod free passage,own,,,,"design: Ø22 around an M10 rod, 6 clear each side so the rod never bears on the bottom plate (OPERATING.md 12, an own size)","Ø22 through the bottom plate at x 0, y 0"
+12.0,rubber element bore,own,,,,"design: Ø12 around an M10 rod, 1 clear each side (OPERATING.md 12, an own size)","Ø12 through the rubber element, coaxial with the cap's hole"

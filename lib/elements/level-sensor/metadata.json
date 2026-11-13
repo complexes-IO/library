@@ -1,0 +1,16 @@
+{
+  "element_id": "level-sensor",
+  "category": "Industrial sensors",
+  "width": 50.8,
+  "height": 81.4,
+  "depth": 50.8,
+  "units": "mm",
+  "datasheet_dims": [
+    50.8,
+    81.4,
+    50.8
+  ],
+  "domain": "sensors",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

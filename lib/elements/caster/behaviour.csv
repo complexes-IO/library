@@ -1,0 +1,8 @@
+# behaviour.csv · caster · swivel plate caster (lib/behaviour.md). Mechanical only: no terminal. Two moving nodes: the fork (node swivel: head disc, crown plate, two legs and the axle) turning about the plate's centre axis z under the plate; the wheel (node wheel: tread and hub) turning about the axle along y and riding the fork (P.parents). The top plate is the fixed body. No load rating is on file or claimed; the twin reads only the two positions.
+kind,a,b,part,when,value,unit,source,note
+state,straight,,swivel,default,,,spec.md (Mechanism),the fork at rest (0): the wheel trailing toward +x
+state,turned,,swivel,manual toggle,,,spec.md (Mechanism),the push on the host turns the fork about the swivel axis so the wheel trails the way it goes
+pose,swivel,,,turned,end,,element.py (node swivel: rotate -180 to 180 about z under the plate),
+state,still,,wheel,default,,,spec.md (Mechanism),the wheel at rest
+state,rolling,,wheel,manual toggle,,,spec.md (Mechanism),the push on the host rolls the wheel on its axle
+pose,wheel,,,rolling,end,,element.py (node wheel: rotate 0 to 360 about the axle along y),

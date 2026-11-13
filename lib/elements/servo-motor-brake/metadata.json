@@ -1,0 +1,16 @@
+{
+  "element_id": "servo-motor-brake",
+  "category": "Motor control and drives",
+  "width": 60.0,
+  "height": 60.0,
+  "depth": 169.7,
+  "units": "mm",
+  "datasheet_dims": [
+    169.7,
+    60.0,
+    60.0
+  ],
+  "domain": "electrical",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

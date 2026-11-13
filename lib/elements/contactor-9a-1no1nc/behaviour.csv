@@ -1,0 +1,35 @@
+# behaviour.csv · contactor-9a-1no1nc · what the element does at its terminals (lib/behaviour.md). Taken in by elec-r24 from the core's proposal of 2026-11-09 (lib/requests/core/behaviour/contactor-9a-1no1nc.csv), checked against references/interior.md and measure.md, parts.csv, ratings.csv and element.py (every t-* port node is built at the default aux=True).
+# The prose is behaviour.md; the sub-elements and their models are parts.csv. "spec" is the maker's technical specifications (references/interior.md); "front block drawing" its 2-D drawing (references/).
+# elec-r27 (review elec-r24 finding 1): the front block's torques classed B (IEC 60947-1, not on file).
+# Differences from the proposal: the front block's terminal torque is NOT ON FILE (B) (parts.csv terminal-fb: spec p. 9 gives its wire range only) where the proposal gave 1.0 N·m by analogy with the built-in aux; the front block's part number and the spec's series name are taken out (DOC-006: in references/ only); the comma in the coil row's source is a semicolon.
+# The pick-up threshold 19.2 V is the top of the band on file (0.5–0.8 × Us; spec p. 6): the twin operates there; the drop-out 9.6 V the top of 0.1–0.4 × Us.
+kind,a,b,part,when,value,unit,source,note
+pin,1,t-1,terminal-main,,1.7,N·m,spec p. 9,L1 line in (main pole 1)
+pin,2,t-2,terminal-main,,1.7,N·m,spec p. 9,T1 load out (pole 1)
+pin,3,t-3,terminal-main,,1.7,N·m,spec p. 9,L2
+pin,4,t-4,terminal-main,,1.7,N·m,spec p. 9,T2
+pin,5,t-5,terminal-main,,1.7,N·m,spec p. 9,L3
+pin,6,t-6,terminal-main,,1.7,N·m,spec p. 9,T3
+pin,A1,t-a1,terminal-coil-aux,,1.0,N·m,spec p. 9,coil +
+pin,A2,t-a2,terminal-coil-aux,,1.0,N·m,spec p. 9,coil −
+pin,13,t-13,terminal-coil-aux,,1.0,N·m,spec p. 9,built-in aux N.O. common
+pin,14,t-14,terminal-coil-aux,,1.0,N·m,spec p. 9,built-in aux N.O.
+pin,21,t-21,terminal-coil-aux,,1.0,N·m,spec p. 9,built-in aux N.C. common
+pin,22,t-22,terminal-coil-aux,,1.0,N·m,spec p. 9,built-in aux N.C.
+pin,53,t-53,terminal-fb,,NOT ON FILE (B): IEC 60947-1,N·m,spec p. 9 (front block: wire range 16-14 AWG only; parts.csv terminal-fb),front block N.O. (aux=true)
+pin,54,t-54,terminal-fb,,NOT ON FILE (B): IEC 60947-1,N·m,as 53,front block N.O.
+pin,61,t-61,terminal-fb,,NOT ON FILE (B): IEC 60947-1,N·m,as 53,front block N.C.
+pin,62,t-62,terminal-fb,,NOT ON FILE (B): IEC 60947-1,N·m,as 53,front block N.C.
+load,A1,A2,coil,,99,ohm,spec p. 6: 5.8 W at 24 V DC; R derived 24² / 5.8,the coil; 0.24 A at 24 V
+state,released,,magnet-system,default,,,spec p. 6,rest: armature at the back stop
+state,operated,,magnet-system,coil.V >= 19.2,,,spec p. 6: pick-up 0.5–0.8 × Us; operated for certain at 0.8 × 24,the twin operates at the top of the pick-up band
+state,released,,magnet-system,coil.V <= 9.6,,,spec p. 6: drop-out 0.1–0.4 × Us; released for certain at 0.4 × 24,
+state,,,magnet-system,hold,,,spec p. 6 (pick-up above drop-out),between 9.6 and 19.2 V the state holds (hysteresis)
+contact,1,2,pole-1,operated,0.0025,ohm,spec p. 5 (marks); p. 7 (2.5 mΩ per pole),main pole N.O.
+contact,3,4,pole-2,operated,0.0025,ohm,spec p. 5; p. 7,main pole N.O.
+contact,5,6,pole-3,operated,0.0025,ohm,spec p. 5; p. 7,main pole N.O.
+contact,13,14,aux-13,operated,,,spec p. 8,built-in auxiliary N.O.
+contact,21,22,aux-21,released,,,spec p. 8,built-in auxiliary N.C. (opens 1.5 ms before 13–14 closes)
+contact,53,54,fb-53,operated,,,front block drawing p. 1 (marks); spec p. 14,front block N.O.
+contact,61,62,fb-61,released,,,front block drawing p. 1 (marks); spec p. 14,front block N.C.
+pose,*,,,operated,end,,parts.csv (motion column): every moving node rides the carrier to its stop; the coil glows (x-ray cue),

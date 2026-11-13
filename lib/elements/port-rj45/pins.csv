@@ -1,0 +1,9 @@
+port,pin,role,signal,rated_A,source
+c-1,1,pass,contact 1: the host says what it carries,,spec.md Dimensions (contacts: design layout); no rating claimed (Class values 9)
+c-2,2,pass,contact 2,,as c-1
+c-3,3,pass,contact 3,,as c-1
+c-4,4,pass,contact 4,,as c-1
+c-5,5,pass,contact 5,,as c-1
+c-6,6,pass,contact 6,,as c-1
+c-7,7,pass,contact 7,,as c-1
+c-8,8,pass,contact 8,,as c-1

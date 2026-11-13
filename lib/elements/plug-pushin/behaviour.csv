@@ -1,0 +1,4 @@
+# behaviour.csv · plug-pushin · generic blanking plug for a push-in port (lib/behaviour.md). One tube-end port and no electrical pin or moving node. It closes a port, so it passes no
+# fluid path: the solver is electrical in phase 1 (lib/toolkit/nets.py), and no state or contact row is written. The stem is held by the fitting's collet, not a torque: value not claimed (lib/behaviour.md, pin; request pneu-15 3). Nothing moves, so no pose row.
+kind,a,b,part,when,value,unit,source,note
+pin,a,port-a,stem,,not claimed,N·m,not claimed: held by the fitting's collet; no thread (ISO 14743 push-in; lib/behaviour.md; pin; request pneu-15 3); spec.md Ports (design: a plug's end has no ISO 11727 number; marked by its node's name),the stem: male tube OD (parameter tube) into a push-in port of the same OD: closes it

@@ -1,0 +1,5 @@
+# behaviour.csv · damper · rectangular multi-blade air damper, own design (lib/behaviour.md). Mechanical only: no terminal of its own (the linkage and the actuator that turn the blades are placed elements of a later version, with their own specs). Three moving nodes, the blades blade-1 to blade-3, each turning about its own axle; the flanges and the casing are the fixed body. No airflow or leakage figure.
+kind,a,b,part,when,value,unit,source,note
+state,closed,,blades,default,,,spec.md (Mechanism),the blades flat across the airway (0): the air through the damper held back (no leakage figure claimed)
+state,open,,blades,manual toggle,,,spec.md (Mechanism),the blades turned 90 degrees on edge along the flow: the airway open
+pose,blade-1 blade-2 blade-3,,,open,end,,element.py (each blade rotates 0 to 90 degrees about its axle along x),

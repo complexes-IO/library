@@ -1,0 +1,12 @@
+stack,term,element,attr,value,sign,tol,min,max,note
+# Tolerance stack-ups: each term adds (+) or subtracts (-) a figure (an element attribute or a value); tol empty = ISO 2768-m general tolerance. One requirement row per stack.
+door-clears-k1,requirement,,,,,,10,,Complexes rule: 10 mm air between the deepest rail device and the closed door's parts behind it
+door-clears-k1,back-panel face from the door front,enc-fs-1524x1829x305,,300.6,+,1.5,,,D - T - 25 - 2.5 + 25 (door front at y -25); sheet-metal cabinet ±1.5 (Assumption)
+door-clears-k1,door skin,enc-fs-1524x1829x305,DOOR_T,,-,0.1,,,14 ga
+door-clears-k1,rail height,,,7.5,-,0.15,,,EN 60715 top-hat 35 x 7.5 (tol Assumption)
+door-clears-k1,contactor with front block from the rail crown,,,133.0,-,0.5,,,contactor-9a-1no1nc 1.2: 140.5 from the mounting plane less the 7.5 rail it sits on
+door-clears-k1,door operator behind the door,,,39.5,-,0.5,,,latch 8 + block 30 + screws 1.5 (std22)
+estop-plate-clears-neighbours,requirement,,,,,,0,,the 60 mm E-stop plate must not touch the next legend plates
+estop-plate-clears-neighbours,station pitch,pbs-6h-22,PITCH,,+,0.2,,,
+estop-plate-clears-neighbours,half E-stop plate,,,30.0,-,0.2,,,op-estop-22-2nc plate 60 / 2
+estop-plate-clears-neighbours,half legend plate,,,15.0,-,0.2,,,std22 legend 30 / 2

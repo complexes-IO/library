@@ -1,0 +1,16 @@
+{
+  "element_id": "ct-current",
+  "category": "Power monitoring",
+  "width": 77.2,
+  "height": 64.3,
+  "depth": 30.0,
+  "units": "mm",
+  "datasheet_dims": [
+    77.2,
+    64.3,
+    30.0
+  ],
+  "domain": "electrical",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

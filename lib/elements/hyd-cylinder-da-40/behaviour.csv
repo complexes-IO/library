@@ -1,0 +1,10 @@
+# behaviour.csv · hyd-cylinder-da-40 · generic double-acting tie-rod hydraulic cylinder, bore 40, stroke 200 (lib/behaviour.md). Two oil ports and no electrical pin; one moving node,
+# the rod. Oil into port-cap extends it, into port-rod retracts it (spec.md); the solver is electrical in phase 1 (lib/toolkit/nets.py) and solves no oil, so the rod's states
+# are its two ends, set by a manual state until the hydraulic circuit model drives them. The ports' thread is open (class B), set by the fitting's stud end: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,cap,port-cap,rear cap,,not claimed,N·m,not claimed: the fitting's stud end sets it (SAE J1926-2 / -3); spec.md Ports (pneu.NODES cylinder end port-cap; marked by its name),oil in extends the rod (unit hyd-port)
+pin,rod,port-rod,head cap,,not claimed,N·m,not claimed: the fitting's stud end sets it (SAE J1926-2 / -3); spec.md Ports (pneu.NODES cylinder end port-rod; marked by its name),oil in retracts the rod (unit hyd-port)
+state,retracted,,rod,default,,,spec.md Named nodes (rod at rest: retracted),
+state,extended,,rod,manual toggle,,,spec.md Named nodes (the stroke 200; stand-in for oil at port-cap until the circuit model),
+pose,rod,,,extended,end,,element.py (rod translates 0 to 200 along +x),
+limit,rod,,,,20.1,kN,spec.md Class values 4 (160 bar on the 40 bore; theoretical),max. push load

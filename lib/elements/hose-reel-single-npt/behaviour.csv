@@ -1,0 +1,9 @@
+# behaviour.csv · hose-reel-single-npt · generic hose reel for one hose, hand crank, female NPT 3/8 swivel inlet (lib/behaviour.md). One air port and no electrical
+# pin; one moving node, the drum with its crank, turned by hand or by the hose drawn off it. The air passes from the inlet through the swivel into the wound hose,
+# whose inner joint in the hub is not modelled: the solver is electrical in phase 1 (lib/toolkit/nets.py), so no path row is written. The NPT inlet makes up by
+# turns (pneu.NPT L1 + L3), so its pin torque reads "not claimed" (lib/behaviour.md, pin; request pneu-13 item 1).
+kind,a,b,part,when,value,unit,source,note
+pin,1,port-1,boss,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 1 as toolkit/pneu.py NODES)",the supply: female NPT 3/8 on the swivel boss's -x end
+state,still,,drum,default,,,spec.md Named nodes (drum at rest),
+state,turning,,drum,manual toggle,,,spec.md Named nodes (the crank turned or the hose drawn off turns the drum),stand-in for the crank and the hose's pull until the machine's model
+pose,drum,,,turning,end,,element.py (drum rotates 0 to 360° about +x on its own axis),

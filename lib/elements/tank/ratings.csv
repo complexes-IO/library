@@ -1,0 +1,2 @@
+property,value,unit,status,source
+p_max,0,bar,generic design,"design choice from the class: ETIM 10.0 EC010413 has no pressure feature; its synonyms say pressureless ('Pressureless storage tank'); vented by the filler-breather; spec.md Class values"

@@ -1,0 +1,24 @@
+{
+  "element_id": "psu-24v-2a4",
+  "domain": "electrical",
+  "category": "Electrical components",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 32.0,
+  "height": 93.3,
+  "depth": 110.0,
+  "units": "mm",
+  "datasheet_dims": {
+    "w": 32.0,
+    "h": 93.3,
+    "d": 110.0
+  },
+  "brief": {
+    "stage0": "COMPLETE",
+    "date": "2026-11-03",
+    "files": [
+      "references/measure.md"
+    ],
+    "note": "Stage 0 of lib/element-qa-checklist.txt; EM 2026-11-03"
+  }
+}

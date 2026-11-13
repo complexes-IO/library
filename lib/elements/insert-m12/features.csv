@@ -1,0 +1,12 @@
+match,role,kind,check,position_tol,datums,source,note
+2.0,contact entry chamfer (A / D); L pin collar seat,internal,,,,toolkit/m12.py,read-back: chamfer to Ø2.0
+1.05,contact entry (A / D),internal,,,,toolkit/m12.py,read-back
+1.65,socket cavity (A / D),internal,,,,toolkit/m12.py,read-back counterbore
+2.4,contact entry chamfer (L),internal,,,,toolkit/m12.py,Assumption
+1.6,contact entry (L),internal,,,,toolkit/m12.py,read-back bore Ø1.6
+2.1,socket cavity (L),internal,,,,toolkit/m12.py,read-back counterbore Ø2.1
+1.3,keyway and D notches on the female front's edge; pin tail bore (A / D),internal,,,,toolkit/m12.py,Ø1.3 on r 3.55 (the A cordset and the I/O block; OCC)
+1.0,pin bore (A / D),internal,,,,toolkit/m12.py,male carrier
+1.5,pin collar seat (A / D); pin bore (L),internal,,,,toolkit/m12.py,
+1.8,pin tail bore (L),internal,,,,toolkit/m12.py,
+1.85,L FE socket bore in the key block,internal,,,,toolkit/m12.py,Ø1.85 8.0 deep (the L cordset; OCC)

@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+6.6468,centre bore at M8 tapping (minor diameter),own,,,,"derived: derive.thread(8.0, 1.25) (ISO 68-1 basic profile; ISO 965-1 clause 10, internal 6H: D1 min 6.6468; ISO 261 pitch 1.25); the thread itself is not drawn","design choice: one plain bore through the whole length on the profile's centre line (y 0, z 20), so either end can be tapped M8 for an end fastening (the tapping is the host's, at its cut length); the screws are the hosts' (screw-iso4762, a common part not built yet)"

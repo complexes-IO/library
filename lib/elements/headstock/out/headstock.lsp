@@ -1,0 +1,13 @@
+;; headstock v1.1. Generated. Millimetres. APPLOAD, then HEADSTK.
+(defun BX (lay p1 p2 h) (command "_.-LAYER" "_M" lay "") (command "_.BOX" p1 p2 h) (entlast))
+(defun CY (lay p1 p2 r / h) (setq h (distance p1 p2)) (command "_.-LAYER" "_M" lay "")
+  (command "_.UCS" "_ZA" p1 p2) (command "_.CYLINDER" (list 0 0 0) r h) (command "_.UCS" "_W") (entlast))
+(defun UB (lay o xp yp l w h) (command "_.-LAYER" "_M" lay "")
+  (command "_.UCS" "3" o xp yp) (command "_.BOX" (list 0 0 0) (list l w 0) h) (command "_.UCS" "_W") (entlast))
+(defun c:HEADSTK (/ os hole e0 e1 e2 e3 e4 e5)
+  (setq os (getvar "OSMODE")) (setvar "OSMODE" 0) (setvar "CMDECHO" 0) (setvar "INSUNITS" 4) (setvar "ISOLINES" 8)
+  (CY "node-spindle-seat_M-SILVER" (list 240 0 260) (list 270 0 260) 90)
+  (BX "M-STEEL-7035" (list -250 -220 0) (list 250 220 0) 40)
+  (BX "M-STEEL-7035" (list -240 -200 40) (list 240 200 40) 380)
+  (command "_.-LAYER" "_S" "0" "") (setvar "OSMODE" os) (command "_.ZOOM" "_E") (princ "\nBuilt.") (princ))
+(princ "\nType HEADSTK.") (princ)

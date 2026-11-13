@@ -1,0 +1,5 @@
+# behaviour.csv · vise-machine · generic machine vise (lib/behaviour.md). Written by mech-r85 from element.py: no terminal (the four M12 lug holes take the machine table's T-bolts, not ports); one moving node, `jaw` (the moving jaw block and its plate), translates +x 0 to 149 (TRAVEL: the jaws 1 apart at 0, 150 apart at the end, the class value max. cheeks opening). The spindle that drives it turns by hand (its handle is part of the fixed body in this model), so the twin sets the jaw as the operator's input. No clamping force here: the class value is "not stated" in spec.md.
+kind,a,b,part,when,value,unit,source,note
+state,closed,,jaw,default,,,element.py (ORIGIN and GAP: the jaws 1 apart at 0),the moving jaw run up to the fixed jaw
+state,open,,jaw,manual toggle,,,element.py (node jaw: translate +x 0 to 149),the moving jaw wound back to the end of its travel: the jaws 150 apart
+pose,jaw,,,open,end,,element.py (node jaw: translate +x 0 to 149),

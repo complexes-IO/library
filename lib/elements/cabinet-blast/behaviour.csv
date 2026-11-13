@@ -1,0 +1,5 @@
+# behaviour.csv · cabinet-blast · sandblast cabinet with a side door (lib/behaviour.md). Mechanical only: no terminal (no earth stud or port is modelled; the glove-port and roof openings take parts and a duct not built yet, not ports). One moving node, the side door; the chamber, legs and window pane are the fixed body. No latch or interlock in this version, so no locked state and no safety claim.
+kind,a,b,part,when,value,unit,source,note
+state,shut,,door,default,,,element.py (docstring),the side door closed over the loading opening in the right wall
+state,open,,door,manual toggle,,,element.py (docstring),the side door swung outward about its back vertical edge
+pose,door,,,open,end,,element.py (door rotates 0 to 90 about z),

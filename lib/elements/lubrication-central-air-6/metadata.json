@@ -1,0 +1,15 @@
+{
+  "element_id": "lubrication-central-air-6",
+  "domain": "pneumatics",
+  "category": "Lubrication",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 200.0,
+  "height": 278.7,
+  "depth": 160.0,
+  "units": "mm",
+  "datasheet_dims": null,
+  "aliases": [
+    "lubrication-central"
+  ]
+}

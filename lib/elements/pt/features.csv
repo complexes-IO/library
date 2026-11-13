@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+18.3762,M20 x 1.5 cable entry,own,,,,"derived: derive.thread(20.0, 1.5) (ISO 68-1 basic profile; ISO 965-1 clause 10: the internal thread's minor diameter D1 18.3762, 6H 18.3762-18.6817)","the tapped entry along x through the head's +x wall into the terminal compartment, modelled plain at D1, as pressure-switch 1.0's; the installer's cable gland screws into it (not placed: spec.md Notes)"

@@ -1,0 +1,5 @@
+# behaviour.csv · conveyor-roller · roller conveyor, generic, gravity (lib/behaviour.md). Mechanical only: no terminal. Twenty moving nodes, the free rollers roller-1 to roller-20, each spinning about its own axis; the side frames, posts, ties and foot plates are the fixed body. Nothing drives the rollers.
+kind,a,b,part,when,value,unit,source,note
+state,still,,rollers,default,,,spec.md (Mechanism),the rollers at rest (0)
+state,turning,,rollers,manual toggle,,,spec.md (Mechanism),goods pushed or rolling along the track turn the rollers under them
+pose,roller-1 roller-2 roller-3 roller-4 roller-5 roller-6 roller-7 roller-8 roller-9 roller-10 roller-11 roller-12 roller-13 roller-14 roller-15 roller-16 roller-17 roller-18 roller-19 roller-20,,,turning,end,,element.py (each roller rotates 0 to 360 about its axis),

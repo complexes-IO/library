@@ -1,0 +1,12 @@
+{
+  "element_id": "amr",
+  "category": "Robotics and motion control",
+  "width": null,
+  "height": null,
+  "depth": null,
+  "units": "mm",
+  "datasheet_dims": null,
+  "domain": "robotics",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

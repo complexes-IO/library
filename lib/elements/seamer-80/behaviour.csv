@@ -1,0 +1,5 @@
+# behaviour.csv · seamer-80 · generic hand seamer (lib/behaviour.md). Written by mech-r128 from element.py: no terminal (a hand tool; nothing is wired or plugged); one moving node, `jaw` (the moving arm with its boss, neck, upper blade, lower handle bar and grip; the arms cross at the pin, as pliers), rotates about (0, -1, 0) 0 to 22 degrees (SWING: the blades' faces 1 apart at 0; their tips 19.7 apart at the end, the class value clamping spread). A hand opens and closes it, so the twin sets the jaw as the operator's input. No clamping force here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note
+state,closed,,jaw,default,,,element.py (ORIGIN and FACE: the blades' faces 1 apart at 0),the blades shut on a sheet's edge
+state,open,,jaw,manual toggle,,,element.py (node jaw: rotate 0 to 22 degrees),the handles spread apart: the blades' tips 19.7 apart (squeezing the handles closes the blades)
+pose,jaw,,,open,end,,element.py (node jaw: rotate 0 to 22 degrees),

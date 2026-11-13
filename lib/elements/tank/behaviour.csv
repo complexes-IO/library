@@ -1,0 +1,6 @@
+# behaviour.csv · tank · generic pressureless storage tank (lib/behaviour.md). Three liquid ports and no electrical pin or moving node. The liquid paths are not the phase 1
+# solver's (lib/toolkit/nets.py, electrical), so no state or contact row is written. NPT joints make up by turns (pneu.NPT L1 + L3), not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,out,port-out,boss,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: a liquid port has no ISO 11727 number; marked by its node's name)",the outlet (pump suction): female NPT 3/8 low on the right end
+pin,return,port-return,boss,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: as out)",the return: female NPT 3/8 on the cover
+pin,drain,port-drain,boss,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: as out)",the drain: female NPT 3/8 low on the left end

@@ -1,0 +1,69 @@
+{
+ "toolkit": "1.3",
+ "validation": "1.0",
+ "rules": 86,
+ "id": "lab-electrical",
+ "status": "PASS",
+ "findings": [
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "lab-electrical",
+   "where": "lab-electrical",
+   "message": "no interference among 1902 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "lab-electrical",
+   "where": "lab-electrical",
+   "message": "75 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "ROOM-010",
+   "scope": "lab-electrical",
+   "where": "lab-electrical",
+   "message": "the machines span (499, 24790, 0) to (4772, 25670, 2182) mm; the clear room is 15770.0 x 25770.0 mm, 8000.0 mm to the eaves",
+   "elements": [],
+   "title": "every machine placed in a lab room lies inside its clear floor and below the eaves",
+   "basis": "toolkit/rooms.py; lib/standards/labs-building.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "ROOM-020",
+   "scope": "lab-electrical",
+   "where": "cell-1.panel-1.enc-1",
+   "message": "working space 1526 x 914 x 2182 mm in front of the door face at y 24790: clear (NFPA 70 110.26(A)(1) Table 110.26(A)(1); 151-600 V to ground, condition 1)",
+   "elements": [],
+   "title": "in front of every enclosure's door face, NFPA 70 110.26(A)'s working space is clear, and the wall opposite is at least condition 2's depth away",
+   "basis": "NFPA 70 110.26(A); lib/standards/clearances.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "ROOM-020",
+   "scope": "lab-electrical",
+   "where": "cell-1.panel-1.enc-1",
+   "message": "24790 mm from the door face to the wall opposite (a grounded surface: condition 2 needs 1067 mm)",
+   "elements": [],
+   "title": "in front of every enclosure's door face, NFPA 70 110.26(A)'s working space is clear, and the wall opposite is at least condition 2's depth away",
+   "basis": "NFPA 70 110.26(A); lib/standards/clearances.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "ROOM-030",
+   "scope": "lab-electrical",
+   "where": "lab-electrical",
+   "message": "the door (1000 x 2100 mm at x 7885) and 1524 mm inside it: clear (2010 ADA Standards 404.2.4.1 Table 404.2.4.1)",
+   "elements": [],
+   "title": "a lab room's door opening and the clear floor inside it are free",
+   "basis": "2010 ADA Standards 404.2.4.1; lib/standards/clearances.csv"
+  }
+ ]
+}

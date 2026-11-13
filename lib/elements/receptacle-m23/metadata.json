@@ -1,0 +1,12 @@
+{
+  "element_id": "receptacle-m23",
+  "domain": "electrical",
+  "category": "Electrical connector systems",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 30.0,
+  "height": 30.0,
+  "depth": 33.0,
+  "units": "mm",
+  "brief": "our own design: generic Circular connector, mounting (without cable) (ETIM 10.0 EC003569), M23 x 1 sleeve, flange 30 with four M3 holes, male contacts, kinds power (3 + PE) and signal (6); no reference part measured (spec.md Class values)"
+}

@@ -1,0 +1,11 @@
+port,pin,role,signal,rated_A,source
+port-pwr,U,phase-load:L1,motor phase U (stator winding),2.5,spec.md Class values 3 and 4 (3 phases; rated current 2.5 A)
+port-pwr,V,phase-load:L2,motor phase V,2.5,as U
+port-pwr,W,phase-load:L3,motor phase W,2.5,as U
+port-pwr,PE,PE,protective earth of the housing,,the housing is an exposed conductive part (spec.md Notes)
+port-enc,A+,out,encoder channel A (RS-422 line-driver pair with A-),,spec.md Class values 14 (incremental encoder)
+port-enc,A-,out,encoder channel A complement,,as A+
+port-enc,B+,out,encoder channel B (RS-422 line-driver pair with B-),,as A+
+port-enc,B-,out,encoder channel B complement,,as A+
+port-enc,5V,load+:5V,encoder supply 5 V DC from the drive,0.2,spec.md Class values 14 (fed 5 V DC 200 mA by the drive)
+port-enc,0V,load0,encoder supply return,,spec.md Class values 14

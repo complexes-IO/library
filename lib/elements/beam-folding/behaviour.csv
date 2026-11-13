@@ -1,0 +1,5 @@
+# behaviour.csv · beam-folding · folding beam of a sheet folder (lib/behaviour.md). Mechanical only: no terminal. One moving node, the folding beam; its drive is the machine's (between the elements).
+kind,a,b,part,when,value,unit,source,note
+state,flat,,fold,default,,,spec.md (Mechanism),the folding beam at rest: its top face in the bed's plane (0)
+state,folded,,fold,manual toggle,,,spec.md (Mechanism),the folding beam swung up to the end of its swing
+pose,fold,,,folded,end,,element.py (fold rotates 0–135 deg),

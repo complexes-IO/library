@@ -1,0 +1,13 @@
+{
+  "element_id": "valve-gauge-double",
+  "domain": "pneumatics",
+  "category": "Valves",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 24.0,
+  "height": 80.405,
+  "depth": 46.0,
+  "units": "mm",
+  "datasheet_dims": null,
+  "aliases": []
+}

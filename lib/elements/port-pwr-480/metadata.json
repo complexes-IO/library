@@ -1,0 +1,23 @@
+{
+  "element_id": "port-pwr-480",
+  "domain": "electrical",
+  "category": "Fasteners, hardware, connectors and cables",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 79.0,
+  "height": 79.0,
+  "depth": 128.2,
+  "units": "mm",
+  "datasheet_dims": [
+    79.0,
+    128.2
+  ],
+  "brief": {
+    "stage0": "COMPLETE",
+    "date": "2026-11-03",
+    "files": [
+      "references/measure.md"
+    ],
+    "note": "Stage 0 of lib/element-qa-checklist.txt; EM 2026-11-03 kit prompt step 5"
+  }
+}

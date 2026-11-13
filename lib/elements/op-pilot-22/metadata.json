@@ -1,0 +1,11 @@
+{
+  "element_id": "op-pilot-22",
+  "domain": "controls",
+  "category": "HMI and operator controls",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 30.0,
+  "height": 50.0,
+  "depth": 51.0,
+  "units": "mm"
+}

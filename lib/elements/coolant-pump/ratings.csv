@@ -1,0 +1,6 @@
+property,value,unit,status,source
+p_max,1,bar,generic design,ETIM 10.0 EC010732 class value (EF020449 Max. operating pressure; spec.md Class values 9)
+voltage,460,V,generic design,ETIM 10.0 EC010732 class value (EF003977 Rated voltage; spec.md Class values 13)
+phases,3,,generic design,ETIM 10.0 EC010732 class value (EF000351 Number of phases; spec.md Class values 14)
+frequency,60,Hz,generic design,ETIM 10.0 EC010732 class value (EF005455 Frequency; spec.md Class values 15)
+power,0.12,kW,generic design,ETIM 10.0 EC010732 class value (EF012425 Motor power output (P2) per motor; spec.md Class values 17)

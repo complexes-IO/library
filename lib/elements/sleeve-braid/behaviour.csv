@@ -1,0 +1,3 @@
+# behaviour.csv · sleeve-braid · generic braided protective sleeve (lib/behaviour.md). A structural part: no port, no electrical pin and no moving node.
+# It is pulled over a tube and guards it; it carries no fluid and passes no path of its own: no state, contact, load or pose row is written (the header only).
+kind,a,b,part,when,value,unit,source,note

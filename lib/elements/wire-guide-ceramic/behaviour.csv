@@ -1,0 +1,2 @@
+# behaviour.csv · wire-guide-ceramic · ceramic wire guide, generic flanged eyelet (lib/behaviour.md). One fixed body (flange and shank in one piece): no terminal, no moving node (the wire is the host's and passes through the bore), no state.
+kind,a,b,part,when,value,unit,source,note

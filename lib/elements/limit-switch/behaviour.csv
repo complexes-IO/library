@@ -1,0 +1,16 @@
+# behaviour.csv · limit-switch · end switch, roller lever, 1 N.C. + 1 N.O. (lib/behaviour.md). Written by elec-r40 (unattended, 2026-11-12) from spec.md (Class values, Switching program, Named nodes), pins.csv, ratings.csv and element.py: a generic element, so its class values are its figures.
+# Two states of the lever (node lever, rotate about +y, -45 ... +45 deg): at rest 11-12 is closed and 23-24 open; actuated (the machine's cam or dog has turned the lever past its operating point, either way) 11-12 opens and 23-24 closes (spec.md Switching program; slow action, break before make). The actuation is the machine's: the twin exposes it as an input (manual momentary: the lever springs back to rest).
+# Each terminal is a screw clamp with its own port node t-<mark> on the back wall (element.py TERMS). The clamps' conductor range and torque are class B (IEC 60947-1 not on file: spec.md Dimensions).
+# Contact resistances are not stated and the phase-1 solver reads none for a closed contact: the contact rows carry no figure.
+kind,a,b,part,when,value,unit,source,note
+pin,11,t-11,terminal-11,,NOT ON FILE (B): IEC 60947-1,N·m,spec.md Dimensions (terminals: four screw clamps on the back wall; conductor range and torque class B); pins.csv t-11,N.C. contact 11-12 line side
+pin,12,t-12,terminal-12,,NOT ON FILE (B): IEC 60947-1,N·m,as 11,N.C. contact 11-12 load side (opens when actuated)
+pin,23,t-23,terminal-23,,NOT ON FILE (B): IEC 60947-1,N·m,as 11,N.O. contact 23-24 line side
+pin,24,t-24,terminal-24,,NOT ON FILE (B): IEC 60947-1,N·m,as 11,N.O. contact 23-24 load side (closes when actuated)
+state,rest,,actuator,default,,,spec.md Switching program (the lever upright at 0 deg; the return spring holds it there); Class values 11 and 24,the lever at rest as built
+state,actuated,,actuator,manual momentary,,,spec.md Switching program (the lever turned past its operating point by the machine's cam or dog; it springs back); Class values 11 and 24,the twin's input for the machine's cam
+contact,11,12,contact-11-12,rest,,,spec.md Switching program (11-12 closed at rest); Class values 16 (1 N.C.),N.C. contact
+contact,23,24,contact-23-24,actuated,,,spec.md Switching program (23-24 closed when actuated); Class values 17 (1 N.O.),N.O. contact
+pose,lever,,,actuated,45,,element.py (lever rotates about +y with range -45 ... +45 at rest; the actuated pose shown at the range end: spec.md Switching program),the lever at full travel
+limit,contact-11-12 contact-23-24,,,,3,A,ratings.csv ie_ac15_230v (ETIM 10.0 EC000030 class value EF001385; spec.md Class values 7),each contact's rated operation current at AC-15 230 V
+limit,contact-11-12 contact-23-24,,,,230,VAC,ratings.csv ie_ac15_230v (ETIM 10.0 EC000030 class value EF001385: the highest voltage a class value rates; spec.md Class values 7),the contacts' highest rated voltage

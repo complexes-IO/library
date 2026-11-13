@@ -1,0 +1,5 @@
+# behaviour.csv · carriage · lathe carriage (lib/behaviour.md). Mechanical only: no terminal. One moving node, the cross slide; the carriage's travel along the bed is the machine's (its leadscrew).
+kind,a,b,part,when,value,unit,source,note
+state,back,,cross-slide,default,,,spec.md (Mechanism),the cross slide at rest toward the operator (0)
+state,in,,cross-slide,manual toggle,,,spec.md (Mechanism),the cross slide run in across the bed to the end of its travel
+pose,cross-slide,,,in,end,,element.py (cross-slide translates 0–200),

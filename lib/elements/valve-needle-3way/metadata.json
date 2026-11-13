@@ -1,0 +1,13 @@
+{
+  "element_id": "valve-needle-3way",
+  "domain": "pneumatics",
+  "category": "Valves",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 64.4,
+  "height": 58.0,
+  "depth": 24.4,
+  "units": "mm",
+  "datasheet_dims": null,
+  "aliases": []
+}

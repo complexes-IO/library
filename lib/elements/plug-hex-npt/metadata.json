@@ -1,0 +1,13 @@
+{
+  "element_id": "plug-hex-npt",
+  "domain": "pneumatics",
+  "category": "Fittings",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 19.04,
+  "height": 19.04,
+  "depth": 18.21,
+  "units": "mm",
+  "datasheet_dims": null,
+  "aliases": []
+}

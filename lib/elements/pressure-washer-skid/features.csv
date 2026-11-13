@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+17.055,port bore NPT 3/8 (plain at E1 + h),port,,,,"ASME B1.20.1 by its formulas (toolkit/pneu.py NPT table, EM 2026-11-07): E1 + h, the male's major diameter at the hand-tight plane, as check-valve 2.0's and hyd-cooler 1.0's NPT 3/8 bores",design choice: the thread drawn plain at the stub's own diameter so the halves touch (tank 2.0's rule); depth L2 + 2 = 12.358; `port-in` in the head's front face and `port-out` in its +x end face; each bore and its field cut by two coaxial holes

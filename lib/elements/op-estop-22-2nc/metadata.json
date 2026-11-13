@@ -1,0 +1,14 @@
+{
+  "element_id": "op-estop-22-2nc",
+  "domain": "controls",
+  "category": "HMI and operator controls",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 60.0,
+  "height": 68.5,
+  "depth": 72.5,
+  "units": "mm",
+  "aliases": [
+    "op-estop-22"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "element_id": "power-meter",
+  "category": "Power monitoring",
+  "width": 72.0,
+  "height": 93.0,
+  "depth": 63.2,
+  "units": "mm",
+  "datasheet_dims": [
+    72.0,
+    93.0
+  ],
+  "domain": "electrical",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

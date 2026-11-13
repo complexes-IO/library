@@ -1,0 +1,12 @@
+{
+  "element_id": "cable-servo-encoder",
+  "category": "Motor control and drives",
+  "width": null,
+  "height": null,
+  "depth": null,
+  "units": "mm",
+  "datasheet_dims": null,
+  "domain": "electrical",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

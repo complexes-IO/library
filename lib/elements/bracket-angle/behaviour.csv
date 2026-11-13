@@ -1,0 +1,2 @@
+# behaviour.csv · bracket-angle · inner-corner angle bracket for 40 x 40 T-slot profile (lib/behaviour.md). One body: no terminal, no node, no moving part, no state. The two M8 clearance holes take the fixing screws into the profile's slots, not a port; no load claim.
+kind,a,b,part,when,value,unit,source,note

@@ -1,0 +1,5 @@
+property,value,unit,status,source
+us_v,24,V DC,on file,techdata p. 3
+ul_v,24,V DC,on file,techdata p. 3
+do_i,2.0,A,on file,manual p. 20 (per output)
+load_i,0.14,A,on file,techdata p. 3 (US 140 mA typical at 24 V; US max. 1 A with sensor load)

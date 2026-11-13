@@ -1,0 +1,3 @@
+match,role,kind,check,position_tol,datums,source,note
+8,head bore,own,,,,design choice (spec.md Its own sizes),"Ø8 through the head block along y on the cross bar's axis: the Ø8 bar is pressed in (head, bar, post and base are one body); no fastener and no standard size"
+10,boss bore,own,,,,design choice (spec.md Its own sizes),"Ø10 through each arm's swivel boss: 1 clear round the Ø8 cross bar, so the arm turns free; no fastener and no standard size"

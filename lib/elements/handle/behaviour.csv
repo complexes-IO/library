@@ -1,0 +1,2 @@
+# behaviour.csv · handle · pull handle 136 x 42, our own design (lib/behaviour.md). Mechanical only: no terminal (the two tapped M6 ends are the host's fixings, not ports; no earth path is modelled or claimed) and no moving node (the two legs and the grip are one fixed body), so no state and no pose. What it moves (a door, a drawer, a cover) is the host's node.
+kind,a,b,part,when,value,unit,source,note

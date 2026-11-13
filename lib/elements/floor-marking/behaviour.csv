@@ -1,0 +1,2 @@
+# behaviour.csv · floor-marking · floor marking tape strip 50 x 1 x 1000, generic (ETIM 10.0 EC001496) (lib/behaviour.md). Mechanical only: no terminal (a tape has no fixing and no port) and no moving node (one fixed strip), so no state and no pose. What the marking means is the placing system's colour code, not a behaviour.
+kind,a,b,part,when,value,unit,source,note

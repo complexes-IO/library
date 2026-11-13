@@ -1,0 +1,22 @@
+unit,pin,function,colour,rated_A,rated_V,standard,note
+# Standard connector pin maps (checked against maker datasheets 2026-11-03; M12 ratings and colours against the cordset cut sheets 2026-11-04). rated_A per contact. IEC 61076-2-101 (M12 A and D: geometry and coding), IEC 61076-2-111 (M12 L power), IEC 60947-5-2 (sensor wire colours pins 1-4), UL 1682 (US pin-and-sleeve 20 A); vendor ratings vary (D 160-250 V, L 12-16 A by cable)
+A,1,L+ (+24 V),brown,4,250,IEC 60947-5-2 colours; cordset cut sheet (4 A 250 V),5-pin A-coded; the device's own rating can be lower: see its pins.csv
+A,2,channel B,white,4,250,IEC 61076-2-101,
+A,3,L- (0 V),blue,4,250,IEC 61076-2-101,
+A,4,channel A,black,4,250,IEC 61076-2-101,"on an IO-Link device pin 4 is C/Q (IEC 61131-9): IO-Link communication to a master, or plain switching (SIO) on a standard input; same connector, same pins (EM 2026-11-08)"
+A,5,FE,grey,4,250,maker datasheets,pin 5 use varies by vendor (FE or not connected): confirm per device; the 5-wire cordset cut sheet on file colours it green-yellow
+D,1,TD+,white-orange,4,60,IEC 61076-2-101; cordset cut sheet (4 A; UL 1.5 A; 60 V DC),4-pin D-coded Ethernet; colours from the cut sheet (EtherNet/IP); PROFINET cables run yellow / white / orange / blue
+D,2,RD+,white-green,4,60,IEC 61076-2-101,
+D,3,TD-,orange,4,60,IEC 61076-2-101,
+D,4,RD-,green,4,60,IEC 61076-2-101,
+L,1,US +24 V,brown,16,63,IEC 61076-2-111,5-pin L-coded power; 16 A per contact with 14 AWG cable, 12 A with 16 AWG (cut sheets): the cable sets the circuit's rating
+L,2,UL 0 V,white,16,63,IEC 61076-2-111,
+L,3,US 0 V,blue,16,63,IEC 61076-2-111,
+L,4,UL +24 V,black,16,63,IEC 61076-2-111,
+L,5,FE,grey,16,63,IEC 61076-2-111,grey: green-yellow is reserved for protective earth
+480V-3P+E,L1,phase L1,,20,480,UL 1682 (20 A; IEC 60309 rates 16 / 32 A),rating of the cell's receptacle class
+480V-3P+E,L2,phase L2,,20,480,UL 1682 (20 A; IEC 60309 rates 16 / 32 A),
+480V-3P+E,L3,phase L3,,20,480,UL 1682 (20 A; IEC 60309 rates 16 / 32 A),
+480V-3P+E,PE,protective earth,green-yellow,20,480,UL 1682 (20 A; IEC 60309 rates 16 / 32 A),
+PE,PE,protective earth,green-yellow,,,IEC 60204-1 8.2,earth stud or bar
+cable,PE,protective earth conductor through a gland,green-yellow,,,IEC 60204-1 8.2,

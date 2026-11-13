@@ -1,0 +1,12 @@
+{
+  "element_id": "bearing-pillow",
+  "domain": "mechanical",
+  "category": "Power transmission",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 140.0,
+  "height": 90.0,
+  "depth": 40.0,
+  "units": "mm",
+  "datasheet_dims": null
+}

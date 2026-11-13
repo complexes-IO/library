@@ -1,0 +1,6 @@
+# behaviour.csv · thermostat-enc · enclosure thermostat (our own design; lib/behaviour.md). Taken in by elec-r24 from the core's proposal of 2026-11-09 (lib/requests/core/behaviour/thermostat-enc.csv), checked against element.py and spec.md; the states renamed by what they mean (the dial at either end of its 0–270° travel).
+# No pin rows: terminals 1 and 2 (spec.md Shape) have no port nodes yet, and their contact form, setpoint scale and differential are NOT ON FILE in spec.md (lines EM accepted 2026-11-06), so the twin reads no switching from this part. Port nodes for 1 and 2 come with a later version.
+kind,a,b,part,when,value,unit,source,note
+state,dial-0,,dial,default,,,element.py (node dial: rotate 0 to 270),the dial at the start of its travel; the temperature it stands for is NOT ON FILE (spec.md Notes)
+state,dial-270,,dial,manual toggle,,,element.py (node dial: rotate 0 to 270),the dial turned to the end of its travel
+pose,dial,,,dial-270,end,,element.py (node dial: rotate 0 to 270),

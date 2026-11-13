@@ -1,0 +1,6 @@
+element,version,tag,parent,x,y,z,yaw,params,note
+bench-1800,1.0,bench-1,floor,2400,100,0,0,,machine bench; the motor plate and the station mount on it
+motor-iec71-370w,1.2,m1,bench-1,2650,180,850.9,0,,0.37 kW IEC 71 on the bench plate; terminal box with the 480 V connector
+io-block-m12-8di8do,1.7,io-1,bench-1,3700,679,1000,0,,field I/O block on the bench back-board; X1..X8 to the station and sensors
+pbs-6h-22,1.6,pbs-1,bench-1,3000,679,1100,0,,operator station on the bench back-board, 1100 centre height
+tag-plate,1.0,tag-m1,bench-1,2600,679,1200,0,kind=device;text=M1,machine tag

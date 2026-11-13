@@ -1,0 +1,24 @@
+# behaviour.csv · switch-cam-22 · control switch 1-0-2, 2 poles (lib/behaviour.md). Written by elec-r29 (unattended, 2026-11-11) from spec.md (Class values, Switching program, Named nodes), pins.csv, ratings.csv and element.py: a generic element, so its class values are its figures.
+# Three maintained positions on one knob (self, rotate about +y, -45 ... +45 deg): position 1 closes 1-2 and 5-6, position 0 opens every contact, position 2 closes 3-4 and 7-8 (spec.md Switching program). The cam shaft and contact bridges inside are not modelled (spec.md Notes): the contacts follow the knob's position.
+# Each terminal is a screw clamp with its own port node t-<mark> (element.py chamber()). The clamps' conductor range and torque are class B (IEC 60947-1 not on file: spec.md Dimensions). The terminal marks are a design choice (spec.md: odd line side, even load side).
+# Contact resistances are not stated and the phase-1 solver reads none for a closed contact: the contact rows carry no figure.
+kind,a,b,part,when,value,unit,source,note
+pin,1,t-1,terminal-1,,NOT ON FILE (B): IEC 60947-1,N·m,spec.md Dimensions (terminals: four screw clamps per chamber; conductor range and torque class B); pins.csv t-1,pole 1 contact 1-2 line side
+pin,2,t-2,terminal-2,,NOT ON FILE (B): IEC 60947-1,N·m,as 1,pole 1 contact 1-2 load side (closes in position 1)
+pin,3,t-3,terminal-3,,NOT ON FILE (B): IEC 60947-1,N·m,as 1,pole 1 contact 3-4 line side
+pin,4,t-4,terminal-4,,NOT ON FILE (B): IEC 60947-1,N·m,as 1,pole 1 contact 3-4 load side (closes in position 2)
+pin,5,t-5,terminal-5,,NOT ON FILE (B): IEC 60947-1,N·m,as 1,pole 2 contact 5-6 line side
+pin,6,t-6,terminal-6,,NOT ON FILE (B): IEC 60947-1,N·m,as 1,pole 2 contact 5-6 load side (closes in position 1)
+pin,7,t-7,terminal-7,,NOT ON FILE (B): IEC 60947-1,N·m,as 1,pole 2 contact 7-8 line side
+pin,8,t-8,terminal-8,,NOT ON FILE (B): IEC 60947-1,N·m,as 1,pole 2 contact 7-8 load side (closes in position 2)
+state,position-0,,knob,default,,,spec.md Switching program (0: pointer up; every contact open); Class values 6 (with zero position),the knob at 0: rest as built
+state,position-1,,knob,manual toggle,,,spec.md Switching program (1: -45 deg); Class values 7 (maintained in every position),the knob turned to 1 (counter-clockwise seen from the front)
+state,position-2,,knob,manual toggle,,,spec.md Switching program (2: +45 deg); Class values 7,the knob turned to 2 (clockwise seen from the front)
+contact,1,2,contact-1-2,position-1,,,spec.md Switching program (position 1 closes 1-2 and 5-6); Class values 2 and 4 (2 poles; Iu 10 A each contact),pole 1 position-1 contact
+contact,5,6,contact-5-6,position-1,,,as 1-2,pole 2 position-1 contact
+contact,3,4,contact-3-4,position-2,,,spec.md Switching program (position 2 closes 3-4 and 7-8),pole 1 position-2 contact
+contact,7,8,contact-7-8,position-2,,,as 3-4,pole 2 position-2 contact
+pose,self,,,position-1,-45,,element.py (self rotates about +y with range -45 ... +45 at position 0; STEP 45 deg a design choice: spec.md Switching program),the knob at position 1
+pose,self,,,position-2,45,,as position-1,the knob at position 2
+limit,contact-1-2 contact-3-4 contact-5-6 contact-7-8,,,,10,A,ratings.csv iu (ETIM 10.0 EC002611 class value EF001389; spec.md Class values 4),each contact's rated permanent current
+limit,contact-1-2 contact-3-4 contact-5-6 contact-7-8,,,,440,VAC,ratings.csv ue_max (ETIM 10.0 EC002611 class value EF007355; spec.md Class values 3),max. rated operation voltage

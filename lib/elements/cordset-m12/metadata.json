@@ -1,0 +1,15 @@
+{
+  "element_id": "cordset-m12",
+  "domain": "electrical",
+  "category": "Fasteners, hardware, connectors and cables",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "aliases": [
+    "cordset-m12-a"
+  ],
+  "width": null,
+  "height": null,
+  "depth": null,
+  "units": "mm",
+  "datasheet_dims": null
+}

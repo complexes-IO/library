@@ -1,0 +1,15 @@
+# behaviour.csv · frl · generic air service unit: 3/2 shut-off and dump valve and filter-regulator (lib/behaviour.md). Four air ports and no electrical pin; two moving nodes,
+# the shut-off handle and the regulator's knob. The air paths (1 to 2 with the handle open; 2 to 3 with it closed) are pneumatic: the solver is electrical in phase 1
+# (lib/toolkit/nets.py), so they are written as notes, and the twin reads no pressure from the knob in 1.0. No safety claim: whether the dump valve is a safety function is
+# EM's question (request pneu-6, lib/needs-em/pneu.md). NPT joints make up by turns (pneu.NPT L1 + L3), not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,1,port-1,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 1 as toolkit/pneu.py NODES)",the inlet: female NPT 1/4 on the shut-off valve
+pin,2,port-2,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 2 as toolkit/pneu.py NODES)",the outlet: female NPT 1/4 after the filter-regulator
+pin,3,port-3,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 3 as toolkit/pneu.py NODES)",the dump exhaust: female NPT 1/4 under the shut-off valve; a silencer goes in it
+pin,G,port-g,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: pneu.NODES has no gauge number; named port-g as next.md decision 1)",the gauge port: female NPT 1/4 downstream of the regulator's seat
+state,closed,,handle,default,,,spec.md Named nodes (handle 0°),supply 1 shut; the line between the valve and the regulator vented through 3 (2 vents through it only if the regulator passes reverse flow: not stated in 1.1); from 2.0 the hasp's padlock holes line up here so a padlock holds it closed (ratings lockable)
+state,open,,handle,manual toggle,,,spec.md Named nodes (a quarter turn),1 to 2 through the filter-regulator; 3 shut
+state,rest,,knob,default,,,spec.md Named nodes (knob 0°: the spring unloaded),
+state,turned,,knob,manual toggle,,,spec.md Named nodes (five turns; the pressure it sets is not modelled),the operator turns the knob to its range end
+pose,handle,,,open,end,,element.py (handle rotates 0 to 90° about +z),
+pose,knob,,,turned,end,,element.py (knob rotates 0 to 1800° about +z),

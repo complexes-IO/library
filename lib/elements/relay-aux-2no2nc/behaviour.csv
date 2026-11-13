@@ -1,0 +1,26 @@
+# behaviour.csv · relay-aux-2no2nc · auxiliary contactor relay, 24 V DC coil, 2 NO + 2 NC (lib/behaviour.md). Written by elec-r27 from spec.md (Class values, Named nodes), pins.csv and ratings.csv: a generic element, so its class values are its figures.
+# The coil is a load A1-A2; the magnet system operates at the bottom of the class's operating-voltage band (19.2 V, Class values 18) and rests released below it (the drop-out level is not a class feature and is not stated: no hysteresis row).
+# The coil's power is not a class feature (spec.md Notes): the load row carries the designer's figure (OPERATING.md 6, "design"), 2.4 W at 24 V, so the solver has a current and the panel's 24 V budget a share; ratings.csv carries the matching coil_p (design) and load_i (derived) rows since 1.2.
+# Contact resistances are not stated and the phase-1 solver reads none for a closed contact: the contact rows carry no figure. Torques: the clamps' conductor range and torque are class B (IEC 60947-1, spec.md Dimensions).
+kind,a,b,part,when,value,unit,source,note
+pin,A1,t-A1,terminal-A1,,NOT ON FILE (B): IEC 60947-1,N·m,spec.md Dimensions (conductor range and torque class B),coil + (24 V DC)
+pin,A2,t-A2,terminal-A2,,NOT ON FILE (B): IEC 60947-1,N·m,as A1,coil 0 V
+pin,13,t-13,terminal-13,,NOT ON FILE (B): IEC 60947-1,N·m,as A1,N.O. 13-14 common
+pin,14,t-14,terminal-14,,NOT ON FILE (B): IEC 60947-1,N·m,as A1,N.O. 13-14
+pin,21,t-21,terminal-21,,NOT ON FILE (B): IEC 60947-1,N·m,as A1,N.C. 21-22 common
+pin,22,t-22,terminal-22,,NOT ON FILE (B): IEC 60947-1,N·m,as A1,N.C. 21-22
+pin,31,t-31,terminal-31,,NOT ON FILE (B): IEC 60947-1,N·m,as A1,N.C. 31-32 common
+pin,32,t-32,terminal-32,,NOT ON FILE (B): IEC 60947-1,N·m,as A1,N.C. 31-32
+pin,43,t-43,terminal-43,,NOT ON FILE (B): IEC 60947-1,N·m,as A1,N.O. 43-44 common
+pin,44,t-44,terminal-44,,NOT ON FILE (B): IEC 60947-1,N·m,as A1,N.O. 43-44
+load,A1,A2,coil,,240,ohm,"design: 2.4 W coil at 24 V DC (R = 24² / 2.4 = 240 Ω; 0.10 A), the designer's figure for a generic 24 V DC auxiliary relay under the panel's 24 V budget (ELR-020); not a class feature (spec.md Notes); spec.md Class values 3 (24 V DC)",the coil
+state,released,,magnet-system,default,,,spec.md Named nodes (carrier 0 = coil off: contacts at rest),rest: 21-22 and 31-32 closed
+state,operated,,magnet-system,coil.V >= 19.2,,,"spec.md Class values 18 (operating voltage DC 19.2 … 26.4 V): operated for certain from the bottom of the band; the drop-out level is not stated (no hysteresis row)",13-14 and 43-44 closed
+contact,13,14,aux-13,operated,,,spec.md Class values 12 and Named nodes (2 N.O.; marks: IEC 60947-1 function numbers as labels),N.O.
+contact,43,44,aux-43,operated,,,as 13-14,N.O.
+contact,21,22,aux-21,released,,,spec.md Class values 11 and Named nodes (2 N.C.),N.C.
+contact,31,32,aux-31,released,,,as 21-22,N.C.
+pose,carrier,,,operated,end,,spec.md Named nodes (carrier translate +y 0 … 3.5: 3.5 = coil on),the carrier pulled in
+pose,led-coil,,,operated,1,,spec.md Class values 8 and Named nodes (LED: coil energised),yellow: coil on
+limit,coil,,,,26.4,VDC,spec.md Class values 18 (operating voltage DC up to 26.4 V),the most the coil may see
+limit,aux-13 aux-21 aux-31 aux-43,,,,6,A,"spec.md Class values 5 (rated operation current 6 A, AC-15 at 230 V); Class values 20 (Ith 10 A)",each contact's rated operational current

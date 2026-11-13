@@ -1,0 +1,149 @@
+{
+ "toolkit": "1.3",
+ "validation": "1.0",
+ "rules": 86,
+ "id": "frl",
+ "status": "PASS",
+ "findings": [
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
+   "scope": "frl",
+   "where": "frl",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "frl",
+   "where": "frl",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "frl",
+   "where": "frl",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "frl",
+   "where": "frl",
+   "message": "no interference among 15 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "frl",
+   "where": "frl",
+   "message": "2 moving node(s) swept through their full range, nothing hit; 1 pair(s) of independent nodes posed together at their ends, clear",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "frl",
+   "where": "frl",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "frl",
+   "where": "frl",
+   "message": "6 solid(s) with openings, all cut in the glTF: 6 as clean extrusions, 0 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "frl",
+   "where": "frl",
+   "message": "12 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-002",
+   "scope": "frl",
+   "where": "frl",
+   "message": "every port declares its gender",
+   "elements": [],
+   "title": "every port declares its gender (male, female or none)",
+   "basis": "EM 2026-11-05; IEC 60204-1 13.4.5 (no exposed live pins on the part that stays live); PIN-030"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "frl",
+   "where": "frl",
+   "message": "4 pins, 0 contacts, 0 loads, 0 sources, 4 states (2 manual), 2 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "frl",
+   "where": "frl",
+   "message": "2 \u00d7 \u00d88 padlock hole (hasp) (declared: own, design choice (spec.md Dimensions: hasp tab; shelf and support))",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "frl",
+   "where": "frl",
+   "message": "4 \u00d7 \u00d813.616 port bore NPT 1/4 (plain at E1 + h) (declared: port, ASME B1.20.1 by its formulas (toolkit/pneu.py NPT table, EM 2026-11-07): E1 + h, the male's major diameter at the hand-tight plane, as fitting-pushin 2.0 and gauge-p draw their stubs)",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-020",
+   "scope": "frl",
+   "where": "frl",
+   "message": "2 hole(s) inside their parts",
+   "elements": [],
+   "title": "every hole stays inside the part it cuts (no break-out)",
+   "basis": "geometry rule"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "frl",
+   "where": "frl",
+   "message": "the AutoCAD gate will pick 62 edges; skipped 33 buried, 0 short, 0 on thin parts, 0 shared, 5 hidden; 0 on placed elements, left to their own gates; 15 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  }
+ ]
+}

@@ -1,0 +1,24 @@
+{
+  "element_id": "relay-ice-cube-2co",
+  "domain": "electrical",
+  "category": "Electrical components",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 21.1,
+  "height": 46.5,
+  "depth": 27.9,
+  "units": "mm",
+  "datasheet_dims": null,
+  "brief": {
+    "stage0b": "COMPLETE",
+    "stage0b_date": "2026-11-03",
+    "stage0b_files": [
+      "references/interior.md",
+      "parts.csv",
+      "behaviour.md"
+    ]
+  },
+  "aliases": [
+    "relay-ice-cube"
+  ]
+}

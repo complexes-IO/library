@@ -1,0 +1,15 @@
+{
+  "element_id": "head-rivet-c-hyd",
+  "domain": "pneumatics",
+  "category": "Fixtures",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 170.0,
+  "height": 651.5,
+  "depth": 100.0,
+  "units": "mm",
+  "datasheet_dims": null,
+  "aliases": [
+    "head-rivet"
+  ]
+}

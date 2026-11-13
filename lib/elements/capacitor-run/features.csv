@@ -1,0 +1,3 @@
+match,role,kind,check,position_tol,datums,source,note
+5.5,M5 clearance medium,clearance,,0.4,"A: the foot's back face (y 0); B: the left hole; C: the line through both holes","ISO 273 medium for M5 (lib/standards/holes.csv); the pattern (64.0) and its position tolerance are design choices","two M5 panel screws through the strap's foot, floating fastener: position Ø0.4 <= H - F = 5.5 - 5.0 = 0.5 (ASME Y14.5 virtual condition)"
+45.0,can seat,internal,,,,"design choice (spec.md Dimensions, strap)","the strap's bore on the can, line on line with the can's Ø45.0: the strap clamps the can; no fastener passes it"

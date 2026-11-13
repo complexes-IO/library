@@ -1,0 +1,12 @@
+{
+  "element_id": "footswitch",
+  "domain": "electrical",
+  "category": "Command and alarm devices (low-voltage switch technology)",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 100.0,
+  "height": 130.6,
+  "depth": 200.0,
+  "units": "mm",
+  "brief": "our own design: generic Foot switch (ETIM 10.0 EC001258), guarded (protective hood), single pedal, 1 N.C. + 1 N.O. (11-12, 23-24), momentary, AC-15 3 A at 230 V, plastic housing 100 x 200 x 130, M20 x 1.5 cable entry; no reference part measured (spec.md Class values)"
+}

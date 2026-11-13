@@ -1,0 +1,39 @@
+{
+ "toolkit": "1.3",
+ "validation": "1.0",
+ "rules": 86,
+ "id": "mc-motor-1",
+ "status": "REVIEW",
+ "findings": [
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "mc-motor-1",
+   "where": "mc-motor-1",
+   "message": "no interference among 410 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "mc-motor-1",
+   "where": "mc-motor-1",
+   "message": "10 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "GATE-010",
+   "scope": "mc-motor-1",
+   "where": "gate",
+   "message": "the AutoCAD gate of 2026-11-03 passed on another LISP than the one on file: the gate's census (158 solids) is not the LISP on file's (400); 177 layer(s) differ, first M-ALU-7035 5 -> 0. Build the assembly, then gate the LISP the build wrote again (acad-gate.py --assembly mc-motor-1)",
+   "elements": [],
+   "title": "an assembly's AutoCAD gate on file ran the LISP on file: its census (lisp_per_layer) is out/<id>.lsp's, and a version it or the LISP names is assembly.py's; REVIEW otherwise",
+   "basis": "OPERATING.md 13 station 6 (every tool result tied to the files it checked); panel/r15 ESCAPE 2"
+  }
+ ]
+}

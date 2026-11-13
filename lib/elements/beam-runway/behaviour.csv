@@ -1,0 +1,2 @@
+# behaviour.csv · beam-runway · monorail beam for a chain hoist (lib/behaviour.md). One body: no terminal, no moving node (`track` is fixed; the trolley's travel along it is the hoist's), no state.
+kind,a,b,part,when,value,unit,source,note

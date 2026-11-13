@@ -1,0 +1,13 @@
+# behaviour.csv · pump-hand-hyd · generic hand hydraulic pump, lever operated, single-acting outlet with a release valve (lib/behaviour.md). One oil port and no electrical
+# pin; two moving nodes, the lever and the release knob. Each lever stroke delivers oil from the reservoir out of port-p; the release knob opened lets the oil back to the
+# reservoir (spec.md What). Those are oil paths: the solver is electrical in phase 1 (lib/toolkit/nets.py) and solves no oil, so the states name only where each node sits,
+# set by a manual state until the hydraulic circuit model drives them. The delivery per stroke and the pressure are not stated (spec.md): no load or limit row. The port's
+# thread is open (class B), set by the fitting's stud end: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,P,port-p,head,,not claimed,N·m,not claimed: the fitting's stud end sets it (SAE J1926-2 / -3); spec.md Ports (design: marked P as its node port-p is named; hpu-7.5kw's delivery port the same; unit hyd-port),the pump's delivery to the press cylinder
+state,lever-down,,lever,default,,,spec.md Named nodes (lever 0°: down on its seat at rest),
+state,lever-up,,lever,manual toggle,,,spec.md Named nodes (lever lifted 60°: the top of a pumping stroke),stand-in for the operator's stroke until the circuit model
+state,release-shut,,knob,default,,,spec.md Named nodes (knob 0°: the release valve shut; the pump holds pressure),
+state,release-open,,knob,manual toggle,,,spec.md Named nodes (knob one turn: the release valve open; the oil returns to the reservoir),the operator lets the press cylinder retract
+pose,lever,,,lever-up,end,,element.py (lever rotates 0 to 60° about -y at its socket's rear lower edge),
+pose,knob,,,release-open,end,,element.py (knob rotates 0 to 360° about -x),

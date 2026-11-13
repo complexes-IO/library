@@ -1,0 +1,12 @@
+{
+  "element_id": "guard-interlock",
+  "domain": "electrical",
+  "category": "Sensors for automation technology",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 40.0,
+  "height": 122.0,
+  "depth": 54.0,
+  "units": "mm",
+  "brief": "our own design: generic Position switch with guard locking (ETIM 10.0 EC002593), separate tongue actuator, spring-applied guard locking released by a 24 V DC solenoid, 2 N.C. safety contacts (11-12 actuator in, 21-22 actuator in and locked) with positive opening designed for, AC-15 2 A at 230 V, DC-13 1 A at 24 V, plastic housing 40 x 40 x 92 with a 30 high head, M20 x 1.5 cable entry; no reference part measured (spec.md Class values); a safety-function class: held for EM's safety sign-off"
+}

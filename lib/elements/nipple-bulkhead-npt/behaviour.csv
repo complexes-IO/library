@@ -1,0 +1,6 @@
+# behaviour.csv · nipple-bulkhead-npt · generic tank feed-through nipple, male NPT at both ends (lib/behaviour.md). Two ports and no electrical pin or moving node. The fluid
+# it passes is a pneumatic or hydraulic path: the solver is electrical in phase 1 (lib/toolkit/nets.py), so no state or contact row is written. Each NPT stub makes up by
+# turns (pneu.NPT L1 + L3), so both pin torques read "not claimed" (lib/behaviour.md, pin; request pneu-13 item 1). The locknut is set by the wall's thickness (parameter wall), not a motion: no pose row.
+kind,a,b,part,when,value,unit,source,note
+pin,a,port-a,stub-a,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: a fitting's ends have no ISO 11727 number; marked by the node's name)",male NPT stub a (parameter thread) outside the wall into a female port of the same size
+pin,b,port-b,stub-b,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: as a)",male NPT stub b (parameter thread) inside the wall into a female port of the same size

@@ -1,0 +1,3 @@
+match,role,kind,check,position_tol,datums,source,note
+3.4,M3 clearance medium,clearance,,0.4,"A: the flange's back face (y 0); B: the sleeve's axis; C: the upper-right hole","ISO 273 medium for M3 (lib/standards/holes.csv); the pattern (four at x, z = ±11.0) and its position tolerance are design choices","four M3 screws through the flange into the host's wall, floating fastener: position Ø0.4 <= H - F = 3.4 - 3.0 = 0.4 (ASME Y14.5 virtual condition, GDT-010)"
+19.0,sleeve bore,own,,,,design choice (spec.md Dimensions: sleeve bore),"the Ø19 bore of the M23 x 1 sleeve, where the mating plug's insert enters and the contact carrier sits: no fastener and no standard size (the mating face's class B line, spec.md)"

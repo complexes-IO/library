@@ -1,0 +1,2 @@
+# behaviour.csv · chuck-zero-point-120 · generic zero-point clamping module (lib/behaviour.md). Written by mech-r130 from element.py: no terminal (the 4 x M8 flange holes take screws, not ports; the release air port is not drawn) and no moving node (the clamping slides, springs and release piston are not drawn). A structural part's file: the header only. No clamping force here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note

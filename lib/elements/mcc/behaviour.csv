@@ -1,0 +1,21 @@
+# behaviour.csv · mcc · motor control centre section, generic (lib/behaviour.md). An enclosure with its bus: four terminals, the right ends (x 580, facing the next section and the side sheet's splice opening; since 2.0) of the three horizontal phase bars (bus-l1, bus-l2, bus-l3) and of the PE bar (pe-bus), each a port node of gender none where an incoming cable's lug or the splice to the next section is bolted; marks L1, L2, L3, PE. Each vertical bar is joined to its horizontal bar in the solid, so a phase is one conductor from its port to every stab opening: no contact row is needed while the stabs are not modelled. No rating is claimed (spec.md Notes), so no limit row. Five moving nodes, the doors; everything else is fixed. No latch modelled, so no latched state.
+kind,a,b,part,when,value,unit,source,note
+pin,L1,bus-l1,bar,,not claimed,N·m,not claimed: the incoming lug's or splice plate's bolt is not part of this element and carries its own torque (lib/behaviour.md pin),phase L1: the right end of its horizontal bar (spec.md Its own sizes)
+pin,L2,bus-l2,bar,,not claimed,N·m,not claimed: as L1,phase L2: the right end of its horizontal bar
+pin,L3,bus-l3,bar,,not claimed,N·m,not claimed: as L1,phase L3: the right end of its horizontal bar
+pin,PE,pe-bus,bar,,not claimed,N·m,not claimed: as L1,the protective bar's right end: where the incoming protective conductor or the splice lands
+state,shut-1,,door-1,default,,,spec.md (Mechanism),bucket door 1 closed
+state,open-1,,door-1,manual toggle,,,spec.md (Mechanism),bucket door 1 swung open outward about x = 0
+state,shut-2,,door-2,default,,,spec.md (Mechanism),bucket door 2 closed
+state,open-2,,door-2,manual toggle,,,spec.md (Mechanism),bucket door 2 swung open outward about x = 0
+state,shut-3,,door-3,default,,,spec.md (Mechanism),bucket door 3 closed
+state,open-3,,door-3,manual toggle,,,spec.md (Mechanism),bucket door 3 swung open outward about x = 0
+state,shut-4,,door-4,default,,,spec.md (Mechanism),bucket door 4 closed
+state,open-4,,door-4,manual toggle,,,spec.md (Mechanism),bucket door 4 swung open outward about x = 0
+state,shut-ww,,door-ww,default,,,spec.md (Mechanism),wireway door closed
+state,open-ww,,door-ww,manual toggle,,,spec.md (Mechanism),wireway door swung open outward about x = 600
+pose,door-1,,,open-1,end,,element.py (door-1 rotates 0 to -110),
+pose,door-2,,,open-2,end,,element.py (door-2 rotates 0 to -110),
+pose,door-3,,,open-3,end,,element.py (door-3 rotates 0 to -110),
+pose,door-4,,,open-4,end,,element.py (door-4 rotates 0 to -110),
+pose,door-ww,,,open-ww,end,,element.py (door-ww rotates 0 to 110),

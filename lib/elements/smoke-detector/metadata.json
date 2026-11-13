@@ -1,0 +1,12 @@
+{
+  "element_id": "smoke-detector",
+  "category": "Safety systems",
+  "width": null,
+  "height": null,
+  "depth": null,
+  "units": "mm",
+  "datasheet_dims": null,
+  "domain": "safety",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

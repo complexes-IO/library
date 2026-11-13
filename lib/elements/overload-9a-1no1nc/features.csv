@@ -1,0 +1,5 @@
+match,role,kind,check,position_tol,datums,source,note
+4.6,pin sleeve hole,internal,,,,interior brief,the Ø4.4 sleeves pass the upper housing top
+4.4,stem bore,internal,,,,,RESET / TEST and dial stems into the front module
+10.4,RESET / TEST counterbore,internal,,,,,the cap sits flush and presses 2 into it
+12.4,dial recess,internal,,,,,the dial sits flush in the face

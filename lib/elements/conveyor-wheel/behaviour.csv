@@ -1,0 +1,5 @@
+# behaviour.csv · conveyor-wheel · wheel conveyor, generic, gravity (lib/behaviour.md). Mechanical only: no terminal. Thirty-eight moving nodes, the free skate wheels wheel-1-1 to wheel-15-3 (line 1 at the -y end; three wheels on the odd lines, two on the even ones), each spinning about its own axis; the side frames, posts, ties and foot plates are the fixed body. Nothing drives the wheels.
+kind,a,b,part,when,value,unit,source,note
+state,still,,wheels,default,,,spec.md (Mechanism),the wheels at rest (0)
+state,turning,,wheels,manual toggle,,,spec.md (Mechanism),goods pushed or rolling along the track turn the wheels under them
+pose,wheel-1-1 wheel-1-2 wheel-1-3 wheel-2-1 wheel-2-2 wheel-3-1 wheel-3-2 wheel-3-3 wheel-4-1 wheel-4-2 wheel-5-1 wheel-5-2 wheel-5-3 wheel-6-1 wheel-6-2 wheel-7-1 wheel-7-2 wheel-7-3 wheel-8-1 wheel-8-2 wheel-9-1 wheel-9-2 wheel-9-3 wheel-10-1 wheel-10-2 wheel-11-1 wheel-11-2 wheel-11-3 wheel-12-1 wheel-12-2 wheel-13-1 wheel-13-2 wheel-13-3 wheel-14-1 wheel-14-2 wheel-15-1 wheel-15-2 wheel-15-3,,,turning,end,,element.py (each wheel rotates 0 to 360 about its axis),

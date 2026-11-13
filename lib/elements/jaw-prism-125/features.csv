@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+6.6468,M8 tapped hole (minor diameter),own,,,,"derived: derive.thread(8.0, 1.25) (ISO 68-1 basic profile; ISO 965-1 clause 10, internal 6H: D1 min 6.6468; ISO 261 pitch 1.25); the thread itself is not drawn","two in the back face (x = -18) at y +-40, z 20, 12 deep, for the socket head cap screws ISO 4762 (a common part not built yet: the holes are modelled, the part placed later) that hold the plate to the vice's jaw block from behind; the jaw block's clearance holes (ISO 273) are the host's"

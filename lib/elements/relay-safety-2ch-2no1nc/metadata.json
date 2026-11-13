@@ -1,0 +1,27 @@
+{
+  "element_id": "relay-safety-2ch-2no1nc",
+  "domain": "electrical",
+  "category": "Electrical components",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 22.5,
+  "height": 119.14,
+  "depth": 113.6,
+  "units": "mm",
+  "datasheet_dims": {
+    "w": 22.5,
+    "h": 119.14,
+    "d": 113.6
+  },
+  "brief": {
+    "stage0": "COMPLETE",
+    "date": "2026-11-03",
+    "files": [
+      "references/measure.md"
+    ],
+    "note": "Stage 0 of lib/element-qa-checklist.txt; EM 2026-11-03"
+  },
+  "aliases": [
+    "sr-440r"
+  ]
+}

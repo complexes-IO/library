@@ -1,0 +1,12 @@
+{
+  "element_id": "gauge-p",
+  "domain": "process",
+  "category": "Process instrumentation",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 64.0,
+  "height": 89.7,
+  "depth": 27.0,
+  "units": "mm",
+  "datasheet_dims": null
+}

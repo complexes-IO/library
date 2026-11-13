@@ -1,0 +1,2 @@
+# behaviour.csv · foam-tool-tray · shadow-foam insert for a cabinet-tool drawer (lib/behaviour.md). One body: no terminal, no node, no moving part, no state. It moves with the drawer it lies in (the drawer's node); no tool pocket is cut, so nothing is sensed.
+kind,a,b,part,when,value,unit,source,note

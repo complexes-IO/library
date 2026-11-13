@@ -1,0 +1,12 @@
+{
+  "element_id": "printer-3d",
+  "category": "Classroom infrastructure",
+  "width": null,
+  "height": null,
+  "depth": null,
+  "units": "mm",
+  "datasheet_dims": null,
+  "domain": "mechanical",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

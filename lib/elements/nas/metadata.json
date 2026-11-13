@@ -1,0 +1,12 @@
+{
+  "element_id": "nas",
+  "category": "Digital twin server equipment",
+  "width": null,
+  "height": null,
+  "depth": null,
+  "units": "mm",
+  "datasheet_dims": null,
+  "domain": "controls",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

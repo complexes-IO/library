@@ -1,0 +1,5 @@
+# behaviour.csv · contact-m12-socket · one female contact of the M12 joint (lib/behaviour.md). Its state in the joint is toolkit/contact.py mate().
+kind,a,b,part,when,value,unit,source,note
+pin,S,self,socket,,,,toolkit/m12.py (the contact zone 0.5–6.0 along the socket),the socket's mouth (the mating face)
+pin,W,self,socket,,,,toolkit/m12.py,the socket's wire end
+contact,S,W,socket,always,NOT ON FILE,ohm,IEC 61076-2-101 (≤ 5 mΩ limit; measured figure NOT ON FILE),one conductor mouth to bucket

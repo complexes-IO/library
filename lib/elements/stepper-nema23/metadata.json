@@ -1,0 +1,14 @@
+{
+  "element_id": "stepper-nema23",
+  "category": "Motor control and drives",
+  "width": null,
+  "height": null,
+  "depth": null,
+  "units": "mm",
+  "datasheet_dims": [
+    56.4
+  ],
+  "domain": "electrical",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

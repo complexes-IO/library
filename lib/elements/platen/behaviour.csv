@@ -1,0 +1,2 @@
+# behaviour.csv · platen · belt grinder platen (lib/behaviour.md). Mechanical only: no terminal (no earth stud is modelled; the two M8 holes take the assembly's screws and are not ports) and no moving node (the whole platen is the fixed body), so no state and no pose.
+kind,a,b,part,when,value,unit,source,note

@@ -1,0 +1,6 @@
+# behaviour.csv · hose-coolant-seg-npt · generic segmented coolant hose, male NPT base (lib/behaviour.md). One port and no electrical pin or moving node: the
+# segments are bent by hand and drawn straight; the bend is not modelled. Coolant passes from port-a to the nozzle's open tip, which is no port, and the solver is
+# electrical in phase 1 (lib/toolkit/nets.py), so no state or contact row is written. The NPT stub makes up by turns (pneu.NPT L1 + L3), so the pin torque reads
+# "not claimed" (lib/behaviour.md, pin; request pneu-13 item 1). Nothing moves, so no pose row.
+kind,a,b,part,when,value,unit,source,note
+pin,a,port-a,stub,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: a fitting's ends have no ISO 11727 number; marked by the node's name)",male NPT stub (parameter thread) into a machine's female coolant outlet of the same size

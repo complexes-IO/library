@@ -1,0 +1,9 @@
+port,pin,role,signal,rated_A,source
+t-L1,L1,pass,LINE line 1 (from the supply),16,spec.md Class values 5 and 9 (3 poles; 16 A each line)
+t-L2,L2,pass,LINE line 2,16,as L1
+t-L3,L3,pass,LINE line 3,16,as L1
+t-PE,PE,PE,protective earth of the housing (LINE side),,the filter's earth: its capacitors to earth and the housing (spec.md Notes)
+t-L1-load,L1',pass,LOAD line 1 (to the drive or controller),16,as L1
+t-L2-load,L2',pass,LOAD line 2,16,as L1
+t-L3-load,L3',pass,LOAD line 3,16,as L1
+t-PE-load,PE,PE,protective earth (LOAD side; the load's PE),,as PE

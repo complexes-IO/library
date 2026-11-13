@@ -1,0 +1,8 @@
+property,value,unit,status,source
+p_max,100,bar,generic design,ISO 4413 value (no ETIM class): max. working pressure and the relief valve's setting (spec.md Class values 1)
+voltage,460,V,derived,from the campus 480 V three-phase 60 Hz supply: a 460 V motor nameplate on the 480 V system as motor-iec71-370w's (spec.md Class values 6)
+phases,3,,derived,from the campus 480 V three-phase 60 Hz supply (spec.md Class values 6)
+frequency,60,Hz,derived,from the campus 480 V three-phase 60 Hz supply (spec.md Class values 6)
+power,0.37,kW,generic design,ISO 4413 value (no ETIM class): the drive motor's rated output (spec.md Class values 5)
+fla,0.91,A,assumption,class A: the drive motor's full-load current at 460 V is motor-iec71-370w's figure (its ratings.csv fla 0.91 A: the maker's performance table on file in that element; the IEC 71 frame 0.37 kW motor the inventory row names as this unit's drive) applied to a unit that draws its own motor and places none; the ELR checks read it as the motor's current (v_electrical.py ELR-010 to ELR-012); EM accepts or refuses it here (spec.md Open figures; review hpu-small-1.0.md finding 1); a placed motor-iec71-370w in a later version would carry its own
+fla_table,1.1,A,standard,NEC Table 430.250: 1/2 hp three-phase at 460 V (the row on file in motor-iec71-370w's ratings.csv; sizing conductors and short-circuit protection: NEC 430.6(A)(1); spec.md Class values 6)

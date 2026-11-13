@@ -1,0 +1,210 @@
+{
+ "toolkit": "1.3",
+ "validation": "1.0",
+ "rules": 86,
+ "id": "receptacle-m12",
+ "status": "REVIEW",
+ "findings": [
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
+   "scope": "receptacle-m12",
+   "where": "receptacle-m12",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "receptacle-m12",
+   "where": "receptacle-m12",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "receptacle-m12",
+   "where": "receptacle-m12",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "DOC-005",
+   "scope": "receptacle-m12",
+   "where": "receptacle-m12",
+   "message": "open figures in spec.md: 6 Assumption with no class (counted as A), 3 NOT ON FILE; 9 need EM, 0 approved ('REVIEW accepted: <figure> \u00b7 EM <date>', one line each)",
+   "elements": [],
+   "title": "every open figure accepted by its class: Assumption (C) with the reviewer's PASS; (A), (B), unclassed and NOT ON FILE each by one 'REVIEW accepted: <figure> \u00b7 EM <date>' line in spec.md",
+   "basis": "element-qa-checklist Stage 0; OPERATING.md 8.c"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "receptacle-m12",
+   "where": "receptacle-m12",
+   "message": "no interference among 9 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "receptacle-m12",
+   "where": "receptacle-m12",
+   "message": "0 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "receptacle-m12",
+   "where": "receptacle-m12",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "receptacle-m12",
+   "where": "receptacle-m12",
+   "message": "9 solid(s) with openings, all cut in the glTF: 9 as clean extrusions, 0 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "receptacle-m12",
+   "where": "receptacle-m12",
+   "message": "8 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "CORE-010",
+   "scope": "receptacle-m12",
+   "where": "receptacle-m12",
+   "message": "5 contact(s) meet the Rust core's proof assumptions",
+   "elements": [],
+   "title": "every contact meets what the Rust core's Kani proofs assume (zone, wipe, face, axis)",
+   "basis": "lib/core/src/proofs.rs"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-002",
+   "scope": "receptacle-m12",
+   "where": "receptacle-m12",
+   "message": "every port declares its gender",
+   "elements": [],
+   "title": "every port declares its gender (male, female or none)",
+   "basis": "EM 2026-11-05; IEC 60204-1 13.4.5 (no exposed live pins on the part that stays live); PIN-030"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "receptacle-m12",
+   "where": "receptacle-m12",
+   "message": "5 pins, 0 contacts, 0 loads, 0 sources, 0 states (0 manual), 0 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "receptacle-m12",
+   "where": "receptacle-m12",
+   "message": "1 \u00d7 \u00d812.3 female entry counterbore (declared: internal, toolkit/m12.py)",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "receptacle-m12",
+   "where": "receptacle-m12",
+   "message": "1 \u00d7 \u00d810.92 female threaded bore \u00d810.917 (plain at the minor \u00d8) (declared: internal, toolkit/m12.py)",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "receptacle-m12",
+   "where": "receptacle-m12",
+   "message": "the AutoCAD gate will pick 1 edges; skipped 0 buried, 0 short, 1 on thin parts, 0 shared, 0 hidden; 16 on placed elements, left to their own gates; 1 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "ELR-022",
+   "scope": "dm-motor-starter-cell",
+   "where": "dc-24v panel-1.p-x2",
+   "message": "L-coded contact rating 16 A \u2265 the 0.76 A it feeds",
+   "elements": [
+    "receptacle-m12"
+   ],
+   "title": "power connector contacts \u2265 the current they feed",
+   "basis": "IEC 61076-2-111"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-030",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 2 cordset-m12 port-a (male L) -> panel-1.p-x2 (female L)",
+   "message": "5 pole(s) made at the seat; pins touch 6.00 mm out, made 2.80 mm out, before the nut catches the thread at 1.939: pushed on by hand it works, held by friction only; thread engaged 1.939 mm at the seat",
+   "elements": [
+    "cordset-m12",
+    "receptacle-m12"
+   ],
+   "title": "every cable end mates with its port as built: opposite genders, the key fits, every mapped pole made at the seat",
+   "basis": "IEC 61076-2-101 / -111; toolkit/contact.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-030",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 3 cordset-m12 port-a (male D) -> panel-1.p-x1 (female D)",
+   "message": "4 pole(s) made at the seat; pins touch 4.95 mm out, made 4.45 mm out, before the nut catches the thread at 1.45: pushed on by hand it works, held by friction only; thread engaged 1.45 mm at the seat",
+   "elements": [
+    "cordset-m12",
+    "receptacle-m12"
+   ],
+   "title": "every cable end mates with its port as built: opposite genders, the key fits, every mapped pole made at the seat",
+   "basis": "IEC 61076-2-101 / -111; toolkit/contact.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-030",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 4 cordset-m12 port-a (male A) -> panel-1.p-x3 (female A)",
+   "message": "5 pole(s) made at the seat; pins touch 4.95 mm out, made 4.45 mm out, before the nut catches the thread at 1.45: pushed on by hand it works, held by friction only; thread engaged 1.45 mm at the seat",
+   "elements": [
+    "cordset-m12",
+    "receptacle-m12"
+   ],
+   "title": "every cable end mates with its port as built: opposite genders, the key fits, every mapped pole made at the seat",
+   "basis": "IEC 61076-2-101 / -111; toolkit/contact.py"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+  "element_id": "prox-cap-m18",
+  "category": "Industrial sensors",
+  "width": 24.0,
+  "height": 27.7,
+  "depth": 92.5,
+  "units": "mm",
+  "datasheet_dims": [
+    92.5,
+    27.7,
+    24.0
+  ],
+  "domain": "sensors",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

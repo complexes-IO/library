@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+# A maker's files you measured from stay with you (CONTRIBUTING.md rule 2): only the brief is shared
+lib/elements/*/references/*
+!lib/elements/*/references/measure*.md
+!lib/elements/*/references/interior.md
+!lib/elements/*/references/*-measure.json
+# What the real-tool checks write on the library's own machines
+lib/elements/*/gate/
+lib/elements/*/qa/
+lib/elements/*/thumbs/
+lib/assemblies/*/gate/

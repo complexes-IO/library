@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+6.6468,M8 tapped through (minor diameter),own,,,,"derived: derive.thread(8.0, 1.25) (ISO 68-1 basic profile; ISO 965-1 clause 10, internal 6H: D1 min 6.6468; ISO 261 pitch 1.25); the thread itself is not drawn","one tapped bore right through on the sleeve's axis, an M8 screw driven into each end; a single hole, located by the sleeve's own outside (no pattern)"

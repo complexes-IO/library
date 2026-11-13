@@ -1,0 +1,16 @@
+{
+  "element_id": "wap",
+  "category": "Industrial networking",
+  "width": 58.0,
+  "height": 115.0,
+  "depth": 70.0,
+  "units": "mm",
+  "datasheet_dims": [
+    58.0,
+    115.0,
+    70.0
+  ],
+  "domain": "controls",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

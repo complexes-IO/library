@@ -1,0 +1,16 @@
+{
+  "element_id": "camera-inspector",
+  "category": "Machine vision",
+  "width": 40.3,
+  "height": 29.6,
+  "depth": 50.0,
+  "units": "mm",
+  "datasheet_dims": [
+    50.0,
+    40.3,
+    29.6
+  ],
+  "domain": "sensors",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

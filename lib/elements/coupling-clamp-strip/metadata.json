@@ -1,0 +1,13 @@
+{
+  "element_id": "coupling-clamp-strip",
+  "domain": "pneumatics",
+  "category": "Fittings",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 40.0,
+  "height": 37.216,
+  "depth": 27.716,
+  "units": "mm",
+  "datasheet_dims": null,
+  "aliases": []
+}

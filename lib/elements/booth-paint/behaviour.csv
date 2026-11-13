@@ -1,0 +1,2 @@
+# behaviour.csv · booth-paint · paint booth body (lib/behaviour.md). One body: no terminal (fans, lights and filters' drives are not drawn), no moving node, no state.
+kind,a,b,part,when,value,unit,source,note

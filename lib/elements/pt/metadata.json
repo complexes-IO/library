@@ -1,0 +1,12 @@
+{
+  "element_id": "pt",
+  "domain": "electrical",
+  "category": "Sensors for automation technology",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 40.0,
+  "height": 96.0,
+  "depth": 36.6,
+  "units": "mm",
+  "brief": "our own design: generic Pressure transmitter (ETIM 10.0 EC011478) for hydraulic oil, 0-250 bar, 4-20 mA two-wire loop at 24 V DC (terminals 1 + / 2 -), stem to a host's gauge port as hyd-gauge 1.1 and pressure-switch 1.0 (thread open), M20 x 1.5 cable entry; no reference part measured (spec.md Class values)"
+}

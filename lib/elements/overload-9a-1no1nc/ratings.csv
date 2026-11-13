@@ -1,0 +1,14 @@
+property,value,unit,status,source
+ir_min,7.0,A,on file,cut sheet p. 1 (7.0-10.0 A); spec p. 3 (RW27-2D3-U010 7 / 10); the drawing title block says 8.0-10A (inconsistency stated)
+ir_max,10.0,A,on file,cut sheet p. 1 (7.0-10.0 A); spec p. 3 (RW27-2D3-U010 7 / 10); the drawing title block says 8.0-10A (inconsistency stated)
+trip_class,10,,on file,"cut sheet p. 1 ('Trip Class 10'); spec p. 3 and p. 5 ('Tripping Class 10'); class limits p. 12 (IEC 60947-4-1 table, printed on the RW-E page)"
+load_i,0,A,on file,no 24 V supply (thermal)
+aux_ith,6,A,on file,"spec p. 5 (Ith, θ ≤ 55 °C)"
+aux_ie_dc13_24v,1,A,on file,spec p. 5 (DC-13 / DC-14 at 24 V)
+aux_ie_ac15_24v,4,A,on file,spec p. 5 (AC-14 / AC-15 at 24 V)
+aux_min,17 V / 5 mA,,on file,spec p. 5 (IEC 60947-5-4)
+ui,690,V,on file,"spec p. 5, p. 7 (IEC; 600 V UL / CSA)"
+heat_loss_low,0.9,W,on file,spec p. 5 (lower value of setting range)
+heat_loss_high,1.7,W,on file,spec p. 5 (higher value of setting range)
+p_pole_max,3,W,on file,spec p. 7 (average power dissipation per pole ≤3 W)
+max_fuse,25,A,on file,"spec p. 7 (7-10 A row, class RK5: 25 A); spec p. 3 selection table gives 40 A for RW27-2D3-U010: inconsistency stated, not resolved"

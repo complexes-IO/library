@@ -1,0 +1,16 @@
+# behaviour.csv · pressure-switch · pressure switch for hydraulic oil, 1 change-over (lib/behaviour.md). Written by elec-r42 (unattended, 2026-11-12) from spec.md (Class values, Switching program, Named nodes), pins.csv, ratings.csv and element.py: a generic element, so its class values are its figures.
+# Two states: below the setting (11-12 closed, 11-14 open) and above it (11-12 open, 11-14 closed: the PLC's pressure ok). The switch changes over as the pressure at port-p rises past the setting and back as it falls by the fixed differential (10 bar, spec.md Class values 9). The solver is electrical in phase 1 and solves no pressure (as hyd-gauge 1.1), so the state above the setting is a manual toggle: the twin's stand-in for the line's pressure until the circuit model gives it.
+# Each terminal is a screw clamp with its own port node t-<mark> on the head's back wall (element.py TERMS). The clamps' conductor range and torque are class B (IEC 60947-1 not on file: spec.md Dimensions). The stem's thread is open (class B, spec.md Notes).
+# Contact resistances are not stated and the phase-1 solver reads none for a closed contact: the contact rows carry no figure.
+kind,a,b,part,when,value,unit,source,note
+pin,11,t-11,terminal-11,,NOT ON FILE (B): IEC 60947-1,N·m,spec.md Dimensions (terminals: three screw clamps on the back wall; conductor range and torque class B); pins.csv t-11,change-over common
+pin,12,t-12,terminal-12,,NOT ON FILE (B): IEC 60947-1,N·m,as 11,N.C. side (closed below the setting)
+pin,14,t-14,terminal-14,,NOT ON FILE (B): IEC 60947-1,N·m,as 11,N.O. side (closed above the setting)
+pin,1,port-p,hex,,not claimed,N·m,"not claimed: the stem's thread is open, so the fitting or port it screws into sets it (lib/behaviour.md, pin; spec.md Notes)",the stem (hyd-port) into a host's gauge port
+state,below,,switch,default,,,spec.md Switching program (pressure below the setting: the spring holds the microswitch at rest); Class values 5 and 9,no pressure at the port
+state,above,,switch,manual toggle,,,spec.md Switching program (pressure risen past the setting; the twin's stand-in until the circuit model reads the pressure at port-p); Class values 5 and 9,the PLC's pressure ok
+contact,11,12,contact-11-12,below,,,spec.md Switching program (11-12 closed below the setting); Class values 26 (1 change-over),N.C. side
+contact,11,14,contact-11-14,above,,,spec.md Switching program (11-14 closed above the setting); Class values 26 (1 change-over),N.O. side
+limit,contact-11-12 contact-11-14,,,,24,VDC,ratings.csv ue_dc (ETIM 10.0 EC000243 class value EF007031; spec.md Class values 17),the contact's rated voltage
+limit,contact-11-12 contact-11-14,,,,2,A,ratings.csv ie_dc13_24v (IEC 60947-5-1 utilization category DC-13 named; the rating limit-switch 1.0 carries),the contact's rated current at 24 V DC
+limit,port-p,,,,250,bar,ratings.csv p_max (ETIM 10.0 EC000243 class value EF020449; spec.md Class values 4),the highest pressure the port may see in operation

@@ -1,0 +1,14 @@
+{
+  "element_id": "light-curtain-14",
+  "category": "Safety systems",
+  "width": null,
+  "height": 683.2,
+  "depth": null,
+  "units": "mm",
+  "datasheet_dims": [
+    683.2
+  ],
+  "domain": "safety",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

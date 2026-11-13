@@ -1,0 +1,5 @@
+# behaviour.csv · bracket-monitor · display bracket with a tilting head (lib/behaviour.md). Taken from the core's proposal (lib/requests/core/behaviour/bracket-monitor.csv, 2026-11-09), checked by mech-r76 against element.py: node `tilt` rotates about x through -20 to 20 (TILT, a design choice); no terminal (the 4 x M6 wall holes and the 4 x M4 display holes take screws, not ports). States renamed by what they mean.
+kind,a,b,part,when,value,unit,source,note
+state,level,,tilt,default,,,element.py (node tilt: rotate -20 to 20; 0 at rest),the head plate upright
+state,tilted,,tilt,manual toggle,,,element.py (node tilt: rotate -20 to 20),the head turned about its hinge axis to the range end
+pose,tilt,,,tilted,end,,element.py (node tilt: rotate -20 to 20),

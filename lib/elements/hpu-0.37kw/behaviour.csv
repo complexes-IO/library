@@ -1,0 +1,13 @@
+# behaviour.csv · hpu-0.37kw · generic hydraulic power unit, small class, 0.37 kW 460 V 3-phase (lib/behaviour.md). The supply port `pwr` (pins.csv: L1 L2 L3 PE) and three oil
+# ports; no moving node (the relief valve's knob is fixed in 1.x). Its load (the drive motor's windings) is not written: ratings.csv has the shaft output (0.37 kW) and the full-load
+# current (0.91 A at 460 V, motor-iec71-370w's record applied to this unit's own motor: class A, open for EM in ratings.csv since 1.1), but no input power, efficiency or power factor, so a load row's P or R would be a guess (OPERATING.md 6), as
+# motor-iec71-370w's own file says; no state rows until it is on file. The oil paths are hydraulic, not the phase 1 solver's (lib/toolkit/nets.py).
+# Terminal torque not claimed (the terminals are not modelled) and the oil ports' thread open (class B), set by the fitting's stud end: value not claimed (lib/behaviour.md, pin; request pneu-13 1). The oil ports' marks are their function names (toolkit/hyd.py H11: ISO 9461 not on file).
+kind,a,b,part,when,value,unit,source,note
+pin,L1,pwr,terminal,,not claimed,N·m,not claimed: the terminal is not modelled; a placed motor-iec71-370w carries its own (IEC 60947-1); pins.csv (pwr L1: the motor's U1),phase L1 of the 460 V supply (ratings.csv)
+pin,L2,pwr,terminal,,not claimed,N·m,not claimed: the terminal is not modelled; a placed motor-iec71-370w carries its own (IEC 60947-1); pins.csv (pwr L2: V1),phase L2
+pin,L3,pwr,terminal,,not claimed,N·m,not claimed: the terminal is not modelled; a placed motor-iec71-370w carries its own (IEC 60947-1); pins.csv (pwr L3: W1),phase L3
+pin,PE,pwr,terminal,,not claimed,N·m,not claimed: the terminal is not modelled; a placed motor-iec71-370w carries its own (IEC 60947-1); pins.csv (pwr PE; the terminal box's bonding terminal),protective earth
+pin,pressure,port-pressure,valve block,,not claimed,N·m,not claimed: the fitting's stud end sets it (SAE J1926-2 / -3); spec.md Ports (design: named by its function; the hydraulic port marking standard ISO 9461 is not on file; unit hyd-port),the pump's delivery through the relief valve's block
+pin,return,port-return,valve block,,not claimed,N·m,not claimed: the fitting's stud end sets it (SAE J1926-2 / -3); spec.md Ports (design: named by its function; ISO 9461 not on file; unit hyd-port),the machine's return oil through the return filter
+pin,gauge,port-gauge,valve block,,not claimed,N·m,not claimed: the fitting's stud end sets it (SAE J1926-2 / -3); spec.md Ports (design: named by its function; ISO 9461 not on file; unit hyd-port),the pressure gauge's port (hyd-gauge)

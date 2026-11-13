@@ -1,0 +1,3 @@
+property,value,unit,status,source
+span,160,psig,generic design,ETIM 10.0 EC011170 class value: the measuring range (spec.md Class values; chosen by PNE-009 at P_SUPPLY)
+p_max,160,psig,generic design,ETIM 10.0 EC011170 class value: the measuring range's top (spec.md Class values; the gauge is not rated above its span)

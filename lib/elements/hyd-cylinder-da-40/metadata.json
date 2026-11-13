@@ -1,0 +1,15 @@
+{
+  "element_id": "hyd-cylinder-da-40",
+  "domain": "hydraulics",
+  "category": "Hydraulics",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 340.0,
+  "height": 61.0,
+  "depth": 60.0,
+  "units": "mm",
+  "datasheet_dims": null,
+  "aliases": [
+    "hyd-cylinder"
+  ]
+}

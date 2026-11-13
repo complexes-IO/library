@@ -1,0 +1,65 @@
+# behaviour.csv · teach-pendant · robot teach pendant (our own design; printed SIMULATION ONLY. NOT A SAFETY DEVICE: spec.md What; OPERATING.md 6; lib/behaviour.md). Written by elec-r30 (unattended; 2026-11-11) from spec.md (What; Dimensions; Named nodes; Decals; Notes) and element.py.
+# No pin rows: the pendant cable to robot-controller and its gland are not built (spec.md Notes); the pendant has no terminal mark on file and no port node (element.py: the pivots are screen; estop; key-1 … key-16; enable). The cable's pins come with the cable in a later version and the pin rows with them; so no contact / load / source rows: what the E-stop and the enabling bar switch is not on file and not claimed (spec.md What: simulation inputs to the twin; never a safety function). EM's Safety sign-off at 1.0 (lib/approvals.csv row 37) stands on that label; this file makes no safety claim.
+# Every state is the operator's: the E-stop a latch (press 6 and latch: spec.md Dimensions E-stop; toolkit/std22.py ESTOP) cleared by its own reset (the head twisted free); each key momentary (design: a key returns when released); the enabling bar momentary at its two pressed positions (enabled about 0.75; pressed through 1.5: spec.md Dimensions enabling bar); the screen lit while the twin sets the supply by hand (the cable is not built: a stand-in until its pins are on file).
+# Key legends (J1− … J6+ and F1 … F4) are decals (spec.md Decals); which key carries which is the decal's and is not read here. Keys are numbered left to right and top row first (spec.md Named nodes): columns x −75 / −25 / 25 / 75 and rows z 5 / −21 / −47 / −73 (spec.md Dimensions keys).
+kind,a,b,part,when,value,unit,source,note
+state,unpowered,,supply,default,,,spec.md Notes (the pendant cable to robot-controller is not built: no supply on file),no supply: the screen dark
+state,powered,,supply,manual toggle,,,spec.md Notes (the cable not built); lib/behaviour.md (a manual state is a twin input),the twin's stand-in for the supply over the pendant cable; replaced by the cable's pins in a later version
+state,estop-latched,,estop,manual latch cleared by estop-reset,,,spec.md Dimensions E-stop (press 6 and latch; toolkit/std22.py ESTOP); What (a simulation input; never a safety function),the mushroom pressed and latched
+state,estop-reset,,estop,manual momentary,,,spec.md Dimensions E-stop (latch); toolkit/std22.py ESTOP (the latched head released by hand),the head released: clears estop-latched
+state,estop-released,,estop,default,,,spec.md Named nodes (estop translate +y 0–6: rest out),the mushroom out
+state,key-1-pressed,,key-1,manual momentary,,,spec.md Dimensions keys (travel 1.0); Named nodes (key-1 … key-16 translate +y 0–1.0); design: a key returns when released,key 1: top row (z 5) at x −75
+state,key-1-released,,key-1,default,,,spec.md Named nodes (key-1 … key-16 translate +y 0–1.0: rest out),
+state,key-2-pressed,,key-2,manual momentary,,,as key-1-pressed,key 2: top row (z 5) at x −25
+state,key-2-released,,key-2,default,,,as key-1-released,
+state,key-3-pressed,,key-3,manual momentary,,,as key-1-pressed,key 3: top row (z 5) at x 25
+state,key-3-released,,key-3,default,,,as key-1-released,
+state,key-4-pressed,,key-4,manual momentary,,,as key-1-pressed,key 4: top row (z 5) at x 75
+state,key-4-released,,key-4,default,,,as key-1-released,
+state,key-5-pressed,,key-5,manual momentary,,,as key-1-pressed,key 5: second row (z −21) at x −75
+state,key-5-released,,key-5,default,,,as key-1-released,
+state,key-6-pressed,,key-6,manual momentary,,,as key-1-pressed,key 6: second row (z −21) at x −25
+state,key-6-released,,key-6,default,,,as key-1-released,
+state,key-7-pressed,,key-7,manual momentary,,,as key-1-pressed,key 7: second row (z −21) at x 25
+state,key-7-released,,key-7,default,,,as key-1-released,
+state,key-8-pressed,,key-8,manual momentary,,,as key-1-pressed,key 8: second row (z −21) at x 75
+state,key-8-released,,key-8,default,,,as key-1-released,
+state,key-9-pressed,,key-9,manual momentary,,,as key-1-pressed,key 9: third row (z −47) at x −75
+state,key-9-released,,key-9,default,,,as key-1-released,
+state,key-10-pressed,,key-10,manual momentary,,,as key-1-pressed,key 10: third row (z −47) at x −25
+state,key-10-released,,key-10,default,,,as key-1-released,
+state,key-11-pressed,,key-11,manual momentary,,,as key-1-pressed,key 11: third row (z −47) at x 25
+state,key-11-released,,key-11,default,,,as key-1-released,
+state,key-12-pressed,,key-12,manual momentary,,,as key-1-pressed,key 12: third row (z −47) at x 75
+state,key-12-released,,key-12,default,,,as key-1-released,
+state,key-13-pressed,,key-13,manual momentary,,,as key-1-pressed,key 13: bottom row (z −73) at x −75
+state,key-13-released,,key-13,default,,,as key-1-released,
+state,key-14-pressed,,key-14,manual momentary,,,as key-1-pressed,key 14: bottom row (z −73) at x −25
+state,key-14-released,,key-14,default,,,as key-1-released,
+state,key-15-pressed,,key-15,manual momentary,,,as key-1-pressed,key 15: bottom row (z −73) at x 25
+state,key-15-released,,key-15,default,,,as key-1-released,
+state,key-16-pressed,,key-16,manual momentary,,,as key-1-pressed,key 16: bottom row (z −73) at x 75
+state,key-16-released,,key-16,default,,,as key-1-released,
+state,enable-pressed-through,,enable,manual momentary,,,spec.md Dimensions enabling bar (pressed through 1.5),the bar squeezed past its enabling position (the class's panic grip; here a position only: no safety function)
+state,enable-enabled,,enable,manual momentary,,,spec.md Dimensions enabling bar (enabled about 0.75),the bar at its enabling position
+state,enable-released,,enable,default,,,spec.md Named nodes (enable translate +x 0–1.5: rest out),the bar released
+pose,screen,,,powered,1,,spec.md Named nodes (screen emissive),the screen lit
+pose,estop,,,estop-latched,end,,element.py (estop translate +y range 0–6); spec.md Dimensions E-stop (press 6 and latch),
+pose,key-1,,,key-1-pressed,end,,element.py (key-1 … key-16 translate +y range 0–1.0); spec.md Dimensions keys (travel 1.0),
+pose,key-2,,,key-2-pressed,end,,as key-1,
+pose,key-3,,,key-3-pressed,end,,as key-1,
+pose,key-4,,,key-4-pressed,end,,as key-1,
+pose,key-5,,,key-5-pressed,end,,as key-1,
+pose,key-6,,,key-6-pressed,end,,as key-1,
+pose,key-7,,,key-7-pressed,end,,as key-1,
+pose,key-8,,,key-8-pressed,end,,as key-1,
+pose,key-9,,,key-9-pressed,end,,as key-1,
+pose,key-10,,,key-10-pressed,end,,as key-1,
+pose,key-11,,,key-11-pressed,end,,as key-1,
+pose,key-12,,,key-12-pressed,end,,as key-1,
+pose,key-13,,,key-13-pressed,end,,as key-1,
+pose,key-14,,,key-14-pressed,end,,as key-1,
+pose,key-15,,,key-15-pressed,end,,as key-1,
+pose,key-16,,,key-16-pressed,end,,as key-1,
+pose,enable,,,enable-pressed-through,end,,element.py (enable translate +x range 0–1.5); spec.md Dimensions enabling bar (pressed through 1.5),
+pose,enable,,,enable-enabled,0.75,,spec.md Dimensions enabling bar (enabled about 0.75: design choice),

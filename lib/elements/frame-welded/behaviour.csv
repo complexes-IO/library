@@ -1,0 +1,2 @@
+# behaviour.csv · frame-welded · welded steel machine frame (lib/behaviour.md). One body: no terminal, no moving node (`mount` is fixed: the machine a BOM puts on it is placed on its top face), no state. The four foot plates' M12 holes take floor anchors, not a port.
+kind,a,b,part,when,value,unit,source,note

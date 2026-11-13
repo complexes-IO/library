@@ -1,0 +1,7 @@
+# behaviour.csv · receptacle-m12 · M12 panel receptacle (lib/behaviour.md). As plug-m12: the contacts, the seal are placed elements; pins 1–5 are the contacts' mouths.
+kind,a,b,part,when,value,unit,source,note
+pin,1,insert.c1,insert,,,,toolkit/m12.py,
+pin,2,insert.c2,insert,,,,toolkit/m12.py,
+pin,3,insert.c3,insert,,,,toolkit/m12.py,
+pin,4,insert.c4,insert,,,,toolkit/m12.py,
+pin,5,insert.c5,insert,,,,toolkit/m12.py,

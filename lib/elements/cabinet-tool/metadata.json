@@ -1,0 +1,12 @@
+{
+  "element_id": "cabinet-tool",
+  "domain": "building",
+  "category": "Classroom infrastructure",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 900.0,
+  "height": 1000.0,
+  "depth": 647.0,
+  "units": "mm",
+  "datasheet_dims": null
+}

@@ -1,0 +1,12 @@
+{
+  "element_id": "mcc",
+  "domain": "electrical",
+  "category": "Enclosures",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 600.0,
+  "height": 2300.0,
+  "depth": 518.0,
+  "units": "mm",
+  "brief": "our own design: generic Empty enclosure for switchgear (ETIM 10.0 EC000712), one motor control centre section: four bucket spaces, a vertical wireway, horizontal and vertical bus, a PE bar; no reference part measured (spec.md Class values)"
+}

@@ -1,0 +1,12 @@
+property,value,unit,status,source
+ue_min,380,V AC,generic design,"IEC 61800-2 value (no ETIM class): rated input voltage, lower end, line to line; spec.md Class values 1"
+ue_max,480,V AC,generic design,"IEC 61800-2 value (no ETIM class): rated input voltage, upper end, line to line; spec.md Class values 1"
+frequency,50-60,Hz,generic design,"IEC 61800-2 value (no ETIM class): rated input frequency; spec.md Class values 2"
+phases,3,,generic design,"IEC 61800-2 value (no ETIM class): number of input phases (and output phases); spec.md Class values 3 and 6"
+i_in,3.4,A,generic design,"IEC 61800-2 value (no ETIM class): rated input current, a design margin above I = P / (√3 U cos φ) = 1.79 A for 1.0 kW at 380 V and cos φ 0.85; spec.md Class values 4"
+u_out_max,480,V AC,generic design,"IEC 61800-2 value (no ETIM class): rated output voltage, upper end; spec.md Class values 6"
+ie,3.0,A,generic design,"IEC 61800-2 value (no ETIM class): rated output current, continuous; spec.md Class values 7"
+i_peak,9.0,A,generic design,"IEC 61800-2 value (no ETIM class): peak output current, 3 s; spec.md Class values 8"
+p_out,1.0,kW,generic design,"IEC 61800-2 value (no ETIM class): rated output power; spec.md Class values 9"
+f_out_max,400,Hz,generic design,"IEC 61800-2 value (no ETIM class): output frequency, upper end; spec.md Class values 10"
+p_loss,45,W,generic design,"IEC 61800-2 value (no ETIM class): power loss at rated output, the drive's own; spec.md Class values 12"

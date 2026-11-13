@@ -1,0 +1,5 @@
+# behaviour.csv · accumulator · generic hydraulic bladder accumulator (lib/behaviour.md). One oil port; no electrical pin and no moving node (the bladder inside
+# is not modelled). What it does (oil in against the gas; oil back when the line's pressure falls) is hydraulic: the solver is electrical in phase 1
+# (lib/toolkit/nets.py) and solves no oil; so no state or contact row is written. The oil port's thread is open (class B), set by the fitting's stud end: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,oil,port-oil,shell,,not claimed,N·m,not claimed: the fitting's stud end sets it (SAE J1926-2 / -3); spec.md Ports (design: marked by its name; the hydraulic port marking standard is not on file),the fluid port under the shell: to the pressure line (unit hyd-port)

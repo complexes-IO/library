@@ -1,0 +1,2 @@
+# behaviour.csv · hopper-abrasive · abrasive hopper under cabinet-blast (lib/behaviour.md). Mechanical only: no terminal (no earth stud is modelled; the Ø50 outlet takes a pickup or valve not built yet, not a port) and no moving node (the whole hopper is the fixed body), so no state and no pose.
+kind,a,b,part,when,value,unit,source,note

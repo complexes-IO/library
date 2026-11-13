@@ -1,0 +1,10 @@
+# behaviour.csv · lift-stacker · pallet stacker / destacker, own design (lib/behaviour.md). Mechanical only: no terminal of its own (the table's drive, the forks' cylinders, the photoeye and the controls are placed elements of a later version, with their own specs). Three moving nodes: the lift table `table` (three stops) and the fork bars `fork-1`, `fork-2`; the posts, top frame, rails, base plate and column are the fixed body.
+kind,a,b,part,when,value,unit,source,note
+state,down,,table,default,,,spec.md (Mechanism),the table at the lower stop: its top level with the conveyor's rollers' tops (750); the bottom pallet rolls on and off along x
+state,mid,,table,manual toggle,,,spec.md (Mechanism),the table raised 200 (deck 950): destacking: the forks run in under the second pallet; stacking: the incoming pallet lifts the stack 10 off the tines
+state,up,,table,manual toggle,,,spec.md (Mechanism),the table raised 344 (deck 1094): destacking: the empty table lifts the stack 10 off the tines; stacking: the incoming pallet's stringer boards 10 over the tines
+state,out,,forks,default,,,spec.md (Mechanism),both fork bars drawn back: the tines' tips 20 outside the pallet's sides
+state,in,,forks,manual toggle,,,spec.md (Mechanism),both fork bars run in 300: the tines 280 into the second pallet's openings under its stringer boards
+pose,table,,,mid,200,,element.py (node table: STOP_MID 200 along +z),
+pose,table,,,up,end,,element.py (node table: translate 0 to 344 along +z),
+pose,fork-1 fork-2,,,in,end,,element.py (fork-1 translates 0 to 300 along +y; fork-2 along -y),

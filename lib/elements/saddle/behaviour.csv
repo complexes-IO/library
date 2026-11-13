@@ -1,0 +1,2 @@
+# behaviour.csv · saddle · milling machine saddle (lib/behaviour.md). One body: no terminal, no moving node (`ways` is fixed; the travel is the machine's), no state.
+kind,a,b,part,when,value,unit,source,note

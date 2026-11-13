@@ -1,0 +1,10 @@
+# behaviour.csv · port-rj45 · RJ45 (8P8C) socket, generic (lib/behaviour.md). Written by elec-r44 from spec.md, pins.csv and element.py. A connector: each contact passes the host's conductor to the mating plug's blade; the host's pins.csv says what each carries. Port nodes at the contacts' front tips. The contacts' tails go to the host's board (not modelled): no screw and no torque. Nothing moves.
+kind,a,b,part,when,value,unit,source,note
+pin,1,c-1,contact-1,,,,spec.md Dimensions (contacts: design layout),contact 1
+pin,2,c-2,contact-2,,,,as 1,contact 2
+pin,3,c-3,contact-3,,,,as 1,contact 3
+pin,4,c-4,contact-4,,,,as 1,contact 4
+pin,5,c-5,contact-5,,,,as 1,contact 5
+pin,6,c-6,contact-6,,,,as 1,contact 6
+pin,7,c-7,contact-7,,,,as 1,contact 7
+pin,8,c-8,contact-8,,,,as 1,contact 8

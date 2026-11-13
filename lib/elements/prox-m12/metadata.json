@@ -1,0 +1,15 @@
+{
+  "element_id": "prox-m12",
+  "category": "Industrial sensors",
+  "width": 12.0,
+  "height": 12.0,
+  "depth": 64.8,
+  "units": "mm",
+  "datasheet_dims": {
+    "dia": 12.0,
+    "l": 64.8
+  },
+  "domain": "sensors",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

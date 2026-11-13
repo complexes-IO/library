@@ -1,0 +1,2 @@
+property,value,unit,status,source
+p_max,16,bar,generic design,design: 16 bar ≥ the tank line's 10 bar (toolkit/hyd.py P_TANK and H5); ISO 4413 named and not on file: max. operating pressure (spec.md Class values 1)

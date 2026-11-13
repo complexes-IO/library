@@ -1,0 +1,5 @@
+property,value,unit,status,source
+voltage,630,V,generic design,"ETIM 10.0 EC003569 class value: rated voltage (EF000228), kind power; spec.md Class values 17"
+current,10,A,generic design,"ETIM 10.0 EC003569 class value: rated current In (EF008250) per contact, kind power; spec.md Class values 18"
+voltage_signal,60,V,generic design,"ETIM 10.0 EC003569 class value: rated voltage (EF000228), kind signal; spec.md Class values 17"
+current_signal,8,A,generic design,"ETIM 10.0 EC003569 class value: rated current In (EF008250) per contact, kind signal; spec.md Class values 18"

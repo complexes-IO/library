@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+8.0,4 mm shrouded test-plug jack bore,own,,,,our own design (Assumption: the plug's figure is NOT ON FILE),four jacks at pitch 20; spec.md Notes

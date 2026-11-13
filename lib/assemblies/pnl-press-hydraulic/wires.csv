@@ -1,0 +1,122 @@
+wire,from,to,section,gauge,colour,route,length,when,source,note
+# pnl-press-hydraulic 0.11 · the wire list (lib/panel-shop.md "Out"; role card r3). Columns and rules as pnl-motor-starter/wires.csv. from / to are <tag>.<mark> with the marks of each element's behaviour.csv.
+# A row with a number is one wire the shop cuts. A row with no number is not a wire: a plug-in joint · a comb's blade in its block (term-jumper 2.0 since 0.9) · the rail under the PE blocks · or a stand-in the solver needs (a `when` row · or a comb blade with no pin). The solver reads them all (toolkit/nets.py).
+# One conductor a clamp on X1 and PE (terminals.csv). Numbers are kept for wires whose one end is a planned row (not on file) and listed where they belong: 1 to 9 the motor branch (q3 planned; q1 placed since 0.5 · k1 and f1 since 0.8: 4 to 6 wait on q3 · 7 to 9 are f1's T1 to T3 out through gl-m1) · 37 the two-hand relay's input · 50 the safety_ok output. 0.8 wrote 36 · 39 · 43 · 44 · 46 to 49 · 51 to 54 and added 64 to 69; wires 23 and 27 are retired for the cordset w-pwr's rows. 0.9 writes 55 (AI0-'s return) and adds 70 to 73 (the four contacts' commons) and 74 to 76 (the HMI's supply across the hinge).
+# 0.9: X1 laid out again (terminals.csv: 41 blocks; +24 V X1:1 to 10 · 0 V X1:11 to 18 · the field blocks 14 to 36 of 0.8 are 19 to 41): every row that lands on X1:7 and up names its new block.
+# gauge: NOT ON FILE (B) on every wire: the conductor ampacity table (NEC 2023 310.16 and NFPA 79 chapter 12) is view-only and not read into lib/standards/nec-conductors.csv (sizes only): request panel-1 item 4 (the core's answer of 2026-11-11: an attended reading, EM's). The design currents on file are in the note where a wire has one.
+# colour: the role card's list (NFPA 79 13.2.4 as it cites it): black power · red AC control · blue DC control · white/blue the grounded DC conductor · green/yellow PE. No circuit of this panel stays live with the disconnect off (no orange): the transformer is fed from q1's load side.
+# route: the ducts of the BOM the wire runs in, by tag, end A's first: duct-705 above rail-1 · duct-525 above rail-2 · duct-365 above rail-3 · duct-145 above rail-4 (the strip) · since 0.8 the tags of the rows' bottoms (duct-515 and duct-325 to 0.7: the rows moved to z 525 and 365; rail-3 carries the controller too); riser-l and riser-r at the rows' ends (x 58 to 98 and 502 to 542). A wire between two rows goes by riser-l (the devices stand at the left of the rails). `door` = the loom across the door's hinge (enc-wm's door is hinged at the left; the loom and its fixing are not elements on file).
+#   Which face of a device a terminal is on is on file for the breakers only (line top · load bottom); elsewhere the row's duct above it is the shop's choice.
+# length (mm · 0.3): assembly.py lengths() (pnl-motor-starter's method, copied: square legs from end A's node into its first duct · along the ducts' centrelines · to end B's node; no allowance) writes out/wire-lengths.csv at every build; the figures are copied here where both ends have a node. Blank where an end is a pin with no node (k-safe · k-lc · g1 · q2: request panel-4 item 1) or on the door (the loom).
+#
+# 480 VAC power: supply -> q1 -> q3 -> k1 -> f1 -> gl-m1. Design current: 1.25 x the motor's Table 430.250 current (NEC 430.22 with 430.6(A)(1): the table's figure for the motor's horsepower and voltage, not the nameplate's): NOT ON FILE (B): NEC 2023 Table 430.250 (view-only; lib/reviews/panel/r5.md finding 1, r7.md finding 1: the reviewer reads the row's 11 A as the 7½ hp line; 7.5 kW is 10 hp · 14 A at 460 V; neither on file). 0.1 to 0.4 wrote 1.25 x 11 A = 13.75 A from the spec's row (spec.md from 0.1 · this header from its first version · 0.3: spec.md section 5). Kept: 1 to 3 q1 T1 T2 T3 to q3 1 3 5 · 4 to 6 q3 2 4 6 to k1 1 3 5 · f1 plugs into k1 · 7 to 9 f1 T1 T2 T3 out through gl-m1 (the motor cable's conductors: not the shop's wires beyond f1). q3 and k1 are planned rows (request panel-6 item 1); q1 is placed since 0.5 (wires 1 to 3 wait on q3).
+# control (mains), 0.6: t1 (xfmr-control 1.0) and q4 (mcb-2p 1.0) placed, as pnl-motor-starter 0.9's. Marks as their behaviour.csv: q4 1 / 2 pole 1 line / load · 3 / 4 pole 2 · t1 1U 1V primary (screw clamps · entries in the top block's top face: toward duct-365 since 0.8 · t1 in the motor row) · 2U 2V secondary (its placed plug x2) · PE its frame (entry in the bottom face: toward duct-145 since 0.8). The routes and lengths of 13 to 18 are 0.8's.
+#   q4 takes L1 and L2 from q1's load side (q1's load terminals face duct-525 below its body; wires 1 and 2 will be the second conductors on q1.T1 and q1.T2 when q3 is placed · the disconnect's clamp capacity is not in disc-3p-30a's brief). The primary is a power circuit at 480 V: black (the card's list). q4's load side (bottom) reaches t1's top block by duct-365 and riser-r (t1 stands at the right of the plate). The secondary: 2U the ungrounded 120 V conductor (red) · 2V the grounded one · bonded to PE:5 at the source (NFPA 79 9.1.3 as the spec's control_power row cites it).
+11,q1.T1,q4.1,control (mains),NOT ON FILE (B),black,duct-525,374,,,disconnect's load side L1 to the transformer's primary breaker (q4's line side is its top)
+12,q1.T2,q4.3,control (mains),NOT ON FILE (B),black,duct-525,371,,,L2 to q4 pole 2
+13,q4.2,t1.1U,control (mains),NOT ON FILE (B),black,duct-365,442,,,q4's load side (bottom) to the primary's 1U (t1's top block: since 0.8 its entries face duct-365 · t1 stands in the motor row · the route by riser-r and the row above to 0.7)
+14,q4.4,t1.1V,control (mains),NOT ON FILE (B),black,duct-365,441,,,to the primary's 1V
+15,t1.2U,q2.1,control (mains),NOT ON FILE (B),red,duct-145 > riser-l > duct-525,952,,,the 120 V secondary to the control breaker's line side (t1's plug x2 stands nearer duct-145 since 0.8: the shop's choice of duct)
+16,t1.2V,g1.N,control (mains),NOT ON FILE (B),NOT ON FILE (B),duct-145 > riser-l > duct-365,997,,,the grounded secondary end to the PSU's N (colour: NOT ON FILE (B): NFPA 79 13.2.4 · the card's list has a line for the grounded DC conductor only · as pnl-motor-starter's wire 16)
+17,t1.2V,pe-5.1,ground,NOT ON FILE (B),green/yellow,duct-145,228,,,the grounded secondary end bonded to PE:5 at the transformer (two conductors on the plug's clamp 2 with wire 16: terminal-plug 2.0's capacity is its brief's)
+18,t1.PE,pe-6.1,ground,NOT ON FILE (B),green/yellow,duct-145,227,,,t1's frame (core and brackets) to PE:6 side 1 (0.6: a number added · the block was spare)
+10,q2.2,g1.L,control (mains),NOT ON FILE (B),red,duct-525,276,,,control breaker to the PSU's input (q2's load side is its bottom)
+# 24 V DC: the +24 V bus is X1:1 to 10 · the 0 V bus X1:11 to 18 (bridged groups: terminals.csv; 0.8: X1:1 to 6 and 7 to 13). Side 1 of each block: the panel's device; side 2: the field conductor of the spec's point (not a wire of the shop's) or the door's lamp returns and the HMI's supply.
+20,g1.+V,x1-1.1,control & 24 VDC,NOT ON FILE (B),blue,duct-525 > riser-l > duct-145,760,,,the PSU's feed to the +24 V bus (2.5 A at most: psu-24v-2a4 ratings.csv)
+21,k-safe.A1,x1-2.1,control & 24 VDC,NOT ON FILE (B),blue,duct-705 > riser-l > duct-145,,,,safety relay 1's supply (0.17 A)
+22,k-lc.A1,x1-3.1,control & 24 VDC,NOT ON FILE (B),blue,duct-705 > riser-l > duct-145,,,,safety relay 2's supply (0.17 A)
+,plc-1.24V-1,w-pwr.A1,control & 24 VDC,,,,,,,plug-in (no wire · 0.8: wire 23 to 0.7): the cordset's plug in port-pwr · +24 V: plc0 port-pwr pin 1 to the cordset's end A pin 1 (L coding: straight 1-1 · lib/standards/cables.csv · as pnl-motor-starter 0.10)
+,w-pwr.B1,x1-4.1,control & 24 VDC,,,,,,,landed (no wire): the cordset's lead 1 in X1:4's clamp 1 · the model draws the lead straight on from the jacket's end · its tip in front of the blocks · not in the clamp (cordset-m12: a lead is straight · 50 long)
+24,g1.-V,x1-12.1,control & 24 VDC,NOT ON FILE (B),white/blue,duct-525 > riser-l > duct-145,833,,,the PSU's return to the 0 V bus (X1:12 since 0.9 · X1:7 to 0.8)
+25,k-safe.A2,x1-13.1,control & 24 VDC,NOT ON FILE (B),white/blue,duct-705 > riser-l > duct-145,,,,(X1:13 since 0.9 · X1:8 to 0.8)
+26,k-lc.A2,x1-14.1,control & 24 VDC,NOT ON FILE (B),white/blue,duct-705 > riser-l > duct-145,,,,(X1:14 since 0.9 · X1:9 to 0.8)
+,plc-1.24V-3,w-pwr.A3,control & 24 VDC,,,,,,,plug-in (no wire · 0.8: wire 27 to 0.7): port-pwr pin 3 (GND_US) to the cordset's end A pin 3
+,w-pwr.B3,x1-11.1,control & 24 VDC,,,,,,,landed (no wire): the cordset's lead 3 in X1:11's clamp 1 (X1:10 to 0.8) · as lead 1
+# the I/O modules' supplies (0.8: io-1 plc-dio 1.0 · io-2 plc-aio 1.0 placed · elec-r33 and r34). The module supply (24V · 0V) on the bus blocks the plan kept for them (X1:5 and 6 · X1:15 and 16 since 0.9). io-1's output supply 24VO · 0VO is not wired: whether it is fed through a safety output is the safety arrangement's (spec.md section 3 · EM's)
+66,x1-5.1,io-1.24V,control & 24 VDC,NOT ON FILE (B),blue,duct-145 > riser-l > duct-525,829,,,the digital I/O's module supply (2.0 W · 0.083 A: plc-dio ratings.csv load_i)
+67,x1-15.1,io-1.0V,control & 24 VDC,NOT ON FILE (B),white/blue,duct-145 > riser-l > duct-525,894,,,its return (X1:15 since 0.9 · X1:11 to 0.8)
+68,x1-6.1,io-2.24V,control & 24 VDC,NOT ON FILE (B),blue,duct-145 > riser-l > duct-525,844,,,the analogue I/O's supply
+69,x1-16.1,io-2.0V,control & 24 VDC,NOT ON FILE (B),white/blue,duct-145 > riser-l > duct-525,909,,,its return (X1:16 since 0.9 · X1:12 to 0.8)
+# the motor contactor and its overload (0.8: k1 contactor-18a-1no 1.0 · f1 placed under it). f1's three pins are in k1's lower clamps 2 4 6 (the joint is the elements': contactor-18a-1no spec.md "What it meets"): rows with no number. The coil chain's head (pump_run's output through a safety output to f1 95) is not written: k-safe's two N.O. outputs both stand in the solenoid paths (spec.md section 3) and a third safety output for K1's coil is the safety arrangement's (EM's · request panel-6 items 3 and 4)
+,k1.2,f1.L1,power,,,,,,,plug-in (no wire): f1's pin L1 in k1's clamp 2 (direct mount)
+,k1.4,f1.L2,power,,,,,,,plug-in (no wire): L2 in clamp 4
+,k1.6,f1.L3,power,,,,,,,plug-in (no wire): L3 in clamp 6
+64,k1.A2,x1-17.1,control & 24 VDC,NOT ON FILE (B),white/blue,duct-365 > riser-l > duct-145,711,,,the coil's return to the 0 V bus (X1:17 side 1 since 0.9 · X1:13 to 0.8)
+65,f1.96,k1.A1,control & 24 VDC,NOT ON FILE (B),blue,duct-365,293,,,the coil chain's end: f1's N.C. 95-96 ahead of K1's coil (ol_trip's row: 95-96 hardwired in K1's coil chain · the core's answer to request panel-1 3.d)
+28,x1-17.2,pe-8.1,ground,NOT ON FILE (B),green/yellow,duct-145,331,,,the 0 V bus bonded to PE at one point (NFPA 79 8.2.1 as pm-motor-starter wire 20 cites it). Colour: the shop's choice (it belongs to the bonding circuit) · the card's list has no line for this conductor: for the reviewer. X1:17 since 0.9 (X1:13 to 0.8)
+# e-stop chain: k-safe's pulse outputs through the door e-stop (two channels) and the two-hand station's e-stop (X1:25 to 28 side 2 since 0.9 · X1:20 to 23 to 0.8: the station's cable) back to S12 and S22
+29,k-safe.S11,estop-door.11,control & 24 VDC,NOT ON FILE (B),blue,duct-705 > door,,,,channel 1 out
+30,estop-door.12,x1-25.1,control & 24 VDC,NOT ON FILE (B),blue,door > duct-145,,,,to the station's e-stop channel 1 (X1:25 side 2)
+31,x1-26.1,k-safe.S12,control & 24 VDC,NOT ON FILE (B),blue,duct-145 > riser-l > duct-705,,,,channel 1 back from X1:26
+32,k-safe.S21,estop-door.21,control & 24 VDC,NOT ON FILE (B),blue,duct-705 > door,,,,channel 2 out
+33,estop-door.22,x1-27.1,control & 24 VDC,NOT ON FILE (B),blue,door > duct-145,,,,
+34,x1-28.1,k-safe.S22,control & 24 VDC,NOT ON FILE (B),blue,duct-145 > riser-l > duct-705,,,,channel 2 back
+# the two solenoid paths (spec.md section 3): down stroke io-1 out -> k-safe 13-14 -> k-lc 13-14 -> k-2h -> X1:19 (sol_a); up stroke io-1 out -> k-safe 23-24 -> k-lc 23-24 -> X1:20 (sol_b) (X1:14 and 15 to 0.8). Kept: 37 k-lc.14 to k-2h in (k-2h is a planned row: request panel-6 item 3).
+35,k-safe.14,k-lc.13,control & 24 VDC,NOT ON FILE (B),blue,duct-705,,,,the down-stroke path's series link (relay 1 to relay 2)
+38,k-safe.24,k-lc.23,control & 24 VDC,NOT ON FILE (B),blue,duct-705,,,,the up-stroke path's series link
+40,k-lc.24,x1-20.1,control & 24 VDC,NOT ON FILE (B),blue,duct-705 > riser-l > duct-145,,,,solenoid b's feed: the end of the up-stroke path (X1:20 side 2: the valve's cable · X1:15 to 0.8)
+36,io-1.DO0,k-safe.13,control & 24 VDC,NOT ON FILE (B),blue,duct-525 > riser-l > duct-705,,,,0.8: sol_a's output (io-1 DO0 · the shop's channel) to the head of the down-stroke path (kept since 0.3)
+39,io-1.DO1,k-safe.23,control & 24 VDC,NOT ON FILE (B),blue,duct-525 > riser-l > duct-705,,,,0.8: sol_b's output (DO1) to the head of the up-stroke path (kept since 0.3)
+# the controller's signals into io-1 and io-2 (0.8 · the shop's channels: DI0 k1_aux · DI1 ol_trip · DI2 and DI3 safety_fb of k-safe and k-lc · DI4 safety_ok · DI5 press_ok · DI6 ram_top · DI7 ram_bottom; DO0 sol_a · DO1 sol_b · DO2 pump_run · DO3 h1_run · DO4 h2_fault · DO5 to 7 spare; io-2 AI0 the pressure loop). 0.9: the contacts' commons (k1.13 · f1.97 · k-safe.41 · k-lc.41) from the +24 V group (X1:7 to 10: wires 70 to 73) and the loop's AI0- return to the 0 V group (X1:18: wire 55). Kept: 50 safety_ok (which relay's output: request panel-6 item 3)
+70,k1.13,x1-7.1,control & 24 VDC,NOT ON FILE (B),blue,duct-365 > riser-l > duct-145,614,,,0.9: k1_aux's common: K1's 13 from the +24 V bus (X1:7) · its 14 into DI0 by wire 46
+71,f1.97,x1-8.1,control & 24 VDC,NOT ON FILE (B),blue,duct-365 > riser-l > duct-145,681,,,0.9: ol_trip's common: f1's 97 from the +24 V bus (X1:8) · its 98 into DI1 by wire 47
+72,k-safe.41,x1-9.1,control & 24 VDC,NOT ON FILE (B),blue,duct-705 > riser-l > duct-145,,,,0.9: safety_fb's common: k-safe's N.C. 41 from the +24 V bus (X1:9) · its 42 into DI2 by wire 48
+73,k-lc.41,x1-10.1,control & 24 VDC,NOT ON FILE (B),blue,duct-705 > riser-l > duct-145,,,,0.9: k-lc's 41 from the +24 V bus (X1:10) · its 42 into DI3 by wire 49
+46,k1.14,io-1.DI0,control & 24 VDC,NOT ON FILE (B),blue,duct-365 > riser-l > duct-525,819,,,k1_aux: K1's 13-14 into DI0
+47,f1.98,io-1.DI1,control & 24 VDC,NOT ON FILE (B),blue,duct-365 > riser-l > duct-525,823,,,ol_trip: f1's N.O. 97-98 (closes on a trip) into DI1
+48,k-safe.42,io-1.DI2,control & 24 VDC,NOT ON FILE (B),blue,duct-525,,,,safety_fb: k-safe's N.C. 41-42 into DI2
+49,k-lc.42,io-1.DI3,control & 24 VDC,NOT ON FILE (B),blue,duct-525,,,,safety_fb: k-lc's 41-42 into DI3 (whether the spec's one row means both: request panel-6 item 3)
+51,x1-21.1,io-1.DI5,control & 24 VDC,NOT ON FILE (B),blue,duct-145 > riser-l > duct-525,965,,,press_ok: the pressure switch's N.O. from X1:21 (X1:16 to 0.8) into DI5
+52,x1-22.1,io-2.AI0+,control & 24 VDC,NOT ON FILE (B),blue,duct-145 > riser-l > duct-525,1001,,,pressure: the 4-20 mA loop from X1:22 (X1:17 to 0.8) into AI0+ (the loop's supply on X1:3 side 2)
+55,x1-18.1,io-2.AI0-,control & 24 VDC,NOT ON FILE (B),white/blue,duct-145 > riser-l > duct-525,982,,,0.9 (kept since 0.3): the loop's return from AI0- to the 0 V bus (X1:18): the input's measuring path AI0+ to AI0- in the loop · the white/blue of the grounded DC conductor
+53,x1-23.1,io-1.DI6,control & 24 VDC,NOT ON FILE (B),blue,duct-145 > riser-l > duct-525,982,,,ram_top: limit switch 1's N.C. from X1:23 (X1:18 to 0.8) into DI6
+54,x1-24.1,io-1.DI7,control & 24 VDC,NOT ON FILE (B),blue,duct-145 > riser-l > duct-525,993,,,ram_bottom: limit switch 2's N.C. from X1:24 (X1:19 to 0.8) into DI7
+# the door: the lamps' returns to the 0 V bus (side 2 of X1:15 and 16 since 0.9) · since 0.9 the HMI's supply (side 2 of X1:7 and 18 · PE:7 side 1). Kept: 43 io-1's output to h1.X1 · 44 io-1's output to h2.X1.
+42,h1.X2,x1-15.2,control & 24 VDC,NOT ON FILE (B),white/blue,door > duct-145,,,,the white lamp's return (0.02 A) · X1:15 since 0.9 (X1:11 to 0.8)
+45,h2.X2,x1-16.2,control & 24 VDC,NOT ON FILE (B),white/blue,door > duct-145,,,,the red lamp's return (0.02 A) · X1:16 since 0.9 (X1:12 to 0.8)
+43,io-1.DO3,h1.X1,control & 24 VDC,NOT ON FILE (B),blue,duct-525 > riser-l > door,,,,0.8: h1_run's output (DO3) to the white lamp across the hinge (kept since 0.3)
+44,io-1.DO4,h2.X1,control & 24 VDC,NOT ON FILE (B),blue,duct-525 > riser-l > door,,,,0.8: h2_fault's output (DO4) to the red lamp (kept since 0.3)
+74,hmi1.24V,x1-7.2,control & 24 VDC,NOT ON FILE (B),blue,door > duct-145,,,,0.9: the HMI's +24 V (hmi-7in 1.0 plug x1 pole 1 · 10 W · 0.42 A: its ratings.csv load_i) from X1:7 side 2 across the hinge
+75,hmi1.0V,x1-18.2,control & 24 VDC,NOT ON FILE (B),white/blue,door > duct-145,,,,0.9: the HMI's 0 V (pole 2) to X1:18 side 2
+76,hmi1.FE,pe-7.1,ground,NOT ON FILE (B),green/yellow,door > duct-145,,,,0.9: the HMI's functional earth (pole 3: its housing's and the Ethernet shield's · hmi-7in spec.md) to PE:7 side 1. Colour: the shop's choice as wire 28's (it lands on the bonding bar) · the card's list has no line for a functional earth: for the reviewer
+# ground. The supply's PE (gl-supply to pe-1.2) and the motor cable's PE (gl-m1 to pe-4.2) are conductors of the cables that enter: not the shop's wires. 61 to 63 (kept since 0.2 · written in 0.7): PE:1 to 3 side 1 to the enclosure's three M8 earth studs · enc-wm 1.3's pins PE1 (pe-body · the bottom's inner face) · PE2 (pe-door · the door's inner face · it swings with the door) · PE3 (pe-plate · the mounting plate's front face) (mech-r95 · the core's answer to request panel-7; pinned enc-wm 1.4). The nut's torque on each stud is the enclosure's open figure (enc-wm behaviour.csv: NOT ON FILE (B) ISO 13918) · not the shop's.
+61,pe-1.1,enc-1.PE1,ground,NOT ON FILE (B),green/yellow,duct-145,576,,,the enclosure body's bonding (NFPA 79 8.2 · NEC 250: the spec's bonding row): PE:1 to the body's stud pe-body (x 100 · y 100 on the bottom's inner face · beside the cable entries)
+62,pe-2.1,enc-1.PE2,ground,NOT ON FILE (B),green/yellow,duct-145 > door,,,,the door's bonding (it carries h1 · h2 · hmi1 · q1's handle and the e-stop): PE:2 to pe-door across the hinge (the loom's `door` token: no length · as wires 42 and 45)
+63,pe-3.1,enc-1.PE3,ground,NOT ON FILE (B),green/yellow,duct-145,242,,,the mounting plate's bonding: PE:3 to pe-plate (the plate's front face · bottom edge centre · 25 up)
+41,g1.PE,pe-4.1,ground,NOT ON FILE (B),green/yellow,duct-525 > riser-l > duct-145,949,,,the PSU's PE
+# ---- not wires: what joins the plan's groups · so the solver sees the potentials the built panel will have
+# the bridges (0.9: term-jumper 2.0 placed · bom.csv jmp-1 10 poles on X1:1 to 10 · jmp-2 8 poles on X1:11 to 18 · request panel-3 item 1; to 0.8 eleven block-to-block rows stood in). Each blade k of a comb meets the k-th block's current bar (term-jumper behaviour.csv: "the panel joins its mark k to that block's pins"); pin 1 stands for the bar (term-4mm behaviour.csv: clamp 1 and clamp 2 joined by it). The comb joins its own blades 1 to 4 (its contact rows 1-2 · 2-3 · 3-4 `always`). It takes no clamp. Pushed home since 0.10 (the blades in the blocks' bodies · declared `seated` in lib/contacts.csv: request panel-13's answer item 1; 0.9 drew it offered up 0.1 short). Every blade has its pin since 0.11 (term-jumper's behaviour.csv as counts on main · elec-r50/r51 · the answer's item 2: pins 1 and 2 always · pin k `count poles>=k` to 12 · the bar's contact rows k to k+1 `always`).
+#   0.9 and 0.10 joined blades 5 and up block to block by stand-in rows (section `bridge (term-jumper 2.0 · no pin)`): ten rows · gone in 0.11 · each blade now joined to its own block like blades 1 to 4.
+,jmp-1.1,x1-1.1,bridge (term-jumper 2.0),,,,,,,+24 V group X1:1 to 10: jmp-1's blade 1 in X1:1
+,jmp-1.2,x1-2.1,bridge (term-jumper 2.0),,,,,,,blade 2 in X1:2
+,jmp-1.3,x1-3.1,bridge (term-jumper 2.0),,,,,,,blade 3 in X1:3
+,jmp-1.4,x1-4.1,bridge (term-jumper 2.0),,,,,,,blade 4 in X1:4
+,jmp-1.5,x1-5.1,bridge (term-jumper 2.0),,,,,,,blade 5 in X1:5 (pin 5 · count poles>=5 · 0.11)
+,jmp-1.6,x1-6.1,bridge (term-jumper 2.0),,,,,,,blade 6 in X1:6
+,jmp-1.7,x1-7.1,bridge (term-jumper 2.0),,,,,,,blade 7 in X1:7
+,jmp-1.8,x1-8.1,bridge (term-jumper 2.0),,,,,,,blade 8 in X1:8
+,jmp-1.9,x1-9.1,bridge (term-jumper 2.0),,,,,,,blade 9 in X1:9
+,jmp-1.10,x1-10.1,bridge (term-jumper 2.0),,,,,,,blade 10 in X1:10
+,jmp-2.1,x1-11.1,bridge (term-jumper 2.0),,,,,,,0 V group X1:11 to 18: jmp-2's blade 1 in X1:11
+,jmp-2.2,x1-12.1,bridge (term-jumper 2.0),,,,,,,blade 2 in X1:12
+,jmp-2.3,x1-13.1,bridge (term-jumper 2.0),,,,,,,blade 3 in X1:13
+,jmp-2.4,x1-14.1,bridge (term-jumper 2.0),,,,,,,blade 4 in X1:14
+,jmp-2.5,x1-15.1,bridge (term-jumper 2.0),,,,,,,blade 5 in X1:15 (pin 5 · count poles>=5 · 0.11)
+,jmp-2.6,x1-16.1,bridge (term-jumper 2.0),,,,,,,blade 6 in X1:16
+,jmp-2.7,x1-17.1,bridge (term-jumper 2.0),,,,,,,blade 7 in X1:17
+,jmp-2.8,x1-18.1,bridge (term-jumper 2.0),,,,,,,blade 8 in X1:18
+# the PE blocks are common through their bonding feet and rail-4 (term-4mm kind=ground; its behaviour.csv: "that path lives with the assembly's wiring"). The rail's rating as that conductor: NOT ON FILE (B): IEC 60947-7-2 (request panel-3 item 2).
+,pe-1.1,pe-2.1,rail (the ground blocks' bonding feet on rail-4),,,,,,,
+,pe-2.1,pe-3.1,rail (the ground blocks' bonding feet on rail-4),,,,,,,
+,pe-3.1,pe-4.1,rail (the ground blocks' bonding feet on rail-4),,,,,,,
+,pe-4.1,pe-5.1,rail (the ground blocks' bonding feet on rail-4),,,,,,,
+,pe-5.1,pe-6.1,rail (the ground blocks' bonding feet on rail-4),,,,,,,
+,pe-6.1,pe-7.1,rail (the ground blocks' bonding feet on rail-4),,,,,,,
+,pe-7.1,pe-8.1,rail (the ground blocks' bonding feet on rail-4),,,,,,,
+# stand-ins (`when` rows: an input of the solver and the twin closes them). Each goes when what it stands for is on file. 0.5: the three rows for q1's poles went with q1 placed (its own contact rows carry the state q1.on, as pnl-motor-starter 0.6).
+#   0.6: the `t1` stand-in for the transformer (a row g1.N to pe-5.1 here and sources.csv's 120 V on q2.1) went with t1 placed: its own source row gives the 120 V (xfmr-control behaviour.csv: 2U to 2V while the primary is fed) and q4's own contact rows close on q4.on (this panel has no twin scene · so no stand-in for a key is kept · unlike pnl-motor-starter's two q4 rows).
+,x1-25.2,x1-26.2,field (bench test),,,,,field,press-hydraulic controls.csv estop row (the two-hand station's e-stop in the chain),the station's e-stop channel 1: jumpered at the strip for the panel-alone test (as pnl-motor-starter's p-x3 rows) · X1:25-26 since 0.9 (X1:20-21 to 0.8)
+,x1-27.2,x1-28.2,field (bench test),,,,,field,as channel 1,channel 2 · X1:27-28 since 0.9
+,k-lc.S11,k-lc.S12,field (bench test),,,,,curtain,press-hydraulic controls.csv curtain row (OSSD1 / OSSD2 into the second safety relay; whether its input takes them is request panel-6 item 4),the curtain clear: relay 2's input channel 1 jumpered from its own pulse output for the panel-alone test (X1:37 reserved for the OSSD)
+,k-lc.S21,k-lc.S22,field (bench test),,,,,curtain,as channel 1,channel 2
+,x1-6.1,k-safe.23,stand-in (io-1's output supply not wired),,,,,run,press-hydraulic controls.csv sol_b row (the controller's output through the safety relays' 23-24),the controller's up-stroke output closed while `run` is set: from the +24 V bus (X1:6) to the head of the up-stroke path. Kept in 0.8 with io-1 placed and wire 39 written: io-1's DO1 sources only from its output supply 24VO · 0VO (plc-dio behaviour.csv) · which is not wired (the safety arrangement's · spec.md section 3)

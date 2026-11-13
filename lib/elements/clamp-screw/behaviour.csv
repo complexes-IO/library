@@ -1,0 +1,12 @@
+# behaviour.csv · clamp-screw · screw clamp for one wire end (lib/behaviour.md). Taken in by elec-r24 from the core's proposal of 2026-11-09 (lib/requests/core/behaviour/clamp-screw.csv), checked against element.py and spec.md.
+# The wire end's state (open, marginal, seated, high-r, blocked) is toolkit/contact.py terminate(); here its screw and its two states for the solver. One change from the proposal: the torque window is the one element.py places (PARAMS 0.5–0.8; spec.md torque window, an Assumption (B) there), not 0.5–0.6.
+# elec-r27 (review elec-r24 finding 1): the two contact resistances classed C (the phase-1 solver reads no R for a closed contact).
+kind,a,b,part,when,value,unit,source,note
+pin,W,self,cage,,0.5–0.8,N·m,element.py PARAMS torque_min 0.5 and torque_max 0.8 (pivot screw torque); spec.md torque window (marked Assumption there),the wire in the cage; the screw's torque window
+pin,B,self,cage,,,,element.py,the bar side of the cage (fixed to the host's current bar)
+state,tight,,screw,default,,,behaviour.md (torque in the window: seated),R at the clamp its new value
+state,loose,,screw,manual toggle,,,behaviour.md (torque under the window: marginal; works loose with vibration; heats under load),a fault the twin injects: R at the clamp rises (series drop; phase 1 ideal solver reports the state only)
+contact,W,B,cage,tight,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,behaviour.md,the wire seated: conductor
+contact,W,B,cage,loose,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,behaviour.md (marginal: high resistance; in phase 1 still a conductor; flagged),
+pose,screw,,,tight,end,,element.py (screw rotates 0–720: two turns down onto the wire),the screw run down
+limit,screw,,,,720,deg,element.py (range 0–720: two turns; lead 0.5 mm per turn),the stroke that closes the window (MOT-030)

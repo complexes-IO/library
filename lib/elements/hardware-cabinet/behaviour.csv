@@ -1,0 +1,8 @@
+# behaviour.csv · hardware-cabinet · wall or bench cabinet for small parts (lib/behaviour.md). Mechanical only: no terminal (the four M6 wall-fixing holes take screws, not a port). Two moving nodes, the doors; the carcass, shelves and bins are the fixed body. No latch or lock in this version, so no latched state.
+kind,a,b,part,when,value,unit,source,note
+state,l-closed,,door-l,default,,,element.py (docstring),the left door shut over the carcass's left half
+state,l-open,,door-l,manual toggle,,,element.py (docstring),the left door swung outward about the carcass's front-left vertical edge
+state,r-closed,,door-r,default,,,element.py (docstring),the right door shut over the carcass's right half
+state,r-open,,door-r,manual toggle,,,element.py (docstring),the right door swung outward about the carcass's front-right vertical edge
+pose,door-l,,,l-open,end,,element.py (door-l rotates 0 to -110),
+pose,door-r,,,r-open,end,,element.py (door-r rotates 0 to 110),

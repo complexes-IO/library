@@ -1,0 +1,25 @@
+port,pin,role,signal,rated_A,source
+t-L1,L1,phase-load:L1,supply line 1 (to the rectifier),3.4,spec.md Class values 1 and 4 (380-480 V; rated input current 3.4 A)
+t-L2,L2,phase-load:L2,supply line 2,3.4,as L1
+t-L3,L3,phase-load:L3,supply line 3,3.4,as L1
+t-PE,PE,PE,protective earth of the heat sink (supply side),,the heat sink is an exposed conductive part (spec.md Notes)
+t-U,U,phase-src:L1,motor phase U (inverter output),3.0,spec.md Class values 6 and 7 (3 phases out; 3.0 A continuous)
+t-V,V,phase-src:L2,motor phase V,3.0,as U
+t-W,W,phase-src:L3,motor phase W,3.0,as U
+t-PE-m,PE,PE,protective earth of the motor (one bar with t-PE),,as PE
+x1.t-1,EN,in,enable (24 V DC to COM),,spec.md Class values 15 (4 digital inputs; thresholds NOT ON FILE (B): IEC 61131-2)
+x1.t-2,RST,in,fault reset (24 V DC to COM),,as EN
+x1.t-3,LIM+,in,positive end-of-travel limit (24 V DC to COM: travel allowed),,as EN
+x1.t-4,LIM-,in,negative end-of-travel limit (24 V DC to COM: travel allowed),,as EN
+x1.t-5,COM,load0,common of EN RST LIM+ LIM- (the panel's 0 V),,spec.md Class values 15
+x1.t-6,AI+,in,speed reference +10 ... -10 V differential (to AI-),,spec.md Class values 16 (1 analogue reference input)
+x1.t-7,AI-,in,speed reference return (differential pair with AI+),,as AI+
+x1.t-8,AGND,load0,analogue 0 V (reference shield and return),,spec.md Class values 16
+x2.t-1,RA,sw-com,ready relay N.O. RA-RC (closed: supply on and no fault),,spec.md Class values 17 (1 digital output; its contact rating is not stated)
+x2.t-2,RC,sw-no,ready relay N.O. RA-RC,,as RA
+x3.t-1,A+,in,encoder channel A (RS-422 line-driver pair with A-),,spec.md Class values 14 (incremental encoder feedback)
+x3.t-2,A-,in,encoder channel A complement,,as A+
+x3.t-3,B+,in,encoder channel B (RS-422 line-driver pair with B-),,as A+
+x3.t-4,B-,in,encoder channel B complement,,as A+
+x3.t-5,5V,supply+:5V,encoder supply 5 V DC 200 mA from the drive (the drive is its source),0.2,spec.md Class values 14; role since 1.2 (servo-motor 1.0's port-enc 5V is the load: in)
+x3.t-6,0V,supply0,encoder supply return (the drive's own 5 V 0 V: the source's 0 V),,spec.md Class values 14; role since 1.2 (servo-motor 1.0's port-enc 0V is load0)

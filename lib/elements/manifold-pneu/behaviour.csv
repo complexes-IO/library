@@ -1,0 +1,16 @@
+# behaviour.csv · manifold-pneu · valve manifold sub-base for 18 mm valve stations (lib/behaviour.md); rows for the default build (stations = 4). Air ports only and no
+# electrical pin; no moving node. The supply gallery (1) feeds every station and the exhaust galleries (3 and 5) take every station's exhaust; each station's work ports
+# (2 and 4) pass what its valve sets: pneumatic paths, the solver is electrical in phase 1 (lib/toolkit/nets.py), so they are notes. A station's ports carry its number
+# (st<k>-) before the ISO 11727 number (pneu.NODES station). NPT joints make up by turns, not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1). Written by pneu-r68 (backlog, BEH-010; no version change).
+kind,a,b,part,when,value,unit,source,note
+pin,1,port-1,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 1 as toolkit/pneu.py NODES)",the supply gallery: female NPT 1/4 on the left end
+pin,3,port-3,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 3 as toolkit/pneu.py NODES)",exhaust gallery: female NPT 1/4 on the right end; a silencer goes in it
+pin,5,port-5,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 5 as toolkit/pneu.py NODES)",exhaust gallery: female NPT 1/4 on the right end; a silencer goes in it
+pin,st1-2,st1-port-2,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (station 1; ISO 11727 number 2 as pneu.NODES)",station 1 work port 2: female NPT 1/8 underneath
+pin,st1-4,st1-port-4,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (station 1; ISO 11727 number 4 as pneu.NODES)",station 1 work port 4: female NPT 1/8 underneath
+pin,st2-2,st2-port-2,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (station 2; ISO 11727 number 2 as pneu.NODES)",station 2 work port 2
+pin,st2-4,st2-port-4,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (station 2; ISO 11727 number 4 as pneu.NODES)",station 2 work port 4
+pin,st3-2,st3-port-2,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (station 3; ISO 11727 number 2 as pneu.NODES)",station 3 work port 2
+pin,st3-4,st3-port-4,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (station 3; ISO 11727 number 4 as pneu.NODES)",station 3 work port 4
+pin,st4-2,st4-port-2,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (station 4; ISO 11727 number 2 as pneu.NODES)",station 4 work port 2
+pin,st4-4,st4-port-4,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (station 4; ISO 11727 number 4 as pneu.NODES)",station 4 work port 4

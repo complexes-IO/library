@@ -1,0 +1,2 @@
+# behaviour.csv · slide-profile-round-belt · circular belt slide profile, generic (lib/behaviour.md). One fixed body (the slide profile bonded on its mounting flat): no terminal, no moving node (the round belt is the host's and slides along the groove), no state.
+kind,a,b,part,when,value,unit,source,note

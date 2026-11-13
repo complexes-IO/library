@@ -1,0 +1,3 @@
+match,role,kind,check,position_tol,datums,source,note
+9,M8 clearance medium,clearance,,0.8,A B,"ISO 273 medium H13 (lib/standards/holes.csv); position Ø0.8 at MMC to A the mounting face, B the module's axis (ASME Y14.5 floating fastener, T = H − F = 1.0)","design choice: 4 x M8 on a Ø100 circle, on the x and y axes"
+25,receiving bore,own,,,,design choice (spec.md Its own sizes),"Ø25, 18 deep, on the module's axis from the seat face: takes the pallet's clamping nipple (the pallet's, not drawn); no fastener and no standard size"

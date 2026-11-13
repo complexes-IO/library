@@ -1,0 +1,5 @@
+# behaviour.csv · clamp-bar-300 · generic bar clamp (lib/behaviour.md). Written by mech-r126 from element.py: no terminal (a loose hand tool: no port, no fixing hole); one moving node, `jaw` (the sliding arm, the pressure pad, the spindle and the handle), translates +x 0 to 299 (TRAVEL: the pad 1 from the fixed jaw at 0, 300 from it at the end, the class value chucking range). The arm is slid and the screw turned by hand, so the twin sets the jaw as the operator's input. No clamping force here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note
+state,closed,,jaw,default,,,element.py (ORIGIN and GAP: the pad 1 from the fixed jaw at 0),the sliding arm run up to the fixed arm
+state,open,,jaw,manual toggle,,,element.py (node jaw: translate +x 0 to 299),the sliding arm run out to the end of its travel: the jaws 300 apart
+pose,jaw,,,open,end,,element.py (node jaw: translate +x 0 to 299),

@@ -1,0 +1,128 @@
+id,name,domain,kind,equation,units,model,sim_layer,teaches_in,status
+m01,Force and motion,mechanical,principle,F = m·a,"N, kg, m/s²",mass-1d,godot,op-pb-22-1no relay-ice-cube-2co cylinder conveyor-seg,mapped
+m02,Torque,mechanical,principle,T = F·r,N·m,rot-mass,solver,motor-iec71-370w gear-reducer servo-motor disc-3p-30a,mapped
+m03,Rotational speed,mechanical,principle,n = 60·ω/2π,"rpm, rad/s",rot-mass,solver,motor-iec71-370w encoder servo-motor fan-exhaust,mapped
+m04,Linear velocity,mechanical,principle,v = ω·r,m/s,gear-stage,godot,conveyor-seg actuator-linear stage-belt,mapped
+m05,Acceleration and deceleration,mechanical,principle,a = dv/dt; α = (T_m − T_L)/J,"m/s², rad/s²",rot-mass,solver,motor-iec71-370w servo-motor vfd-0.75kw,mapped
+m06,Inertia,mechanical,principle,J = Σ m·r²; reflected J_L/i²,kg·m²,rot-mass,solver,motor-iec71-370w gear-reducer servo-motor,mapped
+m07,Friction,mechanical,principle,F = μ·N; viscous b·ω,"N, N·m·s",rot-mass mass-1d,solver,bearing-pillow linear-guide conveyor-seg,mapped
+m08,Mechanical power,mechanical,principle,P = T·ω = F·v,W,rot-mass,solver,motor-iec71-370w pump conveyor-seg,mapped
+m09,Energy transfer,mechanical,principle,E = ½J·ω² + ½m·v²; η = P_out/P_in,J,rot-mass,solver,motor-iec71-370w gear-reducer,mapped
+m10,Gear ratios,mechanical,principle,i = n_in/n_out; T_out = i·η·T_in,—,gear-stage,solver,gear-reducer gearbox-planetary,mapped
+m11,Mechanical advantage,mechanical,principle,MA = F_out/F_in,—,gear-stage,solver,disc-3p-30a hpu-0.37kw lift-table,mapped
+m12,Bearings and friction,mechanical,principle,L10 = (C/P)³·10⁶ rev,"rev, h",rot-mass wear,solver,bearing-pillow motor-iec71-370w,mapped
+m13,Shaft alignment,mechanical,principle,offset / angular misalignment → vibration at 1× and 2×,"mm, °",vib,solver,coupling-shaft motor-iec71-370w,mapped
+m14,Vibration,mechanical,principle,x(t) = Σ A_k·sin(k·ω·t); RMS velocity,mm/s,vib,solver,vib-sensor motor-iec71-370w pump,mapped
+m15,Stress and strain,mechanical,principle,σ = F/A; ε = σ/E,MPa,material,offline,strut tslot-40 bench-1800,mapped
+m16,Material strength,mechanical,principle,"σ_y, σ_UTS from materials.csv",MPa,material,offline,materials.csv,mapped
+m17,Fatigue resistance,mechanical,principle,S–N; cycles to failure,cycles,wear,solver,spring-return relay-ice-cube-2co contactor-9a-1no1nc,mapped
+m18,Stiffness and deflection,mechanical,principle,k = F/x; beam δ = F·L³/(3·E·I),N/mm,spring,solver,spring-return op-pb-22-1no din-rail-35,mapped
+m19,Thermal expansion,mechanical,principle,ΔL = α·L·ΔT,mm,thermal,solver,overload-9a-1no1nc mcb-3p-c10 (bimetal),mapped
+m20,Tolerances and fits,mechanical,principle,ISO 286 hole/shaft fits,µm,—,offline,motor-iec71-370w coupling-shaft bearing-pillow,mapped
+m21,Pneumatics,mechanical,principle,F = p·A; Q through orifice,"bar, l/min",pneu-chamber,solver,cylinder valve-bank frl vacuum,mapped
+m22,Hydraulics,mechanical,principle,F = p·A; Q = v·A,"bar, l/min",hyd-chamber,solver,hyd-cylinder-da-40 hyd-valve-d03 hpu-0.37kw,planned
+m23,Actuator mechanics,mechanical,principle,"stroke, end stops, cushioning","mm, N",mass-1d,godot,cylinder actuator-linear stage-ballscrew,mapped
+m24,Load distribution,mechanical,principle,Σ F = 0; Σ M = 0,N,material,offline,bench-1800 pallet-rack robot-pedestal,mapped
+m25,Mechanical limits and constraints,mechanical,principle,"travel, speed, torque, temperature limits",mixed,limits,solver,every element (limits in behaviour.md),mapped
+e01,Voltage,electrical,principle,V,V,circuit,solver,psu-24v-2a4 port-pwr-480,mapped
+e02,Current,electrical,principle,I,A,circuit,solver,contactor-9a-1no1nc overload-9a-1no1nc mcb-3p-c10,mapped
+e03,Resistance,electrical,principle,R = ρ·L/A,Ω,circuit,solver,term-4mm cordset-m12 coil-24vdc,mapped
+e04,Ohm's law,electrical,principle,V = I·R,"V, A, Ω",circuit,solver,coil-24vdc op-pilot-22 term-4mm,mapped
+e05,Electrical power,electrical,principle,P = V·I; P = I²·R; P = √3·V·I·cos φ,W,circuit,solver,psu-24v-2a4 motor-iec71-370w,mapped
+e06,Electrical energy,electrical,principle,E = ∫P dt,"J, kWh",circuit,solver,power-meter,mapped
+e07,AC circuits,electrical,principle,v(t) = V̂·sin(ωt),"V, Hz",circuit-ac,solver,xfmr-control psu-24v-2a4 motor-iec71-370w,mapped
+e08,DC circuits,electrical,principle,Kirchhoff's laws,"V, A",circuit,solver,psu-24v-2a4 io-block-m12-8di8do relay-safety-2ch-2no1nc,mapped
+e09,Frequency,electrical,principle,f = 1/T,Hz,circuit-ac,solver,vfd-0.75kw motor-iec71-370w,mapped
+e10,Phase,electrical,principle,φ between v and i; 120° between lines,°,circuit-ac,solver,motor-iec71-370w port-pwr-480,mapped
+e11,Impedance,electrical,principle,Z = R + jX,Ω,circuit-ac,solver,coil-24vdc xfmr-control,mapped
+e12,Capacitance,electrical,principle,i = C·dv/dt; τ = R·C,"F, s",rc,solver,psu-24v-2a4 (output caps),mapped
+e13,Inductance,electrical,principle,v = L·di/dt; τ = L/R,"H, s",coil,solver,relay-ice-cube-2co contactor-9a-1no1nc mcb-3p-c10,mapped
+e14,Electrical grounding,electrical,principle,"PE continuity, touch voltage","Ω, V",circuit,solver,term-4mm(ground) bench-1800.pe gland-m20 enc-fs-1524x1829x305,mapped
+e15,Circuit protection,electrical,principle,"I²t, trip curves, selectivity","A, s",thermal coil,solver,mcb-3p-c10 mcb-1p-c6 overload-9a-1no1nc fuse-holder,mapped
+e16,Fuses and breakers,electrical,device-class,thermal + magnetic trip,"A, s",thermal coil latch,solver,mcb-3p-c10 mcb-1p-c6 fuse-holder mccb,mapped
+e17,Relays and contactors,electrical,device-class,"pull-in / drop-out voltage, contact rating","V, A",coil spring contact,solver,relay-ice-cube-2co contactor-9a-1no1nc relay-safety-2ch-2no1nc,mapped
+e18,Transformers,electrical,device-class,V2/V1 = N2/N1,"V, VA",transformer,solver,xfmr-control psu-24v-2a4,planned
+e19,Three-phase power,electrical,principle,P = √3·V_L·I_L·cos φ,W,circuit-ac,solver,port-pwr-480 disc-3p-30a motor-iec71-370w,mapped
+e20,Power factor,electrical,principle,PF = P/S = cos φ,—,circuit-ac,solver,motor-iec71-370w power-meter,mapped
+e21,Motor control,electrical,device-class,"DOL start, seal-in, interlock",—,induction-motor,viob+solver,contactor-9a-1no1nc overload-9a-1no1nc pbs-6h-22 motor-iec71-370w,mapped
+e22,Variable frequency drives,electrical,device-class,V/f; n = 120·f/p·(1−s),"Hz, rpm",vfd,solver,vfd-0.75kw,planned
+e23,Servo drives,electrical,device-class,position / velocity / torque loops,—,servo,solver,servo-drive servo-motor,planned
+e24,Electrical noise (EMI),electrical,principle,"coupling, shielding, separation",dB,noise,solver,cordset-m12 cable-tray duct-40x60 (segregation),mapped
+e25,Signal conditioning,electrical,principle,"4–20 mA scaling, filtering, debounce","mA, V",rc transfer,solver,plc-aio daq pt tt-rtd,mapped
+a01,PLC logic,automation,principle,,,—,viob,plc0,mapped
+a02,Digital inputs,automation,principle,,,di,viob,io-block-m12-8di8do plc-dio,mapped
+a03,Digital outputs,automation,principle,,,do,viob,io-block-m12-8di8do plc-dio,mapped
+a04,Analog inputs,automation,principle,,,ai,viob,plc-aio daq,mapped
+a05,Analog outputs,automation,principle,,,ao,viob,plc-aio,mapped
+a06,Sensors,automation,principle,,,transfer,solver,prox-m12 photoeye-m18 pt,mapped
+a07,Proximity switches,automation,principle,,,transfer,solver,prox-m12 prox-cap-m18,mapped
+a08,Photoelectric sensors,automation,principle,,,transfer,solver,photoeye-m18 light-curtain,mapped
+a09,Limit switches,automation,principle,,,contact,solver,limit-switch,mapped
+a10,Encoders,automation,principle,,,encoder,solver,encoder servo-motor,mapped
+a11,Temperature sensors,automation,principle,,,thermal transfer,solver,tt-rtd gauge-t,mapped
+a12,Pressure sensors,automation,principle,,,transfer,solver,pt gauge-p,mapped
+a13,Flow sensors,automation,principle,,,transfer,solver,flow-meter,mapped
+a14,Motor starters,automation,device-class,,,—,viob+solver,contactor-9a-1no1nc overload-9a-1no1nc,mapped
+a15,Servo motors,automation,device-class,,,servo,solver,servo-motor,mapped
+a16,Stepper motors,automation,device-class,,,stepper,solver,stepper-nema23,mapped
+a17,Induction motors,automation,device-class,,,induction-motor,solver,motor-iec71-370w,mapped
+a18,Pneumatic valves,automation,principle,,,spool,solver,valve-bank,mapped
+a19,Hydraulic valves,automation,principle,,,spool,solver,hyd-valve-d03,mapped
+a20,Solenoids,automation,principle,,,coil spring,solver,valve-bank conveyor-stop,mapped
+a21,PID control,automation,principle,,,pid,viob,process-skid,mapped
+a22,Motion control,automation,principle,,,servo,viob+solver,servo-drive gantry-xyz,mapped
+a23,Interlocks,automation,principle,,,—,viob,guard-interlock relay-safety-2ch-2no1nc,mapped
+a24,Sequencing,automation,principle,,,—,viob,sorting-line logistics-dock,mapped
+a25,State machines,automation,principle,,,—,viob,behaviour.md of every element,mapped
+a26,Feedback loops,automation,principle,,,pid,viob+solver,servo-drive process-skid,mapped
+a27,Alarm handling,automation,principle,,,—,viob,hmi-7in plc0,mapped
+a28,Fault detection,automation,principle,,,—,viob,behaviour.md failure modes,mapped
+a29,Emergency stops,automation,principle,,,—,viob+solver,op-estop-22-2nc relay-safety-2ch-2no1nc,mapped
+a30,Safety circuits,automation,principle,,,—,viob+solver,relay-safety-2ch-2no1nc light-curtain safety-scanner,mapped
+v01,Device modeling,virtualization,method,,,,—,,mapped
+v02,Digital twins,virtualization,method,,,,—,,mapped
+v03,Discrete-time simulation,virtualization,method,,,,viob,,mapped
+v04,Continuous-time simulation,virtualization,method,,,,solver,,mapped
+v05,Real-time simulation,virtualization,timing,,,,solver,,mapped
+v06,Virtual I/O,virtualization,method,,,,twin-api,,mapped
+v07,Signal mapping,virtualization,method,,,,twin-api,,mapped
+v08,Physical behavior modeling,virtualization,method,,,,solver,,mapped
+v09,Mechanical dynamics,virtualization,method,,,,solver,,mapped
+v10,Electrical dynamics,virtualization,method,,,,solver,,mapped
+v11,Motor simulation,virtualization,method,,,,solver,,mapped
+v12,Sensor simulation,virtualization,method,,,,solver,,mapped
+v13,Actuator simulation,virtualization,method,,,,solver+godot,,mapped
+v14,PLC communication,virtualization,protocol,,,,twin-api,,mapped
+v15,Industrial Ethernet,virtualization,protocol,,,,twin-api,,mapped
+v16,Modbus TCP,virtualization,protocol,,,,twin-api,,mapped
+v17,OPC UA,virtualization,protocol,,,,twin-api,,mapped
+v18,EtherNet/IP,virtualization,protocol,,,,twin-api,,mapped
+v19,PROFINET,virtualization,protocol,,,,twin-api,,mapped
+v20,CAN bus,virtualization,protocol,,,,twin-api,,mapped
+v21,Latency,virtualization,timing,,,,twin-api,,mapped
+v22,Communication cycles,virtualization,timing,,,,twin-api,,mapped
+v23,Synchronization,virtualization,timing,,,,twin-api,,mapped
+v24,Fault injection,virtualization,method,,,,solver,,mapped
+v25,Virtual commissioning,virtualization,method,,,,—,,mapped
+x01,Heat generation and temperature rise,thermal,principle,P = I²·R; ΔT = P·R_th; τ = R_th·C_th,"W, K, s",thermal,solver,overload-9a-1no1nc motor-iec71-370w term-4mm,added
+x02,Duty cycle and derating,thermal,principle,S1/S3 duty; derate above 40 °C,"%, °C",thermal,solver,psu-24v-2a4 motor-iec71-370w,added
+x03,Magnetic force and air gap,magnetic,principle,F ≈ B²·A/(2μ₀); pull-in vs gap,"N, mm",coil,solver,relay-ice-cube-2co contactor-9a-1no1nc mcb-3p-c10,added
+x04,Saturation and hysteresis,magnetic,principle,B–H curve,"T, A/m",coil transformer,solver,xfmr-control contactor-9a-1no1nc,added
+x05,Conductor sizing and voltage drop,wiring,principle,ΔV = 2·I·R·L (DC); √3·I·R·L (3φ),"V, mm²",circuit,solver,cordset-m12 term-4mm cable-pwr-480,added
+x06,Terminal torque and contact resistance,wiring,principle,R_c rises as torque falls,"N·m, mΩ",contact thermal,solver,term-4mm contactor-9a-1no1nc mcb-3p-c10,added
+x07,Wear and life,reliability,principle,contact erosion per operation; spring cycles; L10,cycles,wear,solver,relay-ice-cube-2co contactor-9a-1no1nc bearing-pillow,added
+x08,Safety categories and performance levels,safety,principle,"ISO 13849-1 Cat B–4, PL a–e; stop categories 0/1/2",—,—,viob+solver,relay-safety-2ch-2no1nc op-estop-22-2nc light-curtain,added
+x09,Safe distance,safety,principle,S = K·T + C (ISO 13855),mm,—,offline,light-curtain safety-scanner,added
+x10,"Accuracy, resolution, calibration",measurement,principle,"error = reading − true; span, zero",% FS,transfer,solver,pt tt-rtd calibrator-hand-pump,added
+x11,Measurement noise,measurement,principle,"σ, filtering, sample rate",—,transfer noise,solver,plc-aio daq,added
+x12,Ingress and environment,environment,principle,IP code (IEC 60529); NEMA types,—,—,offline,enc-fs-1524x1829x305 pbs-6h-22 io-block-m12-8di8do,added
+x13,Inductive kick and coil suppression,electrical,principle,"v = −L·di/dt at turn-off; diode clamps to V_f, MOV to V_clamp","V, H, A/s",coil circuit,solver,relay-ice-cube-2co contactor-9a-1no1nc relay-safety-2ch-2no1nc,added (relay brief 2026-11-03: 78 spec p. 7)
+x14,Contact bounce,electrical,principle,contact makes and breaks for t_bounce after closing,ms,contact,solver,relay-ice-cube-2co contactor-9a-1no1nc op-pb-22-1no,added (relay brief 2026-11-03: 78 spec p. 7)
+x15,Minimum switching current (dry circuit),electrical,principle,below I_min at V_min the contact film is not broken: R_c ↑,"mA, V",contact,solver,relay-ice-cube-2co,"added (relay brief 2026-11-03: 78 spec p. 2, p. 3)"
+x16,Dielectric strength and isolation,electrical,principle,"withstand voltage between coil, poles and open contacts",V rms,—,offline,relay-ice-cube-2co relay-safety-2ch-2no1nc,added (relay brief 2026-11-03: 78 spec p. 3)
+x17,Utilization categories and arc erosion,electrical,principle,AC-1 / AC-3 / AC-4: the current a contact may make and break falls as the load's break current rises; erosion per operation follows the broken current,"A, operations",contact wear,solver,contactor-9a-1no1nc mcb-3p-c10 relay-ice-cube-2co,added (contactor brief 2026-11-03: CWB spec p. 7)
+x18,Short-circuit coordination (type 1 / type 2),electrical,principle,the protective device clears the fault before the contactor is destroyed (type 1) or welds (type 2),"kA, A",—,offline,contactor-9a-1no1nc overload-9a-1no1nc mcb-3p-c10 disc-3p-30a,added (contactor brief 2026-11-03: CWB spec p. 7)
+x19,Reliability statistics B10 / B10d,reliability,principle,"B10: operations until 10 % have failed; B10d: until 10 % have failed dangerously (IEC 60947-4-1 Annex K, ISO 13849)",operations,wear,solver,contactor-9a-1no1nc relay-safety-2ch-2no1nc relay-ice-cube-2co,added (contactor brief 2026-11-03: CWB spec p. 24)
+x20,Phase-loss sensitivity,electrical,principle,"unequal heating of the three bimetals moves a differential slide: a lost phase trips faster than a balanced overload","A, s",thermal,solver,overload-9a-1no1nc,added (overload brief 2026-11-03: RW spec p. 2)
+x21,Ambient temperature compensation,thermal,principle,"a fourth bimetal outside the current path cancels the ambient's bending; above its range the rated current is derated","°C, factor",thermal,solver,overload-9a-1no1nc,added (overload brief 2026-11-03: RW spec p. 2, p. 8)
+x22,Thermal memory and recovery time,thermal,principle,"after a trip the bimetals must cool before reset; a warm relay trips in about a quarter of the cold time","s, %",thermal latch,solver,overload-9a-1no1nc,added (overload brief 2026-11-03: RW spec p. 2, p. 8)

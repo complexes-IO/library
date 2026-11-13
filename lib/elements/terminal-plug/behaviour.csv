@@ -1,0 +1,17 @@
+# behaviour.csv · terminal-plug · pluggable terminal block, the plug (lib/behaviour.md). Written by elec-r22 for the 4-pole build (the parameter's default):
+# each pole is one conductor from its clamp (t-<n>, mark n) to its socket (s-<n>, mark Sn). The contact resistance and the clamps' torque are not on file.
+# Marks: n is the plug's printed pole mark (spec.md Decals: 1 … n); Sn is a name for the socket side, not a print (review elec-r22 note 3). Unchanged at 2.0 (the sockets' depth only).
+# elec-r27 (review elec-r26 finding 1): the torques classed B (IEC 60999), the contact resistances C.
+kind,a,b,part,when,value,unit,source,note
+pin,1,t-1,clamp-1,,NOT ON FILE (B): IEC 60999,N·m,spec.md Dimensions (conductor range and torque class B),pole 1 clamp (the wire side)
+pin,S1,s-1,socket-1,,,,spec.md Dimensions (sockets: design choice),pole 1 socket (the header side)
+pin,2,t-2,clamp-2,,NOT ON FILE (B): IEC 60999,N·m,as 1,pole 2 clamp
+pin,S2,s-2,socket-2,,,,as S1,pole 2 socket
+pin,3,t-3,clamp-3,,NOT ON FILE (B): IEC 60999,N·m,as 1,pole 3 clamp
+pin,S3,s-3,socket-3,,,,as S1,pole 3 socket
+pin,4,t-4,clamp-4,,NOT ON FILE (B): IEC 60999,N·m,as 1,pole 4 clamp
+pin,S4,s-4,socket-4,,,,as S1,pole 4 socket
+contact,1,S1,pole-1,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,spec.md Class values 7 (12 A each pole); the contact resistance is not on file,a pass-through: the clamp and its socket are one conductor
+contact,2,S2,pole-2,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,as pole-1,
+contact,3,S3,pole-3,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,as pole-1,
+contact,4,S4,pole-4,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,as pole-1,

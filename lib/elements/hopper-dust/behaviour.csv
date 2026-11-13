@@ -1,0 +1,2 @@
+# behaviour.csv · hopper-dust · dust hopper under a dust collector (lib/behaviour.md). Mechanical only: no terminal (no earth stud is modelled; the Ø150 outlet takes a drum or a discharge valve not built yet, not a port) and no moving node (the whole hopper is the fixed body), so no state and no pose.
+kind,a,b,part,when,value,unit,source,note

@@ -1,0 +1,39 @@
+# behaviour.csv · relay-safety-2ch-2no1nc · dual-channel input safety relay (lib/behaviour.md). Taken in by elec-r23 from the core's proposal of 2026-11-09 (lib/requests/core/behaviour/sr-440r.csv),
+# checked against references/measure.md and ratings.csv. Terminal functions from the maker's installation manual (p. 14 Table 2, CI column): A1 A2 S11 S21 S12 S22 S34 L11
+# 13/14 23/24 41/42 (the brief's Ports). The pulse-test outputs S11 / S21 are modelled as 24 V from A1 (the pulses are below the solver's time step); the input is made when S12
+# sees S11's potential and S22 sees S21's; reset mode automatic (Assumption (A), for EM: the rotary switch's position is on the STEP only). The monitored manual reset at S34
+# and the cross-fault detection need the circuit model. Torque NOT ON FILE on the pages the brief read.
+# Differences from the proposal: the 19.2 V supply threshold is marked Assumption (A) (the brief has no tolerance band; the twin reports the relay powered); the proposal's
+# "dead below 10 V" row is left out (on no page: below 19.2 V no row holds and the supply rests at its default, dead); the manual's document number moved out (DOC-006: maker and part numbers in references/ only).
+# elec-r26: the input threshold 20 V (state `made`) marked Assumption (A): p. 14 Table 2 gives the terminal functions, not a threshold (review elec-r23 finding 1).
+kind,a,b,part,when,value,unit,source,note
+pin,A1,,terminal,,NOT ON FILE,N·m,maker's manual p. 14 Table 2 (references/measure.md Ports); wire 0.2–2.5 mm² p. 13; torque not on the pages read,24 V DC +
+pin,A2,,terminal,,NOT ON FILE,N·m,as A1,0 V
+pin,S11,,terminal,,NOT ON FILE,N·m,as A1,pulse-test output channel 1
+pin,S21,,terminal,,NOT ON FILE,N·m,as A1,pulse-test output channel 2
+pin,S12,,terminal,,NOT ON FILE,N·m,as A1,input channel 1
+pin,S22,,terminal,,NOT ON FILE,N·m,as A1,input channel 2
+pin,S34,,terminal,,NOT ON FILE,N·m,as A1,reset input (monitored manual reset)
+pin,L11,,terminal,,NOT ON FILE,N·m,as A1,single-wire safety output
+pin,13,,terminal,,NOT ON FILE,N·m,as A1,safety output 1
+pin,14,,terminal,,NOT ON FILE,N·m,as A1,safety output 1
+pin,23,,terminal,,NOT ON FILE,N·m,as A1,safety output 2
+pin,24,,terminal,,NOT ON FILE,N·m,as A1,safety output 2
+pin,41,,terminal,,NOT ON FILE,N·m,as A1,auxiliary N.C.
+pin,42,,terminal,,NOT ON FILE,N·m,as A1,auxiliary N.C.
+load,A1,A2,logic,,4,W,maker's manual Appendix A p. 73 (4 W typical at 24 V; ratings.csv load_i 0.17 A derived),the relay's own supply
+contact,A1,S11,pulse-1,powered,,,maker's manual p. 14 (S11 pulse-test output; modelled steady),
+contact,A1,S21,pulse-2,powered,,,maker's manual p. 14 (S21 pulse-test output; modelled steady),
+state,dead,,supply,default,,,maker's manual p. 9 (PWR / Fault indicator),
+state,powered,,supply,logic.V >= 19.2,,,"Assumption (A): powered from 0.8 × 24 V; the supply's tolerance band is in the maker's manual (p. 73) but not in the brief; the twin reports it",
+state,open,,input,default,,,maker's manual p. 14,one or both channels open
+state,made,,input,"powered and V(S12,A2) >= 20 and V(S22,A2) >= 20",,,"maker's manual p. 14 Table 2 gives the terminal functions only (dual-channel input S12 / S22 fed from S11 / S21 through the e-stop's two N.C. contacts); the 20 V input threshold is on no page the brief read: Assumption (A), for EM (the twin reports the input made and the outputs on)",both channels see their test output
+state,off,,outputs,default,,,maker's manual p. 75 (outputs),
+state,on,,outputs,made,,,maker's manual p. 75; reset mode automatic (Assumption (A): the rotary switch on the STEP only),the safety outputs closed while the input is made
+contact,13,14,k13,on,,,maker's manual p. 14 Table 2; p. 75,N.O. safety output 1
+contact,23,24,k23,on,,,maker's manual p. 14 Table 2; p. 75,N.O. safety output 2
+contact,41,42,k41,not on,,,maker's manual p. 14 Table 2,N.C. auxiliary
+pose,led-pwr,,,powered,1,,maker's manual p. 9 and p. 31 (PWR / Fault status indicator; references/measure.md Named nodes),
+pose,led-in1 led-in2,,,made,1,,maker's manual p. 31 (per-channel input indication; the LED legend is to be confirmed against p. 31: spec.md),
+pose,led-logic led-out,,,on,1,,maker's manual p. 31 (the legend as for led-in1),
+pose,sw-mode,,,powered,0,,maker's manual chapter 4 (rotary configuration switch; its position per mode is NOT ON FILE: left at 0),

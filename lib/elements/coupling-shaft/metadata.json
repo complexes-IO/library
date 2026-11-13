@@ -1,0 +1,15 @@
+{
+  "element_id": "coupling-shaft",
+  "category": "Power transmission",
+  "width": 44.45,
+  "height": 44.45,
+  "depth": 20.65,
+  "units": "mm",
+  "datasheet_dims": [
+    44.45,
+    44.45
+  ],
+  "domain": "mechanical",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

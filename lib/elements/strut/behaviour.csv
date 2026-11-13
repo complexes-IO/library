@@ -1,0 +1,2 @@
+# behaviour.csv · strut · strut channel, generic (lib/behaviour.md). One fixed body: no terminal, no moving node, no state.
+kind,a,b,part,when,value,unit,source,note

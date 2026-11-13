@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+13.5,M12 clearance medium (the back's slots' width),clearance,,,,ISO 273 medium H13 (lib/standards/holes.csv); the slot's length 28 and pitch 50 are design choices,"slotted holes 13.5 (y) x 28 (x) through the back on a 50 pitch, centred on the length, square-ended (two plain cuts, no round hole: the hole checker reads none); no position tolerance declared: a slot locates across the run only, the frame's holes are the host's"

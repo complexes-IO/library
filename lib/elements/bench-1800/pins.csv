@@ -1,0 +1,2 @@
+port,pin,role,signal,rated_A,source
+pe,PE,PE,bench earth stud (bonds the motor frame and the back-board),,spec

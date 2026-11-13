@@ -1,0 +1,17 @@
+# behaviour.csv · mcb-2p · 2-pole miniature circuit breaker (lib/behaviour.md). Written by elec-r28 from spec.md (Class values, Named nodes): a generic element, so its class values are its figures.
+# Marks 1 / 2 (pole 1 line / load) and 3 / 4 (pole 2): printed on our part, a design choice (spec.md Dimensions). One handle and one trip: both poles close on `on` and open together.
+# The magnetic and thermal trips need the circuit model (phase 2 of the solver) and a rated current (not chosen: NEC 430.72(C) NOT ON FILE): until then tripped is a manual fault the twin injects.
+kind,a,b,part,when,value,unit,source,note
+pin,1,t-1,terminal,,NOT ON FILE (B): IEC 60947-1,N·m,spec.md Dimensions (terminals: the family's captive screws; marks a design choice),pole 1 line (top)
+pin,2,t-2,terminal,,NOT ON FILE (B): IEC 60947-1,N·m,as 1,pole 1 load (bottom)
+pin,3,t-3,terminal,,NOT ON FILE (B): IEC 60947-1,N·m,as 1,pole 2 line
+pin,4,t-4,terminal,,NOT ON FILE (B): IEC 60947-1,N·m,as 1,pole 2 load
+state,off,,mechanism,default,,,spec.md Named nodes (toggle),toggle at rest (0)
+state,tripped,,mechanism,manual latch cleared by reset,,,spec.md Notes (the trips need the circuit model; rated current not chosen),both poles open; the toggle at the off pose
+state,on,,mechanism,manual toggle,,,spec.md Named nodes (one common handle),toggle up: both poles closed
+state,reset,,mechanism,manual momentary,,,"Assumption (A): trip-free, reset by moving the toggle to off, as the family's row (mcb-3p-c10 1.3 behaviour.csv; not a class value of EC000042; IEC 60898-1 and IEC 60947-2, which would fix it, are not on file; spec.md Notes)",the toggle pushed down to reset
+contact,1,2,pole-1,on,,,spec.md Class values 3 and 4 (two protected poles),
+contact,3,4,pole-2,on,,,spec.md Class values 3 and 4,
+pose,toggle,,,on,end,,element.py (toggle rotates −25..25: off to on),
+pose,toggle,,,tripped,0,,as mcb-3p-c10: tripped rests at 0 (the off pose; spec.md Named nodes),
+pose,indicator-1 indicator-2,,,on,1,,element.py (the pole indicators),contact-position windows show closed

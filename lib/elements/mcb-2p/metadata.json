@@ -1,0 +1,12 @@
+{
+  "element_id": "mcb-2p",
+  "domain": "electrical",
+  "category": "Electrical components",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 35.4,
+  "height": 105.0,
+  "depth": 73.0,
+  "units": "mm",
+  "brief": "our own design: generic Miniature circuit breaker (ETIM 10.0 EC000042), 2-pole, 480 V; the mcb family's body on file (mcb-3p-c10 1.3); rated current not chosen (spec.md Class values)"
+}

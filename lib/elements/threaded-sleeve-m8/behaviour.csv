@@ -1,0 +1,2 @@
+# behaviour.csv · threaded-sleeve-m8 · Threaded sleeve, generic (lib/behaviour.md). Written by mech-r146 from element.py: one fixed body, no terminal, no moving node, no state; the screws in it and the parts it spaces are the host's assembly, not a motion. A structural part's file: the header only. No load, torque or temperature figure here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note

@@ -1,0 +1,2 @@
+# behaviour.csv · cap-strut-41 · End cap for a 41 x 41 strut channel, generic (lib/behaviour.md). Written by mech-r149 from element.py: one fixed body, no terminal, no moving node, no state; pushing it into the channel is the host's assembly, not a motion. A structural part's file: the header only. No retention, impact or fire figure here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note

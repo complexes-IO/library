@@ -1,0 +1,8 @@
+# behaviour.csv · enclosure-machine · sheet-metal machine enclosure with two sliding front doors (lib/behaviour.md). Mechanical only: no terminal (the feet's M10 holes take floor anchors, not a port; no earth stud is modelled). Two moving nodes, the doors; the walls, roof, rails, panes and feet are the fixed body. No interlock or lock in this version, so no locked state and no safety claim.
+kind,a,b,part,when,value,unit,source,note
+state,l-shut,,door-l,default,,,element.py (docstring),the left door closed over the left half of the loading opening
+state,l-open,,door-l,manual toggle,,,element.py (docstring),the left door slid outward (-x) to the end of its travel
+state,r-shut,,door-r,default,,,element.py (docstring),the right door closed over the right half of the loading opening
+state,r-open,,door-r,manual toggle,,,element.py (docstring),the right door slid outward (+x) to the end of its travel
+pose,door-l,,,l-open,end,,element.py (door-l translates -x 0 to 580),
+pose,door-r,,,r-open,end,,element.py (door-r translates +x 0 to 580),

@@ -1,0 +1,2 @@
+# behaviour.csv · damping-rod · damping rod, generic straight rubber-metal rail (lib/behaviour.md). One fixed body (base flat, rubber block, top flat): no terminal, no moving node (the class states no stiffness or load, so no loaded pose is drawn), no state.
+kind,a,b,part,when,value,unit,source,note

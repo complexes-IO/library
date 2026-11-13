@@ -1,0 +1,35 @@
+# behaviour.csv · relay-ice-cube-2co · plug-in DPDT control relay, 24 V DC coil, on its 8-pin DIN socket (lib/behaviour.md). Written by elec-r29 (unattended, 2026-11-11) from behaviour.md (states table, transitions), parts.csv (coil-24vdc, socket-terminal, contact models), spec.md (Dimensions and figures on file, Named nodes) and element.py (the socket's port nodes t-<pin>). "spec" is the maker's relay specification cited in references/interior.md; "sockets spec" the socket's.
+# The marks are the relay's pin numbers (spec p. 5): 13 = A1 (+) and 14 = A2 (-) the coil; pole 1 common 9 with N.C. 1 and N.O. 5; pole 2 common 12 with N.C. 4 and N.O. 8. Each mark's port node is the socket's screw terminal of that number (element.py tmap; the ids connections.csv uses): the relay's own blade pins are plug-in contacts inside the socket and carry no node of their own.
+# The magnet system operates at the pull-in level 19.2 V (<= 80 % of 24 V, spec p. 3) and has released by the drop-out level 2.4 V (>= 10 %, spec p. 3); between them it holds (hysteresis, a hold row). The manual test (btn-test) and the locked test (door-lock over the pressed button; lib/motion.csv btn-test -> door-lock requires 1.5) move the card and the contacts without the coil (behaviour.md states table); the armature stays where the coil leaves it.
+# Contact resistances R_c are open in parts.csv and the phase-1 solver reads none for a closed contact: the contact rows carry no figure. The LED's own circuit (V_f, series R) is open in parts.csv: it is posed lit while the coil has any voltage (behaviour.md Outputs: lit while the coil has voltage; its level NOT ON FILE (A), elec-r34 from review relay-ice-cube-2co-1.5 finding 4), so the LED and the flag can disagree (Grading hook 3). Response time 20 ms and the contact bounce are not read by the phase-1 solver (no time).
+kind,a,b,part,when,value,unit,source,note
+pin,13,t-13,socket-terminal,,1.0,N·m,sockets spec p. 1 (screw terminal 1.0 N-m max; parts.csv socket-terminal torque); spec p. 5 (13 = A1 +),coil + (24 V DC)
+pin,14,t-14,socket-terminal,,1.0,N·m,as 13; spec p. 5 (14 = A2 -),coil 0 V
+pin,9,t-9,socket-terminal,,1.0,N·m,as 13; spec p. 5 (pole 1 common),pole 1 common
+pin,1,t-1,socket-terminal,,1.0,N·m,as 13; spec p. 5 (pole 1 N.C.),pole 1 N.C.
+pin,5,t-5,socket-terminal,,1.0,N·m,as 13; spec p. 5 (pole 1 N.O.),pole 1 N.O.
+pin,12,t-12,socket-terminal,,1.0,N·m,as 13; spec p. 5 (pole 2 common),pole 2 common
+pin,4,t-4,socket-terminal,,1.0,N·m,as 13; spec p. 5 (pole 2 N.C.),pole 2 N.C.
+pin,8,t-8,socket-terminal,,1.0,N·m,as 13; spec p. 5 (pole 2 N.O.),pole 2 N.O.
+load,13,14,coil,,640,ohm,spec p. 3 (24 V DC coil 640 ohm; parts.csv coil-24vdc R=640); 37.5 mA at 24 V,the coil
+state,released,,magnet-system,default,,,behaviour.md states table (released: armature at the back stop; 9-1 and 12-4 closed),rest
+state,operated,,magnet-system,coil.V >= 19.2,,,spec p. 3 (pull-in <= 80 % of 24 V = 19.2 V; parts.csv coil-24vdc pull_in_v); behaviour.md transitions,operated for certain from the pull-in level
+state,released,,magnet-system,coil.V < 2.4,,,spec p. 3 (drop-out >= 10 % of 24 V = 2.4 V; parts.csv coil-24vdc drop_out_v); behaviour.md transitions,released for certain below the drop-out level
+state,,,magnet-system,hold,,,spec p. 3 (pull-in above drop-out),between 2.4 and 19.2 V the state holds (hysteresis)
+state,out,,btn-test,default,,,behaviour.md states table (btn-test out),the test button at rest
+state,pressed,,btn-test,manual momentary,,,spec p. 1 (push-to-test: manual operation without coil power); behaviour.md states table (manual test),the test button pressed: the card and the contacts operate
+state,open,,door-lock,default,,,behaviour.md states table (door-lock open),the lock-down slider open
+state,locked,,door-lock,manual latch cleared by unlocked,,,spec p. 1 (holds the pushbutton and contacts in the operate position); behaviour.md states table (locked test); lib/motion.csv btn-test -> door-lock requires 1.5 (closes only over the pressed button),the slider closed over the pressed button: the button and the card held in
+state,unlocked,,door-lock,manual momentary,,,behaviour.md transitions (back to released when the door is opened and the button returns),the slider pulled back
+contact,9,5,pole-1,operated or pressed or locked,,,spec p. 5 (pole 1: common 9 to N.O. 5); behaviour.md states table (9-5 closed in the operated and both manual states); parts.csv contact-1-no,pole 1 N.O. side
+contact,9,1,pole-1,not (operated or pressed or locked),,,spec p. 5 (common 9 to N.C. 1); behaviour.md states table (9-1 closed released); parts.csv contact-1-nc,pole 1 N.C. side (break before make is not modelled: phase 1 has no time)
+contact,12,8,pole-2,operated or pressed or locked,,,spec p. 5 (pole 2: common 12 to N.O. 8); behaviour.md states table; parts.csv contact-2-no,pole 2 N.O. side
+contact,12,4,pole-2,not (operated or pressed or locked),,,spec p. 5 (common 12 to N.C. 4); behaviour.md states table; parts.csv contact-2-nc,pole 2 N.C. side
+pose,armature,,,operated,end,,spec.md Named nodes (armature rotates 0 ... 4.06 deg at the hinge); behaviour.md (manual test: the armature stays where the coil leaves it),the plate on the core
+pose,coil,,,operated,1,,spec.md Named nodes (coil emissive in x-ray while energised),the winding glows
+pose,led-coil,,,"V('13','14') > 0",1,,"behaviour.md Outputs (led-coil lit while the coil has voltage); the level it lights at is NOT ON FILE (A): the LED's forward voltage and series R (parts.csv led), so any coil voltage lights it; review relay-ice-cube-2co-1.5 finding 4","LED lit while the coil has voltage: with the flag (armature) it teaches Grading hook 3 (low supply: LED lit, flag out)"
+pose,actuator spring-return pole-1 pole-2 flag,,,operated or pressed or locked,end,,spec.md Named nodes (actuator translate 0 ... 1.2; spring-return compress with it; pole-1 / pole-2 rotate 0 ... 7.4 deg; flag translate 0 ... 3.6 with the card); lib/motion.csv (armature and btn-test push the card; the flag and the poles follow it),the card down: commons on N.O. and the flag at operate
+pose,btn-test,,,pressed or locked,end,,spec.md Named nodes (btn-test translate 0 ... 1.5); behaviour.md states table (pressed in the manual test; held in the locked test),the button in
+pose,door-lock,,,locked,end,,spec.md Named nodes (door-lock translate 0 ... 4.0); spec.md Mechanism as built (locked test: the nib over the pressed button at the range end),the slider closed
+limit,coil,,,,26.4,VDC,spec p. 3 (continuous maximum 110 % of 24 V; parts.csv coil-24vdc V_max); behaviour.md Inputs,the most the coil may see
+limit,pole-1 pole-2,,,,15,A,spec p. 3 (15 A resistive; parts.csv contact-1-mov I_rated); spec.md Dimensions (contacts),each pole's rated resistive current

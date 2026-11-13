@@ -1,0 +1,8 @@
+# behaviour.csv · clamp-angle · generic angle clamp (lib/behaviour.md). Written by mech-r124 from element.py: no terminal (a loose bench tool: no port, no hole for a fixing); two moving nodes, `pad-a` (translates +y 0 to 29) and `pad-b` (translates +x 0 to 29), each a pad with its spindle and T-handle (TRAVEL: the pad 1 off its fence at 0, 30 off at the end, the class value clamping spread). Each spindle turns by hand, so the twin sets each pad as the operator's input. No clamping force here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note
+state,a-closed,,pad-a,default,,,element.py (ORIGIN and GAP: pad a 1 off fence a at 0),pad a run up to fence a
+state,a-open,,pad-a,manual toggle,,,element.py (node pad-a: translate +y 0 to 29),pad a wound back: 30 between it and fence a
+state,b-closed,,pad-b,default,,,element.py (ORIGIN and GAP: pad b 1 off fence b at 0),pad b run up to fence b
+state,b-open,,pad-b,manual toggle,,,element.py (node pad-b: translate +x 0 to 29),pad b wound back: 30 between it and fence b
+pose,pad-a,,,a-open,end,,element.py (node pad-a: translate +y 0 to 29),
+pose,pad-b,,,b-open,end,,element.py (node pad-b: translate +x 0 to 29),

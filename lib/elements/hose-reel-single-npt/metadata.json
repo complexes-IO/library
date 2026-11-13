@@ -1,0 +1,13 @@
+{
+  "element_id": "hose-reel-single-npt",
+  "domain": "pneumatics",
+  "category": "Hoses",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 281.0,
+  "height": 336.0,
+  "depth": 320.0,
+  "units": "mm",
+  "datasheet_dims": null,
+  "aliases": []
+}

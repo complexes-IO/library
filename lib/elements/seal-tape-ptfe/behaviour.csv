@@ -1,0 +1,3 @@
+# behaviour.csv · seal-tape-ptfe · generic PTFE thread-seal tape on a roll (lib/behaviour.md). A structural part: no port, no electrical pin and no moving node.
+# It is wound onto a male thread and made up with it, so it passes no path of its own: no state, contact, load or pose row is written (the header only).
+kind,a,b,part,when,value,unit,source,note

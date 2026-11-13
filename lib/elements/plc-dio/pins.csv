@@ -1,0 +1,22 @@
+port,pin,role,signal,rated_A,source
+x1.t-1,24V,load+:24V,module supply +24 V DC,0.08,spec.md Class values 3 and 9; rated current derived (ratings.csv load_i)
+x1.t-2,0V,load0,module supply 0 V (the inputs' reference),0.08,as 24V
+x1.t-3,FE,FE,functional earth (the housing),,spec.md Dimensions terminal marks
+x1.t-4,DI0,in,digital input 0 (24 V DC to 0V; sinking),0.003,spec.md Class values 5 10 12 (3 mA at signal 1)
+x1.t-5,DI1,in,digital input 1,0.003,as DI0
+x1.t-6,DI2,in,digital input 2,0.003,as DI0
+x1.t-7,DI3,in,digital input 3,0.003,as DI0
+x1.t-8,DI4,in,digital input 4,0.003,as DI0
+x1.t-9,DI5,in,digital input 5,0.003,as DI0
+x1.t-10,DI6,in,digital input 6,0.003,as DI0
+x1.t-11,DI7,in,digital input 7,0.003,as DI0
+x2.t-1,24VO,load+:24V,output supply +24 V DC (feeds DO0 ... DO7),4.0,spec.md Class values 14 15 (8 x 0.5 A)
+x2.t-2,0VO,load0,output supply 0 V (the loads' return),4.0,as 24VO
+x2.t-3,DO0,out,digital output 0 (transistor; sourcing 24 V DC to the load),0.5,spec.md Class values 6 13 14 16
+x2.t-4,DO1,out,digital output 1,0.5,as DO0
+x2.t-5,DO2,out,digital output 2,0.5,as DO0
+x2.t-6,DO3,out,digital output 3,0.5,as DO0
+x2.t-7,DO4,out,digital output 4,0.5,as DO0
+x2.t-8,DO5,out,digital output 5,0.5,as DO0
+x2.t-9,DO6,out,digital output 6,0.5,as DO0
+x2.t-10,DO7,out,digital output 7,0.5,as DO0

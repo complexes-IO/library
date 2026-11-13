@@ -1,0 +1,3 @@
+match,role,kind,check,position_tol,datums,source,note
+11.1,floor anchor hole 7/16 in,vendor,,,,maker's STEP read-back 11.13 (terminal 2026-11-03; references/source.txt),for a 3/8 in anchor; no drawing on file
+11,M10 clearance medium,clearance,,0.5,back panel rear face A; its left edge B; its bottom edge C,ISO 273 medium H13 (lib/standards/holes.csv:20); position Ø0.5 at MMC = half of H − F = 1.0: the studs are fixed in the back wall (a fixed fastener) so the other Ø0.5 is left to the stud positions,4 x M10 sub-panel studs 1292 x 1596 apart (40 in from the panel corners); the even split is a design choice (mech-r21)

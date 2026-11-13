@@ -1,0 +1,8 @@
+# behaviour.csv · turntable · rotary conveyor turntable (lib/behaviour.md). Mechanical only: no terminal. Seven moving nodes: the deck (node deck: the round plate and the track's side frames) turning about z on the slewing ring; six free rollers roller-1 to roller-6 across the track, each turning about its own axis (along x at rest) and riding the deck (P.parents). The base frame, posts, ties, floor rails, the ring's base plate and its fixed race are the fixed body. The drive is the assembly's.
+kind,a,b,part,when,value,unit,source,note
+state,home,,deck,default,,,spec.md (Mechanism),the deck at rest (0): the track along y
+state,turning,,deck,manual toggle,,,spec.md (Mechanism),the assembly's drive turns the deck on the slewing ring
+pose,deck,,,turning,end,,element.py (node deck: rotate 0 to 360 about z),
+state,still,,rollers,default,,,spec.md (Mechanism),the rollers at rest
+state,rolling,,rollers,manual toggle,,,spec.md (Mechanism),goods passing over the deck turn the free rollers
+pose,roller-1 roller-2 roller-3 roller-4 roller-5 roller-6,,,rolling,end,,element.py (each roller rotates 0 to 360 about its axis),

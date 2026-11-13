@@ -1,0 +1,16 @@
+{
+ "id": "lab-electrical",
+ "version": "0.1",
+ "bay": 2,
+ "lab": "Electrical / motor control",
+ "glb": "lab-electrical-campus.glb",
+ "units": "mm in the glb; metres here",
+ "campus_origin_m": [
+  117.115,
+  166.615,
+  0.0
+ ],
+ "scale_to_campus": 0.001,
+ "yaw_deg": 0,
+ "note": "the room frame's origin is the bay's inner south-west corner (wall faces); +x east, +y north, +z up"
+}

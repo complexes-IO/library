@@ -1,0 +1,14 @@
+# The campus Labs building as the lab rooms need it (toolkit/rooms.py). Copied 2026-11-12 from the campus model (campus.py /
+# campus_v2.py: dimensions.csv row "labs" and reference/warehouse-rules.json), which left this repository that day (EM: "we should
+# only leave the elements as this will be public"); the campus model is the source: a change there is copied here.
+key,value,unit,source
+x,101,m,"campus dimensions.csv row labs: south-west corner, site frame"
+y,166.5,m,campus dimensions.csv row labs
+dx,128,m,campus dimensions.csv row labs (east-west length)
+dy,26,m,campus dimensions.csv row labs (north-south depth)
+eaves,8.0,m,campus dimensions.csv row labs (floor_h: one storey)
+bays,8,,campus dimensions.csv row labs (one 16 m bay each)
+wall,0.23,m,"campus warehouse-rules.json set.wall.thickness (external and internal walls, centred on the grid lines)"
+door_w,1.0,m,campus warehouse-rules.json door D2 (each bay's door on the south wall)
+door_h,2.1,m,campus warehouse-rules.json door D2
+wall_bay,2.5,m,"campus warehouse-rules.json calculus.bay_pitch_nominal (a wall run splits into bays of this pitch; the door takes the middle one)"

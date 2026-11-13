@@ -1,0 +1,6 @@
+# behaviour.csv · dryer-air · generic adsorption compressed air dryer, point of use, in line (lib/behaviour.md). Two air ports and no electrical pin or moving node.
+# The air path (1 to 2 through the desiccant) is pneumatic: the solver is electrical in phase 1 (lib/toolkit/nets.py), so it is written as notes. The desiccant node is fixed;
+# its colour (dry to saturated) has no figure on file to set it by, so no state row is written. NPT joints make up by turns (pneu.NPT L1 + L3), not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,1,port-1,head,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 1 as toolkit/pneu.py NODES)",the inlet: female NPT 1/4
+pin,2,port-2,head,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 2 as toolkit/pneu.py NODES)",the outlet: female NPT 1/4

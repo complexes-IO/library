@@ -1,0 +1,4 @@
+property,value,unit,status,source
+volume_flow,1200,m3/h,generic design,ETIM 10.0 EC010994 class value (plain name until the class's features are on file; spec.md Class values: volume flow at the duty point)
+pressure_increase,600,Pa,generic design,ETIM 10.0 EC010994 class value (plain name until the class's features are on file; spec.md Class values: pressure increase at the duty point)
+motor_power,0.37,kW,generic design,ETIM 10.0 EC010994 class value (plain name until the class's features are on file; spec.md Class values: motor power; the motor seated is motor-iec71-370w)

@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+6.6,M6 clearance medium,clearance,,0.5,A (the gland plate's underside; the four holes located to each other),ISO 273 medium H13 (lib/standards/holes.csv); position Ø0.5 at MMC ≤ H − F = 0.6 (ASME Y14.5 floating fastener),4 x M6 fixing holes in the gland plate on 250 x 150 centres: design choice

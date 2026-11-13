@@ -1,0 +1,5 @@
+# behaviour.csv · conveyor-slat · slat conveyor section (lib/behaviour.md). Mechanical only: no terminal. Two moving nodes, the head shaft shaft-head and the tail shaft shaft-tail, each turning about its own axis; the side frames, posts, ties, cross members, bed rails, foot plates and the slats of the top run (drawn at rest) are the fixed body. The drive is the assembly's.
+kind,a,b,part,when,value,unit,source,note
+state,still,,shafts,default,,,spec.md (Mechanism),the shafts at rest (0)
+state,running,,shafts,manual toggle,,,spec.md (Mechanism),the assembly's drive turns the head shaft; the chains (not drawn) turn the tail shaft with it
+pose,shaft-head shaft-tail,,,running,end,,element.py (each shaft rotates 0 to 360 about its axis),

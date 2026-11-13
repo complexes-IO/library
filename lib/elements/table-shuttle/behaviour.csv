@@ -1,0 +1,5 @@
+# behaviour.csv · table-shuttle · shuttle (pallet-change) table (lib/behaviour.md). Mechanical only: no terminal. One moving node, the pallet; its drive is the machine's (between the elements).
+kind,a,b,part,when,value,unit,source,note
+state,cut,,pallet,default,,,spec.md (Mechanism),the pallet at rest at the cutting position (0)
+state,load,,pallet,manual toggle,,,spec.md (Mechanism),the pallet run out to the load station at the end of its travel
+pose,pallet,,,load,end,,element.py (pallet translates 0–3300),

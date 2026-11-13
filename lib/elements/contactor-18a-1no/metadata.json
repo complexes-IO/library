@@ -1,0 +1,12 @@
+{
+  "element_id": "contactor-18a-1no",
+  "domain": "controls",
+  "category": "Control",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 45.0,
+  "height": 85.0,
+  "depth": 91.6,
+  "units": "mm",
+  "brief": "our own design: generic Power contactor, AC switching (ETIM 10.0 EC000066), 3 main N.O. poles AC-3 18 A at 400 V, 24 V DC coil, 1 N.O. auxiliary; overload-9a-1no1nc mounts under it; no reference part measured (spec.md Class values)"
+}

@@ -1,0 +1,13 @@
+{
+  "element_id": "cross-6way-block-npt",
+  "domain": "pneumatics",
+  "category": "Fittings",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 46.4,
+  "height": 46.4,
+  "depth": 28.4,
+  "units": "mm",
+  "datasheet_dims": null,
+  "aliases": []
+}

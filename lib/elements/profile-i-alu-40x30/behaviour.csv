@@ -1,0 +1,2 @@
+# behaviour.csv · profile-i-alu-40x30 · I-profile, aluminium, generic (lib/behaviour.md). Written by mech-r134 from element.py: one fixed body (plain stock), no terminal, no moving node, no state. A structural part's file: the header only. No load here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note

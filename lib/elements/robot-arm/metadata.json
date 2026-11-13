@@ -1,0 +1,12 @@
+{
+  "element_id": "robot-arm",
+  "category": "Robotics and motion control",
+  "width": 928.2,
+  "height": 1135.1,
+  "depth": 947.6,
+  "units": "mm",
+  "datasheet_dims": null,
+  "domain": "robotics",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

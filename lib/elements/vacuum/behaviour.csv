@@ -1,0 +1,7 @@
+# behaviour.csv · vacuum · generic vacuum ejector with suction cup (lib/behaviour.md). Three air ports and no electrical pin or moving node. Supply air at port 1 through the
+# ejector's nozzle draws the vacuum at the cup and leaves by port 3; air at port-blow releases the part (spec.md): pneumatic paths, and the solver is electrical in phase 1
+# (lib/toolkit/nets.py), so no state or contact row is written. NPT joints make up by turns (pneu.NPT L1 + L3), not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,1,port-1,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 1 as toolkit/pneu.py NODES)",the supply: female NPT 1/8
+pin,3,port-3,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 3 as toolkit/pneu.py NODES)",the ejector's exhaust: female NPT 1/8; takes silencer 1.0 (thread NPT1/8)
+pin,blow,port-blow,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: no ISO 11727 number given to it; marked by its node's name)",the blow-off air: female NPT 1/8

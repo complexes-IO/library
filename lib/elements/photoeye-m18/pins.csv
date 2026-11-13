@@ -1,0 +1,4 @@
+port,pin,role,signal,rated_A,source
+port-x1,+V,load+:24V,supply +24 V DC (the emitter and the electronics),,spec.md Class values 66 (rated control supply voltage DC 24 V; ratings.csv u_supply); the supply current not stated
+port-x1,0V,load0,supply return,,as +V
+port-x1,Q,out,switching output: PNP (switches +V to Q) and normally open (on while a target reflects),0.1,spec.md Class values 5 31 32 (max. output current 100 mA; PNP; normally open)

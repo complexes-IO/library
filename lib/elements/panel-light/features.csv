@@ -1,0 +1,4 @@
+match,role,kind,check,position_tol,datums,source,note
+4.5,M4 clearance medium,clearance,,0.4,back face A; hole line B (z = 0),ISO 273 medium (lib/standards/holes.csv); position Ø0.4 our design choice,two ISO 7380 M4 screws over 270 into the door-frame flange: floating fastener T = H - F = 0.5 (the library's rule GDT-010; the standard's edition is not on file)
+5.2,LED window,own,,,,our own design (Assumption: a 5 mm LED; the led element is NOT ON FILE),nine windows at pitch 25 into the light channel
+8.4,door-switch plunger bore,own,,,,our own design,Ø8.0 plunger with 0.2 clearance each side; 10 deep into the switch block from the back-face plane; the plunger 32 proud toward the door

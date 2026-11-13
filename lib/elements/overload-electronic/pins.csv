@@ -1,0 +1,11 @@
+port,pin,role,signal,rated_A,source
+t-L1,L1,pass,line 1 in (from the contactor's T1),,spec.md Class values 2 (screw connection); main circuit through the current sensing
+t-L2,L2,pass,line 2 in,,as L1
+t-L3,L3,pass,line 3 in,,as L1
+t-T1,T1,pass,motor phase 1 out,,as L1
+t-T2,T2,pass,motor phase 2 out,,as L1
+t-T3,T3,pass,motor phase 3 out,,as L1
+t-95,95,sw-com,N.C. 95-96 common (opens on trip),,spec.md Class values 9 and 16 (1 N.C.; 5 A conventional thermal current)
+t-96,96,sw-nc,N.C. 95-96 output,,as 95
+t-97,97,sw-com,N.O. 97-98 common (closes on trip),,spec.md Class values 10 and 16 (1 N.O.)
+t-98,98,sw-no,N.O. 97-98 output,,as 97

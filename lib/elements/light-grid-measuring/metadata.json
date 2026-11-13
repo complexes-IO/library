@@ -1,0 +1,12 @@
+{
+  "element_id": "light-grid-measuring",
+  "category": "Industrial sensors",
+  "width": null,
+  "height": null,
+  "depth": null,
+  "units": "mm",
+  "datasheet_dims": null,
+  "domain": "sensors",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

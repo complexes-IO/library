@@ -1,0 +1,6 @@
+port,pin,role,signal,rated_A,source
+t-1U,1U,phase-load:L1,primary line 1 (480 V line to line),0.52,spec.md Class values 4; rated current derived (ratings.csv i1)
+t-1V,1V,phase-load:L2,primary line 2,0.52,as 1U
+x2.t-1,2U,supply+:120VAC:X2,secondary 120 V (the control circuit's supply; pole 1 of the placed terminal-plug 2.0),2.08,spec.md Class values 14; rated current derived (ratings.csv i2)
+x2.t-2,2V,supply0,secondary return (0 V of the control circuit; pole 2 of the plug),2.08,as 2U
+t-PE,PE,PE,protective earth of the core frame,,"not on file: the bond of exposed conductive parts to the panel's PE bar is IEC 60204-1's rule, named without a clause because the standard is not in lib/standards/sources.csv; NFPA 79's bonding clause is held view-only (read attended; needs-em elec r35)"

@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+13.5,M12 clearance medium,clearance,,1.2,A (the base plate's underside: the floor plane); the six holes located to each other,ISO 273 medium H13 (lib/standards/holes.csv); position Ø1.2 at MMC ≤ H − F = 1.5 (ASME Y14.5 floating fastener),6 x M12 floor anchors at 1800 x 580 (three a side): design choice

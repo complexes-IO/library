@@ -1,0 +1,10 @@
+# behaviour.csv · hyd-filter-return · generic hydraulic return-line filter, inline head with a spin-on canister (lib/behaviour.md). Two oil ports and no electrical pin; one moving
+# node, the clogging indicator's button. The oil path (in to out through the element; in to out through the bypass valve when the element is clogged) is hydraulic: the solver
+# is electrical in phase 1 (lib/toolkit/nets.py) and solves no oil, so the indicator's states are its two ends, set by a manual state until a hydraulic model drives them.
+# The ports' thread is open (class B), set by the fitting's stud end: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,in,port-in,body,,not claimed,N·m,not claimed: the fitting's stud end sets it (SAE J1926-2 / -3); spec.md Ports (design: marked by its name; the hydraulic port marking standard is not on file),from the directional valve's T port (unit hyd-port)
+pin,out,port-out,body,,not claimed,N·m,not claimed: the fitting's stud end sets it (SAE J1926-2 / -3); spec.md Ports (design: marked by its name; the hydraulic port marking standard is not on file),to the tank (unit hyd-port)
+state,clear,,indicator,default,,,spec.md Named nodes (button seated: the element's pressure drop under 2 bar),
+state,clogged,,indicator,manual toggle,,,spec.md Named nodes (button risen 5: stand-in for a pressure drop of 2 bar or more until a hydraulic model),the engineer sets it to show a clogged element
+pose,indicator,,,clogged,end,,element.py (indicator translates 0 to 5 along +z),

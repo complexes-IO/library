@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+50,abrasive outlet,own,,,,design choice (spec.md Its own sizes),Ø50 through the trough bottom and its collar at x 0 y 400 for the blast gun's pickup or a metering valve (not built yet; placed later): no fastener and no standard size

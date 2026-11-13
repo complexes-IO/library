@@ -1,0 +1,9 @@
+# behaviour.csv · coolant-pump · generic vertical immersion coolant pump, 460 V 3-phase (lib/behaviour.md). The supply port `pwr` (pins.csv: L1 L2 L3 PE) and the outlet; no moving node.
+# Its load (the motor) is not written: the full-load current is not stated (spec.md Class values; pins.csv rated_A blank), and a load row without its figure would be a guess
+# (OPERATING.md 6). No state rows until that figure is on file. Terminal torque and the outlet's NPT joint: value not claimed (the terminals are not modelled; NPT makes up by turns: lib/behaviour.md, pin; request pneu-13 1). The coolant path is liquid, not the phase 1 solver's.
+kind,a,b,part,when,value,unit,source,note
+pin,L1,pwr,terminal,,not claimed,N·m,not claimed: the terminal is not modelled; a placed motor element carries its own (IEC 60947-1); pins.csv (pwr L1: the motor's U1),phase L1 of the 460 V supply (ratings.csv)
+pin,L2,pwr,terminal,,not claimed,N·m,not claimed: the terminal is not modelled; a placed motor element carries its own (IEC 60947-1); pins.csv (pwr L2: V1),phase L2
+pin,L3,pwr,terminal,,not claimed,N·m,not claimed: the terminal is not modelled; a placed motor element carries its own (IEC 60947-1); pins.csv (pwr L3: W1),phase L3
+pin,PE,pwr,terminal,,not claimed,N·m,not claimed: the terminal is not modelled; a placed motor element carries its own (IEC 60947-1); pins.csv (pwr PE; the terminal box's bonding terminal),protective earth
+pin,out,port-out,outlet boss,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: a coolant port has no ISO 11727 number; marked by its node's name)",the outlet: female NPT 3/8 toward the machine's coolant line

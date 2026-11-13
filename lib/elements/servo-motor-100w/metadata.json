@@ -1,0 +1,16 @@
+{
+  "element_id": "servo-motor-100w",
+  "category": "Motor control and drives",
+  "width": 40.0,
+  "height": 40.0,
+  "depth": 110.3,
+  "units": "mm",
+  "datasheet_dims": [
+    110.3,
+    40.0,
+    40.0
+  ],
+  "domain": "electrical",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

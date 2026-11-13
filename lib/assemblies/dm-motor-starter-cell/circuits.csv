@@ -1,0 +1,18 @@
+circuit,kind,voltage,role,tag,note
+# the cell's circuits for the ratings checker: which device does what in each circuit (the single-line view)
+motor-m1,motor-branch,480,isolation,panel-1.q1,main disconnect
+motor-m1,motor-branch,480,protective,panel-1.q3,motor branch breaker
+motor-m1,motor-branch,480,switching,panel-1.k1,motor contactor
+motor-m1,motor-branch,480,overload,panel-1.f1,thermal overload
+motor-m1,motor-branch,480,connector,panel-1.p-m1,wall receptacle
+motor-m1,motor-branch,480,cable,cable-pwr-480,panel to motor
+motor-m1,motor-branch,480,load,machine-1.m1,the motor
+dc-24v,dc-supply,24,supply,panel-1.g1,24 V DC supply
+dc-24v,dc-supply,24,load,panel-1.k1,contactor coil
+dc-24v,dc-supply,24,load,panel-1.k-safe,safety relay
+dc-24v,dc-supply,24,load,panel-1.plc-1,controller
+dc-24v,dc-supply,24,load,panel-1.enc-1.lamp-power,control power lamp on the door
+dc-24v,dc-supply,24,load,machine-1.io-1,I/O block logic (US)
+dc-24v,dc-supply,24,load,machine-1.pbs-1.lamp-run,run light (an I/O output)
+dc-24v,dc-supply,24,load,machine-1.pbs-1.lamp-fault,fault light (an I/O output)
+dc-24v,dc-supply,24,connector,panel-1.p-x2,L-coded supply to the machine

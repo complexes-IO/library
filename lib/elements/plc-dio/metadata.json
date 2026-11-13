@@ -1,0 +1,12 @@
+{
+  "element_id": "plc-dio",
+  "domain": "controls",
+  "category": "Control",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 60.0,
+  "height": 100.0,
+  "depth": 93.5,
+  "units": "mm",
+  "brief": "our own design: generic PLC digital I/O-module (ETIM 10.0 EC001419), 8 digital inputs and 8 digital outputs (transistor, 0.5 A), 24 V DC; no reference part measured (spec.md Class values)"
+}

@@ -1,0 +1,10 @@
+class,over,up_to,tol,standard
+# ISO 2768-1 general tolerances for linear dimensions, class m (medium): the library default when a figure carries no tolerance
+m,0.5,3,0.1,ISO 2768-1
+m,3,6,0.1,ISO 2768-1
+m,6,30,0.2,ISO 2768-1
+m,30,120,0.3,ISO 2768-1
+m,120,400,0.5,ISO 2768-1
+m,400,1000,0.8,ISO 2768-1
+m,1000,2000,1.2,ISO 2768-1
+m,2000,4000,2.0,ISO 2768-1

@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+3.2422,M4 x 0.7 tapped mounting hole,own,,,,"derived: derive.thread(4.0, 0.7) (ISO 68-1 basic profile; ISO 965-1 clause 10: the internal thread's minor diameter D1 3.2422, 6H 3.2422-3.4224)","three blind tapped holes 6 deep in the mounting face on a Ø48 pitch circle, modelled plain at D1; the installer's M4 screws through the host's bracket thread into them (screw-iso4762 not placed: spec.md Notes)"

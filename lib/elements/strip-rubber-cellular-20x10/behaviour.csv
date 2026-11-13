@@ -1,0 +1,2 @@
+# behaviour.csv · strip-rubber-cellular-20x10 · Cellular rubber strip, generic (lib/behaviour.md). Written by mech-r132 from element.py: one fixed body (plain stock), no terminal, no moving node, no state. A structural part's file: the header only. No compression or sealing figure here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note

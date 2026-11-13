@@ -1,0 +1,5 @@
+# behaviour.csv · clamp-spring-25 · generic spring clamp (lib/behaviour.md). Written by mech-r127 from element.py: no terminal (a hand tool; nothing is wired or plugged); one moving node, `jaw` (the upper arm with its boss, bars and pad), rotates about (0, -1, 0) 0 to 24 degrees (SWING: the pads 1 apart at 0; their centres 25.4 apart at the end, the class value max. clamping range). The spring holds it shut and a hand squeezes it open, so the twin sets the jaw as the operator's input. No clamping force here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note
+state,closed,,jaw,default,,,element.py (ORIGIN and PAD_T: the pads 1 apart at 0),the jaws shut: the spring's rest
+state,open,,jaw,manual toggle,,,element.py (node jaw: rotate 0 to 24 degrees),the handles squeezed together: the pads' centres 25.4 apart
+pose,jaw,,,open,end,,element.py (node jaw: rotate 0 to 24 degrees),

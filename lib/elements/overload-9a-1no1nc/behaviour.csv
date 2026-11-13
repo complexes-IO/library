@@ -1,0 +1,28 @@
+# behaviour.csv · overload-9a-1no1nc · what the element does at its terminals (lib/behaviour.md). Taken in by elec-r24 from the core's proposal of 2026-11-09 (lib/requests/core/behaviour/overload-9a.csv), checked against references/interior.md and measure.md, pins.csv, parts.csv, ratings.csv and element.py.
+# The prose is behaviour.md; the sub-elements and models are parts.csv. Phase 1 of the solver has no time: the thermal trip (class 10 curve; spec p. 12) is a manual fault until the thermal model runs;
+# the trip condition that model evaluates is heater.I > 1.2 × the dial setting for the class time.
+# Differences from the proposal: T1–T3 torque 2.3 N·m and 95–98 torque 1.5 N·m are on file (parts.csv terminal-motor / terminal-aux; spec p. 6) where the proposal said NOT ON FILE; the dial row cites this element's range 7.0–10.0 A (cut sheet p. 1) where the proposal named another range (0.8–1.2 A); the commas inside source fields are taken out.
+# elec-r27 (review elec-r24 finding 1): L1-L3 are plug-in pins (no screw: the "torque" is C, none exists); the heater resistances classed C.
+kind,a,b,part,when,value,unit,source,note
+pin,L1,main,pin,,NOT ON FILE (C): plug-in pins with no screw of their own (drawing p. 1); no torque exists,N·m,drawing p. 1 (pin row): the pins plug into the contactor's lower terminals; no screw of their own,line 1 in (K1 T1)
+pin,L2,main,pin,,NOT ON FILE (C): plug-in pins with no screw of their own (drawing p. 1); no torque exists,N·m,as L1,line 2 in
+pin,L3,main,pin,,NOT ON FILE (C): plug-in pins with no screw of their own (drawing p. 1); no torque exists,N·m,as L1,line 3 in
+pin,T1,motor,terminal-motor,,2.3,N·m,spec p. 6 (2.3 N·m IEC; 20 lb-in UL) in parts.csv terminal-motor; drawing p. 1 (terminal row),motor phase 1 out
+pin,T2,motor,terminal-motor,,2.3,N·m,as T1,motor phase 2 out
+pin,T3,motor,terminal-motor,,2.3,N·m,as T1,motor phase 3 out
+pin,95,aux,terminal-aux,,1.5,N·m,spec p. 2 (marks); spec p. 6 (M3.5 screw 1.5 N·m) in parts.csv terminal-aux,N.C. common
+pin,96,aux,terminal-aux,,1.5,N·m,as 95,N.C.
+pin,97,aux,terminal-aux,,1.5,N·m,as 95,N.O. common
+pin,98,aux,terminal-aux,,1.5,N·m,as 95,N.O.
+contact,L1,T1,heater-bimetal,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the thermal model reads the heater,ohm,behaviour.md (FIELD KNOWLEDGE: the overload never breaks the motor current itself); heater R NOT ON FILE,the heater path; the solver reads its current
+contact,L2,T2,heater-bimetal,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the thermal model reads the heater,ohm,as L1–T1,
+contact,L3,T3,heater-bimetal,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the thermal model reads the heater,ohm,as L1–T1,
+state,set,,latch,default,,,spec p. 2,latched set: running or cold
+state,tripped,,latch,manual latch cleared by reset,,,spec p. 2 and p. 12 (class 10: 1.2 × Ir within 2 h; 7.2 × Ir in 4–10 s); a fault the twin injects until the thermal model runs,
+state,up,,btn-reset,default,,,spec p. 2,the reset button at rest
+state,reset,,btn-reset,manual momentary,,,spec p. 2 (H / HAND: the button resets; A / AUTO resets by itself),the reset button pressed
+contact,95,96,aux-95,not tripped,,,spec p. 1 / p. 2 / p. 5 (DC-13 1 A at 24 V),N.C. in the contactor's coil circuit
+contact,97,98,aux-97,tripped,,,spec p. 1 / p. 2 / p. 5,N.O. signals the trip
+pose,bimetal-1 bimetal-2 bimetal-3 differential trip-slide latch aux-95 aux-97,,,tripped,end,,parts.csv (motion: differential follows the bimetals; trip-slide the differential; the aux the latch),
+pose,btn-reset,,,reset,end,,parts.csv,
+pose,dial-fla,,,set,0,,cut sheet p. 1 (dial 7.0–10.0 A; parts.csv dial-fla); the dial angle per ampere is NOT ON FILE: shown at the range bottom,

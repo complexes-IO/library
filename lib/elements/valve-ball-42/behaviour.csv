@@ -1,0 +1,12 @@
+# behaviour.csv · valve-ball-42 · generic four-way ball valve, a manual 4/2 reversing valve, four NPT 1/4 female ports, quarter-turn lever (lib/behaviour.md). Four air ports and
+# no electrical pin; one moving node, the lever. Position a (lever 0°) joins 1 to 2 and 4 to 3; position b (90°) joins 1 to 4 and 2 to 3 (spec.md What, ISO 11727). Those are
+# air paths: the solver is electrical in phase 1 (lib/toolkit/nets.py), so they are notes. No safety function (spec.md Notes). NPT joints make up by turns (pneu.NPT L1 + L3),
+# not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,1,port-1,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 1 as toolkit/pneu.py NODES)",the supply: female NPT 1/4 on the -x face
+pin,2,port-2,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 2 as toolkit/pneu.py NODES)",a work port: female NPT 1/4 on the +y face
+pin,3,port-3,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 3 as toolkit/pneu.py NODES)",the exhaust: female NPT 1/4 on the +x face
+pin,4,port-4,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 4 as toolkit/pneu.py NODES)",a work port: female NPT 1/4 on the -y face
+state,pos-a,,lever,default,,,spec.md Named nodes (lever 0°: position a),1 to 2; 4 vented through 3
+state,pos-b,,lever,manual toggle,,,spec.md Named nodes (a quarter turn: 90°; position b),1 to 4; 2 vented through 3
+pose,lever,,,pos-b,end,,element.py (lever rotates 0 to 90° about +z),

@@ -1,0 +1,28 @@
+# behaviour.csv · plc-aio · PLC analogue I/O module 4 AI + 2 AO, 24 V DC (lib/behaviour.md). Written by elec-r33 from spec.md and pins.csv, in the form of servo-drive's.
+# Not in this file (solver phase 1): the analogue channels. The phase-1 solver reads no analogue signal, so the inputs' readings and the outputs'
+# values (0-10 V / 4-20 mA, spec.md Class values) are the program's and the core's circuit model's; the pins are here so the probe can touch them.
+# The module is a load on its 24 V DC supply (spec.md Class values 25: 2.0 W); it runs on any supply voltage, the under-voltage threshold being IEC 61131-2's table (class B, a document wanted).
+# Torques: the plugs' clamps are terminal-plug 2.0's (class B, IEC 60999), as that element's behaviour.csv writes them.
+kind,a,b,part,when,value,unit,source,note
+pin,AI0+,x1.t-1,x1.clamp-1,,NOT ON FILE (B): IEC 60999,N·m,terminal-plug 2.0 behaviour.csv (its clamps' torque class B),analogue input 0 +
+pin,AI0-,x1.t-2,x1.clamp-2,,NOT ON FILE (B): IEC 60999,N·m,as AI0+,analogue input 0 -
+pin,AI1+,x1.t-3,x1.clamp-3,,NOT ON FILE (B): IEC 60999,N·m,as AI0+,analogue input 1 +
+pin,AI1-,x1.t-4,x1.clamp-4,,NOT ON FILE (B): IEC 60999,N·m,as AI0+,analogue input 1 -
+pin,AI2+,x1.t-5,x1.clamp-5,,NOT ON FILE (B): IEC 60999,N·m,as AI0+,analogue input 2 +
+pin,AI2-,x1.t-6,x1.clamp-6,,NOT ON FILE (B): IEC 60999,N·m,as AI0+,analogue input 2 -
+pin,AI3+,x1.t-7,x1.clamp-7,,NOT ON FILE (B): IEC 60999,N·m,as AI0+,analogue input 3 +
+pin,AI3-,x1.t-8,x1.clamp-8,,NOT ON FILE (B): IEC 60999,N·m,as AI0+,analogue input 3 -
+pin,24V,x2.t-1,x2.clamp-1,,NOT ON FILE (B): IEC 60999,N·m,as AI0+,module supply +24 V DC
+pin,0V,x2.t-2,x2.clamp-2,,NOT ON FILE (B): IEC 60999,N·m,as AI0+,module supply 0 V
+pin,FE,x2.t-3,x2.clamp-3,,NOT ON FILE (B): IEC 60999,N·m,as AI0+,functional earth
+pin,AO0,x2.t-4,x2.clamp-4,,NOT ON FILE (B): IEC 60999,N·m,as AI0+,analogue output 0
+pin,M0,x2.t-5,x2.clamp-5,,NOT ON FILE (B): IEC 60999,N·m,as AI0+,analogue 0 V of output 0
+pin,AO1,x2.t-6,x2.clamp-6,,NOT ON FILE (B): IEC 60999,N·m,as AI0+,analogue output 1
+pin,M1,x2.t-7,x2.clamp-7,,NOT ON FILE (B): IEC 60999,N·m,as AI0+,analogue 0 V of output 1
+load,24V,0V,logic,,2.0,W,"spec.md Class values 25 (2.0 W): the module's power consumption written as the load's P; the solver draws I = P / V at the seen voltage (0.083 A at 24 V, ratings.csv load_i)",the module's electronics
+state,powered,,supply,"V('24V','0V') > 0",,,"spec.md Class values 25 (24 V DC supply); the supply's under-voltage threshold is NOT ON FILE (B): IEC 61131-2 (its 24 V DC supply range table is not in lib/standards/sources.csv), so any supply voltage reads as powered (as xfmr-control's energised row)",the module runs
+state,off,,supply,default,,,spec.md Class values 25,no supply: the module is dead and its outputs at 0
+state,fault,,module,manual toggle,,,spec.md Named nodes (led-err),the twin sets a channel fault (an input out of range or an open 4-20 mA loop)
+state,healthy,,module,default,,,spec.md Named nodes,
+pose,led-run,,,powered,1,,spec.md Named nodes,green: powered and running
+pose,led-err,,,powered and fault,1,,spec.md Named nodes,red: a channel fault

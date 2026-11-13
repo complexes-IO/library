@@ -1,0 +1,5 @@
+property,value,unit,status,source
+ue_max,440,V AC,generic design,"ETIM 10.0 EC002611 class value: max. rated operation voltage Ue AC (EF007355); spec.md Class values 3"
+iu,10,A,generic design,"ETIM 10.0 EC002611 class value: rated permanent current Iu (EF001389), each contact; spec.md Class values 4"
+poles,2,,generic design,"ETIM 10.0 EC002611 class value: number of poles (EF001391); spec.md Class values 2"
+positions,3,,generic design,"ETIM 10.0 EC002611 class value: number of switch positions (EF000231), 1-0-2 with a zero position (EF001416); spec.md Class values 5 and 6"

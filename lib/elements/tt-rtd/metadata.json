@@ -1,0 +1,16 @@
+{
+  "element_id": "tt-rtd",
+  "category": "Industrial sensors",
+  "width": 19.0,
+  "height": 18.0,
+  "depth": 171.0,
+  "units": "mm",
+  "datasheet_dims": [
+    171.0,
+    19.0,
+    18.0
+  ],
+  "domain": "sensors",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

@@ -1,0 +1,6 @@
+property,value,unit,status,source
+ue_dc,24,V,generic design,"ETIM 10.0 EC011478 class value: supply voltage (EF000104), the loop's 24 V DC; spec.md Class values 3"
+p_range_min,0,bar,generic design,"ETIM 10.0 EC011478 class value: measuring range (EF001836), its low end 0 Pa; spec.md Class values 5"
+p_range_max,250,bar,generic design,"ETIM 10.0 EC011478 class value: measuring range (EF001836), its high end 25 MPa; spec.md Class values 5"
+i_out_min,0.004,A,generic design,"ETIM 10.0 EC011478 class value: output signal (EF000506), 4-20 mA, its low end at 0 bar; spec.md Class values 1"
+i_out_max,0.020,A,generic design,"ETIM 10.0 EC011478 class value: output signal (EF000506), 4-20 mA, its high end at 250 bar; spec.md Class values 1"

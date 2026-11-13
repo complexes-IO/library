@@ -1,0 +1,3 @@
+# behaviour.csv · seal-tape-epdm · generic EPDM sponge sealing tape on a roll (lib/behaviour.md). A structural part: no port, no electrical pin and no moving node.
+# It is stuck along a joint face and pressed when the joint closes, so it passes no path of its own: no state, contact, load or pose row is written (the header only).
+kind,a,b,part,when,value,unit,source,note

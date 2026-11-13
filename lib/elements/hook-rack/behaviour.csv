@@ -1,0 +1,2 @@
+# behaviour.csv · hook-rack · hanging rack for powder coating parts (lib/behaviour.md). Mechanical only: no terminal (the Ø18 hang eye takes the overhead conveyor's hook, not a port; no earth path is modelled or claimed) and no moving node (spine, cross-bars and pins are one fixed body), so no state and no pose.
+kind,a,b,part,when,value,unit,source,note

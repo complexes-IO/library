@@ -1,0 +1,4 @@
+property,value,unit,status,source
+u_supply,24,V DC,generic design,"ETIM 10.0 EC001413 class value: supply voltage DC (EF007534), voltage type DC (EF002991); spec.md Class values 3 and 4"
+p_consumption,24.0,W,design,"design: 24 W, the fanless box PC's board, processor, memory and storage on the panel's 24 V DC control supply, inside psu-24v-2a4's output (the 24 V budget, ELR-020); not a feature of EC001413; spec.md Class values (the paragraph under the table)"
+load_i,1.00,A,derived,"24.0 W / 24 V = 1.00 A (I = P / U; p_consumption and u_supply above), what the 24 V budget (ELR-020) reads; behaviour.csv load row 24V-0V"

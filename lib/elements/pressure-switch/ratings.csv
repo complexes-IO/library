@@ -1,0 +1,8 @@
+property,value,unit,status,source
+ue_dc,24,V,generic design,"ETIM 10.0 EC000243 class value: rated voltage Ue at DC (EF007031); spec.md Class values 17"
+p_max,250,bar,generic design,"ETIM 10.0 EC000243 class value: max. operating pressure (EF020449), 250000 hPa; spec.md Class values 4"
+p_set_min,20,bar,generic design,"ETIM 10.0 EC000243 class value: engaging pressure (EF007124), the setting range's low end; spec.md Class values 5"
+p_set_max,200,bar,generic design,"ETIM 10.0 EC000243 class value: engaging pressure (EF007124), the setting range's high end; spec.md Class values 5"
+p_diff,10,bar,generic design,"ETIM 10.0 EC000243 class value: pressure-switching differential (EF008261), fixed; spec.md Class values 9"
+contacts_co,1,,generic design,"ETIM 10.0 EC000243 class value: number of auxiliary contacts as change-over contact (EF003531); spec.md Class values 26"
+ie_dc13_24v,2,A,design,"design: 2 A at 24 V DC, utilization category DC-13 (IEC 60947-5-1 named, not on file), the contact rating limit-switch 1.0 carries; not a class feature of EC000243 (spec.md Switching program)"

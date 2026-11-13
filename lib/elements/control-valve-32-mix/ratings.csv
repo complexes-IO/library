@@ -1,0 +1,2 @@
+property,value,unit,status,source
+p_max,8,bar,design,design: 8 bar; the actuator's control air rating at port-12 only: above the bench drop's P_SUPPLY 100 psig = 6.89 bar (toolkit/pneu.py D3; ISO 4414:2010 clause 5); the body's process pressure is open class A (spec.md Open figures); EF024117 Closing pressure 4 bar is a seat's shut-off differential and not a rating (spec.md Class values 22)

@@ -1,0 +1,13 @@
+{
+  "element_id": "sleeve-braid",
+  "domain": "pneumatics",
+  "category": "Hoses",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 9.35,
+  "height": 9.35,
+  "depth": 500.0,
+  "units": "mm",
+  "datasheet_dims": null,
+  "aliases": []
+}

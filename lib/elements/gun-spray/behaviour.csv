@@ -1,0 +1,9 @@
+# behaviour.csv · gun-spray · generic paint spray gun, gravity cup, compressed air (lib/behaviour.md). One air port and no electrical pin; one moving node, the trigger.
+# Pulled, the trigger opens the air valve and draws the fluid needle back, so air from port-1 atomises the paint at the air cap; released, a spring shuts both (spec.md What).
+# Those are air and paint paths: the solver is electrical in phase 1 (lib/toolkit/nets.py), so they are notes; the trigger is an operator's momentary action.
+# NPT joints make up by turns (pneu.NPT L1 + L3), not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1). Written with 1.0 (pneu-r69).
+kind,a,b,part,when,value,unit,source,note
+pin,1,port-1,collar,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 1 as toolkit/pneu.py NODES; the gun's only port)",the air inlet: female NPT 1/4 under the handle
+state,released,,trigger,default,,,spec.md Named nodes (trigger 0: the spring holds it out),air and paint shut
+state,pulled,,trigger,manual momentary,,,spec.md Named nodes (trigger pulled 10°: the operator's hand),air on at the air cap; paint flows
+pose,trigger,,,pulled,end,,element.py (trigger rotates 0 to 10° about +y at its top rear edge),

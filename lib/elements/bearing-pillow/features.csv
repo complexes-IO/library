@@ -1,0 +1,3 @@
+match,role,kind,check,position_tol,datums,source,note
+13.5,M12 clearance medium,clearance,,0.5,A (the base's underside; the two holes located to each other),ISO 273 medium H13 (lib/standards/holes.csv); position Ø0.5 at MMC ≤ H − F = 1.5 (ASME Y14.5 floating fastener: the host's pattern takes the other half),"2 x Ø13.5 through the base at x +-52.5 (105 centres), y 0: design choice (round holes, not slots)"
+52.0,insert bearing seat,own,,,,"design figure: the insert's seat drawn as a plain through bore; the figure ISO 9628 / ISO 3228 tabulate is a source wanted (spec.md What it meets)","one bore along y through the tower at z 50; declared so the hole checker reads no screw into it (caster 1.0's way)"

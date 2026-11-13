@@ -1,0 +1,15 @@
+# behaviour.csv · encoder · incremental rotary encoder, push-pull HTL, 24 V DC, generic (lib/behaviour.md). Written by elec-r47 (unattended, 2026-11-13) from spec.md (Class values, Signals, Named nodes), pins.csv, ratings.csv and element.py: a generic element, so its class values are its figures.
+# One port, the connector seat port-x1 (unit m12-a), gender none until receptacle-m12 is placed on it (spec.md Notes): the five signals' pins are on that node. Torque: the receptacle's contacts take a mating plug and no screw.
+# The phase-1 solver is electrical and counts no pulses: the outputs A, B and N are signal pins it does not read, and the shaft's turning is the twin's input (manual toggle) with its pose, as servo-motor. The electronics' supply current is not stated (spec.md Class values), so no load row: a figure from nowhere otherwise.
+kind,a,b,part,when,value,unit,source,note
+pin,+V,port-x1,seat-x1,,not claimed,N·m,not claimed: a plug-in contact of receptacle-m12 (not yet placed) and no screw (lib/behaviour.md pin),supply +24 V DC (pins.csv)
+pin,0V,port-x1,seat-x1,,not claimed,N·m,not claimed: as +V,supply return
+pin,A,port-x1,seat-x1,,not claimed,N·m,not claimed: as +V,channel A (push-pull HTL)
+pin,B,port-x1,seat-x1,,not claimed,N·m,not claimed: as +V,channel B (push-pull HTL; a quarter period after A turning one way)
+pin,N,port-x1,seat-x1,,not claimed,N·m,not claimed: as +V,zero pulse N (one a revolution)
+state,off,,electronics,default,,,spec.md Signals (no voltage across +V and 0V: no outputs),the outputs are off
+state,powered,,electronics,"V('+V','0V') > 0",,,"NOT ON FILE (B): IEC 61131-2 (the least supply voltage at which the outputs are valid is the 24 V DC class's lower limit, the standard's table; spec.md Notes)",the outputs follow the shaft
+state,still,,shaft,default,,,element.py (node shaft at 0),the shaft at rest
+state,turning,,shaft,manual toggle,,,element.py (node shaft: rotate 0 to 360); spec.md Signals (the twin turns the shaft: no solver drives it),the shaft turning: A and B pulse while powered
+pose,shaft,,,turning,end,,element.py (shaft: rotate 0 to 360),continuous rotation shown at the range end
+limit,electronics,,,,24,VDC,ratings.csv u_supply (design: 24 V DC; IEC 61131-2's 24 V DC class; spec.md Class values),the supply voltage

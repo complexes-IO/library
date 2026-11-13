@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+13.5,M12 clearance medium,clearance,,1.0,A B C,"ISO 273 medium H13 (lib/standards/holes.csv); position Ø1.0 at MMC to A the floor plane, B the plane midway between the posts (x 0), C the plane through the posts' centres (y 0) (ASME Y14.5 floating fastener, T <= H − F = 1.50)","design choice: 4 x M12 in the base plate at 400 x 180 (x +-200, y +-90), clear of the posts; the anchors are the assembly's"

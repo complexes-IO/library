@@ -1,0 +1,2 @@
+# behaviour.csv · mat-vibration · vibration absorber mat, generic ribbed NBR pad (lib/behaviour.md). One fixed body (core and ribs): no terminal, no moving node (the class states no load or stiffness, so no loaded pose is drawn), no state.
+kind,a,b,part,when,value,unit,source,note

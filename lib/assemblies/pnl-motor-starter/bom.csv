@@ -1,0 +1,73 @@
+element,version,tag,parent,x,y,z,yaw,params,note,pitch,roll
+enc-fs-1524x1829x305,1.9,enc-1,floor,0,0,0,0,,control cabinet; floor anchors at the origin; its own BOM carries the door operators (estop-door · btn-reset · lamp-power); pinned 1.9 since 0.11 (its three earth studs are port nodes: pins PE1 to PE3 · wires 61 to 63)
+din-rail-35,1.1,rail-1,enc-1.back-panel,174.5,275.6,1850,0,length=1200,top rail: k-safe · plc-1
+din-rail-35,1.1,rail-2,enc-1.back-panel,174.5,275.6,1550,0,length=900,control rail: Q2 · PSU · Q4; x 162 to 1062 since 0.9 (1200 before): the transformer t1 is screwed to the back panel to its right (x 1092 to 1208) and stands 130 high across the rail's z (design: the shop's choice · spec.md section 3)
+din-rail-35,1.1,rail-3,enc-1.back-panel,174.5,275.6,1250,0,length=1200,power rail: MCB 3p · contactor + overload
+din-rail-35,1.1,rail-4,enc-1.back-panel,174.5,275.6,950,0,length=1200,terminal rail: strip X1 and the PE blocks
+duct-40x60,1.3,duct-1935,enc-1.back-panel,162,275.6,1935,0,length=1200;cover=true,wiring duct row
+duct-40x60,1.3,duct-1680,enc-1.back-panel,162,275.6,1680,0,length=1200;cover=true;breakout=b143,wiring duct row; since 0.10 one finger of its top wall (b) out at x 302 to 314 (run 140 to 152): w-pwr's L cable (9.8) drops through the gap 294 to 322 (duct-40x60 1.3 `breakout` · request panel-11 item 1)
+duct-40x60,1.3,duct-1385,enc-1.back-panel,162,275.6,1385,0,length=1200;cover=true,wiring duct row
+duct-40x60,1.3,duct-1085,enc-1.back-panel,162,275.6,1085,0,length=1200;cover=true;breakout=a66,wiring duct row; since 0.10 one finger of its bottom wall (a) out at x 222 to 234 (run 60 to 72): w-pwr leaves through the gap 214 to 242 toward X1:3 and X1:7
+duct-40x60,1.3,duct-790,enc-1.back-panel,162,275.6,790,0,length=1200;cover=true,wiring duct row
+duct-40x60,1.3,riser-l,enc-1.back-panel,160,275.6,790,0,length=1185;cover=true;breakout=a906/a306,left riser: the same duct stood on end (roll -90: its run along +z · its 40 section toward -x) joining the five rows; x 120 to 160 · 2 clear of the rows' left ends (162) · z 790 to 1975 (the rows' bottom and top edges); the back panel's studs (x 116 · z 421.5 and 2017.5) are outside it. Since 0.10 two fingers of its right wall (a · facing the rows) out: z 1690 to 1702 (from duct-1680) and 1090 to 1102 (to duct-1085) for w-pwr,,-90
+duct-40x60,1.3,riser-r,enc-1.back-panel,1404,275.6,790,0,length=1185;cover=true,right riser: as riser-l at the rows' right ends (1362); x 1364 to 1404 · for the wires that leave to the ports of the right wall; the studs at x 1408 are below and above it,,-90
+relay-safety-2ch-2no1nc,1.2,k-safe,rail-1,200,268.1,1850,0,,safety relay: e-stop chain in (spec: estop · estop_chain); output 13-14 in K1's coil chain
+plc0,1.2,plc-1,rail-1,246.5,268.1,1850,0,,the controller (spec: io_link). x 246.5 since 0.7 (240 before): its Ethernet socket port-eth (x + 31.5 = 278) stands over the slot of duct-1680's top wall at x 274 to 282 (duct-40x60: 8.0 slots at a 20 pitch from the duct's x 162) so the cordset w-eth drops straight through it (design: the shop's choice)
+mcb-1p-c6,1.5,q2,rail-2,200,268.1,1550,0,,control-circuit breaker ahead of the PSU: on the transformer's 120 V secondary (t1 placed since 0.9; the pin 1.4 since 0.9: its pins' nodes; 1.5 since 0.12: elec-r37's text minor · at station 6)
+psu-24v-2a4,1.4,g1,rail-2,240,268.1,1550,0,,24 V DC supply (spec: io_power); the pin 1.3 since 0.9 (its pins' nodes) · 1.4 since 0.13 (elec-r39 to r41's text minor · at station 6)
+mcb-2p,1.1,q4,rail-2,290,268.1,1550,0,,the transformer's primary breaker across q1's load-side L1 and L2 (spec: control_power; request panel-1 item 2 and the core's answer: a 2-pole breaker trips both poles). Placed since 0.9 at the place reserved since 0.1 (x 290 to 325.4); its rated current is not chosen (mcb-2p spec.md: NEC 430.72(C) · spec.md section 5). The pin 1.1 since 0.10 (elec-r32's minor · at station 6)
+xfmr-control,1.1,t1,enc-1.back-panel,1100,275.6,1495,0,,control transformer 250 VA 480 V to 120 V 1ph (spec: control_power; request panel-1 item 1). Placed since 0.9: a surface-mount device (its brackets' flanges on the back panel · four M5 holes · origin the lower-left hole) at x 1092 to 1208 · z 1485 to 1615 · y 167.6 to 275.6: right of rail-2's end (1062) · left of q1's body (x 1227.7) · 65 below duct-1680 and 60 above duct-1385 (design: the shop's choice · spec.md section 3); the panel screws are the installer's (xfmr-control spec.md)
+mcb-3p-c10,1.5,q3,rail-3,200,268.1,1250,0,,motor branch breaker (spec: m1); the pin 1.4 since 0.9 (its pins' nodes); 1.5 since 0.12 (elec-r37's text minor · at station 6)
+contactor-9a-1no1nc,1.2,k1,rail-3,300,268.1,1250,0,aux=true,motor contactor K1 with front aux block (spec: m1 · k1 · k1_aux); the id contactor-9a until the library's rename of 2026-11-11 (same element · same version)
+overload-9a-1no1nc,1.1,f1,k1,303.1,275.6,1210.8,0,range=D012,thermal overload on K1's lower terminals: 0.8-1.2 A for the 0.91 A motor (EM 2026-11-03; spec: m1 · ol_trip: 95-96 in K1's coil chain · 97-98 to the controller); x +3.1 aligns its pin row with K1's poles; back on the mounting plane; top at rail - 39.2
+disc-3p-30a,1.7,q1,enc-1.door-r,1250,-25,1480,0,door_t=1.9;shaft=243.1,main disconnect (spec: supply): handle on the door; body on the back panel via the long shaft (the pin 1.4 since 0.9: its pins' nodes; 1.5 since 0.12: elec-r37's text minor · at station 6; 1.6 since 0.13: elec-r39 to r41's minor · at station 6; 1.7 since 0.14: elec-r48's text minor · at station 6). Placed since 0.6: held in assembly.py until lib/motion.csv's three rows (body excluded from door-r · door-unit and handle follow it) took the scope p*-motor-starter (request panel-2's answer · 2026-11-11)
+tag-plate,1.0,np-1,enc-1.door-r,800,-25,1980,0,kind=tag,panel nameplate top-left of door-r
+tag-plate,1.0,tag-k1,duct-1385,300,235.5,1427,0,kind=device;text=K1,device tag on the duct cover edge above K1
+term-endplate,1.0,ep-x1-l,rail-4,190.0,268.1,950,0,kind=feed,end cover on the open side of X1-1 (2.0 thick: 190 to 192). The strip stands between two of rail-4's panel screws (heads at x 170 to 179 and 370 to 379: din-rail-35 fix_pitch 200)
+term-4mm,1.6,x1-1,rail-4,192.0,268.1,950,0,kind=feed,terminal strip X1
+term-4mm,1.6,x1-2,rail-4,198.0,268.1,950,0,kind=feed,terminal strip X1
+term-4mm,1.6,x1-3,rail-4,204.0,268.1,950,0,kind=feed,terminal strip X1
+term-4mm,1.6,x1-4,rail-4,210.0,268.1,950,0,kind=feed,terminal strip X1
+term-4mm,1.6,x1-5,rail-4,216.0,268.1,950,0,kind=feed,terminal strip X1
+term-4mm,1.6,x1-6,rail-4,222.0,268.1,950,0,kind=feed,terminal strip X1
+term-4mm,1.6,x1-7,rail-4,228.0,268.1,950,0,kind=feed,terminal strip X1
+term-4mm,1.6,x1-8,rail-4,234.0,268.1,950,0,kind=feed,terminal strip X1
+term-4mm,1.6,x1-9,rail-4,240.0,268.1,950,0,kind=feed,terminal strip X1
+term-4mm,1.6,x1-10,rail-4,246.0,268.1,950,0,kind=feed,terminal strip X1
+term-4mm,1.6,x1-11,rail-4,252.0,268.1,950,0,kind=feed,terminal strip X1
+term-4mm,1.6,x1-12,rail-4,258.0,268.1,950,0,kind=feed,terminal strip X1
+term-4mm,1.6,x1-13,rail-4,264.0,268.1,950,0,kind=feed,terminal strip X1 (terminals.csv 0.5: 13 and 15 to 20 to the controller's ports p-x4 to p-x6 · 14 reserved · 21 and 22 the door's reset reserved · 23 and 24 spare)
+term-4mm,1.6,x1-14,rail-4,270.0,268.1,950,0,kind=feed,terminal strip X1
+term-4mm,1.6,x1-15,rail-4,276.0,268.1,950,0,kind=feed,terminal strip X1
+term-4mm,1.6,x1-16,rail-4,282.0,268.1,950,0,kind=feed,terminal strip X1
+term-4mm,1.6,x1-17,rail-4,288.0,268.1,950,0,kind=feed,terminal strip X1
+term-4mm,1.6,x1-18,rail-4,294.0,268.1,950,0,kind=feed,terminal strip X1
+term-4mm,1.6,x1-19,rail-4,300.0,268.1,950,0,kind=feed,terminal strip X1
+term-4mm,1.6,x1-20,rail-4,306.0,268.1,950,0,kind=feed,terminal strip X1
+term-4mm,1.6,x1-21,rail-4,312.0,268.1,950,0,kind=feed,terminal strip X1
+term-4mm,1.6,x1-22,rail-4,318.0,268.1,950,0,kind=feed,terminal strip X1
+term-4mm,1.6,x1-23,rail-4,324.0,268.1,950,0,kind=feed,terminal strip X1
+term-4mm,1.6,x1-24,rail-4,330.0,268.1,950,0,kind=feed,terminal strip X1
+term-4mm,1.6,pe-1,rail-4,336.0,268.1,950,0,kind=ground,PE blocks (spec: bonding · supply): PE:1 to PE:6 (terminals.csv)
+term-4mm,1.6,pe-2,rail-4,341.0,268.1,950,0,kind=ground,PE blocks (spec: bonding)
+term-4mm,1.6,pe-3,rail-4,346.0,268.1,950,0,kind=ground,PE blocks
+term-4mm,1.6,pe-4,rail-4,351.0,268.1,950,0,kind=ground,PE blocks
+term-4mm,1.6,pe-5,rail-4,356.0,268.1,950,0,kind=ground,PE blocks
+term-4mm,1.6,pe-6,rail-4,361.0,268.1,950,0,kind=ground,PE blocks
+term-endplate,1.0,ep-x1-r,rail-4,366.0,268.1,950,0,kind=ground,end cover on the open side of PE-6 (366 to 368)
+term-jumper,2.0,jmp-1,rail-4,195.0,223.6,959.2,0,poles=4,the +24 V group's bridge X1:1 to 4 (terminals.csv bridge +24V; request panel-3 item 1 · elec-r36's 2.0 · at station 6): a 4-pole comb · blade 1 on X1:1's centre (x1-1's x + 3.0) at the design channel's z (rail + 9.2 · term-jumper spec.md). Pushed home since 0.13: the comb's seating face on the blocks' front face (y 268.1 - 44.5 = 223.6) · its blades stand in the blocks' bodies · declared `seated` in lib/contacts.csv (pnl-* · jmp-*.p-* in x1-*.body: request panel-13's answer item 1 · a modelling simplification: term-4mm has no channel on file). 0.12 drew it offered up at y 212.0; the join is wires.csv's
+term-jumper,2.0,jmp-2,rail-4,219.0,223.6,959.2,0,poles=4,the 0 V group's bridge X1:5 to 8 (bridge 0V): as jmp-1 · its cap (x 216.25 to 239.75) 0.5 from jmp-1's (192.25 to 215.75: term-jumper spec.md Dimensions · cap)
+term-jumper,2.0,jmp-3,rail-4,279.0,223.6,959.2,0,poles=2,the sensor-supply group's bridge X1:15 and 16 (bridge S4 · io-1 X4's U_S for k1_aux and ol_trip): a 2-pole comb · as jmp-1
+marker-terminal,1.0,mk-x1,rail-4,192.0,268.1,950,0,kind=feed;n=24,terminal numbers X1:1 to X1:24 (one tag a block)
+marker-terminal,1.0,mk-pe,rail-4,336.0,268.1,950,0,kind=ground;n=6,terminal numbers PE:1 to PE:6
+port-pwr-480,1.1,p-m1,enc-1.wall-r,1524,150,1100,90,,480 V 3P+E receptacle to the machine's motor (spec: m1; section: 480 VAC power)
+port-m12-a,1.4,p-x1,enc-1.wall-r,1524,150,1600,90,coding=D;mount=rear,Ethernet to the machine's I/O block (spec: io_link; section: Ethernet & communication)
+port-m12-a,1.4,p-x2,enc-1.wall-r,1524,150,1550,90,coding=L,24 V DC power to the machine's I/O block (spec: io_power; section: control & 24 VDC)
+port-m12-a,1.4,p-x3,enc-1.wall-r,1524,150,1500,90,coding=A,E-stop chain from the machine station to the safety relay k-safe (spec: estop_chain; section: control & 24 VDC)
+port-m12-a,1.4,p-x4,enc-1.wall-r,1524,150,1450,90,coding=A,estop_ok to the I/O block's port-x3 (io-1 X3 A: request panel-1 answer 3.b and 3.c; spec: estop_ok; section: control & 24 VDC): pin 1 the port's own U_S in · pin 4 back through k-safe 23-24. On the wall 50 below p-x3 at the ports' pitch
+port-m12-a,1.4,p-x5,enc-1.wall-r,1524,150,1400,90,coding=A,k1_aux and ol_trip to the I/O block's port-x4 (io-1 X4 B on pin 2 · X4 A on pin 4: answer 3.c and 3.d; spec: k1_aux · ol_trip): pin 1 the port's own U_S in
+port-m12-a,1.4,p-x6,enc-1.wall-r,1524,150,1350,90,coding=A,the controller's run output from the I/O block's port-x7 (io-1 X7 A on pin 4: answer 3.a; spec: k1): it sources K1's coil chain; the port's return pin is io-1's NOT ON FILE (A) and is not wired
+cordset-m12,1.8,w-eth,plc-1.port-eth,278,238.1,1775.7,0,coding=D;genders=male-open;length=2000,the controller's Ethernet lead (spec: io_link; request panel-4's answer item 2): a D-coded open-ended cordset at plc-1's port-eth (the socket's mouth at x 246.5 + 31.5 · y 268.1 - 30 · z 1850 - 65.1 = 1784.9; the pitch 90 turns the cordset's +y · its plugging direction · up into the socket that looks down). Drawn offered up · not inserted: its mating face 9.2 below the mouth (z 1775.7) · so the sleeve's 8.9 reach and the pins stop 0.1 short of the socket · which plc0 1.2 models as a solid cylinder with no bore (inserted · GEO-020 found 351 mm3 of overlap: request panel-11 item 2); the join is wires.csv's. The cable goes down through the slot of duct-1680's top wall at x 274 to 282 · along the row · down riser-r and out of its right wall toward p-x1's pigtail; its four leads join the pigtail's conductors behind the panel. The route is assembly.py PATHS (bom.csv's params carry no list); 2000 = the catalogue length that covers the route's run (cordset-m12 spec.md: 0.6 / 1 / 2 / 3 / 5 m) · the surplus lies in the duct; the open form draws the jacket to the path's end,90,
+cordset-m12,1.8,w-pwr,plc-1.port-pwr,305,238.1,1775.7,0,coding=L;genders=male-open;length=2000,the controller's supply lead (spec: io_power · control & 24 VDC; request panel-4's answer item 2): an L-coded open-ended cordset at plc-1's port-pwr (the socket's mouth at x 246.5 + 58.5; the same offered-up placement as w-eth) · its leads 1 and 3 landed on X1:3 and X1:7 (wires 22 and 29 to 0.9). Placed since 0.10 (held 0.7 to 0.9: its 9.8 cable passed no 8.0 slot) through four fingers broken out with duct-40x60 1.3's `breakout` (request panel-11 item 1): down into duct-1680 · left to riser-l · down to duct-1085 · out under it over X1:7. The route is assembly.py PATHS; 2000 = the catalogue length that covers the run of about 1020 (1000 to 0.9),90,
+gland-m20,1.3,gl-pe,enc-1.gland-plate,760,150,303,0,,incoming supply cable with its PE through the gland plate (spec: supply; section: 480 VAC / ground); dome down (pitch 90),90
+gland-m20,1.3,gl-pe-2,enc-1.gland-plate,840,150,303,0,,the bench's bonding cable (spec: bonding): its own gland 80 from gl-pe because gland-m20 takes one cord of 6.1 to 13 mm (request panel-2 item 2: the cell's connections.csv still names gl-pe); dome down (pitch 90),90

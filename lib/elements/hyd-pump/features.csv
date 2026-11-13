@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+11.0,M10 clearance medium,clearance,,1.0,A B C,"our own design: ISO 273 medium H13 (lib/standards/holes.csv); position Ø1.0 to A the mounting face (the flange's front), B the pilot's axis, C the flange's top edge (ASME Y14.5, floating fastener T = H − F = 11.0 − 10 = 1.0)",design choice: two holes 90 apart through the flange; the pattern a standard's flange would fix is open (spec.md Open figures 1); the M10 screws are the host's

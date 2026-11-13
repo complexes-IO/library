@@ -1,0 +1,3 @@
+key,value,note
+bay,2,"lib/labs.csv: bay 2 of the Labs building, Electrical / motor control"
+volts_to_ground,277,"the panel's supply: lib/assemblies/pm-motor-starter/sources.csv, 480Y/277 V (NFPA 70 Table 110.26(A)(1) row 151-600 V)"

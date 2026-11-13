@@ -1,0 +1,7 @@
+port,pin,role,signal,rated_A,source
+t-11,11,sw-com,safety contact 11-12 (N.C.; closed while the actuator is in),2,spec.md Class values 14 and 20 (2 N.C.; Ie 2 A AC-15 230 V) and the switching program
+t-12,12,sw-nc,safety contact 11-12 (N.C.; opens when the actuator is withdrawn),2,as 11
+t-21,21,sw-com,safety contact 21-22 (N.C.; closed while the actuator is in and locked),2,spec.md Class values 14 and 20 (2 N.C.; Ie 2 A AC-15 230 V) and the switching program
+t-22,22,sw-nc,safety contact 21-22 (N.C.; opens when the lock is released or the actuator withdrawn),2,as 21
+t-A1,A1,load+:24V:CTL,guard locking solenoid + (24 V DC: power to unlock),,spec.md Class values 9 (24 V DC magnet drive)
+t-A2,A2,load0,guard locking solenoid 0 V,,as A1

@@ -1,0 +1,5 @@
+port,pin,role,signal,rated_A,source
+pwr,L1,phase-load:L1,U1,,brief (measure.md Ports: terminal box U1 / V1 / W1; motor specifications p. 1)
+pwr,L2,phase-load:L2,V1,,brief (measure.md Ports; motor specifications p. 1)
+pwr,L3,phase-load:L3,W1,,brief (measure.md Ports; motor specifications p. 1)
+pwr,PE,PE,terminal box earth,,brief (measure.md Ports: frame bonding terminal; installation manual p. 17)

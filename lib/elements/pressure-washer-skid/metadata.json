@@ -1,0 +1,15 @@
+{
+  "element_id": "pressure-washer-skid",
+  "domain": "process",
+  "category": "Cleaning",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 560.0,
+  "height": 268.0,
+  "depth": 300.0,
+  "units": "mm",
+  "datasheet_dims": null,
+  "aliases": [
+    "pressure-washer"
+  ]
+}

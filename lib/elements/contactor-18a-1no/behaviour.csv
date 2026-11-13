@@ -1,0 +1,24 @@
+# behaviour.csv · contactor-18a-1no · power contactor 3-pole, AC-3 18 A, 24 V DC coil, 1 NO auxiliary (lib/behaviour.md). Written by elec-r35 from spec.md (Class values, Named nodes), pins.csv and ratings.csv, in the form of relay-aux-2no2nc's: a generic element, so its class values are its figures.
+# The coil is a load A1-A2. Its pick-up and drop-out levels are IEC 60947-4-1's operating limits (class B: a document wanted, not in lib/standards/sources.csv), so any coil voltage reads as operated; no coil limit row (the class states no operating band for a DC coil).
+# The coil's power is not a class feature (spec.md Notes): the load row carries the designer's figure (OPERATING.md 6, "design"), 4.8 W at 24 V, so the solver has a current and the panel's 24 V budget a share; ratings.csv carries the matching coil_p (design) and load_i (derived) rows.
+# Contact resistances are not stated and the phase-1 solver reads none for a closed contact: the contact rows carry no figure. The auxiliary's current rating is not a class feature: no limit row for it. Torques: the clamps' conductor range and torque are class B (IEC 60947-1, spec.md Dimensions).
+kind,a,b,part,when,value,unit,source,note
+pin,1,t-1,terminal-1,,NOT ON FILE (B): IEC 60947-1,N·m,spec.md Dimensions (conductor range and torque class B),main pole 1 line
+pin,2,t-2,terminal-2,,NOT ON FILE (B): IEC 60947-1,N·m,as 1,main pole 1 load (the overload's pin L1 when mounted)
+pin,3,t-3,terminal-3,,NOT ON FILE (B): IEC 60947-1,N·m,as 1,main pole 2 line
+pin,4,t-4,terminal-4,,NOT ON FILE (B): IEC 60947-1,N·m,as 1,main pole 2 load
+pin,5,t-5,terminal-5,,NOT ON FILE (B): IEC 60947-1,N·m,as 1,main pole 3 line
+pin,6,t-6,terminal-6,,NOT ON FILE (B): IEC 60947-1,N·m,as 1,main pole 3 load
+pin,A1,t-A1,terminal-A1,,NOT ON FILE (B): IEC 60947-1,N·m,as 1,coil + (24 V DC)
+pin,A2,t-A2,terminal-A2,,NOT ON FILE (B): IEC 60947-1,N·m,as 1,coil 0 V
+pin,13,t-13,terminal-13,,NOT ON FILE (B): IEC 60947-1,N·m,as 1,auxiliary N.O. 13-14 common
+pin,14,t-14,terminal-14,,NOT ON FILE (B): IEC 60947-1,N·m,as 1,auxiliary N.O. 13-14
+load,A1,A2,coil,,120,ohm,"design: 4.8 W coil at 24 V DC (R = 24² / 4.8 = 120 Ω; 0.20 A), the designer's figure for a generic 24 V DC contactor coil of this size under the panel's 24 V budget (ELR-020); not a class feature (spec.md Notes); spec.md Class values 3 (24 V DC)",the coil
+state,released,,magnet-system,default,,,spec.md Named nodes (carrier 0 = coil off: contacts open),rest: every pole and 13-14 open
+state,operated,,magnet-system,coil.V > 0,,,"spec.md Class values 3 (24 V DC coil); the pick-up level is NOT ON FILE (B): IEC 60947-4-1 (its operating limits are not in lib/standards/sources.csv), so any coil voltage reads as operated",the three main poles and 13-14 closed
+contact,1,2,pole-1,operated,,,spec.md Class values 6 and Named nodes (3 N.O. main poles; marks a design choice),main pole 1
+contact,3,4,pole-2,operated,,,as 1-2,main pole 2
+contact,5,6,pole-3,operated,,,as 1-2,main pole 3
+contact,13,14,aux-13,operated,,,spec.md Class values 16 and Named nodes (1 N.O.; marks: IEC 60947-1 function numbers as labels),auxiliary N.O.
+pose,carrier,,,operated,end,,spec.md Named nodes (carrier translate +y 0 … 4.0: 4.0 = coil on),the carrier pulled in
+limit,pole-1 pole-2 pole-3,,,,18,A,spec.md Class values 11 (rated operation current Ie at AC-3 400 V: 18 A; ratings.csv ie_ac3),each main pole's rated operational current

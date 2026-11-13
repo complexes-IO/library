@@ -1,0 +1,5 @@
+# behaviour.csv · conveyor-ball-transfer · ball transfer table, our own design (lib/behaviour.md). Mechanical only: no terminal. Thirty-two moving nodes, the free balls ball-1-1 to ball-8-4 (line 1 at the -y end; four a line from -x), each turning in its housing; the side frames, posts, ties, foot plates, deck and housings are the fixed body. Nothing drives the balls.
+kind,a,b,part,when,value,unit,source,note
+state,still,,balls,default,,,spec.md (Mechanism),the balls at rest (0)
+state,turning,,balls,manual toggle,,,spec.md (Mechanism),goods pushed across the table turn the balls under them
+pose,ball-1-1 ball-1-2 ball-1-3 ball-1-4 ball-2-1 ball-2-2 ball-2-3 ball-2-4 ball-3-1 ball-3-2 ball-3-3 ball-3-4 ball-4-1 ball-4-2 ball-4-3 ball-4-4 ball-5-1 ball-5-2 ball-5-3 ball-5-4 ball-6-1 ball-6-2 ball-6-3 ball-6-4 ball-7-1 ball-7-2 ball-7-3 ball-7-4 ball-8-1 ball-8-2 ball-8-3 ball-8-4,,,turning,end,,element.py (each ball rotates 0 to 360 about x through its centre),

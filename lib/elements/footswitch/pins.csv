@@ -1,0 +1,5 @@
+port,pin,role,signal,rated_A,source
+t-11,11,sw-com,N.C. contact 11-12 line side (closed at rest),3,spec.md Class values 8 and 13 (1 N.C.; Ie 3 A AC-15 230 V) and the switching program
+t-12,12,sw-nc,N.C. contact 11-12 load side (opens when the pedal is pressed),3,as 11
+t-23,23,sw-com,N.O. contact 23-24 line side (closes when the pedal is pressed),3,spec.md Class values 9 and 13 (1 N.O.; Ie 3 A AC-15 230 V) and the switching program
+t-24,24,sw-no,N.O. contact 23-24 load side,3,as 23

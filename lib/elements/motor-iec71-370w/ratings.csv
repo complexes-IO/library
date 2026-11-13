@@ -1,0 +1,7 @@
+property,value,unit,status,source
+power,0.37,kW,on file,cutsheet p. 1 (1/2 hp)
+voltage,460,V,on file,cutsheet p. 1 (230/460 VAC; wired 460 on the 480 V system)
+phases,3,,on file,cutsheet p. 1
+frequency,60,Hz,derived,1800 / 1690 rpm on the cutsheet is a 4-pole motor at 60 Hz
+fla,0.91,A,on file,maker's motor specifications p. 3 performance table (0.91 A at 460 V; 1.82 A at 230 V)
+fla_table,1.1,A,standard,NEC Table 430.250: 1/2 hp three-phase at 460 V (sizing conductors and short-circuit protection: NEC 430.6(A)(1))

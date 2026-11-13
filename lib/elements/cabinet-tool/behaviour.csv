@@ -1,0 +1,17 @@
+# behaviour.csv · cabinet-tool · floor tool cabinet with five drawers (lib/behaviour.md). Mechanical only: no terminal and no fixing hole (it stands on its plinth). Five moving nodes, the drawers; the carcass and plinth are the fixed body. No lock and no slides modelled in this version, so no locked state.
+kind,a,b,part,when,value,unit,source,note
+state,d1-shut,,drawer-1,default,,,element.py (docstring),drawer 1 (bottom) shut in the carcass
+state,d1-open,,drawer-1,manual toggle,,,element.py (docstring),drawer 1 pulled out toward the user to the end of its travel
+state,d2-shut,,drawer-2,default,,,element.py (docstring),drawer 2 shut in the carcass
+state,d2-open,,drawer-2,manual toggle,,,element.py (docstring),drawer 2 pulled out to the end of its travel
+state,d3-shut,,drawer-3,default,,,element.py (docstring),drawer 3 shut in the carcass
+state,d3-open,,drawer-3,manual toggle,,,element.py (docstring),drawer 3 pulled out to the end of its travel
+state,d4-shut,,drawer-4,default,,,element.py (docstring),drawer 4 shut in the carcass
+state,d4-open,,drawer-4,manual toggle,,,element.py (docstring),drawer 4 pulled out to the end of its travel
+state,d5-shut,,drawer-5,default,,,element.py (docstring),drawer 5 (top) shut in the carcass
+state,d5-open,,drawer-5,manual toggle,,,element.py (docstring),drawer 5 pulled out to the end of its travel
+pose,drawer-1,,,d1-open,end,,element.py (drawer-1 translates -y 0 to 450),
+pose,drawer-2,,,d2-open,end,,element.py (drawer-2 translates -y 0 to 450),
+pose,drawer-3,,,d3-open,end,,element.py (drawer-3 translates -y 0 to 450),
+pose,drawer-4,,,d4-open,end,,element.py (drawer-4 translates -y 0 to 450),
+pose,drawer-5,,,d5-open,end,,element.py (drawer-5 translates -y 0 to 450),

@@ -1,0 +1,6 @@
+# behaviour.csv · contact-m12-pin · one male contact of the M12 joint (lib/behaviour.md). Its state in the joint (made, marginal, open, high-r, blocked) is
+# toolkit/contact.py mate(); here the conductor it is, for the solver.
+kind,a,b,part,when,value,unit,source,note
+pin,P,self,pin,,,,toolkit/m12.py (the contact zone 0.45–6.9 along the pin: the mated length),the pin's tip (the mating face)
+pin,W,self,pin,,,,toolkit/m12.py (the crimp or solder bucket at the back),the pin's wire end
+contact,P,W,pin,always,NOT ON FILE,ohm,IEC 61076-2-101 (contact resistance ≤ 5 mΩ is the standard's limit; the measured figure is NOT ON FILE),one conductor tip to bucket

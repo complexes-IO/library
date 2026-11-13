@@ -1,0 +1,14 @@
+# The Labs building's bays and the lab each one holds (EM 2026-11-12: "I want the lab / machines to be labs inside the campus lab
+# building. almost like the campus becomes a virtual school"). The building is lib/standards/labs-building.csv (from the campus model) (128 x 26 m, 8 bays of 16 m,
+# one storey of 8.0 m), built by campus_v2.py; the seven labs are EM's programme (Nov 2026); the Capstone bay takes the last two
+# bays (the material-flow line is the whole plant in one room): a proposal for EM. Bays are numbered west to east.
+# assembly: the lib/assemblies/<id> that is the room (toolkit/rooms.py); empty until the room is built.
+bay,lab,name,assembly,machines,note
+1,electronics,Electronics,,lab-bench toolbox-station vision-inspection-station hvac-trainer fire-and-life-safety-wall,
+2,electrical,Electrical / motor control,lab-electrical,motor-starter-cell vfd-drive-panel power-monitoring-panel control-transformer-panel safety-cell,the first room: the motor starter cell (dm-motor-starter-cell)
+3,plc,PLC,,plc-training-panel operator-station hil-commissioning-bench remote-io-node network-bench server-rack iiot-edge-node,
+4,fluid,Pneumatics & hydraulics,,pneumatic-trainer hydraulic-trainer press-hydraulic process-skid calibration-bench heat-exchanger-loop,
+5,robotics,Robotics cell,,robot-cell cobot-bench robot-tending-cell pneumatic-pick-and-place servo-pick-and-place gantry-xyz rotary-index-table servo-axis-bench,
+6,fabrication,Fabrication shop,,machining-station mechanisms-bench condition-monitoring-rig reverse-engineering-station,
+7,capstone,Capstone bay,,inbound-conveyor outbound-conveyor sorting-line check-weigh-station pallet-rack-bay conveyor-types-bench amr-dock,bays 7 and 8 (a proposal for EM)
+8,capstone,Capstone bay,,,the Capstone bay's second bay

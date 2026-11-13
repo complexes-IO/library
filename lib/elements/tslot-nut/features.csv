@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+6.6468,M8 tapped hole (minor diameter),own,,,,"derived: derive.thread(8.0, 1.25) (ISO 68-1 basic profile; ISO 965-1 clause 10, internal 6H: D1 6.6468 to 6.9157; ISO 261 pitch 1.25); the thread itself is not drawn","one through the body and the neck on the nut's axis, for the M8 screw that fixes the host's part to tslot-40 (screw-iso4762, the profile's made_of, a common part not built yet: the hole is modelled, the screw placed by the host)"

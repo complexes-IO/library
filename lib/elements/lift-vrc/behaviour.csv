@@ -1,0 +1,5 @@
+# behaviour.csv · lift-vrc · vertical reciprocating conveyor, own design (lib/behaviour.md). Mechanical only: no terminal of its own (the hoist's motor, the guarding's interlocks and the controls are placed elements of a later version, with their own specs). One moving node, the carriage `carriage`; the foot plates, masts and top beam are the fixed body.
+kind,a,b,part,when,value,unit,source,note
+state,lower,,carriage,default,,,spec.md (Mechanism),the carriage at the lower stop: the deck's top level with the conveyor's rollers' tops; goods roll on and off
+state,upper,,carriage,manual toggle,,,spec.md (Mechanism),the carriage raised 2250: the deck's top at the upper level; any height between is a carriage in motion
+pose,carriage,,,upper,end,,element.py (node carriage: translate 0 to 2250 along +z),

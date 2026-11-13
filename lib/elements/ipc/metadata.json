@@ -1,0 +1,12 @@
+{
+  "element_id": "ipc",
+  "domain": "controls",
+  "category": "Control",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 110.0,
+  "height": 240.0,
+  "depth": 164.0,
+  "units": "mm",
+  "brief": "our own design: generic Industrial PC (ETIM 10.0 EC001413), box form, fanless, 24 V DC, two Ethernet sockets (placed port-rj45 1.0), wall mounting on its back plate; no reference part measured (spec.md Class values)"
+}

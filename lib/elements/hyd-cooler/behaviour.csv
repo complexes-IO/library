@@ -1,0 +1,9 @@
+# behaviour.csv · hyd-cooler · generic hydraulic oil cooler, water cooled, shell and tube (lib/behaviour.md). Two oil ports and two water ports; no electrical pin and no
+# moving node. The oil path (oil-in to oil-out through the shell) and the water path (water-in to water-out through the tubes) are hydraulic and thermal: the solver is
+# electrical in phase 1 (lib/toolkit/nets.py) and solves no oil or heat, so no state or contact row is written. The oil ports' thread is open (class B), set by the fitting's stud end:
+# value not claimed. NPT joints make up by turns (pneu.NPT L1 + L3), not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,oil-in,port-oil-in,shell,,not claimed,N·m,not claimed: the fitting's stud end sets it (SAE J1926-2 / -3); spec.md Ports (design: marked by its name; the hydraulic port marking standard is not on file),the return oil from the circuit (unit hyd-port)
+pin,oil-out,port-oil-out,shell,,not claimed,N·m,not claimed: the fitting's stud end sets it (SAE J1926-2 / -3); spec.md Ports (design: marked by its name; the hydraulic port marking standard is not on file),the cooled oil to the tank (unit hyd-port)
+pin,water-in,port-water-in,bonnet,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: a liquid port has no ISO 11727 number; marked by its node's name as control-valve's)",the cooling water's inlet: female NPT 3/8; the lower port
+pin,water-out,port-water-out,bonnet,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: as water-in)",the cooling water's outlet: female NPT 3/8; the upper port

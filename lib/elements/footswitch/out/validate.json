@@ -1,0 +1,149 @@
+{
+ "toolkit": "1.3",
+ "validation": "1.0",
+ "rules": 86,
+ "id": "footswitch",
+ "status": "REVIEW",
+ "findings": [
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
+   "scope": "footswitch",
+   "where": "footswitch",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "footswitch",
+   "where": "footswitch",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "footswitch",
+   "where": "footswitch",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "DOC-005",
+   "scope": "footswitch",
+   "where": "footswitch",
+   "message": "source wanted: 5 class B figure(s) in spec.md, behaviour.csv (5 NOT ON FILE (B)); the document is asked for once in lib/standards/wanted.md; EM may still accept a figure ('REVIEW accepted: <figure> \u00b7 EM <date>'); 0 approved",
+   "elements": [],
+   "title": "every open figure accepted by its class: Assumption (C) with the reviewer's PASS; (A), (B), unclassed and NOT ON FILE each by one 'REVIEW accepted: <figure> \u00b7 EM <date>' line in spec.md",
+   "basis": "element-qa-checklist Stage 0; OPERATING.md 8.c"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "footswitch",
+   "where": "footswitch",
+   "message": "no interference among 14 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "footswitch",
+   "where": "footswitch",
+   "message": "1 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "footswitch",
+   "where": "footswitch",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "footswitch",
+   "where": "footswitch",
+   "message": "1 solid(s) with openings, all cut in the glTF: 1 as clean extrusions, 0 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "footswitch",
+   "where": "footswitch",
+   "message": "12 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-002",
+   "scope": "footswitch",
+   "where": "footswitch",
+   "message": "every port declares its gender",
+   "elements": [],
+   "title": "every port declares its gender (male, female or none)",
+   "basis": "EM 2026-11-05; IEC 60204-1 13.4.5 (no exposed live pins on the part that stays live); PIN-030"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "footswitch",
+   "where": "footswitch",
+   "message": "4 pins, 2 contacts, 0 loads, 0 sources, 2 states (1 manual), 1 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "footswitch",
+   "where": "footswitch",
+   "message": "1 \u00d7 \u00d818.376 M20 x 1.5 cable entry (declared: own, derived: derive.thread(20.0, 1.5) (ISO 68-1 basic profile; ISO 965-1 clause 10: the internal thread's minor diameter D1 18.3762, 6H 18.3762-18.6817))",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-020",
+   "scope": "footswitch",
+   "where": "footswitch",
+   "message": "1 hole(s) inside their parts",
+   "elements": [],
+   "title": "every hole stays inside the part it cuts (no break-out)",
+   "basis": "geometry rule"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "footswitch",
+   "where": "footswitch",
+   "message": "the AutoCAD gate will pick 28 edges; skipped 61 buried, 0 short, 20 on thin parts, 0 shared, 9 hidden; 0 on placed elements, left to their own gates; 6 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  }
+ ]
+}

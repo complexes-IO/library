@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+4.9175,M6 tapped hole (minor diameter),own,,,,"derived: derive.thread(6.0, 1.0) (ISO 68-1 basic profile; ISO 965-1 clause 10, internal 6H: D1 min 4.9175; ISO 261 pitch 1); the thread itself is not drawn","one in each leg's foot on the leg's axis (x +-60, z 0), 12 deep from the mounting face (y = 0), for the socket head cap screws ISO 4762 (the inventory's made_of, screw-iso4762 x2, a common part not built yet: the holes are modelled, the part placed later); the door's clearance holes (Ø6.6, ISO 273 medium) are the host's"

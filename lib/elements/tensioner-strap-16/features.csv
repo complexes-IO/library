@@ -1,0 +1,3 @@
+match,role,kind,check,position_tol,datums,source,note
+12,cheek bore,own,,,,design choice (spec.md Its own sizes),"Ø12 through each of the two cheeks on the feed wheel's axis: 1 clear round the Ø10 shaft, so the lever turns free; no fastener and no standard size"
+10,lever plate bore,own,,,,design choice (spec.md Its own sizes),"Ø10 through each of the lever's two side plates: the Ø10 shaft is pressed in (the lever, its plates, the shaft and the feed wheel are one node); no fastener and no standard size"

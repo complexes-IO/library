@@ -1,0 +1,6 @@
+# behaviour.csv · plunger-spring · generic spring plunger M8 x 16 (lib/behaviour.md). Taken from the core's proposal (lib/requests/core/behaviour/plunger-spring.csv, 2026-11-09), checked by mech-r76 against element.py: node `pin` translates 0 to 2 (pressed in flush; PIN_OUT, a design choice). The proposal had no row for the threaded body's port `self` (unit M8, gender male): added one, as gland-m20's file names its port; the thread is derived in spec.md (derive.thread, ISO 68-1 / ISO 965-1; mech-r85); no tightening torque is on file. No spring force here: the class value stays in spec.md. States renamed by what they mean.
+kind,a,b,part,when,value,unit,source,note
+pin,M8,self,body,,not claimed,N·m,not claimed: the host's lock nut or stop sets it (lib/behaviour.md; request mech-10's answer 2): the body is threaded over its whole length with no head or shoulder; so no seat of its own bears and derive.torque has no d_w to take,the threaded body screwed into its host's M8 hole (no conductor)
+state,out,,pin,default,,,element.py (PIN_OUT: the pin 2 proud of the front face at rest),the thrust pin standing out
+state,pressed,,pin,manual toggle,,,element.py (node pin: translate 0 to 2),the thrust pin pressed in flush with the front face
+pose,pin,,,pressed,end,,element.py (node pin: translate 0 to 2),

@@ -1,0 +1,18 @@
+port,pin,role,signal,rated_A,source
+t-L1,L1,phase-load:L1,supply line 1 (to the rectifier),,spec.md Class values 1 and 3 (380-480 V; 3 phases in; the input current is not stated)
+t-L2,L2,phase-load:L2,supply line 2,,as L1
+t-L3,L3,phase-load:L3,supply line 3,,as L1
+t-PE,PE,PE,protective earth of the heat sink (supply side),,the heat sink is an exposed conductive part (spec.md Notes)
+t-U,U,phase-src:L1,motor phase U (inverter output),2.2,spec.md Class values 4 and 7 (3 phases out; I2N 2.2 A)
+t-V,V,phase-src:L2,motor phase V,2.2,as U
+t-W,W,phase-src:L3,motor phase W,2.2,as U
+t-PE-m,PE,PE,protective earth of the motor (one bar with t-PE),,as PE
+x1.t-1,DI1,in,run forward (24 V DC to COM),,spec.md Class values 16 (3 digital inputs; design IEC 61131-2 type 1; thresholds NOT ON FILE (B): IEC 61131-2)
+x1.t-2,DI2,in,run reverse (24 V DC to COM),,as DI1
+x1.t-3,DI3,in,fault reset (24 V DC to COM),,as DI1
+x1.t-4,COM,load0,common of DI1-DI3 (the panel's 0 V),,spec.md Class values 16
+x1.t-5,AI,in,speed setpoint 0 ... 10 V to AGND,,spec.md Class values 14 (1 analogue input)
+x1.t-6,AO,out,output frequency 0 ... 10 V to AGND,,spec.md Class values 13 (1 analogue output)
+x1.t-7,AGND,load0,analogue reference of AI and AO,,spec.md Class values 13 and 14
+x2.t-1,RA,sw-com,fault relay N.O. RA-RC (closed: supply on and no fault),,spec.md Class values 15 (1 digital output; its contact rating is not stated)
+x2.t-2,RC,sw-no,fault relay N.O. RA-RC,,as RA

@@ -1,0 +1,16 @@
+{
+  "element_id": "flow-meter",
+  "category": "Industrial sensors",
+  "width": 54.2,
+  "height": 54.0,
+  "depth": 110.0,
+  "units": "mm",
+  "datasheet_dims": [
+    110.0,
+    54.2,
+    54.0
+  ],
+  "domain": "sensors",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

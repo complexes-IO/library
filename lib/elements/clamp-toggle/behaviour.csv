@@ -1,0 +1,5 @@
+# behaviour.csv · clamp-toggle · generic vertical hold-down toggle clamp (lib/behaviour.md). Taken from the core's proposal (lib/requests/core/behaviour/clamp-toggle.csv, 2026-11-09), checked by mech-r76 against element.py: node `arm` (the lever: arm and handle) rotates 0 to 95 about the pivot (OPEN, a design choice); 0 is clamped (ORIGIN). No terminal (the 4 x M5 base holes and the M8 spindle hole take screws, not ports). No clamping force here: the class value stays in spec.md. States renamed by what they mean.
+kind,a,b,part,when,value,unit,source,note
+state,clamped,,arm,default,,,element.py (ORIGIN: clamped at 0),the arm reaching toward +x and the handle standing up
+state,open,,arm,manual toggle,,,element.py (node arm: rotate 0 to 95),the arm swung up just past vertical and the handle back toward -x
+pose,arm,,,open,end,,element.py (node arm: rotate 0 to 95),

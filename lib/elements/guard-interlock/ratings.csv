@@ -1,0 +1,8 @@
+property,value,unit,status,source
+ie_ac15_230v,2,A,generic design,"ETIM 10.0 EC002593 class value: rated operation current Ie at AC-15, 230 V (EF001385), each contact; spec.md Class values 20"
+ie_dc13_24v,1,A,generic design,"ETIM 10.0 EC002593 class value: rated operation current Ie at DC-13, 24 V (EF007087), each contact; spec.md Class values 21"
+contacts_nc,2,,generic design,"ETIM 10.0 EC002593 class value: number of contacts as normally closed contact (EF008255); spec.md Class values 14"
+coil_v,24,V DC,generic design,"ETIM 10.0 EC002593 class value: rated control supply voltage magnet drive DC (EF007070); spec.md Class values 9"
+locking_force,1000,N,generic design,"ETIM 10.0 EC002593 class value: guard locking force (EF007552); spec.md Class values 3"
+coil_p,6,W,design,"design: 6 W at 24 V DC, the guard locking solenoid's power for a generic 24 V DC magnet drive of this size under the panel's 24 V budget (ELR-020), the rule behaviour.csv's load row A1-A2 (96 Ω) names for the same figure; not a feature of EC002593; spec.md Notes"
+load_i,0.25,A,derived,"6 W / 24 V (I = P / U; coil_p and coil_v above), what the 24 V budget (ELR-020) reads; behaviour.csv load row A1-A2"

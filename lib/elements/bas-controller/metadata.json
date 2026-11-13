@@ -1,0 +1,12 @@
+{
+  "element_id": "bas-controller",
+  "category": "HVAC and building automation",
+  "width": null,
+  "height": null,
+  "depth": null,
+  "units": "mm",
+  "datasheet_dims": null,
+  "domain": "building",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

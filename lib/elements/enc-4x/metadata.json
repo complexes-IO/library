@@ -1,0 +1,16 @@
+{
+  "element_id": "enc-4x",
+  "category": "Enclosures",
+  "width": 609.6,
+  "height": 609.6,
+  "depth": 203.2,
+  "units": "mm",
+  "datasheet_dims": [
+    609.6,
+    609.6,
+    203.2
+  ],
+  "domain": "electrical",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

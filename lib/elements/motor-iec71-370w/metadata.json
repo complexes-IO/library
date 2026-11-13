@@ -1,0 +1,24 @@
+{
+  "element_id": "motor-iec71-370w",
+  "domain": "electrical",
+  "category": "Motor control and drives",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 138.0,
+  "height": 175.5,
+  "depth": 250.5,
+  "units": "mm",
+  "datasheet_dims": {
+    "l": 250.5,
+    "h": 175.5,
+    "dia": 138.0
+  },
+  "brief": {
+    "stage0": "COMPLETE",
+    "date": "2026-11-03",
+    "files": [
+      "references/measure.md"
+    ],
+    "note": "Stage 0 of lib/element-qa-checklist.txt; EM 2026-11-03 kit prompt step 5"
+  }
+}

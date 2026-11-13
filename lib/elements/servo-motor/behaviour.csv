@@ -1,0 +1,16 @@
+# behaviour.csv · servo-motor · servo motor 1.0 kW, generic (lib/behaviour.md). Written by elec-r37 from spec.md, pins.csv and element.py: two ports, the connector seats port-pwr (unit m23-power: U V W PE) and port-enc (unit m23-signal: A+ A- B+ B- 5V 0V), gender none until receptacle-m23 is placed on them (spec.md Notes). The shaft rotates 0 to 360.
+# Its load (the windings) is not written: a winding's R and inductance are not class values here and the phase-1 solver reads three-phase sources only at the assembly (lib/behaviour.md), so a load row would be a figure from nowhere. The encoder's channels and its 5 V supply are signal pins the phase-1 solver does not read. Until the windings' load is ruled the rotor's running state is a manual toggle and its pose shows the turn (as motor-iec71-370w). Torque: the receptacle's contacts take a mating plug and no screw.
+kind,a,b,part,when,value,unit,source,note
+pin,U,port-pwr,seat-pwr,,not claimed,N·m,not claimed: a plug-in contact of receptacle-m23 (not built) and no screw (lib/behaviour.md pin),motor phase U (pins.csv)
+pin,V,port-pwr,seat-pwr,,not claimed,N·m,not claimed: as U,motor phase V
+pin,W,port-pwr,seat-pwr,,not claimed,N·m,not claimed: as U,motor phase W
+pin,PE,port-pwr,seat-pwr,,not claimed,N·m,not claimed: as U,protective earth of the housing
+pin,A+,port-enc,seat-enc,,not claimed,N·m,not claimed: as U,encoder channel A
+pin,A-,port-enc,seat-enc,,not claimed,N·m,not claimed: as U,encoder channel A complement
+pin,B+,port-enc,seat-enc,,not claimed,N·m,not claimed: as U,encoder channel B
+pin,B-,port-enc,seat-enc,,not claimed,N·m,not claimed: as U,encoder channel B complement
+pin,5V,port-enc,seat-enc,,not claimed,N·m,not claimed: as U,encoder supply 5 V DC from the drive
+pin,0V,port-enc,seat-enc,,not claimed,N·m,not claimed: as U,encoder supply return
+state,still,,rotor,default,,,element.py (node shaft at 0),the rotor at rest
+state,running,,rotor,manual toggle,,,element.py (node shaft: rotate 0 to 360),the rotor turning; the energised state waits on the windings' load (behaviour.csv header)
+pose,shaft,,,running,end,,element.py (shaft: rotate 0 to 360),continuous rotation shown at the range end

@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+150,dust outlet,own,,,,design choice (spec.md Its own sizes),Ø150 through the trough bottom and its collar and outlet ring at x 0 y 0 for a dust drum or a discharge valve (not built yet; placed later): no fastener and no standard size

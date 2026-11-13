@@ -1,0 +1,2 @@
+property,value,unit,status,source
+max_tensile_force,200,N,generic design,ETIM 10.0 EC010720 class value

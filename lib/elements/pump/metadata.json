@@ -1,0 +1,16 @@
+{
+  "element_id": "pump",
+  "category": "Process instrumentation",
+  "width": 223.5,
+  "height": 182.9,
+  "depth": 315.0,
+  "units": "mm",
+  "datasheet_dims": [
+    315.0,
+    223.5,
+    182.9
+  ],
+  "domain": "process",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

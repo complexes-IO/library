@@ -1,0 +1,24 @@
+{
+  "element_id": "plc0",
+  "domain": "controls",
+  "category": "Control",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 98.1,
+  "height": 143.97,
+  "depth": 136.81,
+  "units": "mm",
+  "datasheet_dims": {
+    "w": 98.1,
+    "h": 143.97,
+    "d": 136.81
+  },
+  "brief": {
+    "stage0": "COMPLETE",
+    "date": "2026-11-03",
+    "files": [
+      "references/measure.md"
+    ],
+    "note": "Stage 0 of lib/element-qa-checklist.txt; EM 2026-11-03 kit prompt step 5; plc0 envelope is EM's proposal, to confirm"
+  }
+}

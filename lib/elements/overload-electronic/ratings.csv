@@ -1,0 +1,7 @@
+property,value,unit,status,source
+ir_min,0.4,A,generic design,"ETIM 10.0 EC001080 class value: adjustable current range (EF008211); spec.md Class values 3"
+ir_max,2.0,A,generic design,"ETIM 10.0 EC001080 class value: adjustable current range (EF008211); spec.md Class values 3"
+trip_class,10,,generic design,"ETIM 10.0 EC001080 class value: release class CLASS 10 (EF006668); spec.md Class values 17"
+load_i,0,A,generic design,"ETIM 10.0 EC001080 class value: no external power supply (EF003292), nothing on the 24 V budget; spec.md Class values 4"
+aux_ith,5,A,generic design,"ETIM 10.0 EC001080 class value: rated switch current of the auxiliary contacts, conventional thermal current (EF006706); spec.md Class values 16"
+ue_max,690,V AC,generic design,"ETIM 10.0 EC001080 class value: operating voltage AC 50 / 60 Hz (EF008206, EF008207); spec.md Class values 13 and 14"

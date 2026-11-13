@@ -1,0 +1,12 @@
+{
+  "element_id": "port-rj45",
+  "domain": "electrical",
+  "category": "Installation material for data and telecommunication networks",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 16.0,
+  "height": 14.0,
+  "depth": 21.0,
+  "units": "mm",
+  "brief": "our own design: generic Modular connector (ETIM 10.0 EC001121), an 8P8C RJ45 socket, unshielded, eight female contacts on the opening's top face; the mating face NOT ON FILE (B) IEC 60603-7, a design layout; no reference part measured (spec.md Class values)"
+}

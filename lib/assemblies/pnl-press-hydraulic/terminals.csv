@@ -1,0 +1,61 @@
+strip,terminal,tag,side1,side2,bridge,point,wire,status,note
+# pnl-press-hydraulic 0.9 · the terminal plan (lib/panel-shop.md "Out"; role card r2; arrangement: NFPA 79 13.1 as the card cites it: view-only and not read into a table so no wording of it is quoted here). The form is pnl-motor-starter's plan.
+# strip.terminal is the number on the marker (X1:1 .. X1:41 and PE:1 .. PE:8); tag is the block's BOM tag; its pins are tag.1 and tag.2 (term-4mm behaviour.csv: clamp-1 and clamp-2 joined by the current bar).
+# side1 = clamp 1 (the block's top entry: toward the rails and duct-145); side2 = clamp 2 (the bottom entry: toward the enclosure's bottom and its cable entries). The panel's devices land on side 1; what leaves the panel lands on side 2, and so do the door's conductors (the two lamp returns; since 0.9 the HMI's supply) (the door is off the plate; as pnl-motor-starter's X1:3 and X1:7).
+# One conductor a clamp (the shop's design rule: how many conductors one clamp of term-4mm may take is not in its brief: request panel-3 item 4). A potential with more than two ends is a bridged group of blocks:
+# bridge names the group; the bridge itself is term-jumper 2.0 (placed since 0.9: bom.csv jmp-1 on +24V · jmp-2 on 0V; request panel-3 item 1). Its behaviour.csv has pins 1 to 4 only, so blades 5 and up are stand-in rows in wires.csv (request panel-13 item 2).
+# 0.9 lays the strip out again (36 to 41 blocks): the +24 V group grows from X1:1-6 to X1:1-10 (the four contacts' commons k1 13 · f1 97 · k-safe 41 · k-lc 41 on side 1; the HMI's +24 V on X1:7 side 2) and the 0 V group from X1:7-13 to X1:11-18 (io-2's AI0- return on side 1 · the HMI's 0 V on side 2). The old 0 V blocks keep their pairs of sides: X1:7 to 9 became 12 to 14 · 10 became 11 (the controller's return first · nearest the cordset's jacket end at x 166) · 11 to 13 became 15 to 17; X1:14 to 36 became 19 to 41.
+# The PE blocks are common through their bonding feet and rail-4 (term-4mm spec: ground block with a metal bonding foot); the rail's rating as that conductor is NOT ON FILE (B): IEC 60947-7-2 (request panel-3 item 2).
+# side 2 names the spec's field point (controls.csv `device`: machine.<device>) and the conductor of that device's cable. None of the machine's field devices is an element on file (the valve, the pressure switch, the transmitter, the limit switches, the two-hand station, the curtain), so no field pin mark is on file: the conductor is named by its function. The station's e-stop channels are written 11-12 and 21-22 as op-estop-22-2nc's marks are (IEC 60947-5-1 Annex L: not on file; the shop's naming, not the station's record).
+# wire: wires.csv's numbers (0.3) as <side 1's wire>/<side 2's wire>; a side with no wire yet is blank; a number in brackets is kept for a wire whose other end is a planned row. Side 2 of a field block is a conductor of the machine's cable, not a wire of the shop's (no number). status: planned (both sides named by a file: an element's pin or the spec's point) · reserved (a side waits on a planned element or an answer) · spare.
+# What has no terminal: the supply's phases land on q1 L1 L2 L3 (the spec's supply row); the motor leads leave from f1 T1 T2 T3 through gl-m1 (X1 is the control strip; no power strip in the BOM: a design choice); the Ethernet link hmi1 to plc-1 port-eth (a data pair is not broken at a screw terminal: a design choice);
+# the panel's own circuits go device to device (role card r2): k-safe S11 and S21 to estop-door 11 and 21 · the solenoid paths' series links (io-1 to k-safe 13 · k-safe 14 to k-lc 13 · k-lc 14 to k-2h; io-1 to k-safe 23 · k-safe 24 to k-lc 23) · k1's coil from io-1 · k1 13-14 and f1 95-96 to io-1 · k-safe 41-42 and k-lc 41-42 to io-1 (safety_fb) · the safety relays' outputs to io-1 (safety_ok: which, request panel-6 item 3) · io-1's outputs to h1 X1 and h2 X1 · the transformer, q2 and g1's input.
+X1,1,x1-1,g1.+V,machine.lc1 receiver +24 V,+24V,curtain,20/,planned,+24 V DC bus: the feed from the PSU; out: the curtain receiver's supply (the spec's curtain row: the curtain's own supply from the panel's 24 V)
+X1,2,x1-2,k-safe.A1,machine.lc1 sender +24 V,+24V,curtain,21/,planned,safety relay 1's supply; out: the curtain sender's supply
+X1,3,x1-3,k-lc.A1,machine.pt1 loop +,+24V,pressure,22/,planned,safety relay 2's supply; out: the transmitter's loop supply (two-wire 4-20 mA loop powered from the panel's 24 V: the spec's pressure row)
+X1,4,x1-4,plc-1.24V-1,machine.ps1 common,+24V,press_ok,(w-pwr.B1)/,planned,0.8: side 1 takes the cordset w-pwr's lead 1 (wire 23 retired: wires.csv);controller supply (plc0's mark: port-pwr pole 1); out: the pressure switch's common
+X1,5,x1-5,io-1.24V,machine.ls1 common,+24V,ram_top,66/,planned,0.8: the digital I/O's module supply (plc-dio 1.0 x1 pin 24V: wire 66); out: limit switch 1's common
+X1,6,x1-6,io-2.24V,machine.ls2 common,+24V,ram_bottom,68/,planned,0.8: the analogue I/O's supply (plc-aio 1.0 x2 pin 24V: wire 68); out: limit switch 2's common
+X1,7,x1-7,k1.13,hmi1.24V,+24V,k1_aux,70/74,planned,0.9: K1's auxiliary common 13 (wire 70: k1_aux's contact 13-14 into io-1 DI0 by wire 46); side 2: the HMI's +24 V across the hinge (hmi-7in 1.0 plug x1 pin 24V: wire 74)
+X1,8,x1-8,f1.97,,+24V,ol_trip,71/,planned,0.9: the overload's N.O. common 97 (wire 71: ol_trip's 97-98 into DI1 by wire 47); side 2 spare
+X1,9,x1-9,k-safe.41,,+24V,safety_fb,72/,planned,0.9: safety relay 1's N.C. 41 (wire 72: 41-42 into DI2 by wire 48); side 2 spare
+X1,10,x1-10,k-lc.41,,+24V,safety_fb,73/,planned,0.9: safety relay 2's N.C. 41 (wire 73: into DI3 by wire 49); side 2 spare
+X1,11,x1-11,plc-1.24V-3,machine.v1.b return,0V,sol_b,(w-pwr.B3)/,planned,0.9: X1:10 to 0.8 (the 0 V group's first block: nearest the cordset's jacket end); side 1 takes w-pwr's lead 3 (wire 27 retired);controller return (plc0's mark: port-pwr pole 3); out: solenoid b's return
+X1,12,x1-12,g1.-V,machine.lc1 receiver 0 V,0V,curtain,24/,planned,0.9: X1:7 to 0.8; 0 V bus: the PSU's return; out: the curtain receiver's return
+X1,13,x1-13,k-safe.A2,machine.lc1 sender 0 V,0V,curtain,25/,planned,0.9: X1:8 to 0.8; out: the curtain sender's return
+X1,14,x1-14,k-lc.A2,machine.v1.a return,0V,sol_a,26/,planned,0.9: X1:9 to 0.8; out: solenoid a's return (the coil's second lead; the valve is not an element: its mark is NOT ON FILE)
+X1,15,x1-15,io-1.0V,h1.X2,0V,h1_run,67/42,planned,0.9: X1:11 to 0.8; the digital I/O's return (plc-dio 1.0 pin 0V: wire 67); side 2: the door's white lamp's return (op-pilot-22 X2); its + comes from io-1's DO3 device to device (wire 43)
+X1,16,x1-16,io-2.0V,h2.X2,0V,h2_fault,69/45,planned,0.9: X1:12 to 0.8; the analogue I/O's return (plc-aio 1.0 pin 0V: wire 69); side 2: the door's red lamp's return
+X1,17,x1-17,k1.A2,pe-8.1,0V,pump_run,64/28,planned,0.9: X1:13 to 0.8; the contactor coil's return (k1 contactor-18a-1no 1.0 pin A2: wire 64); side 2: the 0 V bus bonded to PE at one point (NFPA 79 8.2.1 as pm-motor-starter wire 20 cites it)
+X1,18,x1-18,io-2.AI0-,hmi1.0V,0V,pressure,55/75,planned,0.9: the pressure loop's return from io-2's AI0- (wire 55 · kept since 0.3); side 2: the HMI's 0 V across the hinge (hmi-7in 1.0 pin 0V: wire 75)
+X1,19,x1-19,k-2h out,machine.v1.a +,,sol_a,,reserved,0.9: X1:14 to 0.8; solenoid a's feed: the end of the down-stroke path io-1 · k-safe 13-14 · k-lc 13-14 · k-2h (spec.md section 3); k-2h is a planned row with no pins on file (request panel-6 item 3)
+X1,20,x1-20,k-lc.24,machine.v1.b +,,sol_b,40/,planned,0.9: X1:15 to 0.8; solenoid b's feed: the end of the up-stroke path io-1 · k-safe 23-24 · k-lc 23-24 (spec.md section 3)
+X1,21,x1-21,io-1.DI5,machine.ps1 N.O.,,press_ok,51/,planned,0.9: X1:16 to 0.8; into DI5 (wire 51);the pressure switch's N.O. contact into a digital input (IEC 61131-2 type 3 by the row); its common on X1:4
+X1,22,x1-22,io-2.AI0+,machine.pt1 loop -,,pressure,52/,planned,0.9: X1:17 to 0.8; into AI0+ (wire 52; AI0-'s return to 0 V since 0.9: wire 55 on X1:18);the loop's return into the analogue input (4-20 mA); its supply on X1:3
+X1,23,x1-23,io-1.DI6,machine.ls1 N.C.,,ram_top,53/,planned,0.9: X1:18 to 0.8; into DI6 (wire 53);limit switch 1 (ram at top) N.C. into a digital input (NFPA 79 9.2.5.2 by the row); its common on X1:5
+X1,24,x1-24,io-1.DI7,machine.ls2 N.C.,,ram_bottom,54/,planned,0.9: X1:19 to 0.8; into DI7 (wire 54);limit switch 2 (ram at bottom) N.C. into a digital input; its common on X1:6
+X1,25,x1-25,estop-door.12,machine.thc1.estop 11,,estop,30/,planned,0.9: X1:20 to 0.8; channel 1 out to the two-hand station's e-stop (k-safe S11 through the door e-stop 11-12 device to device · then the station's e-stop)
+X1,26,x1-26,k-safe.S12,machine.thc1.estop 12,,estop,31/,planned,0.9: X1:21 to 0.8; channel 1 back
+X1,27,x1-27,estop-door.22,machine.thc1.estop 21,,estop,33/,planned,0.9: X1:22 to 0.8; channel 2 out (k-safe S21 through the door e-stop 21-22)
+X1,28,x1-28,k-safe.S22,machine.thc1.estop 22,,estop,34/,planned,0.9: X1:23 to 0.8; channel 2 back
+X1,29,x1-29,k-2h in,machine.thc1 button 1 N.O. a,,two_hand,,reserved,0.9: X1:24 to 0.8; the two-hand station's four contacts (N.O. and N.C. a button: the spec's two_hand row) into the two-hand relay's inputs; k-2h is planned (request panel-6 item 3): its input marks and whether it feeds the contacts from its own test outputs come with the element. Two conductors a contact until then
+X1,30,x1-30,k-2h in,machine.thc1 button 1 N.O. b,,two_hand,,reserved,as 29
+X1,31,x1-31,k-2h in,machine.thc1 button 1 N.C. a,,two_hand,,reserved,as 29
+X1,32,x1-32,k-2h in,machine.thc1 button 1 N.C. b,,two_hand,,reserved,as 29
+X1,33,x1-33,k-2h in,machine.thc1 button 2 N.O. a,,two_hand,,reserved,as 29
+X1,34,x1-34,k-2h in,machine.thc1 button 2 N.O. b,,two_hand,,reserved,as 29
+X1,35,x1-35,k-2h in,machine.thc1 button 2 N.C. a,,two_hand,,reserved,as 29
+X1,36,x1-36,k-2h in,machine.thc1 button 2 N.C. b,,two_hand,,reserved,as 29
+X1,37,x1-37,k-lc.S12,machine.lc1 receiver OSSD1,,curtain,,reserved,0.9: X1:32 to 0.8; the curtain's OSSD1 into safety relay 2's input channel 1; whether relay-safety-2ch-2no1nc's input takes a solid-state output and on which terminal is not in its record (request panel-6 item 4); its pulse outputs S11 and S21 unused in that case
+X1,38,x1-38,k-lc.S22,machine.lc1 receiver OSSD2,,curtain,,reserved,0.9: X1:33 to 0.8; OSSD2 into input channel 2; as 37
+X1,39,x1-39,,,,,,spare,
+X1,40,x1-40,,,,,,spare,
+X1,41,x1-41,,,,,,spare,
+PE,1,pe-1,enc-1.PE1,supply cable PE (gl-supply),PE,supply,61/,planned,the incoming protective conductor (side 2: a conductor of the supply cable not a wire of the shop's); side 1 since 0.7: wire 61 to the body's earth stud pe-body (enc-wm 1.3's pin PE1 · request panel-7; 0.2 to 0.6: no stud on enc-wm 1.1)
+PE,2,pe-2,enc-1.PE2,machine.frame.pe bonding cable,PE,bonding,62/,reserved,the frame's bonding cable (the spec's bonding row); no entry for it in the enclosure (request panel-6 item 5); side 1 since 0.7: wire 62 to the door's earth stud pe-door (pin PE2 · it swings with the door)
+PE,3,pe-3,enc-1.PE3,machine.hpu.pe bonding cable,PE,bonding,63/,reserved,the HPU skid's bonding cable; no entry (request panel-6 item 5); side 1 since 0.7: wire 63 to the plate's earth stud pe-plate (pin PE3); the plate carries rail-4 and with it the PE blocks' feet
+PE,4,pe-4,g1.PE,motor cable PE (gl-m1),PE,m1,41/,planned,the PSU's PE; out: the HPU motor's protective conductor in its cable (the spec's m1 row; the leads from f1 T1 T2 T3 go with it)
+PE,5,pe-5,t1.2V,,PE,control_power,17/,planned,the transformer's grounded secondary end bonded at the source (NFPA 79 9.1.3 by the spec's row); 0.6: t1 placed (xfmr-control 1.0) and its pin named; side 2 spare
+PE,6,pe-6,t1.PE,,PE,control_power,18/,planned,0.6: the transformer's frame (core and brackets: xfmr-control's PE clamp); side 2 spare
+PE,7,pe-7,hmi1.FE,,PE,hmi,76/,planned,0.9: the HMI's functional earth across the hinge (hmi-7in 1.0 pin FE: the housing's and the Ethernet shield's · wire 76; spare to 0.8); side 2 spare. FE on the PE bar is the shop's design choice: no separate FE bar is in the BOM and no figure on file asks for one
+PE,8,pe-8,x1-17.2,,PE,,28/,planned,the 0 V bus bond (X1:17 since 0.9 · X1:13 to 0.8); side 2 spare

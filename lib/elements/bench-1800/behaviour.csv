@@ -1,0 +1,3 @@
+# behaviour.csv · bench-1800 · steel workbench with a back-board (lib/behaviour.md). Mechanical only, one terminal: the frame bonding stud (port node `pe`, where mc-motor-1 bonds its PE). No moving node: the back-board is a fixed node (the field devices' mounting face), so no state and no pose.
+kind,a,b,part,when,value,unit,source,note
+pin,PE,pe,stud,,NOT ON FILE (B),N·m,element.py (pe port: the bonding stud on the rear-left leg's tab; its size and position are spec.md's open figures),frame bonding stud; the nut's tightening torque is not on file

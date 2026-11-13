@@ -1,0 +1,13 @@
+;; strip-rubber-corner-30x30 v1.0. Generated. Millimetres. APPLOAD, then RUBBERCORNER.
+(defun BX (lay p1 p2 h) (command "_.-LAYER" "_M" lay "") (command "_.BOX" p1 p2 h) (entlast))
+(defun CY (lay p1 p2 r / h) (setq h (distance p1 p2)) (command "_.-LAYER" "_M" lay "")
+  (command "_.UCS" "_ZA" p1 p2) (command "_.CYLINDER" (list 0 0 0) r h) (command "_.UCS" "_W") (entlast))
+(defun UB (lay o xp yp l w h) (command "_.-LAYER" "_M" lay "")
+  (command "_.UCS" "3" o xp yp) (command "_.BOX" (list 0 0 0) (list l w 0) h) (command "_.UCS" "_W") (entlast))
+(defun c:RUBBERCORNER (/ os hole e0 e1 e2 e3 e4 e5)
+  (setq os (getvar "OSMODE")) (setvar "OSMODE" 0) (setvar "CMDECHO" 0) (setvar "INSUNITS" 4) (setvar "ISOLINES" 8)
+  (setq e0 (BX "M-GASKET" (list 0 -30 -30) (list 1000 3 -30) 33))
+  (setq hole (UB "M-GASKET" (list -1 -31 -31) (list 0 -31 -31) (list -1 -30 -31) 1002 31 31)) (command "_.SUBTRACT" e0 "" hole "")
+  (CY "M-GASKET" (list 0 6 6) (list 1000 6 6) 8)
+  (command "_.-LAYER" "_S" "0" "") (setvar "OSMODE" os) (command "_.ZOOM" "_E") (princ "\nBuilt.") (princ))
+(princ "\nType RUBBERCORNER.") (princ)

@@ -1,0 +1,16 @@
+{
+  "element_id": "servo-motor-1kw",
+  "category": "Motor control and drives",
+  "width": 100.0,
+  "height": 100.0,
+  "depth": 198.3,
+  "units": "mm",
+  "datasheet_dims": [
+    198.3,
+    100.0,
+    100.0
+  ],
+  "domain": "electrical",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

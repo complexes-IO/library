@@ -1,0 +1,124 @@
+MACHINES OF A MACHINE-BUILDING FACTORY, FROM ELEMENTS (EM's list, 2026-11-08; the core's BOMs)
+One line = one assembly BOM, as in machines-from-elements.txt. An id with no mark is in lib/inventory.csv already; (new) is an
+element this list adds to the inventory; (own) = our own design (a frame, bed, table or guard we draw ourselves, not a product);
+(tool) = a hand tool or instrument, an element in its own right, not an assembly. Every machine shares the same spine: a
+structure (frame-welded, bed-cast, table-slotted), drives (motor-iec, vfd, servo), motion (ballscrew (new), linear-guide, rack-pinion (new)),
+control (plc0, hmi-7in, pbs-6h-22) and safety (guard-interlock, light-curtain, op-estop-22-2nc, relay-safety-2ch-2no1nc); the department-specific
+elements are the few at the end of each line. `python lib/build.py inventory` ranks elements by the systems of both lists, EM's
+pins first (inventory.csv `pin`). First whole machine: press-hydraulic (EM 2026-11-08: what an engineer meets in the real world);
+its 13 missing elements are pinned across the three lanes.
+
+1. STEEL CUTTING
+laser-cutter-fiber          frame-welded (own), bed-slat (own), gantry-beam (own), linear-guide (x4), rack-pinion (x2) (new), servo-motor (x3), servo-drive (x3), drag-chain (x2), laser-source-fiber (new), laser-head (new), chiller (new), fume-extractor (new), enclosure-machine (own), guard-interlock, light-curtain, op-estop-22-2nc, relay-safety-2ch-2no1nc, plc0, hmi-7in, ipc, enc-fs-1524x1829x305, valve-bank, frl, compressor-air
+plasma-cutter-cnc           frame-welded (own), bed-slat (own), gantry-beam (own), linear-guide (x4), rack-pinion (x2) (new), servo-motor (x3), servo-drive (x3), drag-chain (x2), plasma-psu (new), plasma-torch (new), torch-height-control (new), fume-extractor (new), water-table (own), op-estop-22-2nc, relay-safety-2ch-2no1nc, plc0, hmi-7in, enc-wm, frl, compressor-air
+saw-band-auto               frame-welded (own), motor-iec, gear-reducer, blade-band (new), wheel-band (new), vise-hydraulic (new), hpu-0.37kw, hyd-cylinder-da-40 (x2), feed-roller (new), coolant-pump (new), prox-m12 (x2), limit-switch, plc0, hmi-7in, pbs-6h-22, guard-interlock, op-estop-22-2nc
+saw-circular-metal          frame-welded (own), motor-iec, gear-reducer, blade-circular (new), vise-manual (new), coolant-pump (new), guard-panel (own), op-estop-22-2nc, pbs-6h-22, limit-switch
+pipe-cutter                 frame-welded (own), motor-iec, chuck-3jaw (new), blade-circular (new), pipe-stand (own), coolant-pump (new), limit-switch, pbs-6h-22, op-estop-22-2nc, guard-panel (own)
+shear-hydraulic             frame-welded (own), blade-shear (new), hpu-7.5kw (new), hyd-cylinder-da-40 (x2), hyd-valve-d03, backgauge (new), ballscrew (new), servo-motor, servo-drive, hold-down (new), light-curtain, op-estop-22-2nc, relay-safety-2ch-2no1nc, plc0, hmi-7in, footswitch (new), enc-wm
+
+2. STEEL FORMING
+press-brake-cnc             frame-welded (own), ram (own), hpu-7.5kw (new), hyd-cylinder-da-40 (x2), hyd-valve-d03 (x2), encoder (x2), backgauge (new), ballscrew (x2) (new), servo-motor (x2), servo-drive (x2), tooling-press-brake (new), clamp-tooling (new), light-curtain, laser-guard-brake (new), footswitch (new), op-estop-22-2nc, relay-safety-2ch-2no1nc, safety-plc, hmi-7in, ipc, enc-fs-1524x1829x305
+press-hydraulic             frame-welded (own), bolster (own), hpu-7.5kw (new), hyd-cylinder-da-40, hyd-valve-d03, valve-counterbalance (new), pressure-switch, pt, hyd-gauge, two-hand-control, light-curtain, op-estop-22-2nc, relay-safety-2ch-2no1nc, plc0, hmi-7in, enc-wm, limit-switch (x2)
+roll-plate                  frame-welded (own), roll-forming (x3) (new), bearing-pillow (x6), motor-iec, gear-reducer, hpu-0.37kw, hyd-cylinder-da-40 (x2), encoder, pbs-6h-22, footswitch (new), op-estop-22-2nc, guard-panel (own), plc0
+bender-section              frame-welded (own), roll-forming (x3) (new), bearing-pillow (x6), motor-iec, gear-reducer, hpu-0.37kw, hyd-cylinder-da-40, encoder, pbs-6h-22, op-estop-22-2nc, footswitch (new), plc0
+folder-sheet                frame-welded (own), beam-folding (own), clamp-beam (own), hpu-0.37kw, hyd-cylinder-da-40 (x2), encoder, backgauge (new), ballscrew (new), servo-motor, servo-drive, footswitch (new), op-estop-22-2nc, plc0, hmi-7in, light-curtain
+punch-hydraulic             frame-welded (own), hpu-0.37kw, hyd-cylinder-da-40, punch-die-set (new), stripper (new), table-slotted (own), footswitch (new), two-hand-control, op-estop-22-2nc, limit-switch, pbs-6h-22
+ironworker                  frame-welded (own), hpu-7.5kw (new), hyd-cylinder-da-40 (x2), punch-die-set (new), blade-shear (new), blade-notcher (new), motor-iec, footswitch (new), guard-panel (own), op-estop-22-2nc, pbs-6h-22
+
+3. WELDING AND FABRICATION
+welder-mig-station          welder-mig (new), wire-feeder (new), torch-mig (new), gas-regulator (new), gas-cylinder-cart (own), cable-welding (new), clamp-work (new), table-welding (new), fume-arm (new)
+welder-tig-station          welder-tig (new), torch-tig (new), gas-regulator (new), gas-cylinder-cart (own), footswitch (new), cable-welding (new), clamp-work (new), table-welding (new), fume-arm (new)
+welder-stick-station        welder-stick (new), holder-electrode (new), cable-welding (new), clamp-work (new), table-welding (new), fume-arm (new)
+positioner-welding          frame-welded (own), motor-iec, gear-reducer, chuck-3jaw (new), bearing-slew (new), footswitch (new), pbs-6h-22, op-estop-22-2nc, encoder, vfd-0.75kw
+rotator-welding             frame-welded (own), roller-rubber (x4) (new), bearing-pillow (x4), motor-iec, gear-reducer, vfd-0.75kw, footswitch (new), pbs-6h-22, op-estop-22-2nc
+table-welding               table-welding (new), clamp-work (x4) (new), feet-leveling (x4), caster (x4)
+fume-extraction-system      fume-extractor (new), fume-arm (x4) (new), duct-round (new), fan-exhaust, filter-cartridge (new), enc-wm, vfd-0.75kw, pressure-switch, pbs-6h-22
+welder-plasma               welder-plasma (new), torch-plasma-weld (new), gas-regulator (x2) (new), chiller (new), cable-welding (new), footswitch (new)
+grinder-angle               grinder-angle (tool) (new), disc-grinding (new), guard-grinder (new)
+
+4. CNC MACHINING
+mill-vertical-cnc           bed-cast (own), column (own), saddle (own), table-slotted (own), ballscrew (x3) (new), linear-guide (x6), servo-motor (x3), servo-drive (x3), spindle-cartridge (new), spindle-motor (new), toolchanger (new), tool-holder-bt40 (x20) (new), coolant-pump (new), chip-conveyor (new), way-cover (x3) (new), enclosure-machine (own), guard-interlock (x2), op-estop-22-2nc, safety-plc, cnc-controller (new), hmi-7in, pendant-handwheel (new), enc-fs-1524x1829x305, lubrication-central-air-6 (new)
+lathe-cnc                   bed-cast (own), headstock (own), spindle-cartridge (new), spindle-motor (new), chuck-3jaw (new), chuck-hydraulic (new), hpu-0.37kw, tailstock (new), turret-tool (new), ballscrew (x2) (new), linear-guide (x4), servo-motor (x2), servo-drive (x2), coolant-pump (new), chip-conveyor (new), way-cover (x2) (new), enclosure-machine (own), guard-interlock, op-estop-22-2nc, cnc-controller (new), hmi-7in, enc-fs-1524x1829x305
+lathe-conventional          bed-cast (own), headstock (own), gearbox-headstock (new), chuck-3jaw (new), tailstock (new), carriage (own), leadscrew (new), tool-post (new), motor-iec, pbs-6h-22, op-estop-22-2nc, guard-chuck (new), coolant-pump (new), lamp-machine (new)
+drill-radial                base-cast (own), column (own), arm-radial (own), spindle-drill (new), gearbox-headstock (new), motor-iec, table-slotted (own), vise-manual (new), pbs-6h-22, op-estop-22-2nc, coolant-pump (new), guard-chuck (new)
+drill-pillar                base-cast (own), column (own), spindle-drill (new), belt-timing, motor-iec, table-slotted (own), vise-manual (new), pbs-6h-22, op-estop-22-2nc, guard-chuck (new), lamp-machine (new)
+grinder-surface             bed-cast (own), table-slotted (own), chuck-magnetic (new), wheel-grinding (new), spindle-grinding (new), motor-iec, hpu-0.37kw, hyd-cylinder-da-40, ballscrew (x2) (new), handwheel (new), coolant-pump (new), guard-wheel (new), pbs-6h-22, op-estop-22-2nc, dust-collector (new)
+grinder-cylindrical         bed-cast (own), headstock (own), tailstock (new), wheel-grinding (new), spindle-grinding (new), motor-iec (x2), ballscrew (x2) (new), servo-motor (x2), servo-drive (x2), coolant-pump (new), guard-wheel (new), cnc-controller (new), hmi-7in, op-estop-22-2nc, enc-wm
+mill-horizontal             bed-cast (own), column (own), table-slotted (own), spindle-cartridge (new), arbor (new), gearbox-headstock (new), motor-iec, ballscrew (x3) (new), handwheel (x3) (new), coolant-pump (new), guard-panel (own), pbs-6h-22, op-estop-22-2nc
+machining-center-cnc        bed-cast (own), column (own), table-slotted (own), rotary-table-nc (new), ballscrew (x4) (new), linear-guide (x8), servo-motor (x4), servo-drive (x4), spindle-cartridge (new), spindle-motor (new), toolchanger (new), tool-holder-bt40 (x40) (new), probe-touch (new), coolant-pump (x2) (new), chip-conveyor (new), way-cover (x3) (new), enclosure-machine (own), guard-interlock (x2), op-estop-22-2nc, safety-plc, cnc-controller (new), hmi-7in, pendant-handwheel (new), enc-fs-1524x1829x305, lubrication-central-air-6 (new), chiller (new)
+borer-horizontal            bed-cast (own), column (own), table-slotted (own), rotary-table-nc (new), spindle-boring (new), spindle-motor (new), ballscrew (x4) (new), servo-motor (x4), servo-drive (x4), cnc-controller (new), hmi-7in, op-estop-22-2nc, guard-interlock, coolant-pump (new), enc-fs-1524x1829x305
+
+5. HYDRAULIC AND PNEUMATIC
+hpu-assembly-station        bench-1800, hoist-chain, lift-table, torque-wrench (tool) (new), cabinet-tool, hose-hyd, fitting-hyd-iso8434, hyd-tank (new), hyd-pump (new), motor-iec, hyd-valve-d03, hyd-filter-return (new), hyd-cooler (new), accumulator (new), hyd-gauge
+hose-crimper                frame-welded (own), hpu-0.37kw, hyd-cylinder-da-40, die-crimp (x8) (new), hmi-7in, plc0, footswitch (new), op-estop-22-2nc, guard-panel (own), hose-cutter (new)
+test-bench-hydraulic        bench-1800, hpu-7.5kw (new), hyd-valve-d03 (x4), flow-meter, pt (x4), tt-rtd, hyd-gauge (x4), hyd-filter-return (new), hyd-cooler (new), tank, daq, hmi-7in, plc-aio, op-estop-22-2nc, guard-panel (own), hose-hyd, fitting-hyd-iso8434
+test-rig-cylinder           frame-welded (own), hpu-7.5kw (new), hyd-valve-d03 (x2), pt (x2), flow-meter, hyd-cylinder-da-40, clevis-mount (new), load-cell, encoder, daq, hmi-7in, plc-aio, op-estop-22-2nc, guard-interlock
+compressor-station          compressor-air, receiver-air (new), dryer-air, filter-air (x2), separator-oil-water (new), pressure-switch, gauge-p, valve-ball, valve-air-shutoff, drain-auto (new), pipe-asme, fitting-pipe, enc-wm, contactor-9a-1no1nc, overload-9a-1no1nc
+test-bench-pneumatic        bench-1800, frl, regulator (x2), gauge-p (x4), flow-meter, valve-bank, manifold-pneu, cylinder (x2), pt (x2), daq, plc-dio, hmi-7in, fitting-pushin, tube-pneu, op-estop-22-2nc
+press-shop-hydraulic        frame-welded (own), hyd-cylinder-da-40, pump-hand-hyd (new), hyd-gauge, bolster (own), guard-panel (own)
+
+6. MACHINE CABINET AND ENCLOSURE
+laser-cutter-sheet          frame-welded (own), bed-slat (own), gantry-beam (own), linear-guide (x4), rack-pinion (x2) (new), servo-motor (x3), servo-drive (x3), laser-source-fiber (new), laser-head (new), chiller (new), fume-extractor (new), table-shuttle (own), enclosure-machine (own), guard-interlock, light-curtain, op-estop-22-2nc, relay-safety-2ch-2no1nc, plc0, hmi-7in, ipc, enc-fs-1524x1829x305
+press-brake-sheet           frame-welded (own), ram (own), hpu-7.5kw (new), hyd-cylinder-da-40 (x2), hyd-valve-d03 (x2), encoder (x2), backgauge (new), ballscrew (x2) (new), servo-motor (x2), servo-drive (x2), tooling-press-brake (new), clamp-tooling (new), laser-guard-brake (new), footswitch (new), op-estop-22-2nc, relay-safety-2ch-2no1nc, safety-plc, hmi-7in, enc-fs-1524x1829x305
+shear-sheet                 frame-welded (own), blade-shear (new), hpu-0.37kw, hyd-cylinder-da-40 (x2), backgauge (new), ballscrew (new), servo-motor, servo-drive, hold-down (new), light-curtain, op-estop-22-2nc, relay-safety-2ch-2no1nc, plc0, hmi-7in, footswitch (new), enc-wm
+punch-turret                frame-welded (own), turret-punch (new), punch-die-set (x30) (new), ram (own), servo-motor (x3), servo-drive (x3), ballscrew (x2) (new), linear-guide (x4), clamp-sheet (x3) (new), table-brush (own), hpu-0.37kw, cnc-controller (new), hmi-7in, light-curtain, op-estop-22-2nc, relay-safety-2ch-2no1nc, enc-fs-1524x1829x305
+notcher-corner              frame-welded (own), hpu-0.37kw, hyd-cylinder-da-40, blade-notcher (new), table-slotted (own), footswitch (new), guard-panel (own), op-estop-22-2nc, pbs-6h-22
+welder-spot                 frame-welded (own), welder-spot (new), electrode-spot (x2) (new), cylinder, valve-sol-52-sr, frl, footswitch (new), chiller (new), op-estop-22-2nc, xfmr-welding (new)
+riveter                     frame-welded (own), cylinder, valve-sol-52-sr, frl, head-rivet-c-hyd (new), footswitch (new), guard-panel (own), op-estop-22-2nc
+deburrer                    frame-welded (own), belt-abrasive (new), brush-deburr (x2) (new), motor-iec (x2), vfd-0.75kw (x2), conveyor-seg, dust-collector (new), guard-interlock, op-estop-22-2nc, pbs-6h-22, enc-wm
+powder-coating-system       booth-powder (own), gun-powder (new), hopper-powder (new), fan-exhaust, filter-cartridge (new), compressor-air, frl, oven-cure (own), heater-oven (new), thermostat-enc, tt-rtd, conveyor-overhead (new), hook-rack (own), plc0, hmi-7in, enc-wm, op-estop-22-2nc
+booth-paint                 booth-paint (own), fan-exhaust (x2), filter-paint (new), lamp-explosion-proof (new), gun-spray (new), compressor-air, frl, pressure-switch, pbs-6h-22, enc-wm, extinguisher
+
+7. ASSEMBLY
+workbench-assembly          bench-1800, cabinet-tool, hardware-cabinet, feet-leveling (x4), panel-light, receptacle-panel, frl, tool-dmm
+crane-bridge                girder-bridge (own), runway-beam (own), end-truck (x2) (new), hoist-wire-rope (new), trolley (new), motor-brake (x4), vfd-0.75kw (x3), pendant-crane (new), limit-switch (x4), festoon (new), enc-wm, disc-3p-30a, contactor-9a-1no1nc (x3), overload-9a-1no1nc (x3), buzzer-22, stack-light
+hoist-chain-electric        hoist-chain, trolley (new), pendant-crane (new), beam-runway (own), limit-switch (x2), motor-brake, contactor-reversing
+lift-table-hydraulic        lift-table, hpu-0.37kw, hyd-cylinder-da-40 (x2), hyd-valve-d03, footswitch (new), limit-switch (x2), guard-toe (new), op-estop-22-2nc
+forklift                    forklift (new), battery-traction (new), charger-battery (new)
+pallet-truck                pallet-truck
+torque-wrench               torque-wrench (tool) (new), socket-set (tool) (new), tester-torque (new)
+cabinet-tool                cabinet-tool, tb-rollcab, hardware-cabinet, foam-tool-tray (own)
+alignment-machine           laser-alignment (tool) (new), dial-indicator (tool) (new), level-precision (tool) (new), shim-set (new), feet-leveling
+
+8. ELECTRICAL AND CONTROL PANEL
+wire-processor              wire-processor (new), reel-stand (new), wire, cable-control, enc-wm, pbs-6h-22, op-estop-22-2nc, guard-interlock
+crimper-ferrule             crimper-ferrule (new), ferrule-din46228, footswitch (new), reel-stand (new)
+crimper-terminal            crimper-terminal (new), die-crimp (x6) (new), footswitch (new), terminal-plug, cable-control
+tester-electrical           tester-safety-electrical (new), tester-insulation (tool) (new), tool-dmm, clamp-meter (tool) (new), tester-loop (tool) (new), phase-rotation-tester (tool) (new)
+tester-insulation           tester-insulation (tool) (new)
+multimeter                  tool-dmm
+bench-panel-assembly        bench-1800, cabinet-tool, panel-light, receptacle-panel, lift-table, hoist-chain, tool-dmm, label-printer (new), crimper-ferrule (new), din-rail-35, duct-40x60, term-4mm
+labeler-cable               label-printer (new), printer-label, marker-terminal
+
+9. QUALITY CONTROL AND INSPECTION
+cmm                         cmm (new), probe-touch (new), granite-table (new), compressor-air, frl, ipc, hmi-7in, op-estop-22-2nc, enclosure-machine (own), chiller (new), vibration-isolator (new)
+caliper                     caliper-150
+micrometer                  micrometer (tool) (new), stand-micrometer (new)
+height-gauge                height-gauge (tool) (new), surface-plate (new)
+dial-indicator              dial-indicator (tool) (new), stand-magnetic (new)
+roughness-tester            roughness-tester (tool) (new)
+measuring-tools             gauge-block-set (tool) (new), square-engineers (tool) (new), pin-gauge-set (tool) (new), thread-gauge-set (tool) (new), feeler-gauge (tool) (new), rule-steel (tool) (new), surface-plate (new)
+hardness-tester             hardness-tester (new), bench-1800, indenter (new)
+ut-weld-tester              ut-flaw-detector (tool) (new), probe-ut (x2) (new), block-calibration-ut (new), couplant (new)
+laser-alignment             laser-alignment (tool) (new), bracket-shaft (x2) (new)
+
+10. FINISHING
+sandblaster                 cabinet-blast (own), gun-blast (new), nozzle-blast (new), compressor-air, frl, dust-collector (new), hopper-abrasive (own), lamp-machine (new), footswitch (new), glove-port (new), valve-air-shutoff
+booth-powder                booth-powder (own), gun-powder (new), hopper-powder (new), fan-exhaust, filter-cartridge (new), compressor-air, frl, enc-wm, pbs-6h-22
+oven-cure                   oven-cure (own), heater-oven (x4) (new), fan-circulation (new), motor-iec, thermostat-enc, tt-rtd (x2), temperature-controller (new), contactor-9a-1no1nc (x2), enc-wm, door-oven (own), guard-interlock
+booth-spray-paint           booth-paint (own), fan-exhaust (x2), filter-paint (new), lamp-explosion-proof (new), gun-spray (new), compressor-air, frl, pbs-6h-22, enc-wm
+polisher-metal              frame-welded (own), motor-iec, wheel-polishing (x2) (new), guard-wheel (new), pbs-6h-22, op-estop-22-2nc, dust-collector (new)
+grinder-belt                frame-welded (own), motor-iec, belt-abrasive (new), platen (own), wheel-contact (new), tensioner-belt, guard-panel (own), pbs-6h-22, op-estop-22-2nc, dust-collector (new)
+cleaner-industrial          washer-parts (new), pump, heater-oven (new), tank, pressure-washer-skid (new), vacuum-industrial (new)
+
+11. GENERAL FACTORY EQUIPMENT
+compressors-plant           compressor-air (x2), receiver-air (new), dryer-air, filter-air (x3), separator-oil-water (new), drain-auto (new), pipe-asme, fitting-pipe, valve-ball, pressure-switch, gauge-p, enc-wm, contactor-9a-1no1nc (x2), overload-9a-1no1nc (x2), vfd-0.75kw
+dryers-air                  dryer-air, filter-air (x2), drain-auto (new), gauge-p
+dust-collection-system      dust-collector (new), duct-round (new), fan-exhaust, filter-cartridge (new), hopper-dust (own), enc-wm, vfd-0.75kw, pressure-switch, valve-sol-32nc-sr, compressor-air
+ventilation-industrial      fan-exhaust (x4), louver (new), damper (x4), duct-round (new), bas-controller, sensor-room, enc-wm, vfd-0.75kw (x4)
+panels-distribution         enc-fs-1524x1829x305, mccb (x6), disc-3p-30a, xfmr-dist-3ph, spd, power-meter, ct-current (x3), busbar (new), term-4mm, panel-light
+generator-backup            generator (new), ats (new), tank-fuel (new), battery-starter (new), charger-battery (new), enc-wm, silencer-exhaust (new)
+racks-storage               pallet-rack, rack-cantilever (new), shelving-steel (new), anchor-bolt, pallet, sign-iso7010
+storage-steel               rack-cantilever (new), rack-sheet-vertical (own), rack-bar (own), anchor-bolt, sign-iso7010, floor-marking
+safety-equipment            sign-iso7010, floor-marking, eyewash, emergency-light, extinguisher, first-aid-cabinet (new), lockout-station (new), guard-rail (new), bollard (new), mirror-convex (new)
+fire-protection             facp, smoke-detector, detector-heat (new), extinguisher (x6), sprinkler-head (new), pipe-asme, valve-butterfly, flow-switch (new), bell-fire (new), pull-station (new), emergency-light

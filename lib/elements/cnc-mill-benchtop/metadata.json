@@ -1,0 +1,12 @@
+{
+  "element_id": "cnc-mill-benchtop",
+  "category": "Manufacturing",
+  "width": null,
+  "height": null,
+  "depth": null,
+  "units": "mm",
+  "datasheet_dims": null,
+  "domain": "mechanical",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

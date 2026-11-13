@@ -1,0 +1,2 @@
+# behaviour.csv · ram · press ram (lib/behaviour.md). One body: no terminal, no moving node (`tool-seat` is fixed; the stroke is the press's, the assembly moves the whole element), no state.
+kind,a,b,part,when,value,unit,source,note

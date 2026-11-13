@@ -1,0 +1,12 @@
+{
+  "element_id": "cable-tray",
+  "domain": "controls",
+  "category": "Industrial networking",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 3000.0,
+  "height": 100.0,
+  "depth": 300.0,
+  "units": "mm",
+  "datasheet_dims": null
+}

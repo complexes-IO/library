@@ -1,0 +1,15 @@
+{
+  "element_id": "conveyor-cdlr",
+  "category": "Conveyor and material handling",
+  "width": 1530.35,
+  "height": 152.4,
+  "depth": 1584.96,
+  "units": "mm",
+  "datasheet_dims": [
+    1584.96,
+    1530.35
+  ],
+  "domain": "mechanical",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

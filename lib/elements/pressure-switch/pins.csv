@@ -1,0 +1,4 @@
+port,pin,role,signal,rated_A,source
+t-11,11,sw-com,change-over contact common (to 12 below the setting, to 14 above it),2,spec.md Class values 17 and 26 (1 change-over; 24 V DC) and the switching program; ratings.csv ie_dc13_24v (design)
+t-12,12,sw-nc,N.C. side of the change-over (opens as the pressure rises past the setting),2,as 11
+t-14,14,sw-no,N.O. side of the change-over (closes as the pressure rises past the setting: the PLC's pressure ok),2,as 11

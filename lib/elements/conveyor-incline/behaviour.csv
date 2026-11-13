@@ -1,0 +1,5 @@
+# behaviour.csv · conveyor-incline · cleated belt incline conveyor section (lib/behaviour.md). Mechanical only: no terminal. Two moving nodes, the head pulley pulley-head and the tail pulley pulley-tail, each turning about its own axis; the side frames, posts, ties, cross members, slider bed, floor rails and the belt's top run with its cleats (drawn at rest) are the fixed body. The drive is the assembly's.
+kind,a,b,part,when,value,unit,source,note
+state,still,,pulleys,default,,,spec.md (Mechanism),the pulleys at rest (0)
+state,running,,pulleys,manual toggle,,,spec.md (Mechanism),the assembly's drive turns the head pulley; the belt (its wrap not drawn) turns the tail pulley with it
+pose,pulley-head pulley-tail,,,running,end,,element.py (each pulley rotates 0 to 360 about its axis),

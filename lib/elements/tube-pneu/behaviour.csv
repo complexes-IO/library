@@ -1,0 +1,5 @@
+# behaviour.csv · tube-pneu · generic plastic air tube, inch OD (lib/behaviour.md). Two tube ends and no electrical pin or moving node. The air it carries is a pneumatic path:
+# the solver is electrical in phase 1 (lib/toolkit/nets.py), so no state or contact row is written. A tube end is held by its push-in fitting's collet, not a torque: value not claimed (lib/behaviour.md, pin; request pneu-15 3).
+kind,a,b,part,when,value,unit,source,note
+pin,a,port-a,tube,,not claimed,N·m,not claimed: held by the fitting's collet; no thread (ISO 14743 push-in; lib/behaviour.md; pin; request pneu-15 3); spec.md Ports (design: a tube end has no ISO 11727 number; marked by its node's name),one end: male tube OD (parameter tube) into a push-in port of the same OD
+pin,b,port-b,tube,,not claimed,N·m,not claimed: held by the fitting's collet; no thread (ISO 14743 push-in; lib/behaviour.md; pin; request pneu-15 3); spec.md Ports (design: as a),the other end; a tube has no flow direction

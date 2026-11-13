@@ -1,0 +1,18 @@
+# behaviour.csv · mcb-1p-c6 · 1-pole miniature circuit breaker C6 (lib/behaviour.md). Taken in by elec-r22 from the core's proposal of 2026-11-09 (lib/requests/core/behaviour/mcb-1p-c6.csv),
+# checked against references/measure.md (the family brief of mcb-3p-c10): the tripped pose cites the family brief's OFF pose; every other figure as proposed.
+# Marks: the brief's pages give none, so 1 (line) / 2 (load) are assumed, Assumption (A), for EM (wires.csv joins <tag>.<pin mark>); torque NOT ON FILE.
+# elec-r26 (review elec-r22 finding 2): IEC 60947-2, which the proposal cited for the marks and the reset, is not in lib/standards/sources.csv and no clause was given;
+# the marks and the reset are now Assumption (A) with their reasons.
+# elec-r47 (review mcb-1p-c6-1.5 finding 1): the reset row names the family's standard as the library names it, IEC 60898-1 (lib/inventory.csv mcb-2p, mcb-3p), not IEC 60947-2; neither is on file, so the class stays A.
+# elec-r30 (1.4): each pin names its port node t-1-line / t-1-load (the core's pin-nodes note of 2026-11-11; BEH-020). The node names say pole and side, not the assumed mark.
+kind,a,b,part,when,value,unit,source,note
+pin,1,t-1-line,terminal,,NOT ON FILE,N·m,"maker's datasheet (figures derived from the 3-pole family drawing); marks 1 / 2 Assumption (A): on no page of the brief; torque NOT ON FILE",line (top)
+pin,2,t-1-load,terminal,,NOT ON FILE,N·m,as 1,load (bottom)
+state,off,,mechanism,default,,,maker's datasheet,
+state,tripped,,mechanism,manual latch cleared by reset,,,"maker's datasheet (C curve); a fault the twin injects until the circuit model runs",
+state,on,,mechanism,manual toggle,,,maker's datasheet,
+state,reset,,mechanism,manual momentary,,,"Assumption (A): trip-free, reset by moving the toggle to off, as mcb-3p-c10 (on no page of the brief; IEC 60898-1, the family's standard, which would fix it, is not on file)",
+contact,1,2,pole-1,on,,,maker's datasheet,
+pose,toggle,,,on,end,,element.py (the family's toggle rotates −25..25),
+pose,toggle,,,tripped,0,,"mcb-3p-c10 references/measure.md Named nodes (""The tripped position is the OFF pose""), the same family body: the toggle at rest, as off",
+pose,indicator-1,,,on,1,,element.py,

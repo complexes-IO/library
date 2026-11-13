@@ -1,0 +1,3 @@
+# behaviour.csv · coupling-clamp-strip · generic clamp strip coupling (lib/behaviour.md). A structural part: no port, no electrical pin and no moving node.
+# The pipe passes through it: it squeezes its sleeve onto the two pipe ends; it passes no path of its own: no state, contact, load or pose row is written (the header only).
+kind,a,b,part,when,value,unit,source,note

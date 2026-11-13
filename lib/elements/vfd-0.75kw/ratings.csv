@@ -1,0 +1,10 @@
+property,value,unit,status,source
+ue_min,380,V AC,generic design,"ETIM 10.0 EC001857 class value: mains voltage (EF006780), lower end, line to line; spec.md Class values 1"
+ue_max,480,V AC,generic design,"ETIM 10.0 EC001857 class value: mains voltage (EF006780), upper end, line to line; spec.md Class values 1"
+frequency,50-60,Hz,generic design,"ETIM 10.0 EC001857 class value: mains frequency (EF006783); spec.md Class values 2"
+phases,3,,generic design,"ETIM 10.0 EC001857 class value: number of phases input and output (EF007117, EF006998); spec.md Class values 3 and 4"
+f_out_max,400,Hz,generic design,"ETIM 10.0 EC001857 class value: max. output frequency (EF007350); spec.md Class values 5"
+u_out_max,480,V AC,generic design,"ETIM 10.0 EC001857 class value: max. output voltage (EF009560); spec.md Class values 6"
+ie,2.2,A,generic design,"ETIM 10.0 EC001857 class value: nominal output current I2N (EF009561); spec.md Class values 7"
+p_out,0.75,kW,generic design,"ETIM 10.0 EC001857 class value: max. output at quadratic and at linear load at rated output voltage (EF007366, EF007364); spec.md Class values 8 and 9"
+p_loss,35,W,generic design,"ETIM 10.0 EC001857 class value: power consumption (EF000346), the drive's own loss at rated output; spec.md Class values 10"

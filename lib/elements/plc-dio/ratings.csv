@@ -1,0 +1,9 @@
+property,value,unit,status,source
+n_di,8,,generic design,"ETIM 10.0 EC001419 class value: number of digital inputs (EF001992); spec.md Class values 5"
+n_do,8,,generic design,"ETIM 10.0 EC001419 class value: number of digital outputs (EF001993); spec.md Class values 6"
+u_supply,24,V DC,generic design,"ETIM 10.0 EC001419 class value: supply voltage DC (EF007534); spec.md Class values 3 (the panel's control supply, psu-24v-2a4, under the panel's 24 V budget, ELR-020)"
+p_consumption,2.0,W,generic design,"ETIM 10.0 EC001419 class value: power consumption (EF000346); spec.md Class values 9"
+i_in,3,mA,generic design,"ETIM 10.0 EC001419 class value: input current at signal 1 (EF001428), at 24 V; spec.md Class values 10"
+i_out,0.5,A,generic design,"ETIM 10.0 EC001419 class value: output current (EF003202), each output; spec.md Class values 14"
+u_out,24,V DC,generic design,"ETIM 10.0 EC001419 class value: permitted voltage at output (EF007553), the output supply 24VO-0VO; spec.md Class values 15"
+load_i,0.08,A,derived,"2.0 W / 24 V = 0.083 A (I = P / U; p_consumption and u_supply above), what the 24 V budget (ELR-020) reads; behaviour.csv load row 24V-0V"

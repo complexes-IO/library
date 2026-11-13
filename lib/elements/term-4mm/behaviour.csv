@@ -1,0 +1,10 @@
+# behaviour.csv · term-4mm · feed-through terminal block (lib/behaviour.md). Taken in by elec-r23 from the core's proposal of 2026-11-09 (lib/requests/core/behaviour/term-4mm.csv),
+# checked against references/measure.md and element.py. Two clamp-screw elements (clamp-1, clamp-2) joined by a current bar.
+# Difference from the proposal: the torque is the window term-4mm places on its clamps, 0.5–0.8 N·m (clamp-screw 1.1's PARAMS, which term-4mm doesn't override), not 0.5–0.6;
+# that window is an Assumption (B) in clamp-screw's spec.md (the terminal maker states it; NOT ON FILE (B) for this block's brief).
+# elec-r27 (review term-4mm-1.4 finding 3): the torque window's class (B) and the current bar's resistance (C) now on their cells.
+# The ground variant (kind=ground) bonds its foot to the rail; the rail is not a pin of this element, so that path lives with the assembly's wiring.
+kind,a,b,part,when,value,unit,source,note
+pin,1,clamp-1,clamp-1,,0.5–0.8,N·m,"Assumption (B): clamp-screw 1.1's default torque window 0.5–0.8 N·m as placed (PARAMS torque_min 0.5, torque_max 0.8), itself its spec.md's Assumption (B); the maker's figure is NOT ON FILE (B)",side 1 (clamp-1 is the contact node)
+pin,2,clamp-2,clamp-2,,0.5–0.8,N·m,as 1,side 2
+contact,1,2,current-bar,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,"spec.md 1.1 (a current bar between the cages; references/measure.md Solids: 5.2 x 1.7 x 23.4)",a feed-through: the two sides are one conductor

@@ -1,0 +1,16 @@
+{
+  "element_id": "load-cell",
+  "category": "Industrial sensors",
+  "width": 130.0,
+  "height": 22.0,
+  "depth": 25.4,
+  "units": "mm",
+  "datasheet_dims": [
+    130.0,
+    25.4,
+    22.0
+  ],
+  "domain": "sensors",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

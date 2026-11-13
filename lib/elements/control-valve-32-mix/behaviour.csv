@@ -1,0 +1,12 @@
+# behaviour.csv · control-valve-32-mix · generic pneumatic three-way control valve, mixing, spring return (lib/behaviour.md). Three liquid ports and one control air
+# port; no electrical pin; one moving node, the stem's position indicator. At rest the spring holds A shut and B open to AB; air at port 12 lifts the plug: A open to
+# AB, B shut (spec.md). The solver is electrical in phase 1 (lib/toolkit/nets.py) and solves no air or liquid, so the stem's states are its two ends, set by a manual
+# state until the pneumatic circuit model drives them. NPT joints make up by turns (pneu.NPT L1 + L3), not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,a,port-a,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: a liquid port has no ISO 11727 number; marked by the trade's letter A, the controlled way)",the inlet A: female NPT 3/8
+pin,b,port-b,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: B the bypass way)",the inlet B: female NPT 3/8 on the underside
+pin,ab,port-ab,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: AB the common way)",the outlet AB: female NPT 3/8
+pin,12,port-12,actuator,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 12 as control-valve's: the signal that opens the controlled way)",the control air: female NPT 1/8; air in opens A
+state,b-open,,stem,default,,,spec.md Named nodes (stem 0: the spring holds the plug on A's seat),B to AB open; A shut
+state,a-open,,stem,manual toggle,,,spec.md Named nodes (10 mm lift; stand-in for air at port 12 until the circuit model),A to AB open; B shut
+pose,stem,,,a-open,end,,element.py (stem translates 0 to 10 mm along +z),

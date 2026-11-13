@@ -1,0 +1,4 @@
+port,pin,role,signal,rated_A,source
+x1.t-1,24V,load+:24V,panel supply +24 V DC,0.42,spec.md Class values 7 and 8; rated current derived (ratings.csv load_i)
+x1.t-2,0V,load0,panel supply 0 V,0.42,as 24V
+x1.t-3,FE,FE,functional earth (the housing and the Ethernet shield),,spec.md Dimensions terminal marks

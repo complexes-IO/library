@@ -1,0 +1,4 @@
+port,pin,role,signal,rated_A,source
+x1.t-1,24V,load+:24V,PC supply +24 V DC,1.00,spec.md Class values 3 and 4; rated current derived (ratings.csv load_i)
+x1.t-2,0V,load0,PC supply 0 V,1.00,as 24V
+x1.t-3,FE,FE,functional earth (the housing and the Ethernet sockets' surroundings),,spec.md Dimensions terminal marks

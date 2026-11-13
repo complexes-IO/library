@@ -1,0 +1,34 @@
+{
+  "element_id": "contactor-9a-1no1nc",
+  "domain": "electrical",
+  "category": "Electrical components",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 44.8,
+  "height": 78.4,
+  "depth": 98.5,
+  "units": "mm",
+  "datasheet_dims": {
+    "w": 44.8,
+    "h": 78.4,
+    "d": 98.5
+  },
+  "brief": {
+    "stage0": "COMPLETE",
+    "date": "2026-11-03",
+    "files": [
+      "references/measure.md"
+    ],
+    "note": "Stage 0 of lib/element-qa-checklist.txt; EM 2026-11-03",
+    "stage0b": "COMPLETE",
+    "stage0b_date": "2026-11-03",
+    "stage0b_files": [
+      "references/interior.md",
+      "parts.csv",
+      "behaviour.md"
+    ]
+  },
+  "aliases": [
+    "contactor-9a"
+  ]
+}

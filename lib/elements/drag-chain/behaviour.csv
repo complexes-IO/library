@@ -1,0 +1,5 @@
+# behaviour.csv · drag-chain · cable guide chain, generic (ETIM 10.0 EC002414) (lib/behaviour.md). Mechanical only: no terminal and no pin row (the cables it carries are the assembly's, with their own pins; the brackets' screws are the assembly's). One moving node, the moving end's bracket, carried along x by the axis's carriage; the links are the fixed body, drawn at the travel's start.
+kind,a,b,part,when,value,unit,source,note
+state,parked,,moving-end,default,,,spec.md (Mechanism),the moving end at the travel's start (0; x -500) next to the bend
+state,travelling,,moving-end,manual toggle,,,spec.md (Mechanism),the assembly's axis carries the moving end along its travel; the links' rolling is not simulated here
+pose,moving-end,,,travelling,end,,element.py (the moving end translates 0 to 1000 along +x),

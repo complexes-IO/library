@@ -1,0 +1,12 @@
+# behaviour.csv · gripper · parallel pneumatic gripper, generic (ETIM 10.0 EC004755), two jaws, stroke 10 per jaw (lib/behaviour.md). Two air ports and no electrical pin;
+# two moving nodes, the jaws, driven together by the piston inside (not drawn). Air at port-close drives both jaws in by the stroke; air at port-open drives them back out
+# (double acting, no spring): the solver is electrical in phase 1 (lib/toolkit/nets.py) and solves no air, so the jaws' states are their two ends, set by a manual state until
+# the pneumatic circuit model drives them. NPT joints make up by turns (pneu.NPT L1 + L3), not torque: `not claimed` (lib/behaviour.md, pin). The sensor the inventory lists
+# (prox-m12) is placed later and has no row yet.
+kind,a,b,part,when,value,unit,source,note
+pin,close,port-close,body,,not claimed,N·m,not claimed: made up by turns past hand-tight; not torque (ASME B1.20.1; pneu.NPT L1 + L3),air in drives the jaws in: female NPT 1/8 on the -y face at x -16 (spec.md Ports; the name is this design's: pneu.NODES names no gripper port)
+pin,open,port-open,body,,not claimed,N·m,not claimed: made up by turns past hand-tight; not torque (ASME B1.20.1; pneu.NPT L1 + L3),air in drives the jaws out: female NPT 1/8 on the -y face at x +16 (spec.md Ports; the name is this design's)
+state,open,,jaw-l jaw-r,default,,,spec.md Mechanism (the jaws as modelled: 22 between the fingers),the rest pose as modelled; air at port-open holds it
+state,closed,,jaw-l jaw-r,manual toggle,,,spec.md Mechanism (stand-in for air at port-close until the circuit model),each jaw moved 10 toward the centre; 2 stays between the fingers
+pose,jaw-l jaw-r,,,closed,end,,element.py (each jaw translates 0 to 10 toward the centre: jaw-l along +x; jaw-r along -x),
+limit,jaw-l jaw-r,,,,94,N,spec.md Class values 3 (the Ø20 piston's 188.5 N at 600 kPa shared by the two jaws through a 45-degree wedge hook; ideal; derived: derive.cylinder(20; 8; 6)),holding force per jaw; theoretical (no friction)

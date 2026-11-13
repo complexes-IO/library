@@ -1,0 +1,4 @@
+match,role,kind,check,position_tol,datums,source,note
+13.716,sleeve bore on the pipe,own,,,,"derived: the pipe's OD, D of ASME B1.20.1 Table 2 for NPS 1/4 (pneu.NPT)",the EPDM sleeve's bore: the two plain pipe ends go in from each side and meet at x = 0; no fastener or port
+19.716,band bore on the sleeve,own,,,,design choice (spec.md Dimensions),the stainless band's bore: the sleeve's outside (pipe OD + 2 x 3); no fastener or port
+5.5,M5 clearance medium,clearance,,0.5,A B C,"our own design: ISO 273 medium H13 (lib/standards/holes.csv); position Ø0.5 to A the lug's outer face (the screw head's seat), B the lug's top face and C its end face (ASME Y14.5, floating fastener T = H − F = 5.5 − 5 = 0.5)",design choice: two holes through each lug at x = ±L/4; the two M5 screws and their nuts draw the lugs together (screw-iso4017 once built; not placed in 1.0)

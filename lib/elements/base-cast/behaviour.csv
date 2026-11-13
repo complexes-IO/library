@@ -1,0 +1,2 @@
+# behaviour.csv · base-cast · drill base (lib/behaviour.md). One body: no terminal, no moving node (`column-seat` and `work-face` are fixed), no state. The seat's eight M12 holes take fasteners, not a port.
+kind,a,b,part,when,value,unit,source,note

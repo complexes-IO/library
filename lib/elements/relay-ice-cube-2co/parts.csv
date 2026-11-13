@@ -1,0 +1,36 @@
+part,parent,element,material,qty,mass_g,key_property,source,node,model,params
+relay,-,relay-ice-cube-2co,NOT ON FILE,1,36,"DPDT 15 A, 24 VDC coil, 8 blade pins, IP40",78 spec p. 3 (weight 36 g; IP40),self,none,
+case,relay,case-cover,NOT ON FILE,1,NOT ON FILE,"encapsulated finger-grip cover, 21.08 x 27.94 x 39.12 above the base","78 spec p. 1, p. 3; datasheet p. 1; STEP read-back",fixed,none,
+base,relay,base-pin-carrier,NOT ON FILE,1,NOT ON FILE,carries the 8 blade pins at the pin root plane,STEP read-back,fixed,none,
+pin-contact,base,terminal-blade-4.75,NOT ON FILE,6,NOT ON FILE,"blade 4.75 x 0.51, 7.4 below the base, hole at mid-length; columns 11.42 apart, rows 5.89 / 4.70",STEP read-back 2026-11-03,port,contact,"R_c=NOT ON FILE;I_rated=15 (A, contact rating, spec p. 3)"
+pin-coil,base,terminal-blade-4.75,NOT ON FILE,2,NOT ON FILE,"13 = A1 (+), 14 = A2 (-); 13.72 apart, turned 90 deg to the contact pins","spec p. 5; STEP read-back",port,circuit,R=NOT ON FILE
+magnet-system,relay,magnet-system,-,1,NOT ON FILE,"coil, core, yoke, armature, return spring",principle (no cutaway on file),fixed,none,
+coil,magnet-system,coil-24vdc,NOT ON FILE,1,NOT ON FILE,"24 VDC, 640 ohm, 1.15 W DC",spec p. 3,coil,coil,"R=640 (ohm, spec p. 3);L=NOT ON FILE;N=NOT ON FILE;P_nom=1.15 (W, spec p. 3; V^2/R gives 0.90 W, recorded);pull_in_v=19.2 (V, <= 80 % of 24 V, spec p. 3);drop_out_v=2.4 (V, >= 10 % of 24 V, spec p. 3);V_max=26.4 (V, 110 %, spec p. 3);t_response=20 (ms, operate / release not stated, spec p. 3);F_gap=NOT ON FILE"
+bobbin,coil,bobbin,NOT ON FILE,1,NOT ON FILE,NOT ON FILE,NOT ON FILE,fixed,none,
+core,magnet-system,core-fe,NOT ON FILE,1,NOT ON FILE,NOT ON FILE (section and length),NOT ON FILE,fixed,none,
+yoke,magnet-system,yoke-fe,NOT ON FILE,1,NOT ON FILE,"NOT ON FILE (carries the armature pivot, FIELD KNOWLEDGE)",FIELD KNOWLEDGE,fixed,none,
+armature,magnet-system,armature-clapper,NOT ON FILE,1,NOT ON FILE,"hinged iron armature; pivot, travel and air gap NOT ON FILE","principle; construction FIELD KNOWLEDGE",armature,mass-1d,m=NOT ON FILE;b=NOT ON FILE;stops=NOT ON FILE;preload=NOT ON FILE
+spring-return,armature,spring-return,NOT ON FILE,1,NOT ON FILE,NOT ON FILE (free length and rate),NOT ON FILE,fixed,spring,"k=NOT ON FILE;free_length=NOT ON FILE;preload=NOT ON FILE;cycles=10000000 (mechanical life, spec p. 3)"
+actuator,armature,actuator-card,NOT ON FILE,1,NOT ON FILE,"links the armature, button and flag to both commons (FIELD KNOWLEDGE)",FIELD KNOWLEDGE,fixed,none,
+pole-1,relay,pole-changeover,-,1,NOT ON FILE,"common 9 (11), N.C. 1 (12), N.O. 5 (14)",spec p. 5,pole-1,none,
+common-1,pole-1,contact-blade,NOT ON FILE,1,NOT ON FILE,moving contact blade on pin 9,spec p. 5; blade geometry NOT ON FILE,pole-1,spring,k=NOT ON FILE;free_length=NOT ON FILE
+contact-1-mov,common-1,contact-ag-alloy-au,ag-alloy-au-flash,1,NOT ON FILE,"silver alloy, gold flashed; changeover",spec p. 1 and p. 3,fixed,contact,"gap=NOT ON FILE;material=ag-alloy-au-flash (spec p. 3);R_c_new=NOT ON FILE;I_rated=15 (A resistive at 28 VDC / 120 VAC / 277 VAC, spec p. 3);I_min=0.010 (A at 17 VDC, spec p. 3);U_open=1500 (V rms, spec p. 3; p. 1 says up to 2500);erosion=NOT ON FILE;life_el=100000 (operations at rated resistive load, spec p. 3);life_motor=1000 (cycles, UL 508 T45.1, spec p. 3);bounce=NOT ON FILE"
+contact-1-nc,pole-1,contact-ag-alloy-au,ag-alloy-au-flash,1,NOT ON FILE,fixed N.C. contact on pin 1,spec p. 3 (material); p. 5 (pin),fixed,contact,gap=NOT ON FILE;R_c_new=NOT ON FILE
+contact-1-no,pole-1,contact-ag-alloy-au,ag-alloy-au-flash,1,NOT ON FILE,fixed N.O. contact on pin 5,spec p. 3 (material); p. 5 (pin),fixed,contact,gap=NOT ON FILE;R_c_new=NOT ON FILE
+pole-2,relay,pole-changeover,-,1,NOT ON FILE,"common 12 (41), N.C. 4 (42), N.O. 8 (44)",spec p. 5,pole-2,none,
+common-2,pole-2,contact-blade,NOT ON FILE,1,NOT ON FILE,moving contact blade on pin 12,spec p. 5; blade geometry NOT ON FILE,pole-2,spring,k=NOT ON FILE;free_length=NOT ON FILE
+contact-2-mov,common-2,contact-ag-alloy-au,ag-alloy-au-flash,1,NOT ON FILE,"silver alloy, gold flashed; changeover",spec p. 1 and p. 3,fixed,contact,"gap=NOT ON FILE;material=ag-alloy-au-flash (spec p. 3);R_c_new=NOT ON FILE;I_rated=15 (A, spec p. 3);I_min=0.010 (A at 17 VDC, spec p. 3);U_open=1500 (V rms, spec p. 3);erosion=NOT ON FILE;life_el=100000 (spec p. 3);bounce=NOT ON FILE"
+contact-2-nc,pole-2,contact-ag-alloy-au,ag-alloy-au-flash,1,NOT ON FILE,fixed N.C. contact on pin 4,spec p. 3 (material); p. 5 (pin),fixed,contact,gap=NOT ON FILE;R_c_new=NOT ON FILE
+contact-2-no,pole-2,contact-ag-alloy-au,ag-alloy-au-flash,1,NOT ON FILE,fixed N.O. contact on pin 8,spec p. 3 (material); p. 5 (pin),fixed,contact,gap=NOT ON FILE;R_c_new=NOT ON FILE
+btn-test,case,button-test,NOT ON FILE,1,NOT ON FILE,"push-to-test: operates the contacts without coil power; travel and force NOT ON FILE",spec p. 1; datasheet p. 1,btn-test,mass-1d,m=NOT ON FILE;stops=NOT ON FILE;preload=NOT ON FILE
+spring-button,btn-test,spring-return,NOT ON FILE,1,NOT ON FILE,NOT ON FILE (FIELD KNOWLEDGE: returns the button),FIELD KNOWLEDGE,fixed,spring,k=NOT ON FILE;free_length=NOT ON FILE
+door-lock,case,door-lockdown,NOT ON FILE,1,NOT ON FILE,"holds the button and contacts in the operate position",spec p. 1,door-lock,latch,trip_force=NOT ON FILE;reset_force=NOT ON FILE
+flag,actuator,flag-indicator,NOT ON FILE,1,NOT ON FILE,"shows relay status in manual or powered condition",spec p. 1,flag,none,follows=actuator
+led,case,led-indicator,NOT ON FILE,1,NOT ON FILE,"coil-powered indicator; colour, V_f, series R, polarity protection NOT ON FILE",datasheet p. 1; spec p. 1,led-coil,circuit,V_f=NOT ON FILE;I_f=NOT ON FILE;R_series=NOT ON FILE;polarity=13 + / 14 - (spec p. 5)
+id-tag,case,tag-write-on,NOT ON FILE,1,NOT ON FILE,I.D. tag / write label,spec p. 1,fixed,none,
+socket,-,socket-8pin-din,NOT ON FILE,1,NOT ON FILE,"79.2 x 29.2 x 29.7; mounting centres 68.4; 2 x 6.0 x 4.6 slots; 35 mm DIN or panel","socket drawing p. 1 (by eye); sockets spec p. 1",fixed,none,
+socket-clip,socket,contact-clip-socket,NOT ON FILE,8,NOT ON FILE,takes the relay's blade pins,NOT ON FILE (FIELD KNOWLEDGE),fixed,contact,R_c=NOT ON FILE
+socket-terminal,socket,terminal-screw-socket,NOT ON FILE,8,NOT ON FILE,"screw terminal, 1.0 N-m, 12-20 AWG, one or two identical wires",sockets spec p. 1,port,contact,"torque=1.0 (N-m max, sockets spec p. 1);wire=12-20 AWG (sockets spec p. 1);R_c=NOT ON FILE"
+socket-din-clip,socket,clip-din-35,NOT ON FILE,1,NOT ON FILE,35 mm DIN rail clip,sockets spec p. 1,fixed,none,
+holding-clip,socket,clip-holding,NOT ON FILE,1,NOT ON FILE,holds the relay in the socket (included),sockets spec p. 1,fixed,none,
+suppressor,socket,suppressor-diode-module,NOT ON FILE,0,NOT ON FILE,"option: diode module 6-250 VDC across the coil, plugs into the socket",spec p. 7,fixed,circuit,V_f=NOT ON FILE

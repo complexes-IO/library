@@ -1,0 +1,5 @@
+port,pin,role,signal,rated_A,source
+t-13,13,sw-com,direction up: N.O. contact 13-14 line side (closes with the lever up),6,spec.md Class values 1 and 6 (1 N.O. per direction; Ie 6 A at AC-21 400 V)
+t-14,14,sw-no,direction up: N.O. contact 13-14 load side,6,as 13
+t-23,23,sw-com,direction down: N.O. contact 23-24 line side (closes with the lever down),6,as 13
+t-24,24,sw-no,direction down: N.O. contact 23-24 load side,6,as 13

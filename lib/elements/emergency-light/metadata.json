@@ -1,0 +1,16 @@
+{
+  "element_id": "emergency-light",
+  "category": "Safety systems",
+  "width": 235.5,
+  "height": 115.1,
+  "depth": 72.4,
+  "units": "mm",
+  "datasheet_dims": [
+    235.5,
+    115.1,
+    72.4
+  ],
+  "domain": "safety",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

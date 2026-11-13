@@ -1,0 +1,16 @@
+# behaviour.csv · photoeye-m18 · diffuse photoelectric sensor, M18, PNP N.O., 24 V DC, generic (lib/behaviour.md). Written by elec-r50 (unattended, 2026-11-13) from spec.md (Class values, Output, Named nodes), pins.csv, ratings.csv and element.py: a generic element, so its class values are its figures.
+# One port, the connector seat port-x1 (unit m12-a), gender none until receptacle-m12 is placed on it (spec.md Notes): the three pins are on that node, as encoder 1.0. Torque: the receptacle's contacts take a mating plug and no screw.
+# The phase-1 solver is electrical and traces no light: whether a target is in front of the lens is the twin's input (manual toggle), as the shaft of encoder 1.0. The output is a PNP switch from +V to Q, normally open: Q is at the supply's level while powered and a target is detected. The electronics' supply current is not stated (spec.md Class values), so no load row.
+kind,a,b,part,when,value,unit,source,note
+pin,+V,port-x1,seat-x1,,not claimed,N·m,not claimed: a plug-in contact of receptacle-m12 (not yet placed) and no screw (lib/behaviour.md pin),supply +24 V DC (pins.csv)
+pin,0V,port-x1,seat-x1,,not claimed,N·m,not claimed: as +V,supply return
+pin,Q,port-x1,seat-x1,,not claimed,N·m,not claimed: as +V,switching output (PNP; normally open)
+state,off,,electronics,default,,,spec.md Output (no voltage across +V and 0V: the emitter dark and Q off),the sensor is off
+state,powered,,electronics,"V('+V','0V') > 0",,,"NOT ON FILE (B): IEC 61131-2 (the least supply voltage at which the output is valid is the 24 V DC class's lower limit, the standard's table; spec.md Notes)",the emitter lit; Q follows the target
+state,clear,,target,default,,,spec.md Output (nothing reflects the light back within the sensing range),no target in front of the lens
+state,detected,,target,manual toggle,,,spec.md Output (the twin places a target within the sensing range: no solver traces light),a target reflects the light within 400 mm
+source,Q,0V,output,detected and powered,24,VDC,"spec.md Class values 31 and 32 (PNP; normally open: Q switched to +V); the output at the supply's nominal (the switch's drop is not stated: spec.md Output)",Q on: a target is detected
+pose,led-pwr,,,powered,1,,spec.md Named nodes,green: powered
+pose,led-out,,,detected and powered,1,,spec.md Named nodes,yellow: the output is on
+limit,electronics,,,,24,VDC,ratings.csv u_supply (ETIM 10.0 EC001821 class value EF003980; spec.md Class values 66),the supply voltage
+limit,output,,,,0.1,A,ratings.csv i_out (ETIM 10.0 EC001821 class value EF001315; spec.md Class values 5),the output's highest current

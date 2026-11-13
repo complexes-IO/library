@@ -1,0 +1,14 @@
+{
+  "element_id": "op-pb-22-1no",
+  "domain": "controls",
+  "category": "HMI and operator controls",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 30.0,
+  "height": 50.0,
+  "depth": 45.6,
+  "units": "mm",
+  "aliases": [
+    "op-pb-22"
+  ]
+}

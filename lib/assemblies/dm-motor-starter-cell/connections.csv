@@ -1,0 +1,10 @@
+from,to,cable,version,section,length,route,params,note
+panel-1.p-m1,machine-1.m1.pwr,cable-pwr-480,1.1,480 VAC & 120 VAC power,4000,floor,,motor branch: Q3 -> K1 -> F1 -> port -> motor
+panel-1.p-x2,machine-1.io-1.port-x03,cordset-m12,1.7,control & 24 VDC supply,5000,tray,genders=male-female,L-coded: 24 V US/UL to the I/O block (5 m: the cordset catalogue has 0.6 / 1 / 2 / 3 / 5 / 7.5 / 10 / 15 m, no 4 m)
+panel-1.p-x1,machine-1.io-1.port-x01,cordset-m12,1.7,Ethernet & communication,5000,tray,genders=male-male,D-coded: plc0 to the I/O block (5 m: the cordset catalogue has 0.6 / 1 / 2 / 3 / 5 / 7.5 / 10 / 15 m, no 4 m)
+panel-1.p-x3,machine-1.pbs-1.s-es,cordset-m12,1.7,control & 24 VDC supply,5000,tray,genders=male-female,A-coded: station E-stop dual channel to the 440R (S12/S22) (5 m: the cordset catalogue has 0.6 / 1 / 2 / 3 / 5 / 7.5 / 10 / 15 m, no 4 m)
+machine-1.io-1.port-x1,machine-1.pbs-1.s-x1,cordset-m12,1.7,control & 24 VDC supply,2000,bench,genders=male-female,X1 A start / X1 B stop (2 m: the catalogue has no 1.5 m)
+machine-1.io-1.port-x2,machine-1.pbs-1.s-x2,cordset-m12,1.7,control & 24 VDC supply,2000,bench,genders=male-female,X2 B reset (estop_ok moved to X3 A, from the panel: request panel-1 3.b) (2 m: the catalogue has no 1.5 m)
+machine-1.io-1.port-x6,machine-1.pbs-1.s-x3,cordset-m12,1.7,control & 24 VDC supply,2000,bench,genders=male-female,X6 B run light (an output; X3 is an input port: ERC-005 found it) (2 m: the catalogue has no 1.5 m)
+machine-1.io-1.port-x5,machine-1.pbs-1.s-x5,cordset-m12,1.7,control & 24 VDC supply,2000,bench,genders=male-female,X5 A fault light (2 m: the catalogue has no 1.5 m)
+panel-1.gl-pe,machine-1.bench-1.pe,cable-pe,-,ground,4000,floor,,bench and motor frame bonding

@@ -1,0 +1,13 @@
+{
+  "element_id": "cross-side-block-npt",
+  "domain": "pneumatics",
+  "category": "Fittings",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 46.4,
+  "height": 37.2,
+  "depth": 28.4,
+  "units": "mm",
+  "datasheet_dims": null,
+  "aliases": []
+}

@@ -1,0 +1,16 @@
+{
+  "element_id": "laser-displacement",
+  "category": "Industrial sensors",
+  "width": 32.0,
+  "height": 58.67,
+  "depth": 42.7,
+  "units": "mm",
+  "datasheet_dims": [
+    32.0,
+    58.67,
+    42.7
+  ],
+  "domain": "sensors",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

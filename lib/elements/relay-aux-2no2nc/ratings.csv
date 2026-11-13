@@ -1,0 +1,8 @@
+property,value,unit,status,source
+coil_v,24,V DC,generic design,"ETIM 10.0 EC000196 class value: rated control supply voltage DC (EF003980); spec.md Class values 3"
+coil_range,19.2-26.4,V DC,generic design,"ETIM 10.0 EC000196 class value: operating voltage DC (EF008208); spec.md Class values 18"
+ith,10,A,generic design,"ETIM 10.0 EC000196 class value: rated switch current, conventional thermal current of each contact (EF006706); spec.md Class values 20"
+ie_ac15_230v,6,A,generic design,"ETIM 10.0 EC000196 class value: rated operation current, AC-15 at 230 V (EF007679); spec.md Class values 5"
+ie_ac15_400v,3,A,generic design,"ETIM 10.0 EC000196 class value: rated operation current Ie, 400 V, AC-15 (EF001378); spec.md Class values 6"
+coil_p,2.4,W,design,"design: 2.4 W at 24 V DC, the coil's power for a generic 24 V DC auxiliary relay under the panel's 24 V budget (ELR-020), the rule behaviour.csv's load row A1-A2 (240 Ω) names for the same figure; not a feature of EC000196; spec.md Notes"
+load_i,0.10,A,derived,"2.4 W / 24 V (I = P / U; coil_p and coil_v above), what the 24 V budget (ELR-020) reads; behaviour.csv load row A1-A2"

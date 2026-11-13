@@ -1,0 +1,2 @@
+# behaviour.csv · basin-bulk-shelving-440 · bulk material basin for one half of a shelf of a 1000 x 500 steel shelving bay, generic (lib/behaviour.md). Written by mech-r157 from element.py: one fixed body, no terminal, no moving node, no state; setting it on the shelf is the host's assembly, not a motion. A structural part's file: the header only. No load figure here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note

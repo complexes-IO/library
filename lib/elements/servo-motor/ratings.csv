@@ -1,0 +1,9 @@
+property,value,unit,status,source
+power,1.0,kW,generic design,"IEC 60034-1 value (no ETIM class): rated output, the shaft power, S1; spec.md Class values 1"
+voltage,400,V,generic design,"IEC 60034-1 value (no ETIM class): rated voltage, line to line: the supply class (the drive's mains), not the terminal voltage at rated speed; within servo-drive 1.1's 0-480 V output; spec.md Class values 2"
+phases,3,,generic design,"IEC 60034-1 value (no ETIM class): number of phases; spec.md Class values 3"
+ie,2.5,A,generic design,"IEC 60034-1 value (no ETIM class): rated current at rated torque, rms; within servo-drive 1.1's 3.0 A continuous; spec.md Class values 4"
+i_peak,7.5,A,generic design,"IEC 60034-1 value (no ETIM class): peak current, 3 s (300 %); within servo-drive 1.1's 9.0 A peak; spec.md Class values 8"
+speed,3000,min-1,generic design,"IEC 60034-1 value (no ETIM class): rated speed; spec.md Class values 5"
+torque,3.18,N·m,generic design,"IEC 60034-1 value (no ETIM class): rated torque, T = P / (2π n / 60) = 1000 / 314.16 from items 1 and 5; spec.md Class values 6"
+frequency,200,Hz,generic design,"IEC 60034-1 value (no ETIM class): rated frequency, f = p n / 120 = 8 × 3000 / 120 from items 5 and 9; spec.md Class values 10"

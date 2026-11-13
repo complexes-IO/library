@@ -1,0 +1,5 @@
+# behaviour.csv · arm-radial · radial drill arm (lib/behaviour.md). Mechanical only: no terminal (the hub's clamp and the head's drive are not drawn; the arm's height is fixed on column's top in this form, so it has no elevating screw). One moving node, the arm; the seat plate is the fixed body.
+kind,a,b,part,when,value,unit,source,note
+state,home,,arm,default,,,spec.md (Mechanism),the arm reaching forward over the column's front (0)
+state,swung,,arm,manual toggle,,,spec.md (Mechanism),the arm swung about the column's axis to the end of its range
+pose,arm,,,swung,end,,element.py (arm rotates -90 to 90),

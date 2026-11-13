@@ -1,0 +1,8 @@
+# behaviour.csv · plug-m12 · M12 cable plug (lib/behaviour.md). Its insert's contacts and its nut are placed elements with their own specs; the plug's pins 1–5 are the
+# contacts' tips; what they carry is the cable's (lib/standards/cables.csv map) and the port's (pins.csv of the host).
+kind,a,b,part,when,value,unit,source,note
+pin,1,insert.c1,insert,,,,toolkit/m12.py (contact c1 = pin 1 of the coding),
+pin,2,insert.c2,insert,,,,toolkit/m12.py,
+pin,3,insert.c3,insert,,,,toolkit/m12.py,
+pin,4,insert.c4,insert,,,,toolkit/m12.py,
+pin,5,insert.c5,insert,,,,toolkit/m12.py,

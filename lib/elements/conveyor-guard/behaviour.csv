@@ -1,0 +1,2 @@
+# behaviour.csv · conveyor-guard · fixed tunnel guard over a belt conveyor section (lib/behaviour.md). One body: no terminal, no node, no moving part, no state. The flanges' six M8 clearance holes take the fixing screws to the conveyor frame, not a port; the element makes no safety claim of its own.
+kind,a,b,part,when,value,unit,source,note

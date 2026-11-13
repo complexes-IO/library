@@ -1,0 +1,13 @@
+{
+  "element_id": "seal-vring",
+  "domain": "pneumatics",
+  "category": "Seals",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 54.0,
+  "height": 11.0,
+  "depth": 54.0,
+  "units": "mm",
+  "datasheet_dims": null,
+  "aliases": []
+}

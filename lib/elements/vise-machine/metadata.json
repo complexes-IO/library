@@ -1,0 +1,12 @@
+{
+  "element_id": "vise-machine",
+  "domain": "mechanical",
+  "category": "Manufacturing",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 388.0,
+  "height": 110.0,
+  "depth": 180.0,
+  "units": "mm",
+  "datasheet_dims": null
+}

@@ -1,0 +1,7 @@
+# behaviour.csv · wire · single insulated conductor with prepared ends (lib/behaviour.md). Written by elec-r28 from spec.md and element.py (nodes end-a, end-b: kind contact).
+# One conductor, end A to end B. A wire has no printed mark: the marks are its ends, A and B. Its ends are what a clamp tightens on, so the torque belongs to the clamp (the pin rows: not claimed).
+# The conductor's R is derived for the default build (150 mm of 1.5 mm²); it scales as length / size, and a BOM row with other params has its own (derive.resistance). The end conditions of behaviour.md (under-stripped, nicked: high R) are toolkit/contact.py terminate()'s, not the phase-1 solver's (a closed contact drops nothing).
+kind,a,b,part,when,value,unit,source,note
+pin,A,end-a,conductor,,not claimed,N·m,not claimed: the clamp end A goes into sets it (lib/behaviour.md; pin),end A: the conductor tip or its ferrule
+pin,B,end-b,conductor,,not claimed,N·m,not claimed: the clamp end B goes into sets it (lib/behaviour.md; pin),end B
+contact,A,B,conductor,always,0.0017241,ohm,"derived: derive.resistance('copper', 150.0, 1.5) (R = ρL/A; ρ 1.7241e-08 Ω·m at 20 °C, IEC 60028)",the conductor: default length 150 and size 1.5 mm² (spec.md Built with)

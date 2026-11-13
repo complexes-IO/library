@@ -1,0 +1,2 @@
+# behaviour.csv · column · machine column (lib/behaviour.md). One body: no terminal, no moving node (`ways` is fixed; the head's or knee's travel on it is the machine's), no state. The base flange's holes take fasteners, not a port.
+kind,a,b,part,when,value,unit,source,note

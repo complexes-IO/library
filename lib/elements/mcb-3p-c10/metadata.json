@@ -1,0 +1,24 @@
+{
+  "element_id": "mcb-3p-c10",
+  "domain": "electrical",
+  "category": "Electrical components",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 53.1,
+  "height": 105.0,
+  "depth": 73.0,
+  "units": "mm",
+  "datasheet_dims": {
+    "w": 53.1,
+    "h": 105.0,
+    "d": 73.0
+  },
+  "brief": {
+    "stage0": "COMPLETE",
+    "date": "2026-11-03",
+    "files": [
+      "references/measure.md"
+    ],
+    "note": "Stage 0 of lib/element-qa-checklist.txt; EM 2026-11-03"
+  }
+}

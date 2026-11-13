@@ -1,0 +1,3 @@
+# behaviour.csv · seal-strip-eptfe · generic expanded PTFE sealing strip on a roll (lib/behaviour.md). A structural part: no port, no electrical pin and no moving node.
+# It is laid on a joint and pressed flat when the joint is bolted up, so it passes no path of its own: no state, contact, load or pose row is written (the header only).
+kind,a,b,part,when,value,unit,source,note

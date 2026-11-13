@@ -1,0 +1,2 @@
+# behaviour.csv · spring-plate-qt-6 · Spring plate for a quarter-turn fastener, generic (lib/behaviour.md). Written by mech-r147 from element.py: one fixed body, no terminal, no moving node, no state; the stud that turns in it is latch's node, and riveting it behind a flange is the host's assembly, not a motion. A structural part's file: the header only. No load, holding force or locking figure here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note

@@ -1,0 +1,13 @@
+;; tube-pneu v1.2. Generated. Millimetres. APPLOAD, then TUBE-PNEU.
+(defun BX (lay p1 p2 h) (command "_.-LAYER" "_M" lay "") (command "_.BOX" p1 p2 h) (entlast))
+(defun CY (lay p1 p2 r / h) (setq h (distance p1 p2)) (command "_.-LAYER" "_M" lay "")
+  (command "_.UCS" "_ZA" p1 p2) (command "_.CYLINDER" (list 0 0 0) r h) (command "_.UCS" "_W") (entlast))
+(defun UB (lay o xp yp l w h) (command "_.-LAYER" "_M" lay "")
+  (command "_.UCS" "3" o xp yp) (command "_.BOX" (list 0 0 0) (list l w 0) h) (command "_.UCS" "_W") (entlast))
+(defun c:TUBE-PNEU (/ os hole e0 e1 e2 e3)
+  (setq os (getvar "OSMODE")) (setvar "OSMODE" 0) (setvar "CMDECHO" 0) (setvar "INSUNITS" 4) (setvar "ISOLINES" 8)
+  (CY "node-port-a_M-BLUE" (list 0 0 0) (list 0 10 0) 3.175)
+  (CY "M-BLUE" (list 0 10 0) (list 0 490 0) 3.175)
+  (CY "node-port-b_M-BLUE" (list 0 490 0) (list 0 500 0) 3.175)
+  (command "_.-LAYER" "_S" "0" "") (setvar "OSMODE" os) (command "_.ZOOM" "_E") (princ "\nBuilt.") (princ))
+(princ "\nType TUBE-PNEU.") (princ)

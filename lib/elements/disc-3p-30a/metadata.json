@@ -1,0 +1,23 @@
+{
+  "element_id": "disc-3p-30a",
+  "domain": "electrical",
+  "category": "Electrical components",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 69.1,
+  "height": 69.1,
+  "depth": 86.3,
+  "units": "mm",
+  "datasheet_dims": {
+    "w": 69.1,
+    "h": 69.1
+  },
+  "brief": {
+    "stage0": "COMPLETE",
+    "date": "2026-11-03",
+    "files": [
+      "references/measure.md"
+    ],
+    "note": "Stage 0 of lib/element-qa-checklist.txt; EM 2026-11-03"
+  }
+}

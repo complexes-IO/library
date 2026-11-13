@@ -1,0 +1,2 @@
+element,version,tag,parent,x,y,z,yaw,roll,params,note
+hyd-cylinder-da-40,1.1,cyl,,0,0,651.5,0,90,,the setting cylinder: rolled 90 about its own y so its rod points down (-z) on the die axis and its ports face +x; its head cap seats flush on the upper arm's top face (z 351.5), its gland nose in the arm's bore; the rod's plain end face (z 311.5) carries the die cup (node cyl.rod)

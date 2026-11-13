@@ -1,0 +1,15 @@
+# behaviour.csv · compressor-air · generic air compressor on a 24 l receiver (lib/behaviour.md). One air port and no electrical pin yet: the supply cord and its plug are a later
+# version (spec.md Notes), so the motor's load (0.55 kW 120 V) has no pin to sit between and no load row is written. Three moving nodes: the pressure switch's knob, the outlet
+# lever and the condensate drain. The air path (pump to receiver to port-2) is pneumatic: the solver is electrical in phase 1 (lib/toolkit/nets.py), so it is a note.
+# NPT joints make up by turns (pneu.NPT L1 + L3), not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1). Written by pneu-r68 (backlog, BEH-010; no version change, as the core's 6ffe7ef).
+kind,a,b,part,when,value,unit,source,note
+pin,2,port-2,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 2 as toolkit/pneu.py NODES)",the outlet: female NPT 1/4 on the outlet valve; open to the receiver when the lever is open
+state,off,,switch,default,,,element.py (switch 0: off),the motor does not run
+state,auto,,switch,manual toggle,,,element.py (switch 90: auto),the pressure switch starts and stops the motor (its pressures are not modelled)
+state,closed,,lever,default,,,element.py (lever along +x: across the flow),the receiver shut from port-2
+state,open,,lever,manual toggle,,,element.py (a quarter turn: along the flow),the receiver open to port-2
+state,shut,,drain,default,,,element.py (drain 0),the condensate drain shut
+state,draining,,drain,manual toggle,,,element.py (a quarter turn),the receiver's condensate drains to the floor side
+pose,switch,,,auto,end,,element.py (switch rotates 0 to 90° about -y),
+pose,lever,,,open,end,,element.py (lever rotates 0 to 90° about -z),
+pose,drain,,,draining,end,,element.py (drain rotates 0 to 90° about -z),

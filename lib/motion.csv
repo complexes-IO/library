@@ -1,0 +1,32 @@
+scope,leader,follower,mode,stop,note
+# How parts move together. mode: follow (rigid with the leader, or by the same value when the units match; clipped at the follower's own range or at stop) · exclude (a BOM child that does NOT follow its parent)
+# MOT-020: a follow leader must meet its follower within its range (touch it at rest, or reach it). linked: moves with its leader like follow, with no contact drawn (a spring or pin the model leaves out); its reason in note is required.
+# A follower is never swept on its own: it moves only with its leader. BOM rows whose parent is a moving node follow it automatically.
+# requires (request elec-6, 2026-11-08): the follower moves only while the leader is at `stop`; MOT-010 sweeps the follower with the leader (and what follows it) held there. The leader's own sweep and MOT-020 are unchanged.
+contactor-9a-1no1nc,armature,carrier,follow,,the armature drives the contact carrier
+contactor-9a-1no1nc,carrier,pole-1,follow,2.0,main bridge stops on the fixed contacts at 2.0; the contact spring takes the over-travel
+contactor-9a-1no1nc,carrier,pole-2,follow,2.0,
+contactor-9a-1no1nc,carrier,pole-3,follow,2.0,
+contactor-9a-1no1nc,carrier,aux-13,follow,2.6,N.O. auxiliary bridge: closes on the fixed strips after 2.6 of the 3.5 stroke (gap 2.0 + 0.6; Assumption); its spring takes the rest
+contactor-9a-1no1nc,carrier,aux-21,follow,,NC auxiliary bridge
+contactor-9a-1no1nc,carrier,fb-slide,follow,,front block slide is pushed by the carrier
+contactor-9a-1no1nc,fb-slide,fb-53,follow,2.0,front block N.O. 53-54 closes on its strips after 2.0 (Assumption)
+contactor-9a-1no1nc,fb-slide,fb-61,follow,,
+relay-ice-cube-2co,armature,actuator,follow,,the armature tip pushes the card (deg to mm by fraction of range)
+relay-ice-cube-2co,actuator,flag,ratio,,the flag rides on the card: its 3.6 slide across the window is the card's 1.2 travel (lever ratio Assumption)
+relay-ice-cube-2co,actuator,pole-1,follow,,movable contact fingers are moved by the card
+relay-ice-cube-2co,actuator,pole-2,follow,,
+relay-ice-cube-2co,btn-test,actuator,follow,,the test button's stem pushes the card in the manual test (behaviour.md states table; relay specification p. 1; request elec-4): MOT-020 holds it until the card has a part in line with the button
+p*-motor-starter,enc-1.door-r,q1,exclude,,the disconnect body stays on the back panel when the door opens (scope p*-motor-starter: pm- and pnl-motor-starter, request panel-2)
+p*-motor-starter,enc-1.door-r,q1.door-unit,follow,,the door-coupled handle unit swings with the door; the shaft stays with the body
+p*-motor-starter,enc-1.door-r,q1.handle,follow,,the lever on the handle unit
+pnl-press-hydraulic,enc-1.door,q1,exclude,,the disconnect body stays on the mounting plate when the door opens (enc-wm's one door; request panel-10)
+pnl-press-hydraulic,enc-1.door,q1.door-unit,follow,,the door-coupled handle unit swings with the door; the shaft stays with the body
+pnl-press-hydraulic,enc-1.door,q1.handle,follow,,the lever on the handle unit
+overload-9a-1no1nc,bimetal-2,differential,follow,,the bimetals' free ends push the differential slide (fraction of the bend)
+overload-9a-1no1nc,differential,trip-slide,follow,,the differential pushes the trip slide
+overload-9a-1no1nc,trip-slide,latch,follow,,the trip slide releases the latch
+overload-9a-1no1nc,latch,aux-95,follow,,95-96 N.C. opens on the trip
+overload-9a-1no1nc,latch,aux-97,follow,,97-98 N.O. closes on the trip (stop NOT ON FILE)
+relay-ice-cube-2co,btn-test,door-lock,requires,1.5,the lock-down slider closes only over the pressed button (relay specification p. 1; behaviour.md "locked test"; request elec-6)
+damper-vibration,top,rubber,follow,,one load: the upper plate and its stud sink by the same mm the rubber is squeezed (request mech-6 1; top leads so MOT-010 still sweeps the plate and stud: a compress node is soft and never swept)

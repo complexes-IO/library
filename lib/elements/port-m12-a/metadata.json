@@ -1,0 +1,23 @@
+{
+  "element_id": "port-m12-a",
+  "domain": "electrical",
+  "category": "Fasteners, hardware, connectors and cables",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 18.0,
+  "height": 18.0,
+  "depth": 42.6,
+  "units": "mm",
+  "datasheet_dims": [
+    18.0,
+    17.0
+  ],
+  "brief": {
+    "stage0": "COMPLETE",
+    "date": "2026-11-03",
+    "files": [
+      "references/measure.md"
+    ],
+    "note": "Stage 0 of lib/element-qa-checklist.txt; EM 2026-11-03 kit prompt step 5"
+  }
+}

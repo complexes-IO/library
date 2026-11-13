@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+500,exhaust duct opening,own,,,,design choice (spec.md Its own sizes),"the Ø500 opening in the plenum's top and the duct collar's bore on it, coaxial: the exhaust duct's connection; no fastener and no standard size (the duct and its clamp are the system's)"

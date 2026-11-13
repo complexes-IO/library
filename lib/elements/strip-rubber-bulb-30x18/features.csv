@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+10,bulb hollow core,own,,,,design choice (spec.md Its own sizes),"Ø10 through the bead's full length on its axis (y 0, z 10): ETIM 10.0 EC010639 Hollow core, wall 3; no fastener and no standard size"

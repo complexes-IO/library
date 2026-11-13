@@ -1,0 +1,3 @@
+match,role,kind,check,position_tol,datums,source,note
+6.6,M6 clearance medium,clearance,,0.5,wall plate back face A,ISO 273 medium H13 (lib/standards/holes.csv); position Ø0.5 at MMC ≤ H − F = 0.6 (ASME Y14.5 floating fastener),4 x M6 wall screws at 120 x 120: design choice
+4.5,M4 clearance medium,clearance,,0.4,head plate front face A,ISO 273 medium H13 (lib/standards/holes.csv); position Ø0.4 at MMC ≤ H − F = 0.5 (ASME Y14.5 floating fastener),4 x M4 display screws at 100 x 100: the pattern is an Assumption (VESA MIS-D text not on file)

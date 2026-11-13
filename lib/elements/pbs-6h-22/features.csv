@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+5.5,M5 clearance medium,clearance,,0.5,A (back face; the four holes located to each other),"own design (spec: 4 × Ø5.5 through the back, 320 × 70 centres)","1.7: position Ø0.5 at MMC to A; ASME Y14.5 floating fastener T = H − F = 5.5 − 5.0 = 0.50 (H = ISO 273 medium series, H13, for M5; F = M5); the mating panel's Ø5.5 holes take the same Ø0.5"

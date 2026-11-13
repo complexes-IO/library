@@ -1,0 +1,2 @@
+# behaviour.csv · robot-pedestal · steel robot pedestal (lib/behaviour.md). One body: no terminal, no moving node (`mount` is fixed: the robot a BOM puts on it is placed on its top face), no state. The base plate's four M12 holes take floor anchors, not a port.
+kind,a,b,part,when,value,unit,source,note

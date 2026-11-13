@@ -1,0 +1,21 @@
+# behaviour.csv · plc0 · controller box (own design 2026-11-03) (lib/behaviour.md). Taken in by elec-r23 from the core's proposal of 2026-11-09 (lib/requests/core/behaviour/plc0.csv),
+# checked against spec.md, pins.csv and ratings.csv (own design: no brief). Its I/O is over Ethernet to an I/O block; it has no output terminals. Its program is phase 5 of the
+# roadmap: until then the program's commands are the twin's inputs on the devices they drive (sources.csv `when`, lib/behaviour.md).
+# Differences from the proposal: the run threshold is marked Assumption (A) (the twin reports RUN; IEC 61131-2, which the proposal cites, is not in lib/standards/sources.csv);
+# the proposal's "off below 10 V" row is left out (10 V is on no page and no standard on file: below 19.2 V no row holds and the cpu rests at its default, off).
+# elec-r26 (review elec-r23 finding 2, plc0-1.2 finding 1): marks are <port label>-<M12 pole>, the port labels as printed (spec.md Decals: "24 V", "ETH") and the pole numbers
+# an M12 cordset's map uses (as io-block-m12-8di8do's X03-1 ...). The pinout is io-block-m12-8di8do X03's (pins.csv): pole 1 US +24 V, pole 2 GND_UL, pole 3 GND_US, so the logic supply returns on
+# pole 3. Pole 2 is not tied to pole 3 (a design choice: plc0 has no outputs and draws nothing from UL; pins.csv keeps the copied role load0): a pin with no path.
+kind,a,b,part,when,value,unit,source,note
+pin,24V-1,port-pwr,port-pwr,,,,pins.csv (port-pwr pin 1: load+:24V:US; M12 L-coded; as io-block-m12-8di8do X03),US +24 V logic supply
+pin,24V-2,port-pwr,port-pwr,,,,pins.csv (port-pwr pin 2: load0; io-block-m12-8di8do X03 pin 2 GND_UL),GND_UL: not used by plc0 (no outputs); not tied to pole 3
+pin,24V-3,port-pwr,port-pwr,,,,pins.csv (port-pwr pin 3: load0; io-block-m12-8di8do X03 pin 3 GND_US),GND_US: the logic supply's return
+load,24V-1,24V-3,logic,,3.6,W,ratings.csv (own design: 0.15 A at 24 V; status assumption),
+state,off,,cpu,default,,,own design (spec.md),
+state,run,,cpu,logic.V >= 19.2,,,"Assumption (A): runs from 0.8 × 24 V; the twin reports RUN; the standard the proposal names (IEC 61131-2) is not on file (lib/standards/sources.csv)",
+pose,led-run,,,run,1,,own design (spec.md: RUN green),
+pose,led-fault,,,off,0,,own design (spec.md: FAULT red; a program fault; phase 5),
+pin,ETH-1,port-eth,port-eth,,,,pins.csv (port-eth pin 1: data:TD+; M12 D-coded),TD+ (Ethernet: no potential the solver gives: data)
+pin,ETH-2,port-eth,port-eth,,,,pins.csv (port-eth pin 2),RD+
+pin,ETH-3,port-eth,port-eth,,,,pins.csv (port-eth pin 3),TD-
+pin,ETH-4,port-eth,port-eth,,,,pins.csv (port-eth pin 4),RD-

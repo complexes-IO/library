@@ -1,0 +1,5 @@
+# behaviour.csv · diverter · swing-arm conveyor diverter, own design (lib/behaviour.md). Mechanical only: no terminal of its own (the cylinder that turns the arm, its valve and its sensors are placed elements of a later version, with their own specs). One moving node, the arm `arm`; the base plate and the post are the fixed body.
+kind,a,b,part,when,value,unit,source,note
+state,straight,,arm,default,,,spec.md (Mechanism),the arm along the track outside the left frame: goods pass straight on
+state,diverting,,arm,manual toggle,,,spec.md (Mechanism),the arm turned 45 degrees across the track: its face guides the goods to the right-hand side
+pose,arm,,,diverting,end,,element.py (node arm: rotate 0 to 45 degrees about the vertical axis toward +x),

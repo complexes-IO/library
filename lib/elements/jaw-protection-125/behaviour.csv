@@ -1,0 +1,2 @@
+# behaviour.csv · jaw-protection-125 · generic protection jaw for a bench vice (lib/behaviour.md). One fixed body (the aluminium angle): no terminal (no screw or hole), no moving node (it hangs on the vice's jaw plate and moves with it), no state.
+kind,a,b,part,when,value,unit,source,note

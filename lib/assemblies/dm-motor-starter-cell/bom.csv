@@ -1,0 +1,4 @@
+element,version,tag,parent,x,y,z,yaw,params,note
+pm-motor-starter,1.0,panel-1,floor,0,0,0,0,,the control panel (assembly)
+mc-motor-1,1.0,machine-1,floor,0,0,0,0,,the machine (assembly)
+cordset-m12,-,w-x1,connections,0,0,0,0,,cables are placed by connections.csv, not by rows here

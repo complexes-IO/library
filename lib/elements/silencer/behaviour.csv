@@ -1,0 +1,4 @@
+# behaviour.csv · silencer · generic exhaust silencer, male NPT stub (lib/behaviour.md). One air port and no electrical pin or moving node. The exhaust it passes is a
+# pneumatic path: the solver is electrical in phase 1 (lib/toolkit/nets.py), so no state or contact row is written. An NPT joint is made up by turns (pneu.NPT L1 + L3), not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,1,port-1,stub,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (the only port; marked 1 as its node port-1 is named: design; the host's exhaust carries the ISO 11727 number 3)",the male NPT 1/4 (or 1/8) stub into a female exhaust port of the same size

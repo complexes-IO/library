@@ -1,0 +1,15 @@
+{
+  "element_id": "light-ring",
+  "category": "Machine vision",
+  "width": 76.2,
+  "height": 76.2,
+  "depth": 29.2,
+  "units": "mm",
+  "datasheet_dims": [
+    76.2,
+    76.2
+  ],
+  "domain": "sensors",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

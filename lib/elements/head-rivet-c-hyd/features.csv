@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+38.0,cylinder seat bore (gland nose and rod),own,,,,design choice (spec.md Dimensions; hyd-cylinder-da-40 1.1 GLAND_D 36 read through library.load + 2 x 1 clearance),the bore through the upper arm the placed cylinder's gland nose sits in and its rod passes through; one hole; no fastener or port

@@ -1,0 +1,4 @@
+property,value,unit,status,source
+voltage,460,V,generic design,ETIM 10.0 EC002516 class value (EF008207 Operating voltage AC 60 Hz; spec.md Class values 3)
+phases,3,,generic design,ETIM 10.0 EC002516 class value (EF000187 Voltage type: AC three-phase; spec.md Class values 5)
+frequency,60,Hz,generic design,ETIM 10.0 EC002516 class value (EF008207 Operating voltage AC 60 Hz; spec.md Class values 3)

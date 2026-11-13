@@ -1,0 +1,12 @@
+{
+  "element_id": "robot-pedestal",
+  "domain": "robotics",
+  "category": "Robotics",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 600.0,
+  "height": 700.0,
+  "depth": 600.0,
+  "units": "mm",
+  "datasheet_dims": null
+}

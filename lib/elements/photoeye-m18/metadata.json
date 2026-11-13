@@ -1,0 +1,12 @@
+{
+  "element_id": "photoeye-m18",
+  "domain": "electrical",
+  "category": "Sensors for automation technology",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 17.974,
+  "height": 17.974,
+  "depth": 63.0,
+  "units": "mm",
+  "brief": "our own design: generic Diffuse reflective photoelectric sensor (ETIM 10.0 EC001821), M18 x 1 threaded barrel, red light, 400 mm, one PNP output normally open, 24 V DC, axial M12 connector seat, two status LEDs; no reference part measured (spec.md Class values)"
+}

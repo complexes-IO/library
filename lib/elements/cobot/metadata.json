@@ -1,0 +1,16 @@
+{
+  "element_id": "cobot",
+  "category": "Robotics and motion control",
+  "width": 204.0,
+  "height": 1248.1,
+  "depth": 670.1,
+  "units": "mm",
+  "datasheet_dims": [
+    204.0,
+    null,
+    null
+  ],
+  "domain": "robotics",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

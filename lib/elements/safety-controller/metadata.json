@@ -1,0 +1,16 @@
+{
+  "element_id": "safety-controller",
+  "category": "Safety systems",
+  "width": 22.5,
+  "height": 96.5,
+  "depth": 120.6,
+  "units": "mm",
+  "datasheet_dims": [
+    22.5,
+    96.5,
+    120.6
+  ],
+  "domain": "safety",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

@@ -1,0 +1,10 @@
+feature,a_element,a_attr,b_element,b_attr,tol,required,source,note,kind
+main terminal pitch = overload pin pitch,contactor-9a-1no1nc,PITCH,overload-9a-1no1nc,PIN_PITCH,0.2,yes,"contactor interior brief STEP read-back 14.0; overload drawing p. 1 and STEP read-back 14.0 (the 14.5 once cited here was the motor-terminal pitch; corrected 2026-11-03)","to be measured on both STEPs mated (contactor gates prompt step 1)",equal
+contactor width = overload width,contactor-9a-1no1nc,W,overload-9a-1no1nc,W,0.5,yes,"2-D drawings p. 1 (44.8 / 45.0)","direct-mount stack",equal
+station cut-out = 22.5 operator,pbs-6h-22,CUT,op-pb-22-1no,CUTOUT,0.1,yes,"IEC 60947-5-1 22.5 mm","",equal
+station lid thickness within the operators' panel range,pbs-6h-22,LID.t,op-pb-22-1no,std22.PANEL_RANGE,0.0,yes,std22 (Assumption),operators clamp the lid,within
+door skin within the operators' panel range,enc-fs-1524x1829x305,DOOR_T,op-pb-22-1no,std22.PANEL_RANGE,0.0,yes,std22 (Assumption),door-mounted operators,within
+disconnect door_t = enclosure door,disc-3p-30a,PARAMS.door_t,enc-fs-1524x1829x305,DOOR_T,0.05,yes,spec,the handle unit is built for the door it sits on,equal
+M12 port panel_t = enclosure wall,port-m12-a,PARAMS.panel_t,enc-fs-1524x1829x305,T,0.05,yes,spec,rear-mount bulkhead on the 14 ga wall,equal
+main terminal pitch = overload pin pitch,contactor-18a-1no,PITCH,overload-9a-1no1nc,PIN_PITCH,0.2,yes,"contactor-18a-1no 1.0 element.py reads PITCH = OV.PIN_PITCH (overload-9a-1no1nc 1.1)","direct-mount stack (request panel-6 1a; request elec-12)",equal
+contactor width = overload width,contactor-18a-1no,W,overload-9a-1no1nc,W,0.5,yes,"contactor-18a-1no 1.0 element.py reads W = OV.W (overload-9a-1no1nc 1.1)","direct-mount stack (request panel-6 1a; request elec-12)",equal

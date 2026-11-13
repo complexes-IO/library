@@ -1,0 +1,4 @@
+match,role,kind,check,position_tol,datums,source,note
+4.5,M4 clearance medium,clearance,,,,"drawing p. 1 (Ø4.5 [0.18], four holes on 70.0 x 35.0)","hole Ø4.5 on file (terminal 2026-11-03), no longer an Assumption; positional tolerance NOT ON FILE (drawing note 2: dimensions do not imply tolerance); through lug / back wall / shoulder"
+4.8,clamp entry,internal,,,,interior brief,wire entries at the main terminals; the overload's pins come up through the lower row (1.2)
+4.4,overload hook slot,internal,,,,overload interior brief,takes the overload's Ø4 rear hooks (1.2)

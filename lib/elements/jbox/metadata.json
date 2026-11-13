@@ -1,0 +1,12 @@
+{
+  "element_id": "jbox",
+  "domain": "electrical",
+  "category": "Enclosures",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 240.0,
+  "height": 240.0,
+  "depth": 122.0,
+  "units": "mm",
+  "datasheet_dims": null
+}

@@ -1,0 +1,4 @@
+property,value,unit,status,source
+ie_ac15_230v,3,A,generic design,"ETIM 10.0 EC001258 class value: rated operation current Ie at AC-15, 230 V (EF001385), each contact; spec.md Class values 13"
+contacts_nc,1,,generic design,"ETIM 10.0 EC001258 class value: number of contacts as normally closed contact (EF008255); spec.md Class values 8"
+contacts_no,1,,generic design,"ETIM 10.0 EC001258 class value: number of contacts as normally open contact (EF008256); spec.md Class values 9"

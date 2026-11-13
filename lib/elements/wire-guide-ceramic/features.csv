@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+8.0,wire bore,own,,,,"design: class value inner diameter 8 (ETIM 10.0 EC010725, spec.md Class values); not a fastener hole","Ø8 through the flange and the shank on the axis, 12 long; drawn as two stacked holes, one per solid"

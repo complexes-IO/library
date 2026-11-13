@@ -1,0 +1,5 @@
+# behaviour.csv · jbox · wall-mount junction box with a hinged lid (lib/behaviour.md). Mechanical only: no terminal (no earth stud or terminal is modelled; the two M20 entry holes take glands and the four M6 back holes take wall screws, not ports). One moving node, the lid; the box is the fixed body. No hinge, latch or lock modelled in this version, so no latched state.
+kind,a,b,part,when,value,unit,source,note
+state,shut,,lid,default,,,element.py (docstring),the lid closed over the box's front edges
+state,open,,lid,manual toggle,,,element.py (docstring),the lid swung outward about the box's front-left vertical edge
+pose,lid,,,open,end,,element.py (lid rotates 0 to -110 about z),

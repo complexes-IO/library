@@ -1,0 +1,11 @@
+port,pin,role,signal,rated_A,source
+t-1,1,pass,main pole 1 line (L1; top),18,spec.md Class values 6 and 11 (3 N.O. main poles; AC-3 18 A at 400 V); marks a design choice (spec.md Dimensions)
+t-2,2,pass,main pole 1 load (T1; bottom: the overload's pin L1),18,as 1
+t-3,3,pass,main pole 2 line (L2; top),18,as 1
+t-4,4,pass,main pole 2 load (T2; bottom: the overload's pin L2),18,as 1
+t-5,5,pass,main pole 3 line (L3; top),18,as 1
+t-6,6,pass,main pole 3 load (T3; bottom: the overload's pin L3),18,as 1
+t-A1,A1,load+:24V:CTL,coil + (24 V DC),,spec.md Class values 3 (24 V DC coil)
+t-A2,A2,load0,coil 0 V,,as A1
+t-13,13,sw-com,auxiliary N.O. contact 13-14,,spec.md Class values 16 (1 N.O.); its current rating is not a class feature (spec.md Notes)
+t-14,14,sw-no,auxiliary N.O. contact 13-14,,as 13

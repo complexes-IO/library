@@ -1,0 +1,16 @@
+{
+  "element_id": "robot-controller",
+  "category": "Robotics and motion control",
+  "width": 449.0,
+  "height": 191.0,
+  "depth": 443.5,
+  "units": "mm",
+  "datasheet_dims": [
+    449.0,
+    191.0,
+    443.5
+  ],
+  "domain": "robotics",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

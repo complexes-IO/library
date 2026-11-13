@@ -1,0 +1,9 @@
+# behaviour.csv · hyd-flow-control · generic hydraulic one-way flow control valve, inline (lib/behaviour.md). Two oil ports and no electrical pin; one moving node, the
+# adjusting knob. The oil paths (1 to 2 through the throttle; 2 to 1 free through the check) are hydraulic: the solver is electrical in phase 1 (lib/toolkit/nets.py) and
+# solves no oil, and the twin reads no flow from the knob in 1.0, so the knob's states name only where it sits. The ports' thread is open (class B), set by the fitting's stud end: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,1,port-1,body,,not claimed,N·m,not claimed: the fitting's stud end sets it (SAE J1926-2 / -3); spec.md Ports (design: 1 the throttled way's inlet; ISO 9461 not on file),the inlet of the throttled way (unit hyd-port)
+pin,2,port-2,body,,not claimed,N·m,not claimed: the fitting's stud end sets it (SAE J1926-2 / -3); spec.md Ports (design: 2 the throttled way's outlet; ISO 9461 not on file),the outlet of the throttled way; the free way 2 to 1 through the check (unit hyd-port)
+state,shut,,knob,default,,,spec.md Named nodes (knob 0°: the throttle shut; a design choice),
+state,open,,knob,manual toggle,,,spec.md Named nodes (five turns; the flow it passes is not modelled),the operator opens the throttle to its range end
+pose,knob,,,open,end,,element.py (knob rotates 0 to 1800° about +z),

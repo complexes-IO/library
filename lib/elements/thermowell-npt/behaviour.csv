@@ -1,0 +1,7 @@
+# behaviour.csv · thermowell-npt · generic thermowell, male NPT 3/8 process, female NPT 1/4 instrument (lib/behaviour.md). Two ports and no electrical pin or moving node.
+# The well is closed at its tip, so no fluid path joins port-a and port-b: the medium stays outside the well and the instrument in port-b only reads its temperature through
+# the wall. The solver is electrical in phase 1 (lib/toolkit/nets.py): no state or contact row is written. Each NPT joint makes up by turns (pneu.NPT L1 + L3), so both pin
+# torques read "not claimed" (lib/behaviour.md, pin; request pneu-13 item 1). Nothing moves, so no pose row.
+kind,a,b,part,when,value,unit,source,note
+pin,a,port-a,stub,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: a fitting's ends have no ISO 11727 number; marked by the node's name)",male NPT 3/8 process stub into a host's female port of the same size; the well below it in the medium
+pin,b,port-b,land,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: as a)",female NPT 1/4 instrument port on top: takes gauge-t's male stub; its stem in the well's bore

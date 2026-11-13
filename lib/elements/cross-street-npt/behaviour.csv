@@ -1,0 +1,9 @@
+# behaviour.csv · cross-street-npt · generic street cross, three female NPT ports and one male NPT stub (lib/behaviour.md). Four ports and no electrical pin or moving node.
+# The fluid it passes joins all four ports at once (one line split in three): that is a pneumatic or hydraulic path and the solver is electrical in phase 1
+# (lib/toolkit/nets.py), so no state or contact row is written. NPT joints make up by turns (pneu.NPT L1 + L3), not torque: each pin torque reads "not claimed"
+# (lib/behaviour.md, pin; request pneu-13 item 1). Nothing moves, so no pose row.
+kind,a,b,part,when,value,unit,source,note
+pin,a,port-a,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: a fitting's ends have no ISO 11727 number; marked by the node's name)",run end a: female NPT (parameter thread) on the -x face
+pin,b,port-b,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: as a)",run end b: male NPT stub (parameter thread) on the +x face; screws into a female port of the same size
+pin,c,port-c,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: as a)",branch c: female NPT (parameter thread) on the +y face
+pin,d,port-d,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: as a)",branch d: female NPT (parameter thread) on the -y face; opposite c

@@ -1,0 +1,4 @@
+property,value,unit,status,source
+in,6,A,on file,maker's datasheet (references/source.txt)
+curve,C,,on file,maker's datasheet (references/source.txt)
+poles,1,,on file,

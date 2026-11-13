@@ -1,0 +1,2 @@
+# behaviour.csv · water-table · water table under a plasma cutter's slat bed (lib/behaviour.md). One body: no terminal, no node, no moving part, no state. The bed it carries is its own element; no drain or fill fitting is drawn, so no port.
+kind,a,b,part,when,value,unit,source,note

@@ -1,0 +1,15 @@
+{
+  "element_id": "hx-shell-tube",
+  "domain": "process",
+  "category": "Process instrumentation",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 496.0,
+  "height": 160.0,
+  "depth": 120.0,
+  "units": "mm",
+  "datasheet_dims": null,
+  "aliases": [
+    "hx"
+  ]
+}

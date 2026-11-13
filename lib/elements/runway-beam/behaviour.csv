@@ -1,0 +1,2 @@
+# behaviour.csv · runway-beam · crane runway beam (lib/behaviour.md). One body: no terminal, no moving node (`rail` is fixed; the end trucks' travel along it is the crane's), no state.
+kind,a,b,part,when,value,unit,source,note

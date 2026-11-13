@@ -1,0 +1,12 @@
+;; profile-rect-pvc-30x20 v1.0. Generated. Millimetres. APPLOAD, then RECTPVC.
+(defun BX (lay p1 p2 h) (command "_.-LAYER" "_M" lay "") (command "_.BOX" p1 p2 h) (entlast))
+(defun CY (lay p1 p2 r / h) (setq h (distance p1 p2)) (command "_.-LAYER" "_M" lay "")
+  (command "_.UCS" "_ZA" p1 p2) (command "_.CYLINDER" (list 0 0 0) r h) (command "_.UCS" "_W") (entlast))
+(defun UB (lay o xp yp l w h) (command "_.-LAYER" "_M" lay "")
+  (command "_.UCS" "3" o xp yp) (command "_.BOX" (list 0 0 0) (list l w 0) h) (command "_.UCS" "_W") (entlast))
+(defun c:RECTPVC (/ os hole e0 e1 e2 e3 e4 e5)
+  (setq os (getvar "OSMODE")) (setvar "OSMODE" 0) (setvar "CMDECHO" 0) (setvar "INSUNITS" 4) (setvar "ISOLINES" 8)
+  (setq e0 (BX "M-GREY-PVC" (list 0 -15 0) (list 1000 15 0) 20))
+  (setq hole (UB "M-GREY-PVC" (list -1 -12.5 2.5) (list 0 -12.5 2.5) (list -1 -11.5 2.5) 1002 25 15)) (command "_.SUBTRACT" e0 "" hole "")
+  (command "_.-LAYER" "_S" "0" "") (setvar "OSMODE" os) (command "_.ZOOM" "_E") (princ "\nBuilt.") (princ))
+(princ "\nType RECTPVC.") (princ)

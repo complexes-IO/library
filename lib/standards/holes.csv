@@ -1,0 +1,30 @@
+role,kind,size,d_min,d_max,standard,note
+# Standard hole sizes the hole checker matches (checked against sources 2026-11-03). Clearance: ISO 273 fine H12 / medium H13 / coarse H14 above nominal.
+# Inference uses kinds clearance, cutout and entry only; a foot hole is matched only when features.csv declares it (its H17 window overlaps clearance windows).
+M3 clearance fine,clearance,M3,3.2,3.32,ISO 273,H12
+M3 clearance medium,clearance,M3,3.4,3.58,ISO 273,H13
+M3 clearance coarse,clearance,M3,3.6,3.90,ISO 273,H14
+M4 clearance fine,clearance,M4,4.3,4.42,ISO 273,H12
+M4 clearance medium,clearance,M4,4.5,4.68,ISO 273,H13
+M4 clearance coarse,clearance,M4,4.8,5.10,ISO 273,H14
+M5 clearance fine,clearance,M5,5.3,5.42,ISO 273,H12
+M5 clearance medium,clearance,M5,5.5,5.68,ISO 273,H13
+M5 clearance coarse,clearance,M5,5.8,6.10,ISO 273,H14
+M6 clearance fine,clearance,M6,6.4,6.55,ISO 273,H12
+M6 clearance medium,clearance,M6,6.6,6.82,ISO 273,H13
+M6 clearance coarse,clearance,M6,7.0,7.36,ISO 273,H14
+M8 clearance fine,clearance,M8,8.4,8.55,ISO 273,H12
+M8 clearance medium,clearance,M8,9.0,9.22,ISO 273,H13
+M8 clearance coarse,clearance,M8,10.0,10.36,ISO 273,H14
+M10 clearance fine,clearance,M10,10.5,10.68,ISO 273,H12
+M10 clearance medium,clearance,M10,11.0,11.27,ISO 273,H13
+M10 clearance coarse,clearance,M10,12.0,12.43,ISO 273,H14
+M12 clearance fine,clearance,M12,13.0,13.18,ISO 273,H12
+M12 clearance medium,clearance,M12,13.5,13.77,ISO 273,H13
+M12 clearance coarse,clearance,M12,14.5,14.93,ISO 273,H14
+22.5 operator cut-out,cutout,22.5,22.3,22.7,manufacturer data for IEC 60947-5-1 22 mm devices (Ø22.3 +0.4 / 0; e.g. Schneider ZB4),the standard covers the device; the hole is the makers' common figure
+M16 x 1.5 bulkhead,entry,M16,16.2,16.7,manufacturer practice (thread + 0.2 to 0.7; not in EN 62444),M12 panel receptacles
+M20 x 1.5 entry,entry,M20,20.2,20.7,manufacturer practice (thread + 0.2 to 0.7; not in EN 62444),
+M25 x 1.5 entry,entry,M25,25.2,25.7,manufacturer practice (thread + 0.2 to 0.7; not in EN 62444),
+IEC 71 foot hole K,foot,M6,7.0,8.5,IEC 60072-1 Table 1 (frame 71: K = 7 H17),
+IEC 80-90 foot hole K,foot,M8,10.0,11.5,IEC 60072-1 Table 1 (frames 80 and 90: K = 10 H17),

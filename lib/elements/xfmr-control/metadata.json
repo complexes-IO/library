@@ -1,0 +1,12 @@
+{
+  "element_id": "xfmr-control",
+  "domain": "electrical",
+  "category": "Electrical components",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 116.0,
+  "height": 130.0,
+  "depth": 108.0,
+  "units": "mm",
+  "brief": "our own design: generic One-phase control transformer (ETIM 10.0 EC002486), 250 VA, 480 V / 120 V; no reference part measured (spec.md Class values)"
+}

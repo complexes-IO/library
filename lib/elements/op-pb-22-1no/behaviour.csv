@@ -1,0 +1,10 @@
+# behaviour.csv · op-pb-22-1no · momentary pushbutton (lib/behaviour.md). Taken in by elec-r24 from the core's proposal of 2026-11-09 (lib/requests/core/behaviour/op-pb-22-1no.csv), checked against spec.md and element.py (no Stage 0 brief on file: DOC-004).
+# One N.O. block (spec.md Dimensions: one contact block; blocks 1). The marks 13–14 follow IEC 60947-5-1 Annex L, which is not in lib/standards/sources.csv: Assumption (B) (the standard's table, a document wanted; review elec-r24 finding 2). The screws are not port nodes yet (BEH-020). Torque NOT ON FILE (B): IEC 60947-1 (elec-r27, review elec-r24 finding 1).
+# One change from the proposal: the marks' source says the standard is not on file.
+kind,a,b,part,when,value,unit,source,note
+pin,13,,block-1,,NOT ON FILE (B): IEC 60947-1,N·m,spec.md (two terminal screws per block); mark Assumption (B): IEC 60947-5-1 Annex L (the standard's marks; not on file: lib/standards/sources.csv); not port nodes yet,N.O. common
+pin,14,,block-1,,NOT ON FILE (B): IEC 60947-1,N·m,as 13,N.O.
+state,released,,cap,default,,,spec.md (momentary),
+state,pressed,,cap,manual momentary,,,spec.md (momentary; travel 4),
+contact,13,14,block-1,pressed,,,spec.md (one contact block; N.O.: open at rest),
+pose,self,,,pressed,end,,element.py (self translates 0–4),

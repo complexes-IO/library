@@ -1,0 +1,2 @@
+# behaviour.csv · strip-rubber-bulb-30x18 · Rubber bulb section, generic (lib/behaviour.md). Written by mech-r137 from element.py: one fixed body (plain stock), no terminal, no moving node, no state; the bead's squeeze is not modelled. A structural part's file: the header only. No sealing, compression or hardness figure here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note

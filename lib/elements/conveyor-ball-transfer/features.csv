@@ -1,0 +1,3 @@
+match,role,kind,check,position_tol,datums,source,note
+13.5,M12 clearance medium,clearance,,1.0,A B C,"ISO 273 medium H13 (lib/standards/holes.csv); position Ø1.0 at MMC to A the floor plane, B the plane midway between the side frames, C the plane midway along the table (ASME Y14.5 floating fastener, T <= H − F = 1.50)","design choice: 4 x M12 in the foot plates at 680 x 500 (x +-340, y +-250), the family's pattern (conveyor-roller 1.0) on a 1000 table; the anchors are the assembly's"
+30,ball socket,own,,,,design choice (spec.md Its own sizes),Ø30 bored through each of the 32 ball-unit housings (Ø40 bosses on the deck): the Ø25 ball sits in it with 2.5 clear all round; no fastener and no standard size

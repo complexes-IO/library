@@ -1,0 +1,2 @@
+# behaviour.csv · bar-depth-support-1067 · depth support bar for one beam level of pallet-rack, generic (lib/behaviour.md). Written by mech-r154 from element.py: one fixed body, no terminal, no moving node, no state; laying it across the beams is the host's assembly, not a motion. A structural part's file: the header only. No load, deflection or push-through figure here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note

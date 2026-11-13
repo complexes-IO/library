@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+13.5,M12 clearance medium,clearance,,1.0,A B C,"ISO 273 medium H13 (lib/standards/holes.csv); position Ø1.0 at MMC to A the floor plane, B the plane x = 0 through the deck's axis, C the plane y = 0 through the deck's axis (ASME Y14.5 floating fastener, T <= H − F = 1.50)","design choice: 4 x M12 in the floor rails at 880 x 750 (x +-440, y +-375), one beside each post, the conveyor family's pattern (conveyor-roller 1.0: 680 across); the anchors are the assembly's"

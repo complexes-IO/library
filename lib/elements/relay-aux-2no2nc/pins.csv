@@ -1,0 +1,11 @@
+port,pin,role,signal,rated_A,source
+t-A1,A1,load+:24V:CTL,coil + (24 V DC),,spec.md Class values 3 (24 V DC coil)
+t-A2,A2,load0,coil 0 V,,as A1
+t-13,13,sw-com,N.O. contact 13-14,6,spec.md Class values 5 and 12 (2 N.O.; 6 A AC-15 at 230 V)
+t-14,14,sw-no,N.O. contact 13-14,6,as 13
+t-21,21,sw-com,N.C. contact 21-22,6,spec.md Class values 5 and 11 (2 N.C.)
+t-22,22,sw-nc,N.C. contact 21-22,6,as 21
+t-31,31,sw-com,N.C. contact 31-32,6,as 21
+t-32,32,sw-nc,N.C. contact 31-32,6,as 21
+t-43,43,sw-com,N.O. contact 43-44,6,as 13
+t-44,44,sw-no,N.O. contact 43-44,6,as 13

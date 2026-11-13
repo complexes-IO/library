@@ -1,0 +1,16 @@
+{
+  "element_id": "fuse-holder",
+  "category": "Electrical components",
+  "width": 17.5,
+  "height": 78.0,
+  "depth": 59.7,
+  "units": "mm",
+  "datasheet_dims": [
+    17.526,
+    77.978,
+    59.69
+  ],
+  "domain": "electrical",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

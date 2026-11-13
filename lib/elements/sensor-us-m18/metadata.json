@@ -1,0 +1,16 @@
+{
+  "element_id": "sensor-us-m18",
+  "category": "Industrial sensors",
+  "width": 25.0,
+  "height": 25.0,
+  "depth": 91.6,
+  "units": "mm",
+  "datasheet_dims": [
+    91.6,
+    25.0,
+    25.0
+  ],
+  "domain": "sensors",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

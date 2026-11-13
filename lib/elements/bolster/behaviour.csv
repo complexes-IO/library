@@ -1,0 +1,2 @@
+# behaviour.csv · bolster · press bolster plate (lib/behaviour.md). One body: no terminal, no node, no moving part, no state. The six M12 holes take the fixing screws to the press bed, and the Ø100 knock-out passage is a clearance for the press's ejector, neither a port.
+kind,a,b,part,when,value,unit,source,note

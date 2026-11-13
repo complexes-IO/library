@@ -1,0 +1,7 @@
+property,value,unit,status,source
+p_max,8,bar,generic design,ETIM 10.0 EC002860 class value (EF000634 Max. pressure: the pressure switch's cut-out; spec.md Class values 8)
+voltage,120,V,generic design,ETIM 10.0 EC002860 class value (EF003625 Connection voltage; spec.md Class values 2)
+phases,1,,generic design,ETIM 10.0 EC002860 class value (EF002735 Type of motor: single-phase AC induction motor; spec.md Class values 1)
+frequency,60,Hz,generic design,ETIM 10.0 EC002860 class value (EF005455 Frequency; spec.md Class values 3)
+fla,9,A,generic design,ETIM 10.0 EC002860 class value (EF000047 Amperage: the rated current at the cut-out pressure; spec.md Class values 4)
+power,0.55,kW,generic design,ETIM 10.0 EC002860 class value (EF001314 Motor power; spec.md Class values 11)

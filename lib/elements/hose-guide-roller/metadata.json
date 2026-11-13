@@ -1,0 +1,13 @@
+{
+  "element_id": "hose-guide-roller",
+  "domain": "pneumatics",
+  "category": "Hoses",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 90.0,
+  "height": 60.0,
+  "depth": 50.0,
+  "units": "mm",
+  "datasheet_dims": null,
+  "aliases": []
+}

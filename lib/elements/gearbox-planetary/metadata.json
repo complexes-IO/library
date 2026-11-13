@@ -1,0 +1,14 @@
+{
+  "element_id": "gearbox-planetary",
+  "category": "Power transmission",
+  "width": null,
+  "height": null,
+  "depth": null,
+  "units": "mm",
+  "datasheet_dims": [
+    70.0
+  ],
+  "domain": "mechanical",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

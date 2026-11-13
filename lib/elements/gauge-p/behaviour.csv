@@ -1,0 +1,8 @@
+# behaviour.csv · gauge-p · generic Bourdon tube pressure gauge, 0 to 160 psig, for air lines (lib/behaviour.md). One port and no electrical pin; one moving node, the pointer.
+# The pointer follows the air pressure at the port (angle = 270 x p / 160 psig, spec.md Named nodes); the solver is electrical in phase 1 (lib/toolkit/nets.py) and solves
+# no pressure, so the pointer's states are only its scale's ends: a manual state lets the twin show the sweep until the circuit model gives p. NPT joints make up by turns, not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,1,port-1,hex,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 1 as toolkit/pneu.py NODES; the gauge's only port)",the male NPT 1/4 stub into a host's gauge port (frl port-g)
+state,zero,,pointer,default,,,spec.md Named nodes (pointer 0°: the scale's zero),no pressure at the port
+state,full-scale,,pointer,manual toggle,,,spec.md Named nodes (270°: 160 psig; the twin's sweep until the circuit model reads p),stand-in for the pressure the solver does not yet compute
+pose,pointer,,,full-scale,end,,element.py (pointer rotates 0 to 270° about +y),

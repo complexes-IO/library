@@ -1,0 +1,4 @@
+property,value,unit,status,source
+u_supply,24,VDC,design,"design: 24 V DC, the supply of the PLC's 24 V DC inputs the push-pull outputs feed (IEC 61131-2, the 24 V DC class); EC001486 has no supply feature; spec.md Class values"
+pulses_per_rev,1024,,generic design,"ETIM 10.0 EC001486 class value: max. pulses per revolution (EF003589); spec.md Class values 3"
+shaft_d,10,mm,generic design,"ETIM 10.0 EC001486 class value: diameter axle (EF007110); spec.md Class values 14"

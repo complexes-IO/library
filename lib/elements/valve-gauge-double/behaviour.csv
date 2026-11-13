@@ -1,0 +1,14 @@
+# behaviour.csv · valve-gauge-double · generic double pressure gauge valve, NPT 1/4 male to two NPT 1/4 female gauge ports, two hand knobs (lib/behaviour.md). Three air
+# ports and no electrical pin; two moving nodes, knob-2 (shuts port-2 off) and knob-4 (shuts port-4 off). Air passes 1 to 2 with knob-2 open and 1 to 4 with knob-4 open
+# (spec.md): pneumatic paths, and the solver is electrical in phase 1 (lib/toolkit/nets.py), so the knobs' states name only where they sit. NPT joints make up by turns
+# (pneu.NPT L1 + L3), not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,1,port-1,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 1 as toolkit/pneu.py NODES)",the process side: the male NPT 1/4 stub into the line's port
+pin,2,port-2,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 2 as toolkit/pneu.py NODES)",the first gauge's port: female NPT 1/4 on top
+pin,4,port-4,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 4 as toolkit/pneu.py NODES)",the second gauge's port: female NPT 1/4 on the right side
+state,closed-2,,knob-2,default,,,spec.md Named nodes (knob-2 0°: closed),port-2's gauge is shut off from the line
+state,open-2,,knob-2,manual toggle,,,spec.md Named nodes (1440°: four turns; fully open),the operator opens knob-2 to read the line on port-2's gauge
+state,closed-4,,knob-4,default,,,spec.md Named nodes (knob-4 0°: closed),port-4's gauge is shut off from the line
+state,open-4,,knob-4,manual toggle,,,spec.md Named nodes (1440°: four turns; fully open),the operator opens knob-4 to read the line on port-4's gauge
+pose,knob-2,,,open-2,end,,element.py (knob-2 rotates 0 to 1440° about -y; the spindle rises 0.5 per turn),
+pose,knob-4,,,open-4,end,,element.py (knob-4 rotates 0 to 1440° about -y; the spindle rises 0.5 per turn),

@@ -1,0 +1,2 @@
+property,value,unit,status,source
+p_max,160,bar,generic design,ETIM 10.0 EC011463 class value: EF020449 Max. operating pressure (spec.md Class values 16)

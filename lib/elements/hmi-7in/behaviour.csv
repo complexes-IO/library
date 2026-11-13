@@ -1,0 +1,14 @@
+# behaviour.csv · hmi-7in · operator panel (HMI) 7 in, 24 V DC (lib/behaviour.md). Written by elec-r38 from spec.md and pins.csv, in the form of plc-aio's.
+# Not in this file (solver phase 1): the screen's content, the touches and the Ethernet link. What the panel shows and what a touch sets are the program's
+# and the twin's; the Ethernet socket (port-rj45) is not built, so no pin of it is here (spec.md Notes). The clamps (panel-clamp 1.2) have no terminal and no moving node.
+# The panel is a load on its 24 V DC supply (ratings.csv: 10 W, a design figure); it runs on any supply voltage, the under-voltage threshold being IEC 61131-2's table (class B, a document wanted).
+# Torques: the plug's clamps are terminal-plug 2.0's (class B, IEC 60999), as that element's behaviour.csv writes them.
+kind,a,b,part,when,value,unit,source,note
+pin,24V,x1.t-1,x1.clamp-1,,NOT ON FILE (B): IEC 60999,N·m,terminal-plug 2.0 behaviour.csv (its clamps' torque class B),panel supply +24 V DC
+pin,0V,x1.t-2,x1.clamp-2,,NOT ON FILE (B): IEC 60999,N·m,as 24V,panel supply 0 V
+pin,FE,x1.t-3,x1.clamp-3,,NOT ON FILE (B): IEC 60999,N·m,as 24V,functional earth
+load,24V,0V,logic,,10.0,W,"spec.md Class values (the paragraph under the table: 10 W): the panel's power written as the load's P; the solver draws I = P / V at the seen voltage (0.42 A at 24 V, ratings.csv load_i)",the display and its controller
+state,powered,,supply,"V('24V','0V') > 0",,,"spec.md Class values 8 (24 V DC supply); the supply's under-voltage threshold is NOT ON FILE (B): IEC 61131-2 (its 24 V DC supply range table is not in lib/standards/sources.csv), so any supply voltage reads as powered (as plc-aio's powered row)",the panel runs
+state,off,,supply,default,,,spec.md Class values 8,no supply: the screen dark
+pose,screen,,,powered,1,,spec.md Named nodes (screen emissive),the screen lit
+pose,led-run,,,powered,1,,spec.md Named nodes,green: powered

@@ -1,0 +1,5 @@
+# behaviour.csv · gun-blast · generic suction blast gun for a blast cabinet (lib/behaviour.md). One air port and no electrical pin or moving node: the air is switched
+# upstream by the cabinet's foot control, not at the gun (spec.md What). Air from port-1 draws the abrasive in through the rear hose nipple and drives it out through the nozzle:
+# air and abrasive paths, not the phase 1 solver's (lib/toolkit/nets.py, electrical), so no state or contact row is written. NPT joints make up by turns (pneu.NPT L1 + L3), not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,1,port-1,collar,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 1 as toolkit/pneu.py NODES; the gun's only port)",the air inlet: female NPT 1/4 under the grip

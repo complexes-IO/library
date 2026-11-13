@@ -1,0 +1,2 @@
+# behaviour.csv · booth-powder · open-front powder coating booth (lib/behaviour.md). One body: no terminal, no node, no moving part, no state. The duct collar on the plenum takes the extraction duct, not a port of this element (no port node); the fan, filters and lights are not drawn, and the element makes no airflow, fire or safety claim.
+kind,a,b,part,when,value,unit,source,note

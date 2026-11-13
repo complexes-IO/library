@@ -1,0 +1,3 @@
+match,role,kind,check,position_tol,datums,source,note
+9.0,M8 clearance medium,clearance,,1.0,A B C,"our own design: ISO 273 medium H13 (lib/standards/holes.csv); position Ø1.0 to A mounting face (the flange's underside), B and C the flange's sides (ASME Y14.5, floating fastener T = H − F = 9.0 − 8 = 1.0)",design choice: four holes on a 60 × 60 square through the flange; the M8 screws are the host's (screw-iso4017 once built)
+33.0,plunger bore (guide),own,,,,design choice (spec.md Dimensions),the plunger's bore up the body from its foot: plunger Ø32 + 0.5 clear all round; blind (floor at z = -18); no fastener or port

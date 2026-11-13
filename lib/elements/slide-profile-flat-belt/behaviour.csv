@@ -1,0 +1,2 @@
+# behaviour.csv · slide-profile-flat-belt · flat belt slide profile, generic (lib/behaviour.md). One fixed body (the slide profile bonded on its mounting flat): no terminal, no moving node (the flat belt is the host's and slides along the tread), no state.
+kind,a,b,part,when,value,unit,source,note

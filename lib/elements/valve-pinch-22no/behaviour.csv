@@ -1,0 +1,11 @@
+# behaviour.csv · valve-pinch-22no · generic pneumatic hose (pinch) valve, 2/2 normally open, NPT 3/8 female process ports, NPT 1/8 control port (lib/behaviour.md).
+# Two process ports and one control air port; no electrical pin; no moving node (the sleeve inside is not modelled). Control air at port 10 flattens the sleeve and shuts
+# in from out; air off, the sleeve opens (spec.md What). The solver is electrical in phase 1 (lib/toolkit/nets.py) and solves no air or liquid, so the sleeve's states are
+# set by a manual state until the pneumatic circuit model drives them. No safety function (spec.md Notes). NPT joints make up by turns (pneu.NPT L1 + L3), not torque:
+# value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,in,port-in,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: a process port has no ISO 11727 number; marked by its node's name as control-valve's port-in)",the inlet: female NPT 3/8
+pin,out,port-out,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: as in)",the outlet: female NPT 3/8
+pin,10,port-10,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 10: the signal that shuts 1 from 2)",the control air: female NPT 1/8; air in shuts
+state,open,,sleeve,default,,,spec.md What (no control air: the sleeve stands round),in to out open
+state,shut,,sleeve,manual toggle,,,spec.md What (control air at port 10 at least 2.5 bar above the line flattens the sleeve; stand-in until the circuit model),in and out shut

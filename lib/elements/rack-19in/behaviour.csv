@@ -1,0 +1,5 @@
+# behaviour.csv · rack-19in · floor-standing 19-inch rack frame (lib/behaviour.md). Mechanical only: no terminal (the rails are plain, no earth stud, no port). One moving node, the front door; the plinth, frame, panels, roof and rails are the fixed body. No lock in this version, so no locked state.
+kind,a,b,part,when,value,unit,source,note
+state,closed,,door-front,default,,,element.py (docstring),the front door shut over the frame's front
+state,open,,door-front,manual toggle,,,element.py (docstring),the front door swung outward about the frame's front-left vertical edge
+pose,door-front,,,open,end,,element.py (door-front rotates 0 to -110),

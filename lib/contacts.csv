@@ -1,0 +1,18 @@
+scope,a,b,kind,reason,by
+# Declared contacts: overlaps that are intended. kind: flex (a spring part the model keeps rigid: the overlap is its bending) · seal (a gasket or seal compressed) · journal (a shaft or pin turning in its bore) · seat (a spring end in its cup) · insert (a part held in a groove or socket) · bonded (parts joined into one: moulded, welded, glued) · seated (a knob or button sitting in a bore the model does not cut: a modelling simplification, listed in every report so it stays visible)
+# a / b match a solid's name (node, or <owner>.body) or name|material; scope is an element or assembly id (wildcards allowed)
+overload-9a-1no1nc,dial-fla,body|M-GREY-PA,seated,FLA dial sits 0.5 in the face; its bore is not cut,CAD chat 2026-11-03
+overload-9a-1no1nc,btn-reset,body|M-GREY-PA,seated,RESET / TEST button sits 0.5 in the face; its bore is not cut,CAD chat 2026-11-03
+psu-24v-2a4,vadj,body,seated,V.ADJ potentiometer sits 0.5 in the face and its legend plate; bore not cut,CAD chat 2026-11-03
+relay-safety-2ch-2no1nc,sw-mode,body,seated,mode switch sits 0.5 in the face and its legend plate; bore not cut,CAD chat 2026-11-03
+gl-xr-1,dial-?,frame,seated,diopter dials sit in the brow; bore not cut,CAD chat 2026-11-03
+gl-xr-1,lens-?,frame,insert,lenses held in the rim groove,CAD chat 2026-11-03
+gl-xr-1,frame,body,bonded,nose-pad arms and hinge pin covers are fixed to the frame,CAD chat 2026-11-03
+port-pwr-480,cap,self,seal,spring cap closes 0.2 onto the face seal,CAD chat 2026-11-03
+motor-iec71-370w,shaft,body|M-CAST-BLUE,journal,shaft turns in the end-shield bearing bore (bore not cut),CAD chat 2026-11-03
+contactor-9a-1no1nc,carrier,spring-return,seat,return spring end seated in the carrier's spring cup,CAD chat 2026-11-03
+enc-fs-1524x1829x305,door-?,body|M-GASKET,seal,door returns compress the 2 mm frame gasket,CAD chat 2026-11-03
+enc-fs-1524x1829x305,door-?,hinge-?,journal,hinge pin through the door's hinge knuckle (the rotation axis),CAD chat 2026-11-03
+mcb-*,toggle,body,seated,the toggle moves in a slot in the front face; the writer subtracts round holes only so the slot is not cut,CAD chat 2026-11-03
+relay-ice-cube-2co,actuator,pole-?,flex,the card bends the moving contact springs 0.3 past the contact; the model's rigid fingers turn instead,CAD chat 2026-11-03
+pnl-*,jmp-*.p-*|M-CU,x1-*.body,seated,"a term-jumper comb's blade pushed home in a term-4mm block: the block's jumper channel is not cut (NOT ON FILE (B): the maker's drawing of its bar jumper; a measured block takes no design channel of ours, review term-jumper-1.0 finding 3), so the blade stands in the solid body; the joint is wires.csv's blade-to-pin rows",core watch 2026-11-13 (request panel-13 1)

@@ -1,0 +1,14 @@
+# behaviour.csv · op-estop-22-2nc · what the element does at its terminals and head (lib/behaviour.md). Taken in by elec-r24 from the core's proposal of 2026-11-09 (lib/requests/core/behaviour/op-estop-22-2nc.csv), checked against spec.md and element.py (no Stage 0 brief on file: DOC-004).
+# Two N.C. contact blocks stacked (spec.md Dimensions). The terminal marks 11–12 and 21–22 follow IEC 60947-5-1 Annex L, which is not in lib/standards/sources.csv: the marks are Assumption (B) (the standard's table, a document wanted; review elec-r24 finding 2). The screws are not port nodes yet (BEH-020). Torque NOT ON FILE (B): IEC 60947-1 (elec-r27, review elec-r24 finding 1).
+# One change from the proposal: the marks' source says the standard is not on file.
+kind,a,b,part,when,value,unit,source,note
+pin,11,,block-1,,NOT ON FILE (B): IEC 60947-1,N·m,spec.md (two terminal screws per block); mark Assumption (B): IEC 60947-5-1 Annex L (the standard's marks; not on file: lib/standards/sources.csv); the screws are not port nodes yet,N.C. block 1
+pin,12,,block-1,,NOT ON FILE (B): IEC 60947-1,N·m,as 11,N.C. block 1
+pin,21,,block-2,,NOT ON FILE (B): IEC 60947-1,N·m,as 11,N.C. block 2
+pin,22,,block-2,,NOT ON FILE (B): IEC 60947-1,N·m,as 11,N.C. block 2
+state,released,,head,default,,,spec.md (push-to-latch twist-to-release),the mushroom out: contacts closed
+state,pressed,,head,manual latch cleared by twisted,,,spec.md (press 6 mm and latch),pressed and latched: both N.C. blocks open (positive opening)
+state,twisted,,head,manual momentary,,,spec.md (twist 45° to release),the twist that releases the latch
+contact,11,12,block-1,released,,,spec.md (two NC blocks: closed at rest),channel 1 of the e-stop chain
+contact,21,22,block-2,released,,,as 11–12,channel 2
+pose,self,,,pressed,end,,element.py (self translates 0–6),the head in

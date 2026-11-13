@@ -1,0 +1,12 @@
+{
+  "element_id": "limit-switch",
+  "domain": "electrical",
+  "category": "Sensors for automation technology",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 30.0,
+  "height": 111.0,
+  "depth": 48.0,
+  "units": "mm",
+  "brief": "our own design: generic End switch (ETIM 10.0 EC000030), roller lever, 1 N.C. + 1 N.O. (11-12, 23-24), slow action, AC-15 3 A at 230 V, DC-13 2 A at 24 V, plastic housing 30 x 30 x 80, M20 x 1.5 cable entry; no reference part measured (spec.md Class values)"
+}

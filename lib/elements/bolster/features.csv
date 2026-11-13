@@ -1,0 +1,3 @@
+match,role,kind,check,position_tol,datums,source,note
+13.5,M12 clearance medium,clearance,,1.2,A (the plate's underside: the press bed's face); the six holes located to each other,ISO 273 medium H13 (lib/standards/holes.csv); position Ø1.2 at MMC ≤ H − F = 1.5 (ASME Y14.5 floating fastener),6 x M12 fixing holes at 900 x 600 (three a side): design choice
+100,knock-out passage,own,,,,design choice (spec.md Its own sizes),central Ø100 through the plate for the press's ejector or knock-out rod: no fastener and no standard size

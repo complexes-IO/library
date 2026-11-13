@@ -1,0 +1,15 @@
+[package]
+name = "twin-core"
+version = "0.1.0"
+edition = "2021"
+description = "The twin's rules that run every scan: M12 joints from the element data, the motor-starter cell's safety channel. Proved with Kani."
+license = "MIT"
+publish = false
+
+[dependencies]
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(kani)'] }
+
+[profile.dev]
+overflow-checks = true

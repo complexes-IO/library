@@ -1,0 +1,6 @@
+# behaviour.csv · pbs-6h-22 · six-hole 22.5 mm pushbutton station (lib/behaviour.md). Taken in by elec-r24 from the core's proposal of 2026-11-09 (lib/requests/core/behaviour/pbs-6h-22.csv), checked against element.py and spec.md (no Stage 0 brief on file: DOC-004); the states renamed by what they mean.
+# The station's own moving node is its lid. Its operators and M12 sockets are BOM rows (bom.csv), elements of their own that carry their own behaviour; the internal wiring between them is pins.csv. No pin rows here: the station element builds no port node of its own.
+kind,a,b,part,when,value,unit,source,note
+state,lid-fitted,,lid-1,default,,,element.py (node lid-1: translate 0 to 30),the lid screwed on the rim gasket
+state,lid-off,,lid-1,manual toggle,,,element.py (node lid-1: translate 0 to 30),the lid lifted 30 off the body (open for wiring)
+pose,lid-1,,,lid-off,end,,element.py (node lid-1: translate 0 to 30),

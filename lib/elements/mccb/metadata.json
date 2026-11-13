@@ -1,0 +1,16 @@
+{
+  "element_id": "mccb",
+  "category": "Electrical components",
+  "width": 76.2,
+  "height": 140.0,
+  "depth": 76.5,
+  "units": "mm",
+  "datasheet_dims": [
+    76.2,
+    139.95,
+    76.45
+  ],
+  "domain": "electrical",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

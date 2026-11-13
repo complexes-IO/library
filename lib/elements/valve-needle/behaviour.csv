@@ -1,0 +1,9 @@
+# behaviour.csv · valve-needle · generic needle valve, in line (lib/behaviour.md). Two air ports and no electrical pin; one moving node, the hand knob with its rising spindle.
+# The air path (1 to 2 through the needle's seat) is pneumatic: the solver is electrical in phase 1 (lib/toolkit/nets.py), and the twin reads no flow from the knob in 1.0,
+# so the knob's states name only where it sits. NPT joints make up by turns (pneu.NPT L1 + L3), not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,1,port-1,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 1 as toolkit/pneu.py NODES)",the inlet: female NPT 1/4
+pin,2,port-2,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 2 as toolkit/pneu.py NODES)",the outlet: female NPT 1/4
+state,closed,,knob,default,,,spec.md Named nodes (knob 0°: closed),1 and 2 shut
+state,open,,knob,manual toggle,,,spec.md Named nodes (five turns: 0 to 1800°; the spindle rises 0.5 per turn),fully open
+pose,knob,,,open,end,,element.py (knob rotates 0 to 1800° about +z with lead 0.5),

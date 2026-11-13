@@ -1,0 +1,17 @@
+# behaviour.csv · cable-pwr-480 · motor branch cable 3P+E 480 V (lib/behaviour.md). Written by elec-r28 from spec.md and element.py: end A the plug (port-a, one multi-pin port), end B the four cores out of the jacket (placed wire elements core-l1 … core-pe; each core's end-a is its tip at the motor terminal).
+# Marks as cordset-m12's: A1 … A4 at the plug, B1 … B4 at the core tips; 1 2 3 = L1 L2 L3, 4 = PE (spec.md Named nodes; the 7 h earth keying of IEC 60309-2 at the plug). Each core is one conductor, A to B, always.
+# The plug's contacts and their screws are not elements yet (spec.md Notes); the core tips are wire ends, tightened by the motor's terminal clamp. R is derived for the default 4 m of 2.08 mm² (14 AWG) cores at 20 °C; it scales with length.
+kind,a,b,part,when,value,unit,source,note
+pin,A1,port-a,core-l1,,NOT ON FILE (B): IEC 60309-2,N·m,spec.md Named nodes (port-a 480V-3P+E); the plug's terminal screws (IEC 60309-2; not elements yet: spec.md Notes),end A L1
+pin,A2,port-a,core-l2,,NOT ON FILE (B): IEC 60309-2,N·m,as A1,end A L2
+pin,A3,port-a,core-l3,,NOT ON FILE (B): IEC 60309-2,N·m,as A1,end A L3
+pin,A4,port-a,core-pe,,NOT ON FILE (B): IEC 60309-2,N·m,as A1,end A PE (7 h)
+pin,B1,core-l1.end-a,core-l1,,not claimed,N·m,not claimed: the motor's terminal clamp sets it (lib/behaviour.md; pin),end B L1: the core tip (black)
+pin,B2,core-l2.end-a,core-l2,,not claimed,N·m,as B1,end B L2 (white)
+pin,B3,core-l3.end-a,core-l3,,not claimed,N·m,as B1,end B L3 (red)
+pin,B4,core-pe.end-a,core-pe,,not claimed,N·m,as B1,end B PE (green)
+pin,jacket,port-b,jacket,,not claimed,N·m,not claimed: the motor's gland nut sets it (lib/behaviour.md; pin; as gland-m20's cable row),the jacket's cut end in the motor's gland (spec.md Named nodes: port-b gender none): no conductor of its own; the cores pass on as B1 … B4
+contact,A1,B1,core-l1,always,0.033156,ohm,"derived: derive.resistance('copper', 4000.0, 2.08) (R = ρL/A; ρ 1.7241e-08 Ω·m at 20 °C, IEC 60028)",core L1: default length 4000 and size 2.08 mm² (spec.md Built with)
+contact,A2,B2,core-l2,always,0.033156,ohm,as A1-B1,core L2
+contact,A3,B3,core-l3,always,0.033156,ohm,as A1-B1,core L3
+contact,A4,B4,core-pe,always,0.033156,ohm,as A1-B1,core PE

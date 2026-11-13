@@ -1,0 +1,12 @@
+{
+  "element_id": "tool-dmm",
+  "domain": "mechanical",
+  "category": "Measuring and inspecting",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 114.0,
+  "height": 180.0,
+  "depth": 50.6,
+  "units": "mm",
+  "datasheet_dims": null
+}

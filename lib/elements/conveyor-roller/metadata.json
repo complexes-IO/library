@@ -1,0 +1,12 @@
+{
+  "element_id": "conveyor-roller",
+  "domain": "mechanical",
+  "category": "Conveyor and material handling",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 750.0,
+  "height": 750.0,
+  "depth": 1500.0,
+  "units": "mm",
+  "datasheet_dims": null
+}

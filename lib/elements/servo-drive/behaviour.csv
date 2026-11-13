@@ -1,0 +1,39 @@
+# behaviour.csv · servo-drive · servo drive 1.0 kW (lib/behaviour.md). Written by elec-r30 from spec.md and pins.csv, in the form of vfd-0.75kw's.
+# Both earth clamps are printed PE; this file names the motor's one PE' so the two pins have two names (one bar inside: an always contact).
+# Not in this file (solver phase 1): the enable, the reference, the encoder and the output. EN / RST / LIM+ / LIM- are 24 V DC inputs whose
+# thresholds are NOT ON FILE (B): IEC 61131-2 (spec.md Dimensions); the output U V W is a three-phase source and three-phase sources live at
+# the assembly (lib/behaviour.md). The encoder channels and the 5 V supply are signal pins the phase-1 solver does not read.
+# Torques: the power clamps' NOT ON FILE (B): IEC 60947-1 (a generic's screw clamps); the plugs' NOT ON FILE (B): IEC 60999 (terminal-plug 2.0).
+kind,a,b,part,when,value,unit,source,note
+pin,L1,t-L1,clamp-L1,,NOT ON FILE (B): IEC 60947-1,N·m,spec.md Dimensions (power clamps: conductor range and torque class B),supply line 1
+pin,L2,t-L2,clamp-L2,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,supply line 2
+pin,L3,t-L3,clamp-L3,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,supply line 3
+pin,PE,t-PE,clamp-PE,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,protective earth (supply side)
+pin,U,t-U,clamp-U,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,motor phase U
+pin,V,t-V,clamp-V,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,motor phase V
+pin,W,t-W,clamp-W,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,motor phase W
+pin,PE',t-PE-m,clamp-PE-m,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,protective earth (motor side; printed PE)
+pin,EN,x1.t-1,x1.clamp-1,,NOT ON FILE (B): IEC 60999,N·m,terminal-plug 2.0 (its clamps' torque class B),enable
+pin,RST,x1.t-2,x1.clamp-2,,NOT ON FILE (B): IEC 60999,N·m,as EN,fault reset
+pin,LIM+,x1.t-3,x1.clamp-3,,NOT ON FILE (B): IEC 60999,N·m,as EN,positive limit (closed: travel allowed)
+pin,LIM-,x1.t-4,x1.clamp-4,,NOT ON FILE (B): IEC 60999,N·m,as EN,negative limit (closed: travel allowed)
+pin,COM,x1.t-5,x1.clamp-5,,NOT ON FILE (B): IEC 60999,N·m,as EN,common of EN RST LIM+ LIM-
+pin,AI+,x1.t-6,x1.clamp-6,,NOT ON FILE (B): IEC 60999,N·m,as EN,speed reference +
+pin,AI-,x1.t-7,x1.clamp-7,,NOT ON FILE (B): IEC 60999,N·m,as EN,speed reference -
+pin,AGND,x1.t-8,x1.clamp-8,,NOT ON FILE (B): IEC 60999,N·m,as EN,analogue 0 V
+pin,RA,x2.t-1,x2.clamp-1,,NOT ON FILE (B): IEC 60999,N·m,as EN,ready relay common
+pin,RC,x2.t-2,x2.clamp-2,,NOT ON FILE (B): IEC 60999,N·m,as EN,ready relay N.O.
+pin,A+,x3.t-1,x3.clamp-1,,NOT ON FILE (B): IEC 60999,N·m,as EN,encoder A
+pin,A-,x3.t-2,x3.clamp-2,,NOT ON FILE (B): IEC 60999,N·m,as EN,encoder A complement
+pin,B+,x3.t-3,x3.clamp-3,,NOT ON FILE (B): IEC 60999,N·m,as EN,encoder B
+pin,B-,x3.t-4,x3.clamp-4,,NOT ON FILE (B): IEC 60999,N·m,as EN,encoder B complement
+pin,5V,x3.t-5,x3.clamp-5,,NOT ON FILE (B): IEC 60999,N·m,as EN,encoder supply 5 V DC
+pin,0V,x3.t-6,x3.clamp-6,,NOT ON FILE (B): IEC 60999,N·m,as EN,encoder supply return
+state,powered,,mains,"V(L1,L2) >= 342 and V(L2,L3) >= 342 and V(L3,L1) >= 342",,,spec.md Class values 1 and 5 (380 V less the 10 % input voltage tolerance),all three line voltages within the band
+state,off,,mains,default,,,spec.md Class values 1,no supply: the drive is dead
+state,fault,,drive,manual toggle,,,spec.md Class values 17 (the ready relay),the twin sets a drive fault (which faults the drive detects is not stated: spec.md Notes)
+state,healthy,,drive,default,,,spec.md Class values 17,
+contact,PE,PE',pe-bar,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,spec.md Named nodes (one bar),the two earth clamps are one conductor
+contact,RA,RC,ready-relay,powered and not fault,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,spec.md Class values 17 (N.O. RA-RC closed while ready; its rating is not stated),open on a fault or with no supply
+pose,led-rdy,,,powered and not fault,1,,spec.md Named nodes,green: supply present and no fault
+pose,led-flt,,,powered and fault,1,,spec.md Named nodes,red: stopped on a fault

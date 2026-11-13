@@ -1,0 +1,12 @@
+{
+  "element_id": "patch-panel",
+  "category": "Industrial networking",
+  "width": null,
+  "height": null,
+  "depth": null,
+  "units": "mm",
+  "datasheet_dims": null,
+  "domain": "controls",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

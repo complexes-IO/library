@@ -1,0 +1,4 @@
+element,version,tag,parent,x,y,z,yaw,params,note
+op-estop-22-2nc,1.1,estop-door,door-r,873.5,-25,1500,0,,in series with the station's estop-1 into the safety relay (relay-safety-2ch-2no1nc)
+op-pb-22-1no,1.1,btn-reset,door-r,933.5,-25,1500,0,colour=M-BLUE,parallel with the station's reset · X2 B
+op-pilot-22,1.0,lamp-power,door-r,993.5,-25,1500,0,colour=M-LENS-WHITE,across the 24 V control supply (not a PLC output)

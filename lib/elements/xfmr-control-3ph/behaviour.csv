@@ -1,0 +1,20 @@
+# behaviour.csv · xfmr-control-3ph · three-phase control transformer 1000 VA, 480 V delta / 208Y-120 V (lib/behaviour.md). Written by elec-r27 from spec.md (Class values, Named nodes), pins.csv and ratings.csv: a generic element, so its class values are its figures.
+# The primary is three loads line to line (delta: 1U-1V, 1V-1W, 1W-1U, a third of the rated apparent power each, written as the load's P). The secondary is a three-phase source (2U 2V 2W about 2N, 120 V line to neutral, Dyn11):
+# three-phase supplies live at the assembly (lib/behaviour.md: sources.csv), not in an element, so no source row is written here; the assembly that places this element writes its secondary in sources.csv while the twin's solver has no transformer ratio (phase 1), as vfd-0.75kw's output. The state `energised` tells the twin the core carries flux.
+# Torques: the clamps' conductor range and torque are class B (IEC 60947-7-1 for terminal blocks, spec.md Dimensions, not on file).
+kind,a,b,part,when,value,unit,source,note
+pin,1U,t-1U,clamp-1U,,NOT ON FILE (B): IEC 60947-7-1,N·m,spec.md Dimensions (conductor range and torque class B),primary line 1 (480 V delta)
+pin,1V,t-1V,clamp-1V,,NOT ON FILE (B): IEC 60947-7-1,N·m,as 1U,primary line 2
+pin,1W,t-1W,clamp-1W,,NOT ON FILE (B): IEC 60947-7-1,N·m,as 1U,primary line 3
+pin,2U,t-2U,clamp-2U,,NOT ON FILE (B): IEC 60947-7-1,N·m,as 1U,secondary line 1 (208 V line to line; 120 V to 2N)
+pin,2V,t-2V,clamp-2V,,NOT ON FILE (B): IEC 60947-7-1,N·m,as 1U,secondary line 2
+pin,2W,t-2W,clamp-2W,,NOT ON FILE (B): IEC 60947-7-1,N·m,as 1U,secondary line 3
+pin,2N,t-2N,clamp-2N,,NOT ON FILE (B): IEC 60947-7-1,N·m,as 1U,secondary neutral (star point)
+pin,PE,t-PE,clamp-PE,,NOT ON FILE (B): IEC 60947-7-1,N·m,as 1U,protective earth of the core frame
+load,1U,1V,primary-uv,,333,W,"spec.md Class values 4, 24 and 25 (480 V delta, 1000 VA): a third of the rated apparent power per line-to-line winding, written as the load's P at its rated V; the solver draws I = P / V at the seen voltage (0.69 A per winding; 1.20 A per line, ratings.csv i1); the no-load current is not stated (spec.md Notes)",primary winding U-V
+load,1V,1W,primary-vw,,333,W,as 1U-1V,primary winding V-W
+load,1W,1U,primary-wu,,333,W,as 1U-1V,primary winding W-U
+state,energised,,core,primary-uv.V > 0 and primary-vw.V > 0 and primary-wu.V > 0,,,"spec.md Class values 4 and 24 (Dyn11): all three primary windings fed; the secondary's 208Y/120 V is the assembly's source row (header), the solver's phase 1 having no ratio",the core carries flux
+state,dead,,core,default,,,spec.md Class values 4,a primary winding unfed: no secondary (single-phasing is the assembly's to show)
+limit,primary-uv primary-vw primary-wu,,,,480,VAC,spec.md Class values 4,the rated primary voltage (no tap)
+limit,secondary,,,,2.78,A,ratings.csv i2 (derived: 1000 VA / (√3 × 208 V)),the rated secondary line current

@@ -1,0 +1,15 @@
+{
+  "element_id": "valve-bank",
+  "category": "Robotics and motion control",
+  "width": 11.5,
+  "height": 87.3,
+  "depth": 89.2,
+  "units": "mm",
+  "datasheet_dims": [
+    89.2,
+    87.3
+  ],
+  "domain": "pneumatics",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

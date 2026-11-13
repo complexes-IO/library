@@ -1,0 +1,2 @@
+# behaviour.csv · panel-clamp · panel mounting clamp (lib/behaviour.md). One fixed body: no terminal, no moving node, no state. The screw that would turn is a later element (spec.md Mechanism).
+kind,a,b,part,when,value,unit,source,note

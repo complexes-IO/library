@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+4,M4 tapped hole (plain),own,,,,design choice (spec.md Its own sizes); the M4 thread form is open (spec.md What it meets),blind 12 deep on the body's axis from its front face; the screw that presses the panel is a common part placed in a later version

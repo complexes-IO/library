@@ -1,0 +1,3 @@
+property,value,unit,status,source
+lamp_v,24,V DC,assumption,LED lamp block class
+load_i,0.02,A,assumption,24 V LED lamp block (typical 15 to 20 mA)

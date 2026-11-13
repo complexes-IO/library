@@ -1,0 +1,160 @@
+# behaviour.csv · io-block-m12-8di8do · 8DI/8DO IP67 I/O block, M12 (lib/behaviour.md). Written by elec-r25 (unattended) from references/measure.md (Ports: manual p. 20 / 32 / 33 / 35)
+# and spec.md (Named nodes). Marks: <port>-<pole> as printed on the port labels (X1..X8 / X01 X02 / X03 X04) with the M12 pole number; each pin is the placed receptacle's contact (port-<x>.insert.c<pole>).
+# The M12 coupling torque 0.5 N·m (techdata p. 2) is the port's nut and not a pin's: the pin rows carry no torque. The bus and the program are phase 5 of the roadmap: each output
+# channel's command is a manual state the twin sets (as plc0). Which supply feeds pins 1 and 3 of the output ports X5..X8 is NOT ON FILE (A): no contact rows there; an output
+# is a source between its channel pin and pin 3. The supply thresholds (18 V) below are Assumption (A) (spec.md Behaviour lists them for EM); the input ON level 11 V is Assumption (B):
+# IEC 61131-2 type 3's table, not in lib/standards/sources.csv (elec-r27, review elec-r25 finding 1). The contact resistances are classed C (review elec-r25 finding 2).
+kind,a,b,part,when,value,unit,source,note
+pin,X03-1,port-x03.insert.c1,x03,,,,references/measure.md Ports (manual p. 33),US +24 V (power in: sensor and module supply)
+pin,X03-2,port-x03.insert.c2,x03,,,,references/measure.md Ports (manual p. 33),GND_UL
+pin,X03-3,port-x03.insert.c3,x03,,,,references/measure.md Ports (manual p. 33),GND_US
+pin,X03-4,port-x03.insert.c4,x03,,,,references/measure.md Ports (manual p. 33),UL +24 V (power in: actuator supply)
+pin,X03-5,port-x03.insert.c5,x03,,,,references/measure.md Ports (manual p. 33),FE
+pin,X04-1,port-x04.insert.c1,x04,,,,references/measure.md Ports (manual p. 33),US +24 V (power out)
+pin,X04-2,port-x04.insert.c2,x04,,,,references/measure.md Ports (manual p. 33),GND_UL (power out)
+pin,X04-3,port-x04.insert.c3,x04,,,,references/measure.md Ports (manual p. 33),GND_US (power out)
+pin,X04-4,port-x04.insert.c4,x04,,,,references/measure.md Ports (manual p. 33),UL +24 V (power out)
+pin,X04-5,port-x04.insert.c5,x04,,,,references/measure.md Ports (manual p. 33),FE (power out)
+pin,X01-1,port-x01.insert.c1,x01,,,,references/measure.md Ports (manual p. 32),TD+ (Ethernet: data; no potential the solver gives)
+pin,X01-2,port-x01.insert.c2,x01,,,,references/measure.md Ports (manual p. 32),RD+
+pin,X01-3,port-x01.insert.c3,x01,,,,references/measure.md Ports (manual p. 32),TD-
+pin,X01-4,port-x01.insert.c4,x01,,,,references/measure.md Ports (manual p. 32),RD-
+pin,X02-1,port-x02.insert.c1,x02,,,,references/measure.md Ports (manual p. 32),TD+ (Ethernet: data)
+pin,X02-2,port-x02.insert.c2,x02,,,,references/measure.md Ports (manual p. 32),RD+
+pin,X02-3,port-x02.insert.c3,x02,,,,references/measure.md Ports (manual p. 32),TD-
+pin,X02-4,port-x02.insert.c4,x02,,,,references/measure.md Ports (manual p. 32),RD-
+pin,X1-1,port-x1.insert.c1,x1,,,,references/measure.md Ports (manual p. 35),+24 V (input port: sensor supply from US)
+pin,X1-2,port-x1.insert.c2,x1,,,,references/measure.md Ports (manual p. 35),Ch. B (input)
+pin,X1-3,port-x1.insert.c3,x1,,,,references/measure.md Ports (manual p. 35),GND
+pin,X1-4,port-x1.insert.c4,x1,,,,references/measure.md Ports (manual p. 35),Ch. A (input)
+pin,X1-5,port-x1.insert.c5,x1,,,,references/measure.md Ports (manual p. 35),FE
+pin,X2-1,port-x2.insert.c1,x2,,,,as X1-1,+24 V
+pin,X2-2,port-x2.insert.c2,x2,,,,as X1-2,Ch. B (input)
+pin,X2-3,port-x2.insert.c3,x2,,,,as X1-3,GND
+pin,X2-4,port-x2.insert.c4,x2,,,,as X1-4,Ch. A (input)
+pin,X2-5,port-x2.insert.c5,x2,,,,as X1-5,FE
+pin,X3-1,port-x3.insert.c1,x3,,,,as X1-1,+24 V
+pin,X3-2,port-x3.insert.c2,x3,,,,as X1-2,Ch. B (input)
+pin,X3-3,port-x3.insert.c3,x3,,,,as X1-3,GND
+pin,X3-4,port-x3.insert.c4,x3,,,,as X1-4,Ch. A (input)
+pin,X3-5,port-x3.insert.c5,x3,,,,as X1-5,FE
+pin,X4-1,port-x4.insert.c1,x4,,,,as X1-1,+24 V
+pin,X4-2,port-x4.insert.c2,x4,,,,as X1-2,Ch. B (input)
+pin,X4-3,port-x4.insert.c3,x4,,,,as X1-3,GND
+pin,X4-4,port-x4.insert.c4,x4,,,,as X1-4,Ch. A (input)
+pin,X4-5,port-x4.insert.c5,x4,,,,as X1-5,FE
+pin,X5-1,port-x5.insert.c1,x5,,,,references/measure.md Ports (manual p. 35),+24 V (output port; which supply feeds it is NOT ON FILE (A))
+pin,X5-2,port-x5.insert.c2,x5,,,,references/measure.md Ports (manual p. 35 / p. 20),Ch. B (output 2 A)
+pin,X5-3,port-x5.insert.c3,x5,,,,references/measure.md Ports (manual p. 35),GND (output port; which ground is NOT ON FILE (A))
+pin,X5-4,port-x5.insert.c4,x5,,,,references/measure.md Ports (manual p. 35 / p. 20),Ch. A (output 2 A)
+pin,X5-5,port-x5.insert.c5,x5,,,,references/measure.md Ports (manual p. 35),FE
+pin,X6-1,port-x6.insert.c1,x6,,,,as X5-1,+24 V
+pin,X6-2,port-x6.insert.c2,x6,,,,as X5-2,Ch. B (output)
+pin,X6-3,port-x6.insert.c3,x6,,,,as X5-3,GND
+pin,X6-4,port-x6.insert.c4,x6,,,,as X5-4,Ch. A (output)
+pin,X6-5,port-x6.insert.c5,x6,,,,as X5-5,FE
+pin,X7-1,port-x7.insert.c1,x7,,,,as X5-1,+24 V
+pin,X7-2,port-x7.insert.c2,x7,,,,as X5-2,Ch. B (output)
+pin,X7-3,port-x7.insert.c3,x7,,,,as X5-3,GND
+pin,X7-4,port-x7.insert.c4,x7,,,,as X5-4,Ch. A (output)
+pin,X7-5,port-x7.insert.c5,x7,,,,as X5-5,FE
+pin,X8-1,port-x8.insert.c1,x8,,,,as X5-1,+24 V
+pin,X8-2,port-x8.insert.c2,x8,,,,as X5-2,Ch. B (output)
+pin,X8-3,port-x8.insert.c3,x8,,,,as X5-3,GND
+pin,X8-4,port-x8.insert.c4,x8,,,,as X5-4,Ch. A (output)
+pin,X8-5,port-x8.insert.c5,x8,,,,as X5-5,FE
+contact,X03-1,X04-1,power-through,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,references/measure.md Ports (manual p. 33: X03 power in / X04 power out; one pinout),US carried on to the next block
+contact,X03-2,X04-2,power-through,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,as X03-1,GND_UL carried on
+contact,X03-3,X04-3,power-through,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,as X03-1,GND_US carried on
+contact,X03-4,X04-4,power-through,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,as X03-1,UL carried on
+contact,X03-5,X04-5,power-through,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,as X03-1,FE carried on
+contact,X03-1,X1-1,us-bus,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,references/measure.md Ports (manual p. 20: X1 to X4 DI type 3 with US; p. 35 pin 1 +24 V),sensor supply (its short-circuit protection is NOT ON FILE (A): a maker's rating; not modelled)
+contact,X03-1,X2-1,us-bus,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,as X03-1 / X1-1,
+contact,X03-1,X3-1,us-bus,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,as X03-1 / X1-1,
+contact,X03-1,X4-1,us-bus,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,as X03-1 / X1-1,
+contact,X03-3,X1-3,us-bus,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,references/measure.md Ports (manual p. 20 inputs with US; p. 33 pin 3 GND_US; p. 35 pin 3 GND),sensor supply return
+contact,X03-3,X2-3,us-bus,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,as X03-3 / X1-3,
+contact,X03-3,X3-3,us-bus,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,as X03-3 / X1-3,
+contact,X03-3,X4-3,us-bus,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,as X03-3 / X1-3,
+contact,X03-5,X1-5,fe-bus,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,references/measure.md Ports (pin 5 FE on every port: manual p. 33 / 35; the housing's FE p. 26),one functional earth
+contact,X03-5,X2-5,fe-bus,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,as X03-5 / X1-5,
+contact,X03-5,X3-5,fe-bus,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,as X03-5 / X1-5,
+contact,X03-5,X4-5,fe-bus,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,as X03-5 / X1-5,
+contact,X03-5,X5-5,fe-bus,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,as X03-5 / X1-5,
+contact,X03-5,X6-5,fe-bus,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,as X03-5 / X1-5,
+contact,X03-5,X7-5,fe-bus,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,as X03-5 / X1-5,
+contact,X03-5,X8-5,fe-bus,always,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,as X03-5 / X1-5,
+state,us-on,,us,"V(X03-1,X03-3) >= 18",,,Assumption (A): present from 18 V: the low end of the 18-30 V supply range in metadata.json (the catalogue entry read 2026-11-02; no brief page); the undervoltage threshold is NOT ON FILE (A) (spec.md Behaviour),module and sensor supply present
+state,us-off,,us,default,,,references/measure.md Ports (manual p. 33),no US: the module is dead
+state,ul-on,,ul,"V(X03-4,X03-2) >= 18",,,Assumption (A): as us-on (UL +24 V: manual p. 33),actuator supply present
+state,ul-off,,ul,default,,,references/measure.md Ports (manual p. 33),no UL: the outputs cannot switch
+state,link-up,,ethernet,manual toggle,,,spec.md Named nodes (P1 / P2 Lnk/Act),the twin sets the Ethernet link (the bus is phase 5)
+state,link-down,,ethernet,default,,,spec.md Named nodes,
+state,diag,,module,manual toggle,,,references/measure.md Named nodes (DIA diagnostic LED red: techdata p. 3; manual p. 12),the twin sets a module diagnostic (which faults raise it is NOT ON FILE (A): the manual's fault list on a page not read; spec.md Behaviour)
+state,healthy,,module,default,,,references/measure.md Named nodes,
+state,bus-fault,,bus,manual toggle,,,spec.md Named nodes (NS / BF red; BF bus fault: manual p. 12),the twin sets a bus fault
+state,bus-ok,,bus,default,,,spec.md Named nodes,
+state,x1a-on,,di-x1a,"us-on and V(X1-4,X1-3) >= 11",,,"Assumption (B): 11 V, IEC 61131-2 type 3 (manual p. 20 names type 3; the level is the standard's table, not on file; spec.md Behaviour)",input X1 Ch. A
+state,x1a-off,,di-x1a,default,,,references/measure.md Ports (manual p. 20),
+state,x1b-on,,di-x1b,"us-on and V(X1-2,X1-3) >= 11",,,as x1a-on,input X1 Ch. B
+state,x1b-off,,di-x1b,default,,,as x1a-off,
+state,x2a-on,,di-x2a,"us-on and V(X2-4,X2-3) >= 11",,,as x1a-on,input X2 Ch. A
+state,x2a-off,,di-x2a,default,,,as x1a-off,
+state,x2b-on,,di-x2b,"us-on and V(X2-2,X2-3) >= 11",,,as x1a-on,input X2 Ch. B
+state,x2b-off,,di-x2b,default,,,as x1a-off,
+state,x3a-on,,di-x3a,"us-on and V(X3-4,X3-3) >= 11",,,as x1a-on,input X3 Ch. A
+state,x3a-off,,di-x3a,default,,,as x1a-off,
+state,x3b-on,,di-x3b,"us-on and V(X3-2,X3-3) >= 11",,,as x1a-on,input X3 Ch. B
+state,x3b-off,,di-x3b,default,,,as x1a-off,
+state,x4a-on,,di-x4a,"us-on and V(X4-4,X4-3) >= 11",,,as x1a-on,input X4 Ch. A
+state,x4a-off,,di-x4a,default,,,as x1a-off,
+state,x4b-on,,di-x4b,"us-on and V(X4-2,X4-3) >= 11",,,as x1a-on,input X4 Ch. B
+state,x4b-off,,di-x4b,default,,,as x1a-off,
+state,x5a-on,,do-x5a,manual toggle,,,references/measure.md Ports (manual p. 20: X5 to X8 DO 2 A),the controller's command for output X5 Ch. A (phase 5: the twin sets it)
+state,x5a-off,,do-x5a,default,,,references/measure.md Ports (manual p. 20),
+state,x5b-on,,do-x5b,manual toggle,,,as x5a-on,output X5 Ch. B
+state,x5b-off,,do-x5b,default,,,as x5a-off,
+state,x6a-on,,do-x6a,manual toggle,,,as x5a-on,output X6 Ch. A
+state,x6a-off,,do-x6a,default,,,as x5a-off,
+state,x6b-on,,do-x6b,manual toggle,,,as x5a-on,output X6 Ch. B
+state,x6b-off,,do-x6b,default,,,as x5a-off,
+state,x7a-on,,do-x7a,manual toggle,,,as x5a-on,output X7 Ch. A
+state,x7a-off,,do-x7a,default,,,as x5a-off,
+state,x7b-on,,do-x7b,manual toggle,,,as x5a-on,output X7 Ch. B
+state,x7b-off,,do-x7b,default,,,as x5a-off,
+state,x8a-on,,do-x8a,manual toggle,,,as x5a-on,output X8 Ch. A
+state,x8a-off,,do-x8a,default,,,as x5a-off,
+state,x8b-on,,do-x8b,manual toggle,,,as x5a-on,output X8 Ch. B
+state,x8b-off,,do-x8b,default,,,as x5a-off,
+source,X5-4,X5-3,do-x5a,x5a-on and ul-on and us-on,24,VDC,references/measure.md Ports (manual p. 33: UL +24 V; p. 20 DO from UL),the output at UL's nominal (its drop is NOT ON FILE (A): a maker's figure the twin would report; spec.md Behaviour)
+source,X5-2,X5-3,do-x5b,x5b-on and ul-on and us-on,24,VDC,as X5-4,
+source,X6-4,X6-3,do-x6a,x6a-on and ul-on and us-on,24,VDC,as X5-4,
+source,X6-2,X6-3,do-x6b,x6b-on and ul-on and us-on,24,VDC,as X5-4,
+source,X7-4,X7-3,do-x7a,x7a-on and ul-on and us-on,24,VDC,as X5-4,
+source,X7-2,X7-3,do-x7b,x7b-on and ul-on and us-on,24,VDC,as X5-4,
+source,X8-4,X8-3,do-x8a,x8a-on and ul-on and us-on,24,VDC,as X5-4,
+source,X8-2,X8-3,do-x8b,x8b-on and ul-on and us-on,24,VDC,as X5-4,
+limit,do-x5a do-x5b do-x6a do-x6b do-x7a do-x7b do-x8a do-x8b,,,,2,A,references/measure.md Ports (manual p. 20: DO 2 A),each output's rated current
+pose,led-x1a,,,x1a-on,1,,spec.md Named nodes (channel A yellow: manual p. 159),
+pose,led-x1b,,,x1b-on,1,,spec.md Named nodes (channel B white: manual p. 159),
+pose,led-x2a,,,x2a-on,1,,as led-x1a,
+pose,led-x2b,,,x2b-on,1,,as led-x1b,
+pose,led-x3a,,,x3a-on,1,,as led-x1a,
+pose,led-x3b,,,x3b-on,1,,as led-x1b,
+pose,led-x4a,,,x4a-on,1,,as led-x1a,
+pose,led-x4b,,,x4b-on,1,,as led-x1b,
+pose,led-x5a,,,x5a-on and ul-on and us-on,1,,as led-x1a,
+pose,led-x5b,,,x5b-on and ul-on and us-on,1,,as led-x1b,
+pose,led-x6a,,,x6a-on and ul-on and us-on,1,,as led-x1a,
+pose,led-x6b,,,x6b-on and ul-on and us-on,1,,as led-x1b,
+pose,led-x7a,,,x7a-on and ul-on and us-on,1,,as led-x1a,
+pose,led-x7b,,,x7b-on and ul-on and us-on,1,,as led-x1b,
+pose,led-x8a,,,x8a-on and ul-on and us-on,1,,as led-x1a,
+pose,led-x8b,,,x8b-on and ul-on and us-on,1,,as led-x1b,
+pose,led-us,,,us-on,1,,references/measure.md Named nodes (system supply LED green: techdata p. 3),green: US present (red on a factory reset: not modelled)
+pose,led-ul,,,ul-on and us-on,1,,spec.md Named nodes (UL green),green: UL present
+pose,led-p1 led-p2,,,link-up and us-on,1,,spec.md Named nodes (P1 / P2 Lnk/Act green),Ethernet link; activity blinking not modelled
+pose,led-dia,,,diag and us-on,1,,references/measure.md Named nodes (DIA red: techdata p. 3; manual p. 12),
+pose,led-bf,,,bus-fault and us-on,1,,spec.md Named nodes (NS / BF red: manual p. 12),
+pose,led-s5,,,us-off,0,,spec.md Named nodes (the 5th status LED: name and colour NOT ON FILE (C)),dark: what lights it follows its name (class C with it: a clear lens the twin does not light)
+pose,sw-x100 sw-x10 sw-x1,,,us-off,0,,references/measure.md Named nodes (rotary switches 0 to 9: manual p. 40; the twin does not read them),at rest: the setting is the commissioner's

@@ -1,0 +1,5 @@
+# behaviour.csv · pipe-stand · roller pipe stand (lib/behaviour.md). Mechanical only: no terminal. Two moving nodes, the free rollers roller-1 and roller-2, each spinning about its own axis; the plate, column, head and blocks are the fixed body.
+kind,a,b,part,when,value,unit,source,note
+state,still,,rollers,default,,,spec.md (Mechanism),the rollers at rest (0)
+state,turning,,rollers,manual toggle,,,spec.md (Mechanism),a pipe fed or turned on the stand turns both rollers
+pose,roller-1 roller-2,,,turning,end,,element.py (each roller rotates 0 to 360 about its axis),

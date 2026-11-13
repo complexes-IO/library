@@ -1,0 +1,2 @@
+# behaviour.csv · cable-tray · perforated cable tray, one straight length (lib/behaviour.md). One body: no terminal, no node, no moving part, no state. The M6 splice holes take the splice screws to the next length, not a port; no load rating is claimed.
+kind,a,b,part,when,value,unit,source,note

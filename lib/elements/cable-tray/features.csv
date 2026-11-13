@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+6.6,M6 clearance medium,clearance,,0.5,bottom face A and the run's end B (each end's own four holes),ISO 273 medium H13 (lib/standards/holes.csv); position Ø0.5 at MMC ≤ H − F = 0.6 (ASME Y14.5 floating fastener),4 x M6 splice holes per end (25 and 75 from the end; both sides): design choice; the two ends of one length are not a fit with each other

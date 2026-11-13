@@ -1,0 +1,12 @@
+{
+  "element_id": "regulator",
+  "domain": "process",
+  "category": "Process instrumentation",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 68.0,
+  "height": 86.0,
+  "depth": 54.0,
+  "units": "mm",
+  "datasheet_dims": null
+}

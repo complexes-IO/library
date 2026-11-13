@@ -1,0 +1,12 @@
+element,version,tag,parent,x,y,z,yaw,params,note
+op-pb-22-1no,1.1,btn-start,lid-1,35,-72,35,0,colour=M-GREEN,start · X1 A
+op-pb-22-1no,1.1,btn-stop,lid-1,85,-72,35,0,colour=M-RED,stop NC · X1 B
+op-pb-22-1no,1.1,btn-reset,lid-1,135,-72,35,0,colour=M-BLUE,reset · X2 B
+op-estop-22-2nc,1.1,estop-1,lid-1,185,-72,35,0,,E-stop · feeds the 440R (monitored output X2 A)
+op-pilot-22,1.0,lamp-run,lid-1,235,-72,35,0,colour=M-LENS-GREEN,run · X6 B
+op-pilot-22,1.0,lamp-fault,lid-1,285,-72,35,0,colour=M-LENS-RED,fault · X5 A
+port-m12-a,1.4,s-x1,end-r,330,-25,10,90,coding=A;panel_t=3.0;pigtail=60;gender=male,start (pin 4) + stop NC (pin 2) to the I/O block X1
+port-m12-a,1.4,s-x2,end-r,330,-25,35,90,coding=A;panel_t=3.0;pigtail=60;gender=male,reset (pin 2) to X2 B
+port-m12-a,1.4,s-x3,end-r,330,-25,60,90,coding=A;panel_t=3.0;pigtail=60;gender=male,run light (pin 2) from X6 B (an output)
+port-m12-a,1.4,s-x5,end-l,-10,-25,20,-90,coding=A;panel_t=3.0;pigtail=60;gender=male,fault light (pin 4) from X5 A
+port-m12-a,1.4,s-es,end-l,-10,-25,50,-90,coding=A;panel_t=3.0;pigtail=60;gender=male,E-stop dual channel (pins 2 / 4) to the panel's p-x3 (440R S12 / S22)

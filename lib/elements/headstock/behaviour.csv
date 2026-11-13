@@ -1,0 +1,2 @@
+# behaviour.csv · headstock · headstock housing (lib/behaviour.md). One body: no terminal, no moving node (`spindle-seat` is fixed; the spindle turns on its own element), no state.
+kind,a,b,part,when,value,unit,source,note

@@ -1,0 +1,9 @@
+# behaviour.csv · receiver-air · generic vertical compressed air receiver (lib/behaviour.md). Five air ports and no electrical pin; no moving node.
+# The air path (1 to 2 through the vessel; the gauge and relief ports and the drain on the same volume) is pneumatic: the solver is electrical in phase 1
+# (lib/toolkit/nets.py), so it is written as notes. No safety claim. NPT joints make up by turns (pneu.NPT L1 + L3), not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,1,port-1,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 1 as toolkit/pneu.py NODES)",the inlet: female NPT 3/8 low on the shell
+pin,2,port-2,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 2 as toolkit/pneu.py NODES)",the outlet: female NPT 3/8 high on the shell; open to 1 through the vessel
+pin,G,port-g,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: pneu.NODES has no gauge number; named port-g as frl's)",the gauge port: female NPT 1/4 on the top end
+pin,relief,port-relief,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: pneu.NODES has no relief number)",for a pressure relief valve: female NPT 1/4 on the top end
+pin,drain,port-drain,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: pneu.NODES has no drain number; drain-auto's port-drain name)",for a drain valve: female NPT 1/4 under the bottom end

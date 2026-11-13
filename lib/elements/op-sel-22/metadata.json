@@ -1,0 +1,14 @@
+{
+  "element_id": "op-sel-22",
+  "category": "HMI and operator controls",
+  "width": 29.8,
+  "height": 29.8,
+  "depth": null,
+  "units": "mm",
+  "datasheet_dims": [
+    29.8
+  ],
+  "domain": "controls",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

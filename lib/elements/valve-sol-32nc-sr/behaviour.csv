@@ -1,0 +1,18 @@
+# behaviour.csv · valve-sol-32nc-sr · generic 3/2 solenoid valve, normally closed, single solenoid, spring return, 24 V DC (lib/behaviour.md). Three air ports; two moving
+# nodes, the locking manual override ovr-12 and the coil's LED led-12. Unpowered the spring holds port-1 blocked and port-2 exhausting through port-3; with coil 12 on (or the
+# override locked on) port-1 feeds port-2 and port-3 is blocked (spec.md, ISO 11727). Those are air paths: the solver is electrical in phase 1 (lib/toolkit/nets.py), so they
+# are notes. The coil's electrical pins (pneu.py D6: M12 pin 4 switched +24 V, pin 3 0 V) come with receptacle-m12 and its port node in a later major (spec.md Notes);
+# until then no pin or load row is written for them (a pin row would name no port node; the coil's current is not stated, so no load row) and the coil's state is a manual
+# stand-in. NPT joints make up by turns (pneu.NPT L1 + L3), not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1). Written by pneu-r69 (backlog, BEH-010; no version change, as the core's 6ffe7ef).
+kind,a,b,part,when,value,unit,source,note
+pin,1,port-1,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 1 as toolkit/pneu.py NODES)",the supply: female NPT 1/4 lower row
+pin,2,port-2,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 2 as toolkit/pneu.py NODES)",the work port: female NPT 1/4 upper row
+pin,3,port-3,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 3 as toolkit/pneu.py NODES)",the exhaust: female NPT 1/4 lower row
+state,coil-off,,coil,default,,,spec.md What (single solenoid; spring return),coil 12 not energised
+state,coil-on,,coil,manual toggle,,,spec.md Notes (stand-in for 24 V on M12 pins 4 and 3 until receptacle-m12 is placed: pneu.py D6),coil 12 energised
+state,ovr-off,,override,default,,,spec.md Named nodes (ovr-12 0: off),the override released
+state,ovr-on,,override,manual toggle,,,spec.md Named nodes (ovr-12 turned 90°: locked on),the override locked on
+state,shifted,,spool,coil-on or ovr-on,,,spec.md What (coil 12 on: port-1 feeds port-2; port-3 blocked),1 to 2 open; 3 shut
+state,rest,,spool,default,,,spec.md What (unpowered: the spring holds port-1 blocked),1 shut; 2 vented through 3
+pose,ovr-12,,,ovr-on,end,,element.py (ovr-12 rotates 0 to 90° about -y),
+pose,led-12,,,coil-on,1,,element.py (led-12 emissive 0 to 1; lit while the coil is on: spec.md Its own sizes),

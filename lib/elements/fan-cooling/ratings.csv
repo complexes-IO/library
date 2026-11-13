@@ -1,0 +1,4 @@
+property,value,unit,status,source
+ue_dc,24,V,generic design,"ETIM 10.0 EC001143 class value: rated voltage (EF000228), 24 V DC; spec.md Class values 2"
+p_consumption,2.4,W,design,"design: 2.4 W, the fan's motor on the panel's 24 V DC control supply, inside psu-24v-2a4's output (the 24 V budget, ELR-020); not a feature of EC001143; spec.md Class values (the paragraph under the table)"
+load_i,0.10,A,derived,"2.4 W / 24 V = 0.100 A (I = P / U; p_consumption and ue_dc above), what the 24 V budget (ELR-020) reads; behaviour.csv load row 1-2"

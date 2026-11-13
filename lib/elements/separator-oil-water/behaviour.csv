@@ -1,0 +1,8 @@
+# behaviour.csv · separator-oil-water · generic static oil-water separator for compressor condensate (lib/behaviour.md). Three liquid ports and no electrical pin or moving
+# node. The condensate comes in at port-in-1 and port-in-2; the water leaves at port-out and the oil runs over into the oil container (spec.md What). Those are liquid paths:
+# the solver is electrical in phase 1 (lib/toolkit/nets.py), so no state or contact row is written. The max. inlet pressure is not on file (class A): no limit row.
+# NPT joints make up by turns (pneu.NPT L1 + L3), not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,in-1,port-in-1,boss,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: a condensate port has no ISO 11727 number; marked by its node's name)",a condensate inlet: female NPT 1/4 on the expansion chamber's top
+pin,in-2,port-in-2,boss,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: as in-1)",the second condensate inlet: female NPT 1/4 on the expansion chamber's top
+pin,out,port-out,boss,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: as in-1)",the clean-water outlet: female NPT 3/8 low on the right end

@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+20.4,plunger bore,internal,,,,design choice (our own),"the Ø20 plunger's bore in the spring housing, 0.2 radial clearance, 40 deep from the housing's top; the spring and the plunger's guide and stop inside are not modelled. Not a clearance hole for a screw"

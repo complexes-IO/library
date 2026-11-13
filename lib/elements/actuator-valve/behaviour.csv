@@ -1,0 +1,10 @@
+# behaviour.csv · actuator-valve · generic double-acting rack and pinion quarter-turn actuator (lib/behaviour.md). Two air ports and no electrical pin; one moving node, the shaft.
+# Air at port 2 turns the shaft open, at port 4 closed (spec.md); the solver is electrical in phase 1 (lib/toolkit/nets.py) and solves no air, so the shaft's states are its two
+# ends, set by a manual state until the pneumatic circuit model drives them. NPT joints make up by turns (pneu.NPT L1 + L3), not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,2,port-2,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 2 as toolkit/pneu.py NODES)",air in opens: female NPT 1/4
+pin,4,port-4,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 4 as toolkit/pneu.py NODES)",air in closes: female NPT 1/4
+state,closed,,shaft,default,,,spec.md Named nodes (shaft 0°: closed),
+state,open,,shaft,manual toggle,,,spec.md Named nodes (90°; stand-in for air at port 2 until the circuit model),
+pose,shaft,,,open,end,,element.py (shaft rotates 0 to 90° about +z),
+limit,shaft,,,,35.1,N·m,spec.md Class values 11 (double-acting torque at 80 psig; theoretical),the torque the shaft gives the valve

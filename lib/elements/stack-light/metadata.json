@@ -1,0 +1,16 @@
+{
+  "element_id": "stack-light",
+  "category": "HMI and operator controls",
+  "width": 70.0,
+  "height": 210.2,
+  "depth": 70.0,
+  "units": "mm",
+  "datasheet_dims": [
+    70.0,
+    70.0,
+    210.2
+  ],
+  "domain": "controls",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

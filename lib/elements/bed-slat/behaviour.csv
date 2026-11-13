@@ -1,0 +1,2 @@
+# behaviour.csv · bed-slat · slat bed (lib/behaviour.md). One body: no terminal, no moving node (`slats` is fixed), no state.
+kind,a,b,part,when,value,unit,source,note

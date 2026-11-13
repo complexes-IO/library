@@ -1,0 +1,13 @@
+{
+  "element_id": "valve-ball-32",
+  "domain": "pneumatics",
+  "category": "Valves",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 50.4,
+  "height": 45.0,
+  "depth": 85.2,
+  "units": "mm",
+  "datasheet_dims": null,
+  "aliases": []
+}

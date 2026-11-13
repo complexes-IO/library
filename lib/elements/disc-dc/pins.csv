@@ -1,0 +1,5 @@
+port,pin,role,signal,rated_A,source
+t-1,1,pass,pole 1 line side (L+ from the supply),25,spec.md Class values 8 and 9 (2 poles; 25 A each)
+t-2,2,pass,pole 1 load side (L+ to the loads),25,as 1
+t-3,3,pass,pole 2 line side (M from the supply),25,as 1
+t-4,4,pass,pole 2 load side (M to the loads),25,as 1

@@ -1,0 +1,2 @@
+# behaviour.csv · palletizer-frame · robot palletizing cell frame (lib/behaviour.md). One body: no terminal, no node, no moving part, no state. The robot, the infeed conveyor, the guarding and the light curtains it will carry are their own elements, placed in a later version; no port is drawn.
+kind,a,b,part,when,value,unit,source,note

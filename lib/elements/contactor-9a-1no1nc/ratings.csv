@@ -1,0 +1,6 @@
+property,value,unit,status,source
+ie_ac3,9,A,on file,CWB spec p. 6
+ie_ac1,25,A,on file,CWB spec p. 6
+coil_v,24,V DC,on file,catalogue number 30C03 (24 V DC coil)
+coil_w,5.8,W,on file,CWB spec p. 17
+load_i,0.24,A,derived,coil 5.8 W at 24 V

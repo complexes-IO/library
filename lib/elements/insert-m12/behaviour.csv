@@ -1,0 +1,3 @@
+# behaviour.csv · insert-m12 · the coded insert carrying five contacts (lib/behaviour.md). The contacts are placed elements (contact-m12-pin / -socket) with their own specs; the
+# insert itself adds nothing electrical: its coding key is geometry (toolkit/m12.py), checked by PIN-030.
+kind,a,b,part,when,value,unit,source,note

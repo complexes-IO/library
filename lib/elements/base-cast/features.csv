@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+13.5,M12 clearance medium,clearance,,1.2,A (the column seat's top face); the eight holes located to each other,ISO 273 medium H13 (lib/standards/holes.csv); position Ø1.2 at MMC ≤ H − F = 1.5 (ASME Y14.5 floating fastener),8 x M12 through the column seat and the body on a 500 x 500 square (corners and mid-sides): column 1.1's pattern

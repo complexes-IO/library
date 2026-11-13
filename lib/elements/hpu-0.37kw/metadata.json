@@ -1,0 +1,15 @@
+{
+  "element_id": "hpu-0.37kw",
+  "domain": "hydraulics",
+  "category": "Hydraulics",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 356.0,
+  "height": 559.5,
+  "depth": 256.0,
+  "units": "mm",
+  "datasheet_dims": null,
+  "aliases": [
+    "hpu-small"
+  ]
+}

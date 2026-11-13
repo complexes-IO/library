@@ -1,0 +1,2 @@
+# behaviour.csv · oven-cure · cure oven body (lib/behaviour.md). One body: no terminal (the door, fan and heaters are separate elements), no moving node, no state.
+kind,a,b,part,when,value,unit,source,note

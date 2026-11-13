@@ -1,0 +1,16 @@
+{
+  "element_id": "ups-rack",
+  "category": "Digital twin server equipment",
+  "width": 439.4,
+  "height": 86.4,
+  "depth": 449.6,
+  "units": "mm",
+  "datasheet_dims": [
+    439.4,
+    86.4,
+    449.6
+  ],
+  "domain": "controls",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

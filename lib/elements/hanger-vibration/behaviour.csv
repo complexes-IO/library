@@ -1,0 +1,2 @@
+# behaviour.csv · hanger-vibration · vibration isolation hanger, generic rubber-in-compression frame (lib/behaviour.md). One fixed body (frame, rubber element, cap): no terminal, no moving node (the class's load and deflection are not stated, so no loaded pose is drawn), no state.
+kind,a,b,part,when,value,unit,source,note

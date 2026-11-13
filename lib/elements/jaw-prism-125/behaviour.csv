@@ -1,0 +1,2 @@
+# behaviour.csv · jaw-prism-125 · generic prism clamping jaw (lib/behaviour.md). One fixed body (the jaw plate with its V-groove): no terminal (the two tapped holes take the host's screws, not ports), no moving node (it moves with the vice's jaw block it is screwed to), no state.
+kind,a,b,part,when,value,unit,source,note

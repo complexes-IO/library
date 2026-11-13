@@ -1,0 +1,5 @@
+# behaviour.csv · lift-transfer · pneumatic lift-and-transfer unit, own design (lib/behaviour.md). Mechanical only: no terminal of its own (the cylinder's air ports, its valve and the sensors are placed elements of a later version, with their own specs). One moving node, the lift carriage `lift`; the base plate and the two posts are the fixed body.
+kind,a,b,part,when,value,unit,source,note
+state,lowered,,lift,default,,,spec.md (Mechanism),the carriage down on the posts: the strips' tops 5 under the rollers' tops; goods roll over them
+state,raised,,lift,manual toggle,,,spec.md (Mechanism),the carriage lifted 20: the strips 15 above the rollers' tops carry the goods across
+pose,lift,,,raised,end,,element.py (node lift: translate 0 to 20 along +z),

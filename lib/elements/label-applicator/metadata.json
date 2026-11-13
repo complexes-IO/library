@@ -1,0 +1,12 @@
+{
+  "element_id": "label-applicator",
+  "category": "Identification",
+  "width": null,
+  "height": null,
+  "depth": null,
+  "units": "mm",
+  "datasheet_dims": null,
+  "domain": "controls",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

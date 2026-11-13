@@ -1,0 +1,10 @@
+# behaviour.csv · gas-regulator · generic pressure reducing valve with a tube flowmeter (lib/behaviour.md). Three gas ports and no electrical pin. One moving node: the flow knob.
+# The gas path (inlet to outlet through the preset seat and the needle) is pneumatic: the solver is electrical in phase 1 (lib/toolkit/nets.py), and spec.md says the twin reads
+# no flow from the knob in this version, so the knob's states name only where it sits. NPT joints make up by turns (pneu.NPT L1 + L3), not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,1,port-1,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 1 as toolkit/pneu.py NODES)",the inlet: female NPT 1/4; the cylinder connection's fit is spec.md's open figure 1 (class B)
+pin,G,port-g,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: pneu.NODES has no gauge number; the port is named port-g as frl's)",the contents gauge port: female NPT 1/4 upstream of the seat (cylinder pressure)
+pin,2,port-2,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 2 as toolkit/pneu.py NODES)",the outlet: female NPT 1/4 to the torch's gas hose
+state,rest,,knob,default,,,spec.md Named nodes (knob 0 to 360°),the knob at 0
+state,turned,,knob,manual toggle,,,spec.md Named nodes (the needle valve's knob; the flow it sets is not modelled),the operator turns the knob to its range end
+pose,knob,,,turned,end,,element.py (knob rotates 0 to 360° about +z),

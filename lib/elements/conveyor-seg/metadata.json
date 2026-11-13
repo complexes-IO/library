@@ -1,0 +1,15 @@
+{
+  "element_id": "conveyor-seg",
+  "category": "Material handling",
+  "width": 336.6,
+  "height": 168.1,
+  "depth": 914.4,
+  "units": "mm",
+  "datasheet_dims": [
+    914.4,
+    168.1
+  ],
+  "domain": "mechanical",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

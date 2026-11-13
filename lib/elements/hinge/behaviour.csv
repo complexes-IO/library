@@ -1,0 +1,5 @@
+# behaviour.csv · hinge · butt hinge 80 x 80 x 3, our own design (lib/behaviour.md). Mechanical only: no terminal and no pin row (the screw holes are the hosts' fixings, not ports). One moving node, `leaf`, turning on the pin; the fixed leaf, its knuckles and the pin are the body. Nothing drives it: the door or guard it carries, moved by hand or by its own actuator.
+kind,a,b,part,when,value,unit,source,note
+state,closed,,leaf,default,,,spec.md (Mechanism),the leaves flat in one plane at 0: the door the moving leaf carries is closed against its frame
+state,open,,leaf,manual toggle,,,spec.md (Mechanism),the moving leaf swung to its range end (180): the door folded back over the frame; any angle between is a part-open door
+pose,leaf,,,open,end,,element.py (the leaf rotates 0 to 180 about the pin's axis z through (0 6 0)),

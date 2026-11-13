@@ -1,0 +1,13 @@
+# behaviour.csv · ipc · industrial PC, box, 24 V DC (lib/behaviour.md). Written by elec-r49 from spec.md and pins.csv, in the form of hmi-7in's.
+# Not in this file (solver phase 1): the program, the operating system and the Ethernet links. The two sockets (placed port-rj45 1.0, tags x2 and x3) carry their own port nodes c-1 ... c-8; a data link is not a circuit the phase-1 solver reads, so no pin of them is here (spec.md Notes).
+# The PC is a load on its 24 V DC supply (ratings.csv: 24 W, a design figure); it runs on any supply voltage, the under-voltage threshold being IEC 61131-2's table (class B, a document wanted).
+# Torques: the plug's clamps are terminal-plug 2.0's (class B, IEC 60999), as that element's behaviour.csv writes them.
+kind,a,b,part,when,value,unit,source,note
+pin,24V,x1.t-1,x1.clamp-1,,NOT ON FILE (B): IEC 60999,N·m,terminal-plug 2.0 behaviour.csv (its clamps' torque class B),PC supply +24 V DC
+pin,0V,x1.t-2,x1.clamp-2,,NOT ON FILE (B): IEC 60999,N·m,as 24V,PC supply 0 V
+pin,FE,x1.t-3,x1.clamp-3,,NOT ON FILE (B): IEC 60999,N·m,as 24V,functional earth
+load,24V,0V,logic,,24.0,W,"spec.md Class values (the paragraph under the table: 24 W): the PC's power written as the load's P; the solver draws I = P / V at the seen voltage (1.00 A at 24 V, ratings.csv load_i)",the board and its processor
+state,powered,,supply,"V('24V','0V') > 0",,,"spec.md Class values 3 (24 V DC supply); the supply's under-voltage threshold is NOT ON FILE (B): IEC 61131-2 (its 24 V DC supply range table is not in lib/standards/sources.csv), so any supply voltage reads as powered (as hmi-7in's powered row)",the PC runs
+state,off,,supply,default,,,spec.md Class values 3,no supply: the lenses dark
+pose,led-pwr,,,powered,1,,spec.md Named nodes,green: powered
+pose,led-run,,,powered,1,,spec.md Named nodes,yellow: running (lit with the supply; the program's own state is not modelled)

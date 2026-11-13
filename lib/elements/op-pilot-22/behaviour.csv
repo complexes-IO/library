@@ -1,0 +1,10 @@
+# behaviour.csv · op-pilot-22 · pilot light (lib/behaviour.md). Taken in by elec-r24 from the core's proposal of 2026-11-09 (lib/requests/core/behaviour/op-pilot-22.csv), checked against spec.md, ratings.csv and element.py (no Stage 0 brief on file: DOC-004).
+# LED lamp block. The marks X1–X2 follow IEC 60947-5-1 Annex L, which is not in lib/standards/sources.csv: Assumption (B) (the standard's table, a document wanted; review elec-r24 finding 2). The screws are not port nodes yet (BEH-020). Torque NOT ON FILE (B): IEC 60947-1 (elec-r27, review elec-r24 finding 1). The lit threshold stays Assumption (A).
+# Two changes from the proposal: the load is ratings.csv's 24 V × 0.02 A = 0.48 W (both rows status assumption there) where the proposal said NOT ON FILE; the lit threshold 20 V is marked Assumption (A) without the proposal's "24 V − 15 %" (that is 20.4).
+kind,a,b,part,when,value,unit,source,note
+pin,X1,,lamp-block,,NOT ON FILE (B): IEC 60947-1,N·m,spec.md (two terminal screws); mark Assumption (B): IEC 60947-5-1 Annex L (the standard's marks; not on file: lib/standards/sources.csv); not port nodes yet,lamp +
+pin,X2,,lamp-block,,NOT ON FILE (B): IEC 60947-1,N·m,as X1,lamp −
+load,X1,X2,lamp-block,,0.48,W,ratings.csv lamp_v 24 V DC × load_i 0.02 A (both status assumption: class A),24 V DC LED lamp block
+state,dark,,lamp-block,default,,,spec.md,
+state,lit,,lamp-block,lamp-block.V >= 20,,,Assumption (A): lit from 20 V; the LED threshold is on no page (ratings.csv lamp_v 24 V DC); the twin reports the lamp lit,
+pose,self,,,lit,1,,element.py (self: emissive 0 to 1); spec.md (the lens is emissive when its bit is on),

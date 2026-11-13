@@ -1,0 +1,16 @@
+{
+  "element_id": "cylinder",
+  "category": "Robotics and motion control",
+  "width": 46.0,
+  "height": 46.0,
+  "depth": 271.0,
+  "units": "mm",
+  "datasheet_dims": {
+    "l": 271.0,
+    "w": 46.0,
+    "h": 46.0
+  },
+  "domain": "pneumatics",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

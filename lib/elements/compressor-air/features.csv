@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+13.616,port bore NPT 1/4 (plain at E1 + h),port,,,,"ASME B1.20.1 by its formulas (toolkit/pneu.py NPT table, EM 2026-11-07): E1 + h, the male's major diameter at the hand-tight plane, as fitting-pushin 2.0 and gauge-p draw their stubs",design choice: the thread drawn plain at the stub's own diameter so the halves touch (tank 2.0's rule); depth L2 + 2 = 12.205; the bore and its number field are cut by two coaxial holes

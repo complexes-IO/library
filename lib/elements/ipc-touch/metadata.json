@@ -1,0 +1,12 @@
+{
+  "element_id": "ipc-touch",
+  "category": "Digital twin server equipment",
+  "width": 455.0,
+  "height": 355.0,
+  "depth": null,
+  "units": "mm",
+  "datasheet_dims": null,
+  "domain": "controls",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

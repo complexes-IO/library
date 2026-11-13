@@ -1,0 +1,4 @@
+match,role,kind,check,position_tol,datums,source,note
+36.0,ring bore on the shaft,own,,,,design choice (spec.md Dimensions),the body's free bore: 0.90 x the 40 shaft; stretched onto the shaft it grips it and turns with it; no fastener or port
+42.0,lip root ring bore,own,,,,design choice (spec.md Dimensions),the inside of the lip's root ring: the V between the lip and the shaft; no fastener or port
+47.0,lip tip ring bore,own,,,,design choice (spec.md Dimensions),the inside of the lip's tip ring; no fastener or port

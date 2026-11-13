@@ -1,0 +1,12 @@
+{
+  "element_id": "enc-wm",
+  "domain": "electrical",
+  "category": "Enclosures",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 600.0,
+  "height": 800.0,
+  "depth": 252.0,
+  "units": "mm",
+  "datasheet_dims": null
+}

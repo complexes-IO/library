@@ -1,0 +1,9 @@
+property,value,unit,status,source
+vout,24,V DC,on file,maker's datasheet sheet p. 1 (references/measure.md)
+pout,60,W,on file,maker's datasheet sheet p. 1 (references/measure.md)
+iout,2.5,A,derived,"derived: I = P / U = 60 W / 24 V = 2.5 A (pout and vout above, sheet p. 1)"
+derate,0.8,,assumption,continuous loading kept at 80 % of rating (Complexes design rule)
+vin_min,85,V AC,on file,"maker's datasheet sheet p. 1 (references/measure.md): input 85-264 VAC, the lower end"
+vin_max,264,V AC,on file,"maker's datasheet sheet p. 1 (references/measure.md): input 85-264 VAC, the upper end"
+vadj_min,21.6,V DC,on file,"maker's datasheet sheet p. 1 (references/measure.md): output adjustable 21.6-27.6 V, the lower end (node vadj)"
+vadj_max,27.6,V DC,on file,"maker's datasheet sheet p. 1 (references/measure.md): output adjustable 21.6-27.6 V, the upper end (node vadj)"

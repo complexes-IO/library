@@ -1,0 +1,17 @@
+# behaviour.csv · joystick-22 · joystick control switch, 2 directions, spring return, 1 N.O. per direction (lib/behaviour.md). Written by elec-r29 (unattended, 2026-11-11) from spec.md (Class values, Switching program, Named nodes), pins.csv, ratings.csv and element.py: a generic element, so its class values are its figures.
+# The lever (self, rotate about +x, -20 ... +20 deg) springs back to 0 from either side (spec.md Class values 9): up (-20) closes 13-14, down (+20) closes 23-24, released opens both (spec.md Switching program). The return spring and the linkage to the contact blocks are not modelled (spec.md Notes): the contacts follow the lever's direction.
+# Each terminal is a screw clamp with its own port node t-<mark> (element.py blocks()). The clamps' conductor range and torque are class B (IEC 60947-1 not on file: spec.md Dimensions). The marks 13-14 / 23-24 are labels in the IEC 60947-1 function-number form (a design choice; the standard is not on file: spec.md).
+# Contact resistances are not stated and the phase-1 solver reads none for a closed contact: the contact rows carry no figure.
+kind,a,b,part,when,value,unit,source,note
+pin,13,t-13,terminal-13,,NOT ON FILE (B): IEC 60947-1,N·m,spec.md Dimensions (terminals: two screw clamps per block; conductor range and torque class B); pins.csv t-13,direction up: N.O. 13-14 line side
+pin,14,t-14,terminal-14,,NOT ON FILE (B): IEC 60947-1,N·m,as 13,direction up: N.O. 13-14 load side
+pin,23,t-23,terminal-23,,NOT ON FILE (B): IEC 60947-1,N·m,as 13,direction down: N.O. 23-24 line side
+pin,24,t-24,terminal-24,,NOT ON FILE (B): IEC 60947-1,N·m,as 13,direction down: N.O. 23-24 load side
+state,released,,lever,default,,,spec.md Switching program (0: both contacts open); Class values 9 (spring return to 0),the lever at 0: rest as built
+state,up,,lever,manual momentary,,,spec.md Switching program (up: -20 deg); Class values 9 (released: it springs back),the lever held up
+state,down,,lever,manual momentary,,,spec.md Switching program (down: +20 deg); Class values 9,the lever held down
+contact,13,14,contact-13-14,up,,,spec.md Switching program (up closes 13-14); Class values 6 (1 N.O. per direction),N.O. up
+contact,23,24,contact-23-24,down,,,spec.md Switching program (down closes 23-24); Class values 6,N.O. down
+pose,self,,,up,-20,,element.py (self rotates about +x with range -20 ... +20 at tilt 0; TILT 20 deg a design choice: spec.md Dimensions travel),the knob rises
+pose,self,,,down,20,,as up,the knob drops
+limit,contact-13-14 contact-23-24,,,,6,A,ratings.csv ie_ac21_400v (ETIM 10.0 EC000632 class value EF002417; spec.md Class values 1),each contact's rated operation current Ie at AC-21 400 V

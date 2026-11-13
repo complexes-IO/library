@@ -1,0 +1,12 @@
+{
+  "element_id": "pressure-switch",
+  "domain": "electrical",
+  "category": "Sensors for automation technology",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 44.0,
+  "height": 86.0,
+  "depth": 40.6,
+  "units": "mm",
+  "brief": "our own design: generic Pressure switch (ETIM 10.0 EC000243) for hydraulic oil, 1 change-over contact (11-12 / 11-14), 24 V DC, setting 20-200 bar on rising pressure, 250 bar max., stem to a host's gauge port as hyd-gauge 1.1 (thread open), M20 x 1.5 cable entry; no reference part measured (spec.md Class values)"
+}

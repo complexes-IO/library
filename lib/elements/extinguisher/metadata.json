@@ -1,0 +1,16 @@
+{
+  "element_id": "extinguisher",
+  "category": "Safety systems",
+  "width": 184.2,
+  "height": 389.0,
+  "depth": 107.1,
+  "units": "mm",
+  "datasheet_dims": [
+    107.1,
+    389.0,
+    184.2
+  ],
+  "domain": "safety",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

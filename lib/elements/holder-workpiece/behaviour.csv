@@ -1,0 +1,8 @@
+# behaviour.csv · holder-workpiece · generic workpiece holder (lib/behaviour.md). Written by mech-r129 from element.py: no terminal (a bench tool; nothing is wired or plugged); two moving nodes, `arm-left` and `arm-right` (each a swivel boss, rod and clip block), each rotating about (0, 1, 0) 0 to 60 degrees about the cross bar (SWING: level at 0; the clip turned down toward the bench at the end). The worker sets each arm by hand, so the twin sets them as the operator's inputs. No holding force here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note
+state,l-level,,arm-left,default,,,element.py (ORIGIN: the rods along +x at 0),the left arm level
+state,l-down,,arm-left,manual toggle,,,element.py (node arm-left: rotate 0 to 60 degrees),the left clip turned down toward the bench
+state,r-level,,arm-right,default,,,element.py (ORIGIN: the rods along +x at 0),the right arm level
+state,r-down,,arm-right,manual toggle,,,element.py (node arm-right: rotate 0 to 60 degrees),the right clip turned down toward the bench
+pose,arm-left,,,l-down,end,,element.py (node arm-left: rotate 0 to 60 degrees),
+pose,arm-right,,,r-down,end,,element.py (node arm-right: rotate 0 to 60 degrees),

@@ -1,0 +1,11 @@
+# behaviour.csv · control-valve · generic pneumatic two-way control valve, normally closed, spring return (lib/behaviour.md). Two liquid ports and one control air port; no
+# electrical pin; one moving node, the stem's position indicator. Air at port 12 lifts the plug open and the spring closes it (spec.md); the solver is electrical in phase 1
+# (lib/toolkit/nets.py) and solves no air or liquid, so the stem's states are its two ends, set by a manual state until the pneumatic circuit model drives them.
+# NPT joints make up by turns (pneu.NPT L1 + L3), not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,in,port-in,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: a liquid port has no ISO 11727 number; marked by its node's name as coolant-pump's port-out)",the inlet: female NPT 3/8
+pin,out,port-out,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: as in)",the outlet: female NPT 3/8
+pin,12,port-12,actuator,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 12: the signal that joins 1 to 2)",the control air: female NPT 1/8; air in opens
+state,closed,,stem,default,,,spec.md Named nodes (stem 0: the spring holds the plug on its seat),in and out shut
+state,open,,stem,manual toggle,,,spec.md Named nodes (10 mm lift; stand-in for air at port 12 until the circuit model),in to out open
+pose,stem,,,open,end,,element.py (stem translates 0 to 10 mm along +z),

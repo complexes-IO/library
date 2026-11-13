@@ -1,0 +1,2 @@
+# behaviour.csv · damping-rod-angle · angle damping rod, generic rubber-metal slanting rail (lib/behaviour.md). One fixed body (base and holder, two rubber layers, the wedge): no terminal, no moving node (the class states no stiffness or load, so no loaded pose is drawn), no state.
+kind,a,b,part,when,value,unit,source,note

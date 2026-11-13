@@ -1,0 +1,3 @@
+match,role,kind,check,position_tol,datums,source,note
+11.0,M10 clearance medium,clearance,,0.5,"A (the base's underside), B (the plane x 0, across the rail), C (the plane y 0, along it)",ISO 273 medium H13 (lib/standards/holes.csv); position Ø0.5 at MMC ≤ H − F = 1.0 (ASME Y14.5 floating fastener: the host's pattern takes the other half),"4 x Ø11 through the base at x +-56, y +-60: design choice"
+8.3762,M10 tapped hole (minor diameter),own,,,,"derived: derive.thread(10.0, 1.5) (ISO 68-1 basic profile; ISO 965-1 clause 10, internal 6H: D1 8.3762 to 8.6817; ISO 261 pitch 1.5); the thread itself is not drawn","2 x 15 deep in the wedge's top face at x 0, y +-45, for the machine's foot (its screws are the host's)"

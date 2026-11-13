@@ -1,0 +1,18 @@
+# behaviour.csv · disc-3p-30a · rotary disconnect, handle on the door (lib/behaviour.md). Taken in by elec-r24 from the core's proposal of 2026-11-09 (lib/requests/core/behaviour/disc-3p-30a.csv), checked against references/measure.md, ratings.csv and element.py.
+# The brief gives three poles with screw terminals on the body (Ports) and a two-position handle lockable in OFF only (datasheet p. 3); the terminal marks and torque are on no page read. The marks L1–L3 / T1–T3 follow IEC 60947-3 marking, which is not in lib/standards/sources.csv: Assumption (A) until a page or the standard is on file.
+# Differences from the proposal: the pins cite the brief's Ports (it says nothing of rows or legibility); the contacts cite the brief (3-pole non-fusible) not datasheet p. 3 (the handle table); the OFF state no longer claims the door can open (the door interlock is on no page); the 90° handle swing is the spec's Assumption.
+# elec-r27 (review elec-r24 finding 1): the torques classed B (IEC 60947-1, not on file); the marks stay Assumption (A) (the lane's call: the element has a brief).
+# elec-r31 (1.4): every pin's b names its port node t-<pole>-line / t-<pole>-load (the screw heads; the node names say pole and side, not the assumed mark): BEH-020 clears.
+kind,a,b,part,when,value,unit,source,note
+pin,L1,t-1-line,terminal,,NOT ON FILE (B): IEC 60947-1,N·m,brief Ports (screw terminals on the body; 3 poles); mark per IEC 60947-3 (not on file: Assumption (A)); the node since 1.4 (spec.md Named nodes),line 1 in (the top terminal of pole 1)
+pin,L2,t-2-line,terminal,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,line 2 in
+pin,L3,t-3-line,terminal,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,line 3 in
+pin,T1,t-1-load,terminal,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,load 1 out (the bottom terminal of pole 1)
+pin,T2,t-2-load,terminal,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,load 2 out
+pin,T3,t-3-load,terminal,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,load 3 out
+state,off,,handle,default,,,datasheet p. 3 (two-position; lockable in OFF only) in the brief's Documents,the handle at OFF
+state,on,,handle,manual toggle,,,datasheet p. 3 (two-position),the handle turned to ON; a door interlock is on no page read
+contact,L1,T1,pole-1,on,,,brief (non-fusible 3-pole rotary disconnect: the poles close together with the handle); ratings.csv ith 30 A,
+contact,L2,T2,pole-2,on,,,as L1–T1,
+contact,L3,T3,pole-3,on,,,as L1–T1,
+pose,handle,,,on,end,,element.py (handle rotates 0–90; the 90° is an Assumption (C) in spec.md: the angle is NOT ON FILE (C)),

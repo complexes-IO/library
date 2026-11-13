@@ -1,0 +1,5 @@
+# behaviour.csv · duct-40x60 · wiring duct (lib/behaviour.md). One moving node: the cover. Taken from the core's proposal (lib/requests/core/behaviour/duct-40x60.csv, 2026-11-09) by mech-r67: the cover's 0–40 lift-off is element.py's TRAVEL, Assumption (C) in spec.md.
+kind,a,b,part,when,value,unit,source,note
+state,on,,cover,default,,,spec.md,
+state,off,,cover,manual toggle,,,spec.md,the cover lifted off (service)
+pose,cover,,,off,end,,element.py (cover translates 0–40),

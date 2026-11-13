@@ -1,0 +1,5 @@
+# behaviour.csv · clamp-toggle-hook · generic hook-type toggle clamp (lib/behaviour.md). Written by mech-r130 from element.py: no terminal (the 4 x M5 base holes take screws, not ports; the hook meets the other part's keeper); one moving node, `lever` (the side plates, both pins, the U-hook and the handle), rotates about (0, -1, 0) 0 to 90 degrees (OPEN: closed at 0, the lever level; the hook lifted clear at the end). The operator lifts and lowers the handle, so the twin sets it as the operator's input. No tensile force here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note
+state,closed,,lever,default,,,element.py (ORIGIN: the lever level at 0),the lever down and the hook reaching toward +x
+state,open,,lever,manual toggle,,,element.py (node lever: rotate 0 to 90 degrees),the handle lifted 90 degrees and the hook lifted off the keeper
+pose,lever,,,open,end,,element.py (node lever: rotate 0 to 90 degrees),

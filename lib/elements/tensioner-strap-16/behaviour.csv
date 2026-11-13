@@ -1,0 +1,5 @@
+# behaviour.csv · tensioner-strap-16 · generic strapping device (lib/behaviour.md). Written by mech-r129 from element.py: no terminal (a hand tool; nothing is wired or plugged); one moving node, `lever` (the side plates and handle bar with the shaft and feed wheel), rotates about (0, 1, 0) 0 to 60 degrees (SWING: down at 0; the top of a working stroke at the end). The operator pumps the lever, so the twin sets it as the operator's input. No strap tension here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note
+state,down,,lever,default,,,element.py (ORIGIN: the side plates level at 0),the lever at rest
+state,stroke,,lever,manual toggle,,,element.py (node lever: rotate 0 to 60 degrees),the handle lifted: one working stroke of the feed wheel
+pose,lever,,,stroke,end,,element.py (node lever: rotate 0 to 60 degrees),

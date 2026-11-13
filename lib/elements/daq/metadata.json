@@ -1,0 +1,16 @@
+{
+  "element_id": "daq",
+  "category": "Digital twin server equipment",
+  "width": 22.5,
+  "height": 120.0,
+  "depth": 113.9,
+  "units": "mm",
+  "datasheet_dims": [
+    22.5,
+    120.0,
+    113.9
+  ],
+  "domain": "controls",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

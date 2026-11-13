@@ -1,0 +1,2 @@
+# behaviour.csv · pallet · four-way block pallet (lib/behaviour.md). One body: no terminal, no node, no moving part, no state. The fork openings and the colliders are geometry the twin reads as obstacles, not ports; no load rating is claimed.
+kind,a,b,part,when,value,unit,source,note

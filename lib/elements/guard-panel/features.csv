@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+9.0,M8 clearance medium,clearance,,0.8,A (the mounting face: the back faces of the frame and the lugs); the four holes located to each other,ISO 273 medium H13 (lib/standards/holes.csv); position Ø0.8 at MMC ≤ H − F = 1.0 (ASME Y14.5 floating fastener),4 x M8 fixing holes at 1040 x 600 (one per lug): design choice

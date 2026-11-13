@@ -1,0 +1,13 @@
+{
+  "element_id": "control-valve-32-mix",
+  "domain": "process",
+  "category": "Process instrumentation",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 88.0,
+  "height": 153.5,
+  "depth": 80.0,
+  "units": "mm",
+  "datasheet_dims": null,
+  "aliases": []
+}

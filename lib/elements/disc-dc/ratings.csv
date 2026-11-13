@@ -1,0 +1,4 @@
+property,value,unit,status,source
+ith,25,A,generic design,"ETIM 10.0 EC004963 class value: rated current (EF000227), each pole; spec.md Class values 8"
+ue_max,220,V DC,generic design,"ETIM 10.0 EC004963 class value: rated voltage DC (EF007067), one DC circuit through both poles; spec.md Class values 7"
+poles,2,,generic design,"ETIM 10.0 EC004963 class value: number of poles (EF001391); spec.md Class values 9"

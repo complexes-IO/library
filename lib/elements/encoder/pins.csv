@@ -1,0 +1,6 @@
+port,pin,role,signal,rated_A,source
+port-x1,+V,load+:24V,supply +24 V DC (the electronics and the push-pull output stages),,spec.md Class values (the class has no supply feature; ratings.csv u_supply design 24 V DC); the supply current not stated
+port-x1,0V,load0,supply return,,as +V
+port-x1,A,out,channel A: 1024 pulses per revolution (push-pull HTL),,spec.md Class values 3 and 4
+port-x1,B,out,channel B: 1024 pulses per revolution a quarter period from A (push-pull HTL),,spec.md Class values 3 and 4
+port-x1,N,out,zero pulse N: one per revolution (push-pull HTL),,spec.md Class values 4 and 13

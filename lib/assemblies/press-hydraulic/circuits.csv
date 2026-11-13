@@ -1,0 +1,21 @@
+circuit,kind,voltage,role,tag,note
+# the machine's circuits for the ratings checker (the single-line view), as dm-motor-starter-cell's
+motor-m1,motor-branch,480,isolation,panel.q1,main disconnect
+motor-m1,motor-branch,480,protective,panel.q3,HPU motor branch breaker (NEC 430.52)
+motor-m1,motor-branch,480,switching,panel.k1,HPU motor contactor
+motor-m1,motor-branch,480,overload,panel.f1,thermal overload (the HPU motor's FLA when on file)
+motor-m1,motor-branch,480,load,machine.hpu.motor,the HPU's 7.5 kW pump motor (hpu-7.5kw ratings.csv)
+control-120,control,120,transformer,panel.t1,control transformer 480/120 (xfmr-control)
+control-120,control,120,protective,panel.q2,2-pole control-circuit breaker
+control-120,control,120,load,panel.g1,24 V DC supply (psu-24v-2a4)
+dc-24v,dc-supply,24,supply,panel.g1,
+dc-24v,dc-supply,24,load,panel.k1,contactor coil
+dc-24v,dc-supply,24,load,panel.k-safe,safety relay
+dc-24v,dc-supply,24,load,panel.plc-1,controller
+dc-24v,dc-supply,24,load,panel.hmi1,HMI
+dc-24v,dc-supply,24,load,machine.v1.a,valve solenoid a
+dc-24v,dc-supply,24,load,machine.v1.b,valve solenoid b
+dc-24v,dc-supply,24,load,machine.lc1,light curtain
+dc-24v,dc-supply,24,load,machine.pt1,pressure transmitter loop
+dc-24v,dc-supply,24,load,panel.door.h1,run light
+dc-24v,dc-supply,24,load,panel.door.h2,fault light

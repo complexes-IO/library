@@ -1,0 +1,14 @@
+{
+  "element_id": "stage-belt",
+  "category": "Robotics and motion control",
+  "width": null,
+  "height": null,
+  "depth": null,
+  "units": "mm",
+  "datasheet_dims": [
+    73.0
+  ],
+  "domain": "robotics",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

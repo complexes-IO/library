@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+9.0,M8 clearance medium,clearance,,0.5,A (the bottom's underside; each caster plate's four holes located to each other),ISO 273 medium H13 (lib/standards/holes.csv); position Ø0.5 at MMC ≤ H − F = 1.0 (ASME Y14.5 floating fastener),4 x 4 M8 caster plate fixing holes in the bottom on 80 x 60 centres per plate: design choice

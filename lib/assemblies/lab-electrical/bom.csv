@@ -1,0 +1,2 @@
+element,version,tag,parent,x,y,z,yaw,params,note
+dm-motor-starter-cell,1.0,cell-1,floor,500,24857,0,0,,"the motor starter cell (panel + machine), its back 100 mm off the north wall, at the room's west end; fronts face south, to the door"

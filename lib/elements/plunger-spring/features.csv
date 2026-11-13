@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+4.2,pin bore,internal,,,,design choice (our own),"the Ø4 thrust pin's bore in the body, 0.1 radial clearance, 9 deep from the front face; the spring and the pin's retaining collar inside are not modelled. Not a clearance hole for a screw"

@@ -1,0 +1,12 @@
+{
+  "element_id": "diverter",
+  "domain": "mechanical",
+  "category": "Conveyor and material handling",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 160.0,
+  "height": 860.0,
+  "depth": 880.0,
+  "units": "mm",
+  "datasheet_dims": null
+}

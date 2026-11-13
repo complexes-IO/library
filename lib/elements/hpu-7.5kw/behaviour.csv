@@ -1,0 +1,12 @@
+# behaviour.csv · hpu-7.5kw · generic hydraulic power unit, press class, 7.5 kW 460 V 3-phase (lib/behaviour.md). The supply port `pwr` (pins.csv: L1 L2 L3 PE) and three oil
+# ports; no moving node (the relief valve's knob is fixed in 1.x). Its load (the drive motor) is not written as a row: the full-load current is derived from 1.3 (ratings.csv fla,
+# 12.08 A, which the ELR checks read) but the motor is drawn as one solid with no model of its own; no state rows. The oil paths are hydraulic, not the phase 1 solver's (lib/toolkit/nets.py).
+# Torque: not claimed (lib/behaviour.md, pin; request pneu-13 1): the terminals are not modelled, and the oil ports' fitting stud ends set theirs (the ports' thread open, class B).
+kind,a,b,part,when,value,unit,source,note
+pin,L1,pwr,terminal,,not claimed,N·m,not claimed: the terminal is not modelled; a placed motor element carries its own (IEC 60947-1); pins.csv (pwr L1: the motor's U1),phase L1 of the 460 V supply (ratings.csv)
+pin,L2,pwr,terminal,,not claimed,N·m,not claimed: the terminal is not modelled; a placed motor element carries its own (IEC 60947-1); pins.csv (pwr L2: V1),phase L2
+pin,L3,pwr,terminal,,not claimed,N·m,not claimed: the terminal is not modelled; a placed motor element carries its own (IEC 60947-1); pins.csv (pwr L3: W1),phase L3
+pin,PE,pwr,terminal,,not claimed,N·m,not claimed: the terminal is not modelled; a placed motor element carries its own (IEC 60947-1); pins.csv (pwr PE; the terminal box's bonding terminal),protective earth
+pin,P,port-p,valve block,,not claimed,N·m,not claimed: the fitting's stud end sets it (SAE J1926-2 / -3); spec.md Ports (design: P the trade's letter for the pressure port; ISO 9461 not on file; unit hyd-port),the pump's delivery through the relief valve's block
+pin,T,port-t,valve block,,not claimed,N·m,not claimed: the fitting's stud end sets it (SAE J1926-2 / -3); spec.md Ports (design: T the trade's letter for the tank port; ISO 9461 not on file; unit hyd-port),the machine's return oil through the return filter
+pin,G,port-g,valve block,,not claimed,N·m,not claimed: the fitting's stud end sets it (SAE J1926-2 / -3); spec.md Ports (design: G as frl's and gas-regulator's gauge ports; ISO 9461 not on file; unit hyd-port),the pressure gauge's port (hyd-gauge)

@@ -1,0 +1,5 @@
+port,pin,role,signal,rated_A,source
+t-1,1,pass,pole 1 line (top),,spec.md Dimensions (marks a design choice); rated current not chosen (spec.md Class values 5)
+t-2,2,pass,pole 1 load (bottom),,as 1
+t-3,3,pass,pole 2 line (top),,as 1
+t-4,4,pass,pole 2 load (bottom),,as 1

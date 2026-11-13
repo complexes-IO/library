@@ -1,0 +1,2 @@
+# behaviour.csv · strip-rubber-corner-30x30 · Rubber corner guard section, generic (lib/behaviour.md). Written by mech-r139 from element.py: one fixed body (plain stock), no terminal, no moving node, no state; the bead's squeeze under a strike is not modelled. A structural part's file: the header only. No impact, compression or hardness figure here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note

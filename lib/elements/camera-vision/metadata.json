@@ -1,0 +1,16 @@
+{
+  "element_id": "camera-vision",
+  "category": "Machine vision",
+  "width": 67.0,
+  "height": 88.0,
+  "depth": 41.4,
+  "units": "mm",
+  "datasheet_dims": [
+    88.0,
+    67.0,
+    41.4
+  ],
+  "domain": "sensors",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

@@ -1,0 +1,9 @@
+# behaviour.csv · capacitor-run · motor-run capacitor 10 µF 450 V AC (lib/behaviour.md). Written by elec-r25 (unattended) from spec.md, pins.csv and ratings.csv
+# (a generic element: the class values are its design inputs). The solver's phase 1 has no reactive model: the capacitor is a load of its 60 Hz reactance, with no phase shift.
+# The clamps' torque is NOT ON FILE (B) (spec.md Dimensions: IEC 60947-1 not on file). No moving or lit part: no state and no pose rows.
+# elec-r27 (review elec-r25 finding 2): the class now on each torque cell: (B) IEC 60947-1.
+kind,a,b,part,when,value,unit,source,note
+pin,1,t-1,clamp-1,,NOT ON FILE (B): IEC 60947-1,N·m,pins.csv (t-1: no polarity); spec.md Dimensions (conductor range and torque class B),capacitor terminal 1
+pin,2,t-2,clamp-2,,NOT ON FILE (B): IEC 60947-1,N·m,as 1,capacitor terminal 2
+load,1,2,capacitor,,265.3,ohm,"derived: 1 / (2 pi x 60 Hz x 10 uF) = 265.3 ohm (ratings.csv capacitance and i_60hz: 450 V / 1.70 A)",its reactance at 60 Hz; at 50 Hz it is 318.3 ohm (the solver doesn't change it with frequency)
+limit,capacitor,,,,450,VAC,ratings.csv un (ETIM 10.0 EC001516 class value EF005127; spec.md Class values 3),the most the capacitor may see

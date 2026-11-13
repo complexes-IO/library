@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+3.5,M3 clearance medium,clearance,,0.3,A (back face) | B | C,own design,positional tolerance of the 4-hole pattern on the Complexes drawing

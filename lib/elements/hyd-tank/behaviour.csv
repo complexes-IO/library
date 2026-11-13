@@ -1,0 +1,7 @@
+# behaviour.csv · hyd-tank · generic hydraulic reservoir (lib/behaviour.md). Two oil ports and a drain; no electrical pin and no moving node. The oil paths (return to
+# suction through the tank; the drain) are hydraulic: the solver is electrical in phase 1 (lib/toolkit/nets.py) and solves no oil, so no state or contact row is
+# written. The oil ports' thread is open (class B), set by the fitting's stud end, and an NPT joint makes up by turns (pneu.NPT L1 + L3), not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,suction,port-suction,cover,,not claimed,N·m,not claimed: the fitting's stud end sets it (SAE J1926-2 / -3); spec.md Ports (design: marked by its name; the hydraulic port marking standard is not on file),the pump's suction line (unit hyd-port)
+pin,return,port-return,cover,,not claimed,N·m,not claimed: the fitting's stud end sets it (SAE J1926-2 / -3); spec.md Ports (design: marked by its name; the hydraulic port marking standard is not on file),the circuit's return oil (unit hyd-port)
+pin,drain,port-drain,boss,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: a liquid port has no ISO 11727 number; marked by its node's name as tank's)",the drain: female NPT 3/8 low on the return end

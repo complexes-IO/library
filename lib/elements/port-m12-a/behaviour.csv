@@ -1,0 +1,8 @@
+# behaviour.csv · port-m12-a · M12 panel port (lib/behaviour.md). A bulkhead: the five contacts pass the panel's wires to the cordset's pins; the host's pins.csv says what
+# each carries. Solder / crimp terminations behind the panel: no screw torque. The seal is a placed element (seal-m12) with its own spec.
+kind,a,b,part,when,value,unit,source,note
+pin,1,insert.c1,insert,,,,toolkit/m12.py (contact c1: the port's pin 1),
+pin,2,insert.c2,insert,,,,toolkit/m12.py,
+pin,3,insert.c3,insert,,,,toolkit/m12.py,
+pin,4,insert.c4,insert,,,,toolkit/m12.py,
+pin,5,insert.c5,insert,,,,toolkit/m12.py,

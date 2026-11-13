@@ -1,0 +1,13 @@
+{
+  "element_id": "seal-tape-epdm",
+  "domain": "pneumatics",
+  "category": "Seals",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 200.74,
+  "height": 15.0,
+  "depth": 200.74,
+  "units": "mm",
+  "datasheet_dims": null,
+  "aliases": []
+}

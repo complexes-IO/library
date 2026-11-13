@@ -1,0 +1,2 @@
+# behaviour.csv · bearing-pillow · pillow block bearing unit, generic (lib/behaviour.md). One fixed body (the housing): no terminal, no moving node (the shaft is the host's), no state.
+kind,a,b,part,when,value,unit,source,note

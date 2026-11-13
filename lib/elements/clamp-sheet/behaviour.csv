@@ -1,0 +1,10 @@
+# behaviour.csv · clamp-sheet · generic single-acting pneumatic sheet clamp for a turret punch (lib/behaviour.md). One air port and no electrical pin; one moving node,
+# the upper jaw with its rod. Air into port-cap presses the jaw down onto the sheet; the spring inside lifts it when the air is let out (spec.md); the solver is electrical
+# in phase 1 (lib/toolkit/nets.py) and solves no air, so its states are its two ends, set by a manual state until the pneumatic circuit model drives them. NPT joints make up
+# by turns (pneu.NPT L1 + L3), not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,cap,port-cap,arm,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (pneu.NODES cylinder end port-cap; marked by its name)",air in closes the jaw: female NPT 1/8
+state,open,,jaw,default,,,spec.md Named nodes (jaw at rest: lifted by its spring),
+state,closed,,jaw,manual toggle,,,spec.md Named nodes (the stroke 7.5; stand-in for air at port-cap until the circuit model),
+pose,jaw,,,closed,end,,element.py (jaw translates 0 to 7.5 along -z),
+limit,jaw,,,,444,N,spec.md Class values 3 (P_WORK_MAX on the Ø32 piston; theoretical; the spring not deducted),holding force

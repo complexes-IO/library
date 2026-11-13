@@ -1,0 +1,2 @@
+# behaviour.csv · guard-upright-80 · U-shaped ram protection for an 80 x 80 pallet rack upright, generic (lib/behaviour.md). Written by mech-r153 from element.py: one fixed body, no terminal, no moving node, no state; anchoring it to the floor is the host's assembly, not a motion. A structural part's file: the header only. No impact, energy or load figure here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note

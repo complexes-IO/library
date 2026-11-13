@@ -1,0 +1,14 @@
+port,pin,role,signal,rated_A,source
+t-L1,L1,pass,supply line 1 (through thyristor pair 1 to T1),20,spec.md Class values 2 and 5 (20 A each line; 3 phases in)
+t-L2,L2,pass,supply line 2 (to T2),20,as L1
+t-L3,L3,pass,supply line 3 (to T3),20,as L1
+t-PE,PE,PE,protective earth of the heat sink,,the heat sink is an exposed conductive part (spec.md Notes)
+t-T1,T1,pass,load phase 1 (to the heater),20,spec.md Class values 2 and 6 (3 phases out)
+t-T2,T2,pass,load phase 2,20,as T1
+t-T3,T3,pass,load phase 3,20,as T1
+t-24V,24V,load+:24V:CTL,auxiliary supply +24 V DC,,spec.md Class values 9 (24 V DC; its current is not stated)
+t-0V,0V,load0,auxiliary supply 0 V; the reference of EN and AI,,as 24V
+t-EN,EN,in,enable (24 V DC: high = fire to the setpoint; low = no firing),,spec.md Class values 12 (1 digital input)
+t-AI,AI,in,setpoint 0 ... 10 V (0 ... 100 % of the cycles fired),,spec.md Class values 10 (1 analogue input)
+t-13,13,sw-com,ready relay N.O. 13-14 (closed: supply on and no fault),,spec.md Class values 13 (1 digital output; its contact rating is not stated)
+t-14,14,sw-no,ready relay N.O. 13-14,,as 13

@@ -1,0 +1,7 @@
+pin,kind,value,phase,when,source,note
+# What feeds the panel from outside (lib/behaviour.md). The incoming 480 V three-phase 3-wire + PE lands on the disconnect Q1 through the gland plate
+# (mc-motor-1 controls.csv: supply, 480V 3ph 60Hz; Assumption (B): the lab's branch circuit is not on file). 277.13 V to ground = 480 / √3.
+q1.L1,VAC,277.13,0,,controls.csv supply row; IEEE 141 (480Y/277 V system),incoming L1
+q1.L2,VAC,277.13,-120,,as L1,incoming L2
+q1.L3,VAC,277.13,120,,as L1,incoming L3
+pe-1.1,VAC,0,0,,NEC 250 (the equipment grounding conductor at earth potential),PE in through the gland plate

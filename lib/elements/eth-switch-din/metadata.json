@@ -1,0 +1,16 @@
+{
+  "element_id": "eth-switch-din",
+  "category": "Industrial networking",
+  "width": 27.1,
+  "height": 135.9,
+  "depth": 106.9,
+  "units": "mm",
+  "datasheet_dims": [
+    27.1,
+    135.9,
+    106.9
+  ],
+  "domain": "controls",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

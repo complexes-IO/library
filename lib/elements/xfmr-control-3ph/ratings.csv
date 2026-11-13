@@ -1,0 +1,9 @@
+property,value,unit,status,source
+s_rated,1000,VA,generic design,"ETIM 10.0 EC002485 class value: rated power (EF007051); spec.md Class values 25"
+u1,480,V AC,generic design,"ETIM 10.0 EC002485 class value: primary voltage 1, line to line, delta (EF006125); spec.md Class values 4"
+u2,208,V AC,generic design,"ETIM 10.0 EC002485 class value: secondary voltage 1, line to line (EF007472); spec.md Class values 14"
+u2_ln,120,V AC,generic design,"ETIM 10.0 EC002485 class value: secondary voltage 2, line to neutral (EF007474); spec.md Class values 15"
+i1,1.20,A,derived,"1000 VA / (sqrt 3 x 480 V)"
+i2,2.78,A,derived,"1000 VA / (sqrt 3 x 208 V)"
+uk,4,%,generic design,"ETIM 10.0 EC002485 class value: relative short circuit voltage (EF007452); spec.md Class values 28"
+short_circuit_proof,no,,generic design,"ETIM 10.0 EC002485 class value: short circuit proof (EF007332), the secondary needs its own protection; spec.md Class values 27"

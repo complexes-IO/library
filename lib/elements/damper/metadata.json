@@ -1,0 +1,12 @@
+{
+  "element_id": "damper",
+  "domain": "building",
+  "category": "HVAC and building automation",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 260.0,
+  "height": 150.0,
+  "depth": 290.0,
+  "units": "mm",
+  "datasheet_dims": null
+}

@@ -1,0 +1,3 @@
+# behaviour.csv · term-endplate · end cover for a term-4mm strip (lib/behaviour.md). Written by elec-r23. A structural plate (our own design): no terminals, no moving
+# nodes, no states. The file says so.
+kind,a,b,part,when,value,unit,source,note

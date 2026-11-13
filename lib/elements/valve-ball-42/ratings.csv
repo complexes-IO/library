@@ -1,0 +1,2 @@
+property,value,unit,status,source
+p_max,10,bar,generic design,ETIM 10.0 EC010102 class value (EF020150 Max. pressure difference at 20 °C: read as p_max since a port at supply pressure across the ball from the exhaust carries the whole difference; spec.md Class values 19)

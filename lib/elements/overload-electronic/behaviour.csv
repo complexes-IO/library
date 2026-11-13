@@ -1,0 +1,31 @@
+# behaviour.csv · overload-electronic · electronic overload relay, self-powered, 0.4 … 2.0 A, class 10 (lib/behaviour.md). Written by elec-r27 from spec.md (Class values, Named nodes), pins.csv and ratings.csv: a generic element, so its class values are its figures.
+# The main circuit passes through the three current sensors L1-T1, L2-T2, L3-T3 (always closed: the overload never breaks the motor current itself); the solver reads their current.
+# Phase 1 of the solver has no time: the trip is a manual latch the twin injects until the thermal model runs; the condition that model evaluates is sense.I > 1.2 × the dial's setting for the class 10 time.
+# The class 10 trip-time limits are IEC 60947-4-1's table, which is not on file (lib/standards/sources.csv): NOT ON FILE (B), a document wanted, not a figure of this file (review elec-r20 finding 2a: it was called class A before OPERATING.md 6's "derive before you ask").
+# Contact resistances are not stated and the phase-1 solver reads none for a closed contact: the contact rows carry no figure. Torques: the clamps' conductor range and torque are class B (IEC 60947-1, spec.md Dimensions).
+kind,a,b,part,when,value,unit,source,note
+pin,L1,t-L1,terminal-main,,NOT ON FILE (B): IEC 60947-1,N·m,spec.md Dimensions (conductor range and torque class B),line 1 in (from the contactor's T1)
+pin,L2,t-L2,terminal-main,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,line 2 in
+pin,L3,t-L3,terminal-main,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,line 3 in
+pin,T1,t-T1,terminal-main,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,motor phase 1 out
+pin,T2,t-T2,terminal-main,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,motor phase 2 out
+pin,T3,t-T3,terminal-main,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,motor phase 3 out
+pin,95,t-95,terminal-aux,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,N.C. 95-96 common
+pin,96,t-96,terminal-aux,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,N.C. 95-96
+pin,97,t-97,terminal-aux,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,N.O. 97-98 common
+pin,98,t-98,terminal-aux,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,N.O. 97-98
+contact,L1,T1,sense-1,always,,,spec.md Class values 4 (self-powered from the main circuit) and Notes (separate mounting: wired from the contactor); the sensor's impedance is not stated and phase 1 reads none,the main circuit through sensor 1; the solver reads its current
+contact,L2,T2,sense-2,always,,,as L1-T1,
+contact,L3,T3,sense-3,always,,,as L1-T1,
+state,set,,latch,default,,,spec.md Named nodes (ind-trip green when ready),latched set: running or cold
+state,tripped,,latch,manual latch cleared by reset,,,"spec.md Class values 17 (release class CLASS 10); the class 10 trip-time limits are NOT ON FILE (B): IEC 60947-4-1 (not in lib/standards/sources.csv); a fault the twin injects until the thermal model runs",tripped: 95-96 open and 97-98 closed
+state,up,,btn-reset,default,,,spec.md Named nodes (btn-reset 0 = at rest),the reset button at rest
+state,reset,,btn-reset,manual momentary,,,spec.md Class values 20 (reset by push-button) and Named nodes (btn-reset 2.0 = pressed),the reset button pressed
+contact,95,96,aux-95,not tripped,,,spec.md Class values 9 (1 N.C.) and Named nodes (95-96 open while tripped),N.C. in the contactor's coil circuit
+contact,97,98,aux-97,tripped,,,spec.md Class values 10 (1 N.O.) and Named nodes (97-98 closed while tripped),N.O. signals the trip
+pose,btn-reset,,,reset,end,,spec.md Named nodes (translate +y 0 … 2.0),
+pose,ind-trip,,,tripped,1,,spec.md Named nodes (emissive window: red when tripped),lit while tripped
+pose,dial-ir,,,set,0,,"spec.md Dimensions and Named nodes (dial-ir 0 … 270°, 0° = 0.4 A, 270° = 2.0 A, linear): the setting is the build parameter `setting`; shown at the range bottom",the current setting
+limit,sense-1 sense-2 sense-3,,,,2.0,A,spec.md Class values 3 (adjustable current range 0.4 … 2.0 A; ratings.csv ir_min / ir_max),the top of the setting range
+limit,aux-95 aux-97,,,,5,A,spec.md Class values 16 (rated switch current of the auxiliary contacts 5 A),each auxiliary contact's conventional thermal current
+limit,main,,,,690,VAC,spec.md Class values 13 and 14 (operating voltage AC up to 690 V),the most the main circuit may see

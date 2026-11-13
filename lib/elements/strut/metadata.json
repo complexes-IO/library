@@ -1,0 +1,12 @@
+{
+  "element_id": "strut",
+  "domain": "mechanical",
+  "category": "Fasteners, hardware, connectors and cables",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 1000.0,
+  "height": 41.0,
+  "depth": 41.0,
+  "units": "mm",
+  "datasheet_dims": null
+}

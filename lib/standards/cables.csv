@@ -1,0 +1,8 @@
+cable,unit,map,rated_A,rated_V,standard,note
+# How each cable joins pins end A to end B (a-b pairs). rated_A per conductor, cited or NOT ON FILE.
+cordset-m12,A,1-1 2-2 3-3 4-4 5-5,4,250,IEC 61076-2-101; cordset cut sheet,straight 5-pole; 22 AWG; Ø5.0 is the catalogue's PVC (CDP12) figure, the TPE cable's Ø NOT ON FILE; 4 A 250 V
+cordset-m12,D,1-1 2-2 3-3 4-4,4,60,IEC 61076-2-101; cordset cut sheet,straight 4-pole Ethernet (devices auto-MDIX); Ø6.6; 4 A (UL 1.5 A) 60 V DC
+cordset-m12,L,1-1 2-2 3-3 4-4 5-5,12,63,IEC 61076-2-111; cordset cut sheet,straight 5-pole power; 16 AWG Ø9.8 12 A (the 14 AWG Ø10.5 cable is rated 16 A)
+cable-pwr-480,480V-3P+E,L1-L1 L2-L2 L3-L3 PE-PE,15,600,NEC Table 400.5(A)(1) column A (14 AWG; three current-carrying); NEC 430.22,14/4 SOOW 600 V 90 °C cord; cores black / white / red (phases) and green (ground)
+cable-pe,PE,PE-PE,NOT ON FILE,,,earth bonding conductor; size NOT ON FILE
+cable-pe,cable,PE-PE,NOT ON FILE,,,

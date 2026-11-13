@@ -1,0 +1,12 @@
+{
+  "element_id": "term-jumper",
+  "domain": "electrical",
+  "category": "Electrical components",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 23.5,
+  "height": 8.0,
+  "depth": 19.5,
+  "units": "mm",
+  "brief": "our own design: generic Cross-connector for terminal block (ETIM 10.0 EC000489), plug-in comb for term-4mm feed-through blocks, 4 poles as built (2 to 12 by parameter), 32 A 500 V; pitch and reach from term-4mm 1.4 on file; the block's channel is open (spec.md Class values, Dimensions)"
+}

@@ -1,0 +1,5 @@
+# behaviour.csv · fan-exhaust · exhaust fan, centrifugal, generic (lib/behaviour.md). Mechanical only: no terminal (the motor that drives it is placed later through a coupling, with its own pins). One moving node, the impeller on its shaft, turning about the shaft's axis; the base plate, housing, inlet plate and collar, discharge duct and flange, support, bearing stand and motor seat are the fixed body.
+kind,a,b,part,when,value,unit,source,note
+state,still,,impeller,default,,,spec.md (Mechanism),the impeller at rest (0)
+state,running,,impeller,manual toggle,,,spec.md (Mechanism),the assembly's motor turns the impeller through the coupling; flow and pressure are the class values at the duty point (ratings.csv) and are not simulated here
+pose,impeller,,,running,end,,element.py (the impeller rotates 0 to 360 about the shaft's axis),

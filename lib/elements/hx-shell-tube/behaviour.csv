@@ -1,0 +1,9 @@
+# behaviour.csv · hx-shell-tube · own design: liquid-to-liquid shell-and-tube heat exchanger (lib/behaviour.md). Two shell-side ports and two tube-side ports; no electrical pin and no
+# moving node. The two liquid paths (shell-in to shell-out round the tubes; tube-in to tube-out through the tubes in two passes) and the heat they exchange are hydraulic and
+# thermal: the solver is electrical in phase 1 (lib/toolkit/nets.py) and solves no liquid or heat, so no state or contact row is written. NPT joints make up by turns
+# (pneu.NPT L1 + L3), not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1). No rating of its own (no ratings.csv).
+kind,a,b,part,when,value,unit,source,note
+pin,shell-in,port-shell-in,shell,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: a liquid port has no ISO 11727 number; marked by its node's name as hyd-cooler 1.0's water ports)",the shell liquid's inlet: female NPT 3/8; the +x boss on the shell's top
+pin,shell-out,port-shell-out,shell,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: as shell-in)",the shell liquid's outlet: female NPT 3/8; the -x boss on the shell's top
+pin,tube-in,port-tube-in,bonnet,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: as shell-in)",the tube liquid's inlet: female NPT 3/8; the lower boss on the -x bonnet
+pin,tube-out,port-tube-out,bonnet,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: as shell-in)",the tube liquid's outlet: female NPT 3/8; the upper boss on the -x bonnet

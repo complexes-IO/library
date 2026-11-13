@@ -1,0 +1,16 @@
+{
+  "element_id": "sensor-room",
+  "category": "HVAC and building automation",
+  "width": 79.9,
+  "height": 60.0,
+  "depth": 30.0,
+  "units": "mm",
+  "datasheet_dims": [
+    79.9,
+    60.0,
+    30.0
+  ],
+  "domain": "building",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

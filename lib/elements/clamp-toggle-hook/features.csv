@@ -1,0 +1,4 @@
+match,role,kind,check,position_tol,datums,source,note
+5.5,M5 clearance medium,clearance,,0.4,A B C,"ISO 273 medium H13 (lib/standards/holes.csv); position Ø0.4 at MMC to A the mounting face, B the base's rear edge, C its left edge (ASME Y14.5 floating fastener, T = H − F = 0.50)","design choice: 4 x M5 at 52 x 35 (x -22 / 30, y +-17.5); ISO 2768-m alone gives Ø0.85 over the 62.7 diagonal (GDT-010)"
+7,cheek bore,own,,,,design choice (spec.md Its own sizes),"Ø7 through each of the two cheeks on the pivot axis: 1 clear round the Ø5 pivot pin, so the lever turns free; no fastener and no standard size"
+5,pin bore,own,,,,design choice (spec.md Its own sizes),"Ø5 through each lever side plate (twice: the pivot pin and the hook pin) and each hook arm (the hook pin): the pins are pressed in (the lever, its pins and the hook are one node); no fastener and no standard size"

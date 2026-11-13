@@ -1,0 +1,16 @@
+{
+  "element_id": "linear-guide",
+  "category": "Robotics and motion control",
+  "width": 34.0,
+  "height": 23.3,
+  "depth": 62.1,
+  "units": "mm",
+  "datasheet_dims": [
+    34.0,
+    23.3,
+    62.1
+  ],
+  "domain": "robotics",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

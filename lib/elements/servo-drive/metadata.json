@@ -1,0 +1,12 @@
+{
+  "element_id": "servo-drive",
+  "domain": "electrical",
+  "category": "Motor control and drives",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 65.0,
+  "height": 150.0,
+  "depth": 143.5,
+  "units": "mm",
+  "brief": "our own design: generic servo drive, 1.0 kW (no ETIM class; IEC 61800-2 values), 3~ 380-480 V AC in, incremental encoder feedback; no reference part measured (spec.md Class values)"
+}

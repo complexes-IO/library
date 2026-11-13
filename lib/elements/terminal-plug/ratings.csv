@@ -1,0 +1,4 @@
+property,value,unit,status,source
+in,12,A,generic design,"ETIM 10.0 EC002021 class value: Rated current In (EF008250), each pole; spec.md Class values 7"
+ue,250,V,generic design,"ETIM 10.0 EC002021 class value: Rated voltage (EF000228); spec.md Class values 8"
+poles,4,,generic design,"ETIM 10.0 EC002021 class value: Number of poles (EF001391), as built (2 to 12 by parameter); spec.md Class values 13"

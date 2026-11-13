@@ -1,0 +1,15 @@
+# behaviour.csv · lubrication-central-air-6 · own design: air-operated central lubrication unit with a progressive distributor (lib/behaviour.md). One air port and six oil
+# outlets; no electrical pin (air-operated); one moving node, the distributor's cycle indicator pin. The air pulse drives the pump a stroke and the oil paths (pump to distributor
+# to each outlet in turn) are pneumatic and hydraulic: the solver is electrical in phase 1 (lib/toolkit/nets.py) and reads no stroke or shot, so the pin's states are its two ends,
+# set by a manual state until a flow model drives them. NPT joints make up by turns (pneu.NPT L1 + L3), not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1). No rating of its own (no ratings.csv).
+kind,a,b,part,when,value,unit,source,note
+pin,air,port-air,air cylinder,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: the pump's air pulse; female NPT 1/4; role work)",a pulse from the machine's valve drives the plunger one stroke; the spring returns it
+pin,1,port-out-1,distributor,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: outlet 1 of the progressive distributor; female NPT 1/8)",a metered shot each cycle to lubrication point 1
+pin,2,port-out-2,distributor,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: outlet 2; female NPT 1/8)",to point 2
+pin,3,port-out-3,distributor,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: outlet 3; female NPT 1/8)",to point 3
+pin,4,port-out-4,distributor,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: outlet 4; female NPT 1/8)",to point 4
+pin,5,port-out-5,distributor,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: outlet 5; female NPT 1/8)",to point 5
+pin,6,port-out-6,distributor,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: outlet 6; female NPT 1/8)",to point 6
+state,seated,,indicator,default,,,spec.md Named nodes (pin seated: a cycle not yet complete),
+state,cycled,,indicator,manual toggle,,,spec.md Named nodes (pin out 4: the distributor completed a cycle; stand-in for the pump's stroke until a flow model),the engineer sets it to show a completed cycle
+pose,indicator,,,cycled,end,,element.py (indicator translates 0 to 4 along +x),

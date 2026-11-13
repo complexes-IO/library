@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+6.6,M6 clearance medium,clearance,,0.5,"A (the flat's underside), B (the plane x 0, the run's start), C (the plane y 0, the centre line)",ISO 273 medium H13 (lib/standards/holes.csv); position Ø0.5 at MMC ≤ H − F = 0.6 (ASME Y14.5 floating fastener),"6 x Ø6.6 through the mounting flat at y +-41, x 50 / 500 / 950 at the default length 1000: design choice"

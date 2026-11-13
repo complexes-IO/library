@@ -1,0 +1,15 @@
+# behaviour.csv · disc-dc · DC switch disconnector 2 poles 25 A 220 V DC (lib/behaviour.md). Written by elec-r25 (unattended) from spec.md, pins.csv and ratings.csv
+# (a generic element: the class values are its design inputs). The clamps' torque is NOT ON FILE (B) (spec.md Dimensions: IEC 60947-1 not on file).
+# elec-r27 (review elec-r25 finding 2): the class now on each cell: torques (B) IEC 60947-1, contact resistances (C).
+kind,a,b,part,when,value,unit,source,note
+pin,1,t-1,clamp-1,,NOT ON FILE (B): IEC 60947-1,N·m,pins.csv (t-1: pole 1 line side); spec.md Dimensions (conductor range and torque class B),L+ from the supply
+pin,2,t-2,clamp-2,,NOT ON FILE (B): IEC 60947-1,N·m,pins.csv (t-2: pole 1 load side); as 1,L+ to the loads
+pin,3,t-3,clamp-3,,NOT ON FILE (B): IEC 60947-1,N·m,pins.csv (t-3: pole 2 line side); as 1,M from the supply
+pin,4,t-4,clamp-4,,NOT ON FILE (B): IEC 60947-1,N·m,pins.csv (t-4: pole 2 load side); as 1,M to the loads
+state,on,,handle,manual toggle,,,spec.md Named nodes (handle 90 = I: both poles closed),the operator turns the handle to I
+state,off,,handle,default,,,spec.md Named nodes (handle 0 = OFF: both poles open),
+contact,1,2,pole-1,on,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,spec.md Class values 8 and 9 (2 poles; 25 A each); pins.csv,pole 1 (L+); its resistance is not a class feature
+contact,3,4,pole-2,on,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,as pole-1,pole 2 (M)
+pose,handle,,,on,end,,spec.md Named nodes (rotate 0 … 90°; 90 = I),
+limit,pole-1 pole-2,,,,25,A,ratings.csv ith (ETIM 10.0 EC004963 class value EF000227; spec.md Class values 8),each pole
+limit,pole-1 pole-2,,,,220,VDC,ratings.csv ue_max (ETIM 10.0 EC004963 class value EF007067; spec.md Class values 7),one DC circuit through both poles

@@ -1,0 +1,2 @@
+# behaviour.csv · girder-bridge · bridge crane girder (lib/behaviour.md). One body: no terminal, no moving node (`rail` is fixed; the trolley's travel along it and the girder's along the runways are the crane's), no state.
+kind,a,b,part,when,value,unit,source,note

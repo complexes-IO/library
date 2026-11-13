@@ -1,0 +1,18 @@
+property,value,unit,source,note
+envelope,-2.5..8.0 x -6.0..6.0 x 0..22.0,mm,own: design choice,x out from the housing wall; y across the hook; z along the screw toward the panel
+origin,the hook's bearing face on the housing wall's outer surface at the hook's centre,,own: design choice,the housing toward -x; +z toward the panel
+hook,10.0 x 6.0 x 2.5 (y x z x depth into the wall),mm,own: design choice,bears on the slot's rear face at z = 0
+slot_width,10.4,mm,own: design choice,the host's slot across the hook (y): hook 10.0 + 0.2 a side
+slot_length,7.0,mm,own: design choice,the host's slot along the screw (z): hook 6.0 + 1.0 in front of it to put the hook in
+slot_depth_min,3.0,mm,own: design choice,through the host's wall or blind at least 3.0 deep; nothing of the host within 3.0 of the wall's outer face behind the slot
+slot_seat_distance,30.0,mm,own: design choice,the slot's rear (bearing) face 30.0 behind the face of the bezel that seats on the panel's front face
+slots_per_host,2,,own: design choice,on opposite walls of the housing so the two pulls balance; the host may cut more
+panel_t_min,1.0,mm,own: design choice,the panel's back face 29.0 from the bearing face; the screw stands 7.0 out of the body
+panel_t_max,6.0,mm,own: design choice,the panel's back face 24.0 from the bearing face; 2.0 clear of the body's front face
+body,8.0 x 12.0 x 22.0,mm,own: design choice,lies on the housing wall's outer face x = 0
+tapped_hole,M4 on the axis x = 4.0 y = 0 from z = 22.0 to z = 10.0 (12 deep),mm,own: design choice,modelled plain at the designation's nominal 4.0
+thread_form,M4 x 0.7 coarse 6H: minor D1 3.2422 to 3.4224; pitch D2 3.5453 to 3.6637; tap drill 3.3,mm,"derived: derive.thread(4.0, 0.7) (ISO 68-1 basic profile; ISO 965-1 clause 10 formulas, 6H; ISO 261 pitch)",the figures as spec.md What it meets gives them; the thread form is not drawn (the hole is plain at the nominal 4.0)
+screw,an M4 screw whose tip presses the panel's back face (its type not chosen),,not built,a common part placed in a later version (OPERATING.md 12)
+material,steel zinc-plated (layer M-ZINC),,own: design choice,lib/materials.csv steel-mild; grade not stated
+volume,2111,mm3,own: computed from the model,body 2112 less the hole 151 plus the hook 150
+mass,not stated,kg,lib/materials.csv steel-mild,its density is not on file there: mass = volume x density once it is

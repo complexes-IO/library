@@ -1,0 +1,16 @@
+{
+  "element_id": "conn-m23",
+  "category": "Fasteners, hardware, connectors and cables",
+  "width": 25.4,
+  "height": 25.4,
+  "depth": 71.12,
+  "units": "mm",
+  "datasheet_dims": [
+    25.4,
+    25.4,
+    71.12
+  ],
+  "domain": "electrical",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

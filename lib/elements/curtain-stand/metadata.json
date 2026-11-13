@@ -1,0 +1,14 @@
+{
+  "element_id": "curtain-stand",
+  "category": "Safety systems",
+  "width": null,
+  "height": 1265.0,
+  "depth": null,
+  "units": "mm",
+  "datasheet_dims": [
+    1265.0
+  ],
+  "domain": "safety",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

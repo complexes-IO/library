@@ -1,0 +1,5 @@
+port,pin,role,signal,rated_A,source
+p-1,1,pass,pole 1 blade (the first bridged block),32,spec.md Class values 2 and 4 (32 A: the block's rating)
+p-2,2,pass,pole 2 blade,32,as p-1
+p-3,3,pass,pole 3 blade,32,as p-1
+p-4,4,pass,pole 4 blade,32,as p-1

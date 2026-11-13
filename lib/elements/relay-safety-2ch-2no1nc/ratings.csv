@@ -1,0 +1,3 @@
+property,value,unit,status,source
+supply_v,24,V DC,on file,maker's datasheet: installation manual p. 9 (references/measure.md)
+load_i,0.17,A,derived,4 W typical at 24 V (maker's datasheet: installation manual p. 73; references/measure.md)

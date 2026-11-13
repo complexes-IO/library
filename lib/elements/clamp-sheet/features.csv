@@ -1,0 +1,3 @@
+match,role,kind,check,position_tol,datums,source,note
+10.242,port bore NPT 1/8 (plain at E1 + h),port,,,,"ASME B1.20.1 by its formulas (toolkit/pneu.py NPT table, EM 2026-11-07): E1 + h, the male's major diameter at the hand-tight plane, as vacuum 1.0 and silencer 1.0",design choice: the thread drawn plain at the stub's own diameter so the halves touch (tank 2.0's rule); depth L2 + 2 = 8.702; one blind hole in port-cap's boss
+13.0,rod bore (guide),own,,,,design choice (spec.md Dimensions),the piston rod's bore up the upper arm from its underside: rod Ø12 + 0.5 clear all round; blind (floor at z = 56); no fastener or port

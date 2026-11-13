@@ -1,0 +1,575 @@
+{
+ "toolkit": "1.3",
+ "validation": "1.0",
+ "rules": 86,
+ "id": "dm-motor-starter-cell",
+ "status": "PASS",
+ "findings": [
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "dm-motor-starter-cell",
+   "where": "dm-motor-starter-cell",
+   "message": "no interference among 1895 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "dm-motor-starter-cell",
+   "where": "dm-motor-starter-cell",
+   "message": "75 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-001",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 1 panel-1.p-m1 -> machine-1.m1.pwr",
+   "message": "cable-pwr-480: 480V-3P+E to 480V-3P+E",
+   "elements": [],
+   "title": "both ends of a cable are port nodes; units fit the section and the cable; each port used once",
+   "basis": "connections.csv sections"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-001",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 2 panel-1.p-x2 -> machine-1.io-1.port-x03",
+   "message": "cordset-m12: L to L",
+   "elements": [],
+   "title": "both ends of a cable are port nodes; units fit the section and the cable; each port used once",
+   "basis": "connections.csv sections"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-001",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 3 panel-1.p-x1 -> machine-1.io-1.port-x01",
+   "message": "cordset-m12: D to D",
+   "elements": [],
+   "title": "both ends of a cable are port nodes; units fit the section and the cable; each port used once",
+   "basis": "connections.csv sections"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-001",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 4 panel-1.p-x3 -> machine-1.pbs-1.s-es",
+   "message": "cordset-m12: A to A",
+   "elements": [],
+   "title": "both ends of a cable are port nodes; units fit the section and the cable; each port used once",
+   "basis": "connections.csv sections"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-001",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 5 machine-1.io-1.port-x1 -> machine-1.pbs-1.s-x1",
+   "message": "cordset-m12: A to A",
+   "elements": [],
+   "title": "both ends of a cable are port nodes; units fit the section and the cable; each port used once",
+   "basis": "connections.csv sections"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-001",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 6 machine-1.io-1.port-x2 -> machine-1.pbs-1.s-x2",
+   "message": "cordset-m12: A to A",
+   "elements": [],
+   "title": "both ends of a cable are port nodes; units fit the section and the cable; each port used once",
+   "basis": "connections.csv sections"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-001",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 7 machine-1.io-1.port-x6 -> machine-1.pbs-1.s-x3",
+   "message": "cordset-m12: A to A",
+   "elements": [],
+   "title": "both ends of a cable are port nodes; units fit the section and the cable; each port used once",
+   "basis": "connections.csv sections"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-001",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 8 machine-1.io-1.port-x5 -> machine-1.pbs-1.s-x5",
+   "message": "cordset-m12: A to A",
+   "elements": [],
+   "title": "both ends of a cable are port nodes; units fit the section and the cable; each port used once",
+   "basis": "connections.csv sections"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-001",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 9 panel-1.gl-pe -> machine-1.bench-1.pe",
+   "message": "cable-pe: cable to PE",
+   "elements": [],
+   "title": "both ends of a cable are port nodes; units fit the section and the cable; each port used once",
+   "basis": "connections.csv sections"
+  },
+  {
+   "status": "PASS",
+   "rule": "ERC-000",
+   "scope": "dm-motor-starter-cell",
+   "where": "dm-motor-starter-cell",
+   "message": "39 of 39 conductors pass the rule check; 3 spare channel(s) noted",
+   "elements": [],
+   "title": "conductor summary",
+   "basis": "electrical rule check"
+  },
+  {
+   "status": "PASS",
+   "rule": "ERC-000",
+   "scope": "dm-motor-starter-cell",
+   "where": "spare",
+   "message": "machine-1.io-1.port-x2 4 \u2194 machine-1.pbs-1.s-x2 4: input with nothing to drive it (spare)",
+   "elements": [],
+   "title": "conductor summary",
+   "basis": "electrical rule check"
+  },
+  {
+   "status": "PASS",
+   "rule": "ERC-000",
+   "scope": "dm-motor-starter-cell",
+   "where": "spare",
+   "message": "machine-1.io-1.port-x6 4 \u2194 machine-1.pbs-1.s-x3 4: output drives nothing (spare)",
+   "elements": [],
+   "title": "conductor summary",
+   "basis": "electrical rule check"
+  },
+  {
+   "status": "PASS",
+   "rule": "ERC-000",
+   "scope": "dm-motor-starter-cell",
+   "where": "spare",
+   "message": "machine-1.io-1.port-x5 2 \u2194 machine-1.pbs-1.s-x5 2: output drives nothing (spare)",
+   "elements": [],
+   "title": "conductor summary",
+   "basis": "electrical rule check"
+  },
+  {
+   "status": "PASS",
+   "rule": "ELR-010",
+   "scope": "dm-motor-starter-cell",
+   "where": "motor-m1 panel-1.f1",
+   "message": "overload range 0.8\u20131.2 A covers the motor (FLA 0.91 A on file)",
+   "elements": [
+    "overload-9a-1no1nc"
+   ],
+   "title": "the overload range covers the motor's full-load current",
+   "basis": "IEC 60947-4-1; NEC 430.32"
+  },
+  {
+   "status": "PASS",
+   "rule": "ELR-011",
+   "scope": "dm-motor-starter-cell",
+   "where": "motor-m1 panel-1.k1",
+   "message": "AC-3 9 A \u2265 motor current 0.91 A (IEC 60947-4-1 utilisation category AC-3)",
+   "elements": [
+    "contactor-9a-1no1nc"
+   ],
+   "title": "contactor AC-3 rating \u2265 motor current",
+   "basis": "IEC 60947-4-1 AC-3"
+  },
+  {
+   "status": "PASS",
+   "rule": "ELR-012",
+   "scope": "dm-motor-starter-cell",
+   "where": "motor-m1 panel-1.q3",
+   "message": "breaker 10 A carries the motor current 0.91 A",
+   "elements": [
+    "mcb-3p-c10"
+   ],
+   "title": "branch breaker carries the load current",
+   "basis": "IEC 60947-2 / NEC 430.52"
+  },
+  {
+   "status": "PASS",
+   "rule": "ELR-013",
+   "scope": "dm-motor-starter-cell",
+   "where": "motor-m1 panel-1.p-m1",
+   "message": "rated 20 A \u2265 breaker 10 A (IEC 60364-4-43 / NEC 240.4: the device protects the conductor)",
+   "elements": [
+    "port-pwr-480"
+   ],
+   "title": "connector and cable ratings \u2265 the device protecting them",
+   "basis": "IEC 60364-4-43; NEC 240.4"
+  },
+  {
+   "status": "PASS",
+   "rule": "ELR-013",
+   "scope": "dm-motor-starter-cell",
+   "where": "motor-m1 cable-pwr-480",
+   "message": "rated 15 A \u2265 breaker 10 A (IEC 60364-4-43 / NEC 240.4: the device protects the conductor)",
+   "elements": [],
+   "title": "connector and cable ratings \u2265 the device protecting them",
+   "basis": "IEC 60364-4-43; NEC 240.4"
+  },
+  {
+   "status": "PASS",
+   "rule": "ELR-016",
+   "scope": "dm-motor-starter-cell",
+   "where": "motor-m1 cable-pwr-480",
+   "message": "conductor ampacity 15 A \u2265 125 % of the motor's full-load current, 1.38 A from 1.1 A (NEC 430.22; the table current per 430.6(A)(1))",
+   "elements": [],
+   "title": "a motor's branch conductors carry 125 % of its full-load current",
+   "basis": "NEC 430.22 (table current per 430.6(A)(1))"
+  },
+  {
+   "status": "PASS",
+   "rule": "ELR-014",
+   "scope": "dm-motor-starter-cell",
+   "where": "motor-m1 panel-1.q1",
+   "message": "disconnect 30 A \u2265 branch breaker 10 A",
+   "elements": [
+    "disc-3p-30a"
+   ],
+   "title": "disconnect rating \u2265 the branch it isolates",
+   "basis": "IEC 60947-3; NEC 430.110"
+  },
+  {
+   "status": "PASS",
+   "rule": "ELR-015",
+   "scope": "dm-motor-starter-cell",
+   "where": "motor-m1 machine-1.m1",
+   "message": "motor 460 V on a 480 V system (4 %; NEMA MG 1 / IEC 60034-1 allow \u00b110 %)",
+   "elements": [
+    "motor-iec71-370w"
+   ],
+   "title": "rated voltages fit the circuit voltage",
+   "basis": "NEMA MG 1 / IEC 60034-1 \u00b110 %"
+  },
+  {
+   "status": "PASS",
+   "rule": "ELR-015",
+   "scope": "dm-motor-starter-cell",
+   "where": "motor-m1 panel-1.p-m1",
+   "message": "connector rated 480 V \u2265 480 V",
+   "elements": [
+    "port-pwr-480"
+   ],
+   "title": "rated voltages fit the circuit voltage",
+   "basis": "NEMA MG 1 / IEC 60034-1 \u00b110 %"
+  },
+  {
+   "status": "PASS",
+   "rule": "ELR-021",
+   "scope": "dm-motor-starter-cell",
+   "where": "dc-24v panel-1.k1",
+   "message": "24 V device on the 24 V supply",
+   "elements": [
+    "contactor-9a-1no1nc"
+   ],
+   "title": "coil and device voltages match the supply",
+   "basis": "device ratings"
+  },
+  {
+   "status": "PASS",
+   "rule": "ELR-021",
+   "scope": "dm-motor-starter-cell",
+   "where": "dc-24v panel-1.k-safe",
+   "message": "24 V device on the 24 V supply",
+   "elements": [
+    "relay-safety-2ch-2no1nc"
+   ],
+   "title": "coil and device voltages match the supply",
+   "basis": "device ratings"
+  },
+  {
+   "status": "PASS",
+   "rule": "ELR-021",
+   "scope": "dm-motor-starter-cell",
+   "where": "dc-24v panel-1.plc-1",
+   "message": "24 V device on the 24 V supply",
+   "elements": [
+    "plc0"
+   ],
+   "title": "coil and device voltages match the supply",
+   "basis": "device ratings"
+  },
+  {
+   "status": "PASS",
+   "rule": "ELR-021",
+   "scope": "dm-motor-starter-cell",
+   "where": "dc-24v panel-1.enc-1.lamp-power",
+   "message": "24 V device on the 24 V supply",
+   "elements": [
+    "enc-fs-1524x1829x305"
+   ],
+   "title": "coil and device voltages match the supply",
+   "basis": "device ratings"
+  },
+  {
+   "status": "PASS",
+   "rule": "ELR-021",
+   "scope": "dm-motor-starter-cell",
+   "where": "dc-24v machine-1.io-1",
+   "message": "24 V device on the 24 V supply",
+   "elements": [
+    "io-block-m12-8di8do"
+   ],
+   "title": "coil and device voltages match the supply",
+   "basis": "device ratings"
+  },
+  {
+   "status": "PASS",
+   "rule": "ELR-021",
+   "scope": "dm-motor-starter-cell",
+   "where": "dc-24v machine-1.pbs-1.lamp-run",
+   "message": "24 V device on the 24 V supply",
+   "elements": [
+    "pbs-6h-22"
+   ],
+   "title": "coil and device voltages match the supply",
+   "basis": "device ratings"
+  },
+  {
+   "status": "PASS",
+   "rule": "ELR-021",
+   "scope": "dm-motor-starter-cell",
+   "where": "dc-24v machine-1.pbs-1.lamp-fault",
+   "message": "24 V device on the 24 V supply",
+   "elements": [
+    "pbs-6h-22"
+   ],
+   "title": "coil and device voltages match the supply",
+   "basis": "device ratings"
+  },
+  {
+   "status": "PASS",
+   "rule": "ELR-020",
+   "scope": "dm-motor-starter-cell",
+   "where": "dc-24v",
+   "message": "loads 0.76 A \u2264 2.00 A usable (2.5 A \u00d7 0.8)",
+   "elements": [],
+   "title": "24 V loads within the supply's derated current",
+   "basis": "Complexes design rule (80 % continuous)"
+  },
+  {
+   "status": "PASS",
+   "rule": "ELR-022",
+   "scope": "dm-motor-starter-cell",
+   "where": "dc-24v panel-1.p-x2",
+   "message": "L-coded contact rating 16 A \u2265 the 0.76 A it feeds",
+   "elements": [
+    "receptacle-m12"
+   ],
+   "title": "power connector contacts \u2265 the current they feed",
+   "basis": "IEC 61076-2-111"
+  },
+  {
+   "status": "PASS",
+   "rule": "ELR-030",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 7 machine-1.pbs-1.lamp-run",
+   "message": "output 2 A \u2265 lamp 0.02 A",
+   "elements": [
+    "pbs-6h-22"
+   ],
+   "title": "each output's rating \u2265 the load it drives",
+   "basis": "device manual"
+  },
+  {
+   "status": "PASS",
+   "rule": "ELR-030",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 8 machine-1.pbs-1.lamp-fault",
+   "message": "output 2 A \u2265 lamp 0.02 A",
+   "elements": [
+    "pbs-6h-22"
+   ],
+   "title": "each output's rating \u2265 the load it drives",
+   "basis": "device manual"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-030",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 2 cordset-m12 port-a (male L) -> panel-1.p-x2 (female L)",
+   "message": "5 pole(s) made at the seat; pins touch 6.00 mm out, made 2.80 mm out, before the nut catches the thread at 1.939: pushed on by hand it works, held by friction only; thread engaged 1.939 mm at the seat",
+   "elements": [
+    "cordset-m12",
+    "receptacle-m12"
+   ],
+   "title": "every cable end mates with its port as built: opposite genders, the key fits, every mapped pole made at the seat",
+   "basis": "IEC 61076-2-101 / -111; toolkit/contact.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-030",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 2 cordset-m12 port-b (female L) -> machine-1.io-1.port-x03 (male L)",
+   "message": "5 pole(s) made at the seat; pins touch 6.00 mm out, made by 2.80 mm out (3.6 of 6.351 turns); thread engaged 6.351 mm at the seat",
+   "elements": [
+    "cordset-m12",
+    "io-block-m12-8di8do"
+   ],
+   "title": "every cable end mates with its port as built: opposite genders, the key fits, every mapped pole made at the seat",
+   "basis": "IEC 61076-2-101 / -111; toolkit/contact.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-030",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 3 cordset-m12 port-a (male D) -> panel-1.p-x1 (female D)",
+   "message": "4 pole(s) made at the seat; pins touch 4.95 mm out, made 4.45 mm out, before the nut catches the thread at 1.45: pushed on by hand it works, held by friction only; thread engaged 1.45 mm at the seat",
+   "elements": [
+    "cordset-m12",
+    "receptacle-m12"
+   ],
+   "title": "every cable end mates with its port as built: opposite genders, the key fits, every mapped pole made at the seat",
+   "basis": "IEC 61076-2-101 / -111; toolkit/contact.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-030",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 3 cordset-m12 port-b (male D) -> machine-1.io-1.port-x01 (female D)",
+   "message": "4 pole(s) made at the seat; pins touch 4.90 mm out, made 4.40 mm out, before the nut catches the thread at 1.45: pushed on by hand it works, held by friction only; thread engaged 1.45 mm at the seat",
+   "elements": [
+    "cordset-m12",
+    "io-block-m12-8di8do"
+   ],
+   "title": "every cable end mates with its port as built: opposite genders, the key fits, every mapped pole made at the seat",
+   "basis": "IEC 61076-2-101 / -111; toolkit/contact.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-030",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 4 cordset-m12 port-a (male A) -> panel-1.p-x3 (female A)",
+   "message": "5 pole(s) made at the seat; pins touch 4.95 mm out, made 4.45 mm out, before the nut catches the thread at 1.45: pushed on by hand it works, held by friction only; thread engaged 1.45 mm at the seat",
+   "elements": [
+    "cordset-m12",
+    "receptacle-m12"
+   ],
+   "title": "every cable end mates with its port as built: opposite genders, the key fits, every mapped pole made at the seat",
+   "basis": "IEC 61076-2-101 / -111; toolkit/contact.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-030",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 4 cordset-m12 port-b (female A) -> machine-1.pbs-1.s-es (male A)",
+   "message": "5 pole(s) made at the seat; pins touch 4.95 mm out, made 4.45 mm out, before the nut catches the thread at 3.85: pushed on by hand it works, held by friction only; thread engaged 3.85 mm at the seat",
+   "elements": [
+    "cordset-m12",
+    "pbs-6h-22"
+   ],
+   "title": "every cable end mates with its port as built: opposite genders, the key fits, every mapped pole made at the seat",
+   "basis": "IEC 61076-2-101 / -111; toolkit/contact.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-030",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 5 cordset-m12 port-a (male A) -> machine-1.io-1.port-x1 (female A)",
+   "message": "5 pole(s) made at the seat; pins touch 4.90 mm out, made 4.40 mm out, before the nut catches the thread at 1.45: pushed on by hand it works, held by friction only; thread engaged 1.45 mm at the seat",
+   "elements": [
+    "cordset-m12",
+    "io-block-m12-8di8do"
+   ],
+   "title": "every cable end mates with its port as built: opposite genders, the key fits, every mapped pole made at the seat",
+   "basis": "IEC 61076-2-101 / -111; toolkit/contact.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-030",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 5 cordset-m12 port-b (female A) -> machine-1.pbs-1.s-x1 (male A)",
+   "message": "5 pole(s) made at the seat; pins touch 4.95 mm out, made 4.45 mm out, before the nut catches the thread at 3.85: pushed on by hand it works, held by friction only; thread engaged 3.85 mm at the seat",
+   "elements": [
+    "cordset-m12",
+    "pbs-6h-22"
+   ],
+   "title": "every cable end mates with its port as built: opposite genders, the key fits, every mapped pole made at the seat",
+   "basis": "IEC 61076-2-101 / -111; toolkit/contact.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-030",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 6 cordset-m12 port-a (male A) -> machine-1.io-1.port-x2 (female A)",
+   "message": "5 pole(s) made at the seat; pins touch 4.90 mm out, made 4.40 mm out, before the nut catches the thread at 1.45: pushed on by hand it works, held by friction only; thread engaged 1.45 mm at the seat",
+   "elements": [
+    "cordset-m12",
+    "io-block-m12-8di8do"
+   ],
+   "title": "every cable end mates with its port as built: opposite genders, the key fits, every mapped pole made at the seat",
+   "basis": "IEC 61076-2-101 / -111; toolkit/contact.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-030",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 6 cordset-m12 port-b (female A) -> machine-1.pbs-1.s-x2 (male A)",
+   "message": "5 pole(s) made at the seat; pins touch 4.95 mm out, made 4.45 mm out, before the nut catches the thread at 3.85: pushed on by hand it works, held by friction only; thread engaged 3.85 mm at the seat",
+   "elements": [
+    "cordset-m12",
+    "pbs-6h-22"
+   ],
+   "title": "every cable end mates with its port as built: opposite genders, the key fits, every mapped pole made at the seat",
+   "basis": "IEC 61076-2-101 / -111; toolkit/contact.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-030",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 7 cordset-m12 port-a (male A) -> machine-1.io-1.port-x6 (female A)",
+   "message": "5 pole(s) made at the seat; pins touch 4.90 mm out, made 4.40 mm out, before the nut catches the thread at 1.45: pushed on by hand it works, held by friction only; thread engaged 1.45 mm at the seat",
+   "elements": [
+    "cordset-m12",
+    "io-block-m12-8di8do"
+   ],
+   "title": "every cable end mates with its port as built: opposite genders, the key fits, every mapped pole made at the seat",
+   "basis": "IEC 61076-2-101 / -111; toolkit/contact.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-030",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 7 cordset-m12 port-b (female A) -> machine-1.pbs-1.s-x3 (male A)",
+   "message": "5 pole(s) made at the seat; pins touch 4.95 mm out, made 4.45 mm out, before the nut catches the thread at 3.85: pushed on by hand it works, held by friction only; thread engaged 3.85 mm at the seat",
+   "elements": [
+    "cordset-m12",
+    "pbs-6h-22"
+   ],
+   "title": "every cable end mates with its port as built: opposite genders, the key fits, every mapped pole made at the seat",
+   "basis": "IEC 61076-2-101 / -111; toolkit/contact.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-030",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 8 cordset-m12 port-a (male A) -> machine-1.io-1.port-x5 (female A)",
+   "message": "5 pole(s) made at the seat; pins touch 4.90 mm out, made 4.40 mm out, before the nut catches the thread at 1.45: pushed on by hand it works, held by friction only; thread engaged 1.45 mm at the seat",
+   "elements": [
+    "cordset-m12",
+    "io-block-m12-8di8do"
+   ],
+   "title": "every cable end mates with its port as built: opposite genders, the key fits, every mapped pole made at the seat",
+   "basis": "IEC 61076-2-101 / -111; toolkit/contact.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-030",
+   "scope": "dm-motor-starter-cell",
+   "where": "row 8 cordset-m12 port-b (female A) -> machine-1.pbs-1.s-x5 (male A)",
+   "message": "5 pole(s) made at the seat; pins touch 4.95 mm out, made 4.45 mm out, before the nut catches the thread at 3.85: pushed on by hand it works, held by friction only; thread engaged 3.85 mm at the seat",
+   "elements": [
+    "cordset-m12",
+    "pbs-6h-22"
+   ],
+   "title": "every cable end mates with its port as built: opposite genders, the key fits, every mapped pole made at the seat",
+   "basis": "IEC 61076-2-101 / -111; toolkit/contact.py"
+  }
+ ]
+}

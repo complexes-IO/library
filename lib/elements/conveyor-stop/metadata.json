@@ -1,0 +1,12 @@
+{
+  "element_id": "conveyor-stop",
+  "domain": "mechanical",
+  "category": "Conveyor and material handling",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 70.0,
+  "height": 160.0,
+  "depth": 90.0,
+  "units": "mm",
+  "datasheet_dims": null
+}

@@ -1,0 +1,27 @@
+{
+  "element_id": "overload-9a-1no1nc",
+  "domain": "electrical",
+  "category": "Electrical components",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 45.0,
+  "height": 71.7,
+  "depth": 83.7,
+  "units": "mm",
+  "datasheet_dims": {
+    "w": 45.0,
+    "h": 71.7,
+    "d": 83.7
+  },
+  "brief": {
+    "stage0": "COMPLETE",
+    "date": "2026-11-03",
+    "files": [
+      "references/measure.md"
+    ],
+    "note": "Stage 0 of lib/element-qa-checklist.txt; EM 2026-11-03"
+  },
+  "aliases": [
+    "overload-9a"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "element_id": "vacuum",
+  "domain": "pneumatics",
+  "category": "Robotics and motion control",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 64.4,
+  "height": 43.2,
+  "depth": 32.0,
+  "units": "mm",
+  "datasheet_dims": null
+}

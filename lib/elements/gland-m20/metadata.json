@@ -1,0 +1,24 @@
+{
+  "element_id": "gland-m20",
+  "domain": "electrical",
+  "category": "Electrical components",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 29.72,
+  "height": 29.72,
+  "depth": 38.1,
+  "units": "mm",
+  "datasheet_dims": [
+    29.72,
+    29.72,
+    38.1
+  ],
+  "brief": {
+    "stage0": "COMPLETE",
+    "date": "2026-11-03",
+    "files": [
+      "references/measure.md"
+    ],
+    "note": "Stage 0 of lib/element-qa-checklist.txt; EM 2026-11-03 kit prompt step 5"
+  }
+}

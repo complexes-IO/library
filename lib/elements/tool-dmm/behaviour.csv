@@ -1,0 +1,34 @@
+# behaviour.csv · tool-dmm · digital multimeter (our own design; lib/behaviour.md). Written by elec-r30 (unattended; 2026-11-11) from spec.md (What; Dimensions; the dial positions table; Named nodes; Decals; Notes and assumptions) and element.py.
+# The four jacks are the meter's pins (their marks printed beside them: spec.md Decals); none has a port node yet (element.py: the jacks are M-GASKET bores; the pivots are display; dial; probe-red; probe-black), so b is blank on every pin row and BEH-020 is REVIEW until a later version adds the port nodes with the leads and their plugs (spec.md Notes). A jack has no screw: its torque is not claimed (lib/behaviour.md; pin). The jack bore and pitch are spec.md row 15 (EM approved; lib/approvals.csv row 43; class B) and are not restated.
+# The dial positions are spec.md row 17's table (EM approved; lib/approvals.csv row 42; class A): one state per position in the table's order; the dial posed at the table's angle; the jacks each position uses in the notes. No contact / load / source rows: the meter's input impedance and its ranges are not on file and not claimed (spec.md What) and the phase-1 twin reads the meter's readings from the nets (lib/behaviour.md; the twin). The battery is not modelled: the display lights in every position but OFF.
+kind,a,b,part,when,value,unit,source,note
+pin,COM,,jack-com,,not claimed,N·m,not claimed: a 4 mm plug-in jack with no screw (lib/behaviour.md pin); spec.md row 15 (EM approved; lib/approvals.csv row 43),jack at x −30; the common of every function; no port node yet
+pin,V/Ω,,jack-v-ohm,,not claimed,N·m,as COM,jack at x −10 (printed V Ω beside it: spec.md Decals); the volts and ohms functions; no port node yet
+pin,mA,,jack-ma,,not claimed,N·m,as COM,jack at x 10; the µA and mA functions; no port node yet
+pin,A,,jack-a,,not claimed,N·m,as COM,jack at x 30; the A function; no port node yet
+state,off,,dial,default,,,spec.md row 17 dial positions table (EM approved; lib/approvals.csv row 42): 0° OFF; element.py (dial rotate about −y range 0–270 deg: rest at 0),the pointer ridge up: no jack in use; the display dark
+state,v-ac,,dial,manual toggle,,,spec.md row 17 dial positions table (EM approved; lib/approvals.csv row 42): 30° V~ (AC voltage),jacks in use COM and V/Ω
+state,v-dc,,dial,manual toggle,,,as v-ac: 60° V⎓ (DC voltage),jacks in use COM and V/Ω
+state,mv,,dial,manual toggle,,,as v-ac: 90° mV,jacks in use COM and V/Ω
+state,ohm,,dial,manual toggle,,,as v-ac: 120° Ω (resistance),jacks in use COM and V/Ω
+state,continuity,,dial,manual toggle,,,as v-ac: 150° continuity,jacks in use COM and V/Ω
+state,diode,,dial,manual toggle,,,as v-ac: 180° diode,jacks in use COM and V/Ω
+state,ua,,dial,manual toggle,,,as v-ac: 210° µA,jacks in use COM and mA
+state,ma,,dial,manual toggle,,,as v-ac: 240° mA,jacks in use COM and mA
+state,amps,,dial,manual toggle,,,as v-ac: 270° A,jacks in use COM and A
+state,probe-red-parked,,probe-red,default,,,spec.md Named nodes (probe-red translate +z 0–150: rest in the clips),
+state,probe-red-out,,probe-red,manual toggle,,,spec.md Dimensions probes (pull out 150 along +z; design choice),the red probe taken out of its clips
+state,probe-black-parked,,probe-black,default,,,spec.md Named nodes (probe-black translate +z 0–150: rest in the clips),
+state,probe-black-out,,probe-black,manual toggle,,,spec.md Dimensions probes (pull out 150 along +z; design choice),the black probe taken out of its clips
+pose,dial,,,v-ac,30,,spec.md row 17 dial positions table (EM approved; lib/approvals.csv row 42); element.py (dial rotate about −y in deg; the pointer ridge up at 0),
+pose,dial,,,v-dc,60,,as v-ac,
+pose,dial,,,mv,90,,as v-ac,
+pose,dial,,,ohm,120,,as v-ac,
+pose,dial,,,continuity,150,,as v-ac,
+pose,dial,,,diode,180,,as v-ac,
+pose,dial,,,ua,210,,as v-ac,
+pose,dial,,,ma,240,,as v-ac,
+pose,dial,,,amps,270,,as v-ac (the range end),
+pose,display,,,not off,1,,spec.md row 17 dial positions table (EM approved; lib/approvals.csv row 42): 0° OFF (the display dark); Named nodes (display emissive),lit in every position but OFF; the battery is not modelled
+pose,probe-red,,,probe-red-out,end,,element.py (probe-red translate +z range 0–150),
+pose,probe-black,,,probe-black-out,end,,element.py (probe-black translate +z range 0–150),

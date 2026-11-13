@@ -1,0 +1,16 @@
+{
+  "element_id": "hyd-valve-d03",
+  "category": "Hydraulics",
+  "width": 224.74,
+  "height": 92.075,
+  "depth": 46.0,
+  "units": "mm",
+  "datasheet_dims": [
+    224.74,
+    92.075,
+    46.0
+  ],
+  "domain": "hydraulics",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

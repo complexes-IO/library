@@ -1,0 +1,16 @@
+{
+  "element_id": "safety-scanner",
+  "category": "Safety systems",
+  "width": 106.6,
+  "height": 80.0,
+  "depth": 117.5,
+  "units": "mm",
+  "datasheet_dims": [
+    106.6,
+    80.0,
+    117.5
+  ],
+  "domain": "safety",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

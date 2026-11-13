@@ -1,0 +1,189 @@
+{
+ "title": "pm-motor-starter · the motor starter panel",
+ "asset": "pm-motor-starter",
+ "view": [
+  -0.35,
+  0.2,
+  0.92
+ ],
+ "distance": 1.0,
+ "inputs": {
+  "power": {
+   "solver": "q1.on",
+   "key": "1",
+   "short": "disconnect Q1 (door handle)"
+  },
+  "q2": {
+   "solver": "q2.on",
+   "key": "2",
+   "short": "control breaker Q2"
+  },
+  "q3": {
+   "solver": "q3.on",
+   "key": "3",
+   "short": "branch breaker Q3"
+  },
+  "field": {
+   "solver": "field",
+   "key": "F",
+   "short": "station e-stop chain healthy (field)"
+  },
+  "run": {
+   "solver": "run",
+   "key": "S",
+   "short": "controller run output"
+  },
+  "estop": {
+   "solver": "enc-1.estop-door.pressed",
+   "key": "E",
+   "short": "door e-stop (latched)"
+  },
+  "twist": {
+   "solver": "enc-1.estop-door.twisted",
+   "key": "T",
+   "short": "twist to release"
+  },
+  "trip": {
+   "solver": "f1.tripped",
+   "key": "O",
+   "short": "overload trip (fault)"
+  },
+  "reset": {
+   "solver": "f1.reset",
+   "key": "R",
+   "short": "overload reset"
+  },
+  "doors": {
+   "solver": "enc-1.open",
+   "key": "D",
+   "short": "doors"
+  }
+ },
+ "show": [
+  {
+   "label": "PSU on",
+   "flag": "g1.on"
+  },
+  {
+   "label": "k-safe out",
+   "flag": "k-safe.on"
+  },
+  {
+   "label": "K1 in",
+   "flag": "k1.operated"
+  }
+ ],
+ "report": [
+  "k1.armature",
+  "k1.pole-1",
+  "k1.coil",
+  "k-safe.led-out",
+  "enc-1.lamp-power",
+  "enc-1.estop-door",
+  "f1.latch",
+  "g1.led-dcok",
+  "enc-1.door-r"
+ ],
+ "meter": [
+  [
+   "k1.1",
+   "k1.3"
+  ],
+  [
+   "k1.A1",
+   "k1.A2"
+  ],
+  [
+   "f1.T1",
+   "f1.T2"
+  ],
+  [
+   "g1.L",
+   "g1.N"
+  ],
+  [
+   "g1.+V",
+   "g1.-V"
+  ]
+ ],
+ "smoke": [
+  {
+   "name": "power on",
+   "work": [
+    "power",
+    "q2",
+    "q3"
+   ]
+  },
+  {
+   "name": "doors open",
+   "work": [
+    "doors"
+   ]
+  },
+  {
+   "name": "structure off (control layer alone)",
+   "layers": [
+    "structure",
+    "mechanism",
+    "480 VAC power",
+    "Ethernet & communication",
+    "control (mains)",
+    "ground"
+   ]
+  },
+  {
+   "name": "all layers on",
+   "layers": [
+    "structure",
+    "mechanism",
+    "480 VAC power",
+    "Ethernet & communication",
+    "control (mains)",
+    "ground"
+   ]
+  },
+  {
+   "name": "field healthy",
+   "work": [
+    "field"
+   ]
+  },
+  {
+   "name": "run",
+   "work": [
+    "run"
+   ]
+  },
+  {
+   "name": "e-stop pressed",
+   "work": [
+    "estop"
+   ]
+  },
+  {
+   "name": "e-stop twisted out",
+   "work": [
+    "twist"
+   ]
+  },
+  {
+   "name": "overload trips",
+   "work": [
+    "trip"
+   ]
+  },
+  {
+   "name": "reset pressed",
+   "work": [
+    "reset"
+   ]
+  },
+  {
+   "name": "power off",
+   "work": [
+    "power"
+   ]
+  }
+ ]
+}

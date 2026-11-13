@@ -1,0 +1,5 @@
+# behaviour.csv · stand-micrometer · micrometer stand (lib/behaviour.md). Mechanical only: no terminal. One moving node: the clamp head (node head: the block with the frame slot) tilting about the pin through the fork's cheeks. The base, the post and the fork are the fixed body. The tilt lock and the clamp's thumb screw are not drawn; no force or load is claimed; the twin reads only the head's angle.
+kind,a,b,part,when,value,unit,source,note
+state,upright,,head,default,,,spec.md (Mechanism),the head upright (0): the slot level on top
+state,tilted,,head,manual toggle,,,spec.md (Mechanism),the head tilted by hand about the pin to bring the micrometer's anvils to the hand
+pose,head,,,tilted,end,,element.py (node head: rotate -30 to 30 about the pin along y),

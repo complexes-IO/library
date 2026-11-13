@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+17.055,port bore NPT 3/8 (plain at E1 + h),port,,,,"ASME B1.20.1 by its formulas (toolkit/pneu.py NPT table, EM 2026-11-07): E1 + h, the male's major diameter at the hand-tight plane, as fitting-pushin 2.0 draws its stub and hyd-cooler 1.0 bores its water ports",design choice: the four ports (two on the shell's top, two on the -x bonnet); the thread drawn plain at the stub's own diameter so the halves touch (tank 2.0's rule); depth L2 + 2 = 12.358; each blind in its own boss

@@ -1,0 +1,12 @@
+{
+  "element_id": "hardware-cabinet",
+  "domain": "mechanical",
+  "category": "Fasteners, hardware, connectors and cables",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 600.0,
+  "height": 700.0,
+  "depth": 347.0,
+  "units": "mm",
+  "datasheet_dims": null
+}

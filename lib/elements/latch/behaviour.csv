@@ -1,0 +1,5 @@
+# behaviour.csv · latch · quarter-turn fastener, generic (ETIM 10.0 EC011966) (lib/behaviour.md). Mechanical only: no terminal and no pin row (the stud is not a port: nothing is screwed onto it; the receptacle's rivets are the host's). One moving node, `stud`, turning a quarter turn in the grommet and the receptacle; the grommet and the receptacle are the fixed body. Nothing drives it: an operator's hand on the knurled knob, or a screwdriver in its slot.
+kind,a,b,part,when,value,unit,source,note
+state,closed,,stud,default,,,spec.md (Mechanism),the stud at 0: its pin across the receptacle's slots under the cam plate; the panel is held
+state,open,,stud,manual toggle,,,spec.md (Mechanism),a quarter turn (90) by hand or screwdriver: the pin in line with the slots; the panel lifts off with its stud and grommet
+pose,stud,,,open,end,,element.py (the stud rotates 0 to 90 about its axis z through the knob's seat),

@@ -1,0 +1,5 @@
+# behaviour.csv · desk-pc · workstation desk (lib/behaviour.md). Mechanical only: no terminal (no screw, rail or port is met). One moving node, the drawer; the top, side frames, panels, tray and CPU bay are the fixed body.
+kind,a,b,part,when,value,unit,source,note
+state,shut,,drawer,default,,,element.py (docstring),the drawer shut under the top (0)
+state,open,,drawer,manual toggle,,,element.py (docstring),the drawer pulled out toward the user to the end of its travel
+pose,drawer,,,open,end,,element.py (drawer translates -y 0 to 300),

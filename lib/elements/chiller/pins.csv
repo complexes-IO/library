@@ -1,0 +1,5 @@
+port,pin,role,signal,rated_A,source
+pwr,L1,phase-load:L1,L1,,design (spec.md Ports: the unit's supply terminals L1 / L2 / L3 behind the cable entry; full-load current not stated)
+pwr,L2,phase-load:L2,L2,,design (spec.md Ports)
+pwr,L3,phase-load:L3,L3,,design (spec.md Ports)
+pwr,PE,PE,cabinet earth,,design (spec.md Ports: the cabinet's bonding terminal beside the supply terminals)

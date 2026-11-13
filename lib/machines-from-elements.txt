@@ -1,0 +1,72 @@
+MACHINES AND SYSTEMS BUILDABLE FROM THE ELEMENT SET (124 ids, 2026-11-03; conveyor-types-bench added 2026-11-08: one section of every conveyor type, EM)
+One line = one assembly BOM. (own) = an element we design ourselves; everything else is on disk.
+
+ELECTRICAL / MOTOR CONTROL
+motor-starter-cell          enc-fs-1524x1829x305, din-rail-35, duct-40x60, term-4mm, disc-3p-30a, mcb-3p-c10, mcb-1p-c6, psu-24v-2a4, contactor-9a-1no1nc, overload-9a-1no1nc, relay-safety-2ch-2no1nc, io-block-m12-8di8do, plc0, pbs-6h-22, motor-iec71-370w, port-m12-a, port-pwr-480, gland-m20
+vfd-drive-panel             enc-wm, din-rail-35, duct-40x60, mccb, vfd-0.75kw, xfmr-control, fuse-holder, term-4mm, hmi-7in, motor-iec71-370w, disc-motor
+power-monitoring-panel      enc-wm, mccb, disc-3p-30a, power-meter, ct-current, plc-aio, daq, hmi-7in, vfd-0.75kw, motor-iec71-370w
+control-transformer-panel   enc-wm, xfmr-control, fuse-holder, mcb-1p-c6, term-4mm, relay-ice-cube-2co, pbs-6h-22
+
+PLC / CONTROL
+plc-training-panel          panel-plc-training, plc0, plc-dio, plc-aio, io-block-m12-8di8do, din-rail-35, psu-24v-2a4, pbs-6h-22, hmi-7in, eth-switch-din
+operator-station            panel-operator, hmi-7in, pbs-6h-22, op-sel-22, op-pb-22-1no, op-pilot-22, op-estop-22-2nc, ipc-touch, bracket-monitor
+hil-commissioning-bench     bench-1800, plc0, plc-dio, plc-aio, eth-switch-din, ipc, hmi-7in, servo-drive, servo-motor, vfd-0.75kw, motor-iec71-370w
+remote-io-node              jbox, io-block-m12-8di8do, iolink-master, port-m12-a, gland-m20, cordset-m12-a, prox-m12, photoeye-m18
+
+MATERIAL HANDLING
+inbound-conveyor            conveyor-seg, conveyor-roller, photoeye-m18, barcode-scanner, load-cell, motor-iec71-370w, vfd-0.75kw, conveyor-guard, stack-light
+outbound-conveyor           conveyor-seg, diverter, photoeye-m18, prox-m12, pallet, pallet-rack, stack-light, light-curtain
+sorting-line                conveyor-seg, conveyor-roller, diverter, photoeye-m18, barcode-scanner, plc0, hmi-7in, pbs-6h-22
+check-weigh-station         conveyor-seg, load-cell, photoeye-m18, plc-aio, hmi-7in, diverter
+pallet-rack-bay             pallet-rack, pallet, anchor-bolt, light-curtain
+conveyor-types-bench        conveyor-seg, conveyor-roller, conveyor-wheel, conveyor-ball-transfer, conveyor-cdlr, conveyor-mdr, conveyor-chain, conveyor-mattop, conveyor-incline, conveyor-slat, conveyor-screw, conveyor-vibratory, conveyor-stop, diverter, lift-transfer, turntable, conveyor-guard, photoeye-m18, prox-m12, motor-iec, gearmotor, vfd-0.75kw, plc0, hmi-7in, pbs-6h-22, op-estop-22-2nc, stack-light
+amr-dock                    amr (own), barcode-scanner, photoeye-m18, safety-scanner, pallet, wap
+
+PICK AND PLACE / MECHATRONICS
+pneumatic-pick-and-place    tslot-40, cylinder, valve-bank, frl, vacuum, prox-m12, photoeye-m18, plc0, plc-dio, conveyor-seg, pbs-6h-22
+servo-pick-and-place        tslot-40, actuator-linear, servo-drive, servo-motor, linear-guide, encoder, drag-chain, vacuum, gripper, plc0
+gantry-xyz                  tslot-40, actuator-linear (x3), servo-drive (x3), servo-motor (x3), linear-guide, drag-chain, encoder, limit-switch
+rotary-index-table          motor-iec71-370w, gear-reducer, coupling-shaft, bearing-pillow, prox-m12, encoder, tslot-40
+
+ROBOTICS
+robot-cell                  robot-arm, robot-controller, teach-pendant (own), robot-pedestal, gripper, conveyor-seg, light-curtain, safety-scanner, guard-interlock, tslot-40, conveyor-guard, stack-light
+cobot-bench                 cobot, gripper, bench-1800, safety-scanner, pbs-1h-estop-22, vacuum, conveyor-seg
+robot-tending-cell          robot-arm, robot-controller, cnc-mill-benchtop (own), vise-machine, gripper, guard-interlock, light-curtain, pallet
+
+MOTION / MECHANICAL
+servo-axis-bench            bench-1800, servo-drive, servo-motor, coupling-shaft, actuator-linear, linear-guide, encoder, drag-chain, limit-switch
+mechanisms-bench            bench-1800, tslot-40, motor-iec71-370w, gear-reducer, coupling-shaft, bearing-pillow, linear-guide, actuator-linear
+condition-monitoring-rig    motor-iec71-370w, vfd-0.75kw, pump, coupling-shaft, bearing-pillow, vib-sensor, tt-rtd, ct-current, daq, ipc
+
+FLUID POWER
+pneumatic-trainer           tslot-40, frl, valve-bank, cylinder, vacuum, gauge-p, regulator, pbs-6h-22, plc-dio
+hydraulic-trainer           hpu-0.37kw (own: tank, pump, motor-iec71-370w, hyd-valve-d03, hyd-gauge), hyd-cylinder-da-40, hyd-valve-d03, hyd-gauge, pt, bench-1800, pbs-6h-22
+
+PROCESS
+process-skid                strut, tank, pump, control-valve, hx-shell-tube, flow-meter, level-sensor, pt, tt-rtd, regulator, gauge-p, gauge-t, motor-iec71-370w
+calibration-bench           bench-1800, pt, tt-rtd, flow-meter, level-sensor, load-cell, gauge-p, gauge-t, plc-aio, daq, calibrator-hand-pump (own), caliper-150 (own)
+heat-exchanger-loop         tank, pump, hx-shell-tube, control-valve, tt-rtd (x2), flow-meter, pt, regulator
+
+SAFETY
+safety-cell                 relay-safety-2ch-2no1nc, light-curtain, safety-scanner, guard-interlock, pbs-1h-estop-22, op-estop-22-2nc, conveyor-guard, contactor-9a-1no1nc, stack-light, emergency-light
+guarded-machine-door        guard-interlock, relay-safety-2ch-2no1nc, pbs-1h-estop-22, stack-light, conveyor-guard, tslot-40
+
+NETWORK / IT
+network-bench               bench-1800, eth-switch-din, router-ind, wap, patch-panel, plc0, io-block-m12-8di8do, hmi-7in, cable-tray, port-m12-a
+server-rack                 rack-19in (own, EIA-310), server-1u, nas, patch-panel, ups-rack, eth-switch-din, router-ind, ipc
+iiot-edge-node              enc-wm, din-rail-35, daq, router-ind, ipc, psu-24v-2a4, pt, tt-rtd, sensor-room, wap
+
+BUILDING
+hvac-trainer                bas-controller, vav, damper, diffuser, fan-exhaust, sensor-room, enc-wm, relay-ice-cube-2co, ahu (own assembly)
+fire-and-life-safety-wall   facp, smoke-detector, emergency-light, extinguisher, eyewash
+
+QUALITY / MANUFACTURING
+vision-inspection-station   conveyor-seg, camera-vision, light-ring, photoeye-m18, iolink-master, plc0, hmi-7in, ipc, diverter, tslot-40
+machining-station           cnc-mill-benchtop (own), vise-machine, caliper-150 (own), bench-1800, cabinet-tool, tslot-40
+reverse-engineering-station desk-pc, bracket-monitor, bench-1800, cabinet-tool, caliper-150 (own), printer-3d (own)
+
+CLASSROOM FURNITURE
+lab-bench                   bench-1800, cabinet-tool, feet-leveling, desk-pc, bracket-monitor, hardware-cabinet
+toolbox-station             tb-rollcab (own), tool-dmm (own), bench-1800
+
+Every machine above is a bom.csv in lib/assemblies/: the elements already exist; the work is placing them.

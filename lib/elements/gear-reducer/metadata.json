@@ -1,0 +1,12 @@
+{
+  "element_id": "gear-reducer",
+  "domain": "mechanical",
+  "category": "Power transmission",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 172.0,
+  "height": 160.0,
+  "depth": 157.0,
+  "units": "mm",
+  "datasheet_dims": null
+}

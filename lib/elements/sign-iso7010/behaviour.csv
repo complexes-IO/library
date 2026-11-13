@@ -1,0 +1,2 @@
+# behaviour.csv · sign-iso7010 · safety sign plate 200 x 300, generic (ETIM 10.0 EC001777) (lib/behaviour.md). Mechanical only: no terminal (the four corner holes are the host's fixings, not ports; no earth path is modelled or claimed) and no moving node (the plate and its printed fields are one fixed body), so no state and no pose. What the sign says is a print (a later version's), not a behaviour.
+kind,a,b,part,when,value,unit,source,note

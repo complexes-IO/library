@@ -1,0 +1,5 @@
+# behaviour.csv · vise-bench · generic bench vice (lib/behaviour.md). Written by mech-r124 from element.py: no terminal (the four M10 holes in the table foot take the bench's bolts, not ports); one moving node, `jaw` (the moving jaw block, its plate, the slide bar, the spindle's front end and the T-handle), translates +x 0 to 99 (TRAVEL: the jaws 1 apart at 0, 100 apart at the end, the class value max. clamping width). The spindle turns by hand, so the twin sets the jaw as the operator's input. No clamping force here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note
+state,closed,,jaw,default,,,element.py (ORIGIN and GAP: the jaws 1 apart at 0),the moving jaw run up to the fixed jaw
+state,open,,jaw,manual toggle,,,element.py (node jaw: translate +x 0 to 99),the moving jaw wound out to the end of its travel: the jaws 100 apart
+pose,jaw,,,open,end,,element.py (node jaw: translate +x 0 to 99),

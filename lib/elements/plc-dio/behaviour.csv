@@ -1,0 +1,93 @@
+# behaviour.csv · plc-dio · PLC digital I/O module 8 DI + 8 DO, 24 V DC (lib/behaviour.md). Written by elec-r34 from spec.md and pins.csv, in the form of plc-aio's and io-block-m12-8di8do's.
+# The module is a load on its 24 V DC supply (spec.md Class values 9: 2.0 W). Each input reads 24 V DC to 0V; each output sources the output supply 24VO to its load, returned on 0VO.
+# The supply's and the inputs' switching thresholds are IEC 61131-2's tables (class B: a document wanted, not in lib/standards/sources.csv), so any voltage reads as present / signal 1 (as plc-aio's powered row).
+# The bus and the program are phase 5 of the roadmap: each output's command is a manual state the twin sets (as io-block-m12-8di8do and plc0).
+# Torques: the plugs' clamps are terminal-plug 2.0's (class B: IEC 60999), as that element's behaviour.csv writes them.
+kind,a,b,part,when,value,unit,source,note
+pin,24V,x1.t-1,x1.clamp-1,,NOT ON FILE (B): IEC 60999,N·m,terminal-plug 2.0 behaviour.csv (its clamps' torque class B),module supply +24 V DC
+pin,0V,x1.t-2,x1.clamp-2,,NOT ON FILE (B): IEC 60999,N·m,as 24V,module supply 0 V and the inputs' reference
+pin,FE,x1.t-3,x1.clamp-3,,NOT ON FILE (B): IEC 60999,N·m,as 24V,functional earth
+pin,DI0,x1.t-4,x1.clamp-4,,NOT ON FILE (B): IEC 60999,N·m,as 24V,digital input 0
+pin,DI1,x1.t-5,x1.clamp-5,,NOT ON FILE (B): IEC 60999,N·m,as 24V,digital input 1
+pin,DI2,x1.t-6,x1.clamp-6,,NOT ON FILE (B): IEC 60999,N·m,as 24V,digital input 2
+pin,DI3,x1.t-7,x1.clamp-7,,NOT ON FILE (B): IEC 60999,N·m,as 24V,digital input 3
+pin,DI4,x1.t-8,x1.clamp-8,,NOT ON FILE (B): IEC 60999,N·m,as 24V,digital input 4
+pin,DI5,x1.t-9,x1.clamp-9,,NOT ON FILE (B): IEC 60999,N·m,as 24V,digital input 5
+pin,DI6,x1.t-10,x1.clamp-10,,NOT ON FILE (B): IEC 60999,N·m,as 24V,digital input 6
+pin,DI7,x1.t-11,x1.clamp-11,,NOT ON FILE (B): IEC 60999,N·m,as 24V,digital input 7
+pin,24VO,x2.t-1,x2.clamp-1,,NOT ON FILE (B): IEC 60999,N·m,as 24V,output supply +24 V DC
+pin,0VO,x2.t-2,x2.clamp-2,,NOT ON FILE (B): IEC 60999,N·m,as 24V,output supply 0 V
+pin,DO0,x2.t-3,x2.clamp-3,,NOT ON FILE (B): IEC 60999,N·m,as 24V,digital output 0
+pin,DO1,x2.t-4,x2.clamp-4,,NOT ON FILE (B): IEC 60999,N·m,as 24V,digital output 1
+pin,DO2,x2.t-5,x2.clamp-5,,NOT ON FILE (B): IEC 60999,N·m,as 24V,digital output 2
+pin,DO3,x2.t-6,x2.clamp-6,,NOT ON FILE (B): IEC 60999,N·m,as 24V,digital output 3
+pin,DO4,x2.t-7,x2.clamp-7,,NOT ON FILE (B): IEC 60999,N·m,as 24V,digital output 4
+pin,DO5,x2.t-8,x2.clamp-8,,NOT ON FILE (B): IEC 60999,N·m,as 24V,digital output 5
+pin,DO6,x2.t-9,x2.clamp-9,,NOT ON FILE (B): IEC 60999,N·m,as 24V,digital output 6
+pin,DO7,x2.t-10,x2.clamp-10,,NOT ON FILE (B): IEC 60999,N·m,as 24V,digital output 7
+load,24V,0V,logic,,2.0,W,"spec.md Class values 9 (2.0 W): the module's power consumption written as the load's P; the solver draws I = P / V at the seen voltage (0.083 A at 24 V, ratings.csv load_i)",the module's electronics
+state,powered,,supply,"V('24V','0V') > 0",,,"spec.md Class values 3 (24 V DC supply); the supply's under-voltage threshold is NOT ON FILE (B): IEC 61131-2 (its 24 V DC supply range table is not in lib/standards/sources.csv), so any supply voltage reads as powered (as plc-aio's powered row)",the module runs
+state,off,,supply,default,,,spec.md Class values 3,no supply: the module is dead and its outputs off
+state,out-on,,output-supply,"V('24VO','0VO') > 0",,,"spec.md Class values 15 (the output supply 24VO-0VO); its threshold as powered's: IEC 61131-2's table (class B)",the outputs have their supply
+state,out-off,,output-supply,default,,,spec.md Class values 15,no output supply: the outputs cannot switch
+state,fault,,module,manual toggle,,,spec.md Named nodes (led-err),the twin sets a module fault
+state,healthy,,module,default,,,spec.md Named nodes,
+state,di0-on,,di0,"powered and V('DI0','0V') > 0",,,"spec.md Class values 5 10 12 (24 V DC inputs to 0V); the signal-1 threshold is NOT ON FILE (B): IEC 61131-2 (its type 1 / 3 input table is not on file), so any voltage reads as signal 1",input 0
+state,di0-off,,di0,default,,,spec.md Class values 5,
+state,di1-on,,di1,"powered and V('DI1','0V') > 0",,,as di0-on,input 1
+state,di1-off,,di1,default,,,as di0-off,
+state,di2-on,,di2,"powered and V('DI2','0V') > 0",,,as di0-on,input 2
+state,di2-off,,di2,default,,,as di0-off,
+state,di3-on,,di3,"powered and V('DI3','0V') > 0",,,as di0-on,input 3
+state,di3-off,,di3,default,,,as di0-off,
+state,di4-on,,di4,"powered and V('DI4','0V') > 0",,,as di0-on,input 4
+state,di4-off,,di4,default,,,as di0-off,
+state,di5-on,,di5,"powered and V('DI5','0V') > 0",,,as di0-on,input 5
+state,di5-off,,di5,default,,,as di0-off,
+state,di6-on,,di6,"powered and V('DI6','0V') > 0",,,as di0-on,input 6
+state,di6-off,,di6,default,,,as di0-off,
+state,di7-on,,di7,"powered and V('DI7','0V') > 0",,,as di0-on,input 7
+state,di7-off,,di7,default,,,as di0-off,
+state,do0-on,,do0,manual toggle,,,spec.md Class values 6 (the controller's command; phase 5: the twin sets it),output 0 commanded
+state,do0-off,,do0,default,,,spec.md Class values 6,
+state,do1-on,,do1,manual toggle,,,as do0-on,output 1 commanded
+state,do1-off,,do1,default,,,as do0-off,
+state,do2-on,,do2,manual toggle,,,as do0-on,output 2 commanded
+state,do2-off,,do2,default,,,as do0-off,
+state,do3-on,,do3,manual toggle,,,as do0-on,output 3 commanded
+state,do3-off,,do3,default,,,as do0-off,
+state,do4-on,,do4,manual toggle,,,as do0-on,output 4 commanded
+state,do4-off,,do4,default,,,as do0-off,
+state,do5-on,,do5,manual toggle,,,as do0-on,output 5 commanded
+state,do5-off,,do5,default,,,as do0-off,
+state,do6-on,,do6,manual toggle,,,as do0-on,output 6 commanded
+state,do6-off,,do6,default,,,as do0-off,
+state,do7-on,,do7,manual toggle,,,as do0-on,output 7 commanded
+state,do7-off,,do7,default,,,as do0-off,
+source,DO0,0VO,do0,do0-on and powered and out-on,24,VDC,"spec.md Class values 13 15 16 (transistor output; the output supply's 24 V DC)",the output at the output supply's nominal (the switch's drop is not stated: spec.md Notes)
+source,DO1,0VO,do1,do1-on and powered and out-on,24,VDC,as DO0,
+source,DO2,0VO,do2,do2-on and powered and out-on,24,VDC,as DO0,
+source,DO3,0VO,do3,do3-on and powered and out-on,24,VDC,as DO0,
+source,DO4,0VO,do4,do4-on and powered and out-on,24,VDC,as DO0,
+source,DO5,0VO,do5,do5-on and powered and out-on,24,VDC,as DO0,
+source,DO6,0VO,do6,do6-on and powered and out-on,24,VDC,as DO0,
+source,DO7,0VO,do7,do7-on and powered and out-on,24,VDC,as DO0,
+limit,do0 do1 do2 do3 do4 do5 do6 do7,,,,0.5,A,spec.md Class values 14 (ratings.csv i_out),each output's rated current
+pose,led-di0,,,di0-on,1,,spec.md Named nodes,yellow: input 0 at signal 1
+pose,led-di1,,,di1-on,1,,as led-di0,
+pose,led-di2,,,di2-on,1,,as led-di0,
+pose,led-di3,,,di3-on,1,,as led-di0,
+pose,led-di4,,,di4-on,1,,as led-di0,
+pose,led-di5,,,di5-on,1,,as led-di0,
+pose,led-di6,,,di6-on,1,,as led-di0,
+pose,led-di7,,,di7-on,1,,as led-di0,
+pose,led-do0,,,do0-on and powered,1,,spec.md Named nodes,yellow: output 0 commanded
+pose,led-do1,,,do1-on and powered,1,,as led-do0,
+pose,led-do2,,,do2-on and powered,1,,as led-do0,
+pose,led-do3,,,do3-on and powered,1,,as led-do0,
+pose,led-do4,,,do4-on and powered,1,,as led-do0,
+pose,led-do5,,,do5-on and powered,1,,as led-do0,
+pose,led-do6,,,do6-on and powered,1,,as led-do0,
+pose,led-do7,,,do7-on and powered,1,,as led-do0,
+pose,led-run,,,powered,1,,spec.md Named nodes,green: powered and running
+pose,led-err,,,powered and fault,1,,spec.md Named nodes,red: a module fault

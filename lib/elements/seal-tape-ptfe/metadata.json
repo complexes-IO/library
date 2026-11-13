@@ -1,0 +1,13 @@
+{
+  "element_id": "seal-tape-ptfe",
+  "domain": "pneumatics",
+  "category": "Seals",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 59.92,
+  "height": 12.0,
+  "depth": 59.92,
+  "units": "mm",
+  "datasheet_dims": null,
+  "aliases": []
+}

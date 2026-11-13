@@ -1,0 +1,29 @@
+# behaviour.csv · controller-thyristor · thyristor power controller 3~ 480 V AC 20 A (lib/behaviour.md). Written by elec-r25 (unattended) from spec.md, pins.csv and ratings.csv
+# (a generic element: the class values are its design inputs). Not in this file (solver phase 1): the firing (L1-T1 L2-T2 L3-T3) and the line LEDs. EN's switching level and the
+# setpoint's effect are not class features and are not stated in 1.0 (spec.md Notes), so what enables the firing is NOT ON FILE (A); the load side stays open here.
+# The clamps' torque is NOT ON FILE (B) (spec.md Dimensions: IEC 60947-1 not on file).
+# elec-r27 (review elec-r25 finding 2): the class now on each cell: torques (B) IEC 60947-1, the relay's contact resistance (C).
+kind,a,b,part,when,value,unit,source,note
+pin,L1,t-L1,clamp-L1,,NOT ON FILE (B): IEC 60947-1,N·m,pins.csv (t-L1); spec.md Dimensions (conductor range and torque class B),supply line 1
+pin,L2,t-L2,clamp-L2,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,supply line 2
+pin,L3,t-L3,clamp-L3,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,supply line 3
+pin,PE,t-PE,clamp-PE,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,protective earth of the heat sink
+pin,T1,t-T1,clamp-T1,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,load phase 1
+pin,T2,t-T2,clamp-T2,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,load phase 2
+pin,T3,t-T3,clamp-T3,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,load phase 3
+pin,24V,t-24V,clamp-24V,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,auxiliary supply +24 V DC
+pin,0V,t-0V,clamp-0V,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,auxiliary supply 0 V (the reference of EN and AI)
+pin,EN,t-EN,clamp-EN,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,enable input
+pin,AI,t-AI,clamp-AI,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,setpoint 0-10 V
+pin,13,t-13,clamp-13,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,ready relay N.O.
+pin,14,t-14,clamp-14,,NOT ON FILE (B): IEC 60947-1,N·m,as L1,ready relay N.O.
+state,powered,,aux,"V('24V','0V') >= 19.2 and V('24V','0V') <= 28.8",,,ratings.csv supply_range (ETIM 10.0 EC011564 class value EF005901; spec.md Class values 9),auxiliary supply within its range
+state,off,,aux,default,,,spec.md Class values 9,no auxiliary supply: the controller is dead
+state,fault,,controller,manual toggle,,,spec.md Named nodes (led-fault: stopped firing on a fault and 13-14 open),the twin sets a fault (which faults it detects is not stated: spec.md Notes)
+state,healthy,,controller,default,,,spec.md Named nodes,
+contact,13,14,ready-relay,powered and not fault,NOT ON FILE (C): the phase-1 solver reads no R for a closed contact (toolkit/nets.py); a B when the circuit model reads it,ohm,pins.csv (13-14 closed: supply on and no fault); spec.md Class values 13,its contact rating is not stated (spec.md Notes)
+pose,led-on,,,powered,1,,spec.md Named nodes (green: auxiliary supply present),
+pose,led-fault,,,powered and fault,1,,spec.md Named nodes (red: stopped on a fault),
+pose,led-l1 led-l2 led-l3,,,off,0,,spec.md Named nodes (yellow: a line conducting),dark: the firing is not in this file (header)
+limit,clamp-L1 clamp-L2 clamp-L3,,,,20,A,ratings.csv ie (ETIM 10.0 EC011564 class value EF006087; spec.md Class values 2),each line
+limit,clamp-L1 clamp-L2 clamp-L3,,,,480,VAC,ratings.csv ue_max (ETIM 10.0 EC011564 class value EF008798; spec.md Class values 3),line to line (208-480 V)

@@ -1,0 +1,3 @@
+property,value,unit,status,source
+p_max,10,bar,generic design,ETIM 10.0 EC010122 class value (EF020100 Max. inlet pressure; spec.md Class values 20)
+lockable,yes,,derived,element.py HASP / SHELF / LOCK_D: the Ø8 padlock holes in the handle's hasp tab and the fixed shelf are coaxial only with the handle closed (spec.md Lockable from 2.0); 29 CFR 1910.147(c)(2)(iii) as PNE-008 reads it

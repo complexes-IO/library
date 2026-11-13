@@ -1,0 +1,64 @@
+wire,length_mm,why_not
+1,1209,
+2,1206,
+3,1203,
+4,778,
+5,810,
+6,842,
+7,1454,
+8,1454,
+9,1454,
+11,1755,
+12,1788,
+13,1766,
+14,1800,
+15,1659,
+16,1342,
+17,1868,
+18,2152,
+10,402,
+20,781,
+21,,k-safe.A1 has no node (request panel-4 item 1)
+23,338,
+24,,k-safe.13 has no node (request panel-4 item 1)
+25,,k-safe.14 has no node (request panel-4 item 1)
+26,2041,
+27,813,
+28,,k-safe.A2 has no node (request panel-4 item 1)
+30,973,
+31,425,
+32,,k-safe.S11 has no node (request panel-4 item 1)
+33,,enc-1.estop-door.12 has no node (request panel-4 item 1)
+34,2218,
+35,2209,
+36,,k-safe.S12 has no node (request panel-4 item 1)
+37,,k-safe.S21 has no node (request panel-4 item 1)
+38,,enc-1.estop-door.22 has no node (request panel-4 item 1)
+39,2199,
+40,2197,
+41,,k-safe.S22 has no node (request panel-4 item 1)
+42,2311,
+43,2311,
+44,2285,
+45,2282,
+46,,enc-1.lamp-power.X1 has no node (request panel-4 item 1)
+47,,enc-1.lamp-power.X2 has no node (request panel-4 item 1)
+48,971,
+49,1041,
+64,320,
+65,308,
+50,,k-safe.23 has no node (request panel-4 item 1)
+51,,k-safe.24 has no node (request panel-4 item 1)
+66,2082,
+67,2067,
+68,2061,
+69,2108,
+70,2099,
+52,,enc-1.btn-reset.13 has no node (request panel-4 item 1)
+53,,enc-1.btn-reset.14 has no node (request panel-4 item 1)
+61,1205,
+62,,door-r: the hinge loom is not an element on file
+63,,door-l: the hinge loom is not an element on file
+58,1745,
+59,1049,
+60,2158,

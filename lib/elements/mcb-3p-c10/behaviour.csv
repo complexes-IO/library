@@ -1,0 +1,27 @@
+# behaviour.csv · mcb-3p-c10 · 3-pole miniature circuit breaker C10 (lib/behaviour.md). Taken in by elec-r22 from the core's proposal of 2026-11-09 (lib/requests/core/behaviour/mcb-3p-c10.csv),
+# checked against references/measure.md: the tripped pose cites the brief (measure.md Named nodes: "The tripped position is the OFF pose"); every other figure as proposed.
+# Terminal marks: the marks on the drawing (p. 1) are not legible in the brief, so 1 … 6 (odd line, even load) are assumed, Assumption (A), for EM: wires.csv joins
+# <tag>.<pin mark>, so a wrong mark mis-wires the twin. Torque NOT ON FILE on the pages read.
+# The magnetic and thermal trips need the circuit model (phase 2 of the solver): until then tripped is a manual fault.
+# elec-r26 (review elec-r22 finding 2): IEC 60947-2, which the proposal cited for the marks, the thermal trip and the reset, is not in lib/standards/sources.csv and no clause
+# was given; the marks and the reset are now Assumption (A) with their reasons, the thermal trip NOT ON FILE (A).
+# elec-r47 (review mcb-3p-c10-1.5 finding 1): the tripped and reset rows name the family's standard as the library names it, IEC 60898-1 (lib/inventory.csv mcb-2p, mcb-3p; its C band is
+# above 5 to 10 In, as sheet p. 1), not IEC 60947-2; neither is on file, so both stay class A.
+# elec-r30 (1.4): each pin names its port node t-<pole>-line / t-<pole>-load (the core's pin-nodes note of 2026-11-11; BEH-020). The node names say pole and side, not the assumed mark.
+kind,a,b,part,when,value,unit,source,note
+pin,1,t-1-line,terminal,,NOT ON FILE,N·m,"drawing p. 1 (terminal openings at 66.0 spacing); marks 1 … 6 Assumption (A): not legible in the brief; torque NOT ON FILE",pole 1 line (top)
+pin,2,t-1-load,terminal,,NOT ON FILE,N·m,as 1,pole 1 load (bottom)
+pin,3,t-2-line,terminal,,NOT ON FILE,N·m,as 1,pole 2 line
+pin,4,t-2-load,terminal,,NOT ON FILE,N·m,as 1,pole 2 load
+pin,5,t-3-line,terminal,,NOT ON FILE,N·m,as 1,pole 3 line
+pin,6,t-3-load,terminal,,NOT ON FILE,N·m,as 1,pole 3 load
+state,off,,mechanism,default,,,maker's datasheet (sheet p. 1),toggle at rest
+state,tripped,,mechanism,manual latch cleared by reset,,,"sheet p. 1 (C curve: 5–10 × In magnetic); the thermal trip NOT ON FILE (A) (IEC 60898-1, the family's standard, not on file); a fault the twin injects until the circuit model runs",toggle in the OFF pose (references/measure.md)
+state,on,,mechanism,manual toggle,,,sheet p. 1,toggle up: all three poles closed (common trip bar: one toggle)
+state,reset,,mechanism,manual momentary,,,"Assumption (A): trip-free, reset by moving the toggle to off (on no page the brief read; IEC 60898-1, the family's standard, which would fix it, is not on file)",the toggle pushed down to reset
+contact,1,2,pole-1,on,,,sheet p. 1,
+contact,3,4,pole-2,on,,,sheet p. 1,
+contact,5,6,pole-3,on,,,sheet p. 1,
+pose,toggle,,,on,end,,element.py (toggle rotates −25..25: off to on),
+pose,toggle,,,tripped,0,,"references/measure.md Named nodes (""The tripped position is the OFF pose""): the toggle at rest, as off",
+pose,indicator-1 indicator-2 indicator-3,,,on,1,,element.py (the pole indicators),contact-position indicators show closed

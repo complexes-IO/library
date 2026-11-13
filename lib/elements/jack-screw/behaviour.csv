@@ -1,0 +1,5 @@
+# behaviour.csv · jack-screw · generic screw jack (lib/behaviour.md). Written by mech-r125 from element.py: no terminal (it stands loose on the machine table: no port, no fixing hole); one moving node, `screw` (the screw, its collar with the bearing face and the plug-in peg), translates +z 0 to 30 (TRAVEL: the bearing face 80 above the table at 0, 110 at the end, the class value height). The screw is wound by a spanner on its flats, so the twin sets it as the operator's input. No load here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note
+state,low,,screw,default,,,element.py (ORIGIN: the bearing face at z 80 at 0),the screw wound down: the bearing face at its lowest
+state,high,,screw,manual toggle,,,element.py (node screw: translate +z 0 to 30),the screw wound up to the end of its travel: the bearing face at 110
+pose,screw,,,high,end,,element.py (node screw: translate +z 0 to 30),

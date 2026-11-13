@@ -1,0 +1,4 @@
+match,role,kind,check,position_tol,datums,source,note
+10.92,M12 x 1 internal thread (female nut; plain at the minor Ø),internal,,,,toolkit/m12.py,cordset Ø11.0 (OCC); the I/O block's Ø10.917
+8.3,male sleeve bore (A / D),internal,,,,toolkit/m12.py,Ø8.3 (OCC)
+8.8,male sleeve bore (L),internal,,,,toolkit/m12.py,Ø8.8 (OCC)

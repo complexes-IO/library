@@ -1,0 +1,2 @@
+# behaviour.csv · din-rail-35 · 35 mm top-hat rail (lib/behaviour.md). Taken from the core's proposal (lib/requests/core/behaviour/din-rail-35.csv, 2026-11-09), checked by mech-r76 against element.py (no node, no pivot, no port: check.py nodes []): a structural part, no terminal, no moving node, no state. The devices clipped on it carry their own specs.
+kind,a,b,part,when,value,unit,source,note

@@ -1,0 +1,10 @@
+port,pin,role,signal,rated_A,source
+port-eth,1,data:TD+,,,own design: as io-block-m12-8di8do X01
+port-eth,2,data:RD+,,,
+port-eth,3,data:TD-,,,
+port-eth,4,data:RD-,,,
+port-pwr,1,load+:24V:US,logic supply,,own design: as io-block-m12-8di8do X03
+port-pwr,2,load0,,,
+port-pwr,3,load0,,,
+port-pwr,4,nc,,,
+port-pwr,5,FE,,,

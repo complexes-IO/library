@@ -1,0 +1,2 @@
+# behaviour.csv · plinth-shelving-1000 · plinth panel for the front of a 1000 wide steel shelving bay, generic (lib/behaviour.md). Written by mech-r155 from element.py: one fixed body, no terminal, no moving node, no state; fitting it to the bay is the host's assembly, not a motion. A structural part's file: the header only. No load figure here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note

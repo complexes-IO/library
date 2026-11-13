@@ -1,0 +1,5 @@
+# behaviour.csv · chuck-magnetic-250x125 · generic magnetic chucking block (lib/behaviour.md). Written by mech-r127 from element.py: no terminal (the block has no supply; the ledges take the table's clamps, not ports); one moving node, `lever` (shaft, hub, arm and knob), rotates about (1, 0, 0) 0 to 180 degrees (SWING: off along +y at 0, on along -y at the end). The lever is turned by hand, so the twin sets it as the operator's input. No holding force here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note
+state,off,,lever,default,,,element.py (ORIGIN: the arm along +y at 0),the magnets switched off: the work lifts free
+state,on,,lever,manual toggle,,,element.py (node lever: rotate 0 to 180 degrees),the lever turned half a turn over the top: the magnets switched on
+pose,lever,,,on,end,,element.py (node lever: rotate 0 to 180 degrees),

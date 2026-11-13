@@ -1,0 +1,2 @@
+# behaviour.csv · tslot-40 · T-slot framing profile 40 x 40 (lib/behaviour.md). A structural part: no pin, no port node, no moving node, so the header only.
+kind,a,b,part,when,value,unit,source,note

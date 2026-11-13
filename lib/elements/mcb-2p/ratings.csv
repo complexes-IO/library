@@ -1,0 +1,4 @@
+property,value,unit,status,source
+poles,2,,generic design,"ETIM 10.0 EC000042 class value: number of poles (total) (EF008618); spec.md Class values 3"
+u_rated,480,V AC,generic design,"ETIM 10.0 EC000042 class value: rated voltage (EF000228); spec.md Class values 6"
+f,60,Hz,generic design,"ETIM 10.0 EC000042 class value: frequency (EF000416); spec.md Class values 14"

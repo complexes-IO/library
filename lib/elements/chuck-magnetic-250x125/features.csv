@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+12,lever shaft bore,own,,,,design choice (spec.md Its own sizes),"Ø12 x 30 deep in the +x end face on the lever's axis (y 0, z 40): the lever's Ø10 shaft turns in it 1 clear; no fastener and no standard size"

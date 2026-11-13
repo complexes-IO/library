@@ -1,0 +1,11 @@
+# behaviour.csv · fan-cooling · axial cooling fan 60 x 60 x 25, 24 V DC (lib/behaviour.md). Written by elec-r45 (unattended, 2026-11-13) from spec.md (Class values, Mechanism, Named nodes), pins.csv, ratings.csv and element.py: a generic element, so its class values are its figures.
+# The fan is a load on its 24 V DC supply (ratings.csv: 2.4 W, a design figure); the impeller turns while the supply is across 1-2 the right way round. The solver is electrical in phase 1 and computes no airflow, so it reads running or still only.
+# Each terminal is a screw clamp with its own port node t-<mark> on the terminal block (element.py TERMS). The clamps' conductor range and torque are class B (IEC 60947-1 not on file: spec.md Dimensions).
+kind,a,b,part,when,value,unit,source,note
+pin,1,t-1,terminal-1,,NOT ON FILE (B): IEC 60947-1,N·m,spec.md Dimensions (terminals: two screw clamps on the terminal block; conductor range and torque class B); pins.csv t-1,fan supply +24 V DC
+pin,2,t-2,terminal-2,,NOT ON FILE (B): IEC 60947-1,N·m,as 1,fan supply 0 V
+load,1,2,motor,,2.4,W,"ratings.csv p_consumption (2.4 W inside psu-24v-2a4's output, the 24 V budget ELR-020); the solver draws I = P / V at the seen voltage (0.10 A at 24 V, ratings.csv load_i)",the fan's motor
+state,running,,impeller,"V('1','2') > 0",,,"spec.md Class values 2 (24 V DC across 1 + / 2 -); the least voltage the motor starts at is not stated (EC001143 has no such feature), so any supply voltage the right way round reads as running (as hmi-7in's powered row)",the impeller turns
+state,still,,impeller,default,,,spec.md Mechanism (no supply: the impeller stands),the impeller at rest (0)
+pose,impeller,,,running,end,,element.py (the impeller rotates 0 to 360 about the fan's axis y),
+limit,motor,,,,24,VDC,ratings.csv ue_dc (ETIM 10.0 EC001143 class value EF000228; spec.md Class values 2),the rated supply voltage

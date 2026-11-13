@@ -1,0 +1,8 @@
+# behaviour.csv · door-oven · oven door, double, insulated leaves (lib/behaviour.md). Mechanical only: no terminal (no interlock, no heater; the system's guard-interlock is its own element). Two moving nodes, the leaves; the frame is the fixed body. No latch in this version (spec.md), so no latched state.
+kind,a,b,part,when,value,unit,source,note
+state,l-closed,,door-l,default,,,spec.md (Mechanism),the left leaf shut over the opening's left half
+state,l-open,,door-l,manual toggle,,,spec.md (Mechanism),the left leaf swung outward about its outer back edge
+state,r-closed,,door-r,default,,,spec.md (Mechanism),the right leaf shut over the opening's right half
+state,r-open,,door-r,manual toggle,,,spec.md (Mechanism),the right leaf swung outward about its outer back edge
+pose,door-l,,,l-open,end,,element.py (door-l rotates 0 to -110),
+pose,door-r,,,r-open,end,,element.py (door-r rotates 0 to 110),

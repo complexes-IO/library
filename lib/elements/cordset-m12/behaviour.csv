@@ -1,0 +1,24 @@
+# behaviour.csv · cordset-m12 · M12 cordset, routed cable (lib/behaviour.md). Two plugs (port-a, port-b, placed elements) joined core by core per the cable's wiring map
+# (lib/standards/cables.csv: A and L straight 1-1 … 5-5; D straight 1-1 … 4-4, pin 5 absent). The pins here are the two ends' contacts; the cores are the contacts.
+# The open-ended form (1.8, genders male-open / female-open): end B has no plug; its pins B1 … B5 are the bare leads' tips, lead-<pole> (the form rows below).
+kind,a,b,part,when,value,unit,source,note
+pin,A1,port-a.insert.c1,core-1,,,,cables.csv (cordset-m12 map),end A pin 1
+pin,A2,port-a.insert.c2,core-2,,,,cables.csv,
+pin,A3,port-a.insert.c3,core-3,,,,cables.csv,
+pin,A4,port-a.insert.c4,core-4,,,,cables.csv,
+pin,A5,port-a.insert.c5,core-5,,,,cables.csv,
+pin,B1,port-b.insert.c1,core-1,,,,cables.csv,end B pin 1
+pin,B2,port-b.insert.c2,core-2,,,,cables.csv,
+pin,B3,port-b.insert.c3,core-3,,,,cables.csv,
+pin,B4,port-b.insert.c4,core-4,,,,cables.csv,
+pin,B5,port-b.insert.c5,core-5,,,,cables.csv,
+pin,B1,lead-1,core-1,form genders=male-open|female-open,,,toolkit/m12.py (pole 1 of the coding),open form: end B lead 1
+pin,B2,lead-2,core-2,form genders=male-open|female-open,,,toolkit/m12.py (pole 2 of the coding),open form: end B lead 2
+pin,B3,lead-3,core-3,form genders=male-open|female-open,,,toolkit/m12.py (pole 3 of the coding),open form: end B lead 3
+pin,B4,lead-4,core-4,form genders=male-open|female-open,,,toolkit/m12.py (pole 4 of the coding),open form: end B lead 4
+pin,B5,lead-5,core-5,form genders=male-open|female-open,,,toolkit/m12.py (pole 5 of the coding),open form: end B lead 5 (A and L; a D cordset has none)
+contact,A1,B1,core-1,always,NOT ON FILE,ohm,"cables.csv map 1-1 (22 AWG A / 16 AWG L: the core's resistance per metre is in the cordset cut sheet, NOT ON FILE here)",
+contact,A2,B2,core-2,always,NOT ON FILE,ohm,cables.csv map 2-2,
+contact,A3,B3,core-3,always,NOT ON FILE,ohm,cables.csv map 3-3,
+contact,A4,B4,core-4,always,NOT ON FILE,ohm,cables.csv map 4-4,
+contact,A5,B5,core-5,always,NOT ON FILE,ohm,cables.csv map 5-5 (A and L codings; a D cordset has no pin 5: its PIN-030 check says so),

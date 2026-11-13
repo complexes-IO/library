@@ -1,0 +1,3 @@
+rule,scope,match,by,date,reason
+# A waiver turns one named FAIL or REVIEW into PASS, recorded in every report. Only the person accountable for the element signs one.
+GDT-010,contactor-9a-1no1nc,4 × Ø4.5 for M4,EM,2026-11-05,"rail mounting only (TH35 IEC 60715) in every assembly on file; the maker's position tolerance is NOT ON FILE (drawing note 2); a screw-mounted use reopens it"

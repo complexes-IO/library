@@ -1,0 +1,12 @@
+{
+  "element_id": "encoder",
+  "domain": "electrical",
+  "category": "Sensors for automation technology",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 58.0,
+  "height": 58.0,
+  "depth": 72.0,
+  "units": "mm",
+  "brief": "our own design: generic Rotary encoder (ETIM 10.0 EC001486), incremental, optical, 1024 pulses per revolution, push-pull (HTL) outputs A, B and N, 24 V DC, construction size 58, solid shaft 10, three M4 tapped mounting holes, axial M12 connector seat; no reference part measured (spec.md Class values)"
+}

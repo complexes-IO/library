@@ -1,0 +1,16 @@
+{
+  "element_id": "laser-distance",
+  "category": "Industrial sensors",
+  "width": 63.0,
+  "height": 71.0,
+  "depth": 30.0,
+  "units": "mm",
+  "datasheet_dims": [
+    71.0,
+    63.0,
+    30.0
+  ],
+  "domain": "sensors",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT"
+}

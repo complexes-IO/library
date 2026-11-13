@@ -1,0 +1,5 @@
+match,role,kind,check,position_tol,datums,source,note
+1.1,socket bore for a Ø1.0 pin,internal,,,,toolkit/m12.py,spring bore, blind
+1.24,socket bore spread (Ø1.0 pin),internal,,,,toolkit/m12.py,condition spread
+1.6,socket bore for a Ø1.5 pin,internal,,,,toolkit/m12.py,L coding
+1.74,socket bore spread (Ø1.5 pin),internal,,,,toolkit/m12.py,L, spread

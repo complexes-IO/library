@@ -1,0 +1,26 @@
+# behaviour.csv · term-jumper · plug-in jumper for term-4mm blocks (lib/behaviour.md). Written by elec-r29 from spec.md (Class values, Dimensions, Named nodes): a generic element, so its class values are its figures. Pins follow `poles` (counts; elec-r50, the core's note elec-term-jumper-count-2026-11-13, request panel-13 item 2): pins 1 and 2 in every build (the least `poles`), pins 3 to 12 each `count poles>=<k>`, so a placed build has the blades it draws.
+# Each blade p-<k> (mark k) plugs into the k-th bridged block's channel and meets that block's current bar (term-4mm behaviour.csv: clamp-1 and clamp-2 joined by the bar), so the panel joins its mark k to that block's pins. The comb is one conductor: every blade is joined to the next through the bar `always`; the solver drops a contact naming a count pin the placed build lacks (lib/behaviour.md, nets.elements).
+kind,a,b,part,when,value,unit,source,note
+pin,1,p-1,blade-1,,not claimed,N·m,"not claimed: a plug-in blade with no screw; the block's channel holds it (lib/behaviour.md, pin)",pole 1: the blade in the first bridged block (x = 0)
+pin,2,p-2,blade-2,,not claimed,N·m,as 1,pole 2: the second block
+pin,3,p-3,blade-3,count poles>=3,not claimed,N·m,as 1,pole 3
+pin,4,p-4,blade-4,count poles>=4,not claimed,N·m,as 1,pole 4
+pin,5,p-5,blade-5,count poles>=5,not claimed,N·m,as 1,pole 5
+pin,6,p-6,blade-6,count poles>=6,not claimed,N·m,as 1,pole 6
+pin,7,p-7,blade-7,count poles>=7,not claimed,N·m,as 1,pole 7
+pin,8,p-8,blade-8,count poles>=8,not claimed,N·m,as 1,pole 8
+pin,9,p-9,blade-9,count poles>=9,not claimed,N·m,as 1,pole 9
+pin,10,p-10,blade-10,count poles>=10,not claimed,N·m,as 1,pole 10
+pin,11,p-11,blade-11,count poles>=11,not claimed,N·m,as 1,pole 11
+pin,12,p-12,blade-12,count poles>=12,not claimed,N·m,as 1,pole 12
+contact,1,2,bar,always,0.0000207,ohm,"derived: derive.resistance('copper', 6.0, 5.0) (R = ρL/A; ρ 1.7241e-08 Ω·m at 20 °C, IEC 60028): one pitch of the bar at its 5.0 mm² section (spec.md Dimensions)",the comb is one conductor
+contact,2,3,bar,always,0.0000207,ohm,as 1-2,
+contact,3,4,bar,always,0.0000207,ohm,as 1-2,
+contact,4,5,bar,always,0.0000207,ohm,as 1-2,
+contact,5,6,bar,always,0.0000207,ohm,as 1-2,
+contact,6,7,bar,always,0.0000207,ohm,as 1-2,
+contact,7,8,bar,always,0.0000207,ohm,as 1-2,
+contact,8,9,bar,always,0.0000207,ohm,as 1-2,
+contact,9,10,bar,always,0.0000207,ohm,as 1-2,
+contact,10,11,bar,always,0.0000207,ohm,as 1-2,
+contact,11,12,bar,always,0.0000207,ohm,as 1-2,

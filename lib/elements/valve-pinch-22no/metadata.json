@@ -1,0 +1,13 @@
+{
+  "element_id": "valve-pinch-22no",
+  "domain": "pneumatics",
+  "category": "Valves",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 112.0,
+  "height": 66.0,
+  "depth": 56.2,
+  "units": "mm",
+  "datasheet_dims": null,
+  "aliases": []
+}

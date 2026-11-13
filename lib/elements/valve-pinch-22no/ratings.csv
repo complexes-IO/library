@@ -1,0 +1,2 @@
+property,value,unit,status,source
+p_max,8,bar,generic design,ETIM 10.0 EC010401 class value (EF020305 Max. control pressure: the control chamber's rating and so port-10's only; the process ports' EF020449 Max. operating pressure is 4 bar and no check reads it until ratings.csv has a port-scoped row; spec.md Class values 11 and 12 and Ratings)

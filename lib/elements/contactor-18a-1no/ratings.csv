@@ -1,0 +1,8 @@
+property,value,unit,status,source
+coil_v,24,V DC,generic design,"ETIM 10.0 EC000066 class value: rated control supply voltage DC (EF003980); spec.md Class values 3"
+poles_no,3,,generic design,"ETIM 10.0 EC000066 class value: number of normally open contacts as main contact (EF001374); spec.md Class values 6"
+ie_ac3,18,A,generic design,"ETIM 10.0 EC000066 class value: rated operation current Ie at AC-3, 400 V (EF001392); spec.md Class values 11"
+ue_max,480,V AC,generic design,"ETIM 10.0 EC000066 class value: operating voltage AC 50 / 60 Hz (EF008206, EF008207), the main poles; 480 V the design's choice, the supply of the panel it is built for (pnl-press-hydraulic); spec.md Class values 8 and 9"
+aux_no,1,,generic design,"ETIM 10.0 EC000066 class value: number of auxiliary contacts as normally open contact (EF001376); spec.md Class values 16"
+coil_p,4.8,W,design,"design: 4.8 W at 24 V DC, the coil's power for a generic 24 V DC contactor coil of this size under the panel's 24 V budget (ELR-020), the rule behaviour.csv's load row A1-A2 (120 Ω) names for the same figure; not a feature of EC000066; spec.md Notes"
+load_i,0.20,A,derived,"4.8 W / 24 V (I = P / U; coil_p and coil_v above), what the 24 V budget (ELR-020) reads; behaviour.csv load row A1-A2"

@@ -1,0 +1,7 @@
+# behaviour.csv · pressure-washer-skid · own design: stationary cold-water pressure washer, motor and triplex plunger pump on a skid (lib/behaviour.md). Two water ports and no
+# electrical pin in 1.0 (no `pwr` until a rated version: no ratings.csv, request pneu-11's answer item 1); no moving node (the unloader's knob is fixed). The water path
+# (in through the pump to out; back to the inlet side through the unloader when the outlet is shut) is hydraulic: the solver is electrical in phase 1 (lib/toolkit/nets.py)
+# and solves no water, so no state rows. NPT joints make up by turns (pneu.NPT L1 + L3), not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,in,port-in,manifold head,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: the water inlet; female NPT 3/8; a liquid port on the thread contract)",water from the cell's supply
+pin,out,port-out,manifold head,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: the high-pressure outlet; female NPT 3/8)",to the cell's hose and lance

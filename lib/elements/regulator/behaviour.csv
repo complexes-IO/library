@@ -1,0 +1,10 @@
+# behaviour.csv · regulator · generic relieving compressed air pressure regulator (lib/behaviour.md). Three air ports and no electrical pin; one moving node, the adjusting knob.
+# The air path (1 to 2 through the seat; the gauge port downstream of it) is pneumatic: the solver is electrical in phase 1 (lib/toolkit/nets.py), and the twin reads no pressure
+# from the knob in 1.0, so the knob's states name only where it sits. NPT joints make up by turns (pneu.NPT L1 + L3), not torque: value not claimed (lib/behaviour.md, pin; request pneu-13 1).
+kind,a,b,part,when,value,unit,source,note
+pin,1,port-1,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 1 as toolkit/pneu.py NODES)",the inlet: female NPT 1/4
+pin,2,port-2,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (ISO 11727 number 2 as toolkit/pneu.py NODES)",the outlet: female NPT 1/4
+pin,G,port-g,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3); spec.md Ports (design: pneu.NODES has no gauge number; named port-g as frl's)",the gauge port: female NPT 1/4 downstream of the seat
+state,rest,,knob,default,,,spec.md Named nodes (knob 0°: the spring unloaded),
+state,turned,,knob,manual toggle,,,spec.md Named nodes (five turns; the pressure it sets is not modelled),the operator turns the knob to its range end
+pose,knob,,,turned,end,,element.py (knob rotates 0 to 1800° about +z),

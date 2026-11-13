@@ -1,0 +1,12 @@
+{
+  "element_id": "hmi-7in",
+  "domain": "controls",
+  "category": "HMI and operator controls",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 200.0,
+  "height": 150.0,
+  "depth": 74.5,
+  "units": "mm",
+  "brief": "our own design: generic Display/operator panel (ETIM 10.0 EC011541), 7 in colour touchscreen 800 x 480, 24 V DC, Ethernet, panel cut-out mount with four panel-clamp elements; no reference part measured (spec.md Class values)"
+}

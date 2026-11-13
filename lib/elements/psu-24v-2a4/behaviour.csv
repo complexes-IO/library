@@ -1,0 +1,26 @@
+# behaviour.csv · psu-24v-2a4 · 24 V DC power supply 60 W (lib/behaviour.md). Taken in by elec-r22 from the core's proposal of 2026-11-09 (lib/requests/core/behaviour/psu-24v-2a4.csv),
+# checked against references/measure.md: the terminal marks are in the brief (Ports: input L / N / ground, output +V / -V, drawing p. 1 'connection terminal' rows), so
+# the pin rows cite it; the proposal's "off below 80 V" row is left out (80 V is on no page: below 85 V no row holds and the converter rests at its default, off).
+# Torque NOT ON FILE.
+# elec-r26 (review elec-r22 finding 2): the earth pin's mark PE no longer cites IEC 60445 (not in lib/standards/sources.csv, no clause): Assumption (A), for EM.
+# elec-r29 (1.3; lib/requests/core/elec-pin-nodes-2026-11-11.md): each pin names its port node t-<mark> (element.py TERMINALS). The output row has two +V and two -V terminals
+# (the class B row of spec.md Dimensions: the count and order); the second pair is written +V' / -V' so the pins have distinct names, and each pair is one conductor (contact rows).
+kind,a,b,part,when,value,unit,source,note
+pin,L,t-l,terminal-in,,NOT ON FILE,N·m,"references/measure.md Ports (drawing p. 1 'connection terminal' rows): input L; torque NOT ON FILE",mains line
+pin,N,t-n,terminal-in,,NOT ON FILE,N·m,as L (input N),mains neutral (or the second line of a 2-wire 240 V feed)
+pin,PE,t-pe,terminal-in,,NOT ON FILE,N·m,"as L (the brief's input ""ground""); the mark PE is Assumption (A): the printed symbol is NOT ON FILE and IEC 60445 is not on file (lib/standards/sources.csv)",protective earth
+pin,+V,t-vp,terminal-out,,NOT ON FILE,N·m,as L (output +V),24 V DC +
+pin,-V,t-vn,terminal-out,,NOT ON FILE,N·m,as L (output -V),24 V DC − (0 V)
+pin,+V',t-vp2,terminal-out,,,N·m,"as L (output +V: the second of the pair; spec.md Dimensions terminals); the torque is the +V row's open figure, written once (review cable-pwr-480-1.2 finding 1: one figure, one line)",24 V DC + (second terminal; printed +V)
+pin,-V',t-vn2,terminal-out,,,N·m,"as L (output -V: the second of the pair); the torque is the -V row's open figure, written once",24 V DC − (second terminal; printed -V)
+contact,+V,+V',output-plus,always,,,spec.md Dimensions terminals (two +V terminals: one output; element.py TERMINALS),the two +V terminals are one conductor
+contact,-V,-V',output-minus,always,,,spec.md Dimensions terminals (two -V terminals: one output),the two -V terminals are one conductor
+load,L,N,input,,60,W,"datasheet p. 1 (60 W; 85–264 VAC input); input current at rated load is NOT ON FILE (the load row gives P, the solver derives I at the seen voltage)",the mains input
+state,off,,converter,default,,,datasheet p. 1,no output
+state,on,,converter,input.V >= 85 and input.V <= 264,,,datasheet p. 1 (input 85–264 VAC),regulating
+state,off,,converter,input.V > 264,,,datasheet p. 1 (above the input range: over-voltage; what the unit does there is NOT ON FILE; the twin shows it dead and the solver flags the limit),
+source,+V,-V,output,on,24,VDC,datasheet p. 1 (24 V DC adjustable 21.6–27.6 V; V.ADJ at its factory setting),
+pose,led-dcok,,,on,1,,2-D drawing p. 1 legend 1 (DC OK green),
+pose,led-dclow,,,off,0,,"2-D drawing p. 1 legend 2 (DC LOW red): lit when the output is below its low threshold; the threshold is NOT ON FILE, so the twin shows it dark (it would need the output load model)",
+pose,vadj,,,on,0,,2-D drawing p. 1 legend 3 (V.ADJ): factory setting; the angle per volt is NOT ON FILE,
+limit,input,,,,264,VAC,datasheet p. 1 (input 85–264 VAC),the most the input may see

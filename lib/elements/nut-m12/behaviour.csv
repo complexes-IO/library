@@ -1,0 +1,6 @@
+# behaviour.csv · nut-m12 · the coupling nut (lib/behaviour.md). Turning it pulls the plug home; toolkit/contact.py mate() computes the joint from its turns and torque.
+kind,a,b,part,when,value,unit,source,note
+state,loose,,nut,default,,,spec.md (captive on the plug),not yet engaged
+state,seated,,nut,manual toggle,,,spec.md (3.85 turns to the seat; torque 0.5–0.6 N·m: maker's datasheet: the I/O block's technical data p. 2; cordset catalogues p. 2),run down to the seat at its torque
+pose,self,,,seated,end,,element.py (rotate 0–1386°),
+limit,self,,,,0.5–0.6,N·m,spec.md (maker's datasheet: the I/O block's technical data p. 2: 0.5; cordset catalogues p. 2: max. 0.6),the tightening torque window

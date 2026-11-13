@@ -1,0 +1,13 @@
+{
+  "element_id": "plug-pushin",
+  "domain": "pneumatics",
+  "category": "Fittings",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 11.0,
+  "height": 11.0,
+  "depth": 24.0,
+  "units": "mm",
+  "datasheet_dims": null,
+  "aliases": []
+}

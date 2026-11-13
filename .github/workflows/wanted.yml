@@ -1,0 +1,41 @@
+# The catalogue of what is not in store (lib/toolkit/wanted.py): one issue per wanted element, kept in step with main; /claim and
+# /unclaim on an issue; stale claims released after 14 days; the claims published to the branch wanted-claims for the lanes.
+# Runs on GitHub's machine with GitHub's own token. It reads a comment only to match /claim or /unclaim; nothing from an issue runs.
+name: wanted
+on:
+  push:
+    branches: [main]
+    paths: ["lib/inventory.csv", "lib/elements/**", "lib/toolkit/wanted.py", "lib/standards/etim/**"]
+  issue_comment:
+    types: [created]
+  schedule:
+    - cron: "17 9 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+  issues: write
+concurrency:
+  group: wanted
+  cancel-in-progress: false
+jobs:
+  wanted:
+    if: github.event_name != 'issue_comment' || startsWith(github.event.comment.body, '/claim') || startsWith(github.event.comment.body, '/unclaim')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: sync the wanted issues, or handle a claim
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python lib/toolkit/wanted_sync.py ${{ github.event_name == 'issue_comment' && 'comment' || 'sync' }} "$RUNNER_TEMP/claims.csv"
+      - name: publish the claims (branch wanted-claims, one file)
+        run: |
+          cd "$RUNNER_TEMP" && rm -rf claims && mkdir claims && cd claims && git init -q && cp ../claims.csv .
+          git config user.name "wanted" && git config user.email "wanted@users.noreply.github.com"
+          git add claims.csv && git commit -qm "claims $(date -u +%F' '%H:%M)"
+          git push -q --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:refs/heads/wanted-claims

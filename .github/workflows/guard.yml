@@ -1,0 +1,35 @@
+# A pull request (from anyone: once the library is public, from outside the lanes): what it may bring in (lib/toolkit/guard.py).
+# It runs on GitHub's machine with a read-only token and no secrets; nothing in a pull request ever runs on the PC.
+# Settings that go with it (EM, once, repository Settings): Actions > "Require approval for all outside collaborators"
+# (first-time contributors' runs wait for approval); Branches > main protected (this check and one review required).
+name: guard
+on:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  guard:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: what the pull request brings in (files and code; no build runs before this passes)
+        run: python lib/build.py guard origin/${{ github.base_ref }} --external
+      - name: malware scan of the changed files (ClamAV)
+        run: |
+          sudo apt-get -qq update && sudo apt-get -qq install -y clamav > /dev/null
+          sudo systemctl stop clamav-freshclam 2>/dev/null || true
+          sudo freshclam --quiet || true
+          git diff --name-only --diff-filter=AMRT origin/${{ github.base_ref }} -- | while read -r f; do [ -f "$f" ] && echo "$f"; done > changed.txt
+          if [ -s changed.txt ]; then clamscan --no-summary --infected --file-list=changed.txt; fi
+      - name: build the elements the pull request changes (GitHub's machine, no secrets)
+        run: |
+          pip install -q numpy==2.5.3 matplotlib==3.11.2
+          ids=$(git diff --name-only origin/${{ github.base_ref }} -- lib/elements | cut -d/ -f3 | sort -u)
+          for id in $ids; do if [ -f "lib/elements/$id/element.py" ]; then python lib/build.py "$id" || exit 1; fi; done

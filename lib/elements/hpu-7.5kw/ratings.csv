@@ -1,0 +1,7 @@
+property,value,unit,status,source
+p_max,160,bar,generic design,ISO 4413 value (no ETIM class): max. working pressure and the relief valve's setting (spec.md Class values 1)
+voltage,460,V,derived,from the campus 480 V three-phase 60 Hz supply: a 460 V motor nameplate on the 480 V system as motor-iec71-370w's (spec.md Class values 6)
+phases,3,,derived,from the campus 480 V three-phase 60 Hz supply (spec.md Class values 6)
+frequency,60,Hz,derived,from the campus 480 V three-phase 60 Hz supply (spec.md Class values 6)
+power,7.5,kW,generic design,ISO 4413 value (no ETIM class): the drive motor's rated output (spec.md Class values 5)
+fla,12.08,A,derived,"derived: derive.motor_current(7.5, 460.0, eta=0.917, pf=0.85) (P = √3 V I η cosφ; η IEC 60034-30-1 Table 3 IE3 4-pole 60 Hz; pf a design value): the drive motor's full-load current at 460 V from power and voltage above (spec.md Class values; review hpu-large-1.2.md finding 1)"

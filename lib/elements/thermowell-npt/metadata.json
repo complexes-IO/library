@@ -1,0 +1,13 @@
+{
+  "element_id": "thermowell-npt",
+  "domain": "pneumatics",
+  "category": "Fittings",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 23.1,
+  "height": 106.0,
+  "depth": 23.1,
+  "units": "mm",
+  "datasheet_dims": null,
+  "aliases": []
+}

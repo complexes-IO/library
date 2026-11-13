@@ -1,0 +1,5 @@
+# behaviour.csv · seal-m12 · the O-ring of the M12 joint (lib/behaviour.md). Compressed by the mated nut; IP67 holds only when it is (toolkit/contact.py mate: seated and sealed).
+kind,a,b,part,when,value,unit,source,note
+state,free,,ring,default,,,toolkit/m12.py (SEAL squeeze),
+state,squeezed,,ring,manual toggle,,,toolkit/m12.py (squeeze 0.2 at the seat),the joint mated
+pose,self,,,squeezed,end,,element.py (compress 0–0.2),

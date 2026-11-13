@@ -1,0 +1,5 @@
+# behaviour.csv · shelf-pullout-shelving-1000 · Pull-out shelf for a steel shelving bay, generic (lib/behaviour.md). Written by mech-r160 from element.py. Mechanical only: no terminal, no stop or latch (not drawn), no latched state. One moving node, the tray; the rails and their tie are the fixed body. No load figure here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note
+state,in,,tray,default,,,spec.md (Mechanism),the tray pushed in over the shelf
+state,out,,tray,manual toggle,,,spec.md (Mechanism),the tray pulled out toward the bay's front to the end of its travel
+pose,tray,,,out,end,,element.py (tray translates 0 to 280 toward -y),

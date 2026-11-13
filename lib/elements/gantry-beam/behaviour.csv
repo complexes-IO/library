@@ -1,0 +1,2 @@
+# behaviour.csv · gantry-beam · gantry beam (lib/behaviour.md). One body: no terminal, no moving node (`ways` is fixed; the carriage's travel along it is the machine's), no state.
+kind,a,b,part,when,value,unit,source,note

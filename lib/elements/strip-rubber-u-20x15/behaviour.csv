@@ -1,0 +1,2 @@
+# behaviour.csv · strip-rubber-u-20x15 · Rubber U-section, generic (lib/behaviour.md). Written by mech-r136 from element.py: one fixed body (plain stock), no terminal, no moving node, no state. A structural part's file: the header only. No holding force or hardness figure here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note

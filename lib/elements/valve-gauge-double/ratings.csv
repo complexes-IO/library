@@ -1,0 +1,2 @@
+property,value,unit,status,source
+p_max,10,bar,generic design,ETIM 10.0 EC010471 class value (Max. operating pressure at 20 °C; 10 bar also over the 0 to 60 °C medium temperature range)

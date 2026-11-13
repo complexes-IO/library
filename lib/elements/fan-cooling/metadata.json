@@ -1,0 +1,12 @@
+{
+  "element_id": "fan-cooling",
+  "domain": "electrical",
+  "category": "Fans and ventilators",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 69.3,
+  "height": 60.0,
+  "depth": 25.0,
+  "units": "mm",
+  "brief": "our own design: generic cooling fan (ETIM 10.0 EC001143), axial, 60 x 60 x 25, 24 V DC, impeller Ø52 turning about its axis, screw clamps 1 + / 2 -, 4 x M4 clearance holes ISO 273 medium; a common part of vfd-0.75kw, servo-drive and ups-rack; no reference part measured (spec.md Class values)"
+}

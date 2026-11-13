@@ -1,0 +1,8 @@
+# behaviour.csv · stand-magnetic · magnetic indicator stand (lib/behaviour.md). Mechanical only: no terminal. Two moving nodes: the on/off switch (node switch: the knob and its lever on the base's -x end face) turning 90 degrees about the knob's axis to switch the magnet on; the arm (node arm: hub, boom and clamp block) turning about the post's axis on the post's top. The base block and the post are the fixed body. The magnet's holding force is not on file and not claimed; the twin reads only the two positions.
+kind,a,b,part,when,value,unit,source,note
+state,off,,switch,default,,,spec.md (Mechanism),the lever up (0): the magnet off and the base lifts free
+state,on,,switch,manual toggle,,,spec.md (Mechanism),the lever turned 90 degrees by hand: the magnet on and the base holds on a steel face
+pose,switch,,,on,end,,element.py (node switch: rotate 0 to 90 about the knob's axis along x),
+state,home,,arm,default,,,spec.md (Mechanism),the arm along +x (0)
+state,swung,,arm,manual toggle,,,spec.md (Mechanism),the arm turned by hand on the post's top to point the indicator
+pose,arm,,,swung,end,,element.py (node arm: rotate -180 to 180 about the post's axis along z),

@@ -1,0 +1,169 @@
+{
+ "toolkit": "1.3",
+ "validation": "1.0",
+ "rules": 86,
+ "id": "gear-reducer",
+ "status": "REVIEW",
+ "findings": [
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
+   "scope": "gear-reducer",
+   "where": "gear-reducer",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "gear-reducer",
+   "where": "gear-reducer",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "gear-reducer",
+   "where": "gear-reducer",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "DOC-005",
+   "scope": "gear-reducer",
+   "where": "gear-reducer",
+   "message": "source wanted: 1 class B figure(s) in spec.md (1 NOT ON FILE (B)); the document is asked for once in lib/standards/wanted.md; EM may still accept a figure ('REVIEW accepted: <figure> \u00b7 EM <date>'); 0 approved",
+   "elements": [],
+   "title": "every open figure accepted by its class: Assumption (C) with the reviewer's PASS; (A), (B), unclassed and NOT ON FILE each by one 'REVIEW accepted: <figure> \u00b7 EM <date>' line in spec.md",
+   "basis": "element-qa-checklist Stage 0; OPERATING.md 8.c"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "gear-reducer",
+   "where": "gear-reducer",
+   "message": "no interference among 8 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "gear-reducer",
+   "where": "gear-reducer",
+   "message": "2 moving node(s) swept through their full range, nothing hit; 1 pair(s) of independent nodes posed together at their ends, clear",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "gear-reducer",
+   "where": "gear-reducer",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "gear-reducer",
+   "where": "gear-reducer",
+   "message": "5 solid(s) with openings, all cut in the glTF: 4 as clean extrusions, 1 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "gear-reducer",
+   "where": "gear-reducer",
+   "message": "6 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "gear-reducer",
+   "where": "gear-reducer",
+   "message": "0 pins, 0 contacts, 0 loads, 0 sources, 2 states (1 manual), 1 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "gear-reducer",
+   "where": "gear-reducer",
+   "message": "4 \u00d7 \u00d89 M8 clearance medium (declared, ISO 273)",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "gear-reducer",
+   "where": "gear-reducer",
+   "message": "2 \u00d7 \u00d816 input shaft bore (declared: own, design: 1 radial clearance round the \u00d814 input shaft where its bearings go (not drawn))",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "gear-reducer",
+   "where": "gear-reducer",
+   "message": "3 \u00d7 \u00d822 output shaft bore (declared: own, design: 1 radial clearance round the \u00d820 output shaft where its bearings go (not drawn))",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GDT-010",
+   "scope": "gear-reducer",
+   "where": "gear-reducer",
+   "message": "4 \u00d7 \u00d89 for M8 (floating): position \u00d81 declared \u2264 H \u2212 F = 1.00",
+   "elements": [],
+   "title": "fastener patterns: positional tolerance \u2264 H \u2212 F (floating fastener)",
+   "basis": "ASME Y14.5 / ISO 5459 virtual condition; ISO 2768-1"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-020",
+   "scope": "gear-reducer",
+   "where": "gear-reducer",
+   "message": "6 hole(s) inside their parts",
+   "elements": [],
+   "title": "every hole stays inside the part it cuts (no break-out)",
+   "basis": "geometry rule"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "gear-reducer",
+   "where": "gear-reducer",
+   "message": "the AutoCAD gate will pick 27 edges; skipped 8 buried, 0 short, 0 on thin parts, 0 shared, 1 hidden; 0 on placed elements, left to their own gates; 8 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  }
+ ]
+}

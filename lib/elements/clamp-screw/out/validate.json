@@ -1,0 +1,169 @@
+{
+ "toolkit": "1.3",
+ "validation": "1.0",
+ "rules": 86,
+ "id": "clamp-screw",
+ "status": "REVIEW",
+ "findings": [
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
+   "scope": "clamp-screw",
+   "where": "clamp-screw",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "clamp-screw",
+   "where": "clamp-screw",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "clamp-screw",
+   "where": "clamp-screw",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "DOC-005",
+   "scope": "clamp-screw",
+   "where": "clamp-screw",
+   "message": "open figures in spec.md, behaviour.csv: 5 Assumption with no class (counted as A), 1 NOT ON FILE, 2 NOT ON FILE (C); 6 need EM, 0 approved ('REVIEW accepted: <figure> \u00b7 EM <date>', one line each)",
+   "elements": [],
+   "title": "every open figure accepted by its class: Assumption (C) with the reviewer's PASS; (A), (B), unclassed and NOT ON FILE each by one 'REVIEW accepted: <figure> \u00b7 EM <date>' line in spec.md",
+   "basis": "element-qa-checklist Stage 0; OPERATING.md 8.c"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "DOC-006",
+   "scope": "clamp-screw",
+   "where": "clamp-screw",
+   "message": "spec: vendor names McMaster-Carr; part numbers 7641K21 (term-4mm's): these live only in references/ with file and page; here say \"maker's datasheet\" and point to the brief",
+   "elements": [],
+   "title": "vendor and product names, part numbers and approval marks only in references/; spec, BASELINE, TITLE, the LISP COMMAND and ratings sources say \"maker's datasheet\"",
+   "basis": "OPERATING.md 6 (EM 2026-11-05); lib/standards/vendors.csv"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "DOC-006",
+   "scope": "clamp-screw",
+   "where": "clamp-screw",
+   "message": "BASELINE: vendor names McMaster-Carr; part numbers 7641K21 (term-4mm's): these live only in references/ with file and page; here say \"maker's datasheet\" and point to the brief",
+   "elements": [],
+   "title": "vendor and product names, part numbers and approval marks only in references/; spec, BASELINE, TITLE, the LISP COMMAND and ratings sources say \"maker's datasheet\"",
+   "basis": "OPERATING.md 6 (EM 2026-11-05); lib/standards/vendors.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "clamp-screw",
+   "where": "clamp-screw",
+   "message": "no interference among 3 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "clamp-screw",
+   "where": "clamp-screw",
+   "message": "1 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "MOT-030",
+   "scope": "clamp-screw",
+   "where": "screw \u2192 self",
+   "message": "the screw's stroke 1.00 mm (2 turns x lead 0.5) does not close the 5 mm window onto the smallest conductor (0.33 mm2, \u00d80.65): it needs 4.35 mm, 8.7 turns. Give the screw (or the cage) the travel that closes the clamp over its whole wire range",
+   "elements": [],
+   "title": "a clamping screw's stroke (turns x lead) closes its clamp's window down to the smallest conductor it claims",
+   "basis": "OPERATING.md 8.b, escape group 8 (review clamp-screw-1.1:4)"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "clamp-screw",
+   "where": "clamp-screw",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "clamp-screw",
+   "where": "clamp-screw",
+   "message": "1 solid(s) with openings, all cut in the glTF: 0 as clean extrusions, 1 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "clamp-screw",
+   "where": "clamp-screw",
+   "message": "1 fixed solid(s): one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "clamp-screw",
+   "where": "clamp-screw",
+   "message": "2 pins, 2 contacts, 0 loads, 0 sources, 2 states (1 manual), 1 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "clamp-screw",
+   "where": "clamp-screw",
+   "message": "1 \u00d7 \u00d83 M3 clamping screw thread (plain at the major \u00d8) (declared: internal, Assumption)",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-020",
+   "scope": "clamp-screw",
+   "where": "clamp-screw",
+   "message": "1 hole(s) inside their parts",
+   "elements": [],
+   "title": "every hole stays inside the part it cuts (no break-out)",
+   "basis": "geometry rule"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "clamp-screw",
+   "where": "clamp-screw",
+   "message": "the AutoCAD gate will pick 14 edges; skipped 2 buried, 0 short, 0 on thin parts, 0 shared, 0 hidden; 0 on placed elements, left to their own gates; 2 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  }
+ ]
+}

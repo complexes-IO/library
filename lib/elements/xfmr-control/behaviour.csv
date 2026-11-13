@@ -1,0 +1,17 @@
+# behaviour.csv · xfmr-control · single-phase control transformer 250 VA 480 / 120 V (lib/behaviour.md). Written by elec-r27 from spec.md and pins.csv.
+# The primary is a load between 1U and 1V (its rated apparent power as P; the solver draws I at the seen voltage); the secondary is a source between the
+# placed plug's two clamps (2U, 2V) while the primary sees any voltage. Solver phase 1 has no transformer ratio (a source gives a fixed V), so the secondary
+# gives its rated 120 V whenever the primary is fed; secondary = primary x 120 / 480 is for the core's circuit model (spec.md Notes, lib/rounds/elec/r27.md).
+# Torques: the primary and PE screw clamps are class B (IEC 60947-1, spec.md Dimensions); the plug's clamps are terminal-plug 2.0's (class B, IEC 60999).
+kind,a,b,part,when,value,unit,source,note
+pin,1U,t-1U,clamp-1U,,NOT ON FILE (B): IEC 60947-1,N·m,spec.md Dimensions (conductor range and torque class B),primary line 1 (480 V line to line)
+pin,1V,t-1V,clamp-1V,,NOT ON FILE (B): IEC 60947-1,N·m,as 1U,primary line 2
+pin,2U,x2.t-1,x2.clamp-1,,NOT ON FILE (B): IEC 60999,N·m,terminal-plug 2.0 behaviour.csv (its clamps' torque class B),secondary 120 V (pole 1 of the placed plug)
+pin,2V,x2.t-2,x2.clamp-2,,NOT ON FILE (B): IEC 60999,N·m,as 2U,secondary return (pole 2 of the placed plug)
+pin,PE,t-PE,clamp-PE,,NOT ON FILE (B): IEC 60947-1,N·m,as 1U,protective earth of the core frame
+load,1U,1V,primary,,250,W,"spec.md Class values 4 and 24 (480 V, 250 VA): the rated apparent power written as the load's P at its rated V; the solver draws I = P / V at the seen voltage (0.52 A at 480 V, ratings.csv i1); the no-load current is not stated (spec.md Notes)",the primary winding
+state,energised,,core,primary.V > 0,,,"spec.md Class values 4 and 14: the secondary follows the primary; phase 1 has no ratio (lib/behaviour.md), so any primary voltage gives the rated secondary voltage",the core carries flux
+state,dead,,core,default,,,spec.md Class values 4,no primary voltage: no secondary voltage
+source,2U,2V,secondary,energised,120,VAC,"spec.md Class values 14 (120 V); the ratio 480 : 120 is not applied in phase 1 (see energised)",the secondary winding
+limit,primary,,,,480,VAC,spec.md Class values 4,the rated primary voltage (no tap)
+limit,secondary,,,,2.08,A,ratings.csv i2 (derived: 250 VA / 120 V),the rated secondary current

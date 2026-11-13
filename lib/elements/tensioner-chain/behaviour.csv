@@ -1,0 +1,5 @@
+# behaviour.csv · tensioner-chain · generic spring-activated linear chain tensioner (lib/behaviour.md). Taken from the core's proposal (lib/requests/core/behaviour/tensioner-chain.csv, 2026-11-09), checked by mech-r76 against element.py: node `head` (plunger and slide shoe) translates 0 to 25 downward (TRAVEL, class value: + is pressed in by the chain). No terminal (the 2 x M8 base holes take screws, not ports). No spring force here: the class value stays in spec.md. States renamed by what they mean.
+kind,a,b,part,when,value,unit,source,note
+state,free,,head,default,,,element.py (TRAVEL: 0 is the free stop),the head at its free stop (no chain on the shoe)
+state,end-stop,,head,manual toggle,,,element.py (node head: translate 0 to 25),the head pressed in by the chain to its end stop
+pose,head,,,end-stop,end,,element.py (node head: translate 0 to 25),

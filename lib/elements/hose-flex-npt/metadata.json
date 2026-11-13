@@ -1,0 +1,13 @@
+{
+  "element_id": "hose-flex-npt",
+  "domain": "pneumatics",
+  "category": "Hoses",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 18.02,
+  "height": 18.02,
+  "depth": 320.42,
+  "units": "mm",
+  "datasheet_dims": null,
+  "aliases": []
+}

@@ -1,0 +1,9 @@
+pin,kind,value,phase,when,source,note
+# What feeds pnl-motor-starter from outside (lib/panel-shop.md "Out"; lib/behaviour.md). Form and figures as pm-motor-starter/sources.csv (the core's model).
+# The incoming 480 V three-phase 3-wire + PE lands on the disconnect q1's line terminals through gl-pe (mc-motor-1 controls.csv: supply · 480V 3ph 60Hz; the feeder is the row's Assumption (B)). 277.128 V to ground = 480 / √3 (derived; 0.1 to 0.8 wrote 277.13, which gives 480.0003 V line to line: over t1's rated 480 V primary in the solver's limit check once t1 was placed in 0.9).
+q1.L1,VAC,277.128,0,,controls.csv supply row; IEEE 141 (480Y/277 V system) as pm-motor-starter/sources.csv cites it,incoming L1
+q1.L2,VAC,277.128,-120,,as L1,incoming L2
+q1.L3,VAC,277.128,120,,as L1,incoming L3
+pe-1.2,VAC,0,0,,NEC 250 (the equipment grounding conductor at earth potential) as pm-motor-starter/sources.csv cites it,the supply's PE on PE:1 side 2 (terminals.csv)
+# 0.9: the control circuit's 120 V is no longer a row here. t1 (xfmr-control 1.0) is placed and fed from q1's load side through q4 (wires 11 to 14); its own behaviour.csv gives the secondary (2U to 2V
+# 120 VAC while the primary sees a voltage) and wire 17 bonds 2V to PE:6. 0.1 to 0.8 had a stand-in row here (q2.1 at 120 V while the input `t1` was set).

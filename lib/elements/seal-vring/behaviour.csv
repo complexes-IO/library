@@ -1,0 +1,3 @@
+# behaviour.csv · seal-vring · generic V-ring seal (lib/behaviour.md). A structural part: no port, no electrical pin and no moving node.
+# It is stretched onto a shaft and turns with it, its lip running on a counterface; it passes no path of its own: no state, contact, load or pose row is written (the header only).
+kind,a,b,part,when,value,unit,source,note

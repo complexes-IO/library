@@ -1,0 +1,2 @@
+# behaviour.csv · bracket-angle-strut-41 · 90-degree angle bracket for a 41 x 41 strut channel, generic (lib/behaviour.md). Written by mech-r152 from element.py: one fixed body, no terminal, no moving node, no state; bolting it to two channels is the host's assembly, not a motion. A structural part's file: the header only. No load, slip or torque figure here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note

@@ -1,0 +1,10 @@
+# behaviour.csv · gl-xr-1 · the institute's display glasses (lib/behaviour.md). Own design: a wearable the twin treats as screens; no terminals. Battery, charging port and radio
+# are not modelled yet (the brief's next round).
+kind,a,b,part,when,value,unit,source,note
+state,folded,,temples,default,,,spec.md,
+state,open,,temples,manual toggle,,,spec.md,worn
+state,off,,display,default,,,spec.md,
+state,on,,display,manual toggle,,,spec.md (the lenses are screens),
+pose,temple-l temple-r,,,open,end,,element.py (temple-l rotates 0 to −74; temple-r 0 to 74),
+pose,lens-l lens-r,,,on,1,,element.py (emissive lenses),
+pose,dial-l dial-r,,,on,0,,element.py (the dials: their function is not specified yet; shown at rest),

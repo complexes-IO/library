@@ -1,0 +1,15 @@
+# behaviour.csv · enc-fs-1524x1829x305 · free-standing enclosure (lib/behaviour.md). Mechanical, with three terminals since 1.9: the M8 earth studs pe-body (on the back wall's inner face, lower left), pe-door-l and pe-door-r (on the doors' inner faces, hinge side, low; children of their door nodes, so they swing with the doors), each a port node of gender none where a panel's protective conductor lands (lib/requests/core/mech-earth-studs-2026-11-11.md, from the panel shop's request panel-3 item 3; the bonding itself is the panel's). Their marks PE1, PE2, PE3 (one mark per pin row: the solver keys pins by mark). Three studs: spec.md Dimensions (one on the body, one on each door); the earlier header's "two" was the slip the core's note item 3 asked to settle. No bonding point on the back panel or the gland plate: none is on file, none added. Its door operators are placed elements (bom.csv: op-estop-22-2nc, op-pb-22-1no, op-pilot-22) with their own specs. Taken from the core's proposal (lib/requests/core/behaviour/enc-fs-1524x1829x305.csv, 2026-11-09), checked by mech-r76 against element.py: door-r rotates 0 to 110 and door-l 0 to -110 (both outward), handle-1 0 to 90, gland-plate translates 0 to 60 downward; back-panel, hinge-l and hinge-r are fixed. The door-load limit's source was changed: neither spec.md nor references/measure.md gives a door load.
+kind,a,b,part,when,value,unit,source,note
+pin,PE1,pe-body,stud,,NOT ON FILE (B),N·m,NOT ON FILE (B): IEC 60947-1 (tightening torques for screw terminals and studs by thread size; the document is asked for in lib/standards/wanted.md); the spec gives no torque and the stud is brass (no property class to derive from),the body's bonding stud: the nut that holds the earth lug on it (M8; spec.md Dimensions)
+pin,PE2,pe-door-l,stud,,NOT ON FILE (B),N·m,NOT ON FILE (B): IEC 60947-1 (as PE1),the left door's bonding stud (swings with door-l): the nut that holds the door's bonding lead on it
+pin,PE3,pe-door-r,stud,,NOT ON FILE (B),N·m,NOT ON FILE (B): IEC 60947-1 (as PE1),the right door's bonding stud (swings with door-r): the nut that holds the door's bonding lead on it
+state,closed,,door-r,default,,,spec.md (3-point latch),both doors closed
+state,open,,door-r,manual toggle,,,spec.md,the doors swung open (the right door first: it carries the handle; the left follows in the twin)
+state,latched,,handle-1,default,,,spec.md (3-point latch handle),
+state,unlatched,,handle-1,manual toggle,,,spec.md,the lever swung out: the door can open
+state,in,,gland-plate,default,,,spec.md (gland plate),
+state,removed,,gland-plate,manual toggle,,,spec.md,the gland plate dropped out (service)
+pose,door-r door-l,,,open,end,,element.py (door-r rotates 0–110; door-l 0 to −110),
+pose,handle-1,,,unlatched,end,,element.py (handle-1 rotates 0–90),
+pose,gland-plate,,,removed,end,,element.py (gland-plate translates 0–60),
+limit,door-r,,,,NOT ON FILE (A),kg,no door load in spec.md or references/measure.md (a load rating: class A),what the door may carry (operators and the disconnect handle)

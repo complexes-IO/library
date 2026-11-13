@@ -1,0 +1,5 @@
+# behaviour.csv · clamp-beam · clamping beam of a sheet folder (lib/behaviour.md). Mechanical only: no terminal. One moving node, the clamping beam; its lift is the machine's (between the elements).
+kind,a,b,part,when,value,unit,source,note
+state,closed,,clamp,default,,,spec.md (Mechanism),the clamping beam down: the nose's underside in the bed's plane (0)
+state,open,,clamp,manual toggle,,,spec.md (Mechanism),the clamping beam lifted to the end of its travel
+pose,clamp,,,open,end,,element.py (clamp translates 0–150),

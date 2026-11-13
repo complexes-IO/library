@@ -1,0 +1,13 @@
+;; strip-clamping-8x15 v2.0. Generated. Millimetres. APPLOAD, then STRIPCLMP.
+(defun BX (lay p1 p2 h) (command "_.-LAYER" "_M" lay "") (command "_.BOX" p1 p2 h) (entlast))
+(defun CY (lay p1 p2 r / h) (setq h (distance p1 p2)) (command "_.-LAYER" "_M" lay "")
+  (command "_.UCS" "_ZA" p1 p2) (command "_.CYLINDER" (list 0 0 0) r h) (command "_.UCS" "_W") (entlast))
+(defun UB (lay o xp yp l w h) (command "_.-LAYER" "_M" lay "")
+  (command "_.UCS" "3" o xp yp) (command "_.BOX" (list 0 0 0) (list l w 0) h) (command "_.UCS" "_W") (entlast))
+(defun c:STRIPCLMP (/ os hole e0 e1 e2 e3 e4 e5)
+  (setq os (getvar "OSMODE")) (setvar "OSMODE" 0) (setvar "CMDECHO" 0) (setvar "INSUNITS" 4) (setvar "ISOLINES" 8)
+  (setq e0 (BX "M-GASKET" (list 0 -4 0) (list 1000 4 0) 15))
+  (setq hole (UB "M-GASKET" (list -1 -1 -1) (list 0 -1 -1) (list -1 0 -1) 1002 2 3)) (command "_.SUBTRACT" e0 "" hole "")
+  (setq hole (UB "M-GASKET" (list -1 -0.8 1.5) (list 0 -0.8 1.5) (list -1 0.2 1.5) 1002 1.6 10.5)) (command "_.SUBTRACT" e0 "" hole "")
+  (command "_.-LAYER" "_S" "0" "") (setvar "OSMODE" os) (command "_.ZOOM" "_E") (princ "\nBuilt.") (princ))
+(princ "\nType STRIPCLMP.") (princ)

@@ -1,0 +1,9 @@
+port,pin,role,signal,rated_A,source
+t-1,1,sw-com,pole 1 contact 1-2 line side (closes in position 1),10,spec.md Class values 2 and 4 (2 poles; Iu 10 A) and the switching program
+t-2,2,sw-no,pole 1 contact 1-2 load side,10,as 1
+t-3,3,sw-com,pole 1 contact 3-4 line side (closes in position 2),10,as 1
+t-4,4,sw-no,pole 1 contact 3-4 load side,10,as 1
+t-5,5,sw-com,pole 2 contact 5-6 line side (closes in position 1),10,as 1
+t-6,6,sw-no,pole 2 contact 5-6 load side,10,as 1
+t-7,7,sw-com,pole 2 contact 7-8 line side (closes in position 2),10,as 1
+t-8,8,sw-no,pole 2 contact 7-8 load side,10,as 1

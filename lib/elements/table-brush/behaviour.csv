@@ -1,0 +1,2 @@
+# behaviour.csv · table-brush · brush table for a turret punch's sheet feed (lib/behaviour.md). Mechanical only: no terminal (no earth stud is modelled and there is no hole) and no moving node (the whole table is the fixed body; a sheet sliding over the brushes is the assembly's), so no state and no pose.
+kind,a,b,part,when,value,unit,source,note

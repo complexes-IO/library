@@ -1,0 +1,4 @@
+property,value,unit,status,source
+in,32,A,generic design,"ETIM 10.0 EC000489 class value: Rated current In (EF008250); spec.md Class values 4"
+ue,500,V,generic design,"ETIM 10.0 EC000489 class value: Rated voltage (EF000228); spec.md Class values 5"
+poles,4,,generic design,"ETIM 10.0 EC000489 class value: Number of bridged clamps (EF002550), as built (2 to 12 by parameter); spec.md Class values 2"

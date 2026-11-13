@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+12.0,lever linkage bore,internal,,,,"design choice (spec.md Dimensions, front ring)","the front ring's bore behind the lever's hub: the way through for the linkage to the contact blocks (not modelled in 1.0); no fastener passes it"

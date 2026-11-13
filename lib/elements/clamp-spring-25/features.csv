@@ -1,0 +1,3 @@
+match,role,kind,check,position_tol,datums,source,note
+8,pin bore,own,,,,design choice (spec.md Its own sizes),"Ø8 through the lower arm's two cheeks on the pin's axis: the Ø8 pin is pressed in (the lower arm, its cheeks and the pin are one body); no fastener and no standard size"
+10,boss bore,own,,,,design choice (spec.md Its own sizes),"Ø10 through the upper arm's boss: 1 clear round the Ø8 pin, so the arm turns free; no fastener and no standard size"
