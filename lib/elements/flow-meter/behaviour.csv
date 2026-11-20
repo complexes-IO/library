@@ -1,0 +1,13 @@
+# behaviour.csv · flow-meter · liquid flow meter in line with a 4-20 mA two-wire transmitter (lib/behaviour.md). Written by elec-r56 (unattended, 2026-11-20) from spec.md (Class values, Output, Named nodes), pins.csv, ratings.csv and element.py: a generic element, so its class values are its figures; tt-rtd 1.0's file with flow-control-inline 1.0's two line ports in place of the probe's stem.
+# A two-wire transmitter: terminal 1 takes the loop's +24 V DC, terminal 2 returns the loop current to the PLC's analogue input; the current (4 mA at no flow to 20 mA at 20 l/min) is the reading. The solver is electrical in phase 1 and solves no flow and no analogue value (as pt 1.1 and tt-rtd 1.0), so it reads the loop's states only: off (no voltage across 1-2), live, and a fault the twin sets.
+# Each terminal is a screw clamp with its own port node t-<mark> on the head's back wall (element.py TERMS). The clamps' conductor range and torque are class B (IEC 60947-1 not on file: spec.md Dimensions). The line ports are female NPT 3/8 (pneu.NPT): made up by turns, not torque, as flow-control-inline 1.0's.
+kind,a,b,part,when,value,unit,source,note
+pin,1,t-1,terminal-1,,NOT ON FILE (B): IEC 60947-1,N·m,spec.md Dimensions (terminals: two screw clamps on the back wall; conductor range and torque class B); pins.csv t-1,loop + (supply in)
+pin,2,t-2,terminal-2,,NOT ON FILE (B): IEC 60947-1,N·m,as 1,loop - (signal out to the PLC's analogue input)
+pin,P1,port-1,body,,not claimed,N·m,"not claimed: made up by turns past hand-tight, not torque (ASME B1.20.1; pneu.NPT L1 + L3), as flow-control-inline 1.0's; spec.md Named nodes",the inlet: female NPT 3/8
+pin,P2,port-2,body,,not claimed,N·m,as P1,the outlet: female NPT 3/8
+load,1,2,electronics,,0.48,W,"derived: 20 mA (the output signal's top, ratings.csv i_out_max; spec.md Output) x 24 V (ratings.csv ue_dc), the most the loop can draw; the phase-1 solver draws a load's rated figure (lib/behaviour.md, the solver)",the transmitter's electronics; the current between 4 and 20 mA is the reading and the circuit model's
+state,fault,,transmitter,manual toggle,,,spec.md Output (the twin sets a fault: a measuring element that has stopped or a loop open at the terminals),the PLC sees the loop out of range
+state,live,,transmitter,"V('1','2') > 0",,,"NOT ON FILE (B): IEC 60381-1 (the loop's lift-off voltage, the least the transmitter needs across 1-2, is the standard's figure; spec.md Output)",the loop is powered: the current follows the flow through the body
+state,off,,transmitter,default,,,spec.md Output (no voltage across 1-2: no loop current),no loop current
+limit,electronics,,,,24,VDC,"ratings.csv ue_dc (the panel's 24 V DC control supply, ELR-020; spec.md Output)",the loop's supply voltage

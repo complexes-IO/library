@@ -1,0 +1,2 @@
+# behaviour.csv · lug-lifting-32 · lifting lug, generic, weld-on (lib/behaviour.md). Written by mech-r172 from element.py: one fixed plate welded to a host, no terminal (the eye takes a shackle's pin or a hook: not a port), no moving node, no state; what hangs from it is the host's assembly, not a motion of this element. A structural part's file: the header only. No load figure here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note

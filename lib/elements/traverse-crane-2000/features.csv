@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+32,eye,own,,,,lug-lifting-32 1.0 (placed; its spec.md Its own sizes),"3 x Ø32 along y, the eyes of the three placed lugs: the hook's at (0, 0, 280), the load's at (±800, 0, -80); each the lug's own eye, not drilled by this element; no fastener, no standard size and no load claim"

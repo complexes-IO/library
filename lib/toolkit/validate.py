@@ -705,6 +705,7 @@ def assembly_run(aid, geometry=True, waive=True, P=None):
     from . import rooms as RMV
     F += assembly_findings(aid, P, RMV.run(aid, P, ROOT))                    # a lab room (room.csv; EM 2026-11-12: the campus becomes a virtual school)
     F += assembly_findings(aid, P, PLV.bom_run(aid, ROOT))                   # every BOM row an element or a planned row (panel/r6 ESCAPE)
+    F += assembly_findings(aid, P, PLV.bom_station_run(aid, ROOT))           # what it places past station 6, as drawn (panel/r18 ESCAPE)
     F += assembly_findings(aid, P, assembly_gate(aid))                       # the gate ran the LISP on file (panel/r15 ESCAPE)
     return apply_waivers(F) if waive else F
 

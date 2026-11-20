@@ -1,0 +1,7 @@
+port,pin,role,signal,rated_A,source
+x1.t-1,A,in,RS-485 data line A (a pair with B; Modbus RTU to the meters),,spec.md Class values 14 and 17 (one RS-485 interface)
+x1.t-2,B,in,RS-485 data line B (a pair with A),,as A
+x1.t-3,COM,in,RS-485 signal common,,as A
+x2.t-1,24V,load+:24V,supply +24 V DC,0.10,spec.md Class values 2 and 3 and Ratings; rated current derived (ratings.csv load_i)
+x2.t-2,0V,load0,supply 0 V,0.10,as 24V
+x2.t-3,FE,FE,functional earth (the RS-485 cable's shield),,spec.md Dimensions terminal marks

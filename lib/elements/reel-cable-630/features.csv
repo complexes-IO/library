@@ -1,0 +1,3 @@
+match,role,kind,check,position_tol,datums,source,note
+50,arbor bore,own,,,,design choice (spec.md Its own sizes),"Ø50 on the reel's axis through both flanges and the barrel (three holes, one per part, coaxial): the reel turns on rack-cable-drum-1000 1.0's Ø40 axle, 5 clear all round; no fastener and no standard size"
+30,drive-pin hole,own,,,,design choice (spec.md Its own sizes),"Ø30 through each flange at r 220 above the axis, for a winding machine's drive pin; no fastener and no standard size"

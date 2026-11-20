@@ -6,7 +6,7 @@ kind,a,b,part,when,value,unit,source,note
 pin,11,t-11,terminal-11,,NOT ON FILE (B): IEC 60947-1,N·m,spec.md Dimensions (terminals: three screw clamps on the back wall; conductor range and torque class B); pins.csv t-11,change-over common
 pin,12,t-12,terminal-12,,NOT ON FILE (B): IEC 60947-1,N·m,as 11,N.C. side (closed below the setting)
 pin,14,t-14,terminal-14,,NOT ON FILE (B): IEC 60947-1,N·m,as 11,N.O. side (closed above the setting)
-pin,1,port-p,hex,,not claimed,N·m,"not claimed: the stem's thread is open, so the fitting or port it screws into sets it (lib/behaviour.md, pin; spec.md Notes)",the stem (hyd-port) into a host's gauge port
+pin,1,port-p,hex,,NOT ON FILE (B): SAE J1926-2 / -3,N·m,"a male stud end that is the element's own pin has a torque of its own, which SAE J1926-2 / -3 tabulate (lib/behaviour.md, pin: not a case of not claimed, request pneu-15 2; review pressure-switch-1.0 finding 1); under the same document as the stem's open thread (spec.md Notes)",the stem (hyd-port) into a host's gauge port
 state,below,,switch,default,,,spec.md Switching program (pressure below the setting: the spring holds the microswitch at rest); Class values 5 and 9,no pressure at the port
 state,above,,switch,manual toggle,,,spec.md Switching program (pressure risen past the setting; the twin's stand-in until the circuit model reads the pressure at port-p); Class values 5 and 9,the PLC's pressure ok
 contact,11,12,contact-11-12,below,,,spec.md Switching program (11-12 closed below the setting); Class values 26 (1 change-over),N.C. side

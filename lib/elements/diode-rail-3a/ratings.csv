@@ -1,0 +1,4 @@
+property,value,unit,status,source
+model,diode,,generic design,"ETIM 10.0 EC004667 class value: Model (EF000010), one rectifier diode from A to K; spec.md Class values 1"
+ie,3,A,design,"design: 3 A (the forward current, not above the 12 A of the placed terminal-plug 2.0, ETIM 10.0 EC002021 class value Rated current In EF008250, and above the 24 V DC coil currents on file, relay-aux-2no2nc 1.3's 0.10 A); not a feature of EC004667; spec.md Ratings"
+ue_max,250,V,design,"design: 250 V (the repetitive reverse voltage, not above the 250 V of the placed terminal-plug 2.0, ETIM 10.0 EC002021 class value Rated voltage EF000228); not a feature of EC004667; spec.md Ratings"

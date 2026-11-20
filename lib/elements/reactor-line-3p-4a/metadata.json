@@ -1,0 +1,12 @@
+{
+  "element_id": "reactor-line-3p-4a",
+  "domain": "controls",
+  "category": "Control",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 112.0,
+  "height": 134.0,
+  "depth": 73.2,
+  "units": "mm",
+  "brief": "our own design: generic Coil for low-voltage (ETIM 10.0 EC002563): three-phase line reactor, 4 A a line, 480 V, 50/60 Hz, 7.35 mH a phase (uk 4 %), open, bracket mounted; no reference part measured (spec.md Class values)"
+}

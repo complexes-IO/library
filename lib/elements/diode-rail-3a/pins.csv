@@ -1,0 +1,3 @@
+port,pin,role,signal,rated_A,source
+x1.t-1,A,pass,anode (pole 1 of the placed terminal-plug 2.0): current enters here,3,spec.md Class values 1 and Ratings (ratings.csv ie)
+x1.t-2,K,pass,cathode (pole 2 of the plug): current leaves here,3,as A

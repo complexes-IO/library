@@ -1,0 +1,12 @@
+{
+  "element_id": "diode-rail-3a",
+  "domain": "controls",
+  "category": "Control",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 18.0,
+  "height": 80.0,
+  "depth": 83.5,
+  "units": "mm",
+  "brief": "our own design: generic Discrete electronic component (ETIM 10.0 EC004667): a diode module, one rectifier diode A to K, 3 A 250 V, 35 mm rail; no reference part measured (spec.md Class values)"
+}

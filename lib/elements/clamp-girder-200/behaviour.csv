@@ -1,0 +1,5 @@
+# behaviour.csv · clamp-girder-200 · generic beam clamp for workshop (lib/behaviour.md). Written by mech-r171 from element.py: no terminal (the load plate's eye takes a hoist's hook, the jaws grip a beam's flange: neither is a port); one moving node, `jaw` (the +y C-jaw), translates +y 0 to 40 (TRAVEL: at 0 its lip lies 24 over the flange's top, at 40 it clears the flange's edge by 16 so the clamp can be fitted or taken off). The spindle that drives it turns by hand (its T-handle is part of the fixed body in this model), so the twin sets the jaw as the operator's input. No clamping force, load capacity or working load limit here: the class values are "not stated" in spec.md.
+kind,a,b,part,when,value,unit,source,note
+state,gripping,,jaw,default,,,element.py (ORIGIN and LIP: the +y lip 24 over the flange's top at 0),the moving jaw wound in: both lips over the flange
+state,open,,jaw,manual toggle,,,element.py (node jaw: translate +y 0 to 40),the moving jaw wound out to the end of its travel: its lip clear of the flange's edge
+pose,jaw,,,open,end,,element.py (node jaw: translate +y 0 to 40),

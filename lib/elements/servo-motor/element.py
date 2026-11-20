@@ -21,7 +21,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspa
 from toolkit import library
 from toolkit.prims import Prims
 
-ID, VERSION, CLASS = "servo-motor", "1.1", "device"
+ID, VERSION, CLASS = "servo-motor", "1.2", "device"
 TITLE = "servo motor 1.0 kW 3000 min-1 3.18 N.m, 3~ 400 V 2.5 A, incremental encoder, square flange 80, shaft 19 x 35 (complexes.org generic)"
 TOOLKIT = "1.3"
 BASELINE = ("our own design: generic servo motor, 1.0 kW (no ETIM class; IEC 60034-1 values); class values in spec.md; flange holes "
@@ -42,6 +42,7 @@ BODY, BODY_L = 76.0, 130.0           # square housing 76 x 76 (x, z ±38), y 10 
 RELIEF = 24.0                        # 1.1 (review servo-motor-1.0 finding 1): the housing's four corners relieved to ±24 the full length
                                      # (a cross section: a centre box x ±38, z ±24 and two slabs x ±24, z ±24 ... ±38), so each flange hole
                                      # (axis x, z ±31.82) has 7.82 clear to the housing in x and in z behind the flange: room for an M6 head or nut
+                                     # (1.2: a design allowance, a head or nut up to Ø12 across its corners; no screw standard on file)
 ENC, ENC_L = 70.0, 35.0              # encoder cover 70 x 70, y 140 ... 175
 # ---- connector bosses and seats on top (design choices; receptacle-m23 is placed on the seats at a later version)
 BOSS, BOSS_H = 30.0, 10.0            # bosses 30 x 30, 10 high on the housing's top (z 38 ... 48)

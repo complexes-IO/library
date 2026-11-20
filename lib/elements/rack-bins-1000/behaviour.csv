@@ -1,0 +1,2 @@
+# behaviour.csv · rack-bins-1000 · storage bins rack, free-standing, generic (lib/behaviour.md). Written by mech-r162 from element.py: one fixed body (the frame and its four placed rails, rail-suspension-shelving-1000 1.0, which carries no node), no terminal, no moving node, no state; hanging a bin on a rail and fixing the rack to the floor are the host's assembly, not a motion. A structural part's file: the header only. No load figure here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note

@@ -55,7 +55,12 @@ MATERIALS = {   # base colour, metallic, roughness per material layer (Blender r
     "M-ALU-ANOD": ((0.78, 0.79, 0.8, 1), 1.0, 0.4), "M-ZINC-CAST": ((0.62, 0.63, 0.65, 1), 1.0, 0.45), "M-LENS-YELLOW": ((0.95, 0.85, 0.3, 1), 0.0, 0.2), "M-RED-PA": ((0.75, 0.08, 0.06, 1), 0.0, 0.5),
     "M-BLACK-PC": ((0.05, 0.05, 0.06, 1), 0.0, 0.3), "M-CABLE-PUR": ((0.1, 0.1, 0.12, 1), 0.0, 0.7), "M-CABLE-GREY": ((0.5, 0.52, 0.54, 1), 0.0, 0.7), "M-COLLIDER": ((0.2, 0.8, 0.9, 0.3), 0.0, 1.0), "M-CAST-BLUE": ((0.17, 0.29, 0.54, 1), 0.3, 0.5),
     "M-CONCRETE": ((0.74, 0.73, 0.70, 1), 0.0, 0.9), "M-WALL": ((0.85, 0.80, 0.72, 1), 0.0, 0.85),   # lab rooms (toolkit/rooms.py)
-    "M-SILVER": ((0.86, 0.86, 0.88, 1), 1.0, 0.25), "M-GOLD": ((0.83, 0.69, 0.22, 1), 1.0, 0.25), "M-BROWN": ((0.4, 0.24, 0.12, 1), 0.0, 0.6), "M-CU-CORRODED": ((0.36, 0.55, 0.45, 1), 0.3, 0.8), "M-ORANGE-PA": ((0.95, 0.45, 0.08, 1), 0.0, 0.5), "M-CASE-CLEAR": ((0.85, 0.9, 0.95, 0.25), 0.0, 0.05)}
+    "M-SILVER": ((0.86, 0.86, 0.88, 1), 1.0, 0.25), "M-GOLD": ((0.83, 0.69, 0.22, 1), 1.0, 0.25), "M-BROWN": ((0.4, 0.24, 0.12, 1), 0.0, 0.6), "M-CU-CORRODED": ((0.36, 0.55, 0.45, 1), 0.3, 0.8), "M-ORANGE-PA": ((0.95, 0.45, 0.08, 1), 0.0, 0.5), "M-CASE-CLEAR": ((0.85, 0.9, 0.95, 0.25), 0.0, 0.05),
+    # gl-xr-1 2.0 (EM 2026-11-20): three finishes that read apart, a clear lens and the display window inside it
+    "M-BLACK-MATTE": ((0.03, 0.032, 0.036, 1), 0.0, 0.85), "M-TI-BRUSHED": ((0.62, 0.62, 0.64, 1), 1.0, 0.3),
+    "M-LENS-CLEAR": ((0.97, 0.98, 0.99, 1), 0.0, 0.0), "M-WAVEGUIDE": ((0.8, 0.8, 0.8, 0.02), 0.0, 0.1)}
+EXTENSIONS = {   # glTF material extensions per material layer; written only for a material that has a row here
+    "M-LENS-CLEAR": {"KHR_materials_transmission": {"transmissionFactor": 0.95}, "KHR_materials_ior": {"ior": 1.5}}}
 EMISSIVE = {"M-LENS-GREEN": (0.25, 0.85, 0.4), "M-LENS-RED": (0.95, 0.3, 0.25), "M-LENS-WHITE": (0.95, 0.95, 0.92), "M-LENS-YELLOW": (0.95, 0.85, 0.3)}   # emissiveFactor; Godot's twin scales it with the output bit
 def _tris(prims, report=None):
     """triangulate: {(node, material): [(oid, p0, p1, p2), ...]}, mm, outward. Holes and cuts are cut (toolkit/csg.py, as AutoCAD's
@@ -210,7 +215,8 @@ def write_glb(path, prims, name):
         node["translation"] = (co - po).tolist()
         gnodes[index[pa]].setdefault("children", []).append(i)
     gltf = dict(asset=dict(version="2.0", generator="complexes component library"), scene=0, scenes=[dict(name=name, nodes=roots)], nodes=gnodes, meshes=meshes,
-                materials=[dict(name=m, pbrMetallicRoughness=dict(baseColorFactor=list(MATERIALS.get(m, ((0.6, 0.6, 0.6, 1), 0, 0.5))[0]), metallicFactor=MATERIALS.get(m, (0, 0, 0.5))[1], roughnessFactor=MATERIALS.get(m, (0, 0, 0.5))[2]), **({"emissiveFactor": list(EMISSIVE[m])} if m in EMISSIVE else {}), **({"alphaMode": "BLEND"} if MATERIALS.get(m, ((0, 0, 0, 1),))[0][3] < 1 else {})) for m in mats],
+                materials=[dict(name=m, pbrMetallicRoughness=dict(baseColorFactor=list(MATERIALS.get(m, ((0.6, 0.6, 0.6, 1), 0, 0.5))[0]), metallicFactor=MATERIALS.get(m, (0, 0, 0.5))[1], roughnessFactor=MATERIALS.get(m, (0, 0, 0.5))[2]), **({"emissiveFactor": list(EMISSIVE[m])} if m in EMISSIVE else {}), **({"alphaMode": "BLEND"} if MATERIALS.get(m, ((0, 0, 0, 1),))[0][3] < 1 else {}), **({"extensions": EXTENSIONS[m]} if m in EXTENSIONS else {})) for m in mats],
+                **({"extensionsUsed": sorted({e for m in mats for e in EXTENSIONS.get(m, {})})} if any(m in EXTENSIONS for m in mats) else {}),
                 bufferViews=views, accessors=accessors, buffers=[dict(byteLength=offset)])
     js = json.dumps(gltf, separators=(",", ":")).encode(); js += b" " * ((-len(js)) % 4); bin_ = b"".join(bufs)
     outfile.write(path, struct.pack("<III", 0x46546C67, 2, 12 + 8 + len(js) + 8 + len(bin_)) + struct.pack("<II", len(js), 0x4E4F534A) + js + struct.pack("<II", len(bin_), 0x004E4942) + bin_)

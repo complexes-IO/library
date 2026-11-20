@@ -1,0 +1,2 @@
+# behaviour.csv · traverse-crane-2000 · crane hook traverse (lifting beam), generic (lib/behaviour.md). Written by mech-r173 from element.py: one fixed box beam with three placed lug-lifting-32 1.0 welded to it, no terminal (the eyes take a hook's or a shackle's pin: not ports), no moving node, no state; what hangs from it and the crane that lifts it are the host's assembly, not a motion of this element. A structural part's file: the header only. No load figure here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note

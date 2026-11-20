@@ -1,0 +1,5 @@
+port,pin,role,signal,rated_A,source
+t-C,C,load0,common 0 V of the three light elements,0.30,spec.md Class values 13 and Wiring; the three elements' currents together (ratings.csv load_i)
+t-1,1,load+:24V,green light element +24 V DC,0.10,spec.md Class values 5 and 13 and Wiring; rated current derived (ratings.csv i_element)
+t-2,2,load+:24V,yellow light element +24 V DC,0.10,spec.md Class values 6 and 13 and Wiring; as 1
+t-3,3,load+:24V,red light element +24 V DC,0.10,spec.md Class values 7 and 13 and Wiring; as 1

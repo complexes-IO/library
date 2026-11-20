@@ -43,7 +43,7 @@ wire,from,to,section,gauge,colour,route,length,when,source,note
 # The controller's supply (0.10): plc0's supply is an L-coded M12 port (port-pwr) · not a screw terminal; its lead is the cordset w-pwr (bom.csv: cordset-m12 1.8 L-coded open-ended · request panel-4's answer item 2) · placed since 0.10 through four duct-40x60 1.3 breakouts (request panel-11 item 1's answer; spec.md section 9). Its conductors are the cordset's own (16 AWG · cordset-m12 spec.md): the shop cuts no wire here. Numbers 22 and 29 (0.3 to 0.9: plc-1.24V-1 to x1-3.1 · 1068 and plc-1.24V-3 to x1-7.1 · 1092 · route duct-1680 > riser-l > duct-1085) are retired for the four rows below.
 ,plc-1.24V-1,w-pwr.A1,control & 24 VDC,,,,,,,plug-in (no wire): the cordset's plug in port-pwr · +24 V: plc0 port-pwr pin 1 to the cordset's end A pin 1 (L coding: straight 1-1 · lib/standards/cables.csv)
 ,w-pwr.B1,x1-3.1,control & 24 VDC,,,,,,,landed (no wire): the cordset's lead 1 in X1:3's clamp 1 · the model draws the lead straight on from the jacket's end · its tip over the block · not in the clamp (cordset-m12: a lead is straight · 50 long)
-23,x1-13.1,f1.95,control & 24 VDC,NOT ON FILE (B),blue,duct-1085,338,,,the head of the K1 coil chain: from X1:13 (the run output's block since 0.5; 0.3 took it from the +24 V bus at X1:4)
+23,x1-13.1,f1.95,control & 24 VDC,NOT ON FILE (B),blue,duct-1085,337,,,the head of the K1 coil chain: from X1:13 (the run output's block since 0.5; 0.3 took it from the +24 V bus at X1:4)
 24,f1.96,k-safe.13,control & 24 VDC,NOT ON FILE (B),blue,duct-1085 > riser-l > duct-1680,,,,overload N.C. ahead of the safety output (95-96 stays hardwired in the chain: request panel-1 answer 3.d)
 25,k-safe.14,k1.A1,control & 24 VDC,NOT ON FILE (B),blue,duct-1680 > riser-l > duct-1385,,,,the safety output to the coil · device to device since 0.5 (0.3 broke the chain at X1:13 and 14 for the run output; the answer put the output at the chain's head)
 26,p-x6.4,x1-13.2,control & 24 VDC,NOT ON FILE (B),blue,wall-r > riser-r > duct-790,2041,,,the controller's run output: io-1 X7 A (port-x7 pin 4) by the panel's A-coded port p-x6 (request panel-1 answer 3.a and 3.c). The output port's return pin is io-1's NOT ON FILE (A): not wired; the coil returns to the 0 V bus (wire 30)
@@ -74,8 +74,8 @@ wire,from,to,section,gauge,colour,route,length,when,source,note
 # signals to the controller (request panel-1's answer, 3.b to 3.d): each contact fed from its port's own pin 1 (U_S) · never from the panel's bus · back to pin 4 (A) or pin 2 (B).
 48,k1.13,x1-15.1,control & 24 VDC,NOT ON FILE (B),blue,duct-1385 > riser-l > duct-1085,971,,,run feedback common: the S4 group (X1:15 and 16) is io-1 port-x4's U_S
 49,k1.14,x1-17.1,control & 24 VDC,NOT ON FILE (B),blue,duct-1385 > riser-l > duct-1085,1041,,,k1_aux
-64,x1-16.1,f1.97,control & 24 VDC,NOT ON FILE (B),blue,duct-1085,320,,,ol_trip common: the N.O. 97-98 (answer 3.d)
-65,f1.98,x1-18.1,control & 24 VDC,NOT ON FILE (B),blue,duct-1085,308,,,ol_trip: closes on a trip
+64,x1-16.1,f1.97,control & 24 VDC,NOT ON FILE (B),blue,duct-1085,319,,,ol_trip common: the N.O. 97-98 (answer 3.d)
+65,f1.98,x1-18.1,control & 24 VDC,NOT ON FILE (B),blue,duct-1085,307,,,ol_trip: closes on a trip
 50,k-safe.23,x1-19.1,control & 24 VDC,NOT ON FILE (B),blue,duct-1680 > riser-l > duct-1085,,,,estop_ok common: safety output 2 (23-24 · N.O.) since 0.5 (0.3 had the N.C. auxiliary 41-42: terminals.csv X1:19)
 51,k-safe.24,x1-20.1,control & 24 VDC,NOT ON FILE (B),blue,duct-1680 > riser-l > duct-1085,,,,estop_ok
 66,p-x5.1,x1-15.2,control & 24 VDC,NOT ON FILE (B),blue,wall-r > riser-r > duct-790,2082,,,U_S of io-1 port-x4 (pin 1) in: the sensor supply for k1_aux and ol_trip (answer 3.c)

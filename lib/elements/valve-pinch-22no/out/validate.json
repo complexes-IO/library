@@ -1,7 +1,7 @@
 {
  "toolkit": "1.3",
  "validation": "1.0",
- "rules": 86,
+ "rules": 87,
  "id": "valve-pinch-22no",
  "status": "PASS",
  "findings": [

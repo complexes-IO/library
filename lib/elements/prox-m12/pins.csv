@@ -1,0 +1,4 @@
+port,pin,role,signal,rated_A,source
+port-x1,+V,load+:24V,supply +24 V DC (the oscillator and the electronics),,spec.md Class values 27 (rated control supply voltage DC 24 V; ratings.csv u_supply); the supply current not stated
+port-x1,0V,load0,supply return,,as +V
+port-x1,Q,out,switching output: PNP (switches +V to Q) and normally open (on while a metal target is within the switching distance),0.1,spec.md Class values 8 9 23 (normally open; PNP; max. output current at protected output 100 mA)

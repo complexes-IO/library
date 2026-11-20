@@ -1,7 +1,7 @@
 {
  "toolkit": "1.3",
  "validation": "1.0",
- "rules": 86,
+ "rules": 87,
  "id": "overload-9a-1no1nc",
  "status": "REVIEW",
  "findings": [
@@ -40,57 +40,17 @@
    "rule": "DOC-005",
    "scope": "overload-9a-1no1nc",
    "where": "overload-9a-1no1nc",
-   "message": "open figures in spec.md, the brief, behaviour.csv: 5 Assumption with no class (counted as A), 15 NOT ON FILE, 6 NOT ON FILE (C); 20 need EM, 0 approved ('REVIEW accepted: <figure> \u00b7 EM <date>', one line each)",
+   "message": "open figures in spec.md, the brief, behaviour.csv: 3 Assumption (B), 4 Assumption (C), 11 NOT ON FILE, 6 NOT ON FILE (C); 11 need EM, 0 approved ('REVIEW accepted: <figure> \u00b7 EM <date>', one line each); 3 class B want a source (lib/standards/wanted.md), not EM's line",
    "elements": [],
    "title": "every open figure accepted by its class: Assumption (C) with the reviewer's PASS; (A), (B), unclassed and NOT ON FILE each by one 'REVIEW accepted: <figure> \u00b7 EM <date>' line in spec.md",
    "basis": "element-qa-checklist Stage 0; OPERATING.md 8.c"
-  },
-  {
-   "status": "REVIEW",
-   "rule": "DOC-006",
-   "scope": "overload-9a-1no1nc",
-   "where": "overload-9a-1no1nc",
-   "message": "spec: vendor names AutomationDirect, WEG; part numbers CWB9 (contactor-9a-1no1nc's), RW27: these live only in references/ with file and page; here say \"maker's datasheet\" and point to the brief",
-   "elements": [],
-   "title": "vendor and product names, part numbers and approval marks only in references/; spec, BASELINE, TITLE, the LISP COMMAND and ratings sources say \"maker's datasheet\"",
-   "basis": "OPERATING.md 6 (EM 2026-11-05); lib/standards/vendors.csv"
-  },
-  {
-   "status": "REVIEW",
-   "rule": "DOC-006",
-   "scope": "overload-9a-1no1nc",
-   "where": "overload-9a-1no1nc",
-   "message": "BASELINE: vendor names AutomationDirect, WEG; part numbers RW27: these live only in references/ with file and page; here say \"maker's datasheet\" and point to the brief",
-   "elements": [],
-   "title": "vendor and product names, part numbers and approval marks only in references/; spec, BASELINE, TITLE, the LISP COMMAND and ratings sources say \"maker's datasheet\"",
-   "basis": "OPERATING.md 6 (EM 2026-11-05); lib/standards/vendors.csv"
-  },
-  {
-   "status": "REVIEW",
-   "rule": "DOC-006",
-   "scope": "overload-9a-1no1nc",
-   "where": "overload-9a-1no1nc",
-   "message": "TITLE: part numbers RW27: these live only in references/ with file and page; here say \"maker's datasheet\" and point to the brief",
-   "elements": [],
-   "title": "vendor and product names, part numbers and approval marks only in references/; spec, BASELINE, TITLE, the LISP COMMAND and ratings sources say \"maker's datasheet\"",
-   "basis": "OPERATING.md 6 (EM 2026-11-05); lib/standards/vendors.csv"
-  },
-  {
-   "status": "REVIEW",
-   "rule": "DOC-006",
-   "scope": "overload-9a-1no1nc",
-   "where": "overload-9a-1no1nc",
-   "message": "ratings: part numbers RW27-2D3-U010; approval marks CSA, UL: these live only in references/ with file and page; here say \"maker's datasheet\" and point to the brief",
-   "elements": [],
-   "title": "vendor and product names, part numbers and approval marks only in references/; spec, BASELINE, TITLE, the LISP COMMAND and ratings sources say \"maker's datasheet\"",
-   "basis": "OPERATING.md 6 (EM 2026-11-05); lib/standards/vendors.csv"
   },
   {
    "status": "PASS",
    "rule": "GEO-020",
    "scope": "overload-9a-1no1nc",
    "where": "overload-9a-1no1nc",
-   "message": "no interference among 53 solids",
+   "message": "no interference among 61 solids",
    "elements": [],
    "title": "two element instances do not occupy the same space",
    "basis": "assembly / fit check on true solids"
@@ -106,41 +66,11 @@
    "basis": "motion checker; lib/motion.csv"
   },
   {
-   "status": "REVIEW",
+   "status": "PASS",
    "rule": "MOT-020",
    "scope": "overload-9a-1no1nc",
-   "where": "bimetal-2 \u2192 differential",
-   "message": "follow pair never meets: bimetal-2 swept alone through 0\u20262.5 deg does not reach differential (motion.csv moves it anyway). Place the driver to meet its follower within its travel, or declare the pair \"linked\" with its reason",
-   "elements": [],
-   "title": "a motion.csv follow leader meets its follower within its range, or the pair is declared \"linked\" with a reason",
-   "basis": "OPERATING.md 13 station 3; lib/motion.csv (escape overload-9a-1no1nc 1.1:1)"
-  },
-  {
-   "status": "REVIEW",
-   "rule": "MOT-020",
-   "scope": "overload-9a-1no1nc",
-   "where": "trip-slide \u2192 latch",
-   "message": "follow pair never meets: trip-slide swept alone through 0\u20261.5 mm does not reach latch (motion.csv moves it anyway). Place the driver to meet its follower within its travel, or declare the pair \"linked\" with its reason",
-   "elements": [],
-   "title": "a motion.csv follow leader meets its follower within its range, or the pair is declared \"linked\" with a reason",
-   "basis": "OPERATING.md 13 station 3; lib/motion.csv (escape overload-9a-1no1nc 1.1:1)"
-  },
-  {
-   "status": "REVIEW",
-   "rule": "MOT-020",
-   "scope": "overload-9a-1no1nc",
-   "where": "latch \u2192 aux-95",
-   "message": "follow pair never meets: latch swept alone through 0\u202612 deg does not reach aux-95 (motion.csv moves it anyway). Place the driver to meet its follower within its travel, or declare the pair \"linked\" with its reason",
-   "elements": [],
-   "title": "a motion.csv follow leader meets its follower within its range, or the pair is declared \"linked\" with a reason",
-   "basis": "OPERATING.md 13 station 3; lib/motion.csv (escape overload-9a-1no1nc 1.1:1)"
-  },
-  {
-   "status": "REVIEW",
-   "rule": "MOT-020",
-   "scope": "overload-9a-1no1nc",
-   "where": "latch \u2192 aux-97",
-   "message": "follow pair never meets: latch swept alone through 0\u202612 deg does not reach aux-97 (motion.csv moves it anyway). Place the driver to meet its follower within its travel, or declare the pair \"linked\" with its reason",
+   "where": "overload-9a-1no1nc",
+   "message": "5 follow pair(s): each leader meets its follower within its range",
    "elements": [],
    "title": "a motion.csv follow leader meets its follower within its range, or the pair is declared \"linked\" with a reason",
    "basis": "OPERATING.md 13 station 3; lib/motion.csv (escape overload-9a-1no1nc 1.1:1)"
@@ -166,81 +96,21 @@
    "basis": "render rule: toolkit/csg.py"
   },
   {
-   "status": "REVIEW",
+   "status": "PASS",
    "rule": "GEO-070",
    "scope": "overload-9a-1no1nc",
-   "where": "body|M-CU",
-   "message": "2 solid(s) at x 5\u202619 y -64\u2026-63 z -25\u2026-13 touch nothing of the main body (33 solids), inside its bounds: model what joins them (a body through the wall, a stem, a hinge, a spring) or seat them on it; a part that moves gets its pivot",
+   "where": "overload-9a-1no1nc",
+   "message": "42 fixed solids form one body",
    "elements": [],
    "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
    "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
   },
   {
-   "status": "REVIEW",
-   "rule": "GEO-070",
-   "scope": "overload-9a-1no1nc",
-   "where": "body|M-CU",
-   "message": "1 solid(s) at x 4\u202610 y -28\u2026-26 z -46\u2026-44 touch nothing of the main body (33 solids), inside its bounds: model what joins them (a body through the wall, a stem, a hinge, a spring) or seat them on it; a part that moves gets its pivot",
-   "elements": [],
-   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
-   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
-  },
-  {
-   "status": "REVIEW",
-   "rule": "GEO-070",
-   "scope": "overload-9a-1no1nc",
-   "where": "body|M-CU",
-   "message": "1 solid(s) at x 18\u202624 y -28\u2026-26 z -46\u2026-44 touch nothing of the main body (33 solids), inside its bounds: model what joins them (a body through the wall, a stem, a hinge, a spring) or seat them on it; a part that moves gets its pivot",
-   "elements": [],
-   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
-   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
-  },
-  {
-   "status": "REVIEW",
-   "rule": "GEO-070",
-   "scope": "overload-9a-1no1nc",
-   "where": "body|M-CU",
-   "message": "1 solid(s) at x 32\u202638 y -28\u2026-26 z -46\u2026-44 touch nothing of the main body (33 solids), inside its bounds: model what joins them (a body through the wall, a stem, a hinge, a spring) or seat them on it; a part that moves gets its pivot",
-   "elements": [],
-   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
-   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
-  },
-  {
-   "status": "REVIEW",
-   "rule": "GEO-070",
-   "scope": "overload-9a-1no1nc",
-   "where": "comp-bimetal|M-STEEL-7035",
-   "message": "1 solid(s) at x 30\u202632 y -39\u2026-38 z -40\u2026-14 touch nothing of the main body (33 solids), inside its bounds: model what joins them (a body through the wall, a stem, a hinge, a spring) or seat them on it; a part that moves gets its pivot",
-   "elements": [],
-   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
-   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
-  },
-  {
-   "status": "REVIEW",
-   "rule": "GEO-070",
-   "scope": "overload-9a-1no1nc",
-   "where": "body|M-CU",
-   "message": "1 solid(s) at x 26\u202629 y -64\u2026-63 z -25\u2026-13 touch nothing of the main body (33 solids), inside its bounds: model what joins them (a body through the wall, a stem, a hinge, a spring) or seat them on it; a part that moves gets its pivot",
-   "elements": [],
-   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
-   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
-  },
-  {
-   "status": "REVIEW",
-   "rule": "GEO-070",
-   "scope": "overload-9a-1no1nc",
-   "where": "body|M-CU",
-   "message": "1 solid(s) at x 37\u202640 y -64\u2026-63 z -25\u2026-13 touch nothing of the main body (33 solids), inside its bounds: model what joins them (a body through the wall, a stem, a hinge, a spring) or seat them on it; a part that moves gets its pivot",
-   "elements": [],
-   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
-   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
-  },
-  {
-   "status": "REVIEW",
+   "status": "PASS",
    "rule": "PIN-002",
    "scope": "overload-9a-1no1nc",
-   "where": "overload-9a-1no1nc aux main motor",
-   "message": "3 port(s) without a gender (aux, main, motor): declare gender=male, female or none on the pivot",
+   "where": "overload-9a-1no1nc",
+   "message": "every port declares its gender",
    "elements": [],
    "title": "every port declares its gender (male, female or none)",
    "basis": "EM 2026-11-05; IEC 60204-1 13.4.5 (no exposed live pins on the part that stays live); PIN-030"
@@ -290,7 +160,7 @@
    "rule": "HOLE-010",
    "scope": "overload-9a-1no1nc",
    "where": "overload-9a-1no1nc",
-   "message": "2 \u00d7 \u00d84.4 stem bore (declared: internal, )",
+   "message": "6 \u00d7 \u00d84.4 stem bore (declared: internal, )",
    "elements": [],
    "title": "every hole is a standard size or a declared role",
    "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
@@ -300,7 +170,7 @@
    "rule": "HOLE-020",
    "scope": "overload-9a-1no1nc",
    "where": "overload-9a-1no1nc",
-   "message": "7 hole(s) inside their parts",
+   "message": "11 hole(s) inside their parts",
    "elements": [],
    "title": "every hole stays inside the part it cuts (no break-out)",
    "basis": "geometry rule"
@@ -310,7 +180,7 @@
    "rule": "FIL-010",
    "scope": "overload-9a-1no1nc",
    "where": "overload-9a-1no1nc",
-   "message": "the AutoCAD gate will pick 30 edges; skipped 107 buried, 92 short, 140 on thin parts, 0 shared, 77 hidden; 0 on placed elements, left to their own gates; 20 FILLETEDGE batches",
+   "message": "the AutoCAD gate will pick 34 edges; skipped 133 buried, 100 short, 180 on thin parts, 0 shared, 95 hidden; 0 on placed elements, left to their own gates; 24 FILLETEDGE batches",
    "elements": [],
    "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
    "basis": "acad-gate.py via toolkit/fillet.py"

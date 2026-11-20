@@ -10,8 +10,13 @@ straight down, squashed plc0's 70 x 30 label to a 70 x 0.2 strip and passed.
                        so a 1e-9 tie let noise pick the hidden back (request elec-3, thermostat-enc's dial island facing +y).
                        An x axis has neither (a tie there went to whichever face came first, so a print on +x or -x
                        could face inwards: ESCAPE valve-gauge-double-1.0 2, port-4's field on +x recorded -x): with away, the
-                       vector from the mesh's centre to the island's, the tie goes to the side away from the centre; y and z ties
-                       keep -y / +z, so no result on file for them changes.
+                       vector from the mesh's centre to the island's, the tie goes to the side away from the centre.
+                       That fix missed two cases (the reviewer, valve-ball-32-1.1 and valve-ball-42-1.0: port-3's field on +x
+                       recorded -x, port-2's on +y recorded -y): a field that is its own mesh has its centre at the island's, so
+                       away from the mesh's centre was nothing; and a y tie always went to -y. away may now be a list of vectors,
+                       tried in order (away_from: the element's centre first, then the mesh's), and it decides a y tie too; a z
+                       tie keeps +z (the top, the side a print under an element is not seen from).
+  away_from(c, mesh_box, element_box)  those candidates, in the island's frame
   island(verts, n)     the island's two sides (in the faces' units) when verts are projected along n
   check(size_mm)       FAIL when either side is under DECAL_MIN_MM (a decal drawn there is squashed to nothing)
 DECAL_MIN_MM is the library's design choice: 3 mm, 6 px at the gate's 2 px per mm."""
@@ -39,10 +44,18 @@ def axis(faces, away=None):
     a, (p, m) = c[0], (c[1][1], c[1][-1])
     if abs(p - m) > TIE_REL * max(p, m): return a if p > m else tuple(-x for x in a)
     front = (0.0, -1.0, 0.0) if abs(a[1]) > 0.5 else (0.0, 0.0, 1.0)
-    if abs(_dot(a, front)) < 0.5 and away is not None:                     # an x axis: front and top are both across it (ESCAPE
-        w = _unit(away); d = _dot(a, w) if w else 0.0                       # valve-gauge-double-1.0 2): the side away from the centre
-        if abs(d) > AWAY_MIN: return a if d > 0 else tuple(-x for x in a)
+    if abs(a[2]) < 0.5 and away is not None:                                # an x or y axis: the side away from the centre (ESCAPE
+        cands = [away] if away and isinstance(away[0], (int, float)) else list(away)   # valve-gauge-double-1.0 2; valve-ball-32-1.1)
+        for w in cands:
+            w = _unit(w) if w else None; d = _dot(a, w) if w else 0.0
+            if abs(d) > AWAY_MIN: return a if d > 0 else tuple(-x for x in a)
     return a if _dot(a, front) >= 0 else tuple(-x for x in a)
+
+def away_from(c, mesh_box, element_box=None):
+    """axis()'s away candidates: the island's centre c less the element's centre, then less the mesh's (boxes as (min, max), all in
+    the island's frame). The element's first: a field that is its own mesh has its centre at the island's (valve-ball-32-1.1)."""
+    mid = lambda b: tuple((lo + hi) / 2 for lo, hi in zip(*b))
+    return [tuple(x - m for x, m in zip(c, mid(b))) for b in (element_box, mesh_box) if b]
 
 def basis(n):
     """two unit vectors u, v across the projection normal n"""

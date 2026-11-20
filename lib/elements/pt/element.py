@@ -22,7 +22,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspa
 from toolkit import library
 from toolkit.prims import Prims
 
-ID, VERSION, CLASS = "pt", "1.0", "device"
+ID, VERSION, CLASS = "pt", "1.1", "device"
 TITLE = "pressure transmitter for hydraulic oil, 0-250 bar, 4-20 mA two-wire loop at 24 V DC, M20 x 1.5 entry (complexes.org generic)"
 TOOLKIT = "1.3"
 BASELINE = ("our own design: generic Pressure transmitter (ETIM 10.0 EC011478); class values in spec.md; the stem meets a host's gauge "

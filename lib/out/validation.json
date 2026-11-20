@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-13T14:02:45",
+ "generated": "2026-11-20T13:26:33",
  "toolkit": "1.3",
  "validation": "1.0",
- "rules": 86,
+ "rules": 87,
  "status": {
   "accumulator": "REVIEW",
   "actuator-valve": "REVIEW",
@@ -40,6 +40,7 @@
   "clamp-angle": "PASS",
   "clamp-bar-300": "PASS",
   "clamp-beam": "PASS",
+  "clamp-girder-200": "PASS",
   "clamp-screw": "REVIEW",
   "clamp-sheet": "REVIEW",
   "clamp-spring-25": "PASS",
@@ -56,6 +57,7 @@
   "contactor-9a-1no1nc": "REVIEW",
   "control-valve": "REVIEW",
   "control-valve-32-mix": "REVIEW",
+  "controller-energy": "REVIEW",
   "controller-thyristor": "REVIEW",
   "conveyor-ball-transfer": "PASS",
   "conveyor-guard": "PASS",
@@ -67,6 +69,7 @@
   "conveyor-wheel": "PASS",
   "coolant-pump": "REVIEW",
   "cordset-m12": "REVIEW",
+  "corner-stacking-1000": "PASS",
   "coupling-clamp-strip": "PASS",
   "cross-6way-block-npt": "PASS",
   "cross-block-npt": "PASS",
@@ -76,12 +79,15 @@
   "damper-vibration": "PASS",
   "damping-rod": "PASS",
   "damping-rod-angle": "PASS",
+  "daq": "REVIEW",
   "desk-pc": "PASS",
   "din-rail-35": "REVIEW",
+  "diode-rail-3a": "REVIEW",
   "disc-3p-30a": "REVIEW",
   "disc-dc": "REVIEW",
   "diverter": "PASS",
   "door-oven": "PASS",
+  "door-partition-1000": "PASS",
   "door-shelving-1000": "PASS",
   "drag-chain": "PASS",
   "drain-auto": "REVIEW",
@@ -99,6 +105,7 @@
   "fitting-pushin": "REVIEW",
   "floor-marking": "PASS",
   "flow-control-inline": "PASS",
+  "flow-meter": "REVIEW",
   "foam-tool-tray": "PASS",
   "footswitch": "REVIEW",
   "frame-welded": "PASS",
@@ -160,6 +167,7 @@
   "lift-vrc": "PASS",
   "limit-switch": "REVIEW",
   "lubrication-central-air-6": "PASS",
+  "lug-lifting-32": "PASS",
   "manifold-pneu": "PASS",
   "manifold-valve": "PASS",
   "marker-terminal": "PASS",
@@ -185,6 +193,7 @@
   "panel-clamp": "PASS",
   "panel-light": "REVIEW",
   "panel-operator": "PASS",
+  "panel-partition-1000": "PASS",
   "panel-plc-training": "PASS",
   "pbs-6h-22": "REVIEW",
   "photoeye-m18": "REVIEW",
@@ -201,6 +210,7 @@
   "port-m12-a": "REVIEW",
   "port-pwr-480": "REVIEW",
   "port-rj45": "REVIEW",
+  "post-partition-2000": "PASS",
   "pressure-switch": "REVIEW",
   "pressure-washer-skid": "PASS",
   "profile-angle-alu-40x40x3": "PASS",
@@ -215,18 +225,28 @@
   "profile-u-alu-40x20x3": "PASS",
   "profile-u-pvc-25x25": "PASS",
   "profile-z-alu-30x40x3": "PASS",
+  "prox-m12": "REVIEW",
   "psu-24v-2a4": "REVIEW",
+  "psu-ac-24v-2a5": "REVIEW",
+  "psu-acdc-24v-1a25": "REVIEW",
   "pt": "REVIEW",
   "pump-hand-hyd": "REVIEW",
   "rack-19in": "REVIEW",
   "rack-bar": "PASS",
+  "rack-bins-1000": "PASS",
+  "rack-cable-drum-1000": "PASS",
   "rack-cantilever": "PASS",
+  "rack-lifting-gear-1000": "PASS",
   "rack-sheet-vertical": "PASS",
+  "rail-suspension-shelving-1000": "PASS",
   "ram": "PASS",
+  "ramp-loading-150": "PASS",
+  "reactor-line-3p-4a": "REVIEW",
   "receiver-air": "PASS",
   "receptacle-clip-qt-6": "PASS",
   "receptacle-m12": "REVIEW",
   "receptacle-m23": "PASS",
+  "reel-cable-630": "PASS",
   "regulator": "PASS",
   "relay-aux-2no2nc": "REVIEW",
   "relay-ice-cube-2co": "REVIEW",
@@ -254,6 +274,7 @@
   "slide-profile-round-belt": "PASS",
   "spacer-sleeve-m8": "PASS",
   "spring-plate-qt-6": "PASS",
+  "stack-light": "REVIEW",
   "stand-magnetic": "REVIEW",
   "stand-micrometer": "REVIEW",
   "strip-clamping-8x15": "PASS",
@@ -282,6 +303,7 @@
   "tensioner-chain": "REVIEW",
   "tensioner-strap-16": "PASS",
   "term-4mm": "REVIEW",
+  "term-dist-12a-1p": "REVIEW",
   "term-endplate": "PASS",
   "term-jumper": "REVIEW",
   "terminal-plug": "REVIEW",
@@ -289,8 +311,10 @@
   "thermowell-npt": "PASS",
   "threaded-sleeve-m8": "PASS",
   "tool-dmm": "REVIEW",
+  "traverse-crane-2000": "PASS",
   "tslot-40": "PASS",
   "tslot-nut": "PASS",
+  "tt-rtd": "REVIEW",
   "tube-pneu": "REVIEW",
   "turntable": "PASS",
   "vacuum": "REVIEW",
@@ -319,8 +343,8 @@
   "lab-electrical": "PASS",
   "mc-motor-1": "REVIEW",
   "pm-motor-starter": "REVIEW",
-  "pnl-motor-starter": "PASS",
-  "pnl-press-hydraulic": "PASS"
+  "pnl-motor-starter": "REVIEW",
+  "pnl-press-hydraulic": "REVIEW"
  },
  "findings": [
   {
@@ -4746,6 +4770,136 @@
   {
    "status": "PASS",
    "rule": "DOC-001",
+   "scope": "clamp-girder-200",
+   "where": "clamp-girder-200",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "clamp-girder-200",
+   "where": "clamp-girder-200",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "clamp-girder-200",
+   "where": "clamp-girder-200",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "clamp-girder-200",
+   "where": "clamp-girder-200",
+   "message": "no interference among 5 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "clamp-girder-200",
+   "where": "clamp-girder-200",
+   "message": "1 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "clamp-girder-200",
+   "where": "clamp-girder-200",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "clamp-girder-200",
+   "where": "clamp-girder-200",
+   "message": "3 solid(s) with openings, all cut in the glTF: 1 as clean extrusions, 2 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "clamp-girder-200",
+   "where": "clamp-girder-200",
+   "message": "4 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "clamp-girder-200",
+   "where": "clamp-girder-200",
+   "message": "0 pins, 0 contacts, 0 loads, 0 sources, 2 states (1 manual), 1 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "clamp-girder-200",
+   "where": "clamp-girder-200",
+   "message": "3 \u00d7 \u00d822 spindle bore (declared: own, design choice (spec.md Its own sizes))",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "clamp-girder-200",
+   "where": "clamp-girder-200",
+   "message": "1 \u00d7 \u00d830 eye (declared: own, design choice (spec.md Its own sizes))",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-020",
+   "scope": "clamp-girder-200",
+   "where": "clamp-girder-200",
+   "message": "4 hole(s) inside their parts",
+   "elements": [],
+   "title": "every hole stays inside the part it cuts (no break-out)",
+   "basis": "geometry rule"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "clamp-girder-200",
+   "where": "clamp-girder-200",
+   "message": "the AutoCAD gate will pick 44 edges; skipped 0 buried, 0 short, 0 on thin parts, 0 shared, 0 hidden; 0 on placed elements, left to their own gates; 9 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
    "scope": "clamp-screw",
    "where": "clamp-screw",
    "message": "spec header carries the version",
@@ -6558,7 +6712,7 @@
    "rule": "DOC-005",
    "scope": "contactor-9a-1no1nc",
    "where": "contactor-9a-1no1nc",
-   "message": "open figures in spec.md, the brief, behaviour.csv: 1 Assumption (B), 1 Assumption (C), 11 NOT ON FILE, 4 NOT ON FILE (B); 11 need EM, 0 approved ('REVIEW accepted: <figure> \u00b7 EM <date>', one line each); 5 class B want a source (lib/standards/wanted.md), not EM's line",
+   "message": "open figures in spec.md, the brief, behaviour.csv: 2 Assumption (B), 1 Assumption (C), 11 NOT ON FILE, 4 NOT ON FILE (B); 11 need EM, 0 approved ('REVIEW accepted: <figure> \u00b7 EM <date>', one line each); 6 class B want a source (lib/standards/wanted.md), not EM's line",
    "elements": [],
    "title": "every open figure accepted by its class: Assumption (C) with the reviewer's PASS; (A), (B), unclassed and NOT ON FILE each by one 'REVIEW accepted: <figure> \u00b7 EM <date>' line in spec.md",
    "basis": "element-qa-checklist Stage 0; OPERATING.md 8.c"
@@ -6991,6 +7145,126 @@
    "scope": "control-valve-32-mix",
    "where": "control-valve-32-mix",
    "message": "the AutoCAD gate will pick 19 edges; skipped 7 buried, 0 short, 12 on thin parts, 0 shared, 0 hidden; 0 on placed elements, left to their own gates; 7 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
+   "scope": "controller-energy",
+   "where": "controller-energy",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "controller-energy",
+   "where": "controller-energy",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "controller-energy",
+   "where": "controller-energy",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "DOC-005",
+   "scope": "controller-energy",
+   "where": "controller-energy",
+   "message": "source wanted: 7 class B figure(s) in spec.md, behaviour.csv (7 NOT ON FILE (B)); the document is asked for once in lib/standards/wanted.md; EM may still accept a figure ('REVIEW accepted: <figure> \u00b7 EM <date>'); 0 approved",
+   "elements": [],
+   "title": "every open figure accepted by its class: Assumption (C) with the reviewer's PASS; (A), (B), unclassed and NOT ON FILE each by one 'REVIEW accepted: <figure> \u00b7 EM <date>' line in spec.md",
+   "basis": "element-qa-checklist Stage 0; OPERATING.md 8.c"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "controller-energy",
+   "where": "controller-energy",
+   "message": "no interference among 39 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "controller-energy",
+   "where": "controller-energy",
+   "message": "0 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "controller-energy",
+   "where": "controller-energy",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "controller-energy",
+   "where": "controller-energy",
+   "message": "4 solid(s) with openings, all cut in the glTF: 1 as clean extrusions, 3 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "controller-energy",
+   "where": "controller-energy",
+   "message": "39 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-002",
+   "scope": "controller-energy",
+   "where": "controller-energy",
+   "message": "every port declares its gender",
+   "elements": [],
+   "title": "every port declares its gender (male, female or none)",
+   "basis": "EM 2026-11-05; IEC 60204-1 13.4.5 (no exposed live pins on the part that stays live); PIN-030"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "controller-energy",
+   "where": "controller-energy",
+   "message": "6 pins, 0 contacts, 1 loads, 0 sources, 4 states (1 manual), 2 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "controller-energy",
+   "where": "controller-energy",
+   "message": "the AutoCAD gate will pick 33 edges; skipped 15 buried, 12 short, 16 on thin parts, 0 shared, 0 hidden; 312 on placed elements, left to their own gates; 5 FILLETEDGE batches",
    "elements": [],
    "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
    "basis": "acad-gate.py via toolkit/fillet.py"
@@ -8448,6 +8722,106 @@
   {
    "status": "PASS",
    "rule": "DOC-001",
+   "scope": "corner-stacking-1000",
+   "where": "corner-stacking-1000",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "corner-stacking-1000",
+   "where": "corner-stacking-1000",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "corner-stacking-1000",
+   "where": "corner-stacking-1000",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "corner-stacking-1000",
+   "where": "corner-stacking-1000",
+   "message": "no interference among 8 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "corner-stacking-1000",
+   "where": "corner-stacking-1000",
+   "message": "0 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "corner-stacking-1000",
+   "where": "corner-stacking-1000",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "corner-stacking-1000",
+   "where": "corner-stacking-1000",
+   "message": "no holes or cut-outs",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "corner-stacking-1000",
+   "where": "corner-stacking-1000",
+   "message": "8 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "corner-stacking-1000",
+   "where": "corner-stacking-1000",
+   "message": "0 pins, 0 contacts, 0 loads, 0 sources, 0 states (0 manual), 0 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "corner-stacking-1000",
+   "where": "corner-stacking-1000",
+   "message": "the AutoCAD gate will pick 44 edges; skipped 52 buried, 0 short, 0 on thin parts, 0 shared, 0 hidden; 0 on placed elements, left to their own gates; 8 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
    "scope": "coupling-clamp-strip",
    "where": "coupling-clamp-strip",
    "message": "spec header carries the version",
@@ -9658,6 +10032,126 @@
   {
    "status": "PASS",
    "rule": "DOC-001",
+   "scope": "daq",
+   "where": "daq",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "daq",
+   "where": "daq",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "daq",
+   "where": "daq",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "DOC-005",
+   "scope": "daq",
+   "where": "daq",
+   "message": "source wanted: 12 class B figure(s) in spec.md, behaviour.csv (12 NOT ON FILE (B)); the document is asked for once in lib/standards/wanted.md; EM may still accept a figure ('REVIEW accepted: <figure> \u00b7 EM <date>'); 0 approved",
+   "elements": [],
+   "title": "every open figure accepted by its class: Assumption (C) with the reviewer's PASS; (A), (B), unclassed and NOT ON FILE each by one 'REVIEW accepted: <figure> \u00b7 EM <date>' line in spec.md",
+   "basis": "element-qa-checklist Stage 0; OPERATING.md 8.c"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "daq",
+   "where": "daq",
+   "message": "no interference among 54 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "daq",
+   "where": "daq",
+   "message": "0 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "daq",
+   "where": "daq",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "daq",
+   "where": "daq",
+   "message": "4 solid(s) with openings, all cut in the glTF: 1 as clean extrusions, 3 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "daq",
+   "where": "daq",
+   "message": "54 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-002",
+   "scope": "daq",
+   "where": "daq",
+   "message": "every port declares its gender",
+   "elements": [],
+   "title": "every port declares its gender (male, female or none)",
+   "basis": "EM 2026-11-05; IEC 60204-1 13.4.5 (no exposed live pins on the part that stays live); PIN-030"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "daq",
+   "where": "daq",
+   "message": "11 pins, 0 contacts, 1 loads, 0 sources, 4 states (1 manual), 2 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "daq",
+   "where": "daq",
+   "message": "the AutoCAD gate will pick 33 edges; skipped 15 buried, 12 short, 16 on thin parts, 0 shared, 0 hidden; 442 on placed elements, left to their own gates; 5 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
    "scope": "desk-pc",
    "where": "desk-pc",
    "message": "spec header carries the version",
@@ -9871,6 +10365,126 @@
    "scope": "din-rail-35",
    "where": "din-rail-35",
    "message": "the AutoCAD gate will pick 27 edges; skipped 9 buried, 0 short, 564 on thin parts, 0 shared, 2 hidden; 0 on placed elements, left to their own gates; 9 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
+   "scope": "diode-rail-3a",
+   "where": "diode-rail-3a",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "diode-rail-3a",
+   "where": "diode-rail-3a",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "diode-rail-3a",
+   "where": "diode-rail-3a",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "DOC-005",
+   "scope": "diode-rail-3a",
+   "where": "diode-rail-3a",
+   "message": "source wanted: 2 class B figure(s) in spec.md, behaviour.csv (2 NOT ON FILE (B)); the document is asked for once in lib/standards/wanted.md; EM may still accept a figure ('REVIEW accepted: <figure> \u00b7 EM <date>'); 0 approved",
+   "elements": [],
+   "title": "every open figure accepted by its class: Assumption (C) with the reviewer's PASS; (A), (B), unclassed and NOT ON FILE each by one 'REVIEW accepted: <figure> \u00b7 EM <date>' line in spec.md",
+   "basis": "element-qa-checklist Stage 0; OPERATING.md 8.c"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "diode-rail-3a",
+   "where": "diode-rail-3a",
+   "message": "no interference among 14 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "diode-rail-3a",
+   "where": "diode-rail-3a",
+   "message": "0 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "diode-rail-3a",
+   "where": "diode-rail-3a",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "diode-rail-3a",
+   "where": "diode-rail-3a",
+   "message": "1 solid(s) with openings, all cut in the glTF: 0 as clean extrusions, 1 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "diode-rail-3a",
+   "where": "diode-rail-3a",
+   "message": "14 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-002",
+   "scope": "diode-rail-3a",
+   "where": "diode-rail-3a",
+   "message": "every port declares its gender",
+   "elements": [],
+   "title": "every port declares its gender (male, female or none)",
+   "basis": "EM 2026-11-05; IEC 60204-1 13.4.5 (no exposed live pins on the part that stays live); PIN-030"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "diode-rail-3a",
+   "where": "diode-rail-3a",
+   "message": "2 pins, 0 contacts, 0 loads, 0 sources, 0 states (0 manual), 0 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "diode-rail-3a",
+   "where": "diode-rail-3a",
+   "message": "the AutoCAD gate will pick 33 edges; skipped 15 buried, 12 short, 12 on thin parts, 0 shared, 0 hidden; 76 on placed elements, left to their own gates; 5 FILLETEDGE batches",
    "elements": [],
    "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
    "basis": "acad-gate.py via toolkit/fillet.py"
@@ -10341,6 +10955,136 @@
    "scope": "door-oven",
    "where": "door-oven",
    "message": "the AutoCAD gate will pick 72 edges; skipped 56 buried, 0 short, 0 on thin parts, 0 shared, 4 hidden; 0 on placed elements, left to their own gates; 11 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
+   "scope": "door-partition-1000",
+   "where": "door-partition-1000",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "door-partition-1000",
+   "where": "door-partition-1000",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "door-partition-1000",
+   "where": "door-partition-1000",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "door-partition-1000",
+   "where": "door-partition-1000",
+   "message": "no interference among 42 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "door-partition-1000",
+   "where": "door-partition-1000",
+   "message": "1 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "door-partition-1000",
+   "where": "door-partition-1000",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "door-partition-1000",
+   "where": "door-partition-1000",
+   "message": "8 solid(s) with openings, all cut in the glTF: 6 as clean extrusions, 2 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "door-partition-1000",
+   "where": "door-partition-1000",
+   "message": "3 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "door-partition-1000",
+   "where": "door-partition-1000",
+   "message": "0 pins, 0 contacts, 0 loads, 0 sources, 2 states (1 manual), 1 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "door-partition-1000",
+   "where": "door-partition-1000",
+   "message": "6 \u00d7 \u00d89 M8 clearance medium (declared, ISO 273)",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GDT-010",
+   "scope": "door-partition-1000",
+   "where": "door-partition-1000",
+   "message": "6 \u00d7 \u00d89 for M8 (floating): position \u00d81 declared \u2264 H \u2212 F = 1.00",
+   "elements": [],
+   "title": "fastener patterns: positional tolerance \u2264 H \u2212 F (floating fastener)",
+   "basis": "ASME Y14.5 / ISO 5459 virtual condition; ISO 2768-1"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-020",
+   "scope": "door-partition-1000",
+   "where": "door-partition-1000",
+   "message": "6 hole(s) inside their parts",
+   "elements": [],
+   "title": "every hole stays inside the part it cuts (no break-out)",
+   "basis": "geometry rule"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "door-partition-1000",
+   "where": "door-partition-1000",
+   "message": "the AutoCAD gate will pick 24 edges; skipped 8 buried, 0 short, 472 on thin parts, 0 shared, 0 hidden; 0 on placed elements, left to their own gates; 7 FILLETEDGE batches",
    "elements": [],
    "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
    "basis": "acad-gate.py via toolkit/fillet.py"
@@ -12738,6 +13482,156 @@
   {
    "status": "PASS",
    "rule": "DOC-001",
+   "scope": "flow-meter",
+   "where": "flow-meter",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "flow-meter",
+   "where": "flow-meter",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "flow-meter",
+   "where": "flow-meter",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "DOC-005",
+   "scope": "flow-meter",
+   "where": "flow-meter",
+   "message": "source wanted: 4 class B figure(s) in spec.md, behaviour.csv (4 NOT ON FILE (B)); the document is asked for once in lib/standards/wanted.md; EM may still accept a figure ('REVIEW accepted: <figure> \u00b7 EM <date>'); 0 approved",
+   "elements": [],
+   "title": "every open figure accepted by its class: Assumption (C) with the reviewer's PASS; (A), (B), unclassed and NOT ON FILE each by one 'REVIEW accepted: <figure> \u00b7 EM <date>' line in spec.md",
+   "basis": "element-qa-checklist Stage 0; OPERATING.md 8.c"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "flow-meter",
+   "where": "flow-meter",
+   "message": "no interference among 14 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "flow-meter",
+   "where": "flow-meter",
+   "message": "0 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "flow-meter",
+   "where": "flow-meter",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "flow-meter",
+   "where": "flow-meter",
+   "message": "4 solid(s) with openings, all cut in the glTF: 4 as clean extrusions, 0 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "flow-meter",
+   "where": "flow-meter",
+   "message": "14 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-002",
+   "scope": "flow-meter",
+   "where": "flow-meter",
+   "message": "every port declares its gender",
+   "elements": [],
+   "title": "every port declares its gender (male, female or none)",
+   "basis": "EM 2026-11-05; IEC 60204-1 13.4.5 (no exposed live pins on the part that stays live); PIN-030"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "flow-meter",
+   "where": "flow-meter",
+   "message": "4 pins, 0 contacts, 1 loads, 0 sources, 3 states (1 manual), 0 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "flow-meter",
+   "where": "flow-meter",
+   "message": "4 \u00d7 \u00d817.055 port bore NPT 3/8 (plain at E1 + h) (declared: port, ASME B1.20.1 by its formulas (toolkit/pneu.py NPT table, EM 2026-11-07): E1 + h, the male's major diameter at the hand-tight plane, as flow-control-inline 1.0 and valve-needle 2.0 bore theirs)",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "flow-meter",
+   "where": "flow-meter",
+   "message": "1 \u00d7 \u00d818.376 M20 x 1.5 cable entry (declared: own, derived: derive.thread(20.0, 1.5) (ISO 68-1 basic profile; ISO 965-1 clause 10: the internal thread's minor diameter D1 18.3762, 6H 18.3762-18.6817))",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-020",
+   "scope": "flow-meter",
+   "where": "flow-meter",
+   "message": "5 hole(s) inside their parts",
+   "elements": [],
+   "title": "every hole stays inside the part it cuts (no break-out)",
+   "basis": "geometry rule"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "flow-meter",
+   "where": "flow-meter",
+   "message": "the AutoCAD gate will pick 32 edges; skipped 50 buried, 4 short, 52 on thin parts, 0 shared, 0 hidden; 0 on placed elements, left to their own gates; 6 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
    "scope": "foam-tool-tray",
    "where": "foam-tool-tray",
    "message": "spec header carries the version",
@@ -14140,7 +15034,7 @@
    "rule": "GEO-030",
    "scope": "gl-xr-1",
    "where": "gl-xr-1",
-   "message": "5 declared contact pair(s) accepted (contacts.csv)",
+   "message": "2 declared contact pair(s) accepted (contacts.csv)",
    "elements": [],
    "title": "declared contacts (seal, journal, seat, insert, bonded, seated) accepted with a reason",
    "basis": "lib/contacts.csv"
@@ -14150,17 +15044,17 @@
    "rule": "GEO-020",
    "scope": "gl-xr-1",
    "where": "gl-xr-1",
-   "message": "no interference among 22 solids",
+   "message": "no interference among 51 solids",
    "elements": [],
    "title": "two element instances do not occupy the same space",
    "basis": "assembly / fit check on true solids"
   },
   {
-   "status": "REVIEW",
+   "status": "PASS",
    "rule": "MOT-010",
    "scope": "gl-xr-1",
-   "where": "temple-l+temple-r",
-   "message": "posed together, temple-l at -74 deg and temple-r at 74 deg: temple-l hits temple-r, 180.9 mm\u00b3 at x -3\u20263 y 31\u202636 z 11\u202617; each is clear alone. Keep each one's travel out of the other's, or state the interlock in lib/motion.csv (\"requires\") and in behaviour.csv",
+   "where": "gl-xr-1",
+   "message": "4 moving node(s) swept through their full range, nothing hit; 6 pair(s) of independent nodes posed together at their ends, clear",
    "elements": [],
    "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
    "basis": "motion checker; lib/motion.csv"
@@ -14190,7 +15084,7 @@
    "rule": "GEO-070",
    "scope": "gl-xr-1",
    "where": "gl-xr-1",
-   "message": "16 fixed solids form one body",
+   "message": "29 fixed solids form one body",
    "elements": [],
    "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
    "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
@@ -14200,7 +15094,7 @@
    "rule": "BEH-010",
    "scope": "gl-xr-1",
    "where": "gl-xr-1",
-   "message": "0 pins, 0 contacts, 0 loads, 0 sources, 4 states (2 manual), 3 pose rows",
+   "message": "0 pins, 0 contacts, 0 loads, 0 sources, 4 states (2 manual), 4 pose rows",
    "elements": [],
    "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
    "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
@@ -14210,7 +15104,7 @@
    "rule": "FIL-010",
    "scope": "gl-xr-1",
    "where": "gl-xr-1",
-   "message": "the AutoCAD gate will pick 34 edges; skipped 18 buried, 24 short, 12 on thin parts, 0 shared, 0 hidden; 0 on placed elements, left to their own gates; 8 FILLETEDGE batches",
+   "message": "the AutoCAD gate will pick 0 edges; skipped 0 buried, 0 short, 0 on thin parts, 0 shared, 0 hidden; 0 on placed elements, left to their own gates; 0 FILLETEDGE batches",
    "elements": [],
    "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
    "basis": "acad-gate.py via toolkit/fillet.py"
@@ -20818,6 +21712,126 @@
   {
    "status": "PASS",
    "rule": "DOC-001",
+   "scope": "lug-lifting-32",
+   "where": "lug-lifting-32",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "lug-lifting-32",
+   "where": "lug-lifting-32",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "lug-lifting-32",
+   "where": "lug-lifting-32",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "lug-lifting-32",
+   "where": "lug-lifting-32",
+   "message": "no interference among 1 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "lug-lifting-32",
+   "where": "lug-lifting-32",
+   "message": "0 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "lug-lifting-32",
+   "where": "lug-lifting-32",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "lug-lifting-32",
+   "where": "lug-lifting-32",
+   "message": "1 solid(s) with openings, all cut in the glTF: 0 as clean extrusions, 1 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "lug-lifting-32",
+   "where": "lug-lifting-32",
+   "message": "1 fixed solid(s): one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "lug-lifting-32",
+   "where": "lug-lifting-32",
+   "message": "0 pins, 0 contacts, 0 loads, 0 sources, 0 states (0 manual), 0 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "lug-lifting-32",
+   "where": "lug-lifting-32",
+   "message": "1 \u00d7 \u00d832 eye (declared: own, design choice (spec.md Its own sizes))",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-020",
+   "scope": "lug-lifting-32",
+   "where": "lug-lifting-32",
+   "message": "1 hole(s) inside their parts",
+   "elements": [],
+   "title": "every hole stays inside the part it cuts (no break-out)",
+   "basis": "geometry rule"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "lug-lifting-32",
+   "where": "lug-lifting-32",
+   "message": "the AutoCAD gate will pick 10 edges; skipped 0 buried, 0 short, 0 on thin parts, 0 shared, 0 hidden; 0 on placed elements, left to their own gates; 7 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
    "scope": "manifold-pneu",
    "where": "manifold-pneu",
    "message": "spec header carries the version",
@@ -23110,57 +24124,17 @@
    "rule": "DOC-005",
    "scope": "overload-9a-1no1nc",
    "where": "overload-9a-1no1nc",
-   "message": "open figures in spec.md, the brief, behaviour.csv: 5 Assumption with no class (counted as A), 15 NOT ON FILE, 6 NOT ON FILE (C); 20 need EM, 0 approved ('REVIEW accepted: <figure> \u00b7 EM <date>', one line each)",
+   "message": "open figures in spec.md, the brief, behaviour.csv: 3 Assumption (B), 4 Assumption (C), 11 NOT ON FILE, 6 NOT ON FILE (C); 11 need EM, 0 approved ('REVIEW accepted: <figure> \u00b7 EM <date>', one line each); 3 class B want a source (lib/standards/wanted.md), not EM's line",
    "elements": [],
    "title": "every open figure accepted by its class: Assumption (C) with the reviewer's PASS; (A), (B), unclassed and NOT ON FILE each by one 'REVIEW accepted: <figure> \u00b7 EM <date>' line in spec.md",
    "basis": "element-qa-checklist Stage 0; OPERATING.md 8.c"
-  },
-  {
-   "status": "REVIEW",
-   "rule": "DOC-006",
-   "scope": "overload-9a-1no1nc",
-   "where": "overload-9a-1no1nc",
-   "message": "spec: vendor names AutomationDirect, WEG; part numbers CWB9 (contactor-9a-1no1nc's), RW27: these live only in references/ with file and page; here say \"maker's datasheet\" and point to the brief",
-   "elements": [],
-   "title": "vendor and product names, part numbers and approval marks only in references/; spec, BASELINE, TITLE, the LISP COMMAND and ratings sources say \"maker's datasheet\"",
-   "basis": "OPERATING.md 6 (EM 2026-11-05); lib/standards/vendors.csv"
-  },
-  {
-   "status": "REVIEW",
-   "rule": "DOC-006",
-   "scope": "overload-9a-1no1nc",
-   "where": "overload-9a-1no1nc",
-   "message": "BASELINE: vendor names AutomationDirect, WEG; part numbers RW27: these live only in references/ with file and page; here say \"maker's datasheet\" and point to the brief",
-   "elements": [],
-   "title": "vendor and product names, part numbers and approval marks only in references/; spec, BASELINE, TITLE, the LISP COMMAND and ratings sources say \"maker's datasheet\"",
-   "basis": "OPERATING.md 6 (EM 2026-11-05); lib/standards/vendors.csv"
-  },
-  {
-   "status": "REVIEW",
-   "rule": "DOC-006",
-   "scope": "overload-9a-1no1nc",
-   "where": "overload-9a-1no1nc",
-   "message": "TITLE: part numbers RW27: these live only in references/ with file and page; here say \"maker's datasheet\" and point to the brief",
-   "elements": [],
-   "title": "vendor and product names, part numbers and approval marks only in references/; spec, BASELINE, TITLE, the LISP COMMAND and ratings sources say \"maker's datasheet\"",
-   "basis": "OPERATING.md 6 (EM 2026-11-05); lib/standards/vendors.csv"
-  },
-  {
-   "status": "REVIEW",
-   "rule": "DOC-006",
-   "scope": "overload-9a-1no1nc",
-   "where": "overload-9a-1no1nc",
-   "message": "ratings: part numbers RW27-2D3-U010; approval marks CSA, UL: these live only in references/ with file and page; here say \"maker's datasheet\" and point to the brief",
-   "elements": [],
-   "title": "vendor and product names, part numbers and approval marks only in references/; spec, BASELINE, TITLE, the LISP COMMAND and ratings sources say \"maker's datasheet\"",
-   "basis": "OPERATING.md 6 (EM 2026-11-05); lib/standards/vendors.csv"
   },
   {
    "status": "PASS",
    "rule": "GEO-020",
    "scope": "overload-9a-1no1nc",
    "where": "overload-9a-1no1nc",
-   "message": "no interference among 53 solids",
+   "message": "no interference among 61 solids",
    "elements": [],
    "title": "two element instances do not occupy the same space",
    "basis": "assembly / fit check on true solids"
@@ -23176,41 +24150,11 @@
    "basis": "motion checker; lib/motion.csv"
   },
   {
-   "status": "REVIEW",
+   "status": "PASS",
    "rule": "MOT-020",
    "scope": "overload-9a-1no1nc",
-   "where": "bimetal-2 \u2192 differential",
-   "message": "follow pair never meets: bimetal-2 swept alone through 0\u20262.5 deg does not reach differential (motion.csv moves it anyway). Place the driver to meet its follower within its travel, or declare the pair \"linked\" with its reason",
-   "elements": [],
-   "title": "a motion.csv follow leader meets its follower within its range, or the pair is declared \"linked\" with a reason",
-   "basis": "OPERATING.md 13 station 3; lib/motion.csv (escape overload-9a-1no1nc 1.1:1)"
-  },
-  {
-   "status": "REVIEW",
-   "rule": "MOT-020",
-   "scope": "overload-9a-1no1nc",
-   "where": "trip-slide \u2192 latch",
-   "message": "follow pair never meets: trip-slide swept alone through 0\u20261.5 mm does not reach latch (motion.csv moves it anyway). Place the driver to meet its follower within its travel, or declare the pair \"linked\" with its reason",
-   "elements": [],
-   "title": "a motion.csv follow leader meets its follower within its range, or the pair is declared \"linked\" with a reason",
-   "basis": "OPERATING.md 13 station 3; lib/motion.csv (escape overload-9a-1no1nc 1.1:1)"
-  },
-  {
-   "status": "REVIEW",
-   "rule": "MOT-020",
-   "scope": "overload-9a-1no1nc",
-   "where": "latch \u2192 aux-95",
-   "message": "follow pair never meets: latch swept alone through 0\u202612 deg does not reach aux-95 (motion.csv moves it anyway). Place the driver to meet its follower within its travel, or declare the pair \"linked\" with its reason",
-   "elements": [],
-   "title": "a motion.csv follow leader meets its follower within its range, or the pair is declared \"linked\" with a reason",
-   "basis": "OPERATING.md 13 station 3; lib/motion.csv (escape overload-9a-1no1nc 1.1:1)"
-  },
-  {
-   "status": "REVIEW",
-   "rule": "MOT-020",
-   "scope": "overload-9a-1no1nc",
-   "where": "latch \u2192 aux-97",
-   "message": "follow pair never meets: latch swept alone through 0\u202612 deg does not reach aux-97 (motion.csv moves it anyway). Place the driver to meet its follower within its travel, or declare the pair \"linked\" with its reason",
+   "where": "overload-9a-1no1nc",
+   "message": "5 follow pair(s): each leader meets its follower within its range",
    "elements": [],
    "title": "a motion.csv follow leader meets its follower within its range, or the pair is declared \"linked\" with a reason",
    "basis": "OPERATING.md 13 station 3; lib/motion.csv (escape overload-9a-1no1nc 1.1:1)"
@@ -23236,81 +24180,21 @@
    "basis": "render rule: toolkit/csg.py"
   },
   {
-   "status": "REVIEW",
+   "status": "PASS",
    "rule": "GEO-070",
    "scope": "overload-9a-1no1nc",
-   "where": "body|M-CU",
-   "message": "2 solid(s) at x 5\u202619 y -64\u2026-63 z -25\u2026-13 touch nothing of the main body (33 solids), inside its bounds: model what joins them (a body through the wall, a stem, a hinge, a spring) or seat them on it; a part that moves gets its pivot",
+   "where": "overload-9a-1no1nc",
+   "message": "42 fixed solids form one body",
    "elements": [],
    "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
    "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
   },
   {
-   "status": "REVIEW",
-   "rule": "GEO-070",
-   "scope": "overload-9a-1no1nc",
-   "where": "body|M-CU",
-   "message": "1 solid(s) at x 4\u202610 y -28\u2026-26 z -46\u2026-44 touch nothing of the main body (33 solids), inside its bounds: model what joins them (a body through the wall, a stem, a hinge, a spring) or seat them on it; a part that moves gets its pivot",
-   "elements": [],
-   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
-   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
-  },
-  {
-   "status": "REVIEW",
-   "rule": "GEO-070",
-   "scope": "overload-9a-1no1nc",
-   "where": "body|M-CU",
-   "message": "1 solid(s) at x 18\u202624 y -28\u2026-26 z -46\u2026-44 touch nothing of the main body (33 solids), inside its bounds: model what joins them (a body through the wall, a stem, a hinge, a spring) or seat them on it; a part that moves gets its pivot",
-   "elements": [],
-   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
-   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
-  },
-  {
-   "status": "REVIEW",
-   "rule": "GEO-070",
-   "scope": "overload-9a-1no1nc",
-   "where": "body|M-CU",
-   "message": "1 solid(s) at x 32\u202638 y -28\u2026-26 z -46\u2026-44 touch nothing of the main body (33 solids), inside its bounds: model what joins them (a body through the wall, a stem, a hinge, a spring) or seat them on it; a part that moves gets its pivot",
-   "elements": [],
-   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
-   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
-  },
-  {
-   "status": "REVIEW",
-   "rule": "GEO-070",
-   "scope": "overload-9a-1no1nc",
-   "where": "comp-bimetal|M-STEEL-7035",
-   "message": "1 solid(s) at x 30\u202632 y -39\u2026-38 z -40\u2026-14 touch nothing of the main body (33 solids), inside its bounds: model what joins them (a body through the wall, a stem, a hinge, a spring) or seat them on it; a part that moves gets its pivot",
-   "elements": [],
-   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
-   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
-  },
-  {
-   "status": "REVIEW",
-   "rule": "GEO-070",
-   "scope": "overload-9a-1no1nc",
-   "where": "body|M-CU",
-   "message": "1 solid(s) at x 26\u202629 y -64\u2026-63 z -25\u2026-13 touch nothing of the main body (33 solids), inside its bounds: model what joins them (a body through the wall, a stem, a hinge, a spring) or seat them on it; a part that moves gets its pivot",
-   "elements": [],
-   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
-   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
-  },
-  {
-   "status": "REVIEW",
-   "rule": "GEO-070",
-   "scope": "overload-9a-1no1nc",
-   "where": "body|M-CU",
-   "message": "1 solid(s) at x 37\u202640 y -64\u2026-63 z -25\u2026-13 touch nothing of the main body (33 solids), inside its bounds: model what joins them (a body through the wall, a stem, a hinge, a spring) or seat them on it; a part that moves gets its pivot",
-   "elements": [],
-   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
-   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
-  },
-  {
-   "status": "REVIEW",
+   "status": "PASS",
    "rule": "PIN-002",
    "scope": "overload-9a-1no1nc",
-   "where": "overload-9a-1no1nc aux main motor",
-   "message": "3 port(s) without a gender (aux, main, motor): declare gender=male, female or none on the pivot",
+   "where": "overload-9a-1no1nc",
+   "message": "every port declares its gender",
    "elements": [],
    "title": "every port declares its gender (male, female or none)",
    "basis": "EM 2026-11-05; IEC 60204-1 13.4.5 (no exposed live pins on the part that stays live); PIN-030"
@@ -23360,7 +24244,7 @@
    "rule": "HOLE-010",
    "scope": "overload-9a-1no1nc",
    "where": "overload-9a-1no1nc",
-   "message": "2 \u00d7 \u00d84.4 stem bore (declared: internal, )",
+   "message": "6 \u00d7 \u00d84.4 stem bore (declared: internal, )",
    "elements": [],
    "title": "every hole is a standard size or a declared role",
    "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
@@ -23370,7 +24254,7 @@
    "rule": "HOLE-020",
    "scope": "overload-9a-1no1nc",
    "where": "overload-9a-1no1nc",
-   "message": "7 hole(s) inside their parts",
+   "message": "11 hole(s) inside their parts",
    "elements": [],
    "title": "every hole stays inside the part it cuts (no break-out)",
    "basis": "geometry rule"
@@ -23380,7 +24264,7 @@
    "rule": "FIL-010",
    "scope": "overload-9a-1no1nc",
    "where": "overload-9a-1no1nc",
-   "message": "the AutoCAD gate will pick 30 edges; skipped 107 buried, 92 short, 140 on thin parts, 0 shared, 77 hidden; 0 on placed elements, left to their own gates; 20 FILLETEDGE batches",
+   "message": "the AutoCAD gate will pick 34 edges; skipped 133 buried, 100 short, 180 on thin parts, 0 shared, 95 hidden; 0 on placed elements, left to their own gates; 24 FILLETEDGE batches",
    "elements": [],
    "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
    "basis": "acad-gate.py via toolkit/fillet.py"
@@ -24331,6 +25215,136 @@
    "scope": "panel-operator",
    "where": "panel-operator",
    "message": "the AutoCAD gate will pick 0 edges; skipped 0 buried, 0 short, 72 on thin parts, 0 shared, 0 hidden; 0 on placed elements, left to their own gates; 0 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
+   "scope": "panel-partition-1000",
+   "where": "panel-partition-1000",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "panel-partition-1000",
+   "where": "panel-partition-1000",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "panel-partition-1000",
+   "where": "panel-partition-1000",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "panel-partition-1000",
+   "where": "panel-partition-1000",
+   "message": "no interference among 39 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "panel-partition-1000",
+   "where": "panel-partition-1000",
+   "message": "0 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "panel-partition-1000",
+   "where": "panel-partition-1000",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "panel-partition-1000",
+   "where": "panel-partition-1000",
+   "message": "5 solid(s) with openings, all cut in the glTF: 3 as clean extrusions, 2 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "panel-partition-1000",
+   "where": "panel-partition-1000",
+   "message": "39 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "panel-partition-1000",
+   "where": "panel-partition-1000",
+   "message": "0 pins, 0 contacts, 0 loads, 0 sources, 0 states (0 manual), 0 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "panel-partition-1000",
+   "where": "panel-partition-1000",
+   "message": "6 \u00d7 \u00d89 M8 clearance medium (declared, ISO 273)",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GDT-010",
+   "scope": "panel-partition-1000",
+   "where": "panel-partition-1000",
+   "message": "6 \u00d7 \u00d89 for M8 (floating): position \u00d81 declared \u2264 H \u2212 F = 1.00",
+   "elements": [],
+   "title": "fastener patterns: positional tolerance \u2264 H \u2212 F (floating fastener)",
+   "basis": "ASME Y14.5 / ISO 5459 virtual condition; ISO 2768-1"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-020",
+   "scope": "panel-partition-1000",
+   "where": "panel-partition-1000",
+   "message": "6 hole(s) inside their parts",
+   "elements": [],
+   "title": "every hole stays inside the part it cuts (no break-out)",
+   "basis": "geometry rule"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "panel-partition-1000",
+   "where": "panel-partition-1000",
+   "message": "the AutoCAD gate will pick 12 edges; skipped 8 buried, 0 short, 448 on thin parts, 0 shared, 0 hidden; 0 on placed elements, left to their own gates; 4 FILLETEDGE batches",
    "elements": [],
    "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
    "basis": "acad-gate.py via toolkit/fillet.py"
@@ -26448,6 +27462,156 @@
   {
    "status": "PASS",
    "rule": "DOC-001",
+   "scope": "post-partition-2000",
+   "where": "post-partition-2000",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "post-partition-2000",
+   "where": "post-partition-2000",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "post-partition-2000",
+   "where": "post-partition-2000",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "post-partition-2000",
+   "where": "post-partition-2000",
+   "message": "no interference among 8 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "post-partition-2000",
+   "where": "post-partition-2000",
+   "message": "0 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "post-partition-2000",
+   "where": "post-partition-2000",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "post-partition-2000",
+   "where": "post-partition-2000",
+   "message": "8 solid(s) with openings, all cut in the glTF: 8 as clean extrusions, 0 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "post-partition-2000",
+   "where": "post-partition-2000",
+   "message": "8 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "post-partition-2000",
+   "where": "post-partition-2000",
+   "message": "0 pins, 0 contacts, 0 loads, 0 sources, 0 states (0 manual), 0 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "post-partition-2000",
+   "where": "post-partition-2000",
+   "message": "4 \u00d7 \u00d811 M10 clearance medium (declared, ISO 273)",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "post-partition-2000",
+   "where": "post-partition-2000",
+   "message": "6 \u00d7 \u00d89 M8 clearance medium (declared, ISO 273)",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GDT-010",
+   "scope": "post-partition-2000",
+   "where": "post-partition-2000",
+   "message": "4 \u00d7 \u00d811 for M10 (floating): position \u00d81 declared \u2264 H \u2212 F = 1.00",
+   "elements": [],
+   "title": "fastener patterns: positional tolerance \u2264 H \u2212 F (floating fastener)",
+   "basis": "ASME Y14.5 / ISO 5459 virtual condition; ISO 2768-1"
+  },
+  {
+   "status": "PASS",
+   "rule": "GDT-010",
+   "scope": "post-partition-2000",
+   "where": "post-partition-2000",
+   "message": "6 \u00d7 \u00d89 for M8 (floating): position \u00d81 declared \u2264 H \u2212 F = 1.00",
+   "elements": [],
+   "title": "fastener patterns: positional tolerance \u2264 H \u2212 F (floating fastener)",
+   "basis": "ASME Y14.5 / ISO 5459 virtual condition; ISO 2768-1"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-020",
+   "scope": "post-partition-2000",
+   "where": "post-partition-2000",
+   "message": "10 hole(s) inside their parts",
+   "elements": [],
+   "title": "every hole stays inside the part it cuts (no break-out)",
+   "basis": "geometry rule"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "post-partition-2000",
+   "where": "post-partition-2000",
+   "message": "the AutoCAD gate will pick 68 edges; skipped 24 buried, 0 short, 4 on thin parts, 0 shared, 0 hidden; 0 on placed elements, left to their own gates; 8 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
    "scope": "pressure-switch",
    "where": "pressure-switch",
    "message": "spec header carries the version",
@@ -26480,7 +27644,7 @@
    "rule": "DOC-005",
    "scope": "pressure-switch",
    "where": "pressure-switch",
-   "message": "source wanted: 5 class B figure(s) in spec.md, behaviour.csv (5 NOT ON FILE (B)); the document is asked for once in lib/standards/wanted.md; EM may still accept a figure ('REVIEW accepted: <figure> \u00b7 EM <date>'); 0 approved",
+   "message": "source wanted: 6 class B figure(s) in spec.md, behaviour.csv (6 NOT ON FILE (B)); the document is asked for once in lib/standards/wanted.md; EM may still accept a figure ('REVIEW accepted: <figure> \u00b7 EM <date>'); 0 approved",
    "elements": [],
    "title": "every open figure accepted by its class: Assumption (C) with the reviewer's PASS; (A), (B), unclassed and NOT ON FILE each by one 'REVIEW accepted: <figure> \u00b7 EM <date>' line in spec.md",
    "basis": "element-qa-checklist Stage 0; OPERATING.md 8.c"
@@ -27918,6 +29082,126 @@
   {
    "status": "PASS",
    "rule": "DOC-001",
+   "scope": "prox-m12",
+   "where": "prox-m12",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "prox-m12",
+   "where": "prox-m12",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "prox-m12",
+   "where": "prox-m12",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "DOC-005",
+   "scope": "prox-m12",
+   "where": "prox-m12",
+   "message": "source wanted: 1 class B figure(s) in spec.md (1 NOT ON FILE (B)); the document is asked for once in lib/standards/wanted.md; EM may still accept a figure ('REVIEW accepted: <figure> \u00b7 EM <date>'); 0 approved",
+   "elements": [],
+   "title": "every open figure accepted by its class: Assumption (C) with the reviewer's PASS; (A), (B), unclassed and NOT ON FILE each by one 'REVIEW accepted: <figure> \u00b7 EM <date>' line in spec.md",
+   "basis": "element-qa-checklist Stage 0; OPERATING.md 8.c"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "prox-m12",
+   "where": "prox-m12",
+   "message": "no interference among 6 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "prox-m12",
+   "where": "prox-m12",
+   "message": "0 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "prox-m12",
+   "where": "prox-m12",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "prox-m12",
+   "where": "prox-m12",
+   "message": "no holes or cut-outs",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "prox-m12",
+   "where": "prox-m12",
+   "message": "6 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-002",
+   "scope": "prox-m12",
+   "where": "prox-m12",
+   "message": "every port declares its gender",
+   "elements": [],
+   "title": "every port declares its gender (male, female or none)",
+   "basis": "EM 2026-11-05; IEC 60204-1 13.4.5 (no exposed live pins on the part that stays live); PIN-030"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "prox-m12",
+   "where": "prox-m12",
+   "message": "3 pins, 0 contacts, 0 loads, 1 sources, 4 states (1 manual), 1 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "prox-m12",
+   "where": "prox-m12",
+   "message": "the AutoCAD gate will pick 3 edges; skipped 9 buried, 0 short, 0 on thin parts, 0 shared, 0 hidden; 0 on placed elements, left to their own gates; 3 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
    "scope": "psu-24v-2a4",
    "where": "psu-24v-2a4",
    "message": "spec header carries the version",
@@ -28048,6 +29332,246 @@
   {
    "status": "PASS",
    "rule": "DOC-001",
+   "scope": "psu-ac-24v-2a5",
+   "where": "psu-ac-24v-2a5",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "psu-ac-24v-2a5",
+   "where": "psu-ac-24v-2a5",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "psu-ac-24v-2a5",
+   "where": "psu-ac-24v-2a5",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "DOC-005",
+   "scope": "psu-ac-24v-2a5",
+   "where": "psu-ac-24v-2a5",
+   "message": "source wanted: 5 class B figure(s) in spec.md, behaviour.csv (5 NOT ON FILE (B)); the document is asked for once in lib/standards/wanted.md; EM may still accept a figure ('REVIEW accepted: <figure> \u00b7 EM <date>'); 0 approved",
+   "elements": [],
+   "title": "every open figure accepted by its class: Assumption (C) with the reviewer's PASS; (A), (B), unclassed and NOT ON FILE each by one 'REVIEW accepted: <figure> \u00b7 EM <date>' line in spec.md",
+   "basis": "element-qa-checklist Stage 0; OPERATING.md 8.c"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "psu-ac-24v-2a5",
+   "where": "psu-ac-24v-2a5",
+   "message": "no interference among 26 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "psu-ac-24v-2a5",
+   "where": "psu-ac-24v-2a5",
+   "message": "0 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "psu-ac-24v-2a5",
+   "where": "psu-ac-24v-2a5",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "psu-ac-24v-2a5",
+   "where": "psu-ac-24v-2a5",
+   "message": "2 solid(s) with openings, all cut in the glTF: 0 as clean extrusions, 2 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "psu-ac-24v-2a5",
+   "where": "psu-ac-24v-2a5",
+   "message": "26 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-002",
+   "scope": "psu-ac-24v-2a5",
+   "where": "psu-ac-24v-2a5",
+   "message": "every port declares its gender",
+   "elements": [],
+   "title": "every port declares its gender (male, female or none)",
+   "basis": "EM 2026-11-05; IEC 60204-1 13.4.5 (no exposed live pins on the part that stays live); PIN-030"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "psu-ac-24v-2a5",
+   "where": "psu-ac-24v-2a5",
+   "message": "5 pins, 0 contacts, 1 loads, 1 sources, 2 states (0 manual), 1 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "psu-ac-24v-2a5",
+   "where": "psu-ac-24v-2a5",
+   "message": "the AutoCAD gate will pick 33 edges; skipped 15 buried, 12 short, 14 on thin parts, 0 shared, 0 hidden; 178 on placed elements, left to their own gates; 5 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
+   "scope": "psu-acdc-24v-1a25",
+   "where": "psu-acdc-24v-1a25",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "psu-acdc-24v-1a25",
+   "where": "psu-acdc-24v-1a25",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "psu-acdc-24v-1a25",
+   "where": "psu-acdc-24v-1a25",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "DOC-005",
+   "scope": "psu-acdc-24v-1a25",
+   "where": "psu-acdc-24v-1a25",
+   "message": "source wanted: 7 class B figure(s) in spec.md, behaviour.csv (7 NOT ON FILE (B)); the document is asked for once in lib/standards/wanted.md; EM may still accept a figure ('REVIEW accepted: <figure> \u00b7 EM <date>'); 0 approved",
+   "elements": [],
+   "title": "every open figure accepted by its class: Assumption (C) with the reviewer's PASS; (A), (B), unclassed and NOT ON FILE each by one 'REVIEW accepted: <figure> \u00b7 EM <date>' line in spec.md",
+   "basis": "element-qa-checklist Stage 0; OPERATING.md 8.c"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "psu-acdc-24v-1a25",
+   "where": "psu-acdc-24v-1a25",
+   "message": "no interference among 35 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "psu-acdc-24v-1a25",
+   "where": "psu-acdc-24v-1a25",
+   "message": "0 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "psu-acdc-24v-1a25",
+   "where": "psu-acdc-24v-1a25",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "psu-acdc-24v-1a25",
+   "where": "psu-acdc-24v-1a25",
+   "message": "3 solid(s) with openings, all cut in the glTF: 0 as clean extrusions, 3 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "psu-acdc-24v-1a25",
+   "where": "psu-acdc-24v-1a25",
+   "message": "35 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-002",
+   "scope": "psu-acdc-24v-1a25",
+   "where": "psu-acdc-24v-1a25",
+   "message": "every port declares its gender",
+   "elements": [],
+   "title": "every port declares its gender (male, female or none)",
+   "basis": "EM 2026-11-05; IEC 60204-1 13.4.5 (no exposed live pins on the part that stays live); PIN-030"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "psu-acdc-24v-1a25",
+   "where": "psu-acdc-24v-1a25",
+   "message": "7 pins, 0 contacts, 1 loads, 2 sources, 2 states (0 manual), 2 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "psu-acdc-24v-1a25",
+   "where": "psu-acdc-24v-1a25",
+   "message": "the AutoCAD gate will pick 33 edges; skipped 15 buried, 12 short, 16 on thin parts, 0 shared, 0 hidden; 254 on placed elements, left to their own gates; 5 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
    "scope": "pt",
    "where": "pt",
    "message": "spec header carries the version",
@@ -28080,7 +29604,7 @@
    "rule": "DOC-005",
    "scope": "pt",
    "where": "pt",
-   "message": "source wanted: 5 class B figure(s) in spec.md, behaviour.csv (5 NOT ON FILE (B)); the document is asked for once in lib/standards/wanted.md; EM may still accept a figure ('REVIEW accepted: <figure> \u00b7 EM <date>'); 0 approved",
+   "message": "source wanted: 6 class B figure(s) in spec.md, behaviour.csv (6 NOT ON FILE (B)); the document is asked for once in lib/standards/wanted.md; EM may still accept a figure ('REVIEW accepted: <figure> \u00b7 EM <date>'); 0 approved",
    "elements": [],
    "title": "every open figure accepted by its class: Assumption (C) with the reviewer's PASS; (A), (B), unclassed and NOT ON FILE each by one 'REVIEW accepted: <figure> \u00b7 EM <date>' line in spec.md",
    "basis": "element-qa-checklist Stage 0; OPERATING.md 8.c"
@@ -28548,6 +30072,226 @@
   {
    "status": "PASS",
    "rule": "DOC-001",
+   "scope": "rack-bins-1000",
+   "where": "rack-bins-1000",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "rack-bins-1000",
+   "where": "rack-bins-1000",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "rack-bins-1000",
+   "where": "rack-bins-1000",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "rack-bins-1000",
+   "where": "rack-bins-1000",
+   "message": "no interference among 18 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "rack-bins-1000",
+   "where": "rack-bins-1000",
+   "message": "0 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "rack-bins-1000",
+   "where": "rack-bins-1000",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "rack-bins-1000",
+   "where": "rack-bins-1000",
+   "message": "10 solid(s) with openings, all cut in the glTF: 6 as clean extrusions, 4 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "rack-bins-1000",
+   "where": "rack-bins-1000",
+   "message": "18 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "rack-bins-1000",
+   "where": "rack-bins-1000",
+   "message": "0 pins, 0 contacts, 0 loads, 0 sources, 0 states (0 manual), 0 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "rack-bins-1000",
+   "where": "rack-bins-1000",
+   "message": "the AutoCAD gate will pick 24 edges; skipped 0 buried, 0 short, 48 on thin parts, 0 shared, 0 hidden; 144 on placed elements, left to their own gates; 6 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
+   "scope": "rack-cable-drum-1000",
+   "where": "rack-cable-drum-1000",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "rack-cable-drum-1000",
+   "where": "rack-cable-drum-1000",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "rack-cable-drum-1000",
+   "where": "rack-cable-drum-1000",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "rack-cable-drum-1000",
+   "where": "rack-cable-drum-1000",
+   "message": "no interference among 8 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "rack-cable-drum-1000",
+   "where": "rack-cable-drum-1000",
+   "message": "0 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "rack-cable-drum-1000",
+   "where": "rack-cable-drum-1000",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "rack-cable-drum-1000",
+   "where": "rack-cable-drum-1000",
+   "message": "6 solid(s) with openings, all cut in the glTF: 4 as clean extrusions, 2 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "rack-cable-drum-1000",
+   "where": "rack-cable-drum-1000",
+   "message": "8 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "rack-cable-drum-1000",
+   "where": "rack-cable-drum-1000",
+   "message": "0 pins, 0 contacts, 0 loads, 0 sources, 0 states (0 manual), 0 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "rack-cable-drum-1000",
+   "where": "rack-cable-drum-1000",
+   "message": "4 \u00d7 \u00d842 axle bore (declared: own, design choice (spec.md Its own sizes))",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-020",
+   "scope": "rack-cable-drum-1000",
+   "where": "rack-cable-drum-1000",
+   "message": "4 hole(s) inside their parts",
+   "elements": [],
+   "title": "every hole stays inside the part it cuts (no break-out)",
+   "basis": "geometry rule"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "rack-cable-drum-1000",
+   "where": "rack-cable-drum-1000",
+   "message": "the AutoCAD gate will pick 24 edges; skipped 4 buried, 0 short, 48 on thin parts, 0 shared, 0 hidden; 0 on placed elements, left to their own gates; 8 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
    "scope": "rack-cantilever",
    "where": "rack-cantilever",
    "message": "spec header carries the version",
@@ -28678,6 +30422,106 @@
   {
    "status": "PASS",
    "rule": "DOC-001",
+   "scope": "rack-lifting-gear-1000",
+   "where": "rack-lifting-gear-1000",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "rack-lifting-gear-1000",
+   "where": "rack-lifting-gear-1000",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "rack-lifting-gear-1000",
+   "where": "rack-lifting-gear-1000",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "rack-lifting-gear-1000",
+   "where": "rack-lifting-gear-1000",
+   "message": "no interference among 22 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "rack-lifting-gear-1000",
+   "where": "rack-lifting-gear-1000",
+   "message": "0 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "rack-lifting-gear-1000",
+   "where": "rack-lifting-gear-1000",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "rack-lifting-gear-1000",
+   "where": "rack-lifting-gear-1000",
+   "message": "6 solid(s) with openings, all cut in the glTF: 6 as clean extrusions, 0 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "rack-lifting-gear-1000",
+   "where": "rack-lifting-gear-1000",
+   "message": "22 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "rack-lifting-gear-1000",
+   "where": "rack-lifting-gear-1000",
+   "message": "0 pins, 0 contacts, 0 loads, 0 sources, 0 states (0 manual), 0 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "rack-lifting-gear-1000",
+   "where": "rack-lifting-gear-1000",
+   "message": "the AutoCAD gate will pick 34 edges; skipped 22 buried, 0 short, 48 on thin parts, 0 shared, 0 hidden; 0 on placed elements, left to their own gates; 14 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
    "scope": "rack-sheet-vertical",
    "where": "rack-sheet-vertical",
    "message": "spec header carries the version",
@@ -28778,6 +30622,106 @@
   {
    "status": "PASS",
    "rule": "DOC-001",
+   "scope": "rail-suspension-shelving-1000",
+   "where": "rail-suspension-shelving-1000",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "rail-suspension-shelving-1000",
+   "where": "rail-suspension-shelving-1000",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "rail-suspension-shelving-1000",
+   "where": "rail-suspension-shelving-1000",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "rail-suspension-shelving-1000",
+   "where": "rail-suspension-shelving-1000",
+   "message": "no interference among 3 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "rail-suspension-shelving-1000",
+   "where": "rail-suspension-shelving-1000",
+   "message": "0 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "rail-suspension-shelving-1000",
+   "where": "rail-suspension-shelving-1000",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "rail-suspension-shelving-1000",
+   "where": "rail-suspension-shelving-1000",
+   "message": "1 solid(s) with openings, all cut in the glTF: 0 as clean extrusions, 1 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "rail-suspension-shelving-1000",
+   "where": "rail-suspension-shelving-1000",
+   "message": "3 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "rail-suspension-shelving-1000",
+   "where": "rail-suspension-shelving-1000",
+   "message": "0 pins, 0 contacts, 0 loads, 0 sources, 0 states (0 manual), 0 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "rail-suspension-shelving-1000",
+   "where": "rail-suspension-shelving-1000",
+   "message": "the AutoCAD gate will pick 16 edges; skipped 0 buried, 12 short, 6 on thin parts, 0 shared, 0 hidden; 0 on placed elements, left to their own gates; 2 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
    "scope": "ram",
    "where": "ram",
    "message": "spec header carries the version",
@@ -28871,6 +30815,266 @@
    "scope": "ram",
    "where": "ram",
    "message": "the AutoCAD gate will pick 40 edges; skipped 8 buried, 0 short, 0 on thin parts, 0 shared, 0 hidden; 0 on placed elements, left to their own gates; 4 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
+   "scope": "ramp-loading-150",
+   "where": "ramp-loading-150",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "ramp-loading-150",
+   "where": "ramp-loading-150",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "ramp-loading-150",
+   "where": "ramp-loading-150",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "ramp-loading-150",
+   "where": "ramp-loading-150",
+   "message": "no interference among 1 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "ramp-loading-150",
+   "where": "ramp-loading-150",
+   "message": "0 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "ramp-loading-150",
+   "where": "ramp-loading-150",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "ramp-loading-150",
+   "where": "ramp-loading-150",
+   "message": "1 solid(s) with openings, all cut in the glTF: 0 as clean extrusions, 1 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "ramp-loading-150",
+   "where": "ramp-loading-150",
+   "message": "1 fixed solid(s): one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "ramp-loading-150",
+   "where": "ramp-loading-150",
+   "message": "0 pins, 0 contacts, 0 loads, 0 sources, 0 states (0 manual), 0 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "ramp-loading-150",
+   "where": "ramp-loading-150",
+   "message": "the AutoCAD gate will pick 11 edges; skipped 0 buried, 0 short, 0 on thin parts, 0 shared, 0 hidden; 0 on placed elements, left to their own gates; 5 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
+   "scope": "reactor-line-3p-4a",
+   "where": "reactor-line-3p-4a",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "reactor-line-3p-4a",
+   "where": "reactor-line-3p-4a",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "reactor-line-3p-4a",
+   "where": "reactor-line-3p-4a",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "DOC-005",
+   "scope": "reactor-line-3p-4a",
+   "where": "reactor-line-3p-4a",
+   "message": "source wanted: 8 class B figure(s) in spec.md, behaviour.csv (8 NOT ON FILE (B)); the document is asked for once in lib/standards/wanted.md; EM may still accept a figure ('REVIEW accepted: <figure> \u00b7 EM <date>'); 0 approved",
+   "elements": [],
+   "title": "every open figure accepted by its class: Assumption (C) with the reviewer's PASS; (A), (B), unclassed and NOT ON FILE each by one 'REVIEW accepted: <figure> \u00b7 EM <date>' line in spec.md",
+   "basis": "element-qa-checklist Stage 0; OPERATING.md 8.c"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "reactor-line-3p-4a",
+   "where": "reactor-line-3p-4a",
+   "message": "no interference among 34 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "reactor-line-3p-4a",
+   "where": "reactor-line-3p-4a",
+   "message": "0 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "reactor-line-3p-4a",
+   "where": "reactor-line-3p-4a",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "reactor-line-3p-4a",
+   "where": "reactor-line-3p-4a",
+   "message": "8 solid(s) with openings, all cut in the glTF: 8 as clean extrusions, 0 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "reactor-line-3p-4a",
+   "where": "reactor-line-3p-4a",
+   "message": "34 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-002",
+   "scope": "reactor-line-3p-4a",
+   "where": "reactor-line-3p-4a",
+   "message": "every port declares its gender",
+   "elements": [],
+   "title": "every port declares its gender (male, female or none)",
+   "basis": "EM 2026-11-05; IEC 60204-1 13.4.5 (no exposed live pins on the part that stays live); PIN-030"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "reactor-line-3p-4a",
+   "where": "reactor-line-3p-4a",
+   "message": "7 pins, 3 contacts, 0 loads, 0 sources, 0 states (0 manual), 0 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "reactor-line-3p-4a",
+   "where": "reactor-line-3p-4a",
+   "message": "4 \u00d7 \u00d85.5 M5 clearance medium (declared, ISO 273)",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GDT-010",
+   "scope": "reactor-line-3p-4a",
+   "where": "reactor-line-3p-4a",
+   "message": "4 \u00d7 \u00d85.5 for M5 (floating): position \u00d80.4 declared \u2264 H \u2212 F = 0.50",
+   "elements": [],
+   "title": "fastener patterns: positional tolerance \u2264 H \u2212 F (floating fastener)",
+   "basis": "ASME Y14.5 / ISO 5459 virtual condition; ISO 2768-1"
+  },
+  {
+   "status": "PASS",
+   "rule": "DFM-010",
+   "scope": "reactor-line-3p-4a",
+   "where": "reactor-line-3p-4a",
+   "message": "4 sheet hole(s): edge distance \u2265 1.5 t and \u00d8 \u2265 t",
+   "elements": [],
+   "title": "sheet holes: edge distance \u2265 1.5 t, \u00d8 \u2265 t",
+   "basis": "sheet-metal punching guideline"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-020",
+   "scope": "reactor-line-3p-4a",
+   "where": "reactor-line-3p-4a",
+   "message": "4 hole(s) inside their parts",
+   "elements": [],
+   "title": "every hole stays inside the part it cuts (no break-out)",
+   "basis": "geometry rule"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "reactor-line-3p-4a",
+   "where": "reactor-line-3p-4a",
+   "message": "the AutoCAD gate will pick 88 edges; skipped 84 buried, 32 short, 110 on thin parts, 0 shared, 24 hidden; 0 on placed elements, left to their own gates; 16 FILLETEDGE batches",
    "elements": [],
    "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
    "basis": "acad-gate.py via toolkit/fillet.py"
@@ -29441,6 +31645,126 @@
    "scope": "receptacle-m23",
    "where": "receptacle-m23",
    "message": "the AutoCAD gate will pick 10 edges; skipped 4 buried, 4 short, 8 on thin parts, 0 shared, 0 hidden; 0 on placed elements, left to their own gates; 3 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
+   "scope": "reel-cable-630",
+   "where": "reel-cable-630",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "reel-cable-630",
+   "where": "reel-cable-630",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "reel-cable-630",
+   "where": "reel-cable-630",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "reel-cable-630",
+   "where": "reel-cable-630",
+   "message": "no interference among 3 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "reel-cable-630",
+   "where": "reel-cable-630",
+   "message": "0 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "reel-cable-630",
+   "where": "reel-cable-630",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "reel-cable-630",
+   "where": "reel-cable-630",
+   "message": "3 solid(s) with openings, all cut in the glTF: 3 as clean extrusions, 0 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "reel-cable-630",
+   "where": "reel-cable-630",
+   "message": "3 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "reel-cable-630",
+   "where": "reel-cable-630",
+   "message": "0 pins, 0 contacts, 0 loads, 0 sources, 0 states (0 manual), 0 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "reel-cable-630",
+   "where": "reel-cable-630",
+   "message": "3 \u00d7 \u00d850 arbor bore (declared: own, design choice (spec.md Its own sizes))",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "reel-cable-630",
+   "where": "reel-cable-630",
+   "message": "2 \u00d7 \u00d830 drive-pin hole (declared: own, design choice (spec.md Its own sizes))",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "reel-cable-630",
+   "where": "reel-cable-630",
+   "message": "the AutoCAD gate will pick 4 edges; skipped 2 buried, 0 short, 0 on thin parts, 0 shared, 0 hidden; 0 on placed elements, left to their own gates; 2 FILLETEDGE batches",
    "elements": [],
    "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
    "basis": "acad-gate.py via toolkit/fillet.py"
@@ -32828,6 +35152,166 @@
   {
    "status": "PASS",
    "rule": "DOC-001",
+   "scope": "stack-light",
+   "where": "stack-light",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "stack-light",
+   "where": "stack-light",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "stack-light",
+   "where": "stack-light",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "DOC-005",
+   "scope": "stack-light",
+   "where": "stack-light",
+   "message": "source wanted: 5 class B figure(s) in spec.md, behaviour.csv (5 NOT ON FILE (B)); the document is asked for once in lib/standards/wanted.md; EM may still accept a figure ('REVIEW accepted: <figure> \u00b7 EM <date>'); 0 approved",
+   "elements": [],
+   "title": "every open figure accepted by its class: Assumption (C) with the reviewer's PASS; (A), (B), unclassed and NOT ON FILE each by one 'REVIEW accepted: <figure> \u00b7 EM <date>' line in spec.md",
+   "basis": "element-qa-checklist Stage 0; OPERATING.md 8.c"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "stack-light",
+   "where": "stack-light",
+   "message": "no interference among 17 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "stack-light",
+   "where": "stack-light",
+   "message": "0 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "stack-light",
+   "where": "stack-light",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "stack-light",
+   "where": "stack-light",
+   "message": "3 solid(s) with openings, all cut in the glTF: 3 as clean extrusions, 0 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "stack-light",
+   "where": "stack-light",
+   "message": "17 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-002",
+   "scope": "stack-light",
+   "where": "stack-light",
+   "message": "every port declares its gender",
+   "elements": [],
+   "title": "every port declares its gender (male, female or none)",
+   "basis": "EM 2026-11-05; IEC 60204-1 13.4.5 (no exposed live pins on the part that stays live); PIN-030"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "stack-light",
+   "where": "stack-light",
+   "message": "4 pins, 0 contacts, 3 loads, 0 sources, 6 states (0 manual), 3 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "stack-light",
+   "where": "stack-light",
+   "message": "1 \u00d7 \u00d818.376 M20 x 1.5 cable entry (declared: own, derived: derive.thread(20.0, 1.5) (ISO 68-1 basic profile; ISO 965-1 clause 10: the internal thread's minor diameter D1 18.3762, 6H 18.3762-18.6817))",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "stack-light",
+   "where": "stack-light",
+   "message": "2 \u00d7 \u00d84.5 M4 clearance medium (declared, ISO 273)",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GDT-010",
+   "scope": "stack-light",
+   "where": "stack-light",
+   "message": "2 \u00d7 \u00d84.5 for M4 (floating): position \u00d80.5 declared \u2264 H \u2212 F = 0.50",
+   "elements": [],
+   "title": "fastener patterns: positional tolerance \u2264 H \u2212 F (floating fastener)",
+   "basis": "ASME Y14.5 / ISO 5459 virtual condition; ISO 2768-1"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-020",
+   "scope": "stack-light",
+   "where": "stack-light",
+   "message": "3 hole(s) inside their parts",
+   "elements": [],
+   "title": "every hole stays inside the part it cuts (no break-out)",
+   "basis": "geometry rule"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "stack-light",
+   "where": "stack-light",
+   "message": "the AutoCAD gate will pick 31 edges; skipped 69 buried, 4 short, 20 on thin parts, 0 shared, 0 hidden; 0 on placed elements, left to their own gates; 8 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
    "scope": "stand-magnetic",
    "where": "stand-magnetic",
    "message": "spec header carries the version",
@@ -36108,6 +38592,126 @@
   {
    "status": "PASS",
    "rule": "DOC-001",
+   "scope": "term-dist-12a-1p",
+   "where": "term-dist-12a-1p",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "term-dist-12a-1p",
+   "where": "term-dist-12a-1p",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "term-dist-12a-1p",
+   "where": "term-dist-12a-1p",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "DOC-005",
+   "scope": "term-dist-12a-1p",
+   "where": "term-dist-12a-1p",
+   "message": "source wanted: 6 class B figure(s) in spec.md, behaviour.csv (6 NOT ON FILE (B)); the document is asked for once in lib/standards/wanted.md; EM may still accept a figure ('REVIEW accepted: <figure> \u00b7 EM <date>'); 0 approved",
+   "elements": [],
+   "title": "every open figure accepted by its class: Assumption (C) with the reviewer's PASS; (A), (B), unclassed and NOT ON FILE each by one 'REVIEW accepted: <figure> \u00b7 EM <date>' line in spec.md",
+   "basis": "element-qa-checklist Stage 0; OPERATING.md 8.c"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "term-dist-12a-1p",
+   "where": "term-dist-12a-1p",
+   "message": "no interference among 26 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "term-dist-12a-1p",
+   "where": "term-dist-12a-1p",
+   "message": "0 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "term-dist-12a-1p",
+   "where": "term-dist-12a-1p",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "term-dist-12a-1p",
+   "where": "term-dist-12a-1p",
+   "message": "1 solid(s) with openings, all cut in the glTF: 0 as clean extrusions, 1 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "term-dist-12a-1p",
+   "where": "term-dist-12a-1p",
+   "message": "26 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-002",
+   "scope": "term-dist-12a-1p",
+   "where": "term-dist-12a-1p",
+   "message": "every port declares its gender",
+   "elements": [],
+   "title": "every port declares its gender (male, female or none)",
+   "basis": "EM 2026-11-05; IEC 60204-1 13.4.5 (no exposed live pins on the part that stays live); PIN-030"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "term-dist-12a-1p",
+   "where": "term-dist-12a-1p",
+   "message": "6 pins, 5 contacts, 0 loads, 0 sources, 0 states (0 manual), 0 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "term-dist-12a-1p",
+   "where": "term-dist-12a-1p",
+   "message": "the AutoCAD gate will pick 33 edges; skipped 15 buried, 12 short, 12 on thin parts, 0 shared, 0 hidden; 180 on placed elements, left to their own gates; 5 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
    "scope": "term-endplate",
    "where": "term-endplate",
    "message": "spec header carries the version",
@@ -36968,6 +39572,106 @@
   {
    "status": "PASS",
    "rule": "DOC-001",
+   "scope": "traverse-crane-2000",
+   "where": "traverse-crane-2000",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "traverse-crane-2000",
+   "where": "traverse-crane-2000",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "traverse-crane-2000",
+   "where": "traverse-crane-2000",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "traverse-crane-2000",
+   "where": "traverse-crane-2000",
+   "message": "no interference among 6 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "traverse-crane-2000",
+   "where": "traverse-crane-2000",
+   "message": "0 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "traverse-crane-2000",
+   "where": "traverse-crane-2000",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "traverse-crane-2000",
+   "where": "traverse-crane-2000",
+   "message": "4 solid(s) with openings, all cut in the glTF: 1 as clean extrusions, 3 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "traverse-crane-2000",
+   "where": "traverse-crane-2000",
+   "message": "6 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "traverse-crane-2000",
+   "where": "traverse-crane-2000",
+   "message": "0 pins, 0 contacts, 0 loads, 0 sources, 0 states (0 manual), 0 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "traverse-crane-2000",
+   "where": "traverse-crane-2000",
+   "message": "the AutoCAD gate will pick 20 edges; skipped 16 buried, 0 short, 0 on thin parts, 0 shared, 0 hidden; 36 on placed elements, left to their own gates; 3 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
    "scope": "tslot-40",
    "where": "tslot-40",
    "message": "spec header carries the version",
@@ -37201,6 +39905,146 @@
    "scope": "tslot-nut",
    "where": "tslot-nut",
    "message": "the AutoCAD gate will pick 8 edges; skipped 4 buried, 8 short, 4 on thin parts, 0 shared, 0 hidden; 0 on placed elements, left to their own gates; 2 FILLETEDGE batches",
+   "elements": [],
+   "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
+   "basis": "acad-gate.py via toolkit/fillet.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-001",
+   "scope": "tt-rtd",
+   "where": "tt-rtd",
+   "message": "spec header carries the version",
+   "elements": [],
+   "title": "spec header carries the element version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-002",
+   "scope": "tt-rtd",
+   "where": "tt-rtd",
+   "message": "history row for this version",
+   "elements": [],
+   "title": "spec history row for the current version",
+   "basis": "complexes library: README Versions"
+  },
+  {
+   "status": "PASS",
+   "rule": "DOC-003",
+   "scope": "tt-rtd",
+   "where": "tt-rtd",
+   "message": "baseline stated",
+   "elements": [],
+   "title": "baseline stated",
+   "basis": "complexes library: element contract"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "DOC-005",
+   "scope": "tt-rtd",
+   "where": "tt-rtd",
+   "message": "source wanted: 4 class B figure(s) in spec.md, behaviour.csv (4 NOT ON FILE (B)); the document is asked for once in lib/standards/wanted.md; EM may still accept a figure ('REVIEW accepted: <figure> \u00b7 EM <date>'); 0 approved",
+   "elements": [],
+   "title": "every open figure accepted by its class: Assumption (C) with the reviewer's PASS; (A), (B), unclassed and NOT ON FILE each by one 'REVIEW accepted: <figure> \u00b7 EM <date>' line in spec.md",
+   "basis": "element-qa-checklist Stage 0; OPERATING.md 8.c"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-020",
+   "scope": "tt-rtd",
+   "where": "tt-rtd",
+   "message": "no interference among 13 solids",
+   "elements": [],
+   "title": "two element instances do not occupy the same space",
+   "basis": "assembly / fit check on true solids"
+  },
+  {
+   "status": "PASS",
+   "rule": "MOT-010",
+   "scope": "tt-rtd",
+   "where": "tt-rtd",
+   "message": "0 moving node(s) swept through their full range, nothing hit",
+   "elements": [],
+   "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
+   "basis": "motion checker; lib/motion.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-050",
+   "scope": "tt-rtd",
+   "where": "tt-rtd",
+   "message": "no coplanar same-facing faces between different parts",
+   "elements": [],
+   "title": "no coplanar same-facing faces between different solids (z-fighting in Godot; openings the writer cut are not face)",
+   "basis": "render rule: glTF / Godot"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-060",
+   "scope": "tt-rtd",
+   "where": "tt-rtd",
+   "message": "2 solid(s) with openings, all cut in the glTF: 1 as clean extrusions, 1 by boolean, 0 with nothing visible",
+   "elements": [],
+   "title": "every hole and cut-out shows in the glTF and previews (the mesh writer cut it as AutoCAD's SUBTRACT does)",
+   "basis": "render rule: toolkit/csg.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "GEO-070",
+   "scope": "tt-rtd",
+   "where": "tt-rtd",
+   "message": "13 fixed solids form one body",
+   "elements": [],
+   "title": "the element's fixed solids form one connected body (moving parts and springs ride on their pivots; a placed element is one solid of its host)",
+   "basis": "OPERATING.md 8.b, escape group 9 (review port-m12-a-1.4:1)"
+  },
+  {
+   "status": "PASS",
+   "rule": "PIN-002",
+   "scope": "tt-rtd",
+   "where": "tt-rtd",
+   "message": "every port declares its gender",
+   "elements": [],
+   "title": "every port declares its gender (male, female or none)",
+   "basis": "EM 2026-11-05; IEC 60204-1 13.4.5 (no exposed live pins on the part that stays live); PIN-030"
+  },
+  {
+   "status": "PASS",
+   "rule": "BEH-010",
+   "scope": "tt-rtd",
+   "where": "tt-rtd",
+   "message": "3 pins, 0 contacts, 1 loads, 0 sources, 3 states (1 manual), 0 pose rows",
+   "elements": [],
+   "title": "behaviour.csv on file and well formed: known kinds, pins declared before use, states defined (one default), a source on every row, every `when` parses and names only the element's own states, parts and pins",
+   "basis": "lib/behaviour.md; EM 2026-11-09 (REVIEW while missing, FAIL when malformed)"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-010",
+   "scope": "tt-rtd",
+   "where": "tt-rtd",
+   "message": "1 \u00d7 \u00d818.376 M20 x 1.5 cable entry (declared: own, derived: derive.thread(20.0, 1.5) (ISO 68-1 basic profile; ISO 965-1 clause 10: the internal thread's minor diameter D1 18.3762, 6H 18.3762-18.6817))",
+   "elements": [],
+   "title": "every hole is a standard size or a declared role",
+   "basis": "ISO 273; IEC 60947-5-1; IEC 60072-1; lib/standards/holes.csv"
+  },
+  {
+   "status": "PASS",
+   "rule": "HOLE-020",
+   "scope": "tt-rtd",
+   "where": "tt-rtd",
+   "message": "1 hole(s) inside their parts",
+   "elements": [],
+   "title": "every hole stays inside the part it cuts (no break-out)",
+   "basis": "geometry rule"
+  },
+  {
+   "status": "PASS",
+   "rule": "FIL-010",
+   "scope": "tt-rtd",
+   "where": "tt-rtd",
+   "message": "the AutoCAD gate will pick 22 edges; skipped 52 buried, 16 short, 16 on thin parts, 0 shared, 0 hidden; 0 on placed elements, left to their own gates; 7 FILLETEDGE batches",
    "elements": [],
    "title": "fillet pre-flight: share of outer edges the gate will pick, after buried, short, thin, shared and hidden edges",
    "basis": "acad-gate.py via toolkit/fillet.py"
@@ -40547,7 +43391,7 @@
    "rule": "GEO-020",
    "scope": "dm-motor-starter-cell",
    "where": "dm-motor-starter-cell",
-   "message": "no interference among 1895 solids",
+   "message": "no interference among 1903 solids",
    "elements": [],
    "title": "two element instances do not occupy the same space",
    "basis": "assembly / fit check on true solids"
@@ -41110,10 +43954,20 @@
   },
   {
    "status": "PASS",
+   "rule": "BOM-020",
+   "scope": "dm-motor-starter-cell",
+   "where": "bom.csv",
+   "message": "1 placed elements, each past station 6's tools in the build drawn",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
+   "status": "PASS",
    "rule": "GEO-020",
    "scope": "lab-electrical",
    "where": "lab-electrical",
-   "message": "no interference among 1902 solids",
+   "message": "no interference among 1910 solids",
    "elements": [],
    "title": "two element instances do not occupy the same space",
    "basis": "assembly / fit check on true solids"
@@ -41189,6 +44043,16 @@
    "basis": "motion checker; lib/motion.csv"
   },
   {
+   "status": "PASS",
+   "rule": "BOM-020",
+   "scope": "mc-motor-1",
+   "where": "bom.csv",
+   "message": "5 placed elements, each past station 6's tools in the build drawn",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
    "status": "REVIEW",
    "rule": "GATE-010",
    "scope": "mc-motor-1",
@@ -41203,7 +44067,7 @@
    "rule": "GEO-020",
    "scope": "pm-motor-starter",
    "where": "pm-motor-starter",
-   "message": "no interference among 1485 solids",
+   "message": "no interference among 1493 solids",
    "elements": [],
    "title": "two element instances do not occupy the same space",
    "basis": "assembly / fit check on true solids"
@@ -41230,10 +44094,80 @@
   },
   {
    "status": "REVIEW",
+   "rule": "BOM-020",
+   "scope": "pm-motor-starter",
+   "where": "k-safe",
+   "message": "relay-safety-2ch-2no1nc 1.2 is below station 6 as placed; the BOM pins 1.1, the build draws 1.2: AutoCAD gate: brief figure 'depth' 113.6 not on the build's y extent 114.6 (diff 1 > 0.3, ISO 2768-1 m)",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "BOM-020",
+   "scope": "pm-motor-starter",
+   "where": "k1",
+   "message": "contactor-9a-1no1nc 1.4 is below station 6 as placed; the BOM pins 1.2, the build draws 1.4: AutoCAD gate: brief figure 'depth alone (rail back to coil face)' 98.5 not on the build's y extent 140.5 (diff 42 > 0.3, ISO 2768-1 m)",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "BOM-020",
+   "scope": "pm-motor-starter",
+   "where": "f1",
+   "message": "overload-9a-1no1nc 1.2 is below station 6 as placed; the BOM pins 1.1, the build draws 1.2: AutoCAD gate passed at v1.1, not v1.2",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "BOM-020",
+   "scope": "pm-motor-starter",
+   "where": "pe-1, pe-2",
+   "message": "term-4mm 1.6 variant ground is below station 6 as placed; the BOM pins 1.0, the build draws 1.6: Godot QA did not read the Blender gate's export: qa/term-4mm.json rendered 1572 triangles, the export's visible nodes have 1796; rerun the QA on gltf/",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "BOM-020",
+   "scope": "pm-motor-starter",
+   "where": "p-m1",
+   "message": "port-pwr-480 1.1 is below station 6 as placed: AutoCAD gate: brief figure 'depth: cap + body + rear' 60 not on the build's y extent 94.9 (diff 34.9 > 0.3, ISO 2768-1 m)",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "BOM-020",
+   "scope": "pm-motor-starter",
+   "where": "p-x2",
+   "message": "port-m12-a 1.4 variant L is below station 6 as placed: Godot QA failed",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "BOM-020",
+   "scope": "pm-motor-starter",
+   "where": "p-x3",
+   "message": "port-m12-a 1.4 is below station 6 as placed: AutoCAD gate: brief figure 'overall length' 42.6 not on the build's y extent 38.2 (diff 4.4 > 0.3, ISO 2768-1 m); Godot QA did not read the Blender gate's export: qa/port-m12-a.json rendered 5472 triangles, the export's visible nodes have 5476; rerun the QA on gltf/",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
+   "status": "REVIEW",
    "rule": "GATE-010",
    "scope": "pm-motor-starter",
    "where": "gate",
-   "message": "the AutoCAD gate of 2026-11-03 passed on another LISP than the one on file: the gate's census (1352 solids) is not the LISP on file's (1472); 281 layer(s) differ, first M-ALU-ANOD 1 -> 0. Build the assembly, then gate the LISP the build wrote again (acad-gate.py --assembly pm-motor-starter)",
+   "message": "the AutoCAD gate of 2026-11-03 passed on another LISP than the one on file: the gate's census (1352 solids) is not the LISP on file's (1480); 281 layer(s) differ, first M-ALU-ANOD 1 -> 0. Build the assembly, then gate the LISP the build wrote again (acad-gate.py --assembly pm-motor-starter)",
    "elements": [],
    "title": "an assembly's AutoCAD gate on file ran the LISP on file: its census (lisp_per_layer) is out/<id>.lsp's, and a version it or the LISP names is assembly.py's; REVIEW otherwise",
    "basis": "OPERATING.md 13 station 6 (every tool result tied to the files it checked); panel/r15 ESCAPE 2"
@@ -41253,7 +44187,7 @@
    "rule": "GEO-020",
    "scope": "pnl-motor-starter",
    "where": "pnl-motor-starter",
-   "message": "no interference among 2087 solids",
+   "message": "no interference among 2095 solids",
    "elements": [],
    "title": "two element instances do not occupy the same space",
    "basis": "assembly / fit check on true solids"
@@ -41289,11 +44223,91 @@
    "basis": "lib/panel-shop.md \"Out\" (terminal plan, wire list); request panel-4 4"
   },
   {
-   "status": "PASS",
+   "status": "REVIEW",
+   "rule": "BOM-020",
+   "scope": "pnl-motor-starter",
+   "where": "k-safe",
+   "message": "relay-safety-2ch-2no1nc 1.2 is below station 6 as placed: AutoCAD gate: brief figure 'depth' 113.6 not on the build's y extent 114.6 (diff 1 > 0.3, ISO 2768-1 m)",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "BOM-020",
+   "scope": "pnl-motor-starter",
+   "where": "k1",
+   "message": "contactor-9a-1no1nc 1.4 is below station 6 as placed: AutoCAD gate: brief figure 'depth alone (rail back to coil face)' 98.5 not on the build's y extent 140.5 (diff 42 > 0.3, ISO 2768-1 m)",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "BOM-020",
+   "scope": "pnl-motor-starter",
+   "where": "f1",
+   "message": "overload-9a-1no1nc 1.2 is below station 6 as placed: AutoCAD gate passed at v1.1, not v1.2",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "BOM-020",
+   "scope": "pnl-motor-starter",
+   "where": "pe-1, pe-2, pe-3, pe-4 +2",
+   "message": "term-4mm 1.6 variant ground is below station 6 as placed: Godot QA did not read the Blender gate's export: qa/term-4mm.json rendered 1572 triangles, the export's visible nodes have 1796; rerun the QA on gltf/",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "BOM-020",
+   "scope": "pnl-motor-starter",
+   "where": "p-m1",
+   "message": "port-pwr-480 1.1 is below station 6 as placed: AutoCAD gate: brief figure 'depth: cap + body + rear' 60 not on the build's y extent 94.9 (diff 34.9 > 0.3, ISO 2768-1 m)",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "BOM-020",
+   "scope": "pnl-motor-starter",
+   "where": "p-x2",
+   "message": "port-m12-a 1.4 variant L is below station 6 as placed: Godot QA failed",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "BOM-020",
+   "scope": "pnl-motor-starter",
+   "where": "p-x3, p-x4, p-x5, p-x6",
+   "message": "port-m12-a 1.4 is below station 6 as placed: AutoCAD gate: brief figure 'overall length' 42.6 not on the build's y extent 38.2 (diff 4.4 > 0.3, ISO 2768-1 m); Godot QA did not read the Blender gate's export: qa/port-m12-a.json rendered 5472 triangles, the export's visible nodes have 5476; rerun the QA on gltf/",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "BOM-020",
+   "scope": "pnl-motor-starter",
+   "where": "w-pwr",
+   "message": "cordset-m12 1.8 variant male-open-L is below station 6 as placed: AutoCAD gate failed (2026-11-11)",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
+   "status": "REVIEW",
    "rule": "GATE-010",
    "scope": "pnl-motor-starter",
    "where": "gate",
-   "message": "the AutoCAD gate of 2026-11-13 ran the LISP on file (2066 solids)",
+   "message": "the AutoCAD gate of 2026-11-13 passed on another LISP than the one on file: the gate's census (2066 solids) is not the LISP on file's (2074); 3 layer(s) differ, first node-f1.bimetal-2_M-STEEL-7035 1 -> 2. Build the assembly, then gate the LISP the build wrote again (acad-gate.py --assembly pnl-motor-starter)",
    "elements": [],
    "title": "an assembly's AutoCAD gate on file ran the LISP on file: its census (lisp_per_layer) is out/<id>.lsp's, and a version it or the LISP names is assembly.py's; REVIEW otherwise",
    "basis": "OPERATING.md 13 station 6 (every tool result tied to the files it checked); panel/r15 ESCAPE 2"
@@ -41313,7 +44327,7 @@
    "rule": "GEO-020",
    "scope": "pnl-press-hydraulic",
    "where": "pnl-press-hydraulic",
-   "message": "no interference among 1492 solids",
+   "message": "no interference among 1524 solids",
    "elements": [],
    "title": "two element instances do not occupy the same space",
    "basis": "assembly / fit check on true solids"
@@ -41323,7 +44337,7 @@
    "rule": "MOT-010",
    "scope": "pnl-press-hydraulic",
    "where": "pnl-press-hydraulic",
-   "message": "123 moving node(s) swept through their full range, nothing hit",
+   "message": "124 moving node(s) swept through their full range, nothing hit",
    "elements": [],
    "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
    "basis": "motion checker; lib/motion.csv"
@@ -41333,7 +44347,7 @@
    "rule": "PNL-010",
    "scope": "pnl-press-hydraulic",
    "where": "wires.csv",
-   "message": "114 wire ends name a tag of the assembly and a pin of its element",
+   "message": "126 wire ends name a tag of the assembly and a pin of its element",
    "elements": [],
    "title": "every end of a numbered wire (wires.csv) names an element of the assembly and a pin mark of its behaviour.csv; REVIEW when the element has no behaviour.csv",
    "basis": "lib/panel-shop.md (wires.csv joins <tag>.<pin mark>); request panel-4 3: pm-motor-starter's plc-1.L+ left the controller on no net"
@@ -41349,11 +44363,61 @@
    "basis": "lib/panel-shop.md \"Out\" (terminal plan, wire list); request panel-4 4"
   },
   {
-   "status": "PASS",
+   "status": "REVIEW",
+   "rule": "BOM-020",
+   "scope": "pnl-press-hydraulic",
+   "where": "k-safe, k-lc",
+   "message": "relay-safety-2ch-2no1nc 1.2 is below station 6 as placed: AutoCAD gate: brief figure 'depth' 113.6 not on the build's y extent 114.6 (diff 1 > 0.3, ISO 2768-1 m)",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "BOM-020",
+   "scope": "pnl-press-hydraulic",
+   "where": "f1",
+   "message": "overload-9a-1no1nc 1.2 is below station 6 as placed: AutoCAD gate passed at v1.1, not v1.2",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "BOM-020",
+   "scope": "pnl-press-hydraulic",
+   "where": "h1, h2",
+   "message": "op-pilot-22 1.0 is below station 6 as placed: no AutoCAD gate on file (gate/op-pilot-22-acad.json)",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "BOM-020",
+   "scope": "pnl-press-hydraulic",
+   "where": "pe-1, pe-2, pe-3, pe-4 +4",
+   "message": "term-4mm 1.6 variant ground is below station 6 as placed: Godot QA did not read the Blender gate's export: qa/term-4mm.json rendered 1572 triangles, the export's visible nodes have 1796; rerun the QA on gltf/",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "BOM-020",
+   "scope": "pnl-press-hydraulic",
+   "where": "w-pwr",
+   "message": "cordset-m12 1.8 variant male-open-L is below station 6 as placed: AutoCAD gate failed (2026-11-11)",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
+   "status": "REVIEW",
    "rule": "GATE-010",
    "scope": "pnl-press-hydraulic",
    "where": "gate",
-   "message": "the AutoCAD gate of 2026-11-13 ran the LISP on file (1491 solids)",
+   "message": "the AutoCAD gate of 2026-11-13 passed on another LISP than the one on file: the gate's census (1491 solids) is not the LISP on file's (1523); 16 layer(s) differ, first node-f1.bimetal-2_M-STEEL-7035 1 -> 2. Build the assembly, then gate the LISP the build wrote again (acad-gate.py --assembly pnl-press-hydraulic)",
    "elements": [],
    "title": "an assembly's AutoCAD gate on file ran the LISP on file: its census (lisp_per_layer) is out/<id>.lsp's, and a version it or the LISP names is assembly.py's; REVIEW otherwise",
    "basis": "OPERATING.md 13 station 6 (every tool result tied to the files it checked); panel/r15 ESCAPE 2"

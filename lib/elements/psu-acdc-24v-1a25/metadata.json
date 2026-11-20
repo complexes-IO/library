@@ -1,0 +1,12 @@
+{
+  "element_id": "psu-acdc-24v-1a25",
+  "domain": "controls",
+  "category": "Control",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 45.0,
+  "height": 100.0,
+  "depth": 93.5,
+  "units": "mm",
+  "brief": "our own design: generic AC/DC-power supply (ETIM 10.0 EC002542): 120 V AC single-phase in, 24 V AC 1.25 A and 24 V DC 1.25 A out (60 W), not stabilised, 35 mm rail; no reference part measured (spec.md Class values)"
+}

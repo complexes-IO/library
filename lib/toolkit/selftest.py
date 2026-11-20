@@ -17,6 +17,20 @@ def cases():
     q = ([tuple(tuple(c * 10.0 for c in V8[i]) for i in f) for f in F12],)
     X = np.random.default_rng(1).random((20000, 3)) * 14 - 2
     agree = (inside("mesh", q, X) == np.all((X >= 0) & (X <= 10), axis=1)).mean(); t("mesh inside test = box inside test", agree == 1.0, f"{agree:.4f}")
+    # the institute's mark (toolkit/mark.py, EM 2026-11-20): one outline for every element; the triangles cover the regions, an inlay is a closed shell, a ring too small to carry the characters is refused
+    from . import mark as MK
+    R6 = MK.regions(6.0); tri_area = lambda r: sum(0.5 * ((r[0][b][0] - r[0][a][0]) * (r[0][c][1] - r[0][a][1]) - (r[0][b][1] - r[0][a][1]) * (r[0][c][0] - r[0][a][0])) for a, b, c in r[1])
+    ring = 0.5 * 72 * math.sin(2 * math.pi / 72) * (3.0 ** 2 - 2.6 ** 2)
+    t("mark: the ring is 6.0 outside with a 0.4 line, and 0{1} is five islands inside it", abs(tri_area(R6[0]) - ring) < 1e-6 and len(R6) == 6 and all(float(np.hypot(*q)) < 2.6 for r in R6[1:] for q in r[0]), f"ring {tri_area(R6[0]):.4f} of {ring:.4f}, {len(R6)} regions")
+    t("mark: a ring twice the size has four times the area in every region", all(abs(tri_area(b) - 4 * tri_area(a)) < 1e-6 for a, b in zip(R6, MK.regions(12.0))), f"{sum(map(tri_area, MK.regions(12.0))):.4f} of {4 * sum(map(tri_area, R6)):.4f}")
+    edges = {}
+    for r in R6:
+        for tri in MK.inlay(r, lambda u, v, top: (u, v, 0.03 if top else -0.3)):
+            for a, b in zip(tri, tri[1:] + tri[:1]): edges[(a, b)] = edges.get((a, b), 0) + 1
+    t("mark: every inlay is a closed shell (each edge once in each direction)", all(n == 1 and edges.get((b, a)) == 1 for (a, b), n in edges.items()), f"{len(edges)} directed edges")
+    try: MK.regions(5.0); small = False
+    except ValueError: small = True
+    t("mark: a 5 mm ring is refused (the characters' strokes would go under 0.3 mm)", small)
     # interference: overlapping instances FAIL, touching instances PASS, a hole clears its plug
     P = Prims(); P.box("M-STEEL", 0, 0, 0, 10, 10, 10); _owned(P, 0, 1, "a"); P.box("M-STEEL", 8, 0, 0, 10, 10, 10); _owned(P, 1, 2, "b")
     r = G.interference(P, "test-overlap"); t("GEO-020 finds a 2 mm overlap", any(s == "FAIL" and x == "GEO-020" for s, x, *_ in r), r[0][3])
@@ -566,6 +580,30 @@ def cases():
         finally: AP.state = _st
     t("an idle lane waits until main changes something it could use, starts when it does, and a building lane never waits (autopilot.idle_wait)",
       _iw_same and _iw_new is None and _iw_built is None, f"{_iw_same} | {_iw_new} | {_iw_built}")
+    # core watch 2026-11-14, the improvement run: lib/reviews as one tree woke the idle panel shop on every review of another lane's
+    # rounds (8 of its 36 wakes 11-11 to 11-13; panel-r19, r30, r31 idle), and the line then stood 41 h on the weekly limit
+    with _tf.TemporaryDirectory() as _g:
+        def _w(p, s):
+            os.makedirs(os.path.dirname(os.path.join(_g, p)), exist_ok=True); open(os.path.join(_g, p), "w", encoding="utf-8").write(s)
+        def _cm(m):
+            _run(["git", "add", "-A"], cwd=_g, capture_output=True)
+            _run(["git", "-c", "user.email=t@t", "-c", "user.name=t", "commit", "-q", "-m", m], cwd=_g, capture_output=True)
+            return {ln: AP.inputs_fp("HEAD", ln, cwd=_g) for ln in ("panel", "mech")} | {None: AP.inputs_fp("HEAD", cwd=_g)}
+        _run(["git", "init", "-q", _g], capture_output=True)
+        _w("lib/OWNERS.csv", "path,owner,note\nlib/elements/bench-1800/*,mech,\nlib/elements/mcb-2p/*,elec,\n")
+        for _p in ("lib/reviews/mech/r1.md", "lib/reviews/panel/r1.md", "lib/toolkit/x.py", "lib/elements/bench-1800/element.py",
+                   "lib/elements/mcb-2p/element.py", "lib/assemblies/mc-1/controls.csv"): _w(_p, "1\n")
+        _w("lib/assemblies/pnl-a/bom.csv", "element,version\nmcb-2p,1.0\n")
+        _f0 = _cm("base")
+        _w("lib/reviews/mech/r2.md", "PASS\n"); _f1 = _cm("review mech-r2")                     # another lane's round review
+        _w("lib/reviews/elements/mcb-2p-1.0.md", "PASS\n"); _f2 = _cm("review mcb-2p")           # elec's element
+        _w("lib/reviews/elements/bench-1800-1.0.md", "FINDINGS\n"); _f3 = _cm("review bench")    # mech's own element
+        _w("lib/elements/mcb-2p/element.py", "2\n"); _f4 = _cm("mcb-2p 1.1")                     # a version the panel can pin
+        _w("lib/assemblies/mc-1/controls.csv", "2\n"); _f5 = _cm("a controls spec")
+        _w("lib/reviews/panel/r2.md", "PASS\n"); _f6 = _cm("review panel-r2")
+    _lw = [(a["panel"] == b["panel"], a["mech"] == b["mech"], a[None] == b[None]) for a, b in zip((_f0, _f1, _f2, _f3, _f4, _f5), (_f1, _f2, _f3, _f4, _f5, _f6))]
+    t("an idle lane wakes on its own reviews, its own elements' reviews and, for the panel shop, a new version it places or a controls spec; not on another lane's (autopilot.lane_inputs)",
+      _lw == [(True, False, False), (True, True, False), (True, False, False), (False, True, True), (False, True, True), (False, True, False)], _lw)
     # core watch 2026-11-10, the improvement run: elec-9's answer and round 26 sat on core 14 h, the queue 9 h, library budget 0
     import datetime as _dts
     _nw = _dts.datetime(2026, 11, 10, 8, 7)
@@ -577,6 +615,87 @@ def cases():
       and "3 queued lane round(s)" in _sl0[2] and "(9.2 h)" in _sl0[2]
       and len(_sl1) == 2 and "no shift is open" in _sl1[0] and "budget" not in _sl1[0].split(";")[0]
       and _sl2 == [] and "stalls(c)" in _insp.getsource(AP.status), f"{_sl0} | {_sl1} | {_sl2}")
+    # core watch 2026-11-15, the improvement run: line-status last written 16:08 CST 11-14, the PC silent 16 h, and no reader said so
+    _st = ("# Line status · 2026-11-14 16:08\n\n```\nshift: 2026-11-14 10:48 to 2026-11-14 18:48 (open)\n"
+           "usage limit: the account's limit was reached; runs wait until 2026-11-15 09:00\n```\n")
+    _hs = getattr(AP, "silence_lines", None)
+    _si0 = _hs(_st, _dts.datetime(2026, 11, 15, 9, 30)) if _hs else []
+    _si1 = _hs(_st, _dts.datetime(2026, 11, 14, 17, 30)) if _hs else ["missing"]
+    _si2 = _hs("", _dts.datetime(2026, 11, 15, 9, 30)) if _hs else []
+    t("a session in the cloud reads the PC's silence from line-status: its age, a usage limit already reset, a shift already closed (autopilot.silence_lines; build.py silent)",
+      len(_si0) == 3 and _si0[0].startswith("PC SILENT") and "(17.4 h)" in _si0[0] and "reset at 2026-11-15 09:00" in _si0[1]
+      and "closed at 2026-11-14 18:48" in _si0[2] and _si1 == [] and len(_si2) == 1 and _si2[0].startswith("PC SILENT"), f"{_si0} | {_si1} | {_si2}")
+    # core watch 2026-11-17, the improvement run: the PC silent 64 h, 0 elements for 88 h, and no reader named the generic elements the
+    # cloud could build meanwhile (EM 2026-11-07: the cloud builders), or that starting them is EM's
+    _sa, _cl = getattr(AP, "silence_age", None), getattr(AP, "cloud_lines", None)
+    _ca = _sa(_st, _dts.datetime(2026, 11, 15, 9, 30)) if _sa else None
+    _cl0 = _cl(30.0, {"mech": [("EC012003", "Ball joint")], "elec": []}, {"mech": "2026-11-07"}) if _cl else []
+    _cl1 = _cl(_ca, {"mech": [("EC012003", "Ball joint")]}) if _cl and _ca is not None else ["missing"]
+    _cl2 = _cl(None, {"mech": [("EC012003", "Ball joint")]}) if _cl else ["missing"]
+    t("a PC silent 24 h or more names the generic elements the cloud could build to station 5, and that starting them is EM's (autopilot.cloud_lines; build.py silent)",
+      _ca is not None and abs(_ca - 17.367) < 0.01 and len(_cl0) == 2 and _cl0[0].startswith("CLOUD CAN BUILD") and "30.0 h" in _cl0[0]
+      and "EM's" in _cl0[0] and _cl0[1] == "  mech: EC012003 Ball joint (cloud-mech last built 2026-11-07)" and _cl1 == [] and _cl2 == [],
+      f"{_ca} | {_cl0} | {_cl1} | {_cl2}")
+    # core watch 2026-11-18, the improvement run: the summary reads main, and every needs-em.md entry core watch wrote while the PC
+    # was silent (PC SILENT, the cloud builders' decision) stood on origin/core alone for four days
+    _un, _ul = getattr(AP, "unmerged_needs", None), getattr(AP, "unmerged_lines", None)
+    _nm = "# Needs EM\n\n## 2026-11-13 14:30 CST · round 37 ready\n\n- **Yours: the next whole machine.** more\n"
+    _nc = ("# Needs EM\n\n## 2026-11-17 08:50 CST · the cloud could build\n\n- **Yours, a decision: start the cloud builders again?** On"
+           " 11-07 ...\n- **Nothing to decide, done.** x\n\n## 2026-11-15 08:35 CST · PC SILENT\n\n- **Yours, the line's cost: PC SILENT:"
+           " line-status last written 2026-11-14 16:08 CST (16.2 h). Every start.** y\n\n" + _nm.split("\n\n", 1)[1])
+    _u0 = _un(_nm, _nc) if _un else []
+    _u1 = _un(_nc, _nc) if _un else ["missing"]
+    _ul0 = _ul(_u0) if _ul else []
+    t("the core's needs-em entries that main lacks are named for the summary, which reads main (autopilot.unmerged_needs; build.py needs-em)",
+      [h for h, _ in _u0] == ["2026-11-17 08:50 CST · the cloud could build", "2026-11-15 08:35 CST · PC SILENT"]
+      and _u0[0][1] == ["Yours, a decision: start the cloud builders again?", "Nothing to decide, done"]
+      and _u0[1][1] == ["Yours, the line's cost: PC SILENT: line-status last written 2026-11-14 16:08 CST (16.2 h)"]
+      and _u1 == [] and _ul0 and _ul0[0].startswith("NEEDS EM, NOT ON MAIN: 2 entries") and _ul([]) == [],
+      f"{_u0} | {_u1} | {_ul0}")
+    # core watch 2026-11-19, the improvement run: a new entry a day restated the same silence and the same open decision; `needs-em`
+    # printed 7 entries, 28 lines, for what EM is asked. Each open item is printed once, with the entry it was first written in.
+    _oi = getattr(AP, "open_items", None)
+    _oe = [("2026-11-18 08:40 CST (14:40 UTC) · still", ["Yours, the line's cost: PC SILENT: line-status last written 2026-11-14 16:08 CST (88.2 h at 08:18 CST)",
+                                                        "Yours, a decision, still open: start the cloud builders again?", "Nothing to decide, done"]),
+           ("2026-11-17 08:50 CST (14:50 UTC) · could", ["Yours, the line's cost: PC SILENT: line-status last written 2026-11-14 16:08 CST (64.3 h at 08:21 CST)",
+                                                        "Yours, a decision: start the cloud builders again?"]),
+           ("2026-11-15 08:35 CST (14:35 UTC) · silent", ["Yours, the line's cost: PC SILENT: line-status last written 2026-11-14 16:08 CST (16.2 h)"])]
+    _oi0 = _oi(_oe) if _oi else []
+    _ol0 = _ul(_oe) if _ul else []
+    t("each open item of the core's needs-em entries is named once, with the entry it was first written in, however many entries restate it (autopilot.open_items; build.py needs-em)",
+      [(n, h[:16]) for _, h, n in _oi0] == [(3, "2026-11-15 08:35"), (2, "2026-11-17 08:50")] and _oi0[0][0].endswith("(88.2 h at 08:18 CST)")
+      and _ol0[1] == "OPEN FOR EM: 2 items, each once" and _ol0[2].endswith("(first written 2026-11-15 08:35 CST; restated in 3 entries)")
+      and "Nothing to decide, done" not in "\n".join(_ol0) and "    - Nothing to decide, done" in _ul(_oe, full=True),
+      f"{_oi0} | {_ol0}")
+    # core watch 2026-11-16, the improvement run: the PC silent 40 h with round 37 and 14 lane rounds waiting for main; round 36's
+    # core merge had been refused twice on the PC before the cloud saw why. The next merge run is rehearsed in the cloud first.
+    import importlib as _il, tempfile as _tfr, subprocess as _spr, os
+    try: _RH = _il.import_module("toolkit.rehearse")
+    except ImportError: _RH = None
+    _rh = None
+    if _RH is not None:
+        with _tfr.TemporaryDirectory() as _gr:
+            _Gr = lambda *a: _spr.run(["git", "-c", "user.email=t@t", "-c", "user.name=t", *a], cwd=_gr, capture_output=True, text=True)
+            _wr = lambda p, s: (os.makedirs(os.path.dirname(os.path.join(_gr, p)), exist_ok=True), open(os.path.join(_gr, p), "w").write(s))
+            _Gr("init", "-q", "-b", "main")
+            _wr("lib/OWNERS.csv", "path,owner,note\nlib/out/*,*,generated\nlib/core.txt,core,\nlib/x.txt,elec,\nlib/m.txt,mech,\nlib/y.txt,core,\n")
+            for _p in ("lib/out/v.json", "lib/core.txt", "lib/x.txt", "lib/m.txt", "lib/y.txt"): _wr(_p, "0\n")
+            _Gr("add", "."); _Gr("commit", "-qm", "base")
+            _Gr("checkout", "-qb", "core"); _wr("lib/core.txt", "core\n"); _Gr("commit", "-qam", "c")
+            _Gr("checkout", "-q", "main"); _Gr("checkout", "-qb", "mech"); _wr("lib/out/v.json", "mech\n"); _wr("lib/m.txt", "m\n"); _Gr("commit", "-qam", "m")
+            _Gr("checkout", "-q", "main"); _Gr("checkout", "-qb", "elec"); _wr("lib/x.txt", "elec\n"); _wr("lib/y.txt", "elec\n"); _Gr("commit", "-qam", "e")
+            _Gr("checkout", "-q", "main"); _wr("lib/out/v.json", "main\n"); _wr("lib/x.txt", "main\n"); _Gr("commit", "-qam", "main moved")
+            _ow = lambda ln, b, h, here: not [f for f in _spr.run(["git", "diff", "--name-only", f"{b}...{h}"], cwd=here, capture_output=True, text=True).stdout.split()
+                                              if f in ("lib/core.txt", "lib/y.txt") and ln != "core"]
+            _rows, _st = _RH.rehearse(_gr, "main", ["core", "mech", "elec"], owners=_ow, selftest=False)
+            _rh = [(r["ref"], r["merge"], r["generated"], r["conflicts"], r["owners"]) for r in _rows]
+            _rl = _RH.lines(_rows, _st)
+            _left = _spr.run(["git", "worktree", "list"], cwd=_gr, capture_output=True, text=True).stdout.strip().count("\n")
+    t("the library's next merges are rehearsed in a scratch worktree: core merged, a lane's generated conflict takes main's copy, a real conflict and a file outside the lane refuse it, and the worktree is gone after (toolkit/rehearse; build.py rehearse)",
+      _rh == [("core", "merged", [], [], True), ("mech", "merged", ["lib/out/v.json"], [], True), ("elec", "conflict", [], ["lib/x.txt"], False)]
+      and _rl[0].startswith("REHEARSAL REFUSED") and "CONFLICT: lib/x.txt" in _rl[3] and _left == 0
+      and _RH.generated("lib/out/v.json", "path,owner,note\nlib/out/*,*,g\n") and not _RH.generated("lib/x.txt", "path,owner,note\nlib/out/*,*,g\n"),
+      f"{_rh} | {_rl if _RH else 'no toolkit.rehearse'}")
     _src_run = _insp.getsource(AP.run)
     t("a start that failed or was stopped records nothing of what it saw on main, so the next start still finds the change; only a round that ran to its end does (autopilot.record_inputs)",
       not _ri_fail and _iw_fail is None and not _ri_stop and _iw_stop is None and _ri_done and _iw_done
@@ -1103,9 +1222,18 @@ def cases():
     _xt = [((-1, 0, 0), 40.0), ((1, 0, 0), 40.0)]
     _xn = (DC.axis(_xt, away=(12.0, 1.0, -3.0)), DC.axis(_xt, away=(-12.0, 1.0, -3.0)), DC.axis([((0, 1, 0), 40.0), ((0, -1, 0), 40.0)], away=(0.0, 9.0, 0.0)),
            DC.axis(_xt, away=(0.0, 0.0, 0.0)))
-    t("ESCAPE valve-gauge-double-1.0 2: a print on +x whose front and back tie faces +x, one on -x faces -x (away from the mesh's centre); "
-      "a y tie still goes to the front (-y); an island at the centre keeps the old rule", _xn[:3] == ((1.0, 0.0, 0.0), (-1.0, 0.0, 0.0), (0.0, -1.0, 0.0))
+    t("ESCAPE valve-gauge-double-1.0 2: a print on +x whose front and back tie faces +x, one on -x faces -x (away from the centre); "
+      "a y tie away +y faces +y (valve-ball-32-1.1); an island at the centre keeps the old rule", _xn[:3] == ((1.0, 0.0, 0.0), (-1.0, 0.0, 0.0), (0.0, 1.0, 0.0))
       and _xn[3] in ((1.0, 0.0, 0.0), (-1.0, 0.0, 0.0)), str(_xn))
+    # ESCAPE valve-ball-32-1.1 (core watch 2026-11-14; group 35 again): a field that is its own mesh, and a y tie, faced their hidden sides
+    _yt = [((0, 1, 0), 30.0), ((0, -1, 0), 30.0)]
+    _fx = DC.away_from((40.0, 0.0, 5.0), ((39.0, -6.0, 0.0), (41.0, 6.0, 10.0)), ((-40.0, -30.0, -20.0), (41.0, 30.0, 30.0)))   # port-3's field, its own mesh
+    _fy = DC.away_from((0.0, 30.0, 5.0), ((-6.0, 29.0, 0.0), (6.0, 31.0, 10.0)), ((-40.0, -30.0, -20.0), (41.0, 31.0, 30.0)))   # port-2's, on +y
+    _vb = (DC.axis(_xt, away=_fx), DC.axis(_yt, away=_fy), DC.axis(_yt, away=DC.away_from((0.0, -30.0, 5.0), ((-6.0, -31.0, 0.0), (6.0, -29.0, 10.0)), ((-40.0, -31.0, -20.0), (41.0, 30.0, 30.0)))),
+           DC.axis(_yt), DC.axis([((0, 0, 1), 30.0), ((0, 0, -1), 30.0)], away=(0.0, 0.0, -9.0)))
+    t("ESCAPE valve-ball-32-1.1 (group 35 again): a field that is its own mesh on +x faces +x (away from the element's centre, the mesh's "
+      "being its own), one on +y faces +y, one on -y faces -y; a y tie with no centre keeps -y; a z tie keeps +z (decal.away_from, axis)",
+      _vb == ((1.0, 0.0, 0.0), (0.0, 1.0, 0.0), (0.0, -1.0, 0.0), (0.0, -1.0, 0.0), (0.0, 0.0, 1.0)), str(_vb))
     t("LINE counts an element waiting at station 7 in its lane's work in progress, not one past it (finish before start)", LN.in_progress(6) and not LN.in_progress(7))
     # request mech-3 (core watch 2026-11-06): the board counted every element not past 7, those waiting on EM included; mech idled 4 rounds
     _h = lambda n, *holds: (n, "x", "x", False, list(holds))
@@ -1988,6 +2116,42 @@ def cases():
     _b1 = PLV.bom_ids(_bm, {"ka-9a-1no1nc"}, {"relay-row"}, {"ka-9a": "ka-9a-1no1nc"})
     t("ESCAPE panel/r6 1: BOM-010 fails a bom.csv row that names a renamed element's old id (an alias), reviews a versioned row naming no element and no inventory row, and passes a placeholder with no version, an element on file and an inventory row",
       [(s, w) for s, _, w, _ in _b1] == [("FAIL", "k1"), ("REVIEW", "k5")] and "ka-9a-1no1nc" in _b1[0][3], str(_b1))
+    # ESCAPE, lib/reviews/panel/r18.md finding 1 (core watch 2026-11-14): pnl-motor-starter's gate of record passed with k1 drawn at
+    # contactor-9a-1no1nc 1.3 (no AutoCAD gate at 1.3; the row pins 1.2) and w-pwr's L variant (its gate failed); nothing read the
+    # station of what a panel places, and the round queued as all-pass
+    import json as _js
+    from . import line as _LN, library as _lb
+    _gd, _qd = (os.path.join(_lb.ELEMENTS, "gl-xr-1", x) for x in ("gate", "qa"))
+    _mkq = not os.path.isdir(_qd)
+    _pf = [os.path.join(_gd, "gl-xr-1-bomx" + x) for x in ("-acad.json", ".lsp", ".json")] + [os.path.join(_qd, "gl-xr-1-bomx.json")]
+    try:
+        os.makedirs(_qd, exist_ok=True)
+        _ver = _LN._catalogue()["gl-xr-1"]["version"]
+        open(_pf[0], "w", encoding="utf-8").write(_js.dumps({"pass": False, "date": "2026-11-11", "params": {"kind": "bomx", "coding": "L"}, "measure_compare": []}))
+        open(_pf[1], "w", encoding="utf-8").write(f";; gl-xr-1 v{_ver} {{'kind': 'bomx', 'coding': 'L'}} (gate build 2026-11-11). Generated.\n")
+        open(_pf[2], "w", encoding="utf-8").write(_js.dumps({"pass": True})); open(_pf[3], "w", encoding="utf-8").write(_js.dumps({"pass": True}))
+        _v1 = _LN.placed_variant("gl-xr-1", _lb.parse_params("coding=L;kind=bomx;length=2000"))
+        _v0 = _LN.placed_variant("gl-xr-1", _lb.parse_params("coding=L;length=2000"))
+        _h1 = _LN.build_holds("gl-xr-1", _ver, _v1)
+        open(_pf[0], "w", encoding="utf-8").write(_js.dumps({"pass": True, "date": "2026-11-11", "params": {"kind": "bomx", "coding": "L"}, "measure_compare": []}))
+        _h2 = _LN.build_holds("gl-xr-1", _ver, "bomx"); _h3 = _LN.build_holds("gl-xr-1", "9.9", "bomx")
+        t("ESCAPE panel/r18 1: a BOM row's params pick the gated variant whose gate params they all carry (none: the default build); that "
+          "build holds on its failed AutoCAD gate and on a pass at another version than the one drawn, and passes when gated at it",
+          _v1 == "bomx" and _v0 is None and any("AutoCAD gate failed" in w for w in _h1) and _h2 == [] and any("not v9.9" in w for w in _h3),
+          f"{_v1} {_v0} | {_h1} | {_h2} | {_h3}")
+    finally:
+        for f in _pf:
+            if os.path.exists(f): os.remove(f)
+        if _mkq and os.path.isdir(_qd) and not os.listdir(_qd): os.rmdir(_qd)
+    _bs = [dict(element="kx", version="1.2", tag="k1"), dict(element="kx", version="1.2", tag="k2"), dict(element="wx", version="1.8", tag="w-pwr", params="coding=L"),
+           dict(element="ok-x", version="1.0", tag="ok1"), dict(element="a-cell", version="0.1", tag="c1"), dict(element="#kx", version="1.3", tag="k9")]
+    _hf = lambda e, v, p: ((None, ["AutoCAD gate failed (2026-11-03)"]) if e == "kx" else ("L", ["AutoCAD gate failed (2026-11-11)"]) if p.get("coding") == "L" else (None, []))
+    _b2 = PLV.bom_stations(_bs, {"kx": "1.3", "wx": "1.8", "ok-x": "1.0"}, _hf)
+    _b3 = PLV.bom_stations(_bs[3:], {"ok-x": "1.0"}, _hf)
+    t("ESCAPE panel/r18 1: BOM-020 reviews each placed element and variant below station 6 once, naming its tags and the pin the build does "
+      "not draw, skips an assembly or comment row, and passes a BOM whose every placed element passed",
+      [(s, w) for s, _, w, _ in _b2] == [("REVIEW", "k1, k2"), ("REVIEW", "w-pwr")] and "pins 1.2, the build draws 1.3" in _b2[0][3]
+      and "variant L" in _b2[1][3] and "pins" not in _b2[1][3] and [s for s, *_ in _b3] == ["PASS"], f"{_b2} | {_b3}")
     # ESCAPES 28 to 30 (core watch 2026-11-11): DOC-009, a figure that leans on another is sourced as well as it
     _d9 = ("| earth stud torque | 22.3 N·m | derived: derive.torque(8, 1.25, '8.8') (ISO 16047); design: property class 8.8 (the stud's steel, "
            "this design's choice). design: d_w 13 (the bearing face: this design's figure, the nut's standard ISO 4032 not on file) |\n")
@@ -2159,6 +2323,25 @@ def cases():
         _all = PS.contributions("HEAD", None, cwd=_d9); _after = PS.contributions("HEAD", _c1, cwd=_d9)
     t("public sync: the contributions to bring in are the public commits after the last imported one, never the first commit (the export) nor a workshop sync",
       _all == [_c1, _c3] and _after == [_c3], f"{_all} {_after}")
+    # ESCAPE lib/reviews/pneu/r100.md finding 2 (core watch 2026-11-14): valve-gauge-double 1.1's retry found the hung run's gate folder in
+    # TRUSTEDPATHS, recorded it as found and put it back (trustedpaths_restored_ok true); 50 of its 55 entries were such leftovers.
+    # Entries verbatim from gate/valve-gauge-double-acad.json (its shapes: backslashes, one forward-slash out/, an assembly out/,
+    # lane worktrees, EM's Downloads folders and lib\out, which stay)
+    from toolkit import acadset as AS
+    _tp = ("<PC>;"
+           "<PC>;"
+           "<PC>;"
+           "<PC>;"
+           "F:/Foundation/Research/Complexes.org/CAD/lib/elements/term-4mm/out;"
+           "<PC>;"
+           "<PC>;"
+           "<PC>")
+    _kp, _dp = AS.split(_tp); _rv = AS.restore_value(_tp)
+    t("ESCAPE pneu/r100 2: what a gate puts back in TRUSTEDPATHS drops every element or assembly gate/ or out/ folder of a library worktree "
+      "(either slash, a lane's worktree included) that earlier stopped runs left, keeps EM's folders and lib\\out in their order, and a "
+      "clean list comes back unchanged",
+      len(_dp) == 5 and _kp == _tp.split(";")[:2] + [_tp.split(";")[5]] and _rv == ";".join(_kp) and AS.restore_value(_rv) == _rv
+      and AS.leftovers({"trustedpaths_before": _tp}) == _dp and AS.leftovers({}) == [], f"{_kp} | {_dp}")
     return out
 
 def main():

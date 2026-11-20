@@ -1,0 +1,12 @@
+{
+  "element_id": "term-dist-12a-1p",
+  "domain": "controls",
+  "category": "Control",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 36.0,
+  "height": 80.0,
+  "depth": 83.5,
+  "units": "mm",
+  "brief": "our own design: generic Distribution terminal block (ETIM 10.0 EC000276): one potential on six plug-in screw clamps, 12 A 250 V, 35 mm rail; no reference part measured (spec.md Class values)"
+}

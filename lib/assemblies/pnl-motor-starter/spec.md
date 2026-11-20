@@ -1,4 +1,4 @@
-# pnl-motor-starter · v0.14 · the motor-starter panel for mc-motor-1
+# pnl-motor-starter · v0.16 · the motor-starter panel for mc-motor-1
 
 **What** The control panel of the motor bench mc-motor-1, built by the panel shop to the bench's controls spec
 (lib/assemblies/mc-motor-1/controls.csv, 17 points) and shipped as one unit: the machine places it and pins its version, and
@@ -13,13 +13,25 @@ wall ports as pm-motor-starter, so dm-motor-starter-cell can swap one unit for t
 **Built with** toolkit 1.3 · `assembly.py` from `bom.csv` (library.read_bom, place_on_hosts; P.assembly = True; no geometry of
 its own) · AutoLISP command `PNLMS`.
 
-**Status: v0.14 takes two text minors' pins (panel-r28, 2026-11-13): disc-3p-30a 1.7 and term-4mm 1.6 (elec-r48, each at
-station 6: same nodes and origin). contactor-9a-1no1nc 1.3 (elec-r51: MOT-020 stops, GEO-070 seats, PIN-002 genders) is on main
-but not at station 6 (no AutoCAD gate at 1.3: AutoCAD on the PC has answered no gate since 03:42), so k1's pin stays 1.2
-(section 10); the build draws the element as main has it, 1.3. term-jumper's behaviour.csv on main now gives a pin for every
+**Status: v0.16 pins k1 to contactor-9a-1no1nc 1.4, the version the build draws (panel-r35, 2026-11-20).** 1.4 is elec-r54's
+text minor (its contact gap, over-travel and stroke classed Assumption (B), not (C); model, nodes, origin, cut-outs and pins as
+1.3), on main since 2026-11-20: the panel's LISP is the same (2074 solids), no wire end moves. Stations 1 to 5 PASS, station
+6 open as at 1.3 (section 10). Nothing else changes; the paragraph below is v0.15's and still holds but for k1's pin.
+
+v0.15 pinned what the build drew (panel-r34, 2026-11-20): k1 contactor-9a-1no1nc 1.3 and f1 overload-9a-1no1nc 1.2.
+Review r28 finding 1: v0.14 kept k1's pin at 1.2 "because 1.3 is not at station 6", but 1.2 is further back (station 2) and the
+build has drawn 1.3 since v0.14 (toolkit/library.load builds the newest minor on main whatever the row pins), so the pin was a
+label on a version the panel does not ship. The pin now follows the build: 1.3, stations 1 to 5 PASS, station 6 open (section
+10). f1's 1.2 (elec-r52, a minor: MOT-020 and GEO-070 fixes inside the housing, PIN-002 genders, nodes and origin kept) reached
+main on 2026-11-20 and changes the panel's LISP (2066 to 2074 solids: f1's bimetals, links and aux strips), so v0.15 is built
+and gated again; its pins moved the ends of wires 23, 64 and 65 by 1 mm each (337, 319, 307). The core's BOM-020 (on main since
+2026-11-20) now reviews every placed element or variant that has not passed station 6's tools as the build draws it: 8 lines
+here, each the element's own hold and its lane's to clear (section 10). The solver reads the loads as v0.13. 63 wires, 45
+lengths.
+v0.14 took two text minors' pins (panel-r28, 2026-11-13): disc-3p-30a 1.7 and term-4mm 1.6 (elec-r48, each at
+station 6: same nodes and origin). term-jumper's behaviour.csv on main gives a pin for every
 pole the placed build draws (elec-r50, request panel-13 item 2): jmp-3 (2 poles) has p-1 and p-2 only, so the solver carries no
-loose pins 3 and 4 any more (review r23 note 2); wires.csv needs no change. The solver reads the loads as v0.13. 63 wires, 45
-lengths.**
+loose pins 3 and 4 any more (review r23 note 2); wires.csv needed no change.
 v0.13 pushes the combs home (panel-r26, 2026-11-13): request panel-13's answer item 1 declared a comb's blade in a
 term-4mm block's body as a `seated` contact (lib/contacts.csv, `pnl-*, jmp-*.p-*|M-CU, x1-*.body`), so jmp-1 to jmp-3 stand
 with their seating face on the blocks' front face, y 223.6 (212.0 in v0.12); the single-panel check accepts the 10 blade pairs
@@ -138,7 +150,7 @@ wires.csv since v0.3 (section 8); where a row below says "r3's", read section 8.
 |---|---|---|---|
 | supply | power-in | yes (since v0.6) | q1 (disc-3p-30a 1.6: 3 poles, Ith 30 A on file, against the row's 30 A feeder), line terminals L1 L2 L3; handle on door-r (NFPA 79 5.3, the row's clause); the cable enters at gl-pe. Placed in v0.6 (section 2); the solver's run with q1.on set puts 277.1 V a phase on q1's load side and through q3, k1 and f1 on p-m1 (section 8). Open: the feeder is the row's Assumption (B); the supply cable's diameter is NOT ON FILE (B) (gl-pe takes one cord of 6.1 to 13 mm); q1's rated voltage is not in its ratings.csv (section 5) |
 | control_power | transform | yes (since v0.9) | t1 (xfmr-control 1.0: 250 VA, primary 480 V 1U 1V, secondary 120 V 2U 2V on its placed plug, PE its frame) fed across L1 and L2 of q1's load side through q4 (mcb-2p 1.1: two poles on one handle and one trip, so both open together; the core's answer to request panel-1 item 2); 2U to q2 (mcb-1p-c6 1.5, 6 A C) and on to g1.L; 2V, the grounded end, to g1.N and bonded to PE:6 at the transformer (NFPA 79 9.1.1 and 9.1.3, the row's clauses). Wires 11 to 18. The row's 100 VA class (its Assumption (B)) against 250 VA on file: the 120 V load is g1's input, 0.5 A = 60 VA by the solver (section 8). Open (section 5): q4's rated current and q2 as the secondary's protection (NEC 430.72(C) tables), q2's rated voltage (not in its ratings.csv) |
-| m1 | load | yes | q3 (mcb-3p-c10 1.5: 10 A C, 3 poles) terminals 1 3 5 / 2 4 6; k1 (contactor-9a-1no1nc 1.2, the id contactor-9a until the library's rename of 2026-11-11: 9 A AC-3 against 0.91 A) 1 3 5 / 2 4 6; f1 (overload-9a-1no1nc 1.1, range=D012, 0.8 to 1.2 A: EM 2026-11-03) T1 T2 T3; p-m1 (port-pwr-480 1.1: 20 A, 480 V) L1 L2 L3 PE. Open lines in section 5 (f1's range rows, the 480 V ratings, NEC 430.52) |
+| m1 | load | yes | q3 (mcb-3p-c10 1.5: 10 A C, 3 poles) terminals 1 3 5 / 2 4 6; k1 (contactor-9a-1no1nc 1.4 since v0.16, 1.3 in v0.15, the id contactor-9a until the library's rename of 2026-11-11: 9 A AC-3 against 0.91 A) 1 3 5 / 2 4 6; f1 (overload-9a-1no1nc 1.2 since v0.15, range=D012, 0.8 to 1.2 A: EM 2026-11-03) T1 T2 T3; p-m1 (port-pwr-480 1.1: 20 A, 480 V) L1 L2 L3 PE. Open lines in section 5 (f1's range rows, the 480 V ratings, NEC 430.52) |
 | start | DI | yes, outside the panel | the station's button lands on io-1 X1 A by the bench's cordset; the panel's part is io_link and io_power |
 | stop | DI | yes, outside the panel | io-1 X1 B, as start |
 | reset | DI | yes, outside the panel | io-1 X2 B, as start. The door's own reset button (enc-1.btn-reset 13-14) still has no way to the controller: the core's answer to request panel-1 names ports for the four signals below and none for the door's reset (X1:21 and 22 stay reserved) |
@@ -512,36 +524,43 @@ jacket to the path's end. `python lib/build.py assembly pnl-motor-starter`: GEO-
 v0.9: the cordset's), MOT-010 101 nodes; `build.py nets`: plc-1 runs at 24.0 V, 0.15 A, its supply through the cordset's
 cores 1 and 3. Every figure here is the elements' own (plc0, duct-40x60, cordset-m12, term-4mm) or the shop's choice.
 
-## 10. Placed elements not yet at station 6 (v0.13, checked again in v0.14; lib/reviews/panel/r18.md finding 1, r20 finding 4, r21 finding 1)
+## 10. Placed elements not yet at station 6 (v0.13, checked again in v0.14 to v0.16; lib/reviews/panel/r18.md finding 1, r20 finding 4, r21 finding 1, r28 finding 1)
 
 OPERATING.md 12 (quality at the source) and lib/panel-shop.md "The line": a panel moves through the stations as an element does,
-and a host places common parts that have passed station 6. `python lib/build.py station <id>` on 2026-11-13 (main 0c07f83b; the
-pins that moved, again at main 29ddebeb, panel-r28) for
+and a host places common parts that have passed station 6. `python lib/build.py station <id>` on 2026-11-20 (main 905e1046,
+panel-r34; k1's row and BOM-020's lines read again on main 08c4d034, panel-r35) for
 every element this BOM places (and enc-1's own door operators): these are below station 6 at the pinned version, so **the
 panel's own station 6 waits on them**. None is the shop's to fix (each is its lane's element); they are placed because the
-panel's points need them and no element at station 6 serves those points.
+panel's points need them and no element at station 6 serves those points. Each pin is the version the build draws (since
+v0.15; review r28 finding 1). "First hold" is the lowest open station's; a later station's hold is added where there is one
+(review r26 notes 1 and 2). The last column is the core's rule BOM-020 (`python lib/build.py assembly pnl-motor-starter`, on
+main since 2026-11-20; lib/requests/core/panel-bom020-2026-11-14.md): it reads station 6's tools only, on the element or
+variant as this panel places it: 8 REVIEW lines, each "waiting on <element>'s station 6".
 
-| tag(s) | element · pin | station reached | what holds it |
-|---|---|---|---|
-| enc-1 | enc-fs-1524x1829x305 1.9 | 1 open | DOC-004: no Stage 0 brief (references/measure.md) on file. Pinned 1.9 since v0.11 for its earth-stud pins PE1 to PE3; 1.8 was at station 0 too (review r18 finding 1), so the pin goes to no lower station |
-| enc-1's door: estop-door, btn-reset, lamp-power | op-estop-22-2nc 1.1, op-pb-22-1no 1.1, op-pilot-22 1.0 (enc-fs's own BOM) | 1 open | DOC-004: no Stage 0 brief |
-| rail-1 to rail-4 | din-rail-35 1.1 | 1 open | DOC-004: no Stage 0 brief; GEO-070 (its end clamps touch nothing of the body) |
-| np-1, tag-k1 | tag-plate 1.0 | 1 open | DOC-008 (a spec figure against the brief's NOT ON FILE) |
-| k1 | contactor-9a-1no1nc 1.2 | 2 open | GEO-070, PIN-002 (16 ports without a gender); MOT-020 at station 3. v0.14: 1.3 on main (elec-r51) fixes the three and passes stations 1 to 5, but station 6 is open (its AutoCAD gate is not at 1.3; AutoCAD on the PC answers no gate since 03:42), so the pin stays 1.2 and goes to 1.3 when that gate passes; the build already draws 1.3 (`build.py assembly` warns "BOM pins 1.2, building with 1.3") |
-| f1 | overload-9a-1no1nc 1.1 | 2 open | GEO-070 |
-| p-x1 to p-x6 | port-m12-a 1.4 | 2 open | GEO-070 (the pigtail's solids 1.9 off the body) |
-| p-m1 | port-pwr-480 1.1 | 2 open | PIN-002 (its port without a gender) |
-| k-safe | relay-safety-2ch-2no1nc 1.2 | 5 open | BEH-020: no port node for the probe (wires 48 and 49 have no length for it) |
-| w-pwr | cordset-m12 1.8, variant `coding=L;genders=male-open` | 6 open | that variant's AutoCAD gate failed (2026-11-11, core round 29). w-eth (D-coded) is not named by the hold |
+| tag(s) | element · pin | station reached | first hold, and any later one | BOM-020 (station 6's tools, as placed) |
+|---|---|---|---|---|
+| enc-1 | enc-fs-1524x1829x305 1.9 | 1 open | DOC-004: no Stage 0 brief (references/measure.md) on file. Pinned 1.9 since v0.11 for its earth-stud pins PE1 to PE3; 1.8 was at station 0 too (review r18 finding 1) | not named |
+| enc-1's door: estop-door, btn-reset, lamp-power | op-estop-22-2nc 1.1, op-pb-22-1no 1.1, op-pilot-22 1.0 (enc-fs's own BOM) | 1 open | DOC-004: no Stage 0 brief | not named (enc-fs's rows, not this BOM's) |
+| rail-1 to rail-4 | din-rail-35 1.1 | 1 open | DOC-004: no Stage 0 brief; GEO-070 (its end clamps touch nothing of the body) | not named |
+| np-1, tag-k1 | tag-plate 1.0 | 1 open | DOC-008 (a spec figure against the brief's NOT ON FILE) | not named |
+| k1 | contactor-9a-1no1nc 1.4 | stations 1 to 5 PASS, 6 open | station 6: its AutoCAD gate read the brief's "depth alone (rail back to coil face)" 98.5 against the build's y extent 140.5. Pinned 1.4 since v0.16: the version the build draws since main took elec-r54 (a text minor: three travels classed B, not C; the model as 1.3). 1.3 in v0.15 (1.2 was at station 2: GEO-070, PIN-002, MOT-020, which 1.3 fixed, elec-r51) | REVIEW: waiting on contactor-9a-1no1nc's station 6 (the AutoCAD figure above) |
+| f1 | overload-9a-1no1nc 1.2 | stations 1 to 5 PASS, 6 open | station 6: its AutoCAD gate passed at 1.1, not 1.2 (the base and the `cutaway` variant). Pinned 1.2 since v0.15 (elec-r52's minor; 1.1 was at station 2, GEO-070) | REVIEW: waiting on overload-9a-1no1nc's station 6 (no AutoCAD gate at 1.2) |
+| p-x1 to p-x6 | port-m12-a 1.4 | 2 open | GEO-070 (the pigtail's solids 1.9 off the body). Station 6 too: its AutoCAD gate read the brief's overall length 42.6 against the build's 38.2, and its Godot QA did not read the Blender gate's export | REVIEW, two lines: p-x3 to p-x6 waiting on port-m12-a's station 6 (the AutoCAD figure and the Godot QA re-run); p-x2 on its variant L (Godot QA failed). p-x1 (variant D) is not named |
+| p-m1 | port-pwr-480 1.1 | 2 open | PIN-002 (its port without a gender). Station 5 too: DOC-006 (vendor names in its spec.md and BASELINE; review r26 note 1). Station 6 too: its AutoCAD gate read the brief's "depth: cap + body + rear" 60 against the build's 94.9 | REVIEW: waiting on port-pwr-480's station 6 (the AutoCAD figure) |
+| k-safe | relay-safety-2ch-2no1nc 1.2 | 5 open | BEH-020: no port node for the probe (wires 48 and 49 have no length for it). Station 6 too: its AutoCAD gate read the brief's depth 113.6 against the build's 114.6 (review r26 note 2) | REVIEW: waiting on relay-safety-2ch-2no1nc's station 6 (the AutoCAD figure) |
+| w-pwr | cordset-m12 1.8, variant `coding=L;genders=male-open` | 6 open | that variant's AutoCAD gate failed (2026-11-11, core round 29). w-eth (D-coded) is not named by the hold | REVIEW: waiting on cordset-m12's station 6 (variant male-open-L) |
+| pe-1 to pe-6 | term-4mm 1.6, variant `kind=ground` | 7 open (the element's own view) | the element passes station 6 as its default build; the `ground` variant's Godot QA did not read the Blender gate's export (1572 triangles rendered, 1796 in the export): new with BOM-020 | REVIEW: waiting on term-4mm's station 6 for the variant (a Godot QA re-run, elec's or the gate runner's) |
 
-At station 6 or past it (checked the same day): contactor-18a-1no 1.0 is not placed here; plc0 1.2, psu-24v-2a4 1.4, mcb-1p-c6
-1.5, mcb-2p 1.1, mcb-3p-c10 1.5, disc-3p-30a 1.7, xfmr-control 1.1, term-4mm 1.6, term-jumper 2.0, gland-m20 1.3 (station 7
+At station 6 or past it (checked the same day): plc0 1.2, psu-24v-2a4 1.4, mcb-1p-c6
+1.5, mcb-2p 1.1, mcb-3p-c10 1.5, disc-3p-30a 1.7, xfmr-control 1.1, term-4mm 1.6 (its `feed` blocks x1-1 to x1-24), term-jumper 2.0, gland-m20 1.3 (station 7
 open); duct-40x60 1.3, marker-terminal 1.0, term-endplate 1.0 (released). A pin moved to a version below station 6 is said so in
-the round's report (review r21 finding 1).
+the round's report and listed here (review r21 finding 1); the pin follows the version the build draws (review r28 finding 1).
 
 ## History
 | version | change |
 |---|---|
+| 0.16 | one pin, to what the build draws (panel-r35, unattended, 2026-11-20): k1 contactor-9a-1no1nc 1.3 to 1.4 (elec-r54's text minor, on main 2026-11-20: contact gap, over-travel and stroke classed Assumption (B); model, nodes, origin, cut-outs and pins as 1.3; stations 1 to 5 PASS, 6 open on the same AutoCAD figure). The LISP, the glb and every wire length as 0.15 (2074 solids). 63 wires, 45 lengths; 72 BOM rows, 72 placed. A minor: one pin; nothing placed moves |
+| 0.15 | pins to what the build draws (panel-r34, unattended, 2026-11-20; review r28 finding 1): k1 contactor-9a-1no1nc 1.3 (drawn since 0.14; stations 1 to 5 PASS, 6 open), f1 overload-9a-1no1nc 1.2 (elec-r52's minor, on main 2026-11-20; stations 1 to 5 PASS, 6 open: no AutoCAD gate at 1.2). f1's new minor changes the LISP (2066 to 2074 solids) and the ends of wires 23, 64, 65 (337, 319, 307: 1 mm each), so the panel is built and gated again. Section 10: every pin the version drawn, later holds named (review r26 notes 1, 2), the core's BOM-020 lines (8). 63 wires, 45 lengths; 72 BOM rows, 72 placed. A minor: pins and three lengths; the origin, every rail, device, port and cut-out kept |
 | 0.14 | pins (panel-r28, unattended, 2026-11-13): disc-3p-30a 1.7, term-4mm 1.6 (elec-r48's text minors, at station 6); k1 stays at 1.2 (1.3 not at station 6: section 10). term-jumper's count pins on main drop jmp-3's loose pins 3 and 4 (review r23 note 2); wires.csv unchanged. 63 wires, 45 lengths; 72 BOM rows, 72 placed. A minor: pins only, nothing moves |
 | 0.13 | the combs pushed home (panel-r26, unattended, 2026-11-13; request panel-13's answer item 1): jmp-1 to jmp-3 at y 223.6 (212.0 in 0.12), the seating face on the blocks' front face, declared `seated` by lib/contacts.csv (GEO-030: 10 pairs). Pins psu-24v-2a4 1.4, disc-3p-30a 1.6 (elec-r39 to r41's minors, at station 6). Text (reviews r18 finding 1, r20 findings 1 and 4, r21 finding 1): section 10, the placed elements below station 6; section 8, the conductors' insulation NOT ON FILE (B). 63 wires, 45 lengths; 72 BOM rows, 72 placed. A minor: the combs move 11.6 toward the blocks, nothing else moves |
 | 0.12 | the bridges of X1 placed (panel-r23, unattended, 2026-11-12; request panel-3 item 1, kept since 0.2): term-jumper 2.0 (elec-r36's major, at station 6) as three combs, jmp-1 (4 poles, X1:1 to 4, x 195), jmp-2 (4 poles, X1:5 to 8, x 219), jmp-3 (2 poles, X1:15 and 16, x 279), all at y 212.0, z 959.2: drawn offered up, the blades' tips 0.1 in front of the blocks (term-4mm has no channel on file; section 3; request panel-13). wires.csv: the seven block-to-block bridge stand-ins became ten joins from each blade to its block. terminals.csv: the header names the combs. Pins: term-4mm 1.5 (30 rows), mcb-1p-c6 1.5, mcb-3p-c10 1.5, disc-3p-30a 1.5 (elec-r37 and r38's text minors, each at station 6, the build used them already). 63 wires, 45 lengths; 72 BOM rows, 72 placed. A minor: the origin, every rail, device, port and cut-out kept; three parts added |

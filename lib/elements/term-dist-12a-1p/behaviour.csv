@@ -1,0 +1,18 @@
+# behaviour.csv · term-dist-12a-1p · generic distribution terminal block 12 A 250 V (ETIM 10.0 EC000276) (lib/behaviour.md). Written by elec-r62 from spec.md (Class values and Ratings) and pins.csv and ratings.csv.
+# One potential: the six clamps of the placed plug are joined by one bar inside the housing. The block is one conductor: every clamp is joined to the next through the bar `always` (term-jumper 2.0's form).
+# The solver's phase 1 is ideal (a closed contact drops nothing): the bar is not modelled and no section is stated for it so no resistance is given.
+# Torques: the plug's clamps are terminal-plug 2.0's (class B, IEC 60999), as that element's behaviour.csv writes them.
+kind,a,b,part,when,value,unit,source,note
+pin,1,x1.t-1,x1.clamp-1,,NOT ON FILE (B): IEC 60999,N·m,terminal-plug 2.0 behaviour.csv (its clamps' torque class B),clamp 1 (pole 1 of the placed plug)
+pin,2,x1.t-2,x1.clamp-2,,NOT ON FILE (B): IEC 60999,N·m,as 1,clamp 2
+pin,3,x1.t-3,x1.clamp-3,,NOT ON FILE (B): IEC 60999,N·m,as 1,clamp 3
+pin,4,x1.t-4,x1.clamp-4,,NOT ON FILE (B): IEC 60999,N·m,as 1,clamp 4
+pin,5,x1.t-5,x1.clamp-5,,NOT ON FILE (B): IEC 60999,N·m,as 1,clamp 5
+pin,6,x1.t-6,x1.clamp-6,,NOT ON FILE (B): IEC 60999,N·m,as 1,clamp 6
+contact,1,2,bar,always,,,pins.csv role pass; spec.md Class values 2 (one potential on one bar),the block is one conductor
+contact,2,3,bar,always,,,as 1-2,
+contact,3,4,bar,always,,,as 1-2,
+contact,4,5,bar,always,,,as 1-2,
+contact,5,6,bar,always,,,as 1-2,
+limit,bar,,,,12,A,"ratings.csv ie (design: 12 A, not above terminal-plug 2.0's 12 A, ETIM 10.0 EC002021 class value EF008250; spec.md Ratings)",through any one clamp and the bar
+limit,bar,,,,250,V,"ratings.csv ue_max (design: 250 V, not above terminal-plug 2.0's 250 V, ETIM 10.0 EC002021 class value EF000228; spec.md Ratings)",the bar to the rail

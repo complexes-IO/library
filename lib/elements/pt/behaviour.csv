@@ -4,7 +4,7 @@
 kind,a,b,part,when,value,unit,source,note
 pin,1,t-1,terminal-1,,NOT ON FILE (B): IEC 60947-1,N·m,spec.md Dimensions (terminals: two screw clamps on the back wall; conductor range and torque class B); pins.csv t-1,loop + (supply in)
 pin,2,t-2,terminal-2,,NOT ON FILE (B): IEC 60947-1,N·m,as 1,loop - (signal out to the PLC's analogue input)
-pin,P,port-p,hex,,not claimed,N·m,"not claimed: the stem's thread is open, so the fitting or port it screws into sets it (lib/behaviour.md, pin; spec.md Notes)",the stem (hyd-port) into a host's gauge port
+pin,P,port-p,hex,,NOT ON FILE (B): SAE J1926-2 / -3,N·m,"a male stud end that is the element's own pin has a torque of its own, which SAE J1926-2 / -3 tabulate (lib/behaviour.md, pin: not a case of not claimed, request pneu-15 2; review pt-1.0 finding 1); under the same document as the stem's open thread (spec.md Notes)",the stem (hyd-port) into a host's gauge port
 load,1,2,electronics,,0.48,W,"derived: 20 mA (the output signal's top, ratings.csv i_out_max; spec.md Class values 1) x 24 V (ratings.csv ue_dc; Class values 3), the most the loop can draw; the phase-1 solver draws a load's rated figure (lib/behaviour.md, the solver)",the sensing cell's electronics; the current between 4 and 20 mA is the reading and the circuit model's
 state,fault,,transmitter,manual toggle,,,spec.md Output (the twin sets a sensor fault: a broken cell or a loop open at the terminals),the PLC sees the loop out of range
 state,live,,transmitter,"V('1','2') > 0",,,"NOT ON FILE (B): IEC 60381-1 (the loop's lift-off voltage, the least the transmitter needs across 1-2, is the standard's figure; spec.md Output)",the loop is powered: the current follows the pressure at port-p

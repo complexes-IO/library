@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+5.5,M5 clearance medium,clearance,,0.4,"A: the flanges' back face (y 0); B, C: the lower-left hole and the lower pair","ISO 273 medium for M5 (lib/standards/holes.csv); the pattern (96.0 x 114.0) and its position tolerance are design choices","four M5 panel screws through both flanges, floating fastener: position Ø0.4 <= H - F = 5.5 - 5.0 = 0.5 (ASME Y14.5 virtual condition)"

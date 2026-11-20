@@ -1,0 +1,24 @@
+# behaviour.csv · psu-acdc-24v-1a25 · AC/DC power supply 120 V AC in, 24 V AC 1.25 A and 24 V DC 1.25 A out (lib/behaviour.md). Written by elec-r59 from spec.md and pins.csv, in the form of psu-ac-24v-2a5's.
+# The input is a load between L and N (its rated power consumption as P; the solver draws I at the seen voltage); each output is a source between its
+# plug's two clamps (AC1, AC2 on x2; +V, -V on x3) while the input sees any voltage. The supply is not stabilised (spec.md Class values 16 and 19): its
+# outputs follow its input. Solver phase 1 has no ratio (a source gives a fixed V), so each output gives its rated 24 V whenever the input is fed; the
+# ratio is for the core's circuit model (spec.md Notes), as xfmr-control 1.1.
+# Torques: the plugs' clamps are terminal-plug 2.0's (class B, IEC 60999), as that element's behaviour.csv writes them.
+kind,a,b,part,when,value,unit,source,note
+pin,L,x1.t-1,x1.clamp-1,,NOT ON FILE (B): IEC 60999,N·m,terminal-plug 2.0 behaviour.csv (its clamps' torque class B),input line 120 V AC
+pin,N,x1.t-2,x1.clamp-2,,NOT ON FILE (B): IEC 60999,N·m,as L,input neutral
+pin,PE,x1.t-3,x1.clamp-3,,NOT ON FILE (B): IEC 60999,N·m,as L,protective earth
+pin,AC1,x2.t-1,x2.clamp-1,,NOT ON FILE (B): IEC 60999,N·m,as L,output 24 V AC (pole 1 of the placed plug x2)
+pin,AC2,x2.t-2,x2.clamp-2,,NOT ON FILE (B): IEC 60999,N·m,as L,24 V AC output return (pole 2 of the placed plug x2)
+pin,+V,x3.t-1,x3.clamp-1,,NOT ON FILE (B): IEC 60999,N·m,as L,output 24 V DC + (pole 1 of the placed plug x3)
+pin,-V,x3.t-2,x3.clamp-2,,NOT ON FILE (B): IEC 60999,N·m,as L,24 V DC output return (pole 2 of the placed plug x3)
+load,L,N,input,,75,W,"spec.md Class values 17 (75 VA): the rated power consumption written as the load's P at its rated V; the solver draws I = P / V at the seen voltage (0.625 A at 120 V, ratings.csv i_in); the no-load current is not stated (spec.md Notes)",the input winding
+state,energised,,supply,input.V > 0,,,"spec.md Class values 13, 14, 16 and 19: not stabilised, the outputs follow the input; phase 1 has no ratio (lib/behaviour.md), so any input voltage gives the rated output voltages",the supply is fed
+state,dead,,supply,default,,,spec.md Class values 13 and 14,no input voltage: no output voltage
+source,AC1,AC2,output-ac,energised,24,VAC,"spec.md Class values 2 (24 V AC); the ratio 120 : 24 is not applied in phase 1 (see energised)",the AC output winding
+source,+V,-V,output-dc,energised,24,VDC,"spec.md Class values 5 (24 V DC, rectified and smoothed, not regulated); the ratio is not applied in phase 1 (see energised)",the DC output
+pose,led-ac,,,energised,1,,spec.md Named nodes,green: the AC output is live
+pose,led-dc,,,energised,1,,spec.md Named nodes,green: the DC output is live
+limit,input,,,,120,VAC,spec.md Class values 13 and 14,the rated input voltage (no tap)
+limit,output-ac,,,,1.25,A,spec.md Class values 8 (ratings.csv i_out_ac),the AC output's rated current
+limit,output-dc,,,,1.25,A,spec.md Class values 9 (ratings.csv i_out_dc),the DC output's rated current

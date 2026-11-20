@@ -19,7 +19,7 @@ wire,length_mm,why_not
 10,402,
 20,781,
 21,,k-safe.A1 has no node (request panel-4 item 1)
-23,338,
+23,337,
 24,,k-safe.13 has no node (request panel-4 item 1)
 25,,k-safe.14 has no node (request panel-4 item 1)
 26,2041,
@@ -45,8 +45,8 @@ wire,length_mm,why_not
 47,,enc-1.lamp-power.X2 has no node (request panel-4 item 1)
 48,971,
 49,1041,
-64,320,
-65,308,
+64,319,
+65,307,
 50,,k-safe.23 has no node (request panel-4 item 1)
 51,,k-safe.24 has no node (request panel-4 item 1)
 66,2082,

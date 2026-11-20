@@ -1,0 +1,6 @@
+property,value,unit,status,source
+p_max,1000,kPa,generic design,"ETIM 10.0 EC010586 class value: Max. operating pressure at 20 °C (EF023116), 1000 kPa; spec.md Class values 14"
+q_max,20,l/min,generic design,"ETIM 10.0 EC010586 class value: Volume flow (EF002464), 1 to 20 l/min, its high end; spec.md Class values 13"
+ue_dc,24,V,design,"design: 24 V DC, the panel's control supply on the two-wire loop (the 24 V budget, ELR-020), as pt 1.1's and tt-rtd 1.0's; not a feature of EC010586; spec.md Output"
+i_out_min,0.004,A,design,"design: 4-20 mA two-wire output, its low end at no flow (IEC 60381-1 names the signal, not on file; plc-aio 1.1's analogue input takes it); not a feature of EC010586; spec.md Output"
+i_out_max,0.020,A,design,"design: 4-20 mA two-wire output, its high end at 20 l/min (IEC 60381-1 names the signal, not on file; plc-aio 1.1's analogue input takes it); not a feature of EC010586; spec.md Output"

@@ -1,0 +1,3 @@
+match,role,kind,check,position_tol,datums,source,note
+22,spindle bore,own,,,,design choice (spec.md Its own sizes),"3 x Ø22 on the spindle's axis (x 0, z -42), along y: through each jaw's lower part and through the load plate; a loose sliding fit, 1 clear all round the plain Ø20 spindle; no fastener and no standard size"
+30,eye,own,,,,design choice (spec.md Its own sizes),"1 x Ø30 through the load plate along y at x 0, z -95: the eye a hoist's hook or shackle takes; no fastener, no standard size and no load claim"

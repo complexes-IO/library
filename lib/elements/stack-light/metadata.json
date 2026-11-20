@@ -1,16 +1,12 @@
 {
   "element_id": "stack-light",
-  "category": "HMI and operator controls",
-  "width": 70.0,
-  "height": 210.2,
-  "depth": 70.0,
-  "units": "mm",
-  "datasheet_dims": [
-    70.0,
-    70.0,
-    210.2
-  ],
-  "domain": "controls",
+  "domain": "electrical",
+  "category": "Optical and acoustic signalling equipment",
   "owner": "Complexes Institute of Technology",
-  "licence": "MIT"
+  "licence": "MIT",
+  "width": 100.0,
+  "height": 176.0,
+  "depth": 60.6,
+  "units": "mm",
+  "brief": "our own design: generic Signal tower complete (ETIM 10.0 EC001042), three continuous-light elements green / yellow / red, outer diameter 50, 24 V DC, terminals C 1 2 3 as screw clamps in a 60 x 60 base, two M4 fixing ears, M20 x 1.5 cable entry; no reference part measured (spec.md Class values)"
 }

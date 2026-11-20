@@ -260,6 +260,47 @@ def variants(eid):
                   if f.startswith(eid + "-") and f.endswith("-acad.json") and f != f"{eid}-acad.json")
 
 
+def _same(a, b):
+    return a == b or str(a).strip().lower() == str(b).strip().lower()
+
+
+def placed_variant(eid, params):
+    """the gated variant an assembly row builds (BOM-020): the variant on file whose gate params (gate/<id>-<variant>-acad.json "params")
+    the row's params all carry, the one with the most of them; None for the element's default build"""
+    best, n = None, 0
+    for v in variants(eid):
+        p = (_json(os.path.join(library.ELEMENTS, eid, "gate", f"{eid}-{v}-acad.json")) or {}).get("params")
+        if isinstance(p, dict) and p and len(p) > n and all(k in params and _same(params[k], x) for k, x in p.items()): best, n = v, len(p)
+    return best
+
+
+def build_holds(eid, version, variant=None):
+    """station 6's tools for the one build an assembly row places (BOM-020; ESCAPE panel/r18 1, core watch 2026-11-14): its AutoCAD gate
+    passed at the version the assembly draws (library.load builds the element on file, whatever the row pins), and its Blender gate and
+    Godot QA passed. A variant with no Blender or Godot result of its own is judged by the default build's. Stations 1 to 5 and the
+    element's other variants are not read here: the element's own station view holds them."""
+    d = os.path.join(library.ELEMENTS, eid); n = f"{eid}-{variant}" if variant else eid; why = []
+    a = _json(os.path.join(d, "gate", f"{n}-acad.json"))
+    try: head = open(os.path.join(d, "gate", f"{n}.lsp"), encoding="utf-8", errors="replace").readline()
+    except OSError: head = ""
+    m = re.search(rf"{re.escape(eid)} v([\d.]+)", head); gv = m.group(1) if m else None
+    if not a: why.append(f"no AutoCAD gate on file (gate/{n}-acad.json)")
+    elif not a.get("pass"): why.append(f"AutoCAD gate failed ({a.get('date', '?')})")
+    elif acad_unanswered(d, n, a, head): why.append(f"{ACAD_NO_RESULT}gate/{n}.lsp (v{gv}) is from a run that wrote none")
+    elif gv != version: why.append(f"AutoCAD gate passed at v{gv}, not v{version}")
+    else: why += [f"AutoCAD gate: {figcompare.say(r)}" for r in figcompare.misses(a)]
+    got = {}
+    for sub, tool in (("gate", "Blender gate"), ("qa", "Godot QA")):
+        r, f = _json(os.path.join(d, sub, f"{n}.json")), f"{sub}/{n}.json"
+        if r is None and variant: r, f = _json(os.path.join(d, sub, f"{eid}.json")), f"{sub}/{eid}.json"
+        if r is None: why.append(f"no {tool} on file")
+        elif not r.get("pass"): why.append(f"{tool} failed")
+        got[sub] = (r, f)
+    (bl, _), (qa, qf) = got["gate"], got["qa"]
+    if qa and qa.get("pass"): why += qa_source_miss(qa, bl, qf) + qa_read_miss(qa, eid, qf[3:-5], qf)
+    return why
+
+
 FP_SKIP = ("out", "gate", "thumbs", "qa")
 STALE_REVIEW = "reviewed on other files: "
 FP_RECORDED = re.compile(r"source\s+fingerprint\b.{0,80}?sha256\s+([0-9a-f]{16})", re.S | re.I)

@@ -1,0 +1,4 @@
+property,value,unit,status,source
+u_supply,24,VDC,generic design,"ETIM 10.0 EC002714 class value: rated control supply voltage DC (EF003980); spec.md Class values 27"
+i_out,0.1,A,generic design,"ETIM 10.0 EC002714 class value: max. output current at protected output (EF004035), 100 mA; spec.md Class values 23"
+sensing_range,2,mm,generic design,"ETIM 10.0 EC002714 class value: switching distance (EF003647); spec.md Class values 6"

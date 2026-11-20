@@ -1,0 +1,4 @@
+property,value,unit,status,source
+ue_dc,24,V,generic design,"ETIM 10.0 EC002919 class value: supply voltage, the loop's 24 V DC (the class's features are not in class-features.csv: request elec-18); spec.md Class values 4"
+i_out_min,0.004,A,generic design,"ETIM 10.0 EC002919 class value: output signal, 4-20 mA, its low end at 0 °C (request elec-18); spec.md Class values 2"
+i_out_max,0.020,A,generic design,"ETIM 10.0 EC002919 class value: output signal, 4-20 mA, its high end at 200 °C (request elec-18); spec.md Class values 2"

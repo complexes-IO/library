@@ -1,15 +1,12 @@
 {
   "element_id": "prox-m12",
-  "category": "Industrial sensors",
-  "width": 12.0,
-  "height": 12.0,
-  "depth": 64.8,
-  "units": "mm",
-  "datasheet_dims": {
-    "dia": 12.0,
-    "l": 64.8
-  },
-  "domain": "sensors",
+  "domain": "electrical",
+  "category": "Sensors for automation technology",
   "owner": "Complexes Institute of Technology",
-  "licence": "MIT"
+  "licence": "MIT",
+  "width": 11.974,
+  "height": 11.974,
+  "depth": 53.0,
+  "units": "mm",
+  "brief": "our own design: generic Inductive proximity switch (ETIM 10.0 EC002714), M12 x 1 threaded barrel, flush mounting, switching distance 2 mm, one PNP output normally open, 24 V DC, axial M12 connector seat, yellow LED ring; no reference part measured (spec.md Class values)"
 }

@@ -1,16 +1,12 @@
 {
   "element_id": "tt-rtd",
-  "category": "Industrial sensors",
-  "width": 19.0,
-  "height": 18.0,
-  "depth": 171.0,
-  "units": "mm",
-  "datasheet_dims": [
-    171.0,
-    19.0,
-    18.0
-  ],
-  "domain": "sensors",
+  "domain": "electrical",
+  "category": "Measuring and testing instruments process measurement technology",
   "owner": "Complexes Institute of Technology",
-  "licence": "MIT"
+  "licence": "MIT",
+  "width": 40.0,
+  "height": 176.0,
+  "depth": 36.6,
+  "units": "mm",
+  "brief": "our own design: generic Temperature transformer (ETIM 10.0 EC002919, synonym temperature transmitter) with a Pt100 probe, 0-200 C, 4-20 mA two-wire loop at 24 V DC (terminals 1 + / 2 -), male NPT 1/4 stem to a host's port as gauge-t 1.2, 100 mm insertion, M20 x 1.5 cable entry; no reference part measured (spec.md Class values)"
 }

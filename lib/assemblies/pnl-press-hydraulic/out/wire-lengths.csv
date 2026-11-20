@@ -1,4 +1,10 @@
 wire,length_mm,why_not
+1,690,
+2,722,
+3,755,
+4,562,
+5,594,
+6,626,
 11,374,
 12,371,
 13,442,
@@ -19,7 +25,7 @@ wire,length_mm,why_not
 68,844,
 69,909,
 64,711,
-65,293,
+65,292,
 28,331,
 29,,k-safe.S11 has no node (request panel-4 item 1)
 30,,estop-door.12 has no node (request panel-4 item 1)
@@ -33,11 +39,11 @@ wire,length_mm,why_not
 36,,k-safe.13 has no node (request panel-4 item 1)
 39,,k-safe.23 has no node (request panel-4 item 1)
 70,614,
-71,681,
+71,680,
 72,,k-safe.41 has no node (request panel-4 item 1)
 73,,k-lc.41 has no node (request panel-4 item 1)
 46,819,
-47,823,
+47,821,
 48,,k-safe.42 has no node (request panel-4 item 1)
 49,,k-lc.42 has no node (request panel-4 item 1)
 51,965,

@@ -1,4 +1,4 @@
-# relay-ice-cube-2co · v1.7 · plug-in control relay DPDT 15 A, 24 V DC, on its DIN socket
+# relay-ice-cube-2co · v1.8 · plug-in control relay DPDT 15 A, 24 V DC, on its DIN socket
 
 **What** An 8-pin plug-in "ice cube" relay with two changeover poles, a 24 V DC coil, a push-to-test button, a lock-down slider, a mechanical flag and an LED, in a clear case, on its 35 mm DIN socket with eight screw terminals. It is the **first element built mechanism-first**: magnet system, return spring, actuator card and contacts are real geometry and nodes, and the case wraps them.
 **Class** device · **Baseline** the 8-pin DPDT plug-in relay and its 8-pin DIN socket, maker's datasheet (references/interior.md: relay specification p. 1, 3, 5, 7; socket drawing p. 1; STEP read-back of the pin field and envelope). The maker's name and part numbers are only in references/ (OPERATING.md 6). Nothing of a vendor file ships.
@@ -68,6 +68,7 @@ Interior geometry is sized from principle inside the cited envelope; the twin's 
 ## History
 | version | change |
 |---|---|
+| 1.8 | text only (review relay-ice-cube-2co-1.7 finding 1 / elec-r46; elec-r54, unattended, 2026-11-13): the Deliberate differences line cites the gate's versions and rounds, not a file whose run changes with each regate. Model, nodes, origin, pins and envelope unchanged |
 | 1.7 | text only (review elec-r34 finding 1, the lane's half; elec-r46, unattended, 2026-11-13): row 22 names the coil voltage the LED lights at as an open figure, class A, so DOC-005 counts it and it reaches EM's page (behaviour.csv's led-coil pose wrote it in its source cell only). Model, nodes, origin, pins and envelope unchanged |
 | 1.6 | text only (review relay-ice-cube-2co-1.5 findings 1 and 2; elec-r36, unattended, 2026-11-12): the Deliberate differences line names the AutoCAD gate's version on file (1.5, not 1.4); row 21 says the nib's depth follows row 14, as rows 9 and 11 say for row 10. Model, nodes, origin, pins and envelope unchanged |
 | 1.5 | the locked state (request elec-6, answered by the core: lib/motion.csv `btn-test → door-lock requires 1.5`): a nib on the slider's +x end, 1.5 × 2.0, from the face back to the pressed button's front (y −37.36), riding in a slot cut through the face beside the button opening (row 21, class C); at the slider's range end it holds the pressed button in. The face's −x piece split around the slot (two pieces added). Nodes, origin, pins, envelope and the default build's other shapes unchanged; primitives 81 → 84. The slot is a case-face opening no host meets, so a minor |
@@ -79,5 +80,5 @@ Interior geometry is sized from principle inside the cited envelope; the twin's 
 
 ## Deliberate differences
 <!-- acad-gate relay-ice-cube-2co -->
-- AutoCAD gate 2026-11-08 (relay-ice-cube-2co, 1.5, elec-r18; the gate JSON's note, gate/relay-ice-cube-2co-acad.json; 1.6 is text only and is gated again in elec-r36, its result in that file and lib/metrics/elec.csv): STEP extents [29.2, 77.21, 79.4] mm; vs glb [0.0, 0.0, 0.0] mm; brief figures (toolkit/figcompare.py, ISO 2768-1 m): none. Fillet r 0.5 on edges > 3 mm: 0 of 26 rejected (0.0 %, 0 on the envelope).
+- AutoCAD gate, the same figures at every version since 1.5 (1.5 in elec-r18, 1.6 in elec-r36, 1.7 in elec-r46, 1.8 in elec-r54; each run's result is its row in lib/metrics/elec.csv and the round report, the gate file holding only the latest): STEP extents [29.2, 77.21, 79.4] mm; vs glb [0.0, 0.0, 0.0] mm; brief figures (toolkit/figcompare.py, ISO 2768-1 m): none. Fillet r 0.5 on edges > 3 mm: 0 of 26 rejected (0.0 %, 0 on the envelope).
 - "brief figures: none" means nothing was compared: the gate reads references/measure.md, and this element's brief is references/interior.md (review elec-r13 finding 3). 1.1's line here ("every brief figure found in the build within 2 mm") claimed a comparison that did not happen and is withdrawn.

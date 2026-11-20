@@ -1,7 +1,7 @@
 {
  "toolkit": "1.3",
  "validation": "1.0",
- "rules": 86,
+ "rules": 87,
  "id": "dm-motor-starter-cell",
  "status": "PASS",
  "findings": [
@@ -10,7 +10,7 @@
    "rule": "GEO-020",
    "scope": "dm-motor-starter-cell",
    "where": "dm-motor-starter-cell",
-   "message": "no interference among 1895 solids",
+   "message": "no interference among 1903 solids",
    "elements": [],
    "title": "two element instances do not occupy the same space",
    "basis": "assembly / fit check on true solids"
@@ -570,6 +570,16 @@
    ],
    "title": "every cable end mates with its port as built: opposite genders, the key fits, every mapped pole made at the seat",
    "basis": "IEC 61076-2-101 / -111; toolkit/contact.py"
+  },
+  {
+   "status": "PASS",
+   "rule": "BOM-020",
+   "scope": "dm-motor-starter-cell",
+   "where": "bom.csv",
+   "message": "1 placed elements, each past station 6's tools in the build drawn",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
   }
  ]
 }

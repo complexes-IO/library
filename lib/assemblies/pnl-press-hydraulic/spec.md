@@ -1,4 +1,4 @@
-# pnl-press-hydraulic · v0.12 · the control panel of the hydraulic press
+# pnl-press-hydraulic · v0.14 · the control panel of the hydraulic press
 
 **What** The control panel of press-hydraulic, built by the panel shop to the machine's controls spec
 (lib/assemblies/press-hydraulic/controls.csv, 21 points; the core, 2026-11-09) and shipped as one unit: the machine places it
@@ -14,7 +14,24 @@ back face y = 250 against the wall or the frame's rear post.
 **Built with** toolkit 1.3 · `assembly.py` from `bom.csv` (library.read_bom, place_on_hosts; P.assembly = True; no geometry of
 its own) · AutoLISP command `PNLPH`.
 
-**Status: v0.12 pins io-2 to plc-aio 1.1 (panel-r29, 2026-11-13).** elec-r46's text minor of the analogue module (review
+**Status: v0.14 is text only (panel-r35, 2026-11-20): q3's element mcb-3p 1.1 has passed station 6.** Its AutoCAD gate at 1.1
+(elec-r54, run 2026-11-13) reached main on 2026-11-20, after v0.13 was written: `python lib/build.py station mcb-3p` reads
+stations 1 to 6 PASS, and BOM-020 no longer names q3 (5 lines here, from 6; section 10). So v0.13's "placed below station 6"
+no longer holds for q3; nothing placed, pinned or wired changes, and the paragraph below is v0.13's with that one correction.
+q3's rated current is still not chosen, so m1 stays "in form".
+
+v0.13 placed the motor branch breaker q3 and wrote the motor branch (panel-r34, 2026-11-20). q3 is mcb-3p 1.1
+(elec-r41; request panel-6 item 1b, request elec-13): the mcb family's generic 3-pole body, 480 V AC, one handle, one trip,
+53.1 wide, at the place kept for it since v0.1 on rail-3 (x 125 to 178.1, between the rail's left screw head and k1; GEO-020
+finds no interference among 1524 solids). Wires 1 to 6 are written (kept numbers since v0.1): q1 T1 T2 T3 to q3 1 3 5 by
+duct-525, riser-l and duct-365 (690, 722, 755), q3 2 4 6 to k1 1 3 5 by duct-145, riser-l and duct-365 (562, 594, 626); the
+solver carries the three phases from q1 through q3 to k1's poles. **Not claimed:** q3's rated current is not chosen (mcb-3p
+spec.md Class values 5: NEC 430.52's table NOT ON FILE (B)), so m1 is "in form", not served (section 1). At v0.13 mcb-3p 1.1
+read stations 1 to 5 PASS and station 6 open (its AutoCAD gate at 1.0, not 1.1), said then (review r21 finding 1); since
+v0.14 it is at station 6. f1's pin follows the build: overload-9a-1no1nc 1.2 (elec-r52's minor, on main 2026-11-20; it moves the ends of wires 47,
+65 and 71 by 1 or 2 mm: 821, 292, 680). The core's BOM-020 (on main since 2026-11-20) reviews the placed elements that have
+not passed station 6's tools: 6 lines at v0.13, 5 at v0.14 (section 10). 63 wires, 36 lengths; 88 BOM rows: 87 placed, 1 not (k-2h).
+v0.12 pinned io-2 to plc-aio 1.1 (panel-r29, 2026-11-13). elec-r46's text minor of the analogue module (review
 elec-r33 findings 1 and 4: the IEC 61131-2 threshold counted in its spec, its record moved to references/), at station 6;
 the build already drew 1.1 (`build.py assembly` warned "BOM pins 1.0, building with 1.1"). No geometry moves, no wire changes:
 57 wires, 30 lengths; 88 BOM rows: 86 placed. Gated at v0.12 in panel-r29, the first AutoCAD gate since v0.9 (AutoCAD on the
@@ -144,7 +161,7 @@ placed and the claim or a fit is someone else's to settle. The wires that make e
 |---|---|---|---|
 | supply | power-in | **yes** (v0.5) | q1 (disc-3p-30a 1.6 since v0.10, 1.5 in v0.9, 1.4 before: 3 poles, Ith 30 A on file, against the row's 30 A feeder), handle on the door (NFPA 79 5.3, the row's clause), body on the mounting plate by its long shaft; the cable enters at gl-supply. Held out of the build v0.1 to v0.4 (lib/motion.csv had no rows for this panel; request panel-10, answered 2026-11-11). The feeder is the row's Assumption (B) |
 | control_power | transform | **yes** (v0.6) | t1 (xfmr-control 1.0: 250 VA, 480 V to 120 V, against the row's 150 VA class, its Assumption (B); the control load on file is g1's 60 VA input) on the mounting plate, fed from q1's load side L1 and L2 through q4 (mcb-2p 1.1: two poles, one handle, one trip; request panel-1 items 1 and 2); its secondary to q2 (mcb-1p-c6 1.5 since v0.9, 6 A C) and g1 (psu-24v-2a4 1.4 since v0.10: 60 W, 2.5 A), the grounded end bonded at PE:5 (NFPA 79 9.1.3 as the row cites it). q4's rated current and q2 as the secondary's protection are NOT ON FILE (B) (section 5): not claimed |
-| m1 | load | **no** | The row's sizing figure is 11 A. Since v0.8 k1 is contactor-18a-1no (1.1 since v0.11; AC-3 18 A at 400 V, its ratings.csv ie_ac3, ETIM EF001392; elec-r35, request panel-6 item 1a). **Its rating at this circuit's 480 V is NOT ON FILE (A)** (a rating, the element's): v0.8 and v0.9 wrote "above the motor's 11 A" without the voltage; above 11 A is said at 400 V only. Request panel-15's answer (the core, 2026-11-13) judges a 480 V controller by NEC 430.83(A)(1): its horsepower (kW) rating at the application voltage, not less than the motor's, so no AC-3 current at 480 V is asked for. Of the two rows it named, contactor-18a-1no 1.1 has the first: its main poles' operating voltage up to 480 V AC (ratings.csv `ue_max`, ETIM EF008206 / EF008207, "generic design", elec-r46), so the 480 V supply is within K1's Ue. The second, Rated operation power NEMA (EF011960), is "not stated" in its Class values (item 15), so K1's power against m1's at 480 V stays NOT ON FILE (A) until elec states it (the core's note lib/requests/core/elec-contactor-480v-2026-11-13.md asks for it). With f1 (overload-9a-1no1nc 1.1) mounted under it; q3 is still a planned row with a placeholder id: mcb-3p-c10 (10 A) is below the row's current and no larger 3-pole breaker is on file (request panel-6 item 1, request elec-13), so wires 1 to 6 wait on it. f1's range is open: NOT ON FILE (A): the motor's nameplate FLA (NEC 430.32(A)(1) sets the overload from the nameplate current, 430.6(A)(2), and the spec's row says the generic motor's FLA is not on file). D125 (8.0 to 12.5 A) is the shop's provisional choice in bom.csv until that figure comes; v0.1 to v0.3 wrote it as holding the row's 11 A table figure (lib/reviews/panel/r5.md finding 2). The cable leaves at gl-m1; no power terminals: the motor's leads land on f1 |
+| m1 | load | in form (v0.13) | **v0.13: q3 placed (mcb-3p 1.1: generic 3-pole breaker, 480 V AC; terminals 1 3 5 line, 2 4 6 load) and wires 1 to 6 written, so the branch q1, q3, k1, f1 stands in form. Not claimed: q3's rated current is not chosen (mcb-3p spec.md Class values 5: NEC 430.52's Table 430.52 NOT ON FILE (B), the element's own open figure, elec's), so the branch's short-circuit protection is not said; K1's 480 V power and f1's range stay as below.** The row's sizing figure is 11 A. Since v0.8 k1 is contactor-18a-1no (1.1 since v0.11; AC-3 18 A at 400 V, its ratings.csv ie_ac3, ETIM EF001392; elec-r35, request panel-6 item 1a). **Its rating at this circuit's 480 V is NOT ON FILE (A)** (a rating, the element's): v0.8 and v0.9 wrote "above the motor's 11 A" without the voltage; above 11 A is said at 400 V only. Request panel-15's answer (the core, 2026-11-13) judges a 480 V controller by NEC 430.83(A)(1): its horsepower (kW) rating at the application voltage, not less than the motor's, so no AC-3 current at 480 V is asked for. Of the two rows it named, contactor-18a-1no 1.1 has the first: its main poles' operating voltage up to 480 V AC (ratings.csv `ue_max`, ETIM EF008206 / EF008207, "generic design", elec-r46), so the 480 V supply is within K1's Ue. The second, Rated operation power NEMA (EF011960), is "not stated" in its Class values (item 15), so K1's power against m1's at 480 V stays NOT ON FILE (A) until elec states it (the core's note lib/requests/core/elec-contactor-480v-2026-11-13.md asks for it). With f1 (overload-9a-1no1nc 1.2 since v0.13) mounted under it; q3 was a planned row with a placeholder id to v0.12 (mcb-3p-c10, 10 A, is below the row's current; request panel-6 item 1, request elec-13) and is mcb-3p 1.1 since v0.13 (above). f1's range is open: NOT ON FILE (A): the motor's nameplate FLA (NEC 430.32(A)(1) sets the overload from the nameplate current, 430.6(A)(2), and the spec's row says the generic motor's FLA is not on file). D125 (8.0 to 12.5 A) is the shop's provisional choice in bom.csv until that figure comes; v0.1 to v0.3 wrote it as holding the row's 11 A table figure (lib/reviews/panel/r5.md finding 2). The cable leaves at gl-m1; no power terminals: the motor's leads land on f1 |
 | pump_run | DO | **no** | k1's coil A1-A2 (v0.8: A2 to the 0 V bus, wire 64; A1 from f1 96, wire 65) and io-1's DO2 (v0.8). Not written: the chain's head from DO2 through a safety output to f1 95 (section 3: k-safe's two N.O. outputs both stand in the solenoid paths) and io-1's output supply (24VO, 0VO: section 8) |
 | k1_aux | DI | **yes** (v0.9) | k1 13-14 into io-1 DI0 (wire 46, v0.8); the common 13 from the +24 V bus at X1:7 (wire 70, v0.9; to v0.8 not written: no bus block left) |
 | ol_trip | DI | **yes** (v0.9) | f1 97-98 (N.O., closes on a trip) into io-1 DI1 (wire 47, v0.8), its common 97 from the +24 V bus at X1:8 (wire 71, v0.9); 95-96 stays hardwired in K1's coil chain (wire 65; the core's answer to request panel-1, 3.d: the point was ol_ok on 95-96 until 2026-11-11) |
@@ -164,13 +181,17 @@ placed and the claim or a fit is someone else's to settle. The wires that make e
 | h2_fault | DO | in form | h2 (op-pilot-22 1.0, red) on the door, from io-1 DO4 (wire 44) |
 | bonding | safety | yes, as blocks | PE:1 to PE:8 on the bottom rail for the supply's PE, the motor's, the frame's and the HPU skid's, the door's and the plate's; the conductors are the wire list's. Since v0.7 the enclosure is bonded: wires 61 to 63 from PE:1 to 3 to enc-wm's earth studs PE1 (body), PE2 (door), PE3 (plate). The frame's and the skid's bonding cables have no entry into the enclosure yet (request panel-6 item 5) |
 
-Count (v0.9): 6 served (supply, control_power, bonding; since v0.9 k1_aux, ol_trip and pressure: their commons and AI0-'s
-return written), 10 in form (curtain, estop, h1_run, h2_fault, sol_b, press_ok, ram_top, ram_bottom, safety_fb; since v0.9
-hmi), 5 not yet (m1: q3; pump_run: its coil chain's head; sol_a: k-2h; two_hand; safety_ok). "In form" for the I/O rows: the
+Count (v0.13): 6 served (supply, control_power, bonding; since v0.9 k1_aux, ol_trip and pressure: their commons and AI0-'s
+return written), 11 in form (curtain, estop, h1_run, h2_fault, sol_b, press_ok, ram_top, ram_bottom, safety_fb; since v0.9
+hmi; since v0.13 m1: q3 placed, its rated current not chosen), 4 not yet (pump_run: its coil chain's head; sol_a: k-2h;
+two_hand; safety_ok) (v0.9 to v0.12: 6, 10, 5). "In form" for the I/O rows: the
 device and the signal wire are there, and what is open is the field side or section 3's (v0.8: 3, 12, 6; v0.7: 3, 4, 14;
 v0.5: 2, 4, 15; v0.4: 1, 4, 16).
 
-## 2. Rows in the BOM that are not placed (2 since v0.9; 3 in v0.8; 7 in v0.6 and v0.7)
+## 2. Rows in the BOM that are not placed (1 since v0.13; 2 in v0.9 to v0.12; 3 in v0.8; 7 in v0.6 and v0.7)
+
+v0.13 places q3 (mcb-3p 1.1, elec-r41: stations 1 to 5 PASS and station 6 open at v0.13, station 6 PASS since v0.14, section 10) at the place reserved since v0.1:
+88 rows, 87 placed.
 
 v0.9 places hmi1 (hmi-7in 1.0, elec-r38, at station 6) and adds the two combs jmp-1 and jmp-2 (term-jumper 2.0) and five X1
 blocks (x1-37 to x1-41): 88 rows, 86 placed.
@@ -187,10 +208,10 @@ enc-1.door, q1 excluded, q1.door-unit and q1.handle follow). One row set a panel
 
 | tag | element | why |
 |---|---|---|
-| q3 | placeholder `mcb-3p` | no 3-pole breaker for an 11 A motor on file (request panel-6 item 1, request elec-13) |
 | k-2h | placeholder `relay-twohand` | request panel-6 item 3 |
 
-The places of the planned rows are reserved by eye from sizes not on file; each moves when its element says its size.
+The place of the planned row is reserved by eye from a size not on file; it moves when its element says its size. (q3's
+place, reserved 117 to 195, took mcb-3p's 53.1 at x 125 without a move.)
 
 ## 3. The safety functions (the shop's call, asked for by the spec's two_hand row)
 
@@ -220,7 +241,7 @@ device. The shop places what is on file and asks.
   285 to 330 (plc-aio 1.0, 45 wide), x 330 to 383 spare; duct-525 (525 to 565; duct-515 at 515 before); rail-2 at z 465 (440)
   with q2, g1, q4 as before (x 360 to 500 now spare: t1 left it); duct-365 (365 to 405; duct-325 at 325 before); rail-3 at
   z 307 (250), length 270 (x 100 to 370, 400 before), fix_pitch 150 (screw heads 108 to 117 and 258 to 267), with q3's place
-  117 to 195 (planned), k1 200 to 245 (contactor-18a-1no 1.0) and f1 under it, plc-1 267.5 to 357.5 (plc0 1.2), its end clamp
+  117 to 195 (planned to v0.12; since v0.13 mcb-3p 1.1 at x 125 to 178.1), k1 200 to 245 (contactor-18a-1no 1.0) and f1 under it, plc-1 267.5 to 357.5 (plc0 1.2), its end clamp
   360 to 368, then t1 on the plate at x 376 to 492; duct-145 (kept) and rail-4 (kept). The risers are kept (z 145 to 715):
   every row still meets them.
   The figures that set it (design choices of the shop, each read from the element's own build): (1) plc0 1.2's sockets open
@@ -351,7 +372,8 @@ device. The shop places what is on file and asks.
   hold here too.
 
 ## 6. What the next versions add
-Each planned row placed when its element is on file (q3, k-2h), and its wires (the kept numbers of section 8) with it;
+The planned row placed when its element is on file (k-2h; q3 done in v0.13), and its wires (the kept numbers of section 8) with it;
+q3's rated current when mcb-3p chooses it (NEC 430.52, a document wanted);
 io-1's output supply (section 8) and the head of K1's coil chain when the safety arrangement is settled (section 3); K1's
 480 V power line when contactor-18a-1no states its NEMA power (section 1, m1); the entries for the field cables when the enclosure has them; the gauges when the ampacity table is read; the
 Ethernet cordset to the HMI when hmi-7in has its socket (port-rj45) and plc0 its receptacle minor (port-eth over its slot
@@ -425,6 +447,17 @@ Open lines of the plan:
 The form, the rules and the colours are pnl-motor-starter's (its spec.md section 8). What this panel has on file is less: the
 motor branch, the transformer, the controller's I/O, the two-hand relay and the lamps' feeds all end on planned rows, so
 their wires are kept numbers, not wires.
+
+**v0.13:** 63 numbered wires, 36 with a length. Written (kept numbers since v0.1): 1 to 3, q1 T1 T2 T3 to q3 1 3 5 (mcb-3p's
+marks: 1 / 2, 3 / 4, 5 / 6 line / load a pole; line at the top) by duct-525 > riser-l > duct-365: 690, 722, 755; 4 to 6, q3 2
+4 6 (load, at the bottom) to k1 1 3 5 by duct-145 > riser-l > duct-365: 562, 594, 626 (the first panel's wires 4 to 6 run the
+same way: the duct below the breaker, the riser, the duct above the contactor). Section 480 VAC power, black, gauge NOT ON
+FILE (B) as every wire. Wires 1 and 2 are second conductors on q1.T1 and q1.T2 beside 11 and 12 (the disconnect's clamp
+capacity is not in its brief: open, elec's). f1's minor 1.2 moved its pins: 47 821 (823), 65 292 (293), 71 680 (681). Kept:
+7 to 9, 37, 50. **What the solver sees** (`python lib/build.py nets pnl-press-hydraulic q1.on=1 q2.on=1 q3.on=1 q4.on=1
+field=1 curtain=1 run=1`): 203 elements with a spec, 100 wires, 4 sources, 9 passes, stable; 277.1 V to earth on each phase
+from q1 through q3 to k1's poles 1, 3, 5 (k1's coil dead: its chain's head is not written, section 3); every load as v0.12
+(t1's primary 480.0 V 0.521 A, g1 120.0 V 0.5 A, the relays 0.167 A each, plc-1 0.15 A, io-1 and io-2 0.083 A, hmi1 0.417 A).
 
 **v0.11:** 57 numbered wires, 30 with a length, as v0.10. The ten stand-in rows for blades 5 and up (section `bridge
 (term-jumper 2.0 · no pin)`) become joins of each blade to its own block, jmp-1.5 to .10 on X1:5 to 10 and jmp-2.5 to .8 on
@@ -554,33 +587,44 @@ station's e-stop; `curtain` k-lc's inputs; `run` the up-stroke output. The bridg
 - **Checks:** GEO-020 1396 solids, no interference (`python lib/build.py assembly pnl-press-hydraulic`: the route iterated in
   seconds, first try); the solver reads the cordset's own contact rows (plc-1 powered, section 8).
 
-## 10. Placed elements not yet at station 6 (v0.10, checked again in v0.11 and v0.12; lib/reviews/panel/r18.md finding 1, r20 finding 4)
+## 10. Placed elements not yet at station 6 (v0.10, checked again in v0.11 to v0.14; lib/reviews/panel/r18.md finding 1, r20 finding 4, r28 finding 1)
 
 OPERATING.md 12 (quality at the source) and lib/panel-shop.md "The line": a panel moves through the stations as an element does,
-and a host places common parts that have passed station 6. `python lib/build.py station <id>` on 2026-11-13 (main 0c07f83b; the
-four v0.11 pins again at main 29ddebeb, panel-r28; plc-aio 1.1 at main 72c8146b, panel-r29) for
+and a host places common parts that have passed station 6. `python lib/build.py station <id>` on 2026-11-20 (main 905e1046,
+panel-r34; q3's element and BOM-020's lines read again on main 08c4d034, panel-r35) for
 every element this BOM places: these are below station 6 at the pinned version, so **the panel's own station 6 waits on them**.
 None is the shop's to fix (each is its lane's element); they are placed because the panel's points need them and no element at
-station 6 serves those points.
+station 6 serves those points. Each pin is the version the build draws (review r28 finding 1). "First hold" is the lowest
+open station's; a later station's hold is added where there is one (review r26 note 2). The last column is the core's rule
+BOM-020 (`python lib/build.py assembly pnl-press-hydraulic`, on main since 2026-11-20;
+lib/requests/core/panel-bom020-2026-11-14.md): it reads station 6's tools only, on the element or variant as this panel
+places it: 5 REVIEW lines since v0.14 (6 at v0.13: q3's went when mcb-3p 1.1's AutoCAD gate reached main), each "waiting on
+<element>'s station 6".
 
-| tag(s) | element · pin | station reached | what holds it |
-|---|---|---|---|
-| rail-1 to rail-4 | din-rail-35 1.1 | 1 open | DOC-004: no Stage 0 brief; GEO-070 (its end clamps touch nothing of the body) |
-| estop-door | op-estop-22-2nc 1.1 | 1 open | DOC-004: no Stage 0 brief |
-| h1, h2 | op-pilot-22 1.0 | 1 open | DOC-004: no Stage 0 brief |
-| np-1 | tag-plate 1.0 | 1 open | DOC-008 (a spec figure against the brief's NOT ON FILE) |
-| f1 | overload-9a-1no1nc 1.1 | 2 open | GEO-070. Placed since v0.8 under k1, as that element's spec gives (held v0.1 to v0.7); v0.8's report did not name its station (review r20 finding 4) |
-| k-safe, k-lc | relay-safety-2ch-2no1nc 1.2 | 5 open | BEH-020: no port node for the probe (wires 48 and 49 have no length for it) |
-| w-pwr | cordset-m12 1.8, variant `coding=L;genders=male-open` | 6 open | that variant's AutoCAD gate failed (2026-11-11, core round 29) |
+| tag(s) | element · pin | station reached | first hold, and any later one | BOM-020 (station 6's tools, as placed) |
+|---|---|---|---|---|
+| rail-1 to rail-4 | din-rail-35 1.1 | 1 open | DOC-004: no Stage 0 brief; GEO-070 (its end clamps touch nothing of the body) | not named |
+| estop-door | op-estop-22-2nc 1.1 | 1 open | DOC-004: no Stage 0 brief | not named |
+| h1, h2 | op-pilot-22 1.0 | 1 open | DOC-004: no Stage 0 brief. Station 6 too: no AutoCAD gate on file | REVIEW: waiting on op-pilot-22's station 6 (no AutoCAD gate on file) |
+| np-1 | tag-plate 1.0 | 1 open | DOC-008 (a spec figure against the brief's NOT ON FILE) | not named |
+| k-safe, k-lc | relay-safety-2ch-2no1nc 1.2 | 5 open | BEH-020: no port node for the probe (wires 48 and 49 have no length for it). Station 6 too: its AutoCAD gate read the brief's depth 113.6 against the build's 114.6 (review r26 note 2) | REVIEW: waiting on relay-safety-2ch-2no1nc's station 6 (the AutoCAD figure) |
+| f1 | overload-9a-1no1nc 1.2 | stations 1 to 5 PASS, 6 open | station 6: its AutoCAD gate passed at 1.1, not 1.2. Pinned 1.2 since v0.13 (elec-r52's minor, the version the build draws; 1.1 was at station 2, GEO-070). Placed since v0.8 under k1 (held v0.1 to v0.7) | REVIEW: waiting on overload-9a-1no1nc's station 6 (no AutoCAD gate at 1.2) |
+| w-pwr | cordset-m12 1.8, variant `coding=L;genders=male-open` | 6 open | that variant's AutoCAD gate failed (2026-11-11, core round 29) | REVIEW: waiting on cordset-m12's station 6 (variant male-open-L) |
+| pe-1 to pe-8 | term-4mm 1.6, variant `kind=ground` | 7 open (the element's own view) | the element passes station 6 as its default build; the `ground` variant's Godot QA did not read the Blender gate's export (1572 triangles rendered, 1796 in the export): new with BOM-020 | REVIEW: waiting on term-4mm's station 6 for the variant (a Godot QA re-run, elec's or the gate runner's) |
 
-At station 6 or past it (checked the same day): enc-wm 1.4, contactor-18a-1no 1.1, plc0 1.2, plc-dio 1.0, plc-aio 1.1, hmi-7in
-1.1, psu-24v-2a4 1.4, mcb-1p-c6 1.5, mcb-2p 1.1, disc-3p-30a 1.7, xfmr-control 1.1, term-4mm 1.6, term-jumper 2.0, gland-m20 1.3
-(station 7 open); duct-40x60 1.3, marker-terminal 1.0, term-endplate 1.0 (released). q3 and k-2h are planned rows, not placed
-(section 2). A pin moved to a version below station 6 is said so in the round's report (review r21 finding 1).
+At station 6 or past it (checked the same day): mcb-3p 1.1 (q3; since v0.14: placed in v0.13 while its AutoCAD gate at 1.1 was
+not on main yet, said then, review r21 finding 1; station 7 open on its own figures, 2 of them EM's), enc-wm 1.4, contactor-18a-1no 1.1, plc0 1.2, plc-dio 1.0, plc-aio 1.1, hmi-7in
+1.1, psu-24v-2a4 1.4, mcb-1p-c6 1.5, mcb-2p 1.1, disc-3p-30a 1.7, xfmr-control 1.1, term-4mm 1.6 (its `feed` blocks x1-1 to
+x1-41), term-jumper 2.0, gland-m20 1.3
+(station 7 open); duct-40x60 1.3, marker-terminal 1.0, term-endplate 1.0 (released). k-2h is a planned row, not placed
+(section 2). A pin moved to a version below station 6 is said so in the round's report and listed here (review r21 finding
+1); the pin follows the version the build draws (review r28 finding 1).
 
 ## History
 | version | date | what |
 |---|---|---|
+| 0.14 | 2026-11-20 | panel-r35 (unattended): text only. mcb-3p 1.1 (q3) passed station 6 (its AutoCAD gate at 1.1, elec-r54, on main 2026-11-20): the status, section 2, section 10 and q3's BOM note no longer say "below station 6"; BOM-020 names 5 lines, from 6. No pin, placement, wire or length changes; the LISP and glb are 0.13's (1523 solids) |
+| 0.13 | 2026-11-20 | panel-r34 (unattended): q3 placed, mcb-3p 1.1 (elec-r41's generic 3-pole breaker, 480 V AC; stations 1 to 5 PASS, station 6 open: its AutoCAD gate is at 1.0) on rail-3 at x 125 to 178.1, the place kept since 0.1; wires 1 to 6 written (q1 to q3: 690, 722, 755; q3 to k1: 562, 594, 626), m1 "in form" (q3's rated current not chosen: NEC 430.52 NOT ON FILE (B), the element's). Pin f1 overload-9a-1no1nc 1.2 (elec-r52's minor, what the build draws: wires 47, 65, 71 at 821, 292, 680). Section 10: later holds named, the core's BOM-020 lines (6). 63 wires, 36 lengths; 88 BOM rows, 87 placed. One device added on a reserved place; the origin, every rail, duct, device, port and cut-out kept |
 | 0.12 | 2026-11-13 | panel-r29 (unattended): pin plc-aio 1.0 to 1.1 (elec-r46's text minor, at station 6; the build already drew 1.1). 57 wires, 30 lengths; 88 BOM rows, 86 placed. A minor: the pin only; no geometry moves. The panel's first AutoCAD gate since 0.9 (AutoCAD hung 03:42 to 10:01) |
 | 0.11 | 2026-11-13 | panel-r28 (unattended): every comb blade joined by its own pin: term-jumper's behaviour.csv on main gives pin k `count poles>=k` (elec-r50, request panel-13 item 2), so wires.csv's ten stand-in rows for blades 5 and up (jmp-1.5 to .10, jmp-2.5 to .8) become joins blade to block; the solver reads both groups on every blade, loads as 0.10. Pins (text minors, at station 6): contactor-18a-1no 1.1 (Ue up to 480 V AC, `ue_max`: section 1, m1, K1's 480 V line now waits only on its NEMA power, EF011960, not stated), disc-3p-30a 1.7, hmi-7in 1.1, term-4mm 1.6. 57 wires, 30 lengths; 88 BOM rows, 86 placed. A minor: wires.csv's bridge rows and the pins; no geometry moves |
 | 0.10 | 2026-11-13 | panel-r26 (unattended): the combs pushed home (request panel-13's answer item 1): jmp-1 and jmp-2 at y 178.5 (166.9 in 0.9), declared `seated` by lib/contacts.csv (GEO-030: 18 pairs; GEO-020 1492 solids, no interference). Pins psu-24v-2a4 1.4, disc-3p-30a 1.6 (elec-r39 to r41's minors, at station 6). Text (review r20 findings 1 to 4, r18 finding 1): k1's AC-3 18 A said at 400 V and its 480 V rating NOT ON FILE (A), request panel-15; the duct sentence corrected and the insulation NOT ON FILE (B): NFPA 79 13.1.3; port-eth's slot corrected (the Ethernet cordset will break out b200); section 10, the placed elements below station 6. 57 wires, 30 lengths; 88 BOM rows, 86 placed. A minor: the combs move 11.6 toward the blocks, nothing else moves |

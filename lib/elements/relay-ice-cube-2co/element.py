@@ -14,7 +14,7 @@ import numpy as np
 from toolkit import library, din, sweep as SW
 from toolkit.prims import Prims, transform
 
-ID, VERSION, CLASS = "relay-ice-cube-2co", "1.7", "device"
+ID, VERSION, CLASS = "relay-ice-cube-2co", "1.8", "device"
 TITLE = "plug-in control relay DPDT 15 A, 24 V DC coil, push-to-test, flag, LED, clear case, on its 8-pin DIN socket"
 TOOLKIT = "1.3"
 BASELINE = "8-pin DPDT plug-in relay and its 8-pin DIN socket, maker's datasheet (references/interior.md: relay specification p. 1, 3, 5, 7; socket drawing p. 1; STEP read-back of the pin field); open figures: spec.md Assumptions table, each with its class"

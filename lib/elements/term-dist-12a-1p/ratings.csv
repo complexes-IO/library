@@ -1,0 +1,4 @@
+property,value,unit,status,source
+poles,1,,generic design,"ETIM 10.0 EC000276 class value: Number of poles (EF001391), one potential on one bar with six clamps; spec.md Class values 2"
+ie,12,A,design,"design: 12 A (the current through any one clamp and through the bar, not above the 12 A of the placed terminal-plug 2.0, ETIM 10.0 EC002021 class value Rated current In EF008250); not a feature of EC000276; spec.md Ratings"
+ue_max,250,V,design,"design: 250 V (the bar to the rail and to a neighbour, not above the 250 V of the placed terminal-plug 2.0, ETIM 10.0 EC002021 class value Rated voltage EF000228); not a feature of EC000276; spec.md Ratings"

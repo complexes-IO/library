@@ -1,0 +1,4 @@
+property,value,unit,status,source
+u_supply,24,V DC,generic design,"ETIM 10.0 EC002758 class value: Supply voltage (EF004127), Voltage type (supply voltage) DC (EF002991); spec.md Class values 2 and 3"
+p_consumption,2.5,W,design,"design: 2.5 W (the controller's own draw from the panel's 24 V control supply, inside the 24 V budget ELR-020 checks; daq 1.0's figure for the same housing and ports); not a feature of EC002758, whose Power (EF000076) is the load's; spec.md Ratings"
+load_i,0.10,A,derived,"2.5 W / 24 V = 0.104 A (I = P / U; p_consumption and u_supply above), what the 24 V budget (ELR-020) reads; behaviour.csv load row 24V-0V"

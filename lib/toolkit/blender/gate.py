@@ -59,6 +59,9 @@ for o in objs:
     bm.free()
     print(f"  {o.name:28s} tris {tris:6d}  non-manifold {nonman:4d}  flipped {flipped:3d}  degenerate {degenerate:3d}  doubles {doubles:4d}  volume {vol * 1e9:10.1f} mm3", flush=True)
 
+# the element's box in world space, for the decal tie rule (decal.away_from; ESCAPE valve-ball-32-1.1: a field that is its own mesh)
+ECORN = [o.matrix_world @ Vector(c) for o in objs if not o.name.endswith("-colonly") for c in o.bound_box]
+
 # ------------------------------------------------------------------ 2. smoothing, 3. fillets, 4. UVs
 bake_used = False; bake_note = ""
 def select_only(o):
@@ -96,10 +99,13 @@ for o in objs:
         if faces:
             # EM 2026-11-05 (plc0-1.1 finding 1): along the outward normal of the face cluster that carries the print (toolkit/decal.py),
             # not the sum of every normal (zero for a closed box, which fell back to straight down and squashed the label to a strip)
-            # an x-axis tie goes to the side away from the mesh's centre (ESCAPE valve-gauge-double-1.0 2; toolkit/decal.axis)
+            # an x- or y-axis tie goes to the side away from the element's centre, else the mesh's (ESCAPE valve-gauge-double-1.0 2,
+            # valve-ball-32-1.1; toolkit/decal.axis, away_from), in this mesh's own frame, as its normals are
             pts = [l.vert.co for f in faces for l in f.loops]; ic = sum(pts, Vector()) / len(pts)
-            xs = [v.co for v in bm.verts]; mc = Vector([(min(c[i] for c in xs) + max(c[i] for c in xs)) / 2 for i in range(3)])
-            n = Vector(DC.axis([(tuple(f.normal), f.calc_area()) for f in faces], away=tuple(ic - mc)))
+            xs = [v.co for v in bm.verts]; mbox = tuple(tuple(g(c[i] for c in xs) for i in range(3)) for g in (min, max))
+            inv = o.matrix_world.inverted(); lc = [inv @ c for c in ECORN]
+            ebox = tuple(tuple(g(c[i] for c in lc) for i in range(3)) for g in (min, max)) if lc else None
+            n = Vector(DC.axis([(tuple(f.normal), f.calc_area()) for f in faces], away=DC.away_from(tuple(ic), mbox, ebox)))
             u, v = (Vector(x) for x in DC.basis(tuple(n)))
             front = [f for f in faces if abs(f.normal.dot(n)) > 0.95] or faces          # the island's bounds: the printed side only
             us = [l.vert.co.dot(u) for f in front for l in f.loops]; vs = [l.vert.co.dot(v) for f in front for l in f.loops]

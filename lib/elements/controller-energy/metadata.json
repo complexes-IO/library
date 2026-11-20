@@ -1,0 +1,12 @@
+{
+  "element_id": "controller-energy",
+  "domain": "controls",
+  "category": "Control",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 45.0,
+  "height": 100.0,
+  "depth": 93.5,
+  "units": "mm",
+  "brief": "our own design: generic Energy management controller (ETIM 10.0 EC002758), a controller with no power path: one RS-485 port (Modbus RTU), one Ethernet socket (port-rj45 1.0, Modbus TCP), 24 V DC, 35 mm rail; no reference part measured (spec.md Class values)"
+}

@@ -1,9 +1,9 @@
 {
  "toolkit": "1.3",
  "validation": "1.0",
- "rules": 86,
+ "rules": 87,
  "id": "pnl-press-hydraulic",
- "status": "PASS",
+ "status": "REVIEW",
  "findings": [
   {
    "status": "PASS",
@@ -20,7 +20,7 @@
    "rule": "GEO-020",
    "scope": "pnl-press-hydraulic",
    "where": "pnl-press-hydraulic",
-   "message": "no interference among 1492 solids",
+   "message": "no interference among 1524 solids",
    "elements": [],
    "title": "two element instances do not occupy the same space",
    "basis": "assembly / fit check on true solids"
@@ -30,7 +30,7 @@
    "rule": "MOT-010",
    "scope": "pnl-press-hydraulic",
    "where": "pnl-press-hydraulic",
-   "message": "123 moving node(s) swept through their full range, nothing hit",
+   "message": "124 moving node(s) swept through their full range, nothing hit",
    "elements": [],
    "title": "every moving part, with what it carries and what follows it, clears everything through its full range",
    "basis": "motion checker; lib/motion.csv"
@@ -40,7 +40,7 @@
    "rule": "PNL-010",
    "scope": "pnl-press-hydraulic",
    "where": "wires.csv",
-   "message": "114 wire ends name a tag of the assembly and a pin of its element",
+   "message": "126 wire ends name a tag of the assembly and a pin of its element",
    "elements": [],
    "title": "every end of a numbered wire (wires.csv) names an element of the assembly and a pin mark of its behaviour.csv; REVIEW when the element has no behaviour.csv",
    "basis": "lib/panel-shop.md (wires.csv joins <tag>.<pin mark>); request panel-4 3: pm-motor-starter's plc-1.L+ left the controller on no net"
@@ -56,11 +56,61 @@
    "basis": "lib/panel-shop.md \"Out\" (terminal plan, wire list); request panel-4 4"
   },
   {
-   "status": "PASS",
+   "status": "REVIEW",
+   "rule": "BOM-020",
+   "scope": "pnl-press-hydraulic",
+   "where": "k-safe, k-lc",
+   "message": "relay-safety-2ch-2no1nc 1.2 is below station 6 as placed: AutoCAD gate: brief figure 'depth' 113.6 not on the build's y extent 114.6 (diff 1 > 0.3, ISO 2768-1 m)",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "BOM-020",
+   "scope": "pnl-press-hydraulic",
+   "where": "f1",
+   "message": "overload-9a-1no1nc 1.2 is below station 6 as placed: AutoCAD gate passed at v1.1, not v1.2",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "BOM-020",
+   "scope": "pnl-press-hydraulic",
+   "where": "h1, h2",
+   "message": "op-pilot-22 1.0 is below station 6 as placed: no AutoCAD gate on file (gate/op-pilot-22-acad.json)",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "BOM-020",
+   "scope": "pnl-press-hydraulic",
+   "where": "pe-1, pe-2, pe-3, pe-4 +4",
+   "message": "term-4mm 1.6 variant ground is below station 6 as placed: Godot QA did not read the Blender gate's export: qa/term-4mm.json rendered 1572 triangles, the export's visible nodes have 1796; rerun the QA on gltf/",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
+   "status": "REVIEW",
+   "rule": "BOM-020",
+   "scope": "pnl-press-hydraulic",
+   "where": "w-pwr",
+   "message": "cordset-m12 1.8 variant male-open-L is below station 6 as placed: AutoCAD gate failed (2026-11-11)",
+   "elements": [],
+   "title": "every element a bom.csv row places has passed station 6's tools in the build the assembly draws (the element on file, whatever the row pins; the gated variant its params build); REVIEW names each one below it",
+   "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
+  },
+  {
+   "status": "REVIEW",
    "rule": "GATE-010",
    "scope": "pnl-press-hydraulic",
    "where": "gate",
-   "message": "the AutoCAD gate of 2026-11-13 ran the LISP on file (1491 solids)",
+   "message": "the AutoCAD gate of 2026-11-13 passed on another LISP than the one on file: the gate's census (1491 solids) is not the LISP on file's (1523); 16 layer(s) differ, first node-f1.bimetal-2_M-STEEL-7035 1 -> 2. Build the assembly, then gate the LISP the build wrote again (acad-gate.py --assembly pnl-press-hydraulic)",
    "elements": [],
    "title": "an assembly's AutoCAD gate on file ran the LISP on file: its census (lisp_per_layer) is out/<id>.lsp's, and a version it or the LISP names is assembly.py's; REVIEW otherwise",
    "basis": "OPERATING.md 13 station 6 (every tool result tied to the files it checked); panel/r15 ESCAPE 2"

@@ -1,7 +1,7 @@
 {
  "toolkit": "1.3",
  "validation": "1.0",
- "rules": 86,
+ "rules": 87,
  "id": "contactor-9a-1no1nc",
  "status": "REVIEW",
  "findings": [
@@ -40,7 +40,7 @@
    "rule": "DOC-005",
    "scope": "contactor-9a-1no1nc",
    "where": "contactor-9a-1no1nc",
-   "message": "open figures in spec.md, the brief, behaviour.csv: 1 Assumption (B), 1 Assumption (C), 11 NOT ON FILE, 4 NOT ON FILE (B); 11 need EM, 0 approved ('REVIEW accepted: <figure> \u00b7 EM <date>', one line each); 5 class B want a source (lib/standards/wanted.md), not EM's line",
+   "message": "open figures in spec.md, the brief, behaviour.csv: 2 Assumption (B), 1 Assumption (C), 11 NOT ON FILE, 4 NOT ON FILE (B); 11 need EM, 0 approved ('REVIEW accepted: <figure> \u00b7 EM <date>', one line each); 6 class B want a source (lib/standards/wanted.md), not EM's line",
    "elements": [],
    "title": "every open figure accepted by its class: Assumption (C) with the reviewer's PASS; (A), (B), unclassed and NOT ON FILE each by one 'REVIEW accepted: <figure> \u00b7 EM <date>' line in spec.md",
    "basis": "element-qa-checklist Stage 0; OPERATING.md 8.c"

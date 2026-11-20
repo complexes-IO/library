@@ -1,0 +1,2 @@
+# behaviour.csv · corner-stacking-1000 · stacking corner for a block pallet, generic (lib/behaviour.md). Written by mech-r169 from element.py: one fixed body (a foot plate and a top plate with their lips, an angle post between them), no terminal, no moving node, no state; the pallets it stands on and carries are the host's assembly, not a motion of this element. A structural part's file: the header only. No load figure here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note

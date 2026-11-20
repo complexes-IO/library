@@ -16,6 +16,9 @@ BOM-010  every bom.csv row of any assembly names an element on file or a lib/inv
          element yet writes "-" for its version, as the panel shop's placeholder rows do, request panel-6's answer). Reviewer
          panel/r6.md finding 1, an ESCAPE (core watch 2026-11-11): core round 28 renamed contactor-9a and op-estop-22 on main while
          the panels waited in the queue, the merge brought the old ids back, and both panels built without K1 and the door e-stop.
+BOM-020  every element a bom.csv row places has passed station 6's tools (AutoCAD at the version drawn, Blender, Godot) in the build
+         the assembly draws: the element on file, whatever the row pins, and the gated variant the row's params build. REVIEW names
+         each element and variant below it (reviewer panel/r18.md finding 1, an ESCAPE, core watch 2026-11-14).
 Not checked here: how many conductors one clamp takes (PNL-020 waits on term-4mm's brief, request panel-3 item 4)."""
 import csv, os, re
 
@@ -121,6 +124,45 @@ def bom_run(aid, root):
     on_file |= {x for x in os.listdir(a) if os.path.isdir(os.path.join(a, x))} if os.path.isdir(a) else set()
     planned = {r.get("id", "") for r in _rows(os.path.join(root, "inventory.csv"))}
     return bom_ids(rows, on_file, planned, aliases(root))
+
+def bom_stations(rows, cat, holds):
+    """BOM-020 on bom.csv rows (ESCAPE lib/reviews/panel/r18.md finding 1, core watch 2026-11-14): every element an assembly places has
+    passed station 6's tools in the build the assembly draws. cat: {element id: version on file} (the version library.load builds,
+    whatever the row pins); holds(eid, version, params) -> (variant or None, [what holds that build]). One REVIEW per element and
+    variant, naming its tags and the pin when it is not the version drawn; a PASS when none holds. pnl-motor-starter's gate of record
+    passed with k1 drawn at contactor-9a-1no1nc 1.3 (no AutoCAD gate at 1.3, the row pins 1.2) and w-pwr's L variant (its gate failed),
+    and the round queued as all-pass: nothing read the station of what a panel places."""
+    from . import library as _lib
+    seen, out, n = {}, [], 0
+    for i, r in enumerate(rows, 1):
+        e = (r.get("element") or "").strip()
+        if not e or e.startswith("#") or e not in cat: continue
+        tag = (r.get("tag") or "").strip() or f"row {i}"; pin = (r.get("version") or "").strip()
+        p = r["params"] if isinstance(r.get("params"), dict) else _lib.parse_params(r.get("params") or "")
+        v, why = holds(e, cat[e], p); n += 1
+        if not why: continue
+        k = (e, v)
+        if k not in seen: seen[k] = dict(tags=[], pins=set(), why=why)
+        seen[k]["tags"].append(tag)
+        if pin and pin not in ("-", cat[e]): seen[k]["pins"].add(pin)
+    for (e, v), s in seen.items():
+        tags = ", ".join(s["tags"][:4]) + (f" +{len(s['tags']) - 4}" if len(s["tags"]) > 4 else "")
+        pins = f"; the BOM pins {'/'.join(sorted(s['pins']))}, the build draws {cat[e]}" if s["pins"] else ""
+        out.append(("REVIEW", "BOM-020", tags, f"{e} {cat[e]}{' variant ' + v if v else ''} is below station 6 as placed{pins}: "
+                    + "; ".join(s["why"][:3])))
+    if n and not out: out.append(("PASS", "BOM-020", "bom.csv", f"{n} placed elements, each past station 6's tools in the build drawn"))
+    return out
+
+def bom_station_run(aid, root):
+    """BOM-020 on assembly aid's bom.csv (nothing when it has none)"""
+    rows = _rows(os.path.join(root, "assemblies", aid, "bom.csv"))
+    if not rows: return []
+    from . import line as LN
+    cat = {r.get("id", ""): (r.get("version") or "").strip() for r in _rows(os.path.join(root, "catalogue.csv"))}
+    def holds(e, ver, p):
+        v = LN.placed_variant(e, p)
+        return v, LN.build_holds(e, ver, v)
+    return bom_stations(rows, cat, holds)
 
 def run(aid, P, root):
     """PNL-010 and PNL-030 on assembly aid (P: its built prims, for the placed tags); nothing when it has no wires.csv"""

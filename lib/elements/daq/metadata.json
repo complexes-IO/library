@@ -1,16 +1,12 @@
 {
   "element_id": "daq",
-  "category": "Digital twin server equipment",
-  "width": 22.5,
-  "height": 120.0,
-  "depth": 113.9,
-  "units": "mm",
-  "datasheet_dims": [
-    22.5,
-    120.0,
-    113.9
-  ],
   "domain": "controls",
+  "category": "Control",
   "owner": "Complexes Institute of Technology",
-  "licence": "MIT"
+  "licence": "MIT",
+  "width": 45.0,
+  "height": 100.0,
+  "depth": 93.5,
+  "units": "mm",
+  "brief": "our own design: generic Fieldbus, decentr. periphery - analogue I/O module (ETIM 10.0 EC001596), a data acquisition module: 4 differential analogue inputs, 0-10 V / 4-20 mA, 16 bit, one Ethernet socket (port-rj45 1.0), 24 V DC; no reference part measured (spec.md Class values)"
 }

@@ -1,4 +1,4 @@
-;; pt v1.0. Generated. Millimetres. APPLOAD, then PTRANS.
+;; pt v1.1. Generated. Millimetres. APPLOAD, then PTRANS.
 (defun BX (lay p1 p2 h) (command "_.-LAYER" "_M" lay "") (command "_.BOX" p1 p2 h) (entlast))
 (defun CY (lay p1 p2 r / h) (setq h (distance p1 p2)) (command "_.-LAYER" "_M" lay "")
   (command "_.UCS" "_ZA" p1 p2) (command "_.CYLINDER" (list 0 0 0) r h) (command "_.UCS" "_W") (entlast))

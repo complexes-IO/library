@@ -1,0 +1,21 @@
+# behaviour.csv · reactor-line-3p-4a · generic three-phase line reactor 4 A 480 V 7.35 mH (ETIM 10.0 EC002563) (lib/behaviour.md). Written by elec-r60 from spec.md (Class values and Named nodes) and pins.csv and ratings.csv: a generic element so its class values are its figures.
+# Each phase passes from its line-side clamp to its load-side clamp through one coil (pins.csv role pass): a pass-through contact row a phase as filter-emc's lines. The solver's phase 1 is ideal (a closed contact drops nothing):
+# the reactor's series drop (uk 4 % at 4 A; spec.md Class values 14) and its inductance (7.35 mH; Class values 12) are stated in spec.md and ratings.csv and are not modelled here. They come with the circuit model.
+# Torques: the clamps' conductor range and torque are class B (IEC 60947-7-1 for terminal blocks; spec.md Dimensions; not on file).
+kind,a,b,part,when,value,unit,source,note
+pin,1U1,t-1U1,clamp-1U1,,NOT ON FILE (B): IEC 60947-7-1,N·m,spec.md Dimensions (conductor range and torque class B),line side phase 1 (from the supply)
+pin,1V1,t-1V1,clamp-1V1,,NOT ON FILE (B): IEC 60947-7-1,N·m,as 1U1,line side phase 2
+pin,1W1,t-1W1,clamp-1W1,,NOT ON FILE (B): IEC 60947-7-1,N·m,as 1U1,line side phase 3
+pin,1U2,t-1U2,clamp-1U2,,NOT ON FILE (B): IEC 60947-7-1,N·m,as 1U1,load side phase 1 (to the drive)
+pin,1V2,t-1V2,clamp-1V2,,NOT ON FILE (B): IEC 60947-7-1,N·m,as 1U1,load side phase 2
+pin,1W2,t-1W2,clamp-1W2,,NOT ON FILE (B): IEC 60947-7-1,N·m,as 1U1,load side phase 3
+pin,PE,t-PE,clamp-PE,,NOT ON FILE (B): IEC 60947-7-1,N·m,as 1U1,protective earth of the core frame
+contact,1U1,1U2,coil-u,always,,,pins.csv role pass; spec.md Class values 6 and 10 (3 poles; 4 A each line),the coil on the left limb
+contact,1V1,1V2,coil-v,always,,,as coil-u,the coil on the middle limb
+contact,1W1,1W2,coil-w,always,,,as coil-u,the coil on the right limb
+limit,coil-u,,,,4,A,ratings.csv ie (ETIM 10.0 EC002563 class value; spec.md Class values 10),each line
+limit,coil-u,,,,480,VAC,ratings.csv ue_max (spec.md Class values 9),line to line
+limit,coil-v,,,,4,A,as coil-u (spec.md Class values 10: each line),each line
+limit,coil-v,,,,480,VAC,as coil-u (spec.md Class values 9),line to line
+limit,coil-w,,,,4,A,as coil-u (spec.md Class values 10: each line),each line
+limit,coil-w,,,,480,VAC,as coil-u (spec.md Class values 9),line to line

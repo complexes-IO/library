@@ -19,7 +19,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspa
 from toolkit import library
 from toolkit.prims import Prims
 
-ID, VERSION, CLASS = "encoder", "1.0", "device"
+ID, VERSION, CLASS = "encoder", "1.1", "device"
 TITLE = "rotary encoder, incremental, optical, 1024 ppr, push-pull HTL A B N, 24 V DC, size 58, solid shaft 10, axial M12 seat (complexes.org generic)"
 TOOLKIT = "1.3"
 BASELINE = ("our own design: generic Rotary encoder (ETIM 10.0 EC001486); class values in spec.md; mounting holes M4 x 0.7 tapped, "

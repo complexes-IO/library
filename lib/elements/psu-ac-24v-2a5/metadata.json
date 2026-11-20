@@ -1,0 +1,12 @@
+{
+  "element_id": "psu-ac-24v-2a5",
+  "domain": "controls",
+  "category": "Control",
+  "owner": "Complexes Institute of Technology",
+  "licence": "MIT",
+  "width": 45.0,
+  "height": 100.0,
+  "depth": 93.5,
+  "units": "mm",
+  "brief": "our own design: generic AC-power supply (ETIM 10.0 EC002541): 120 V AC single-phase in, 24 V AC 2.5 A (60 W) out, not stabilised, 35 mm rail; no reference part measured (spec.md Class values)"
+}

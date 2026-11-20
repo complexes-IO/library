@@ -13,7 +13,7 @@ import numpy as np
 from toolkit import library, din, sweep as SW
 from toolkit.prims import Prims
 
-ID, VERSION, CLASS = "contactor-9a-1no1nc", "1.3", "device"
+ID, VERSION, CLASS = "contactor-9a-1no1nc", "1.4", "device"
 TITLE = "IEC contactor 9 A AC-3, 24 V DC coil, 1 NO + 1 NC aux, front aux block option, 35 mm rail; mechanism modelled"
 TOOLKIT = "1.3"
 BASELINE = "maker's datasheet and 2-D drawings (references/measure.md, references/source.txt: contactor and front aux block drawings p. 1; series spec p. 5-10, 14, 15, 24; STEP read-back of housings and terminal rows)"
@@ -36,8 +36,8 @@ PITCH, ROW_Z = 14.0, 31.5        # main terminals: 14.0 pitch across, rows 63 ap
 XP = [W / 2 + (i - 1) * PITCH for i in range(3)]          # pole centres along x
 CLAMP_Y = -34.5                  # clamp entry depth (where the overload's pins come up): NOT ON FILE (Assumption)
 # ---- mechanism: all NOT ON FILE (Assumptions; the brief names gap and over-travel as the figures to find)
-GAP, OVER = 2.0, 1.5             # contact gap per break, over-travel
-STROKE = GAP + OVER              # carrier / armature stroke 3.5
+GAP, OVER = 2.0, 1.5             # contact gap per break, over-travel: Assumption (B), the node ranges the twin reads (spec.md, 1.4)
+STROKE = GAP + OVER              # carrier / armature stroke 3.5 (the armature's released gap): Assumption (B), as GAP and OVER
 CORE = dict(x0=8.0, x1=36.8, back=(-6.0, -10.0), legs_to=-30.0, z_out=(14.0, 20.0), z_mid=5.0)
 ARM = (-33.5, -38.5)             # armature plate, released (y range)
 REAR = (-38.5, -40.5)            # carrier rear plate behind the armature... in front of it

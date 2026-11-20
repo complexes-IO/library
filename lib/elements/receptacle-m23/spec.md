@@ -59,7 +59,7 @@ None: the flange carries no field big enough for a legend. The contact numbers a
 
 ## Notes
 - No open figure (1.1): the mating face is a design layout (the line under Dimensions; review receptacle-m23-1.0 finding 3). Every rating is a class value (design input), the thread derived, the holes ISO 273 on file, every other size a design choice.
-- The two kinds differ in their contacts (power c-1 c-2 c-3 c-pe; signal c-1 … c-6). behaviour.csv names the default kind's only, since the checks read the default build; how the signal kind's marks 4 to 6 get rows (two elements, or a form row that adds marks) is put to the core (request elec-15; review finding 2).
+- The two kinds differ in their contacts (power c-1 c-2 c-3 c-pe; signal c-1 … c-6). behaviour.csv's rows for one kind only read `only kind=<value>` (PE `only kind=power`, 4 to 6 `only kind=signal`; the core's answer to request elec-15, lib/behaviour.md pin; review finding 2): the checks read each such pin in a build of its kind, the solver keeps it where the placed build has its node.
 - Not modelled: the coding key (the mating face's), the thread's form, the seal between the flange and the wall, the contacts' crimp or solder ends and the cable side behind the body, a protective cap.
 - The host places it on its wall and models the Ø22 wall hole and the four M3 tapped or clearance holes itself (the host's figures). servo-motor's seats (Ø23 × 8, port-pwr and port-enc) are replaced by this element at its next major.
 - Not a safety-function device.

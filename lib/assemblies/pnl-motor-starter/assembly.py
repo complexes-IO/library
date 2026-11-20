@@ -6,7 +6,7 @@ import os, sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from toolkit import library, cadout, preview
 from toolkit.prims import Prims, nodes
-ID = "pnl-motor-starter"; VERSION = "0.14"; HERE = os.path.dirname(os.path.abspath(__file__)); OUT = os.path.join(HERE, "out"); os.makedirs(OUT, exist_ok=True)
+ID = "pnl-motor-starter"; VERSION = "0.16"; HERE = os.path.dirname(os.path.abspath(__file__)); OUT = os.path.join(HERE, "out"); os.makedirs(OUT, exist_ok=True)
 # A BOM row on file that is not placed yet, with what it waits on. bom.csv keeps its version pin; the row is reported as planned.
 # q1 (the door-coupled disconnect) was held 0.1 to 0.5 while lib/motion.csv's three rows that keep its body on the back panel
 # named pm-motor-starter only; since the core's answer to request panel-2 (2026-11-11) their scope is p*-motor-starter.

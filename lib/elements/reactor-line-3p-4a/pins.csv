@@ -1,0 +1,8 @@
+port,pin,role,signal,rated_A,source
+t-1U1,1U1,pass,line side phase 1 (from the supply),4,spec.md Class values 6 and 10 (3 poles; 4 A each line)
+t-1V1,1V1,pass,line side phase 2,4,as 1U1
+t-1W1,1W1,pass,line side phase 3,4,as 1U1
+t-1U2,1U2,pass,load side phase 1 (to the drive),4,as 1U1
+t-1V2,1V2,pass,load side phase 2,4,as 1U1
+t-1W2,1W2,pass,load side phase 3,4,as 1U1
+t-PE,PE,PE,protective earth of the core frame,,"not on file: the bond of exposed conductive parts to the panel's PE bar is IEC 60204-1's rule, named without a clause because the standard is not in lib/standards/sources.csv (xfmr-control-3ph 1.2's line)"

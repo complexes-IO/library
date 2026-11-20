@@ -1,7 +1,7 @@
 {
  "toolkit": "1.3",
  "validation": "1.0",
- "rules": 86,
+ "rules": 87,
  "id": "io-block-m12-8di8do",
  "status": "REVIEW",
  "findings": [

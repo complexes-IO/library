@@ -1,0 +1,6 @@
+port,pin,role,signal,rated_A,source
+x1.t-1,L,load+:120VAC,input line (120 V AC),0.63,spec.md Class values 1 10 11 and 14; rated current derived (ratings.csv i_in)
+x1.t-2,N,load0,input neutral (the 120 V control circuit's return),0.63,as L
+x1.t-3,PE,PE,protective earth,,"not on file: the bond to the panel's PE bar is IEC 60204-1's rule, named without a clause because the standard is not in lib/standards/sources.csv (as xfmr-control 1.1's t-PE)"
+x2.t-1,AC1,supply+:24VAC:AC,output 24 V AC (pole 1 of the placed terminal-plug 2.0),2.5,spec.md Class values 2 and 5
+x2.t-2,AC2,supply0,output return (pole 2 of the plug),2.5,as AC1

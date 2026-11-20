@@ -1,0 +1,7 @@
+port,pin,role,signal,rated_A,source
+x1.t-1,1,pass,clamp 1 (pole 1 of the placed terminal-plug 2.0): the one potential of the bar,12,spec.md Class values 2 and Ratings (ratings.csv ie)
+x1.t-2,2,pass,clamp 2: the same potential,12,as 1
+x1.t-3,3,pass,clamp 3: the same potential,12,as 1
+x1.t-4,4,pass,clamp 4: the same potential,12,as 1
+x1.t-5,5,pass,clamp 5: the same potential,12,as 1
+x1.t-6,6,pass,clamp 6: the same potential,12,as 1

@@ -1,0 +1,21 @@
+# behaviour.csv · stack-light · signal tower, three continuous-light elements green / yellow / red, 24 V DC (lib/behaviour.md). Written by elec-r55 (unattended, 2026-11-20) from spec.md (Class values, Wiring, Named nodes), pins.csv, ratings.csv and element.py: a generic element, so its class values are its figures.
+# Each light element is a load between its own terminal (1 green, 2 yellow, 3 red) and the common C (ratings.csv: 2.4 W each, a design figure) and is lit while a voltage is across them. The solver's V(a,b) is unsigned (toolkit/nets.py), so either polarity reads as lit: reverse polarity is not modelled (the tower is wired 1 2 3 + / C -), as fan-cooling 1.0.
+# Each terminal is a screw clamp with its own port node t-<mark> on the base's back wall (element.py TERMS). The clamps' conductor range and torque are class B (IEC 60947-1 not on file: spec.md Dimensions).
+kind,a,b,part,when,value,unit,source,note
+pin,C,t-C,terminal-C,,NOT ON FILE (B): IEC 60947-1,N·m,spec.md Dimensions (terminals: four screw clamps on the back wall; conductor range and torque class B); pins.csv t-C,common 0 V
+pin,1,t-1,terminal-1,,NOT ON FILE (B): IEC 60947-1,N·m,as C,green light element +24 V DC
+pin,2,t-2,terminal-2,,NOT ON FILE (B): IEC 60947-1,N·m,as C,yellow light element +24 V DC
+pin,3,t-3,terminal-3,,NOT ON FILE (B): IEC 60947-1,N·m,as C,red light element +24 V DC
+load,1,C,light-green,,2.4,W,"ratings.csv p_element (2.4 W each element inside psu-24v-2a4's output, the 24 V budget ELR-020); the solver draws I = P / V at the seen voltage (0.10 A at 24 V, ratings.csv i_element)",the green light element
+load,2,C,light-yellow,,2.4,W,as the green element's row,the yellow light element
+load,3,C,light-red,,2.4,W,as the green element's row,the red light element
+state,greendark,,light-green,default,,,spec.md Wiring (no voltage across 1-C: the green element is dark),the green element dark
+state,greenlit,,light-green,"V('1','C') > 0",,,"spec.md Class values 3 and 13 (continuous light, 24 V DC across 1 + / C -); the least voltage an element lights at is not stated (EC001042 has no such feature), so any voltage across 1-C reads as lit (as fan-cooling's running row); either polarity: the solver's V(a,b) is unsigned and reverse polarity is not modelled",the green element lit
+state,yellowdark,,light-yellow,default,,,spec.md Wiring (no voltage across 2-C: the yellow element is dark),the yellow element dark
+state,yellowlit,,light-yellow,"V('2','C') > 0",,,"spec.md Class values 3 and 13 (continuous light, 24 V DC across 2 + / C -); as the green element's row",the yellow element lit
+state,reddark,,light-red,default,,,spec.md Wiring (no voltage across 3-C: the red element is dark),the red element dark
+state,redlit,,light-red,"V('3','C') > 0",,,"spec.md Class values 3 and 13 (continuous light, 24 V DC across 3 + / C -); as the green element's row",the red element lit
+pose,lamp-green,,,greenlit,1,,spec.md Named nodes,green lit
+pose,lamp-yellow,,,yellowlit,1,,spec.md Named nodes,yellow lit
+pose,lamp-red,,,redlit,1,,spec.md Named nodes,red lit
+limit,light-green light-yellow light-red,,,,24,VDC,ratings.csv ue_dc (ETIM 10.0 EC001042 class value EF008208; spec.md Class values 13),the rated operating voltage

@@ -1,4 +1,4 @@
-# contactor-9a-1no1nc · v1.3 · IEC contactor 9 A, 24 V DC coil
+# contactor-9a-1no1nc · v1.4 · IEC contactor 9 A, 24 V DC coil
 
 **What** IEC contactor 9 A, 24 V DC coil. Built from the Stage 0 brief `references/measure.md` (figures with their document pages).
 **Class** device · **Baseline** maker's datasheet and 2-D drawings (references/measure.md; the reference part's record in references/source.txt): contactor drawing p. 1 (44.8 × 78.4 × 98.5; 70 × 35 pattern); front aux block drawing p. 1 (45 × 46 × 42); series spec p. 6, 9, 17. Nothing of a vendor file ships.
@@ -26,9 +26,11 @@ a post on the N.O. bridge's +y face (53-54). The fixed aux strips, built-in and 
 Coil data, contact ratings, timings and life live in parts.csv as model parameters (coil 5.8 W, ≈ 99 Ω derived; pick-up 12–19.2 V;
 drop-out 2.4–9.6 V; close 35–45 ms, open 8–12 ms; 9 A AC-3, 25 A AC-1, 4.4 A AC-4; 2.5 mΩ per pole; 2 million AC-3 operations).
 
-**Assumption (C)**, internal mechanism and walls the twin doesn't read (OPERATING.md 6, class C; none of it is in the brief): contact
-gap 2.0 per break and over-travel 1.5 (stroke 3.5) · E-core 28.8 wide, outer legs at z ±14…20, centre leg ±5, legs ending at y −30 ·
-armature 5 thick, gap 3.5 released · coil as a block on the centre leg · carrier frame (rear plate, side columns, crossbar at y −60,
+**Assumption (B)**, the travels the twin reads (the node ranges of `carrier`, `armature`, `pole-1..3`, the contact springs and the aux
+nodes; the maker's documents would give them, the brief has none; review elec-r51 finding 1): contact gap 2.0 per break, over-travel 1.5,
+and so the stroke 3.5, which is also the armature's gap released.
+**Assumption (C)**, internal mechanism and walls the twin doesn't read (OPERATING.md 6, class C; none of it is in the brief): E-core 28.8
+wide, outer legs at z ±14…20, centre leg ±5, legs ending at y −30 · armature 5 thick · coil as a block on the centre leg · carrier frame (rear plate, side columns, crossbar at y −60,
 front crossbar at −84, stem to the face, the 1.3 stops) · fixed main strips at y −49…−50.5 with rivets Ø3.6, bridges 6 × 24 × 2 · two
 return springs Ø2.8, nine turns · contact springs Ø3.2 · housing wall 2.0 · front block slide, yoke and bridges.
 **Assumption (B)**, where a wire meets the part (the maker's drawing would give it; it gives none of these): built-in aux 13–14 at
@@ -62,6 +64,7 @@ The aux block is a parameter, not a carried element: it has no state and no orig
 ## History
 | version | change |
 |---|---|
+| 1.4 | elec-r54 (unattended, 2026-11-13), text only (review elec-r51 finding 1): the contact gap, over-travel and stroke (the armature's released gap) classed B, not C: they set the moving nodes' ranges the twin reads; the rest of the mechanism list stays C. Model, nodes, origin, cut-outs and pins as 1.3 |
 | 1.3 | elec-r51 (unattended), the backlog's checks: MOT-020, the carrier's stops on the main bridges and both built-in aux bridges and the front block slide's yoke on its two bridges, so every follow pair of lib/motion.csv meets within the stroke; GEO-070, the fixed aux strips (built-in and front block) run 0.5 further to the housing walls; PIN-002, gender none on the 16 screw-clamp ports; DOC-006, the maker's and part names out of BASELINE and this spec (references/ only); the open mechanism figures classed C and the aux and coil terminal positions B; the Dimensions pitch row 14.0 as built. Nodes, origin and cut-outs as 1.2 |
 | 1.2 | terminal figures and the suite (2026-11-03): the drawing's 98.5 runs from the rail back, so the rail sits in a groove in the base: coil face at −91.0 from the crown, rear lugs either side of the ±18.4 groove down to the mounting plane, a rail latch tongue (was a clip behind a body standing on the crown: 148.0 against 140.5); 70 × 35 screw pattern cut, Ø4.5 (then an assumption: the drawing p. 1 gives it, terminal round 2); clamp entry holes at the lower and upper terminals (the overload's pins come up through them; the dark wire-entry plates are gone); slots for the overload's hooks in the lower lug; window in the carrier's front crossbar for the N.O. aux bridge (GEO-010) and its stop at 2.6; window in the coil face for the front block's slide, which now reaches the stem (MOT-010); front block N.O. stops at 2.0; label field only without the front block |
 | 1.1 | mechanism-first: E-core, coil, armature and carrier, three bridges on contact springs, return springs, built-in aux, front-block slide; shells for the housings; terminal ids as port nodes; rows at 14.0 / ±31.5 (interior brief) |

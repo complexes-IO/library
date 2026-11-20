@@ -1,6 +1,9 @@
-# behaviour.csv · receptacle-m23 · M23 receptacle, generic (lib/behaviour.md). Written by elec-r39 from spec.md, pins.csv and element.py; the torque cells elec-r50 (review receptacle-m23-1.0 finding 1). A connector: each contact passes the host's wire to the mating plug's contact; the host's pins.csv says what each carries. The rows are the default build's (kind power): contacts c-1 c-2 c-3 c-pe, port nodes at the contacts' tips. Kind signal's contacts c-1 to c-6 take the same form (pins.csv lists c-4 to c-6); the checks read the default build, which has no c-4 to c-6 node, so no row names them (review finding 2, put to the core: request elec-15). Crimp or solder ends behind the body: a plug-in contact with no screw, so its torque is `not claimed` (lib/behaviour.md, pin). Nothing moves.
+# behaviour.csv · receptacle-m23 · M23 receptacle, generic (lib/behaviour.md). Written by elec-r39 from spec.md, pins.csv and element.py; the torque cells elec-r50 (review receptacle-m23-1.0 finding 1); the signal kind's rows elec-r52 (the core's answer to request elec-15). A connector: each contact passes the host's wire to the mating plug's contact; the host's pins.csv says what each carries. The default build is kind power: contacts c-1 c-2 c-3 c-pe, port nodes at the contacts' tips. A pin of one kind only is `only kind=<value>` in `when` (lib/behaviour.md, pin; toolkit/behaviour.only): PE in kind power, 4 to 6 in kind signal; 1 to 3 are in both. Crimp or solder ends behind the body: a plug-in contact with no screw, so its torque is `not claimed` (lib/behaviour.md, pin). Nothing moves.
 kind,a,b,part,when,value,unit,source,note
 pin,1,c-1,contact-1,,not claimed,N·m,not claimed: a crimp or solder contact with no screw (lib/behaviour.md pin); its position spec.md Dimensions (contacts: design layout),contact 1
 pin,2,c-2,contact-2,,not claimed,N·m,as 1,contact 2
 pin,3,c-3,contact-3,,not claimed,N·m,as 1,contact 3
-pin,PE,c-pe,contact-pe,,not claimed,N·m,as 1,protective earth contact
+pin,PE,c-pe,contact-pe,only kind=power,not claimed,N·m,as 1,protective earth contact (kind power)
+pin,4,c-4,contact-4,only kind=signal,not claimed,N·m,as 1,contact 4 (kind signal)
+pin,5,c-5,contact-5,only kind=signal,not claimed,N·m,as 1,contact 5 (kind signal)
+pin,6,c-6,contact-6,only kind=signal,not claimed,N·m,as 1,contact 6 (kind signal)

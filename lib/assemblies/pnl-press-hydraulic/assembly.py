@@ -6,7 +6,7 @@ import os, sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from toolkit import library, cadout, preview
 from toolkit.prims import Prims
-ID = "pnl-press-hydraulic"; VERSION = "0.12"; HERE = os.path.dirname(os.path.abspath(__file__)); OUT = os.path.join(HERE, "out"); os.makedirs(OUT, exist_ok=True)
+ID = "pnl-press-hydraulic"; VERSION = "0.14"; HERE = os.path.dirname(os.path.abspath(__file__)); OUT = os.path.join(HERE, "out"); os.makedirs(OUT, exist_ok=True)
 # A BOM row on file that is not placed yet, with what it waits on. bom.csv keeps its version pin; the row is reported as planned.
 # q1 (the door-coupled disconnect) was held 0.1 to 0.4: its parent is enc-1.door (the door gets the handle's cut-out), so MOT-010
 #     swung the whole switch with the door until lib/motion.csv (the core's) carried this panel's three rows (body excluded from

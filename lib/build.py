@@ -214,6 +214,46 @@ if __name__ == "__main__":
     if arg == "line": sys.exit(0 if line_board(sys.argv[2] if len(sys.argv) > 2 else None) else 1)
     if arg == "station": sys.exit(0 if line_station(sys.argv[2]) else 1)
     if arg == "history": sys.exit(0 if line_history() else 1)
+    if arg == "silent":                                                   # the PC's silence, from origin/line-status (autopilot.silence_lines)
+        import subprocess, datetime as _dt, autopilot as AP
+        subprocess.run(["git", "fetch", "-q", "origin", "+refs/heads/line-status:refs/remotes/origin/line-status"], cwd=HERE, capture_output=True)
+        r = subprocess.run(["git", "show", "origin/line-status:status.md"], cwd=HERE, capture_output=True, text=True, encoding="utf-8")
+        now = _dt.datetime.now(_dt.timezone.utc).replace(tzinfo=None) - _dt.timedelta(hours=6)   # CST, the PC's (no DST in the shifts' months)
+        try:
+            from zoneinfo import ZoneInfo; now = _dt.datetime.now(ZoneInfo("America/Chicago")).replace(tzinfo=None)
+        except Exception: pass
+        lines = AP.silence_lines(r.stdout if r.returncode == 0 else "", now)
+        age = AP.silence_age(r.stdout if r.returncode == 0 else "", now)
+        if age is not None and age >= AP.CLOUD_AFTER_H:                  # core watch 2026-11-17: what the cloud could build meanwhile
+            from toolkit import generic as _gn
+            subprocess.run(["git", "fetch", "-q", "origin", "+refs/heads/cloud-*:refs/remotes/origin/cloud-*"], cwd=HERE, capture_output=True)
+            last = {ln: subprocess.run(["git", "log", "-1", "--format=%cs", f"origin/cloud-{ln}"], cwd=HERE, capture_output=True,
+                                       text=True).stdout.strip() for ln in ("mech", "elec", "pneu")}
+            lines += AP.cloud_lines(age, {ln: [(c["class"], c["description"]) for c in _gn.next_classes(ln, 3)]
+                                          for ln in ("mech", "elec", "pneu")}, last)
+        print("\n".join(lines) if lines else f"PC heard from: line-status within 2 h of {now:%Y-%m-%d %H:%M} CST"); sys.exit(0)
+    if arg == "needs-em":                                                 # the core's needs-em entries main lacks (autopilot.unmerged_needs)
+        import subprocess, autopilot as AP
+        subprocess.run(["git", "fetch", "-q", "origin", "main", "core"], cwd=HERE, capture_output=True)
+        S = lambda ref: subprocess.run(["git", "show", f"{ref}:lib/requests/core/needs-em.md"], cwd=HERE, capture_output=True,
+                                       text=True, encoding="utf-8").stdout
+        ls = AP.unmerged_lines(AP.unmerged_needs(S("origin/main"), S("origin/core")), full="-v" in sys.argv[2:])   # 2026-11-19: open items once
+        print("\n".join(ls) if ls else "needs-em: main carries every entry on origin/core"); sys.exit(0)
+    if arg == "rehearse":                                                 # the library's next merges, rehearsed in a scratch worktree (toolkit/rehearse.py)
+        import subprocess, autopilot as AP; from toolkit import rehearse as RH
+        root = subprocess.run(["git", "rev-parse", "--show-toplevel"], cwd=HERE, capture_output=True, text=True).stdout.strip()
+        G = lambda *a: subprocess.run(["git", *a], cwd=root, capture_output=True, text=True).stdout.strip()
+        G("fetch", "-q", "origin")
+        cands = []
+        for b in ("core", "mech", "elec", "pneu", "panel", "public", "review"):
+            ref = f"origin/{b}"
+            if G("rev-parse", "--verify", "-q", ref) and G("rev-list", "--count", f"origin/main..{ref}") not in ("", "0"):
+                ts = G("log", "--reverse", "--format=%ct", f"origin/main..{ref}").split()
+                cands.append((ref, int(ts[0]) if ts and b != "core" else None))
+        refs = AP.merge_order(cands, most=99)                                 # the library's order, every branch that waits
+        rows, st = RH.rehearse(root, "origin/main", refs, owners=lambda ln, b, h, here: owners(ln, b, h, here=here),
+                               selftest="--no-selftest" not in sys.argv, build="--build" in sys.argv)
+        ls = RH.lines(rows, st); print("\n".join(ls)); sys.exit(0 if ls[0].startswith("REHEARSAL CLEAN") else 1)
     if arg == "rereview": sys.exit(0 if rereview() else 1)
     if arg == "fingerprint":                                              # an element's source fingerprint, the reviewer's method (escape group 13)
         if len(sys.argv) < 3: sys.exit("usage: python lib/build.py fingerprint <id> [<id> ...]")

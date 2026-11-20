@@ -3,4 +3,4 @@
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from toolkit import check, library
-check.run(library.load("gl-xr-1"), dict(primitives=25, extents=((-74.0, -2.25, -24.13), (74.0, 153.68, 28.0)), nodes=['dial-l', 'dial-r', 'frame', 'lens-l', 'lens-r', 'temple-l', 'temple-r'], holes=0))
+check.run(library.load("gl-xr-1"), dict(primitives=54, extents=((-71.36, -0.0, -22.7), (71.36, 140.07, 24.26)), nodes=['dial-l', 'dial-r', 'display-l', 'display-r', 'frame', 'lens-l', 'lens-r', 'temple-l', 'temple-r'], holes=0))

@@ -1,7 +1,7 @@
 {
  "toolkit": "1.3",
  "validation": "1.0",
- "rules": 86,
+ "rules": 87,
  "id": "profile-z-alu-30x40x3",
  "status": "PASS",
  "findings": [

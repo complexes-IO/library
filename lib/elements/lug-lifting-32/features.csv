@@ -1,0 +1,2 @@
+match,role,kind,check,position_tol,datums,source,note
+32,eye,own,,,,design choice (spec.md Its own sizes),"1 x Ø32 through the plate along y at x 0, z 80: the eye a shackle's pin or a hook takes; no fastener, no standard size and no load claim"

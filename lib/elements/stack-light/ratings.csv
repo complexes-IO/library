@@ -1,0 +1,6 @@
+property,value,unit,status,source
+ue_dc,24,V,generic design,"ETIM 10.0 EC001042 class value: operating voltage DC (EF008208), 24 V; spec.md Class values 13"
+elements,3,,generic design,"ETIM 10.0 EC001042 class value: number of signal tower elements (EF008260); spec.md Class values 1"
+p_element,2.4,W,design,"design: 2.4 W each light element on the panel's 24 V DC control supply, the three together 7.2 W inside psu-24v-2a4's output (the 24 V budget, ELR-020); not a feature of EC001042; spec.md Class values (the paragraph under the table)"
+i_element,0.10,A,derived,"2.4 W / 24 V = 0.100 A (I = P / U; p_element and ue_dc above), one light element; behaviour.csv load rows"
+load_i,0.30,A,derived,"3 x 2.4 W / 24 V = 0.300 A (I = P / U; elements, p_element and ue_dc above), all three elements lit: what the 24 V budget (ELR-020) reads"

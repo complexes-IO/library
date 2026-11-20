@@ -1,0 +1,2 @@
+# behaviour.csv · panel-partition-1000 · element for a storage partition, generic (lib/behaviour.md). Written by mech-r166 from element.py: one fixed body (a welded tube frame with a middle rail and 17 flat bars), no terminal, no moving node, no state; bolting the panel to the posts' tabs is the host's assembly, not a motion of this element. A structural part's file: the header only. No load figure here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note

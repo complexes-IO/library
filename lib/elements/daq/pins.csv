@@ -1,0 +1,12 @@
+port,pin,role,signal,rated_A,source
+x1.t-1,AI0+,in,analogue input 0 + (0-10 V or 4-20 mA; differential pair with AI0-),,spec.md Class values 6 7 17 (4 differential inputs)
+x1.t-2,AI0-,in,analogue input 0 - (differential pair with AI0+),,as AI0+
+x1.t-3,AI1+,in,analogue input 1 +,,as AI0+
+x1.t-4,AI1-,in,analogue input 1 -,,as AI0+
+x1.t-5,AI2+,in,analogue input 2 +,,as AI0+
+x1.t-6,AI2-,in,analogue input 2 -,,as AI0+
+x1.t-7,AI3+,in,analogue input 3 +,,as AI0+
+x1.t-8,AI3-,in,analogue input 3 -,,as AI0+
+x2.t-1,24V,load+:24V,module supply +24 V DC,0.10,spec.md Class values 3 and 5; rated current derived (ratings.csv load_i)
+x2.t-2,0V,load0,module supply 0 V,0.10,as 24V
+x2.t-3,FE,FE,functional earth (the analogue cables' shields),,spec.md Dimensions terminal marks

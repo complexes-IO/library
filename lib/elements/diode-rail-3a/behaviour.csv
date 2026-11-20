@@ -1,0 +1,11 @@
+# behaviour.csv · diode-rail-3a · generic diode module 3 A 250 V (ETIM 10.0 EC004667) (lib/behaviour.md). Written by elec-r61 from spec.md (Class values and Ratings) and pins.csv and ratings.csv.
+# One diode from A (anode) to K (cathode): it conducts from A to K and blocks from K to A. Solver phase 1 has no row kind for that: a contact is one conductor both ways and V(a b) is unsigned
+# (lib/behaviour.md Expressions; fan-cooling 1.0's running row says the same of its polarity). So this file gives the pins and the limits and NO path between A and K: across a coil with its cathode
+# on the positive side (the free-wheeling use) the diode is reverse biased whenever the circuit is at rest or driven and the open path is what the solver should see; in series (a decoupling use)
+# the solver sees an open circuit where the diode would conduct. Request elec-21 asks the core for a one-way path; the contact row comes with its answer (spec.md Notes).
+# Torques: the plug's clamps are terminal-plug 2.0's (class B, IEC 60999), as that element's behaviour.csv writes them.
+kind,a,b,part,when,value,unit,source,note
+pin,A,x1.t-1,x1.clamp-1,,NOT ON FILE (B): IEC 60999,N·m,terminal-plug 2.0 behaviour.csv (its clamps' torque class B),anode (pole 1 of the placed plug)
+pin,K,x1.t-2,x1.clamp-2,,NOT ON FILE (B): IEC 60999,N·m,as A,cathode (pole 2 of the placed plug)
+limit,junction,,,,3,A,"ratings.csv ie (design: 3 A, not above terminal-plug 2.0's 12 A, ETIM 10.0 EC002021 class value EF008250; spec.md Ratings)",the forward current A to K
+limit,junction,,,,250,V,"ratings.csv ue_max (design: 250 V, not above terminal-plug 2.0's 250 V, ETIM 10.0 EC002021 class value EF000228; spec.md Ratings)",the reverse voltage K to A

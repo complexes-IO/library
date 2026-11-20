@@ -1,0 +1,2 @@
+# behaviour.csv · ramp-loading-150 · loading ramp, generic (lib/behaviour.md). Written by mech-r170 from element.py: one fixed welded body (a nose, a deck sloping 1 in 10, a landing, side walls and ribs), no terminal, no moving node, no state; the loads that roll over it are the host's assembly, not a motion of this element. A structural part's file: the header only. No load figure here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note

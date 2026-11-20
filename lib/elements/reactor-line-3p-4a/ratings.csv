@@ -1,0 +1,7 @@
+property,value,unit,status,source
+ue_max,480,V AC,generic design,"ETIM 10.0 EC002563 class value: max. rated operation voltage Ue (EF007357), line to line; spec.md Class values 9"
+ie,4,A,generic design,"ETIM 10.0 EC002563 class value: rated current AC (EF007500), each line; spec.md Class values 10"
+frequency,50-60,Hz,generic design,"ETIM 10.0 EC002563 class value: rated operating frequency (EF007024); spec.md Class values 8"
+poles,3,,generic design,"ETIM 10.0 EC002563 class value: number of poles, primary side (EF007403); spec.md Class values 6"
+l_rated,7.35,mH,generic design,"ETIM 10.0 EC002563 class value: rated inductance (EF007291), each phase; spec.md Class values 12"
+uk,4,%,generic design,"ETIM 10.0 EC002563 class value: relative short circuit voltage (EF007452); spec.md Class values 14"

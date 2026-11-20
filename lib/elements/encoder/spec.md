@@ -1,4 +1,4 @@
-# encoder · v1.0 · rotary encoder, incremental, optical, 1024 ppr, push-pull HTL, 24 V DC, size 58, solid shaft 10 (complexes.org generic)
+# encoder · v1.1 · rotary encoder, incremental, optical, 1024 ppr, push-pull HTL, 24 V DC, size 58, solid shaft 10 (complexes.org generic)
 
 **What** Incremental rotary encoder for a machine axis whose position or speed a controller counts (a servo axis, a rotary index table, a positioner, a press brake's back gauge): an optical code disc on a solid Ø10 shaft gives 1024 pulses per revolution on two channels A and B, a quarter period apart (the direction from which leads), and one zero pulse N per revolution, as push-pull (HTL) outputs at the supply's level, fed 24 V DC, so a PLC's 24 V DC fast inputs count them. Construction size 58: an aluminium housing Ø58 × 42 whose front face is the mounting face, with a Ø36 spigot and three M4 tapped holes; the shaft is coupled to the machine's shaft by the installer's coupling; the cable plugs onto an axial M12 connector at the back. A generic element (OPERATING.md 12, EM 2026-11-07): our own vendor-neutral design of the ETIM 10.0 class EC001486 "Rotary encoder", built to the class values below; no maker's datasheet (the folder's earlier stub is reference only and was not used: references/source.txt).
 **Class** device · **Baseline** our own design: generic Rotary encoder (ETIM 10.0 EC001486). The class values are this element's definition (design inputs); the mounting holes are M4 × 0.7 tapped, their minor diameter derived (ISO 68-1 / ISO 965-1); the housing, spigot, shaft and every other size are design choices, said so below.
@@ -44,8 +44,8 @@ These values are what the element claims: ratings are the class definition, not 
 |---|---|---|
 | housing | Ø58.0 × 42.0 (y 0 … 42), the front face y 0 the mounting face | design choice (construction size 58: Class values 7) |
 | mounting holes | three M4 × 0.7 tapped, 6.0 deep from the mounting face, on a Ø48 pitch circle at 90°, 210° and 330° (one on top, +z), modelled plain at D1 Ø3.242 | thread derived: derive.thread(4.0, 0.7) (ISO 68-1 basic profile, ISO 965-1 clause 10; 6H D1 3.2422 … 3.4224); depth and pitch circle a design choice; features.csv |
-| spigot | Ø36.0, 3.0 proud of the mounting face (y −3 … 0); its fit tolerance NOT ON FILE (B): ISO 286-2 | size a design choice; the fit a standard's table not on file (lib/standards/wanted.md) |
-| shaft | solid, Ø10.0, 20.0 out from the mounting face (y −3 … −20 beyond the spigot), plain (no flat, no key); its fit tolerance NOT ON FILE (B): ISO 286-2 | size a design choice (Class values 14); the fit as the spigot's |
+| spigot | Ø36.0, 3.0 proud of the mounting face (y −3 … 0); tolerance class g6 (design: g6, a locational clearance fit H7/g6 in the host's centring bore, hole basis); the class's limits NOT ON FILE (B): ISO 286-2 | size and class a design choice (1.1: review elec-r47 finding 1); the limits a standard's table not on file (lib/standards/wanted.md) |
+| shaft | solid, Ø10.0, 20.0 out from the mounting face (y −3 … −20 beyond the spigot), plain (no flat, no key); tolerance class h6 (design: h6, a sliding fit H7/h6 in the installer's coupling bore, hole basis); the class's limits NOT ON FILE (B): ISO 286-2 | size a design choice (Class values 14); the class a design choice and its limits as the spigot's (1.1) |
 | connector boss | Ø20.0 × 6.0 on the back face (y 42 … 48) | design choice |
 | connector seat | Ø16.0 × 4.0 (y 48 … 52), the face receptacle-m12 sits on; port node `port-x1` on its face | design choice; the receptacle and its fixing are receptacle-m12's (Notes) |
 | label field | 24.0 × 11.0 × 0.6 on the back face below the boss (x ±12, z −24 … −13, y 42 … 42.6) | design choice |
@@ -61,16 +61,17 @@ These values are what the element claims: ratings are the class definition, not 
 On the label field: "complexes.org generic", "encoder", "1024 ppr HTL", "24 V DC". No maker's name, logo or approval mark.
 
 ## Notes
-- Open lines, each class B, a standard's table not on file and asked for once in lib/standards/wanted.md: the shaft's and the spigot's fit tolerances (ISO 286-2), and the supply's least voltage at which the outputs are valid (the IEC 61131-2 24 V DC class's lower limit, which behaviour.csv's `powered` row reads as "above 0"): NOT ON FILE (B): IEC 61131-2. Every rating is a class value (design input) or a design choice bounded by a rule, every size a design choice, the hole thread derived. Nothing is guessed and shown as sourced.
+- Open lines, each class B, a standard's table not on file and asked for once in lib/standards/wanted.md: the limits of the shaft's and the spigot's tolerance classes (h6 and g6, design choices since 1.1; their limits ISO 286-2's table), and the supply's least voltage at which the outputs are valid (the IEC 61131-2 24 V DC class's lower limit, which behaviour.csv's `powered` row reads as "above 0"): NOT ON FILE (B): IEC 61131-2. Every rating is a class value (design input) or a design choice bounded by a rule, every size a design choice, the hole thread derived. Nothing is guessed and shown as sourced.
 - Not a safety-function device: no safe speed or position monitoring is claimed (an encoder in a safety function needs a safety-class element and EM's sign-off).
 - Not placed (OPERATING.md 12, quality at the source): receptacle-m12 (built, not yet past station 6), so the connection is a seat with its port node, as servo-motor's for receptacle-m23; coupling-shaft and screw-iso4762 x3 (not built), so the shaft is plain and the holes bare. Nothing is modelled that a later element will place.
 - The folder's earlier stub: references/source.txt keeps its record verbatim as the end block (OPERATING.md 6, DOC-007; reviews servo-motor-1.0 finding 5, hmi-7in-1.0 finding 2). The stub's validation.json stays in the folder: removing or moving a tracked file is refused to an unattended run (lib/needs-em/elec.md r47).
 - The id: the inventory's row is `encoder`; the id convention (OPERATING.md 6) would add the form, size and output (encoder-inc-58-htl). A rename is the library's on main (`build.py rename`), not the lane's: lib/needs-em/elec.md r47.
 
 ## Outputs (out/)
-`encoder.lsp` · `.glb` (pivots on the shaft and the connector seat, `env-colonly` collider) · `preview-*.png`. Gates through the lock: 1.0 in elec-r47 (lib/rounds/elec/r47.md).
+`encoder.lsp` · `.glb` (pivots on the shaft and the connector seat, `env-colonly` collider) · `preview-*.png`. Gates through the lock: 1.0 in elec-r47, 1.1 in elec-r53 (lib/rounds/elec/).
 
 ## History
 | version | change |
 |---|---|
 | 1.0 | elec-r47 (2026-11-13, unattended): first build, generic ETIM 10.0 EC001486, our own design; inventory elec encoder (11 systems) |
+| 1.1 | elec-r53 (2026-11-13, unattended): review elec-r47 finding 1 (text only, geometry as 1.0): the spigot's and the shaft's tolerance classes named as design choices (g6 and h6, hole basis with an H7 bore), only the classes' limits left to ISO 286-2's table (class B) |

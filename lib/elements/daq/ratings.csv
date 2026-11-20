@@ -1,0 +1,6 @@
+property,value,unit,status,source
+u_supply,24,V DC,generic design,"ETIM 10.0 EC001596 class value: supply voltage DC (EF007534), voltage type DC (EF002991); spec.md Class values 3 and 4"
+p_consumption,2.5,W,generic design,"ETIM 10.0 EC001596 class value: power consumption (EF000346); spec.md Class values 5"
+n_ai,4,,generic design,"ETIM 10.0 EC001596 class value: number of analogue inputs (EF001994); spec.md Class values 17"
+res_ai,16,bit,generic design,"ETIM 10.0 EC001596 class value: resolution of the analogue inputs (EF003575); spec.md Class values 12"
+load_i,0.10,A,derived,"2.5 W / 24 V = 0.104 A (I = P / U; p_consumption and u_supply above), what the 24 V budget (ELR-020) reads; behaviour.csv load row 24V-0V"

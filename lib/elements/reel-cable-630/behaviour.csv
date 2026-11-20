@@ -1,0 +1,2 @@
+# behaviour.csv · reel-cable-630 · cable storage and transport reel, generic (lib/behaviour.md). Written by mech-r168 from element.py: one fixed body (two flanges and a barrel, an arbor bore and two drive-pin holes), no terminal, no moving node, no state; the reel turning on an axle and the cable wound on it are the host's assembly, not a motion of this element. A structural part's file: the header only. No load figure here: spec.md claims none.
+kind,a,b,part,when,value,unit,source,note

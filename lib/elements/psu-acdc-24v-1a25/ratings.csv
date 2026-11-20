@@ -1,0 +1,10 @@
+property,value,unit,status,source
+u_in,120,V AC,generic design,"ETIM 10.0 EC002542 class value: rated supply voltage AC 50 Hz (EF007076) and AC 60 Hz (EF007077), voltage type AC (EF002991); spec.md Class values 1, 13 and 14"
+u_out_ac,24,V AC,generic design,"ETIM 10.0 EC002542 class value: 1st secondary output voltage AC (EF006793); spec.md Class values 2"
+u_out_dc,24,V DC,generic design,"ETIM 10.0 EC002542 class value: 1st secondary output voltage DC (EF006794); spec.md Class values 5"
+i_out_ac,1.25,A,generic design,"ETIM 10.0 EC002542 class value: max. output current 1 (EF008284), the AC output; spec.md Class values 8"
+i_out_dc,1.25,A,generic design,"ETIM 10.0 EC002542 class value: max. output current 2 (EF008285), the DC output; spec.md Class values 9"
+p_out,60,W,generic design,"ETIM 10.0 EC002542 class value: power output (EF003034), both outputs together; spec.md Class values 18"
+s_in,75,VA,generic design,"ETIM 10.0 EC002542 class value: power consumption (EF000346); spec.md Class values 17"
+i_in,0.63,A,derived,"75 VA / 120 V = 0.625 A (I = S / U; s_in and u_in above)"
+short_circuit_proof,no,,generic design,"ETIM 10.0 EC002542 class value: short-circuit-proof (EF007332), each output needs its own protection; spec.md Class values 12"
