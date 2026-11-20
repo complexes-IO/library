@@ -106,11 +106,11 @@
    "basis": "OPERATING.md 12 (a host places only common parts that have passed station 6); lib/reviews/panel/r18.md finding 1 (ESCAPE): a panel's gate passed with a variant whose own gate failed"
   },
   {
-   "status": "REVIEW",
+   "status": "PASS",
    "rule": "GATE-010",
    "scope": "pnl-press-hydraulic",
    "where": "gate",
-   "message": "the AutoCAD gate of 2026-11-13 passed on another LISP than the one on file: the gate's census (1491 solids) is not the LISP on file's (1523); 16 layer(s) differ, first node-f1.bimetal-2_M-STEEL-7035 1 -> 2. Build the assembly, then gate the LISP the build wrote again (acad-gate.py --assembly pnl-press-hydraulic)",
+   "message": "the AutoCAD gate of 2026-11-20 ran the LISP on file (1523 solids)",
    "elements": [],
    "title": "an assembly's AutoCAD gate on file ran the LISP on file: its census (lisp_per_layer) is out/<id>.lsp's, and a version it or the LISP names is assembly.py's; REVIEW otherwise",
    "basis": "OPERATING.md 13 station 6 (every tool result tied to the files it checked); panel/r15 ESCAPE 2"
