@@ -6,7 +6,15 @@ from . import outfile
 COL = {}
 def mesh(prims, colliders=False, report=None):
     """outward faces (layer, object id, points) of every solid, with its holes and cuts cut (toolkit/csg.py); report, a dict, gets
-    {object id: (primitive index, method)} for every solid that had openings"""
+    {object id: (primitive index, method)} for every solid that had openings. A Prims that states its own facet count (prims.facets)
+    is meshed with it: every round face above 0.5 mm radius, holes and the pins in them alike."""
+    from . import csg
+    old = csg.FACETS; csg.FACETS = getattr(prims, "facets", None) or old
+    try: return _mesh(prims, colliders, report)
+    finally: csg.FACETS = old
+
+
+def _mesh(prims, colliders=False, report=None):
     from . import csg
     faces = []; oid = 0
     subs = {}

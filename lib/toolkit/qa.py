@@ -41,6 +41,11 @@ def run(mod, P):
     if total > budget: problems.append(f"triangle budget: {total} > {budget} for {'this element (TRIANGLES)' if getattr(mod, 'TRIANGLES', None) else 'class ' + cls}")
     mats = {L.split("|")[-1] for L, k, q in P if k not in ("hole", "cut") and not L.startswith("collider:")}
     if len(mats) > mat_budget: problems.append(f"materials: {len(mats)} > {mat_budget} for class {cls} ({', '.join(sorted(mats))})")
+    f = getattr(P, "facets", None)
+    if f:                                                                                  # its own facet count: the cut mesh is on new ground, so the Blender gate's count is taken here
+        from . import cadout
+        if not 24 <= f <= 48: problems.append(f"facets: {f} is outside 24 to 48")
+        for (n, m), bad in sorted(cadout.non_manifold(P).items()): problems.append(f"facets {f}: node {n}, {m}: {bad} non-manifold edge(s) in the glb (the Blender gate refuses them); try another count")
     # per solid: closed (each edge used twice, opposite directions), outward (signed volume > 0), no degenerate triangles
     sol = P
     for oid, faces in _per_object_faces(P).items():

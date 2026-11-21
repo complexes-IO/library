@@ -25,6 +25,7 @@ class Prims(list):
         self.params = {}                                                # placed instance tag -> the params it was built with (ratings follow them)
         self.parts = {}                                                 # primitive index -> part name (part="..."; carried by transform and library.place)
         self.radii = {}                                                 # primitive index -> its own fillet radius (fillet._radii; a bare lead's edge break)
+        self.facets = None                                              # its own facet count for round faces above 0.5 mm radius (csg.segments; 24 to 48), or None: the library's
     def _part(self, part):
         i = len(self) - 1
         if part: self.parts[i] = str(part)
@@ -68,7 +69,7 @@ def transform(prims, at=(0, 0, 0), yaw=0.0, rename=None, base=0, pitch=0.0, roll
         if own_body and rename and not L.startswith("collider:") and rename("body") != "body":
             return f"node:{own_body if isinstance(own_body, str) else rename('body')}|{L}"   # <tag>.body (True): never fused into the
         return L                                      # assembly's body, the machine comes apart; a node name: joins that node (a door's e-stop)
-    out = Prims()
+    out = Prims(); out.facets = getattr(prims, "facets", None)
     for s0, e0, tg, eid in getattr(prims, "owners", []):
         out.owners.append((s0 + base, e0 + base, rename(tg) if rename else tg, eid))
     for hn, (hi, ht) in getattr(prims, "hosts", {}).items():

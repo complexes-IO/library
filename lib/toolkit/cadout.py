@@ -78,6 +78,22 @@ def _tris(prims, report=None):
     return {k: unneedle(v) for k, v in out.items()}
 
 
+def non_manifold(prims):
+    """{(node, material): edges that do not join exactly two triangles} in the glb as write_glb writes it (vertices shared within a
+    solid, positions to 1e-4 mm): the Blender gate's count (toolkit/blender/gate.py), here before Blender sees it"""
+    out = {}
+    for (n, m), tris in _tris(prims).items():
+        if n.endswith("-colonly"): continue
+        uniq = {}; e = {}
+        for t in tris:
+            ids = [uniq.setdefault((t[0],) + tuple(np.round(p, 4)), len(uniq)) for p in t[1:]]
+            for a, b in zip(ids, ids[1:] + ids[:1]):
+                if a != b: k = (min(a, b), max(a, b)); e[k] = e.get(k, 0) + 1
+        bad = sum(1 for c in e.values() if c != 2)
+        if bad: out[(n, m)] = bad
+    return out
+
+
 NEEDLE_MM = 1e-3    # a triangle thinner than this (twice its area over its longest edge) collapses in float32 metres a machine away from
                     # the origin: 1 m's float32 step is 1.2e-4 mm, 8 m's 9.5e-4 mm (request panel-9 1, an escape: port-m12-a's D and L
                     # keys gated clean at the element's origin and failed Blender's degenerate count placed at 1.5 m in a panel)

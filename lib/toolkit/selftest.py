@@ -31,6 +31,16 @@ def cases():
     try: MK.regions(5.0); small = False
     except ValueError: small = True
     t("mark: a 5 mm ring is refused (the characters' strokes would go under 0.3 mm)", small)
+    # an element's own facet count (Prims.facets, EM 2026-11-20: round holes): only its mesh changes, the library's count comes back, and the build counts what the Blender gate would
+    from . import csg as _csg, preview as _pv, cadout as _co, qa as _qa
+    P = Prims(); b_ = P.box("M-STEEL", 0, 0, 0, 40, 6, 30); P.hole("M-GASKET", (20, -1, 15), (20, 7, 15), 2.25, b_); n12 = len(_pv.mesh(P))
+    P.facets = 32; n32 = len(_pv.mesh(P)); P.facets = None; again = len(_pv.mesh(P))
+    t("facets: a 2.25 mm hole has 12 sides by default and 32 when its Prims says so; the default comes back after", n32 > n12 == again and _csg.FACETS is None, f"{n12}, {n32}, {again} faces; csg.FACETS {_csg.FACETS}")
+    P.facets = 32; t("facets: a closed cut box has no non-manifold edge in the glb", _co.non_manifold(P) == {}, str(_co.non_manifold(P)))
+    Q = Prims(); Q.mesh("M-STEEL", [((0, 0, 0), (10, 0, 0), (0, 10, 0)), ((0, 0, 0), (0, 0, 10), (10, 0, 0)), ((0, 0, 0), (0, 10, 0), (0, 0, 10))])
+    t("facets: an open shell's edges are counted as the Blender gate counts them (3 of a tetrahedron less one face)", _co.non_manifold(Q) == {("body", "M-STEEL"): 3}, str(_co.non_manifold(Q)))
+    class _M: CLASS = "device"; TRIANGLES = 100000
+    P.facets = 64; r_ = _qa.run(_M, P); t("facets: a count outside 24 to 48 is refused at the build", any("outside 24 to 48" in x for x in r_), str(r_[:1]))
     # interference: overlapping instances FAIL, touching instances PASS, a hole clears its plug
     P = Prims(); P.box("M-STEEL", 0, 0, 0, 10, 10, 10); _owned(P, 0, 1, "a"); P.box("M-STEEL", 8, 0, 0, 10, 10, 10); _owned(P, 1, 2, "b")
     r = G.interference(P, "test-overlap"); t("GEO-020 finds a 2 mm overlap", any(s == "FAIL" and x == "GEO-020" for s, x, *_ in r), r[0][3])

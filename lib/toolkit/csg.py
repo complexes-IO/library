@@ -15,8 +15,13 @@ import numpy as np
 N = 20                       # sides of a cylinder or hole above 2.5 mm radius (the preview prism uses segments() too)
 EPS = 1e-6
 
+FACETS = None                # the facet count of the Prims being meshed, when it states its own (Prims.facets; toolkit/preview.py sets it for the
+                             # length of one mesh() and puts it back). None: the library's counts below. EM 2026-11-20: round holes on the parts the home
+                             # page shows close; the Blender gate's count of non-manifold edges is checked at the build for such an element (qa.py)
+
 def segments(r):
     """facets of a cylinder or hole of radius r in the mesh: small contacts and pins stay light, holes match the pins in them"""
+    if FACETS: return 8 if r <= 0.5 else FACETS
     return 8 if r <= 1.0 else 12 if r <= 2.5 else N
 
 def _ring_phase(d):
@@ -498,7 +503,7 @@ _CACHE = {}
 def cut_solid(k, q, subs):
     """(faces, method) for target (k, q) minus subs [(kind, q), ...]; faces point outward. See the module docstring for the methods."""
     if not subs: return None, "plain"
-    key = (k, repr(q), repr(subs))
+    key = (k, repr(q), repr(subs), FACETS)
     if key in _CACHE: return _CACHE[key]
     res = (None, None)
     if k in ("box", "obox", "cyl"):
